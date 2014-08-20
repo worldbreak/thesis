@@ -1,0 +1,143 @@
+\chapter{Intelligent Driver Model}
+\label{chap:IDM}
+
+Jeden z pøedstavitelù \uv{car following models} je také Intelligent Driver Model (IDM), model inteligentního øidièe. Tento model patøí do skupiny mikroskopických modelù, ve kterých se sleduje každý úèastník na komunikaci zvláš a ne komunikaci jako celek, nicménì nepatøí do žádné ze skupin uvedených v sekci \ref{sec:micro}. Dále patøí do tzv. \textit{deterministických} modelù, to znamená, že pøi opakujících se stejných vstupech bude systém vydávat stejné výstupy.\footnote{Opakem deterministických modelù jsou modely stochastické, kdy do pohybových rovnic vstupují i náhodné velièiny simulující nepøedvídatelné prvky chování øidièù èi jiné náhodné vlivy; u tìchto modelù jsou výsledky nereprodukovatelné} Tento model uvažuje pouze jednoproudou komunikaci (bez možnosti pøedjíždìní)\cite{TreiberWWW}.
+
+Mezi základní vstupy do IDM se zaøazuje u každého úèastníka (auta) jeho rychlost a poloha. Mezi parametry tohoto modelu se uvádí bezpeèný rozestup mezi vozidly, prùmìrné zrychlení vozidla, brzdová konstanta, preferovaná rychlost vozidla a bezpeèná doba zastavení pøed jiným vozidlem. Nìkteré tyto parametry mùžou mít jednotlivá auta jiné (napø. preferovaná rychlost). Jako výstupy se potom dostávají závislosti polohy, rychlosti èi zrychlení jednotlivých aut na èase\cite[str.2]{HHSW}. 
+
+Rozhodování, zda úèastník bude v danou chvíli zrychlovat èi zpomalovat, závisí pouze na jeho rychlosti a pozici a také na rychlosti a pozici úèastníka pøed ním. V každém èase se potom dají sledovat jednotlivé vlastnosti každého úèastníka (rychlost, poloha..).
+
+Mezi hlavní výhody IDM modelu patøí\cite[str.2,3]{HHSW}:
+\begin{itemize}
+	\item je do velké míry nekolizní
+	\item všechny parametry modelu mají \uv{rozumnou} interpretaci, jsou empiricky mìøitelné a jsou známy rozsahy jejich hodnot
+	\item z fundamentálního diagramu a vlastností stability modelu lze snadno a samostatnì kalibrovat data do empirických dat
+	\item hodí se pro numerické simulace
+	\item akcelerace se mùže lišit od decelerace, napø. v pøípadì nehody auto zaène brzdit razantnìji (asymetrie modelu)
+	\item patøí mezi tzv. akceleraèní modely, které mají výhodu v tom, že hodnota aktuálního zrychlení nebude nesmyslná hodnota pøi dobøe nastavených parametrech simulace
+  \item je vhodný pro popis tøí hlavních typù proudù na silnicích
+		\begin{itemize}
+				\item volný proud -- úèastník provozu jede úplnì sám a není nièím omezován, tohoto proudu lze dosáhnout napø. na závodním okruhu
+				\item plynulý proud -- úèastník provozu jede plynule, tj. musí se sice pøizpùsobovat ostatním úèastníkùm, ale tito úèastníci mají podobné èi stejné parametry jako on sám (nízká intenzita i hustota dopravy)
+				\item dopravní zácpa -- úèastník provozu je brždìn úèastníkem, který jede pøed ním (nízká intenzita a vysoká hustota dopravy)
+		\end{itemize}
+  \end{itemize}
+
+\section{Matematický popis}
+\label{sec:matpopis}
+ 
+Pro výpoèet zrychlení v IDM je použit vztah
+\begin{equation}
+\dot{v}_n = a_\free + a_\inter,
+\label{soucetzrych}
+\end{equation}
+kde se aktuální zrychlení úèastníka vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i úèastník jedoucí pøed ním $a_\inter$. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
+
+Zrychlení pøi volném proudu je definováno vztahem
+\begin{equation}
+a_\free {}={} a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right],
+\label{zrychvolproud}
+\end{equation}
+kde $a$ je maximální zrychlení, $\delta$ je exponent zrychlení, $v_n$ je aktuální rychlost vozidla a $v_{n\free}$ je rychlost, které chce vozidlo dosáhnout.
+
+Pokud v rovnici \eqref{zrychvolproud} bude zlomek $v_n / v_\free$ roven jedné, auto se již dostalo na svou preferovanou rychlost $v_\free$ a celkové zrychlení $a_\free$ bude rovno nule. Naopak pokud bude $v_n$ rovno nule, znamená to, že $a_\free$ bude pøímo rovno $a$, a auto pojede svým maximálním zrychlením. Pokud $v_n$ bude menší než $v_\free$, pak platí že, èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_\free$. Pokud $v_n$ bude vìtší než $v_\free$, bude platit pravý opak.
+
+Auto jedoucí pøi volném proudu je ale nereálná pøedstava, proto se do rovnice \eqref{soucetzrych} pøidává interakèní èlen, který pøímo závisí na parametrech vozidla jedoucí pøed naším úèastníkem. Tento èlen je roven
+\begin{equation}
+a_\inter = - a \left(\frac{s_n^*}{s_n}\right)^2,
+\label{intclen}
+\end{equation}
+kde $a$ je maximální zrychlení, $s_n = x_{n-1} - x_n$ je rozdíl poloh vozidel a $s_n^*$
+\begin{equation}
+s_n^* = s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}
+\label{snhvez}
+\end{equation}
+je preferovaný odstup. $s_\text{0}$ je souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $T$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}.
+
+Èlen úmìrný $v_n - v_{n-1}$ je kvadratický v promìnné $v_n$ a obsahuje souèin $v_n v_{n-1}$. Tyto nelineární èleny popisují interakci, v tomto pøípadì dvou vozidel. Pokud tedy bude vzdálenost $s_n$ mezi auty vysoká, potom zlomek $s_n^*/s_n$ bude mít velmi malou hodnotu a interakèní èlen $a_\inter$ lze zanedbat, takže vozidlo se pohybuje jako ve volném proudu.
+\begin{figure}%
+\centering
+\includegraphics[width=0.6\textwidth]{idm.pdf}%
+\caption{Promìnné jednotlivých aut}%
+\label{promen}%
+\end{figure}
+
+
+Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní èlen $s_n^*$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení auta $\dot{v}_n$ se musí snížit.
+ 
+Hodnoty, které se pro simulaci bìžnì používají jsou uvedeny v tabulce \ref{simulacehodnoty}.
+\begin{table}%
+\begin{tabular}{|r|r|r|}
+\hline
+ Parametr  & Hodnoty pro automobil  & Hodnoty pro kamion \\
+\hline \hline
+Rychlost, které chce auto dosáhnout $v_\free$ &   120 km/h &    80 km/h \\
+\hline
+Èasový odstup $T$ &      1.5 s &      1.7 s \\
+\hline
+Minimální vzdálenost $s_\text{0}$ &      2.0 m &      2.0 m \\
+\hline
+Prùmìrné zrychlení $a$ &   0.3 m/s$^2$ &   0.3 m/s$^2$ \\
+\hline
+Konstanta brzdìní $b$ &   3.0 m/s$^2$ &   2.0 m/s$^2$ \\
+\hline
+\end{tabular}  
+\caption{Hodnoty používané pro simulaci Zdroj:\cite{TreiberWWW}}
+\label{simulacehodnoty}
+\end{table}
+
+\section{Model MOBIL}
+\label{sec:mobil}
+Pøi simulaci vozidel je také potøeba brát v úvahu, že vedoucí vozidlo mùže jet nižší rychlostí než vozidla za ním nebo se na vozovce mùže nacházet nìjaká pøekážka. Z tohoto dùvodu byl také vymyšlen pøedjíždìcí model \textit{MOBIL}\cite{TreiberWWW}.
+
+Pro øidièe je pøedjíždìní na komunikacích i za normálních okolností považováno za problém. Øidiè se vždy rozhoduje na základì nìkolika faktorù, nejdùležitìjším z nich je bezpeènost. Dalším z nich jsou napøíklad jeho vlastní zkušenosti. Dále se pak øidiè rozhoduje podle výhodnosti vedlejšího pruhu, což by mìlo vést k primárnì zvýšení jeho rychlosti a tím i rychlejšímu dosažení jeho preferované rychlosti. Nìkterá vozidla by mìla preferovat pravý jízdní pruh i tehdy, když je pro nì výhodnìjší jet v levém pruhu\footnote{Jako pøíklad se dá uvést kamion, který jede rychleji než kamion pøed ním, ovšem øidiè kamionu ví, že bude následovat stoupání, pøedjíždel by pomalu a proto zpomalí a zùstane ve stávajícím pruhu.}, jiná vozidla by mohla volit zase levý jízdní pruh. Všechny tyto faktory se snaží model \textit{MOBIL} zachytit.
+
+\subsection{Popis modelu}
+
+Podstatné pro pøedjíždìní jsou dvì kritéria, která musí být splnìna:
+\begin{itemize}
+	\item druhý jízdní pruh musí být pro automobil více atraktivní, tj. \uv{motivaèní kritérium}
+	\item zmìna jízdního pruhu je bezpeèná, nehrozí nebezpeèí kolize, tj. \uv{bezpeènostní kritérium}
+\end{itemize}
+
+Pro lepší názornost je situace znázornìna na obrázku \ref{schemapredjizdeni}. Jednotlivé obdelníky znaèí automobily, první index znaèí pozici automobilu, druhý index pak jízdní pruh. Vozidlo, které bude uvažovat o zmìnì pruhu, je oznaèeno písmenem B.
+
+\subsubsection{Bezpeènostní kritérium}
+
+Bezpeènostní kritérium se stará o to, aby nedošlo k situaci, že vozidlo pøejede do vedlejšího pruhu a vozidlo, které v tomto pruhu již jede, bude muset prudce brzdit, pøípadnì ani zabrzdit nedokáže. Závisí tudíž na automobilu, které jede ve vedlejším pruhu za ním (E). U vozidla E se tedy spoète teoretické zrychlení $a_{n+1,2}$ podle vztahu \eqref{soucetzrych} pøi situaci, kdyby se auto B nacházelo v levém pruhu. Pokud by hodnota zrychlení byla menší než hodnota pøedem stanovená konstanta, vozidlo E by nebylo schopno zareagovat na pøejetí vozidla B a mohlo by dojít i ke srážce. Toto zrychlení tedy musí být vìtší než bezpeènostní konstanta $b_\safe$. Vyjádøeno matematicky
+\begin{equation}
+a_{n+1,2} > -b_\safe.
+\label{bezpkrit}
+\end{equation}
+
+Pokud tedy tato nerovnice platí, je splnìno bezpeènostní kritérium.
+ 
+\subsubsection{Motivaèní kritérium}
+\label{sec:motkrit}
+
+\begin{figure}%
+\centering
+\includegraphics[width=0.8\textwidth]{schemapredjizdeni.pdf}%
+\caption{Schéma situace pøi výpoètu pøedjíždìní}%
+\label{schemapredjizdeni}%
+\end{figure}
+
+Bezpeèná zmìna pruhu pro vozidlo ještì nutnì nemusí znamenat zmìnu pruhu. Od toho musí být splnìno motivaèní kritérium. Toto kritérium vychází z pøedpokladu, že vozidlo chce dosáhnout co nejrychleji své preferované rychlosti. Z poèátku se mùže zdát, že toto kritérium je zde proto, aby umožnilo plynulou jízdu vozidla, tj. aby se zrychlení vozidla mìnilo co nejménì. To ovšem není totéž.
+
+Pro motivaèní kritérium je zapotøebí, aby byla splnìna nerovnice \eqref{motkrit}. Na levé stranì se vcelku logicky nachází rozdíl zrychlení automobilu ve vedlejším pruhu a zrychlení automobilu ve stávajícím pruhu. Pro vìtší pøesnost se vìtšinou na levé stranì ještì uvádí konstanta $b_r$, která urèuje preferenci pruhu. Na dvouproudové silnici by vozidla mìla jet vždy napravo a mìnit jízdní pruh pouze pokud chtìjí pøedjíždìt, a ovšem hned poté by se mìla zaøadit zpátky. V modelu MOBIL se toho docílí nastavením konstanty $b_r$ na pøíslušnou hodnotu, která bude pro pravý jízdní pruh kladná a pro levý záporná.
+
+Na pravé stranì nerovnice by èistì teoreticky staèila hodnota $a_\thr$, která eliminuje vliv  \uv{bláznivé jízdy}, tj. jízdy, kdy by auto neustále pøejíždìlo z jednoho pruhu do druhého. Nachází se zde ale také rozdíl zrychlení pro vozidlo E. Poèítá se nejprve zrychlení vozidla E v závislosti na automobilu pøed ním a také na automobilu B, pokud by zmìnilo pruh.
+
+To, jak moc se øidiè vozidla B ohlíží na vozidlo E, je urèeno \uv{zdvoøilostní} promìnnou $p$. Pokud tedy bude hodnota $p$ rovna nule, je jasné, že vozidlo B se vùbec neohlíží na vozidlo E a pøejede do druhého pruhu. Takovýto øidiè se dá nazvat pirátem silnic. Jediný náhled vozidla B na vozidlo E by tedy zùstal v bezpeènostním kritériu. Naopak pokud je hodnota $p$ rovna jedné znamená to, že øidiè se v podstatì neustále dívá do zpìtného zrcátka a bude pøedjíždìt pouze tehdy, pokud tím v podstatì vùbec nezpomalí vozidlo E.
+
+Pokud je hodnota $p$ vyšší, vozidlo nemìní svùj jízdní pruh èi mìní jen pokud je to nezbytnì nutné. Normální hodnota na silnici pro $p$ je 0,5. Ale pokud je napøíklad na silnici nìjaká pøekážka tak se hodnota $p$ snižuje nìkdy až k nule. Na dálnici se hodnota pohybuje od 0 do 0,5.
+
+Pokud se položí parametry $p=1$ a $a_\thr=0$, zmìna jízdního pruhu se vykoná pøesnì v pøípadì, že by se pøedjetím pouze zvýšilo zrychlení, a žádné auto by nezpomalilo. Takto také vznikl název pro tento model MOBIL \textit{Minimizing Overall Braking decelerations Induced by Lane changes\footnote{Minimalizace celkového zpomalení vyvolané zmìnì jízdního pruhu.}}. 
+
+Matematicky se podmínka motivaèního kritéria zapíše jako 
+\begin{equation}
+b_r + a_{n,2} - a_{n,1}>p*\left[a_{n+1,2}\text{(D)} - a_{n+1,2}\text{(B)}\right] + a_\thr.
+\label{motkrit}
+\end{equation}
+
+

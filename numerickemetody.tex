@@ -1,0 +1,164 @@
+\chapter{Numerické metody}
+
+% místo rovnítek v rovnici psát {}={}
+Èasto se uvádí, že numerické metody jsou souèasnì vìdou i umìním. Využívají se hlavnì tehdy, kdy není možné najít øešení urèitého problému analyticky nebo øešení lze nalézt, ale je to buï èasovì nebo ekonomicky nároèné nebo není nutné, aby øešení bylo úplnì pøesné. V našem svìtì jsme si zvolili elementární funkce (napøíklad polynomy, goniometrické, logaritmus), které ovšem zdaleka nedokáží popsat všechna možná øešení rùzných problémù. Proto v první øadì využíváme numerické metody na pøibližné urèení správného øešení. Jiným problémem stále zùstavá, jak pøijít ke správným diferenciálním rovnicím pro popis toho urèitého systému.
+%V praxi se setkáváme s mnoha typy diferenciálních rovnic a jen nìkteré se dají øešit exaktnì, a když už to jde, tak øešení je vyjádøeno natolik složitými vzorci, že je velmi pracné z nich dopoèítávat pøesné hodnoty. Proto je velmi èasto jedinou možnou cestou øešení diferenciální rovnici nìjakou numerickou metodou. %
+\section{Dynamický systém}
+
+Uvažujme systém (obecnì nelineárních) diferenciálních rovnic prvního øádu ve tvaru
+\begin{align}
+\begin{split}
+\dot{x}_1 &{}={} f_1(x_1,x_2,\dots,x_m,t) \\
+\dot{x}_2 &{}={} f_2(x_1,x_2,\dots,x_m,t) \\
+& \vdots \\
+\dot{x}_m &{}{}={}{} f_m(x_1,x_2,\dots,x_m,t), \\
+\end{split}
+\label{indextvar}
+\end{align}
+pro které chceme nalézt øešení numericky\cite[str. 124]{Vitasek}. Tyto rovnice jsou zapsány v tzv. úplném tvaru. Rovnice také mùžeme zapsat v kratším vektorovém tvaru
+\begin{equation}
+\dot{\bb{x}} {}={} \bb{f}(\bb{x},t), 
+\label{vekttvar}
+\end{equation}
+kde $\bb{x} {}={} (x_1,x_2,\dots,x_m)$. Podobnì pak $\bb{f} {}={} (f_1,f_2,\dots,f_m)$. Složky vektoru $\bb{x}$ resp. $\bb{f}$ oznaèíme
+\begin{equation}
+x_a, \quad f_a, \quad \text{kde}~  a {}={} 1\dots m. %tady by to chtelo oznacit lepe, ale nechci proto 2 radky
+\label{slozky}
+\end{equation}
+%Skuteènost, že $\bb{x}$ a $\bb{f}$ jsou závislé na èase zapíšeme
+%\[
+%\bb{x} {}={} \bb{x(t)},\;\;\;\bb{f} {}={} \bb{f(t)}
+%\]
+ Soustavu (\ref{indextvar}) nebo (\ref{vekttvar}) budeme nazývat \textit{dynamickým systémem}\footnote{èi Cauchyho systémem}. Takovýto samotný systém není pro výpoèet postaèující, protože pokud nejsou známy doplòující neboli poèáteèní podmínky. V tu chvíli není jasné odkud má daná numerická metoda vycházet.\footnote{Napøíklad vozidlo, které nemá zadanou svou poèáteèní rychlost a dráhu.} Pro výpoèet proto bude také nutno znát $m$ doplòujících podmínek
+\begin{equation}
+x_1(0){}={}x_1^0,\qquad x_2(0){}={}x_2^0,\qquad \dots \qquad ,x_m(0){}={}x_m^0. 
+\label{initconds}
+\end{equation}
+Horní index u promìnné bude oznaèovat její hodnotu v pøíslušném èase. V tomto pøípadì znaèí hodnotu v èase $t{}={}0$.
+
+Mùže se také stát, že je zadaná diferenciální rovnice $m$-tého øádu
+\begin{equation}
+y^{(m)} {}={} f(y^{(m-1)},y^{(m-2)},\dots,y,t),
+\label{mrad}
+\end{equation}
+Pro øešení takové rovnice se zavedou nové nezávislé promìnné:
+\begin{equation}
+\begin{split}
+&y_1 {}={} y,\\
+&y_2 {}={} \dot{y}_1,\\
+&\vdots\\
+&y_m {}={} y^{(m-1)},
+\label{prevodmrad1krok}
+\end{split}
+\end{equation}
+a pomocí tìchto promìnných se problém pøevede na systém diferenciálních rovnic (\ref{indextvar}), který již lze numericky øešit
+\begin{equation}
+\begin{split}
+&\dot{y}_1 {}={} y_2,\\
+&\dot{y}_2 {}={} y_3,\\
+&\vdots \\
+&\dot{y}_m {}={} f(y_1,y_2,\dots,y_m,t),
+\label{prevodmrad}
+\end{split}
+\end{equation}
+\cite[str. 124-127]{Vitasek}.
+Tento pøevod se používá napøíklad pøi zjednodušení diferenciální rovnice 2. øádu
+\[
+a {}={} \ddot{s},
+\]
+kde $a$ je zrychlení a $s$ je dráha. Pøidáním nové nezávislé promìnné $v$, tj. rychlosti, vzniknou 2 diferenciální rovnice 1. øádu
+\[
+a {}={} \dot{v}, \quad v {}={} \dot{s}.
+\]
+Toto zjednodušení neboli redukce øádu je pouze formální a z praktického hlediska neulehèuje øešení diferenciální rovnice. Pod \uv{formálním} zjednodušením se  myslí to, že získaná soustava rovnic prvního øádu je ve skuteènosti stejnì komplikovaná jako výchozí diferenciální rovnice. Dùvod, proè se preferuje tato redukce, spoèívá v tom, že dynamický systém má názornou geometrickou interpretaci a všechny použité numerické metody jsou sestaveny pro rovnice prvního øádu. 
+
+\section{Eulerova metoda}
+
+Nejjednodušší numerickou metodou je metoda Eulerova. Je sice nejménì pøesná, ale také nejjednodušší a lze na ní vysvìtlit základní principy využívané i u  složitìjších metod. První vìcí je \textit{diskretizace èasu}, tj. zavedení posloupnosti èasových okamžikù 
+\begin{equation}
+t_k {}={} hk,
+\label{ik}
+\end{equation}
+kde $h$ znaèí tzv. \textit{integraèní krok} èi \textit{diferenci}. U Eulerovy metody je tato diference konstantní. Princip Eulerovy metody vychází z definice derivace
+\[
+\dot{x}_a {}={} \lim_{h\to 0}\frac{x_a(t+h)-x_a(t)}{h} {}={} f_a(\bb{x}(t),t).
+\]
+Nyní se pouze nahradí spojitý èas jeho diskretizovanou verzí
+\[
+\frac{x_a^{k+1}-x_a^k}{h} {}={} f_a(\bb{x}(t_k),t_k)
+\]
+a po úpravì vychází jeden iteraèní krok Eulerovy metody
+\begin{equation}
+x_a^{k+1} {}={} x_a(t_k) {}+{} h\,f_a(\bb{x}(t_k),t_k) {}\equiv{} x_a^k {}+{} h\,f_a(\bb{x}^k,t_k).
+\label{Euler}
+\end{equation}
+Dùležité je si uvìdomit, že tento iteraèní krok je absolutnì nezávislý na konkrétní funkci $f_a$. Eulerùv integrátor dostane na zaèátku informace o poèáteèních podmínkách $x_a^0$ a o funkci $f_a$ a pouze na základì tìchto informací dokáže nalézt øešení v libovolném èase. Iteraèní schéma zùstavá tedy pro jakýkoliv problém stejné, jediné co ve schématu (\ref{Euler}) na studovaném problému závisí, je $f_a(\bb{x}(t_k),t_k)$.
+
+Na první pohled je jasné, že èím víc se bude zmenšovat integraèní krok $h$, tím pøesnìjší se dostane výsledek. U numerických metod se rozlišují dva základní druhy chyb.
+%Z geometrického hlediska znaèí Eulerova metoda aproximaci køivky funkce $f_a$ lomenou èárou.
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{euler.pdf} & \includegraphics[width=0.45\textwidth]{rk2.pdf}  \\
+a) Eulerova metoda & b) metoda Runge-Kutta 2. øádu
+\end{tabular}
+\caption{Grafické znázornìní numerických metod}
+\label{eulerrungefigure}
+\end{figure}
+
+Jak je vidìt na obrázku \ref{eulerrungefigure}a, Eulerova metoda pracuje tak, že v bodì $[t_1,x_1]$ nalezneme teènu a pohneme s ní ve smìru vektoru $\bb{\tau}_0$ do bodu $[t_2,x_2]$ a v bodì $[t_2,x_2]$ opìt nalezneme teènu a pohneme s ní ve smìru vektoru $\bb{\tau}_0$. Rozdíl $t_2-t_1$ resp. $t_3-t_2$ je právì diference $h$(\ref{ik}). Tímto zpùsobem se ale postupnì vzdaluje od správného øešení. Eulerova metoda je tedy pøesná pouze tehdy, když její integraèní krok se limitnì blíží nule, $h\rightarrow 0$, \cite[str. 132,133]{Prikryl}.
+
+\section{Metoda Runge-Kutta}
+
+Runge-Kutta pracuje ponìkud pøesnìji oproti Eulerovì metodì. U Eulerovy metody vypoèteme souøadnice bodu $[t_2,x_2]$ (viz. obrázek \ref{eulerrungefigure}a) tak, že
+\[
+t_2{}={}t_1 + h\qquad x_2{}={}x_1 + \dot{y}(t_1){}={}x_1 + f(x_0)h.
+\]
+Metoda Runge-Kutta se snaží tento problém \uv{obejít}. Stejnì jako v Eulerovì metodì se nejprve posuneme z bodu $[t_1,x_1]$ ve smìru teèny $\vec{\tau}_0$, ale pouze s polovièním integraèním krokem $h$
+\[
+t_2{}={}t_1 + \frac{h}{2}\qquad x_2{}={}x_1 + f(x_0)\frac{h}{2}.
+\]
+V tomto bodì se opìt vypoèítá derivace funkce, což je smìrnice $\vec{\tau}_1$. A tato teèna se nyní zpátky posune do bodu $[t_1,x_1]$. Nyní se udìlá \uv{prùmìr teèen}.
+\[
+\vec{\tau} = \frac{\vec{\tau}_1+\vec{\tau}_2}{2}
+\]
+V tomto smìru se potom Runge-Kutta posune o celý integraèní krok $h$. Jak je vidìt z obrázku \ref{eulerrungefigure}b, øešení metodou Runge-Kutta druhého øádu je pøesnìjší než základní Eulerovou metodou. Pøesnìjších výsledkù lze tedy dosáhnout nejen snižováním diference $h$, ale také vypoètením hodnot derivací v bodech, kde se nepøièítá celá hodnota diference, ale jen její zlomek. U metody Runge Kutta druhého øádu se zapíše základní iteraèní krok takto \cite[str. 145]{Prikryl}
+
+\[
+x_a^{k+1} {}={} x_a^k {}+{} \frac{1}{2}\left(k_1 + k_2\right),
+\]
+kde
+\[
+k_2 {}={} hf_a\left(x_a^k+\frac{k_1}{2},t_k+\frac{h}{2}\right)
+\]
+a
+\[
+k_1 {}={} h\,f_a(x_a^k,t_k).
+\]
+Tento proces je graficky znázornìn na obrázku \ref{eulerrungefigure}b.
+
+Metody Runge-Kutta se používají nejen 2. øádu, ale i víceøádové. Jejich výhodou bezpochyby je zvýšení pøesnosti a to tím, že se vypoèítávají derivace ve vícero bodech, které jsou rozprostøeny na intervalu $\left\langle t_k, h\right\rangle$.  Nejèastìjší ze všech tìchto metod je metoda 4. øádu. Její iteraèní krok vypadá následovnì\cite[str. 146]{Prikryl}:
+\begin{equation}
+x_a^{k+1} {}={} x_a^k {}+{}\frac{1}{6}h\left(k_1{}+{}2k_2{}+{}2k_3+k_4 \right),
+\label{iterrk4}
+\end{equation}
+kde
+\begin{equation}
+\begin{split}
+k_1&{}={}f_a(\bb{x}^k,t_k),\\
+k_2&{}={}f_a\left(\bb{x}^k+\frac{1}{2}k_1,t_k+\frac{h}{2}\right),\\
+k_3&{}={}f_a\left(\bb{x}^k+\frac{1}{2}k_2,t_k+\frac{h}{2}\right),\\
+k_4&{}={}f_a\left(\bb{x}^k+k_3,t_k\right).
+\end{split}
+\label{rk4eq}
+\end{equation}
+Existují i další metody 4. øádu \cite[str. 145-148]{Prikryl}, zde ovšem plnì postaèí schéma \ref{iterrk4}. U metod vyšších øádù výpoèetní nároènost algoritmu pøevažuje nad zvýšením pøesnosti.
+
+%\section{Chyby numerických metod}
+%\addcontentsline{toc}{section}{Chyby numerických metod}
+
+%Hodnotu, které získáme v èase $k+1$ ovšem není pøesná. Pøi aplikaci jednoho kroku Eulerovy metody lze tuto chybu popsat vzorcem
+%\begin{equation}
+%L(x^k;h) {}={} x^k{}+{}hf(x^k,t_k){}-{}x^{k+1}   
+%\label{ldch}
+%\end{equation}
+%Chybì \ref{ldch} se øíká lokální diskretizaèní chyba. 

@@ -1,0 +1,261 @@
+\chapter{Makroskopické modely}
+\label{sec:makro}
+
+
+Makroskopické modely nahlížejí na provoz jako na spojitý dopravní proud, který je popsán spojitì se mìnícími velièinami, napøíklad hustotou $\rho$. Makroskopické modely tedy nezkoumají skuteènou diskrétní strukturu dopravního toku, jenž je v koneèném dùsledku tvoøen jednotlivými vozidly. Tento pohled je inspirován mechanikou kontinua, což je fyzikální disciplína, která analogicky nepøihlíží na molekulární strukturu hmoty a popisuje její rozložení na makroskopické úrovni pomocí spojitých velièin. Tyto modely jsou užiteèné v situacích, kdy je hustota vozidel dostateènì velká a již pomìrnì malý úsek komunikace obsahuje dostateènì velký poèet vozidel.\cite[str.15-17]{Barcelo} Dopravní tok se za tìchto okolností chová jako spojité prostøedí, jehož matematický popis je podobný popisu proudìní tekutiny.
+
+V této kapitole uvedeme nìkteré základní myšlenky, na nichž jsou makroskopické modely založeny. 
+
+
+\section{Rovnice kontinuity}
+\label{sec:continuity}
+
+Jedna z nejzákladnìjších rovnic mechaniky kontinua je {\itshape rovnice kontinuity}, která vyjadøuje zákon zachování hmotnosti. Podle tohoto zákona se hmotnost kapaliny nemùže ztrácet ani vznikat, mùže pouze proudit z jednoho místa do druhého. Nech $V$ je objem libovolnì zvolené tøírozmérné oblasti ohranièené uzavøenou plochou $S$. Celková hmotnost kapaliny uvnitø oblasti $V$ je dána vztahem\cite{Brdicka}
+\[
+ M = \int_V \rho\,\dd V.
+\]
+V Eulerovì popisu kontinua se, na rozdíl od popisu Lagrangeova, oblast $V$ nepohybuje spolu s kapalinou, nýbrž zùstává fixována v prostoru. Do této oblasti pak pøitéká kapalina z okolí a souèasnì vytéká z oblasti pryè. Proto se objem $V$ nemìní, ale mìní se hmotnost kapaliny v tomto objemu. Zmìna hmotnosti kapaliny za jednotku èasu je dána derivací
+\begin{align}
+ \frac{\dd M}{\dd t} = \frac{\dd}{\dd t}\,\int_V \rho\,\dd V = \int_V \frac{\pd \rho}{\pd t}\,\dd V.
+\label{eq:mass dot}
+\end{align}
+
+Obsahem zákona zachování hmotnosti je, že pokud se hmotnost $M$ mìní (a derivace \eqref{eq:mass dot} je nenulová), není to proto, že by nìjaká hmotnost uvnitø dané oblasti vznikla èi zanikla, ale proto, že z této oblasti odtekla nebo do ní pøitekla. Hmotnost kapaliny, která za jednotku èasu proteèe ohranièující plochou $S$ je dána plošným integrálem
+\begin{align}
+\Phi = \oint_S \rho\,\bb{v}\cdot \dd \bb{S} = \oint_S \bb{j}\cdot \dd \bb{S},
+\label{eq:flux}
+\end{align}
+kde
+\begin{align}
+\bb{j} = \rho \bb{v}
+\label{eq:j}
+\end{align}
+je objemová hustota hybnosti kapaliny a skalární souèin $\bb{j}\cdot \dd \bb{S}$ vyjadøuje, že do integrálu pøispívá pouze složka rychlosti normálová k ploše v daném bodì.\cite{Brdicka} Zachování hmotnosti nyní vyžaduje, aby se integrály \eqref{eq:mass dot} a \eqref{eq:flux} rovnaly co do velikosti a mìly rùzná znaménka:
+\[
+ \frac{\dd M}{\dd t} = - \Phi.
+\]
+Podintegrální výrazy v rovnicích \eqref{eq:mass dot} a \eqref{eq:flux} není možné pøímo porovnat, protože první integrál je objemový a druhý plošný. Aplikace Gaussovy-Ostrogradského vìty na plošný integrál pak vede ke vztahu
+\begin{align}
+ \int_V \left[
+\frac{\pd \rho}{\pd t} + \nabla \cdot \bb{j}
+\right]\, \dd V = 0.
+\label{eq:cont 1}
+\end{align}
+
+Obecnì platí, že je-li integrál nìjaké funkce na daném intervalu roven nule, nelze z toho usoudit na nulovost integrované funkce\footnote{Napøíklad rovnost
+\[
+ \int_a^b f(x) \dd x = 0.
+\]
+Je-li napøíklad funkce f antisymetrická kolem bodu $(a+b)/2$, je její integrál automaticky roven nule, aèkoli sama funkce $f$ je na tomto intervalu nenulová. Ovšem, platí-li uvedená integrální rovnost na {\itshape libovolném} intervalu, musí být nulová i funkce $f$.
+\label{fn:integral}
+}. Mohlo by se napøíklad, v souladu se zákonem zachování hmotnosti, stát, že v jednom bodì prostoru vznikne hmotnost $m$ a souèasnì v jiném vzdáleném bodì hmotnost kapaliny klesne o tutéž hodnotu $m$. Pokud se nyní zvolí objem $V$ tak, aby obsahoval oba body, pak celková zmìna hmotnosti je rovna nule a rovnìž tak celkový tok $\Phi$.  Vztah \eqref{eq:cont 1} je tedy v tomto umìlém pøípadì splnìn a zákon zachování hmotnosti platí {\itshape globálnì}. 
+
+Fyzikálnì však k uvedenému procesu nemùže dojít. Proto je požadována silnìjší verze zákona zachování, která je {\itshape lokální}. To znamená, že vznikne-li v nìjakém místì hmotnost $\dd m$, musela hmotnost kapaliny o $\dd m$ poklesnout v bezprostøedním nejbližším okolí tohoto bodu, což pouze znamená, že se hmotnost $\dd m$ spojitì pøemístila do blízkého bodu. Lokální zákon zachování vyžaduje, aby byla rovnost \eqref{eq:cont 1} splnìna pro {\itshape libovolnì zvolený} objem $V$. Døíve uvažovaný umìlý pøípad této podmínce nevyhovuje, protože pokud je objem zvolen tak, aby obsahoval pouze jeden z bodù, bude zmìna hmotnosti uvnitø objemu nenulová, ale tok ohranièující plochou bude nulový. Ovšem má-li platit vztah \eqref{eq:cont 1} pro libovolnì zvolený objem, musí být nule roven samotný podintegrální výraz (viz poznámka \ref{fn:integral} pod èarou na stranì \pageref{fn:integral}). Rovnice kontinuity tedy zní
+\begin{align}
+ \frac{\pd \rho}{\pd t} + \nabla \cdot \bb{j} = 0,
+\label{eq:cont}
+\end{align}
+\cite{Brdicka}.
+
+
+\section{Pohybové rovnice kontinua}
+
+
+Rovnice kontinuity ještì plnì neurèuje proudìní kapaliny (pouze v nejjednodušších pøípadech) a je k ní potøeba dodat pohybovou rovnici. V teorii kontinua se ukazuje, že podmínkou rovnováhy kontinua je rovnice
+\[
+ \sum_{j=1}^3 \frac{\pd \sigma_{ij}}{\pd x_j} = 0,
+\]
+kde $\sigma_{ij}$ je symetrický tenzor napìtí. Podobnì jako v mechanice soustavy hmotných bodù, i v teorii kontinua lze aplikovat d'Alembertùv princip a považovat uvedenou rovnici i za pohybovou rovnici kontinua v obecném dynamickém pøípadì. Pro izotropní prostøedí je tenzor napìtí diagonální a úmìrný jednotkovému tenzoru, takže platí
+\[
+ \sigma_{ij} = - P\,\delta_{ij},
+\]
+kde $\delta_{ij}$ je Kroneckerovo delta (jednotková matice) a velièina $P$ pøedstavuje tlak kapaliny. Tato volba tenzoru napìtí vede na {\itshape Eulerovu pohybovou rovnici}
+\[
+ \frac{\pd v_i}{\pd t} + v_j\,\frac{\pd v_i}{\pd x_j} = - \frac{1}{\rho}\,\frac{\pd P}{\pd x_i}.
+\]
+
+V obecnì anizotropním a viskózním, ale nestlaèitelném prostøedí je tenzor napìtí dán vztahem
+\[
+ \sigma_{ij} = - P\,\delta_{ij} + \alpha \left( \frac{\pd v_i}{\pd x_j} + \frac{\pd v_j}{\pd x_i} \right),
+\]
+kde $\alpha$ je konstanta související s viskozitou kapaliny a pøedpokládá se, že viskózní síly jsou úmìrné gradientu rychlosti kapaliny. Je-li kapalina nestlaèitelná, rovnice kontinuity se redukuje na 
+\[
+ \nabla \cdot \bb{v} = 0 \quad \text{neboli} \quad \sum_j \frac{\pd v_j}{\pd x_j} = 0.
+\]
+V tomto pøípadì je pohybovou rovnicí kontinua {\itshape Navierova-Stokesova rovnice}
+\[
+\frac{\pd v_i}{\pd t} + v_j\,\frac{\pd v_i}{\pd x_j} = - \frac{1}{\rho}\,\frac{\pd P}{\pd x_i} + \nu \Delta v_i,
+\]
+kde $\nu$ je kinematická viskozita a $\Delta$ je Laplaceùv operátor\cite{Brdicka}. Tato rovnice již dostateènì dobøe popisuje turbulentní i laminární proudìní nestlaèitelné kapaliny. Obtížnost øešení Navierových-Stokesových rovnic je dobøe známa a pøedstavuje již více než století výzvu pro matematiky, fyziky i experimentátory.
+
+
+
+
+\section{Doprava jako kontinuum}
+
+\begin{comment}
+Po této \uv{fyzikální} odboèce se vrátíme k makroskopickým dopravním modelùm.
+\end{comment}
+
+Z matematického hlediska vyjadøuje rovnice kontinuity nejen zákon zachování hmotnosti, ale zákon zachování jakékoliv spojité velièiny. Toho si všimli i dopravní inženýøi a zaèali zkoumat, zda by makroskopický popis kontinua bylo možno aplikovat i na dopravní tok. V takovém pøípadì by rovnice kontinuity vyjadøovala zákon zachování poètu vozidel. 
+
+Poèet vozidel samozøejmì není spojitá velièina, ale v pøípadì vysoké hustoty dopravy je poèet automobilù podstatnì vìtší, než flukuace poètu vozidel. Nech poloha automobilu na komunikaci je dána jedinou souøadnicí $x$. Zvolíme nyní délku $\Delta x$ takovou, že poèet automobilù na úseku $(x, x+\Delta x)$ je dostateènì veliký; tento poèet oznaèíme $n(t,x)$, kde jsme vyznaèili, že poèet vozidel závisí na poloze i na èase. Množinu automobilù, které se v tomto úseku nacházejí oznaèíme symbolem $M(t,x)$. Platí potom
+\[
+ n(t, x) = | M(t, x) |,
+\]
+kde svislé èáry znamenají mohutnost (poèet prvkù) množiny. {\itshape Hustotu vozidel} $k$ v bodì $x$ a èase $t$ definujeme vztahem
+\begin{align}
+k(t, x) = \frac{n(t, x)}{\Delta x}.
+\end{align}
+Jinými slovy, hustota $k$ udává poèet automobilù na jednotku délky (kilometr) v bodì $x$. Hustota poètu vozidel $k$ je analogon k hustotì $\rho$ zavedené v mechanice kontinua. Takto definovanou hustotu budeme považovat za spojitou velièinu\cite[str. 265]{Haberman}. 
+
+Pøedpokládáme, že v libovolnì zvoleném úseku $(x, x+\Delta x)$ se nachází velký poèet automobilù $n(t, x)$, a každý z nich se pohybuje jinou rychlostí. Je-li však hustota toku dostateènì vysoká, takže makroskopický popis má smysl, lze oèekávat, že rychlosti jednotlivých vozidel se nebudou pøíliš lišit. Má proto smysl definovat prùmìrnou {\itshape rychlost toku} vztahem
+\[
+ v(t, x) = \frac{1}{n(t,x)} \sum_j v_j,
+\]
+kde se sèítá pøes všechna vozidla z množiny $M(t,x)$ a $v_j$ je rychlost $j-$tého vozidla\cite[str. 274-276]{Haberman}. Mùžeme si tedy pøedstavit, že všechna vozidla na úseku $(x, x+\Delta x)$ se pohybují spoleènou prùmìrnou rychlostí $v(t,x)$. 
+
+Nakonec definujeme {\itshape hustotu toku} (nebo krátce {\itshape tok}) vztahem
+\begin{align}
+ q(t,x) = k(t,x)\,v(t, x).
+\end{align}
+Velièina $q$ pøedstavuje hustotu poètu automobilù, které v okamžiku $t$ pøejíždìjí úsek $(x, x+\Delta x)$. Postupem podobným jako v sekci \ref{sec:continuity} (ale zjednodušeným na jednorozmìrný pøípad) lze nyní odvodit rovnici kontinuity neboli {\itshape rovnici zachování poètu automobilù}:
+\begin{align}
+\frac{\pd k}{\pd t} + \frac{\pd q}{\pd x} = 0,
+\label{eq:N of cars}
+\end{align}
+\cite[str. 16]{Barcelo},\cite[str. 279]{Haberman}.
+
+
+
+Rovnice kontinuity v dopravì pøedstavuje vazbu mezi hustotou dopravního toku (poètu aut na jednotku délky) a rychlostí automobilù. Pokud si tedy dopravní inženýr zvolí urèitý úsek dálnice, na kterém bude chtít mìøit hlavní dopravní parametry a posléze sestavit vhodný makroskopický model, jedna z rovnic pro jeho model bude rovnice kontinuity. Jaký bude pøesnì zvolen model, rozhoduje právì vztah mezi hustotou a prùmìrnou rychlostí v oblasti. Pokud se zvolí model, kde rychlost bude záviset výluènì na hustotì
+\begin{align}
+v = v(\rho),
+\label{eq:rychrho}
+\end{align}
+\cite[str. 283]{Haberman},staèí již znát pouze rovnici kontinuity a je možno na silnici pøedvídat stavy budoucí, samozøejmì v závislosti na poèáteèních a okrajových podmínkách. Poèáteèní podmínkou se rozumí iniciální distribuce v èase $t=0$, tedy libovolnì zvolená diferencovatelná funkce $k_0(x)$ taková, že 
+\[
+k(0, x) = k_0(x).   
+\]
+Vedle toho je nutné specifikovat okrajovou podmínku, tedy hustotu $\rho$ v libovolném èase, ale pevnì zvoleném bodì $x_0$; bez újmy na obecnosti lze zvolit $x_0 = 0$, takže okrajová podmínka má tvar
+\[
+k(0, t) = \theta(t), 
+\]
+kde $\theta$ je zase libovolnì zvolená funkce èasu. Tyto podmínky již jednoznaènì urèují øešení rovnice kontinuity\cite[str. 283-285]{Haberman}. 
+
+
+
+\section{Fundamentální diagram}
+
+V pøedchozí kapitole jsme vysvìtlili, že k rovnici kontinuity \eqref{eq:N of cars} je nutno pøidat vztah \eqref{eq:rychrho} mezi hustotou a tokem. Takový vztah se nazývá {\itshape fundamentální} a jeho grafická reprezentace se nazývá {\itshape fundamentální diagram}. Nìkdy se pod fundamentálními diagramy rozumí i závislosti $q(k), q(v)$ èi jiné.
+
+Obecnì lze øíct, že rychlost toku musí s hustotou klesat. Nejjednodušším možným modelem je lineární závislost mezi rychlostí a hustotou. Takový model formuloval v roce 1935 Greenshields, který navrhl závislost
+\[
+v = v_\text{f}\left(1-\frac{k}{k_\text{j}}\right),
+\]
+kde $v_\text{f}$ je rychlost na volné komunikaci a $k_\text{j}$ hustota dopravy pøi kongesci.
+%(jam density)
+Podle tohoto vztahu se vozidla na volné komunikaci pohybují rychlostí $v_{\mathrm{f}}$. Se zvìtšující se hustotou $k$ rychlost vozidel klesá. Jakmile hustota dosáhne hodnoty $k_\mathrm{j}$, rychlost vozidel klesá na nulu a formuje se kongesce. Hustota toku je v tomto modelu dána vztahem
+\[
+q = k\,v = k\,v_{\mathrm{f}}\left( 1 - \frac{k}{k_\mathrm{j}}\right).
+\]
+Fundamentální diagramy pro Greenshieldsùv model jsou znázornìny na obrázku \ref{fig:greenshields}. U obrázku \ref{fig:greenshields} je maximální tok dosažen pro hodnotu $k = k_\mathrm{j}/2$\cite[str. 18,34]{Barcelo}.
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\centering
+\includegraphics[width=0.45\textwidth]{greenshields} & \includegraphics[width=0.45\textwidth]{greenshields2} \\
+a) & b)
+\end{tabular}
+\caption{Fundamentální diagramy pro Greenshieldsùv model. {\bfseries a)} Závislost $v = v(k)$. {\bfseries b)} Závislost $q=q(k)$.}
+\label{fig:greenshields}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Mikroskopické modely}
+\label{sec:micro}
+
+Mikroskopické modely se, na rozdíl od makroskopických, zabývají vlastnostmi souvisejícími s každým jednotlivým vozidlem. Zatímco makroskopické modely jsou inspirovány mechanikou kontinua, mikroskopické modely mají svùj protìjšek v molekulové fyzice, ve které se chování systému jako celku vysvìtluje jako výsledek složité interakce jednotlivých konstituentù systému.V dopravì to znamená, že výsledný dopravní tok je výsledkem chování každého jednoho øidièe. Interakce mezi molekulami mohou být znaènì složité, ale fyzikálnì lze pøedpokládat, že každá daná molekula neinteraguje se všemi ostatními molekulami, ale pouze s tìmi, které se nacházejí v jejím bezprostøedním okolí. Analogicky je chování øidièe ovlivnìno nikoli všemi vozidly nacházejícími se na komunikaci, nýbrž pouze vozidly, které má na dohled. 
+
+Cílem mikroskopických modelù je co nejvìrnìji popsat chování øidièe pomocí obyèejných diferenciálních rovnic. Parametry, na které se øidiè zamìøuje, jsou rychlost, zrychlení, vzdálenost mezi vozidly a funkce tìchto promìnných (napø. èas do kolize). Øidiè si tyto parametry sjednotí a vyhodnotí podle svých vlastních zkušeností i dalších okolností (napøíklad parametrù svého vozidla). Pøi ovládání vozidla pak mùže øidiè provádìt jednotlivé úkony s lehkostí, obratností, a to v závislosti na svých pøedchozích zkušenostech. 
+
+Již v 50. letech 20. století se stal proces porovnávání øidièových \uv{vstupù} a \uv{výstupù} aktuální. Problémem ovšem bylo, že nebyla nalezena žádná adekvátní pøenosová funkce, která by tìmto vstupùm a výstupùm odpovídala. Díky tomu vznikl nápad vytvoøit modely, které nastavují zrychlení jednotlivých vozidel v závislosti na jejich okolí, tzv. \textit{Car Following Models} (CFM). Pøi využití mikroskopických modelù se dá lépe simulovat chování øidièe ve stresu, pøedjíždìní a dalších situací, pøi kterých se zmìní parametry pouze jediného vozidla\cite[str. 160,161]{May}.
+
+
+
+První modely CFM se zabývaly rozestupem a èasovou vzdáleností mezi vozidly. Jejich název proto zní \textit{Safety distance models}\footnote{Model založený na bezpeèných vzdálenostech mezi vozidly}. V tìchto modelech se vychází z pøedpokladu, že øidiè dodržuje bezpeènou vzdálenost k vozidlu pøed sebou. Pro tyto modely je základem klasický Newtonùv pohybový zákon. V nìkterých modelech se dokonce poèítá tato bezpeèná vzdálenost pouze jako vzdálenost nutná k zabránìní nehodì pokud pøední vozidlo náhle sníží svoji rychlost.
+
+Pipesùv model vycházel z pøedpokladu, že bezpeèná mezera mezi vozidly závisí lineárnì na rychlosti, konkrétnì, že se zvýší o délku vozidla pøi nárùstu rychlosti druhého vozidla oproti prvnímu o 16 km/h. V roce 1981 byl testován další model, Gippsùv. V nìm má øidiè vozidla zajištìno, že se nesrazí s vozidlem pøed ním, pokud je èasová vzdálenost mezi obìma vozidly vìtší než 1,5 násobek reakèního èasu øidièe a pokud øidiè správnì odhadl rychlost brždìní vozidla pøed sebou\cite[str. 164-166]{May}.
+
+Jiný náhled na vìc zaujala skupina výzkumníkù ze spoleènosti General Motors (GM), která se zabývala CFM modely na principu akce a reakce. Existuje pìt modelù GM, podle toho, jak se postupnì zdokonalovala mìøení a matematické výpoèty. Základním pøedpokladem všech tìchto modelù je rovnice odezvy\footnote{Stimul-response equation}
+\begin{align}
+\text{Odezva} = f(\text{citlivost}, \text{podnìt}).  
+\label{eq:odezvagm}
+\end{align}
+Odezva je v GM modelech vždy nahrazena zrychlením aktuálního vozidla zatímco podnìt je reprezentován rozdílem rychlostí mezi aktuálním a následujícím vozidlem. Rozdíly mezi jednotlivými GM modely spoèívají v urèení citlivostní funkce. Tato myšlenka pochází z klasické newtonovské mechaniky, kde je zrychlení èástice považováno za její reakci k podnìtu zpùsobenou silou, která je obdržena interakcí s jinými èásticemi v systému.
+
+V prvním GM modelu byl citlivostní èlen $\alpha$ považován za konstantní. Pohybová rovnice tu má tvar
+\begin{align}
+\dot{v}_n (t+ \Delta t) = \alpha \left[v_{n-1}(t)-v_{n}(t)\right],
+\label{eq:prvnigm}
+\end{align}
+kde $\Delta t$ je reakèní èas. Záleží tedy pouze na rozdílu rychlostí vedoucího a aktuálního auta. Podnìtový èlen mùže být kladný, když vedoucí auto jede rychleji $v_{n-1}>v_n$, což vyústí v zrychlování aktuálního vozidla. Podnìtový èlen bude nulový za podmínky $v_{n-1}{}={}v_n$, takže zrychlení aktuálního vozidla bude nulové a jeho rychlost konstantní. Za podmínky $v_{n-1}<v_n$ bude aktuální vozidlo zpomalovat.
+
+Experimentálnì bylo dokázáno, že citlivostní èlen je konstantní pouze pro úzké spektrum reakèních èasù a bezpeèných mezer, proto byl výzkumníky model vylepšen z rovnice \eqref{eq:prvnigm} na tvar
+\begin{align}
+\dot{v}_n (t+ \Delta t) = \alpha_1 \left[v_{n-1}(t)-v_{n}(t)\right] \qquad 
+\text{nebo}
+\qquad \dot{v}_n (t+ \Delta t) = \alpha_2 \left[v_{n-1}(t)-v_{n}(t)\right],
+\label{eq:druhagm}
+\end{align}
+v závislosti na bezpeènostní mezeøe. Pokud byla vozidla u sebe velmi blízko, použila se vysoká hodnota citlivostního èlenu, tzn. $\alpha_1$, pokud od sebe byla vozidla daleko, použila se nízká hodnota $\alpha_2$.
+
+Záhy se zjistilo, že je velký problém urèit, kdy už jsou od sebe vozidla daleko a kdy jsou ještì blízko. Byly proto provádìny další pokusy, jejichž výsledkem byl
+experimentální vztah pro citlivostní èlen $\alpha$
+\begin{align}
+\alpha = \frac{\alpha_0}{d} = \frac{\alpha_0}{x_{n-1}(t)-x_n(t)},\qquad \alpha_0 \in \left\langle 0,1 \right\rangle,
+\label{eq:citlivost}
+\end{align} 
+kde $d$ je vzdálenost mezi vozidly, $\alpha_0$ je parametr závislý na $d$ a $\alpha$. Èím blíže tedy vozidla k sobì budou, tím vyšší hodnotu bude mít citlivostní èlen. Pokud se tento vztah dosadí do \eqref{eq:druhagm}, vychází
+\begin{align}
+\dot{v}_n (t+ \Delta t) = \frac{\alpha_0}{x_{n-1}(t)-x_n(t)} \left[v_{n-1}(t)-v_{n}(t)\right],
+\label{eq:tretigm}
+\end{align}
+což je zároveò rovnice tøetího GM modelu. Citlivostní èlen je závislý na bezpeènostní vzdálenosti a na parametru $\alpha_0$. Jeho rozmìr je m/s.
+
+Ve ètvrtém modelu GM se opìt vylepšuje citlivostní èlen pøidáním rychlosti následujícího vozidla. Tento model vychází z toho, že pokud se zrychluje dopravní proud, øidiè bude mnohem citlivìjší na rozdíl rychlostí. Rovnice toho modelu vypadá takto
+\begin{align}
+\dot{v}_n (t+ \Delta t) = \frac{\alpha'[v_n(t+\Delta t)]}{x_{n-1}(t)-x_n(t)} \left[v_{n-1}(t)-v_{n}(t)\right],
+\label{eq:ctvrtagm}
+\end{align}
+citlivostní èlen se skládá ze tøí komponent, rychlosti vozidla, parametru $\alpha'$ (který je bezrozmìrný) a bezpeènostní mezery.
+
+Poslední, pátý, model se snaží vylepšit a zobecnit citlivostní èlen, tím, že jak èitatel, tak jmenovatel jsou umocnìny na urèité koeficienty, které se mìní v závislosti na typu komunikace. Rovnice pátého modelu má tvar
+\begin{align}
+\dot{v}_n (t+ \Delta t) = \frac{\alpha'[v_n(t+\Delta t)]^m}{\left[x_{n-1}(t)-x_n(t)\right]^l} \left[v_{n-1}(t)-v_{n}(t)\right],
+\label{eq:patagm}
+\end{align}
+\cite[str. 167-173]{May}.
+
+
+Modely GM pøedpokládají, že øidiè reaguje na relativnì malé zmìny pøi své jízdì, dále také reaguje na vozidlo pøed ním i tehdy, pokud už je od nìj velmi vzdálené. a øidiè také nebude reagovat pøi stejných rychlostech vozidel. Tyto nedostatky mohou být odstranìny buïto rozšíøením GM modelù novými režimy - jízda na volné silnici, pohotovostní brzdìní anebo použitím psycho-fyziologického modelu, což je nový pøístup k CFM, který byl pøedstaven v 70. letech.
+
+V psycho-fyziologických modelech jsou použity urèité prahy, pøi jejichž dosažení zmìní øidiè druhého vozidla své chování. Prahy jsou v nejjednodušším pøípadì definovány dva, a to vzájemná rychlost a vzdálenost vozidel. Z obrázku \ref{fig:zony} vyplývá, že když rozdíl rychlostí obou vozidel dosáhne urèitého prahu, pøedpokládá urèitou reakci ze strany druhého vozidla. Tato reakce ovšem nenastane, pokud je vzájemná vzdálenost vozidel taková, že také dosáhne urèité hranice.  Tyto modely jsou implementovány v známých mikrosimulaèních softwarech jako je \textit{VisSim}, který používá Wiedermannùv model èi \textit{AIMSUN}\cite[str. 25]{Barcelo}.
+
+\begin{figure}%
+\includegraphics[width=\columnwidth]{zony}%
+\caption{Zóny pro reakci øidièù v závislosti na rozdílu rychlostí a poloh}%
+\label{fig:zony}%
+\end{figure}
+
+Posledním typem CFM modelù jsou modely s fuzzy logikou, která kvantifikuje výroky, napøíklad výrok \uv{Jede moc rychle.} Pokud tento výrok splní koeficient pøíslušnosti, tak se aktivuje rychlé brzdìní. V pøedchozích modelech øidièi museli znát aktuální rychlost a polohu ostatních øidièù èi další parametry, což zde odpadá. V tìchto modelech se pouze kontroluje, zda automobil splnil urèitý výrok a pokud ano, tak se vykonají jednotlivé pøíkazy. Vozidlo tedy mùže být v nìkolika množinách zároveò a tím pádem se vykonává více pøíkazù. To je hlavní výhodou tohoto pøístupu. Byly snahy fuzifikovat GM modely, to se ovšem do této doby nepodaøilo\cite{Ma}.
+
+
+
+
+

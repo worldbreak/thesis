@@ -1,0 +1,211 @@
+\chapter{Popis programu}
+
+Program má v sobì implementovanı model IDM a MOBIL, dále je zde monost nastavení nekoneèné nebo cyklické dálnice. Jako vıstup programu se vytvoøí soubor, kterı obsahuje èas, polohu a rychlost jednotlivıch vozidel, pøípadnì dalších vlastností, které se dají donastavit. Základní okno programu je vidìt na obrázku \ref{screenshot}.  To je rozdìleno na nìkolik èástí, z nich kadá má jinou funkci. JControlPanel informuje u vybraného vozidla o jeho vlastnostech a o vlastnostech vozidel, které má pøed a za sebou v tom samém pruhu. CarSelector slouí k vybrání libovolného auta. To se stane aktivním jak v JControlPanelu, tak i v panelu JHighway, kde se zobrazí doprostøed. JHighway pak zobrazuje samotnou dálnici, kde je v této situaci vidìt aktuální vybrané vozidlo 0 (znaèené lutou barvou), ostatní vozidla jsou oznaèena bílou barvou. Horní posuvník v JHighway mìní mìøítko dálnice, na zaèátku je nastaveno na $40\m$, max. hodnota mùe dosáhnout a $500 \m$.
+\begin{figure}%
+\includegraphics[width=\columnwidth]{screenshot}%
+\caption{Snímek obrazovky programu}%
+\label{screenshot}%
+\end{figure}
+
+\section{Pøevod kartézskıch souøadnic}
+\label{prevod}
+Prvním problémem, kterı je v programu øešen, je pøevod souøadnic. Pro jednoznaèné urèení kadého bodu sítì dálnice se pouije lineární kombinace dvou vektorù $\bb{u}=(u_x,u_y)$ a $\bb{v}=(v_x,v_y)$. Pro nìjakı bod $P [x,y]$ tedy bude platit, e jeho souøadnice se dají napsat ve tvaru
+\begin{equation}
+\begin{split}
+x &{}={} \alpha\, u_x {}+{} \beta\, v_x, \\
+y &{}={} \alpha\, u_y {}+{} \beta\, v_y,
+\end{split}
+\label{linkomb}
+\end{equation}
+kde $\alpha$ a $\beta$ jsou koeficienty, urèující pøesnou pozici bodu v souøadném systému.
+
+V tuto chvíli je nutné si uvìdomit, e poèítaè nemá stejnı souøadnı systém jako je kartézskı. Poèítaè bere jako poèátek souøadnic bod $O_p$ a od nìj dopoèítává všechny ostatní body. Proto souøadnice bodu O budou po pøepoètu $O[borderX, h-borderY]$. Oblast dálnice je urèena kosodelníkem jeho vrcholy jsou $ABDO$.
+
+\begin{figure}[t]%
+\includegraphics[width=\columnwidth]{souradnice.pdf}%
+\caption{Popis bodu pomocí lineární kombinace}%
+\label{souradnice}%
+\end{figure}
+Jednotlivé sloky vektorù se vypoèítají jako rozdíly souøadnic bodù A a O pro vektor $\bb{u}$ a bodù B a O pro vektor $\bb{v}$. Tím se docílí toho, e odteï se budou jednotlivé body poèítat od bodu $O$ a ne od bodu $O_p$. Tyto vektory je nutné vydìlit vzdáleností, která se bude lišit v závislosti na pozici a mìøítku. U osy $y$ se mìøítko mìnit nebude a bude to šíøka dálnice. U osy $x$ je problém ponìkud sloitìjší. Zde se mìní mìøítko i pozice, od které se bude danı úsek dálnice sledovat.
+\begin{equation}
+\begin{split}
+u_x = \frac{A_x - O_x}{x_a - x_0}\qquad &u_y = \frac{A_y - O_y}{x_a - x_0}\\
+v_x = \frac{B_x - O_x}{y_b - y_0}\qquad &v_y = \frac{B_y - O_y}{y_b - y_0}
+\end{split}
+\label{vektory}
+\end{equation}
+Pokud by se souøadnı systém mìnil tak, e by osa $x$ a osa $y$ na sebe byly vzájemnì kolmé, hodnota $u_y$ a $v_x$ by se potom rovnala nule. To znamená, e by se rovnice \eqref{linkomb} zjednodušily tak, e nová hodnota souøadnice by závisela pouze na jediném vektoru. Tím pádem by se daly transformovat souøadnice $x$ a $y$ zvláš.
+
+V pøípadì izometrické dálnice na sebe osy kolmé nejsou a nulová je pouze hodnota $u_y$. Je tedy vdy nutné transformovat obì souøadnice zároveò.
+
+To, co se v pøípadì zmìny mìøítka bude mìnit, je hodnota $x_a$ a $x_0$. Hodnota $x_0$ nastavuje pozici, od které se bude dálnice sledovat a hodnota $x_a$ se bude rovnat konci sledované oblasti. Rozdíl $x_a$ a $x_0$ tedy urèuje vzdálenost, která bude zobrazovaná. U hodnot $y_b$ a $y_0$ zústavá hodnota stejná a jejich rozdíl urèuje šíøku dálnice. 
+
+Pøi poèítání vykreslení bodu $P$ se nejdøíve musí zkontrolovat, zda souøadnice [x,y] leí v zobrazované oblasti. Pokud ano, dopoètou se hodnoty $\alpha$ a $\beta$, které jsou  rozdíly $x-x_0$ respektive $y-y_0$. Nové souøadnice pak budou mít hodnotu vypoètenou pomocí \eqref{linkomb}.
+
+Všechny body a souøadnice jsou znázornìny na obrázku \ref{souradnice}.
+
+
+\section{Balík \textit{Utilities}}
+
+
+V tomto balíku jsou dvì tøídy. První z nich, \iit{Conversions}, obsahuje funkce primárnì pro pøevod jednotek, druhá \textit{Vectors} pak funkce pro práci s vektory.
+
+\subsection{Tøída \textit{Conversions}}
+\label{subsec:conversions}
+
+\begin{comment}
+Zadávání a zjišování rychlostí jednotlivıch automobilù bude v $km/h$ pro lepší pøedstavivost, ale vıpoèty budou probíhat v $m/s$. Tøída {Conversions} proto obsahuje funkce pro pøevod jednotek z $km/h$ na $m/s$. Dále pak funkci pøevodù stupòù na radiány. Jsou zde pouity pouze základní matematické opetárory a ve funkci \iit{Radians} pøesná hodnota konstanty $\pi$ z matematické knihovny. Poslední funkce \iit{LaneToStr} pøevede do textu informaci o tom, v jakém pruhu se automobil nachází.
+\end{comment}
+
+Tøída \iit{Conversions} je pomocná tøída pro pøevod jednotek rychlosti, hodnoty úhlù. Hodnota, ve kterém pruhu se nachází automobil, je uloena ve formì èísla, proto tøída obsahuje funkci pro pøevod tohoto èísla na text.
+
+Seznam funkcí:
+\begin{itemize}
+	\item \iit{public static double Radians(int degrees)} - pøevod stupòù na radiány
+	\item \iit{public static double KmHtoMS(double kmh)} - pøevod rychlosti z $km/h$ na $m/s$
+	\item \iit{public static double MStoKmH(double ms)} - pøevod rychlosti z $m/s$ na $km/h$
+	\item \iit{public static String LaneToStr(int lane)} - v závislosti na pruhu funkce vrátí textovı øetìzec
+\end{itemize}
+
+
+\subsection{Tøída \textit{Vectors}}
+
+V programu budou automobily jezdit po izometrické dálnici. Pro tento úèel je vytvoøena tøída \textit{Vectors}, která zajišuje základní práci s vektory. Java toti tyto funkce primárnì neobsahuje.
+
+Seznam funkcí:
+\begin{itemize}
+	\item \iit{public static double[] Vector(double[] A, double[] B)} - ze dvou bodù (vstupních parametrù) se vypoète vektor
+	\item \iit{public static double[] Multiply(double[] v, double k)} - kadá sloka vektoru $v$ bude vynásobena konstantou $k$
+	\item \iit{public static double[] LinComb( double alpha, double[] u, double beta, double[] v)} - vypoèítání vektoru, kterı je lineární kombinací vektoru $\bb{u}$ a $\bb{v}$
+	\[
+	\vec{a} = \alpha\,\bb{u} + \beta\,\bb{v}
+	\]
+	\item \textit{public static double[] LinComb( double[] r0, double alpha, double[] u, double beta, double[] v)} - stejná funkce jako pøedešlá, s tím rozdílem, e se dá nastavit vzdálenost od poèátku
+	\[
+	\vec{a} = r_0 + \alpha\,\bb{u} + \beta\,\bb{v}
+	\]
+\end{itemize}
+
+
+\section{Balík \textit{mathcomps}}
+
+\subsection{Tøída \textit{JDrawPanel}}
+
+Základem pro tøídu \textit{JDrawPanel} bude klasickı JPanel z tøídy Swing\footnote{Tato tøída je urèena pro vytváøení grafickıch komponent a prvkù ve formuláøi.}. Všechny funkce tohoto panelu se tıkají vykreslení izometrické dálnice. Dále jsou zde funkce ke kreslení èar, tak i vyplnìní urèité oblasti barvou. Všechny souøadnice budou zadávány v kartézskıch souøadnicích a v této tøídì budou pøevedeny na poèítaèové (viz kapitola \ref{prevod}). K nakreslení pøerušované èáry slouí funkce \iit{fillRhomboid}.
+
+Seznam funkcí:
+\begin{itemize}
+	\item \iit{public JDrawPanel ()} - konstruktor, nastavuje barvu pozadí panelu na èernou
+	\item \iit{public void setScale (double[] Origin, double[]A, double[]B, double x0, double y0, double xA, double yB)} - nastavení mìøítka panelu. Tato funkce pracuje na základì vıpoètu vektorù $\bb{u}$ a $\bb{v}$ ve smìrech urèenımi body A a B. Poté se tyto vektory vynásobí koeficientem závisejícím na stanoveném mìøítku. Kadı bod kosodelníku je pak jednoznaènì urèen lineární kombinací vektorù $\bb{u}$ a $\bb{v}$.
+	\item \iit{public int[] transform(double x, double y)} - pøevod souøadnic bodù z kartézskıch do poèítaèovıch. Pouije se k tomu funkce z balíku \iit{Vectors LinComb}, kde se nové (poèítaèové) souøadnice bodu spoètou jako lineární kombinace vektoru $u$ a $v$. Koeficienty $\alpha$ a $\beta$ jsou vzdálenosti od poèátku souøadnic ($bod [x_0,y_0]$).
+	\item \iit{public void move(Graphics g, double x, double y)} - uloí do promìnné \iit{lastPoint} pozici odkud se posléze bude kreslit èára
+	\item \iit{public void line(Graphics g, double x, double y)} - nakreslí èáru z bodu \iit{lastPoint} do bodu [$x$,$y$]
+	\item \iit{public void fillRhomboid( Graphics g, double a1, double b1, double a2, double b2, double a3, double b3, double a4, double b4)} - vyplní oblast urèenou vstupními parametry.
+\end{itemize}
+
+
+
+
+
+\section{Tøída \textit{ControlPanel}}
+
+Tøída \textit{ControlPanel} je opìt rozšíøením tøídy \textit{JPanel}. Tentokrát je ovšem vytvoøen panel, kterı poskytuje informace o jednotlivıch vozidlech.
+
+\begin{itemize}
+	\item \iit{public void createGUI()} - funkce pro vykreslení všech popiskù, nastavení pozadí
+	\item \iit{public void arrangeGUI()} - nastavení rozmístìní prvkù na \textit{ControlPanelu}
+	\item \iit{public void refreshData()} - funkce, která se volá pøi kadé zmìnì, vypisuje u vybraného automobilu rychlost, pozici a preferovanou rychlost, dále pak informace rychlost a vzdálenost k vozidlu pøed a za sebou
+	\item \iit{public void setCar(int i)} - volá se pøi vıbìru vozidla pro jeho nastavení jako aktuálního, poté se ihned zavolá \iit{refreshData()}
+	\item \iit{public void initialize(carsList)} - inicializace celého panelu
+\end{itemize}
+
+\section{Tøída \textit{CarList}}
+
+Tato tøída je základním kamenem programu. Obsahuje v sobì tøídu \textit{CarInfo}, která nastavuje parametry kadému jednotlivému automobilu, které je vygenerováno. Všechny parametry jsou stejné jako v kapitole \ref{sec:matpopis}. Jeliko jsou všechny hodnoty promìnnıch (tzn. vlastnosti automobilu) ji nastavené, pro vytvoøení nového auta staèí pouít pøíkaz
+\begin{flushleft}
+Carinfo car = new CarInfo(defaultImageFile);
+\end{flushleft}
+a v promìnné \textit{car} ji jsou uloena všechna data o automobilu. Napø. v promìnné \iit{car.lane} je uloena hodnota o aktuálním pruhu vozidla.
+
+%Samotnı konstruktor tøídy \textit{CarList} vytvoøí pouze nové pole typu \textit{CarInfo}. Jako parametr konstruktoru se uvádí poèet aut, které se vytvoøí.
+
+Tøída CarInfo
+\begin{itemize}
+  \item \iit{double x, double v, double vFree, double a, double b, double L, double T, int lane} - promìnné urèující parametry vozidla, jejich vysvìtlení viz. podkapitola \ref{sec:matpopis}
+  \item \iit{double aThreshold, double p, double bSafe} - promìnné urèující parametry pøedjízdìcího modelu MOBIL, jejich vysvìtlení viz. podkapitola \ref{sec:mobil}
+  \item \iit{boolean overtaking} - promìnná urèující zda je povoleno pøedjídìní
+	\item \iit{public CarInfo(String imageFile)} - vytvoøí novou instanci vozidla s obrázkem, kterı je parametrem konstruktoru
+	\item \iit{public int nextLane()} - vrací èíslo urèující druhı jízdní pruh, ne ve kterém jede vozidlo
+\end{itemize}
+
+Tøída CarList
+\begin{itemize}
+  \item \iit{public CarInfo[] cars} - pole aut, které se pøi zavolání konstruktoru \iit{CarList} naplní vozidly, a pracuje se s ním v celé tøídì
+  \item \iit{double hwLength} - urèuje délku dálnice, její hodnota se vyuije pouze tehdy, kdy je nastavena cyklická dálnice
+  \item \iit{boolean cyclic} - urèuje zda je nastavena cyklická dálnice, tj. pokud vozidlo dojede na konec dálnice, která je urèena hodnotou hwLength, tak pokud je promìnná \iit{cyclic} nastavena na true, vozidlo se objeví na zaèátku dálnice
+	\item \iit{public CarList(int numberOfCars)} - konstruktor, kterı vytvoøí pole automobilù dle vstupní hodnoty \iit{numberOfCars}
+	\item \iit{public int getCount ()} - vrací délku pole \iit{cars}
+	\item \iit{public double sqr (double x)} - vrací druhou mocninu èísla \iit{x}
+	\item \iit{public double power(double x, int n)} - umocní èíslo \textit{x} na \iit{n}
+	
+	Tyto dvì funkce jsou naprogramovány z dùvodu zvıšení pøesnosti vıpoètù.
+	\item \iit{public int findLeader(int i, int lane)} - funkce vrací index vozidla, které jede pøed vybranım (indexem \iit{i}) v závislosti na jízdním pruhu (vstupní parametr \iit{lane})
+	\item \iit{public int findFollower(int i, int lane)} - totoná funkce jako pøedchozí, s tím rozdílem, e vrací index vozidla jedoucí za vybranım.
+	
+	Tyto funkce pracují na principu vypoèítávání polohy auta s indexem \textit{i} a porovnávání s polohou všech ostatních vozidel. Pokud je hodnota rozdílu poloh vozidel menší ne u pøedchozího vozidla v poli, uloí se rozdíl poloh do pomocné promìnné a stejnì tak index tohoto vozidla, jinak se nestane nic. Rozdíl mezi \textit{FindLeader} a \textit{FindFollower} je pouze v tom, jak se vypoèítává vzdálenost mezi tìmito vozidly. V pøípadì funkce \textit{FindLeader} je to poloha ostatních automobilù a od ní odeètena poloha automobilu s indexem \textit{i}. U funkce \textit{FindFollwer} je tomu právì naopak. Posledním problémem, kterı mùe nastat je situace pokud automobil pojede první, resp. poslední. Index vozidla je proto na zaèátku funkce nastaven na hodnotu -1, a pokud se po prozkoumání poloh ostatních aut zjistí, e ádná vzdálenost není kladná, index zùstane nastaven na -1, co znaèí, e automobil jede první resp. poslední.
+    \item \iit{public double getFrontDistance(int i, int j)} - funkce poèítající vzdálenost nejblišího vozidla jedoucího pøed aktuálním
+	  \item \iit{public double getBackDistance(int i, int j)} - funkce poèítající vzdálenost nejblišího vozidla jedoucího za aktuálním	
+	  
+	  Tyto funkce jsou nutné hlavnì pokud je nastavena cyklická dálnice. Jinak by pøi zobrazování vzdáleností staèilo odeèíst souøadnice obou vozidel. Pokud ovšem vozidlo jede tìsnì pøed koncem dálnice a druhé hned na zaèátku, tak by rozdíl vzdáleností nefungoval, respektive by vycházel nesmysl. 
+	  \item \iit{public double acceleration (int i, int j)} - funkce vypoèítávající pøesné zrychlení $a_\inter$ podle modelu IDM a rovnic uvedenıch v podkapitole \ref{sec:matpopis}. Parametry jsou indexy aut, mezi kterımi probíhá interakce. (Pokud auto jede jako první, zrychlení bude nulové, $a_\inter = 0$.)
+	  \item \iit{public void nextStep()} - hlavní funkce, vykonávající všechny potøebné úkony bìhem jednoho posunu Eulerovy metody. Pro kadé vozidlo se najde vozidlo pøed ním, za ním, ve vedlejším pruhu, spoète se jeho zrychlení, dále se ovìøuje to, zda automobil bude mìnit svùj jízdní pruh. Poté se zmìní jeho rychlost a dráha, pøípadnì i jízdní pruh.
+\end{itemize}
+
+\section{Tøída \textit{Highway}}
+
+Tato tøída se stará o grafické uivatelské rozhraní celého programu. Pokud se tøída Highway rozšíøí tøídou \textit{JFrame}, která bude mít implementované události na urèitou zmìnu, získá se prvotní vzhled okna. Tøída \textit{JHighWay}, která je rozšíøením \textit{JDrawPanelu}, se stará o správné vykreslování dálnice. Pokud se okno spouští poprvé nebo se mìní rozmìry okna, zavolá se vytvoøená funkce \iit{arrangeGUI}, která pøepoèítá umístìní jednotlivıch komponent ve formuláøi.
+
+Tøída JHighWay
+\begin{itemize}
+  \item \iit{double hwLength, double markerLength, double markerWidth, double hwWidth, int borderX, int borderY} - konstanty urèující vykreslení dálnice, jejich vıznam je znázornìn na obrázku \ref{konstanty}
+  \item \iit{double position} - dùleitá promìnná urèující pozici, od které se zaène dálnice vykreslovat
+  \item \iit{double zoom} - promìnná, její hodnota stanovuje poèet zobrazovanıch metrù (mìøítko dálnice)
+	\item \iit{private void drawHighway(Graphics g)} - tato funkce se stará o vykreslení dálnice vèetnì pøerušované èáry uprostøed
+	\item \iit{public void paint(Graphics g)} - funkce volá funkci \iit{DrawHighway} a poté u se stará o vykreslení aut a popiskù, které se právì nacházejí v zobrazované oblasti dálnice
+\end{itemize}
+
+Tøída HighWay
+
+\begin{itemize}
+  %\item Thread animator - promìnná typu vlákno, které se spustí pøi startu simulace
+	\item \iit{public Highway()} - konstruktor, kterı zobrazuje formuláø, provádí základní nastavení okna (minimalizace, správné ukonèení) a volá funkci pro vykreslení obsahu formuláøe
+	\item \iit{private void createGUI()} - funkce pro vytvoøení objektù ve formuláøi. Formuláø je rozloen na nìkolik èástí. První z nich je panel, na kterı se vykresluje dálnice, nad ním je posuvník urèující mìøítko dálnice. Další èást tvoøí panel, ve kterém se zobrazují informace o právì vybraném automobilu a informace o pøedchozím a následujícím automobilu, poslední jsou pak zbylá tlaèítka, která zajišují generování, spouštìní a pøerušování simulace.
+	 \item \iit{private void arrangeGUI()} - nastavuje rozmìry jednotlivım komponentám ve formuláøi. 
+	 \item \iit{public void componentResized(ComponentEvent e); public void componentShown (ComponentEvent e)} - pøi zobrazení èi pøi zmìnì rozmìrù okna se automaticky zavolá funkce \iit{arrangeGUI}
+	 \item \iit{public void run()} - pokud bìí vlákno, provede se funkce \iit{nextStep}, ControlPanel obnoví data, a pomocí funkcí tøídy \textit{FileCreator} se zapíšou informace o automobilech do souboru
+	 \item \iit{public double equilibriumVelocity(double vLow,double vHigh,int i, double distance)} - funkce, která pracuje úplnì stejnì jako metoda seèen. V tomto pøípadì hledá rychlost v rozsahu \iit{vLow} a \iit{vHigh}, pøi které bude zrychlení nulové.
+	 \item \iit{public double y(double x,int i, double distance)} - funkce která pro dané $x$ nalezne funkèní hodnotu $y$  
+	 
+	 Reakce na komponenty umístìné na formuláøi
+	 \item \iit{GenerateButton} - po stisknutí tohoto tlaèítka se vygenerují jednotlivá vozidla, nastaví se jim aktuální a preferovaná rychlost a startovní pozice, inicializuje se ControlPanel s informacemi a vytvoøí se soubor pro zápis (viz. \ref{filecre})
+	 \item \iit{CarSelected} - nastaví se auto vybrané ze seznamu jako aktuální a podle nìj se pøekreslí dálnice
+	 \item \iit{ZoomChange} - nastavuje mìøítko; pøi zmìnì mìøítka se pouze mìní hodnota promìnné \textit{zoom}
+	 \item \iit{DrawingButton} - pøi stisku se pøestane vykreslovat dálnice, simulace ovšem bìí dál
+	 \item \iit{RunButton} - pøi startu simulace se vytvoøí nové vlákno a spustí se; pokud simulace bìí, vlákno se ukonèí
+\end{itemize}
+
+\begin{figure}[ht!]%
+\includegraphics[width=\columnwidth]{rozmery-vse}%
+\caption{Konstanty pouité pro vykreslení dálnice}%
+\label{konstanty}%
+\end{figure}
+
+\section{Tøída \textit{FileCreator}}
+\label{filecre}
+Tato tøída slouí pro vıpis informací do souboru. 
+
+\begin{itemize}
+	\item \iit{public void initialize(CarList carList, String gnuFileName)} - vytvoøení a nastavení souboru pro externí program
+	\item \iit{public void finalize()} - funkce starající se o øádné ukonèení práce se souborem
+	\item \iit{public void writeStatus(CarList carList)} - zápis èasu a pozice kadého automobilu z pole \iit{carList}
+\end{itemize}

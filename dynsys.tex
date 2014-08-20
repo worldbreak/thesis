@@ -1,0 +1,300 @@
+\chapter{Dynamické systémy}
+
+Z matematického hlediska je studium mikroskopických dopravních modelù založeno na teorii obyèejných diferenciálních rovnic. Vhodný teoretický rámec pro tuto analýzu je teorie dynamických systémù, což jsou soustavy obyèejných diferenciálních rovnic prvního øádu. V této kapitole uvedeme nìkteré základní poznatky této teorie.
+
+
+
+Systém se nazývá stabilní tehdy, když se pøi malé zmìnì poèáteèních podmínek se chování systému v budoucích stavech zmìní pouze málo. Naopak nestabilita znamená, že  sebemenší zmìna poèáteèních podmínek zpùsobí velký rozdíl v jeho dalším chování. Ukazuje se, že velmi dùležitou souèástí matematických systémù nejsou pouze jejich rovnice, ale též poèáteèní podmínky. Význam této vlastnosti systémù rozpoznal James Clerk Maxwell\footnote{\uv{Je-li stav vìcí takový, že nekoneènì malá variace pøítomného stavu zmìní pouze o nekoneènì malou velièinu stav v nìjakém budoucím èase, pak podmínky systému, a už je v klidu èi v pohybu, nazveme stabilními; povede-li však nekoneènì malá zmìna pøítomného stavu ke koneènému rozdílu ve stavu systému v koneèném èase, nazveme podmínky systému nestabilní.\cite[str. 158]{Barrow}}}, který uvedl, že nepatrná nejistota ve znalosti souèasného stavu znemožní pøesnou pøedpovìï stavu budoucího. Z toho plyne, že aby se daly pøedpovídat budoucí stavy systému, musely by být známy poèáteèní podmínky s dokonalou pøesností. V tu chvíli by byl popis deterministického systému k užitku. To se ovšem stát nemùže\cite[str. 78,79]{Barrow}.
+
+S tímto názorem se pozdìji ztotožòoval i francouzský matematický fyzik Henri Poincaré, který studoval problém, jak klasický deterministický popis mùže vést k pravdìpodobnostnímu vyjádøení. Avšak vznik kvantové mechaniky\footnote{kvantová mechanika je doposud jediná teorie, která ukazuje, že svìt je náhodný na úrovni mikrosvìta; pøíroda ve skuteènosti není deterministická}, která byla schopna odpovìdìt na nìkteré otázky týkající se chaosu, pøibrzdil další studium citlivosti na poèáteèních podmínkách. Navíc v té dobì ještì nebyl dostateèný matematický aparát tyto úlohy øešit. To pøišlo až s pøíchodem výpoèetní techniky, kdy bylo možné øešit rozsáhlé numerické simulace.
+
+Dalším matematikem, který se zajímal o determinismus byl Pierre Simon de Laplace. Ten stanovil deterministický model svìta, který umožòuje na základì poèáteèních podmínek a pøírodních zákonù stanovit všechny podstatné jevy budoucnosti i minulosti. Poincaré ovšem jeho tvrzení vyvrátil tím, že minimální zmìny pøírodních zákonù mohou vést k úplnì nepøedvídatelným výsledkùm.
+
+Nìkteré nelineární dynamické systémy vykazují \textit{deterministický chaos}. To znamená, že aèkoliv je systém popsán rovnicemi velice pøesnì a neobsahuje nahodilé parametry, v dùsledku citlivosti na poèáteèní podmínky pak pùsobí chaoticky. Hovoøí se o tzv. \uv{Motýlím efektu}. Jak pozdìji ukázal Lorenz, chaotiènost se objevuje už i v pomìrnì jednoduchých nelineárních systémech. Zjistil, že v jeho zjednodušeném modelu atmosféry existují chaotické trajektorie, které dnes nazýváme Lorenzovým atraktorem, viz obrázek \ref{lorenzatrakt} \cite[str. 7]{HorakKrlinRaidl}.
+
+\begin{figure}[ht]%
+\centering
+\includegraphics[width=0.5\textwidth]{lorentz}%
+\caption{Lorenzùv atraktor.}%
+\label{lorenzatrakt}%
+\end{figure}
+
+\begin{comment}
+Dùležité je si také uvìdomit, že systém, který je deterministický, ještì neznamená, že se dají zjistit všechny budoucí stavy systému. Systém mùže být deterministický i chaotický zároveò. 
+
+
+Jedna z povìr pøírodních vìd bývá uvedena tak, že pokud máme nìjáký matematický model, jsme schopni pøedpovìdìt jeho další vývoj\footnote{Napø. systém pohybù fyzikálního objektu v prostoru pøi zapoèítání vzájemného pùsobení(Newtonovy rovnice). Takovýto systém lze pomocí Lagreangeových èi Hamiltonových rovnic s danými poèáteèními podmínkami vyøešit.}. Už v poèátcích mìla ovšem tato teze nesrovnalosti. Vìtšinou byl totiž rozdíl mezi chováním systému, který jsme nìjakým zpùsobem predikovali a skuteèným chováním. Na zaèátku 20. století zaèaly pokusy o zjednodušování tìchto systémù\footnote{První takový pokus byl se tøemi tuhými tìlesy, které na sebe pùsobí gravitaèní silou.}, ale i tady nedocházelo ke shodì mezi predikcí a skuteèností. Uvedené chování systémù totiž souvisí s teorií stability. Doposud jsou v tomto oboru mnohé fundamentální problémy nevyøešené.
+
+
+Když se zaèla rozvíjet výpoèetní technika, zaèaly se jednotlivé systémy numericky modelovat na PC. Zjistilo se, že ani velmi výkonný stroj nedokáže pøesnì simulovat chování tìchto dynamických systémù. Vznikla tedy teorie chaosu, která se zabývá systémy, jejichž chování je za urèitých podmínek nepredikovatelné. Hodnoty všech stavových promìnných v daném èase popisují stav systému, který lze znázornit bodem v tzv. \textit{fázovém prostoru}.
+\end{comment}
+
+\section{Planární dynamický systém}
+
+V této èásti bude pro jednoduchost uvažován \textit{autonomní dynamický planární systém}, který je popsán pouze dvìmi promìnnými $x_1$ a $x_2$. Poté se rovnice dynamického systému \eqref{indextvar} zjednoduší na 
+\begin{align}
+\dot{x}_1 = f_{1}(x_1,x_2)\qquad \dot{x}_2 = f_{2}(x_1,x_2).
+\label{dynsys}
+\end{align}
+Fázovým prostorem pro nì pak bude rovina. Pro vyšetøování stability je klíèové nalézt \textit{kritické body}. Øíká se jim také pevné, stacionární, rovnovážné èi singulární. Pokud budou poèáteèní podmínky systému nastaveny do kritického bodu, nic se nestane, systém zùstane ve stejné poloze. Podle toho, jak bude systém reagovat na nepatrnou zmìnu poèáteèních podmínek, se rozlišují typy kritických bodù, viz dále. K nalezení kritických (pevných) bodù se položí jednotlivé funkce rovny nule
+\[
+f_{1}(x_{1c},x_{2c}) = f_{2}(x_{1c},x_{2c}) = 0,
+\]
+kde $x_{1c}$ a $x_{2c}$ jsou souøadnice kritického bodu\cite[str. 156]{Scholtz}. Ke zjištìní stability jednotlivých kritických bodù se zkoumá chování systému v jejich okolí. Za tímto úèelem zavedeme nové promìnné $\epsilon$ a $\delta$ vztahy
+\begin{align}
+\begin{split}
+x_1 &= x_{1c} + \delta, \qquad \delta\ll 1,\\
+x_2 &= x_{2c} + \epsilon, \qquad \epsilon\ll 1.
+\end{split}
+\label{okolibodu}
+\end{align}
+Toto vyjádøení se dosadí do rovnice \eqref{dynsys} a zanedbají se všechny èleny vyšších øádù v $\delta$ a $\epsilon$, èímž se dostavá linearizovaný systém. Zde platí \textit{Hartman–Grobmanùv teorém}, který øíká, že chování dynamického systému v blízkosti kritického bodu bude kvalitativnì stejné i poté, co se provede jeho linearizace. V okolí kritických bodù se použije zjednodušený zápis systému ve tvaru
+\begin{align}
+\begin{split}
+\dot{\delta} &= a\;\delta + b\;\epsilon, \\
+\dot{\epsilon} &= c\;\delta + d\;\epsilon,
+\end{split}
+\label{rovniceuokoli}
+\end{align}
+kde koeficienty $a$,$b$,$c$ a $d$ jsou parciálními derivacemi v Jacobiho matici plynoucí z Taylorova rozvoje
+\begin{align}
+\textbf{J}=
+\left(
+\begin{array}{cc}
+a&b\\
+c&d\\	
+\end{array}
+\right)
+=
+\left(
+\begin{array}{cc}
+\dfrac{\pd  f_1}{\pd  x_1}& \dfrac{\pd  f_1}{\pd  x_2} \\
+\\
+\dfrac{\pd  f_2}{\pd  x_1}& \dfrac{\pd  f_2}{\pd  x_2} \\
+\end{array}
+\right).
+\label{jacob}
+\end{align}
+
+\section{Klasifikace kritických bodù}
+
+Jednotlivé kritické body lze klasifikovat na základì vlastních èísel $\lambda_1$ a $\lambda_2$ matice \eqref{jacob}, která ovlivòují systém v okolí kritického bodu. Možnosti jsou následující: %a podle tìchto hodnot, které ovlivòují chování v okolí kritického bodu. 
+\begin{itemize}
+	\item reálné koøeny $\lambda_1$ a $\lambda_2$
+	\begin{itemize}
+		\item $\lambda_{1,2} > 0$ -- \textit{nestabilní uzel}, trajektorie vycházejí z poèátku a smìøují do nekoneèna (obrázek \ref{lambdakladna})
+		
+		\begin{figure}%
+		 \centering
+		 	\begin{minipage}[c]{7cm}
+       	\includegraphics[width=7cm]{obaklad}
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \includegraphics[width=7cm]{obazapor}%
+			\end{minipage}		
+			\\
+			\begin{minipage}[c]{7cm}
+				\caption{Trajektorie pro $\lambda_{1,2} > 0$}
+				\label{lambdakladna}%
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \caption{Trajektorie pro $\lambda_{1,2} < 0$}%
+			  \label{lambdazaporna}
+			\end{minipage}			
+		\end{figure}
+		\item $\lambda_{1,2} < 0$ -- \textit{stabilní uzel}, trajektorie smìøují do poèátku, (obrázek \ref{lambdazaporna})
+		
+		\item $\lambda_1\cdot\lambda_2 < 0$ -- \textit{sedlový bod}, trajektorie jsou pøitahovány k ose s kladnou hodnotou a odpouzovány od osy se zápornou hodnotou $\lambda$ (obrázek \ref{jedenkladdruhyzapor})
+		\begin{figure}%
+		  \centering
+			\includegraphics[width=7cm]{jedenkladdruhyzapor}
+			\caption{Trajektorie pro $\lambda_1\cdot\lambda_2 < 0$}%
+			\label{jedenkladdruhyzapor}%
+		\end{figure}
+		
+	\end{itemize}
+	\item komplexné sdružené koøeny $\lambda_1$ a $\lambda_2$ ($\lambda_{1,2} = \alpha \pm i\beta$)
+	\begin{itemize}
+		\item $\alpha = 0$ -- \textit{støed}, trajektorie jsou kružnice se støedem v poèátku (obrázek \ref{alfa0betamensi} a \ref{alfa0betavetsi})
+		\begin{figure}%
+		 \centering
+		 	\begin{minipage}[c]{7cm}
+       	\includegraphics[width=7cm]{alfa0betamensi}
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \includegraphics[width=7cm]{alfa0betavetsi}%
+			\end{minipage}		
+			\\
+			\begin{minipage}[c]{7cm}
+				\caption{Trajektorie pro $\alpha = 0$, $\beta < 0$}
+				\label{alfa0betamensi}%
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \caption{Trajektorie pro $\alpha = 0$, $\beta > 0$}%
+			  \label{alfa0betavetsi}
+			\end{minipage}			
+		\end{figure}		
+		\item $\alpha < 0$ -- \textit{stabilní ohnisko}, trajektorie jsou pøitahovány k poèátku (obrázek \ref{alfambetav})
+	  \begin{figure}%
+		 \centering
+		 	\begin{minipage}[c]{7cm}
+       	\includegraphics[width=7cm]{alfambetav}
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \includegraphics[width=7cm]{alfavbetav}%
+			\end{minipage}		
+			\\
+			\begin{minipage}[c]{7cm}
+				\caption{Trajektorie pro $\alpha < 0$, $\beta > 0$}
+				\label{alfambetav}%
+			\end{minipage}
+			\begin{minipage}[c]{7cm}
+			  \caption{Trajektorie pro $\alpha > 0$, $\beta > 0$}%
+			  \label{alfavbetav}
+			\end{minipage}			
+		\end{figure}
+	 \item $\alpha > 0$ -- \textit{nestabilní ohnisko}, trajektorie smìøují do nekoneèna (obrázek \ref{alfavbetav})
+	\end{itemize}
+\end{itemize}
+
+Pokud se vlastní èísla rovnají, $\lambda_1 = \lambda_2$, pak se kritický bod nazývá degenerovaný, v opaèném pøípadì se nazývá singulární.  
+
+Vlastní èísla $\lambda_{1,2}$ splòují rovnici
+\[
+J\cdot \bb{e} = \lambda\cdot \bb{e},
+\]
+kde každému vlastnímu èíslu $\lambda_i$ náleží vlastní vektor $\bb{e}_i$. Geometrický význam vlastního vektoru spoèívá v tom, že pøedstavuje invariantní systém, tedy smìr, který se pùsobením matice $J$ nemìní. Invariantní smìr (vlastní vektor matice J) se nazývá \textit{varieta}. Ta je stabilní pro $\lambda<0$, kdy se trajektorie pøibližuje k poèátku, nestabilní varieta odpovídá kladné hodnotì $\lambda$\cite[str. 160-173]{Scholtz}.
+
+
+\begin{comment}
+
+Jestliže se u matice \eqref{jacob} zjistí kromì vlastních èísel i vlastní vektory $\mathit{\mathbf{e_1}}$ a $\mathit{\mathbf{e_2}}$, dají se trajektorie dìlit podle toho, jakých hodnot tyto vektory nabývají. Vlastní vektory jsou takové vektory, které splòují rovnici
+\[
+\mathbf{J}\cdot\mathit{\mathbf{e}}= \lambda\cdot\mathit{\mathbf{e}},
+\]
+kde $\mathbf{J}$ je matice \eqref{jacob}.
+
+Podle hodnot vlastních vektorù se urèují \textit{manifoldy}. Pokud trajektorie smìøují od kritického bodu ve smìru vektoru $\mathit{\mathbf{e}}$, pøímce urèené vektorem $\mathit{\mathbf{e}}$ se øíká nestabilní \textit{manifold}, naopak pokud jsou trajektorie pøitahovány kritickým bodem, nazývá se pøímka urèená vektorem $\mathit{\mathbf{e}}$ stabilní \textit{manifold}.
+
+
+
+\begin{align}
+\mathit{\mathbf{e}}_1 = \left(
+\begin{array}{c}
+1\\
+0	
+\end{array}
+\right)
+\qquad
+\mathit{\mathbf{e}}_2 = \left(
+\begin{array}{c}
+0\\
+1	
+\end{array}
+\right).
+\label{vlvekt}
+\end{align}
+
+end{comment} 
+
+
+
+\begin{comment}
+
+
+Za dynamický model budeme považovat model popsaný rovnicí (\ref{indextvar}). Každý stav systému pøitom jednoznaènì urèuje jeho další vývoj\footnote{a to jak do budoucnosti, tak do minulosti}. Nás budou pøi vyšetøování stability zajímat takové body, kde jednotlivá øešení $x(t) = x_\text{0}$ budou platit pro všechna $t$. Tyto body se potom fázového prostoru nazývají \textit{kritické} (èi pevné).
+
+K tomu abychom tyto body našli, musíme vyøešit soustavu
+\begin{align}
+\begin{split}
+\dot{f}_1 &= 0, \\
+&\vdots \\
+\dot{f}_m &= 0.
+\end{split}
+\label{x1xm}
+\end{align}
+
+Poté zderivujeme všechny rovnice (\ref{indextvar}) podle všech promìnných a hodnoty umístíme do Jakobiho matice
+\begin{align}
+\left(
+\begin{array}{cccc}
+\dfrac{\pd  f_1}{\pd  x_1}& \dfrac{\pd  f_1}{\pd  x_2} & \cdots & \dfrac{\pd  f_1}{\pd  x_\m}\\
+\\
+\dfrac{\pd  f_2}{\pd  x_1}& \dfrac{\pd  f_2}{\pd  x_2} & \cdots & \dfrac{\pd  f_2}{\pd  x_\m}\\
+\\
+\vdots & \vdots & \ddots & \vdots\\
+\\
+\dfrac{\pd  f_m}{\pd  x_1}& \dfrac{\pd  f_m}{\pd  x_2} & \cdots & \dfrac{\pd  f_m}{\pd  x_\m}\\	
+\end{array}
+\right).
+\label{jordan}
+\end{align}
+
+\section{Planární systémy}
+
+
+V této sekci bude pouze systémy se dvìmi stupni volnosti, tj. hodnota $m = 2$. Hlavní výhodou tìchto systému je to, že fázovým prostorem bude rovina, která lze jednoduše nakreslit. Jakobiho matice pro tento pøípad se zjednoduší a bude vypadat takto:
+\begin{align}
+\left(
+\begin{array}{cccc}
+\dfrac{\pd  f_1}{\pd  x_1}& \dfrac{\pd  f_1}{\pd  x_2} \\
+\\
+\dfrac{\pd  f_2}{\pd  x_1}& \dfrac{\pd  f_2}{\pd  x_2} \\
+\end{array}
+\right).
+\label{jordan2}
+\end{align}
+
+Vypoèteme vlastní èísla $\lambda_1$ a  $\lambda_2$ matice \eqref{jordan2}. Podle hodnot tìchto vlastních èísel $\lambda_1$ a  $\lambda_2$ urèujeme vlastnosti pro každý kritický bod. Vždy to bude jedna z tìchto možností
+\begin{itemize}
+	\item Poradit kde najit pekne definice - pripadne zda je mozne pouzit \textit{http://user.mendelu.cz/marik/in-mat-web/in-mat-webse17.html}
+	\item \textit{uzel}   
+	\item \textit{ohnisko}
+	\item \textit{sedlo}
+	\item \textit{bod rotace}
+\end{itemize}
+
+Stabilita ohniska èi uzlu se urèí ze smìru tìchto trajektorií. Pokud konvergují smìrem ke kritickému bodu, jsou stabilní, jinak jsou nestabilní. V tabulce \ref{prehledvlcisel} je uveden jejich pøehled vzhledem k hodnotám vlastních èísel. 
+
+\begin{comment}
+\begin{table}[htb]
+\centering%
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{pro $\lambda_1$, $\lambda_2$ $\in$ $\mathcal{R}$} \\
+\hline
+obì záporná & stabilní uzel \\
+\hline
+obì kladná & nestabilní uzel \\
+\hline
+jedno kladné a jedno záporné & sedlový bod \\
+\hline
+\multicolumn{ 2}{|c|}{pro $\lambda_1$, $\lambda_2$ $\in$ $\mathcal{I}$} \\
+\hline
+komplexnì sdružená s kladnou $\mathcal{R}$ èástí & nestabilní ohnisko \\
+\hline
+komplexnì sdružená se zápornou $\mathcal{R}$ èástí & stabilní ohnisko \\
+\hline
+komplexnì sdružená bez $\mathcal{R}$ èásti & bod rotace \\
+\hline
+\end{tabular}  \caption{Pøehled variant vlastních èísel}
+\label{prehledvlcisel}
+\end{table}
+\end{comment}
+
+\begin{comment}
+
+Nyní již mùžeme pøistoupit k vyšetøování jednotlivých kritických bodù pro náš IDM. Vozidlo, které budeme øešit na zaèátku, je první a tím pádem mùžeme vynechat èlen $a_\inter$ z rovnice \ref{soucetzrych}, protože pøedpokládáme, že pøed ním žádné vozidlo nepojede. Pro nìj dostáváme rovnici
+
+\begin{align}
+\dot{v}_1 = a_\free = \left( 1- \left(\frac{v_n}{v_\free}\right)^\delta \right).
+\label{stabilitaprvnisp}
+\end{align}
+
+Kritický bod je øešením rovnice $\dot{v}_1 = 0$, ze které po úpravách dostáváme
+\begin{align}
+v_1 = v_\free.
+\label{stabilitaprvnivy}
+\end{align}
+
+\end{comment}

@@ -1,0 +1,26 @@
+\chapter*{Závìr}
+\addcontentsline{toc}{chapter}{Závìr}
+
+\begin{comment}
+Cílem této práce bylo naprogramovat a následnì na jednoduchých pøíklad otestovat Intelligent Driver Model. V první kapitole je proto shrnuta obecnì problematika stávajícího stavu dopravních modelù. Druhá kapitola se zabývá numerickými metodami, bez kterých by nebylo vùbec možné øešit dopravní simulace. V další kapitole je pøímo popsán IDM a pøedjíždìcí model MOBIL. Díky pochopení tìchto znalostí je možnost i nadále pokraèovat v této problematice.
+
+Ve ètvrté kapitole je již seznámení se všemi funkcemi, které program nabízí, ve kterém je samozøejmì implementován IDM a MOBIL. Tento program je hlavním výsledkem celé práce a autor by chtìl v tomto duchu pokraèovat i do budoucna. Tento program byl vyvíjen v programovacím jazyce Java. 
+
+Výstupy, které program nabízí byly zpracovány v matematickém prostøedí Mathematica, kde se vytvoøily jednotlivé grafy a histogramy a na jednoduchých pøíkladech, které jsou popsány v kapitole Simulace, byl otestován Intelligent Driver Model.
+
+Bakaláøská práce tím pádem splnila svùj cíl a pokud by se model i pøiložený program podaøilo vylepšit autor vìøí, že by poté byl schopen dosahovat podobných výsledkù jako nìkterý z robustních softwarù, které ovšem stojí nemalé peníze.
+
+Tato práce pùvodnì mìla navíc obsahovat èást týkající se parciálních diferenciálních rovnic, po zjištìní nároènosti programování a simulování IDM jsem se rozhodl upøednostnit kvalitni provedení práce týkající se pouze této problematiky než povrchním zpracovaním celého pùvodního rozsahu.
+\end{comment}
+
+Jak už je zmínìno v úvodu, cílem této práce nebylo dosažení nových vìdeckých poznatkù, nýbrž seznámení se s problematikou dopravních modelù a jejich programování. Za tímto úèelem byly popsány dva základní typy modelù: makroskopické a mikroskopické. Z vlastností tìchto typù modelù vyplynulo, že pro další studium bude vhodné se primárnì zabývat mikroskopickými modely. Tyto modely jsou pøevážnì popsány diferenciálními rovnicemi. Porozumìní jejich tematice je podmínìno znalostmi z oblasti teorie stability. Tímto se zabývá ètvrtá kapitola této práce. Pro realizaci dopravních modelù založených na diferenciálních rovnicích je nutno použít numerické postupy a algoritmy. Studovali jsme základní Eulerovu metodu numerického øešení diferenciálních rovnic. Poté jsme implementovali metody vyšších øádu, konkrétnì metody Runge-Kutta druhého a ètvrtého øádu. Ukázalo se však, že všechny tyto metody poskytují pro studovaný problém identické výsledky. 
+
+Na základì teoretického popisu modelu IDM byla vytvoøena základní kostra programu. V této podobì program pracoval pouze s èíselnými vstupy a výstupy. Díky tomu mohl být vyzkoušen matematický popis tohoto modelu a mohla být ovìøena jeho funkènost. Po úspìšných výsledcích testování bylo k programu pøidáno grafické prostøedí, v nìmž bylo možné simulovat i složitìjší  problémy. Pro implementaci byl použit programovací jazyk Java.
+
+Po implemntaci IDM byla aplikace postupnì rozšiøována o pøedjíždìcí model MOBIL. Naprogramování tohoto modelu bylo jednoduché, složitìjší však bylo zjištìní jeho správných vstupních parametrù. Dosažení adekvátních výsledkù vyžadovalo dlouhé testování spojené s mnohonásobným pøenastavováním jednotlivých hodnot.
+
+Po tìchto úspìšnì zakonèených pokusech se pøistoupilo k samotným simulacím. Pro simulaci stacionárního stavu bylo tøeba naprogramovat funkci, pomocí které by bylo možno spoèítat jednotlivé kritické body a a díky nim stanovit popis tohoto stavu. K jejímu vytvoøení byla použita metoda seèen. Následnì byly provedeny simulace s využitím modelu IDM (a rozšíøeného modelu IDM+MOBIL) pro tento stav a pro další dopravní simulace. Výsledky simulací bylo výhodné popsat dvojím zpùsobem: makroskopicky v pojmech distribucí poètu vozidel (mj. hustoty) a mikroskopicky se zamìøením na jednotlivá vozidla.
+
+Nejprve byla otestována zvolená numerická metoda na stacionárním stavu modelu IDM, kde výsledky simulace potvrdily vhodnost jejího použití. Postupnì byly testovány tøi pøípady na nekoneèné i cyklické dálnici. Zjistili jsme, že ve všech pøípadech mají vozidla tendenci dostávat se na svoji preferovanou rychlost, ale s ohledem na ostatní vozidla tendují ke stacionárnímu stavu, pøièemž u tøetího pøípadu (podkapitola \ref{sec:zmenaparam}) by stacionárního stavu bylo dosaženo za pomìrnì dlouhý èasový úsek.
+
+Výzkum v této oblasti je možno rozšiøovat smìrem k dalším mikroskopickým modelùm èi zvolit makroskopický model pro hustší provoz na pozemní komunikaci.

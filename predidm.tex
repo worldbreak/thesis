@@ -1,0 +1,70 @@
+
+
+\chapter{Modely pøedcházející IDM}
+\label{chap:predIDM}
+
+\begin{comment}
+Jednoduše øeèeno „Car Following“ modely vycházejí z pøedpokladu, když n-té vozidlo následuje (n-1)-té vozidlo na homogenní (stejnorodé) dálnici, trajektorie n-tého vozidla bude v podstatì stejná jako (n-1) vozidla kromì posunù v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechna ostatní vymyšlená pravidla (modely) v sobì toto jednoduché a pomìrnì pøesné pravidlo obsahují. Newellùv model je v podstatì speciálním pøípadem ostatních modelù s ménì parametry a jinou logikou. Posloužil také jako základ pro pozdìjší Intelligent Driver Model.
+\end{comment}
+
+Jednoduše øeèeno \uv{Car Following} modely vycházejí z pøedpokladu, že pokud n-té vozidlo následuje n-1 vozidlo na homogenní dálnici, trajektorie n-tého vozidla bude stejná jako vozidla pøed ním (n-1) až na posuny v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechny další dispozice jednotlivých modelù v sobì tento pøedpoklad obsahují.
+
+\section{Newellùv model}
+\label{sec:Newell}
+
+Jestliže n-té vozidlo jede za n-1 vozidlem (které jede za n-2 vozidlem atd.), cíl každého Car following modelu je zjistit závislost trajektorie n-tého vozidla  $x_{\n}(t)$, jeho pozici v èase $t$ na n-1 vozidle, viz. obrázek \ref{newell}. (To také znamená, že není žádná náhodná spojitost mezi tìmito vozidly.)
+Jestliže se n-1 vozidlo pohybuje konstantní rychlostí $v$,
+\[
+x_{\nm1} {}={} x_{\n} + vt,
+\]
+n-té vozidlo také pojede prùmìrnou rychlostí $v$. Pokud by n-té vozidlo zrychlovalo, tak by došlo ke kolizi s n-1 vozidlem a naopak pokud by zpomalovalo, tak by se n-té vozidlo neustále vzdalovalo. Totéž platí pro všechna vozidla jedoucí za n-tým. Tento model se nezabývá zjištìním hodnoty rychlosti $v$, pøedpokládá se, že je urèena buïto na základì omezení rychlosti èi možnostech vozidla.
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=0.6\textwidth]{images/newell.pdf}%
+\caption{Trajektorie vozidel s konstantní rychlostí}%
+\label{newell}%
+\end{figure}
+
+Vzdálenost $s_\n = x_\nm1 (t) - x_\n (t)$ mezi vozidly n a n-1 se mùže mìnit v èase. Pokud je dálnice homogenní, tato vzdálenost zùstane konstantní okolo hodnoty $s_\n$. Tato hodnota se mìní na základì typu vozidla a také závisí na rychlosti $v$.
+
+Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svoji preferovanou rychlost $\text{V}_\n$. Jestliže tato rychlost je u n-1 vozidla vyšší než u n-tého $v>\text{V}_\n$, znamená to, že n-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a n-1 vozidlo mu ujede.
+Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové rychlosti by mìla být níže než polopøímka lineární závislosti, viz èerná teèka na obrázku \ref{vztahmezivas} pøi rychlosti $v=0$.
+\begin{figure}[h]%
+\centering
+\includegraphics[width=0.6\textwidth]{images/vztahmeziSaV.pdf}%
+\caption{Vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$}%
+\label{vztahmezivas}%
+\end{figure}
+
+Nyní pøedpokládejme, že n-1 se vozidlo nìjakou dobu $t$ pohybuje konstantní rychlostí $v$\footnote{hodnota rychlosti osciluje okolo hodnoty $v$} a potom náhle zmìní rychlost na hodnotu $v'$. Trajektorie vozidel n a n-1 mohou poté vypadat jako na obrázku \ref{linearaprox}. Z obrázku lze také vypozorovat jak èasovou $\tau_\n$, tak prostorovou $d_\n$ mezeru mezi vozidly n a n-1. Z èárkovaného obdelníku poté dostáváme vztah vzdálenost mezi vozidly pøed zmìnou rychlosti $s_\n$ a po zmìnì rychlosti $s'_\n$.
+
+\[
+s_\n{}={}d_\n + v\tau_\n,\qquad s'_\n{}={}d_\n + v'\tau_\n. 
+\]
+
+Z toho vyplývá, že pokud leží $v$ a $v'$ na polopøímce z obrázku \ref{vztahmezivas}, sklon této pøímky je právì $\tau_\n$ a hodnota $s_n$ pøi rychlosti $v = 0$ je $d_\n$.
+
+Ze vztahu mezi $v$ a $s_\n$, jak je zobrazeno na obrázku \ref{vztahmezivas}, plyne nezávislost mezer $d_\n$ a $\tau_\n$ na rychlostech $v$, resp. $v'$. Pokud se tedy zmìní rychlost z hodnoty $v'$ na $v''$, $d_\n$ a $\tau_\n$ zùstanou pøi této zmìnì rychlosti stejné. Lineární trajektorie vozidla $x_n(t)$ potom bude jednoduše posun v èase $\tau_\n$ a místì $d_\n$.
+
+\begin{equation}
+x_\n(t+\tau_\n) {}={} x_\nm1(t) - d_\n.
+\label{eq:newelxn}
+\end{equation}
+
+U Newellova modelu platí, že n-té vozidlo bude (pøibližnì) kopírovat trajektorii n-1 vozidla dle vztahu \eqref{eq:newelxn} pøi vhodných hodnotách $d_\n$ a $\tau_\n$. Tím, jak se pøesnì dokáže n-té vozidlo dodržovat vztah \eqref{eq:newelxn}, se Newellùv model nezabývá, pouze pøedpokládá, že øidiè je schopen se tímto vztahem øídit. To není tak tìžké, protože pokud se zmìní rychlost vozidla n-1, n-tý øidiè nemusí zareagovat okamžitì, ale mùže poèkat dokud se mezera $s_\n$ nezvýší (neklesne) na hodnotu, která odpovídá nové rychlosti vozidla n-1 (viz obrázek \ref{vztahmezivas}).
+\begin{figure}[h]%
+\centering
+\includegraphics[width=0.6\textwidth]{images/linearaprox.pdf}%
+\caption{Lineární aproximace pøi zmìnì rychlosti vozidel}%
+\label{linearaprox}%
+\end{figure}
+
+Pøi pozorování se došlo k závìru, že každý øidiè nezkoumá každého jiného øidièe na komunikaci, ale pouze jen vhodnou \uv{makroskopickou} èást. Hodnoty $\tau_\n$ a $d_\n$ jsou pøirozené, to vychází ze vztahu \eqref{eq:newelxn}, kde postupným iterováním dostaneme
+
+\begin{equation}
+x_\n(t+\tau_\n + \tau_\nm1 + \cdots + \tau_1) {}={} x_0(t) - d_\n - d_\nm1 - \cdots - d_1.
+\label{eq:newelxn0}
+\end{equation}
+
+$\tau_\n$ a $d_\n$ se znaènì liší mezi jednotlivými vozidly, protože nìkteøí øidièi radìji jedou blíže vozidlu pøed sebou (n-1) až na minimální bezpeènou vzdálenost, kdežto nìkteøí mají radi zase naopak velkou, aby byli schopni vklidu zareagovat. Je rozumné, aby se hodnoty $\tau_n$ a $d_\n$ lišily, a to tak, že každému jednotlivému vozidlu budou hodnoty vygenerovány z nìjakého pravdìpodobnostního rozdìlení, jehož variaèní koeficient se bude blížit jedné. Pøi generování vozidel za sebou 

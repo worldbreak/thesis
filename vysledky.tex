@@ -1,0 +1,246 @@
+\chapter{Simulace}
+
+Výstupem programu je tedy soubor, ve kterém je uveden aktuální èas, rychlost a poloha každého vozidla. Tento výstup je klíèový proto, aby se simulace vozidel dala dále použít. Pro zobrazení výsledkù se použije naprogramovaný sešit v programu \textit{Mathematica}. Ten umožòuje zobrazit vozidla jako tok v prùbìhu èasu, prùbìhy drah jednotlivých vozidel, dále pak prùbìh poètu vozidel v jednotlivých úsecích. Díky tomuto zobrazení se dají snadno vyèíst makroskopické ukazatele a to hlavnì hustota vozidel. Parametry všech simulací mají tyto výchozí hodnoty
+\begin{itemize}
+	\item zrychlení $a = 0,3\text{m/s}^\text{2}$
+	\item brzdová konstanta $b = 3\text{m/s}^\text{2}$
+	\item minimální vzdálenost mezi vozidly $s_0 = 7\m$
+	\item minimální èasový odstup mezi vozidly $T = 1,5 \s$ 
+	\item exponent zrychlení $\delta = 4$
+\end{itemize}
+
+Ostatní parametry se budou s ohledem na typ simulace mìnit, proto zde nejsou uvedeny.
+
+\section{Stacionární stav}
+\label{sec:stac}
+Stacionární stav je takový stav, kdy jednotlivá vozidla jedou za sebou konstantní rychlostí a mezi sebou udržují konstantní vzdálenosti.
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{nstacstav/hustotazacatek} & \includegraphics[width=6.5cm]{nstacstav/hustotakonec} \\
+a) Poèáteèní distribuce & b) Koneèná distribuce \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{cstacstav/hustotazacatek} & \includegraphics[width=6.5cm]{cstacstav/hustotakonec} \\
+c) Poèáteèní distribuce & d) Koneèná distribuce
+\end{tabular}
+\caption{Simulace stacionárního stavu. {\bfseries a)} poèáteèní distribuce vozidel pøi nekoneèné dálnici {\bfseries b)} finální distribuce vozidel pøi nekoneèné dálnici {\bfseries c)} poèáteèní distribuce pøi cyklické dálnici délky 8 km {\bfseries d)} finální distribuce pro cyklickou dálnici délky 8 km}
+\label{fig:stationary}
+\end{figure}
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{nstacstav/drahacasvyrez}
+\caption{Závislost polohy jednotlivých vozidel na èase v pøípadì stacionárního stavu.}
+\label{fig:nstacdrahacasvyrez}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{nstacstav/caspoloha} & \includegraphics[width=0.45\textwidth]{cstacstav/grafcasdraha}  \\
+a) Nekoneèná dálnice & b) Cyklická dálnice
+\end{tabular}
+\caption{Závislost poloh jednotlivých vozidel na èase pro celou dobu simulace.}
+\label{fig:drahacas}
+\end{figure}
+
+
+
+
+
+K nalezení konstantních rychlostí slouží funkce equilibriumVelocity. Jejími parametry jsou horní a dolní mez rychlosti a vzdálenost mezi vozidly. Tato vzdálenost musí být pro každá dvì vozidla za sebou stejná. Horní mez rychlosti je pak rovna preferované rychlosti vozidla a dolní mez nule. Znamená to tedy, že konstantní rychlost vozidla se bude stanovena mezi tìmito mezemi a vozidlo nikdy nedosáhne své preferované rychlosti.
+
+Hledá se tedy øešení rovnice
+\begin{equation}
+\dot{v}_n = a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}}{s_n}\right)^2 = 0,
+\label{eq:staciornistav}
+\end{equation}
+aby se našel stacionární stav. Po nastavení $v_\free$ tedy zùstane pouze jedna neznámá $v_n$.
+
+Jediná zmìna nastává u úplnì prvního vozidla, protože pøed sebou nemá vùbec nikoho a tím pádem je interakèní èlen roven nule, $a_\inter = 0$ a rovnice se zjednoduší na 
+\begin{equation}
+\dot{v}_n = a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] = 0,
+\label{eq:staciornistavprvni}
+\end{equation}
+z èehož plyne ze jeho rychlost $v_n$ na zaèátku se musí právì rovnat jeho preferované rychlosti $v_\free$.
+ 
+Pro simulaci stacionárního stavu se použily následující parametry: preferovaná rychlost vozidla $v_{n\free} = 120 \kmh$ a vzdálenost mezi vozidly $s_n = 100 \m$. Rychlost, která bude pro všechny vozidla konstantní, potom vychází $v_n = 110 \kmh$. U cyklické dálnice, kde se poloha vozidla po dosažení konce dálnice vrátí na zaèátek (jeho poloha po návratu bude nulová), je délka dálnice nastavena na hodnotu $8000 \m$.
+
+Pøedjíždìní v tomto pøípadì musí být zakázáno,\footnote{Nebo nastavena taková hodnota parametru $p$ a $b_r$, aby pro vozidlo bylo výhodnìjší jet ve stávajícím pruhu.}, aby jednotlivá vozidla nemìla potøebu mìnit jízdní pruh.
+
+%tady budou obrazky jednotlivych simulaci stacionarniho stavu, cyklicke i necyklicke
+
+Na zaèátku je tedy hustota rovnomìrnì rozložena, a to jak pro nekoneènou dálnici, obrázek \ref{fig:stationary}a, tak i pro cyklickou dálnici, obrázek \ref{fig:stationary}c. Vozidla jsou od sebe vzdálena konstantnì, obrázek \ref{fig:nstacdrahacasvyrez}. Z výøezu znázornìném na obrázku \ref{fig:nstacdrahacasvyrez} je také vidìt, že použitá numerická metoda v pøípadì stacionárního poèáteèního rozdìlení zachovává ekvidistantní distribuci vozidel. Délky úsekù, na kterých je hustota mìøena, èiní 200 m, proto pøi vzdálenosti vozidel 100 m je poèet vozidel $n$ roven právì dvìma. Konec simulace je znázornìn na obrázcích \ref{fig:stationary}b (nekoneèná dálnice) a \ref{fig:stationary}d (cyklická dálnice). Je vidìt, že rozložení automobilù se nemìní, pouze se rovnomìrnì posouvá rychlostí $v_n$, jež je stejná pro všechna vozidla.
+
+Pøi shlédnutí obrázku \ref{fig:drahacas}a, kde se na osu $x$ vynáší èas a na ose $y$ figuruje poloha vozidla, je vidìt, že se každé jednotlivé vozidlo pohybuje lineárnì. Každá úseèka pak odpovídá jednomu vozidlu, které vychází ze své poèáteèní polohy až do konce simulace. Je tedy vidìt, že rovnice \eqref{eq:staciornistav} je opravdu splnìna a vozidla se pohybují konstantní rychlostí; zrychlení každého vozidla je nulové. Nic na tom nezmìní ani cyklická dálnice, obrázek \ref{fig:drahacas}b. 
+
+\section{Náhodné rychlosti}
+\label{sec:nahrych}
+Cílem této simulace je ukázat, že pøi zakázaném pøedjíždìní se vozidla pøi náhodnì nastavených poèáteèních parametrech dostanou opìt do stacionárního stavu.
+
+Cílem každého vozidla bude dostat se na svou preferovanou rychlost. Pokud je zakázáno pøedjíždìní, je jasné, že pokud vozidlo bude mít vyšší preferovanou rychlost než vozidlo pøed ním, na svou preferovanou rychlost by se nemìlo dostat a automobil pojede rychlostí nižší, která je rovna preferované rychlosti automobilu pøed ním.
+
+Vozidla pøi této simulaci budou mít na zaèátku nastavenou náhodnou preferovanou i poèáteèní rychlost. Rychlosti budou generovány z Gaussova rozdìlení symetrického kolem hodnoty $100 \kmh$. Vygeneruje se èíslo z tohoto rozdìlení, ke které se poté vynásobí dvaceti a pøiète se k nìmu 100. Mùže tedy nastat i pøípad, že auto bude mít vyšší rychlost, než je povolená rychlost na dálnicích v ÈR. To ovšem nevadí, protože takoví øidièi se také vyskytují. Pokud by ovšem rychlost vozidla klesla pod $80 \kmh$, pak se rychlost nastaví právì na $80 \kmh$, což odpovídá minimální rychlosti na dálnicích v Èeské republice.
+
+Poèáteèní pozice vozidla se urèuje na základì vygenerovaného èísla v rozsahu 0-1. Klasicky zùstávají vzdálenosti mezi vozidly $100\m$ a k tomu se od vygenerovaného èísla odeète 0.5 a vynásobí padesáti. Tím pádem se dostane interval +/- 50m.
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{ndostacstavu/drahacas} & \includegraphics[width=0.45\textwidth]{cdostacstavu/drahacas}  \\
+a) Nekoneèná dálnice & b) Cyklická dálnice
+\end{tabular}
+\caption{Závislost poloh jednotlivých vozidel na èase pøi poèáteèní náhodné rychlosti a poloze pro celou dobu simulace.}
+\label{fig:dostacdrahacas}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{ndostacstavu/hustotazacatek} & \includegraphics[width=6.5cm]{ndostacstavu/hustotakonec} \\
+a) Poèáteèní distribuce & b) Koneèná distribuce \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{cdostacstavu/hustotazacatek} & \includegraphics[width=6.5cm]{cdostacstavu/hustotakonec} \\
+c) Poèáteèní distribuce & d) Koneèná distribuce
+\end{tabular}
+\caption{Simulace pøi náhodných poèáteèních polohách a rychlostech. {\bfseries a)} poèáteèní distribuce vozidel pøi nekoneèné dálnici {\bfseries b)} finální distribuce pøi nekoneèné dálnici {\bfseries c)} poèáteèní distribuce pøi cyklické dálnici délky 8 km {\bfseries d)} finální distribuce pro cyklickou dálnici délky 8 km}
+\label{fig:hustotaintostationary}
+\end{figure}
+
+
+\begin{figure}%
+\centering
+\includegraphics[width=6.5cm]{ndostacstavu/drahacasvyrez}%
+\caption{Náhodné rychlosti - závislost polohy na èase v pøípadì nekoneèné dálnice - výøez}%
+\label{fig:ndostacdrahacasvyrez}%
+\end{figure}
+
+Po prozkoumání obrázku \ref{fig:ndostacdrahacasvyrez}, který je výøezem obrázku \ref{fig:dostacdrahacas}a je vidìt, že startovní pozice opravdu nejsou rovnomìrnì rozdìleny a vozidla od sebe nejsou konstantnì vzdálena. Pøi pozorování jak se vozidla navzájem dojíždìjí zaèíná být závislost polohy na èase být lineární. Mùže se stát, že vygenerovaná rychlost je velmi vysoká, zatímco preferovaná mùže být i $80km/h$. Proto je potøeba nechat bìžet simulaci potøebnì dlouhou dobu, aby se rychlosti jednotlivých vozidel ustálily.
+
+To je potom vidìt v èase $t = 3500 \s$ na obrázku \ref{fig:dostacdrahacas}, kde se vozidla shlukla do skupinek, kde první vozidlo brzdí ostatní a ty se tím pádem nemohou dostat na svoji preferovanou rychlost. Jakmile se takto vozidla shlukla, potom platí, že èím déle by se nechala puštìna simulace, tím více by se vozidla pøibližovala do stacionárního stavu. Na obrázku \ref{fig:dostacdrahacas}a jsou vidìt 3 skupiny vozidel, kde všechny z nich se blíží stacionárnímu stavu. Obrázek pro cyklickou dálnici \ref{fig:dostacdrahacas}b vypadá podobnì až na to, že skupinek je podstatnì více. To mùže být zpùsobeno tím, že vozidlo, které má vygenerovanou nejvzdálenìjší polohu od poèátku (cca. $5000 \m$) interaguje s posledním vozidlem (poloha $0\m$) nebo jednoduše proto, že byla vygenerovány jiné preferované rychlosti vozidel a jejich polohy.
+
+Hustota je na startu simulace pøibližnì stejná pro nekoneènou dálnici, obrázek \ref{fig:hustotaintostationary}a, tak i pro cyklickou, obrázek \ref{fig:hustotaintostationary}c. Zajímavìjší obrázky se získávají pøi zastavení simulace. U nekoneèné dálnice je vytvoøení skupinek interpretováno zvýšenou hustotou v urèitých úsecích, viz obrázek \ref{fig:hustotaintostationary}b. Šíøka každého sloupce opìt odpovídá hodnotì $200\m$. U cyklické dálnice o délce $8000 \m$ nejsou tyto píky tak patrné, což je zpùsobeno vìtším poètem skupinek (obrázek \ref{fig:hustotaintostationary}d) a navíc je dálnice omezena svoji délkou.
+
+Simulace ovšem splnila svùj úèel, když potvrdila, že vozidla se po urèité dobì dostávají do stacionárního stavu, pokud není povoleno pøedjíždìní.
+
+
+
+
+
+
+\section{Zmìna parametrù prvního vozidla}
+\label{sec:zmenaparam}
+V této simulaci pùjde o to zkoumat dopravní proud, tz. i stacionární stav systému, pøi náhlé zmìnì parametrù prvního vozidla. V první fázi se vygenerují vozidla stejnì jako v sekci \ref{sec:stac}, obrázek \ref{fig:hustotafirstslow}a. Po nìjaké dobì jízdy se prvnímu vozidlu nastaví jeho preferovaná rychlost na nízkou hodnotu, v této simulaci na $50 \kmh$. Posléze, až se z prvního vozidla stane poslední, se jeho rychlost tentokrát zmìní na vysokou hodnotu, v tomto pøípadì na $250 \kmh$. Pøedjíždìní musí být povoleno, jeho parametry budou nastaveny standardnì, tj. zdvoøilostní koeficient $p = 0.5$ a preference pravého jízdního pruhu.
+
+Pøedpoklad je takový, že vozidla zaènou plynule vozidlo pøedjíždìt. Poté, co se mu nastaví velmi vysoká rychlost, bude zase vozidlo plynule pøedjíždìt všechna vozidla a systém až na toto vozidlo, které mìní svojí preferovanou rychlost, zùstanou ve stacionárním stavu. 
+
+\begin{comment}
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{nautozpomalzrych/drahacas} & \includegraphics[width=0.45\textwidth]{cautozpomalzrych/drahacas}  \\
+a) Nekoneèná dálnice & b) Cyklická dálnice
+\end{tabular}
+\caption{Závislost poloh jednotlivých vozidel na èase pøi poèáteèní náhodné rychlosti a poloze pro celou dobu simulace.}
+\label{fig:dostacdrahacas}
+\end{figure}
+\end{comment}
+
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{nautozpomalzrych/hustotazacatek} & \includegraphics[width=6.5cm]{nautozpomalzrych/hustotaautopomale} \\
+a) Poèáteèní distribuce & b) Distribuce, rychlost prvního vozidla $50 \kmh$ \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{nautozpomalzrych/hustotaautonakonci} & \includegraphics[width=6.5cm]{nautozpomalzrych/histogramkonec-autooznaceno} \\
+c) Distribuce po pøedjíždìní & d) Koneèná distribuce
+\end{tabular}
+\caption{Simulace pøi snížení a následném zvýšení rychlosti èelního vozidla. {\bfseries a)} poèáteèní distribuce vozidel pøi nekoneèné dálnici {\bfseries b)} distribuce pøi rychlosti èelního vozidla 50 $\kmh$ {\bfseries c)} distribuce poté po pøedjetí èelního vozidla {\bfseries d)} finální distribuce}
+\label{fig:hustotafirstslow}
+\end{figure}
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{nautozpomalzrych/drahacasvyrez-predjizdeni} & \includegraphics[width=0.45\textwidth]{nautozpomalzrych/drahacasvyrez}  \\
+a) výøez - pøedjíždìní posledního vozidla & b) výøez - posledních 2000 s
+\end{tabular}
+\caption{Simulace pøi snížení a následném zvýšení rychlosti èelního vozidla. {\bfseries a)} závislost polohy vozidel na èase - zvýšení rychlosti posledního vozidla {\bfseries b)} závislost polohy vozidel na èase - posledních 2000 s}
+\label{fig:nautozpomalzrychdrahacasvyrezy}
+\end{figure}
+
+\begin{figure}%
+\includegraphics[width=\columnwidth, height=70mm]{nautozpomalzrych/drahacas}%
+\caption{Simulace pøi snížení a následném zvýšení rychlosti èelního vozidla - závislost polohy na èase - nekoneèná dálnice}%
+\label{fig:nautozpomalzrychdrahacas}%
+\end{figure}
+\begin{figure}
+\includegraphics[width=\columnwidth, height=70mm]{cautozpomalzrych/drahacas}  
+\caption{Simulace pøi snížení a následném zvýšení rychlosti èelního vozidla - závislost polohy na èase - cyklická dálnice}
+\label{fig:cautozpomalzrychdrahacas}
+\end{figure}
+
+Jak je vidìt u nekoneènì dálnice, výsledky jsou pomìrnì pøekvapující. Pøi snížení rychlosti prvního vozidla se ještì nic nedìje, automobil zaène klasicky zpomalovat na svou preferovanou rychlost $50 \kmh$ a ostatní vozidla ho zaènou klasicky pøedjíždìt. Ovšem v tu chvíli už se zaèíná pomalu nabourávat stabilita systému. Je to zpùsobeno tím, že vozidlo zaène pøedjíždìt až ve chvíli, kdy mu to umožní podmínka motivaèního kritéria, viz odstavec \ref{sec:motkrit}. Jeho rychlost se mezitím sníží a on až poté zaène pøedjíždìt. Tento proces se šíøí mezi jednotlivými vozidly.
+
+Poté co ho všechna pøedjedou, tak teï už poslední vozidlo zrychlí na preferovanou rychlost $250 \kmh$. Vozidla pøed ním ovšem nejsou ve stacionárním stavu, došlo tam k narušení stability a vozidla pøed ním se navzájem pøedjíždìjí, takže i když má vozidlo nastavenou preferovanou rychlost velmi vysokou, není šance aby se pøed tyto vozidla dostal. Znázornìno je to na obrázku \ref{fig:hustotafirstslow}d, kde vozidlo pøedjelo asi jen 6 vozidel oproti tomu, když ho všechna vozidla pøedjela, a to za stejný èas. Jeho koneèná poloha se nachází v rùžovì zvýraznìném sloupci vozidel. Tato simulace ukazuje vysokou závislost na nastavení parametrù nejen pøedjíždìcího modelu, ale také na nastavení chvíle, kdy øidiè zaène opìt zrychlovat.
+
+Na obrázku \ref{fig:nautozpomalzrychdrahacas} je potom vidìt závislost dráhy na èase. Je vidìt, že èelní vozidlo je postupnì pøedjíždìno ostatními, na své pùvodní místo se ovšem za stejný èas nevrátí a skonèí nìkde mezi ostatními vozidly, což dokumentuje obrázek \ref{fig:nautozpomalzrychdrahacasvyrezy}a. Na výøezu \ref{fig:nautozpomalzrychdrahacasvyrezy}b je potom vidìt, že všechna vozidla nejsou ve stacionárním stavu, že èelní vozidlo celkovì stabilitu systému narušilo.
+
+U cyklické dálnice se stacionární stav nenaboural tolik, jako u nekoneèné, je pouze vidìt zvìtšení vzdálenosti mezi jednotlivými vozidly pøi zpomalení vozidla, viz obrázek \ref{fig:cautozpomalzrychdrahacas}. Není úplnì pøesnì jasné, proè se dálnice v pøípadì cykliènosti chová jinak než u nekoneèné. Hustota u cyklické dálnice odpovídá poèáteèním pøedpokladùm, vozidlo pøedjíždí plynule ostatní vozidla ve stacionárním stavu, viz obrázek \ref{cautozpomalzrychhk}. Rùžovì je zobrazen sloupec s vozidly, ve kterém se nachází pøedjíždìcí. 
+
+
+\begin{figure}%
+\includegraphics[width=0.7\columnwidth]{cautozpomalzrych/histogram-konecoznacen}%
+\caption{Simulace pøi snížení a následném zvýšení rychlosti èelního vozidla - finální distribuce - cyklická dálnice}%
+\label{cautozpomalzrychhk}%
+\end{figure}
+
+
+
+
+
+
+
+\section{Uzavøení pruhu komunikace}
+
+V poslední simulaci se v urèitém úseku uzavøe pravý jízdní pruh komunikace. Vozidla v tomto pøípadì budou mít na zaèátku nastavenu náhodnou rychlost a polohu stejnì jako v simulaci \ref{sec:nahrych}. To znamená, že pokud by zde uzavírka nebyla, vozidla postupnì pøejdou do skupin stacionárního stavu.
+
+Hlavní problém této simulace se týká nastavení parametrù pøedjíždìcího modelu. Nejprve byla vyzkoušena simulace s parametry používanými do teï, to jest zdvoøilostní koeficient $p = 0.5$, dále $b_r = 0.3$ pro vozidla v pravém jízdním pruhu a $b_r = -0.1$ pro levý pruh, což znaèí, že øidiè se ohlíží na vozidlo jedoucí ve vedlejším pruhu, pokud je v levém pruhu, snaží se hned zaøadit do pravého. Takto spuštìná simulace vùbec neodpovídala realitì. Vozidla, která mìla nízkou preferovanou rychlost a jela v pravém jízdním pruhu vùbec nemìla šanci se této uzavírce pruhu vyhnout. Je to zpùsobeno tím, že berou pøílišný ohled na vozidlo jedoucí v levém pruhu. Proto bylo nutné tyto parametry pøenastavit.
+
+Èím blíže se bude vozidlo blížit uzavírce, tím ménì ho zajímá vozidlo ve vedlejším pruhu. Pøeneseno do pøedjíždìcího modelu, 500 m pøed pøekážkou má každé vozidlo nastavenou hodnotu zdvoøilostního koeficientu na hodnotu $p=0.2$ a 150 m už jen $p = 0.05$. Potom, co se uzavírka pruhu objede, se opìt nastaví $p$ na výchozí hodnotu 0.5. Preference levého èi pravého pruhu je pak nastavena na nulu, $b_r = 0$.
+
+Vozidla byla vygenerována až do polohy 5000m a jízdní pruh byl uzavøen od 6050m do 6150m (na obrázku \ref{fig:uzavrenihustota}a znázornìno dvìma vozidly v úseku 6000 - 6200m). Za tímto místem už by se vozidla mìla snažit klasicky dostat na svoji preferovanou rychlost.
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{nuzaver100m/hustotazacatek} & \includegraphics[width=6.5cm]{nuzaver100m/hustotakonec} \\
+a) Poèáteèní distribuce & b) Koneèná distribuce \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{cuzaver100m/hustotazacatek} & \includegraphics[width=6.5cm]{cuzaver100m/hustotakonec} \\
+c) Poèáteèní distribuce & d) Koneèná distribuce
+\end{tabular}
+\caption{Simulace uzavøení jízdního pruhu. {\bfseries a)} poèáteèní distribuce vozidel pøi nekoneèné dálnici {\bfseries b)} finální distribuce pøi nekoneèné dálnici {\bfseries c)} poèáteèní distribuce pøi cyklické dálnici délky 8 km {\bfseries d)} finální distribuce pro cyklickou dálnici pøi cyklické dálnici délky 8 km}
+\label{fig:uzavrenihustota}
+\end{figure}
+
+Na obrázku \ref{fig:uzavrenihustota}a je vidìt rozložení hustoty vozidel po èásteènì náhodném vygenerování jejich pozic. Pokud simulace pobìží dostateènì dlouho (více než tøi hodiny) výsledkem je obrázek \ref{fig:uzavrenihustota}b, kde jsou znatelnì vidìt jednotlivé skupiny vozidel, které se shlukují. Zaprvé je to tím, že se k sobì shlukují vozidla se stejnými preferovanými rychlostmi a za druhé, že po pøedjetí pøekážky vozidla již nejeví takový zájem pøedjíždìt vozidla pøed sebou, i když mají tøeba o nìkolik km nižší preferovanou rychlost. Prùbìh polohy na èase je potom znázornìn na obrázku \ref{fig:ncuzaver100mdrahacas}a. Je vidìt, že u pøekážky na 6000m (na ose $y$) vozidla velmi zpomalují, navíc nìkteré musejí èekat, než pøejede vozidlo za ním ve druhém jízdním pruhu a až pak se mohou zaøadit a pøejet si. Druhý extrém nastává v pøípadì, že vozidlo v levém jízdním pruhu jede rychle, a vozidlo mu tam zprava \uv{vjede}. Nastává rychlé brždìní, opìt znázornìno na obrázku \ref{fig:ncuzaver100mdrahacas}a.
+
+U cyklické dálnice se vygenerovala opìt vozidla na prvních 5000m, viz. obrázek \ref{fig:uzavrenihustota}c . Výsledky simulace docela pøekvapují, protože vozidla opìt utváøí urèité skupinky, viz. obrázek \ref{fig:uzavrenihustota}d, což by se na tak krátké vzdálenosti ani nepøedpokládalo. Na obrázku \ref{fig:ncuzaver100mdrahacas}b je znázornìna závislost polohy na èase. Nìkterá vozidla pouze musejí pøibrzdit. Poté, co se však utvoøí skupinky, již není nutné pøi pøedjíždìní pøekážky zpomalovat.
+
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{nuzaver100m/drahacas} & \includegraphics[width=0.45\textwidth]{cuzaver100m/drahacas}  \\
+a) Nekoneèná dálnice & b) Cyklická dálnice
+\end{tabular}
+\caption{Simulace pøi uzavøení jednoho pruhu {\bfseries a)} závislost polohy vozidel na èase - nekoneèná dálnice {\bfseries b)} závislost polohy vozidel na èase - cyklická dálnice}
+\label{fig:ncuzaver100mdrahacas}
+\end{figure}

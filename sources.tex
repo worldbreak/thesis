@@ -1,0 +1,931 @@
+\chapter{Zdrojový kód}
+\label{ch:sources}
+V této pøíloze uvádíme kompletní výpis zdrojového kódu programu popsaného v této bakaláøské práci. 
+
+
+\section{Hlavní program}
+
+
+
+\begin{lstlisting}[caption=Highway.java]
+import mathcomps.JDrawPanel;
+import utilities.Conversions;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+
+public class Highway extends JFrame implements ComponentListener, Runnable {
+
+	
+	private class JHighWay extends JDrawPanel {
+		
+		double hwLength = 1000; /* in meters */
+		double position = 0; /* position of the left edge */
+		double zoom = 40; /* meters per screen */
+        double viewAngle = Conversions.Radians(45); /* in degrees */
+		
+		double markerLength = 1.5; /* marker between lanes */
+		double markerWidth = 1;
+
+		double hwWidth = 10; /* width in meters */
+        int borderX = 50; /* border along the road in pixels */
+        int borderY = 70;
+
+		int w, h;
+
+        Polygon road;
+        Font numbersFont = new Font("Times New Roman", Font.PLAIN, 20);
+		
+		private void drawHighway(Graphics g) {
+			g.setColor( Color.GRAY );
+            /* corners of the road */
+            int[] xs = new int[4];
+            int[] ys = new int[4];
+            xs[0] = borderX; ys[0] = h - borderY; //left down
+            xs[1] = w - 2*borderX; ys[1] = h - borderY; //right down
+            xs[2] = w - borderX; ys[2] = borderY; //right up
+            xs[3] = 2*borderX; ys[3] = borderY;
+			road = new Polygon(xs, ys, 4);
+            g.fillPolygon(road);
+            g.setClip(road);
+            double[] O = {xs[0], ys[0]};
+            double[] A = {xs[1], ys[1]};
+            double[] B = {xs[3], ys[3]};
+
+            setScale(O, A, B, position, -hwWidth/2, position+zoom, hwWidth/2);
+            g.setColor(Color.WHITE);
+
+            /* markers  */
+
+            int im = (int)(position/(2*markerLength) - 1);
+            double xm;
+            do {
+                xm = (2*im+1) * markerLength;
+                fillRhomboid(g,
+                        xm, -markerWidth / 2,
+                        xm + markerLength, -markerWidth / 2,
+                        xm + markerLength, markerWidth / 2,
+                        xm, markerWidth / 2
+                );
+                im++;
+            } while (xm < position + zoom);
+        }
+
+        public void update(Graphics g) {
+            paint(g);
+        }
+
+		public void paint (Graphics g) {
+            super.paint(g);
+
+	    w = getWidth(); h = getHeight();
+
+            position = (carList==null)?0:carList.cars[selectedCar].x-zoom/2;
+			drawHighway(g);
+            move(g,position, -hwWidth/2);
+            line(g,position, hwWidth/2);
+            if (carList==null)
+                return;
+
+            for (int i=0; i < carList.getCount(); i++ ) {
+                CarList.CarInfo car = carList.cars[i];
+                if ((car.x>=position)&(car.x<=position+zoom)) {
+                    int[] coords = transform(car.x, 0);
+                    g.drawImage(car.image, coords[0],
+                        (car.lane==1)?coords[1]-30:coords[1]-90, null);
+                }
+            }
+
+            g.setFont(numbersFont);
+            g.setClip(null);
+            Rectangle roadBounds = road.getBounds();
+            for (int i=0; i < carList.getCount(); i++)
+                if ((carList.cars[i].x >= position)&(carList.cars[i].x<=position+zoom)) {
+                int[] coords = transform(carList.cars[i].x, 0);
+                g.setColor((i==selectedCar)?Color.YELLOW:Color.WHITE);
+                g.drawString(""+i, coords[0] + 30, roadBounds.y + roadBounds.height + 30);
+            }
+	}		
+	}
+
+    public void run() {
+        while (animator!=null) {
+        carList.nextStep();
+        if (drawing) highWay.repaint();
+        controlPanel.refreshData();
+        timeLabel.setText("Time: t = " + Math.round(carList.time));
+        fileWriteSteps++;
+        if (fileWriteSteps>fileWriteStepsMax) {
+             fileWriteSteps = 0;
+             fileCreator.writeStatus(carList);
+        }
+        try {
+          //  Thread.sleep(80);
+        } catch (Exception e) {
+            System.out.println("Thread problem");
+        }
+        }
+     }
+    Thread animator = null;
+	
+    JHighWay   highWay;
+    JPanel     contentPane;
+    JButton    runBtn, generateBtn, drawingBtn, specialBtn;
+    CarList    carList = null;
+    JComboBox  carSelector;
+    JScrollBar zoomBar;
+    JLabel     zoomLabel;
+    JLabel     timeLabel;
+    ControlPanel controlPanel;
+    FileCreator fileCreator;
+
+    int fileWriteStepsMax = 100;
+    int fileWriteSteps = fileWriteStepsMax;
+    boolean drawing = true;
+
+
+    int selectedCar;
+	
+	public Highway() {
+		super("Highway simulation");
+		setExtendedState( getExtendedState()|JFrame.MAXIMIZED_BOTH );
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 400, 400 );		
+		createGUI();
+		setVisible(true);
+        // loading picture
+
+	}
+	
+	public static void main (String[] args) {		
+		new Highway();
+	}
+
+
+	private void createGUI() {
+		contentPane = new JPanel();
+		contentPane.setBackground( Color.DARK_GRAY );
+		contentPane.setLayout( null );
+		addComponentListener( this );
+		
+		setContentPane( contentPane );
+		highWay = new JHighWay();
+		add(highWay);
+
+        runBtn = new JButton("Start simulation");
+        runBtn.addActionListener(new RunButton());
+        runBtn.setEnabled(false);
+        add(runBtn);
+
+        generateBtn = new JButton("Generate cars");
+        generateBtn.addActionListener(new GenerateButton());
+        add(generateBtn);
+
+        carSelector = new JComboBox();
+        carSelector.setEditable(false);
+        carSelector.setEnabled(false);
+        carSelector.addActionListener(new CarSelected());
+        add(carSelector);
+
+        zoomBar = new JScrollBar(JScrollBar.HORIZONTAL, 40, 5, 20, 500);
+        zoomBar.addAdjustmentListener(new ZoomChange());
+        add(zoomBar);
+        zoomLabel = new JLabel("Meters / screen = " + highWay.zoom);
+        zoomLabel.setForeground(Color.YELLOW);
+        add(zoomLabel);
+
+        controlPanel = new ControlPanel();
+        controlPanel.setBackground(Color.DARK_GRAY);
+        add(controlPanel);
+
+        timeLabel = new JLabel("Time: t = ");
+        timeLabel.setForeground(Color.YELLOW);
+        add(timeLabel);
+
+        drawingBtn = new JButton("Stop drawing");
+        drawingBtn.addActionListener(new DrawingButton());
+        add(drawingBtn);
+
+        specialBtn = new JButton("");
+        specialBtn.addActionListener(new SpecialButton());
+        add(specialBtn);
+
+	}
+	
+	private void arrangeGUI() {
+        zoomBar.setBounds(50, 30, getWidth() - 100, 20);
+        zoomLabel.setBounds(50, 10, getWidth() - 100, 20);
+		highWay.setBounds(50, 50, getWidth()-100, getHeight()/3);
+        runBtn.setBounds(50, getHeight()/3 + 70, 200, 30);
+        generateBtn.setBounds(300, getHeight()/3 + 70, 200, 30);
+        drawingBtn.setBounds(520, getHeight()/3 + 70, 200, 30);
+        specialBtn.setBounds(750, getHeight()/3 + 70, 200, 30);
+        carSelector.setBounds(250, getHeight()/3 + 130, 100, 30);
+        controlPanel.setBounds(50, getHeight()/3 + 170, getWidth()/3, 
+	  (int)(1.5*getHeight()/3));
+        controlPanel.arrangeGUI();
+        timeLabel.setBounds(50 + (getWidth()-100)/2, 10, getWidth()-100, 20);
+        //
+        specialBtn.setText(SpecialEventsList[specials]);
+	}
+	
+	public void componentHidden(ComponentEvent e) {}
+	public void componentResized(ComponentEvent e) {
+		arrangeGUI();
+	}
+	public void componentMoved(ComponentEvent e) {}
+	public void componentShown(ComponentEvent e) {
+		arrangeGUI();	
+	}
+		
+	private class RunButton implements ActionListener {
+        public void actionPerformed (ActionEvent e){
+            if (animator==null)
+            {
+                runBtn.setText("Stop simulation");
+                fileCreator.initialize(carList, "cars");
+                animator = new Thread(Highway.this);
+                animator.start();
+            }
+                else
+            {
+                animator.interrupt();
+                animator = null;
+                runBtn.setText("Start simulation");
+                fileCreator.finalize();
+
+            }
+        }
+    }
+
+    private class GenerateButton implements ActionListener {
+        public void actionPerformed (ActionEvent e) {
+            int N = 10;
+            carList = new CarList(N);
+
+            double distance = 100;
+            double vFree = Conversions.KmHtoMS(120);
+            double vLast=0;
+            double xLast=0;
+
+            //equidistantly distributed
+            for (int j=0;j < N-1; j++){
+                CarList.CarInfo car = carList.cars[j];
+                car.x = j*distance;
+                car.vFree = vFree;
+                vLast = car.v = equilibriumVelocity(0, 2*vFree, 0, distance);
+            }
+
+            // we set up the leading car separately
+            CarList.CarInfo car = carList.cars[N-1];
+            car.x = (N-1)*distance;
+            car.v = car.vFree = vLast;
+
+
+            fileCreator = new FileCreator();
+
+            carSelector.removeAllItems();
+            for (int i=0; i < carList.getCount(); i++)
+                carSelector.addItem("Car " + i);
+            carSelector.setEnabled(true );
+
+            highWay.repaint();
+            runBtn.setEnabled(true);
+            controlPanel.initialize(carList);
+            controlPanel.arrangeGUI();
+            controlPanel.setCar(0);
+            generateBtn.setEnabled(false);
+        }
+    }
+
+    private class CarSelected implements ActionListener {
+        public void actionPerformed (ActionEvent e ) {
+            selectedCar = carSelector.getSelectedIndex();
+            controlPanel.setCar(selectedCar);
+            highWay.repaint();
+        }
+    }
+
+    private class ZoomChange implements AdjustmentListener {
+        public void adjustmentValueChanged (AdjustmentEvent e) {
+            highWay.zoom = e.getValue();
+            zoomLabel.setText("Meters / screen = " + e.getValue());
+            if ((animator!=null)&(!animator.isAlive())) {
+                highWay.repaint();
+            }
+        }
+    }
+
+    private class DrawingButton implements  ActionListener {
+        public void  actionPerformed(ActionEvent e) {
+            if (drawing) {
+                drawingBtn.setText("Restore drawing");
+                drawing = false;
+            }
+            else {
+                drawingBtn.setText("Stop drawing");
+                drawing = true;
+            }
+        }
+    }
+
+
+    int specials = 0;
+    public static final String[]
+      SpecialEventsList = { "Slow down leading car", "Accelerate the same car"};
+
+    private class SpecialButton implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            CarList.CarInfo car;
+            switch (specials) {
+                case 0:
+                    /* leading car slows down */
+                    car = carList.cars[carList.getCount()-1];
+                    car.vFree = Conversions.KmHtoMS(50);
+                    break;
+                case 1: /* accelerate it back */
+                    car = carList.cars[carList.getCount()-1];
+                    car.vFree = Conversions.KmHtoMS(250);
+                    car.a = 1;
+                    car.p = 0;
+                    car.rightBias=0;
+                    car.leftUnBias=0;
+                    break;
+            }
+            specials = (specials==1)?0:specials+1;
+            specialBtn.setText(SpecialEventsList[specials]);
+        }
+    }
+		
+	public double y(double x,int i, double distance){
+        CarList.CarInfo car = carList.cars[i];
+        double afree = car.a * (1 - carList.power(x/car.vFree, car.delta));
+
+        double s = distance;
+        double sStar = car.L + x*car.T;//
+        return afree - car.a * carList.sqr(sStar / s);
+
+    }
+
+    public double equilibriumVelocity(double vLow,double vHigh,int i, double distance){
+       double nextIteration;
+       double n=0;
+       double epsilon = 1E-10;
+       do{
+            n++;
+            nextIteration = vHigh- 
+	      ((y(vHigh,i,distance)*(vHigh-vLow))/
+	      (y(vHigh,i,distance)-y(vLow,i,distance)));
+            if ((y(nextIteration,i,distance)*y(vLow,i,distance))<0){
+                vHigh = nextIteration;
+            }
+            else
+            {
+                vLow = nextIteration;
+            }
+       }
+       while(Math.abs(y(nextIteration,i,distance))>=epsilon);
+        System.out.println("Method of secants converged after " + n + " steps");
+       return nextIteration;
+    }
+} 
+\end{lstlisting}
+
+
+\begin{lstlisting}[caption=ControlPanel.java]
+import utilities.Conversions;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class ControlPanel extends JPanel {
+
+    private JLabel currentCarLabel;
+    private JLabel speedLabel;
+    private JLabel positionLabel;
+    private JLabel vFreeLabel;
+    private JLabel nextCarLabel;
+    private JLabel nextCarSpeedLabel;
+    private JLabel nextCarDistanceLabel;
+    private JLabel prevCarLabel;
+    private JLabel prevCarSpeedLabel;
+    private JLabel prevCarDistanceLabel;
+
+    private int carIndex = 0;
+    private CarList carList;
+    private boolean initialized = false;
+    private int width, height;
+
+
+    public void initialize(CarList carsList) {
+        createGUI();
+        //
+        carList = carsList;
+        initialized = true;
+    }
+
+    public void setCar(int i) {
+        carIndex = i;
+        //
+        refreshData();
+    }
+
+    public void createGUI() {
+        setBackground(Color.BLACK);
+        setLayout(null);
+        //
+        currentCarLabel = new JLabel("Selected car:");
+        currentCarLabel.setForeground(Color.YELLOW);
+        add(currentCarLabel);
+
+        positionLabel = new JLabel("Position: x = ");
+        add(positionLabel);
+        speedLabel = new JLabel("Speed: v = ");
+        add(speedLabel);
+        vFreeLabel = new JLabel("Free speed: vf = ");
+        add(vFreeLabel);
+
+        nextCarLabel = new JLabel("Next car: ");
+        nextCarLabel.setForeground(Color.YELLOW);
+        add(nextCarLabel);
+
+        nextCarDistanceLabel = new JLabel("Distance: s = ");
+        add(nextCarDistanceLabel);
+
+        nextCarSpeedLabel = new JLabel("Speed: v = ");
+        add(nextCarSpeedLabel);
+
+        prevCarLabel = new JLabel("Previous car: ");
+        prevCarLabel.setForeground(Color.YELLOW);
+        add(prevCarLabel);
+
+        prevCarDistanceLabel = new JLabel("Distance: s = ");
+        add(prevCarDistanceLabel);
+
+        prevCarSpeedLabel = new JLabel("Speed: v = ");
+        add(prevCarSpeedLabel);
+
+    }
+
+    public void arrangeGUI() {
+        if (!initialized)
+            return;
+        width = getWidth();
+        height = getHeight();
+        currentCarLabel.setBounds(20, 0, width-40, 30);
+        positionLabel.setBounds(20, 30, width-40, 30);
+        speedLabel.setBounds(20, 60, width-40, 30);
+        vFreeLabel.setBounds(20, 90, width-40, 30);
+        nextCarLabel.setBounds(20, 120, width-40, 30);
+        nextCarDistanceLabel.setBounds(20, 150, width-40, 30);
+        nextCarSpeedLabel.setBounds(20, 180, width-40, 30);
+        prevCarLabel.setBounds(20, 210, width-40, 30);
+        prevCarDistanceLabel.setBounds(20, 240, width-40, 30);
+        prevCarSpeedLabel.setBounds(20, 270, width-40, 30);
+    }
+
+    public void refreshData() {
+        if (!initialized)
+            return;
+        CarList.CarInfo car = carList.cars[carIndex];
+        currentCarLabel.setText("Selected car: " + carIndex);
+        positionLabel.setText("Position x = " + Math.round(car.x) + " m");
+        speedLabel.setText("Speed v = " + 
+	  Math.round(Conversions.MStoKmH(car.v)) + " km/h");
+        vFreeLabel.setText("Free speed vf = " + 
+	  Math.round(Conversions.MStoKmH(car.vFree)) + " km/h");
+        int iNext = carList.findLeader(carIndex, car.lane);
+
+        if (iNext < 0) {
+            nextCarLabel.setText("this car is the leading car in the " 
+	      + Conversions.LaneToStr(car.lane));
+            nextCarDistanceLabel.setText("");
+            nextCarSpeedLabel.setText("");
+        } else {
+            CarList.CarInfo nextCar = carList.cars[iNext];
+            nextCarLabel.setText("Next car: " + iNext);
+            nextCarDistanceLabel.setText("Distance: s = " +
+	      Math.round(nextCar.x - car.x) + " m");
+            nextCarSpeedLabel.setText("Speed: v = " 
+	      + Math.round(Conversions.MStoKmH(nextCar.v)) + " km/h");
+        }
+
+        int iPrev = carList.findFollower(carIndex, car.lane);
+
+        if (iPrev < 0) {
+            prevCarLabel.setText("this car is the last car in the " 
+	      + Conversions.LaneToStr(car.lane));
+            prevCarDistanceLabel.setText("");
+            prevCarSpeedLabel.setText("");
+        } else {
+            CarList.CarInfo prevCar = carList.cars[iPrev];
+            prevCarLabel.setText("Previous car: " + iPrev);
+            prevCarDistanceLabel.setText("Distance: s = " +
+	      Math.round(prevCar.x - car.x) + " m");
+            prevCarSpeedLabel.setText("Speed: v = " + 
+	      Math.round(Conversions.MStoKmH(prevCar.v)) + " km/h");
+        }
+
+        if ((iNext>=0)&(carList.cars[iNext].x - car.x<0))
+              nextCarDistanceLabel.setText("Distance: s = " +
+	  Math.round(carList.hwLength+carList.cars[iNext].x - car.x) + " m");
+        if ((iPrev>=0)&(carList.cars[iPrev].x-car.x>0))
+              prevCarDistanceLabel.setText("Distance: s = " + 
+	  Math.round(-(carList.hwLength-carList.cars[iPrev].x + car.x)) + " m");
+
+    }
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}[caption=CarList.java]
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+
+public class CarList {
+
+    public class CarInfo {
+        double x = 0;
+        double v = 0;
+        double vFree = 0;
+        double a = 0.3;
+        double b = 3;
+        double L = 7;
+        double T = 1.5;
+        double p = 0.5;
+        double rightBias = 0.3;
+        double leftUnBias = -0.1;
+        int    lane = 1;
+        double aThreshold = 0.2;
+        double bSafe = 4;
+        int delta = 4;
+        public Image image;
+        public String imageName;
+
+        public CarInfo(String imageFile) {
+            try {
+                imageName = imageFile;
+                image = ImageIO.read(new File(imageFile));
+            }
+            catch (Exception e) {
+                System.out.println("Error reading " + imageFile);
+            }
+        }
+
+        public int nextLane() {
+            return (lane==1)?2:1;
+        }  }
+
+    private int n;
+    double time = 0;
+    private String defaultImageFile = "car.png";
+    public CarInfo[] cars;
+    double hwLength = 1000;
+    boolean cyclic = true;
+    public CarList(int numberOfCars) {
+        n = numberOfCars;
+        cars = new CarInfo[n];
+        for (int i = 0; i<n; i++) {
+            cars[i] = new CarInfo(defaultImageFile);
+        }
+    }
+
+    public int getCount () {
+        return cars.length;
+    }
+
+    private CarInfo copyCar(CarInfo source) {
+        CarInfo target = new CarInfo(source.imageName);
+        target.x = source.x;
+        target.v = source.v;
+        target.vFree = source.vFree;
+        target.a = source.a;
+        target.b = source.b;
+        target.L = source.L;
+        target.T = source.T;
+        target.lane = source.lane;
+        target.aThreshold = source.aThreshold;
+        target.bSafe = source.bSafe;
+        target.p = source.p;
+        return target;
+    }
+
+    private CarList copyCars(CarList source) {
+        int n = source.getCount();
+        CarList target = new CarList(n);
+        for (int i =0; i<n; i++)
+            target.cars[i] = copyCar(source.cars[i]);
+        return target;
+    }
+
+    double dt = 0.01;
+
+    public double sqr (double x) {
+        return x*x;
+    }
+
+    public double power(double x, int n) {
+        double y = 1;
+        for (int i = 0; i < n; i++)
+            y *= x;
+        return y;
+    }
+
+    public int findLeader(int i, int lane) {
+        if (i<0)
+            return -1;
+        double minDist = -1; //negative distance corresponds to leading car
+        double dist;
+        int lead = -1;
+        for (int j = 0; j < getCount(); j++)
+            if ((i!=j)&(cars[j].lane==lane)) {
+                dist = cars[j].x - cars[i].x;
+                if ((dist<0)&cyclic)
+                    dist = (hwLength-cars[i].x) + (cars[j].x - 0);
+                if ((dist>0)&((minDist<0)|(dist<minDist))) {
+                    minDist = dist;
+                    lead = j;
+                }
+            }
+         return lead;  }
+
+
+    public int findFollower(int i, int lane) {
+        if (i<0)
+            return -1;
+        double minDist = -1; 
+	    //negative distance corresponds to the last car
+        double dist;
+        int follow = -1;
+        for (int j = 0; j < getCount(); j++)
+            if ((i!=j)&(cars[j].lane==lane)) {
+                dist = cars[i].x - cars[j].x;
+                if ((dist<0)&(cyclic))
+                    dist = (hwLength-cars[j].x) + (cars[i].x-0);
+                if ((dist>0)&((minDist<0)|(dist<minDist))) {
+                    minDist = dist;
+                    follow = j;
+                } }
+        return follow;
+    }
+
+
+    public double acceleration (int i, int j) {
+        if ((j < 0)|(i<0))
+            return 0;
+        CarInfo car = cars[i];
+        double s = cars[j].x - 
+	    car.x>0?cars[j].x - car.x:hwLength-car.x+cars[j].x;
+        double sStar = car.L + 
+	    car.v*car.T + car.v * (car.v - cars[j].v) 
+	    / (2 * Math.sqrt(car.a * car.b));
+        return  - car.a * sqr(sStar / s);
+    }
+
+    boolean overtaking = true;
+
+    public void nextStep() {
+        CarList old = copyCars(this);
+        for (int i = 0; i < old.getCount(); i++) {
+            CarInfo car = cars[i];
+            int leader = findLeader(i, car.lane); 
+	      //leading car in the current lane
+            int leaderNext = findLeader(i, car.nextLane()); 
+	      //leading car in the next lane
+            int follower = findFollower(i, car.nextLane()); 
+	      //following car in the next lane
+            double aFree = (car.vFree==0)?0:car.a * 
+	      (1 - power(car.v/car.vFree, car.delta));
+            double acc1 = old.acceleration(i, leader);  
+	      //acceleration in the current lane
+            double acc2 = old.acceleration(i, leaderNext); 
+	    //acceleration in the next lane
+            // acceleration of previous car in the next lane
+            double accB = old.acceleration(follower, 
+	      findLeader(follower, car.nextLane()));
+            // hypothetical acceleration of previous car if the current car 
+	    // changes the lane
+            double accB2 = old.acceleration(follower, i);
+            // we prefer to ride in the right lane
+            double right = (car.lane==2)?car.rightBias:car.leftUnBias;
+
+            boolean incentive = right + acc2 - acc1 > car.p*(accB - accB2) 
+		+ car.aThreshold;
+            boolean politeness = accB2 > - car.bSafe;
+
+            double acc;
+
+            if (overtaking&incentive&politeness) {
+                acc = acc2;
+                car.lane = car.nextLane();
+            } else {
+                acc = acc1;
+            }
+            car.v += (aFree + acc) * dt;
+            car.x += car.v * dt;
+            if (cyclic)
+            if (car.x>=hwLength){
+                car.x = car.x-hwLength;
+            }
+            time += dt;
+        }
+    }
+} 
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[caption=FileCreator.java]
+import java.io.*;
+import java.util.Scanner;
+
+public class FileCreator {
+
+    private String gnuFile;
+    private PrintWriter out;
+    private PrintWriter densityFile;
+
+    public void initialize(CarList carList, String gnuFileName) {
+        try {
+            gnuFile = gnuFileName;
+            FileWriter outFilePositions = new FileWriter(gnuFileName + ".pos");
+            PrintWriter outPositions = new PrintWriter(outFilePositions);
+            outPositions.println("reset");
+            outPositions.println("set style data lines");
+            outPositions.print("plot ");
+            for (int i = 0; i < carList.getCount(); i++) {
+                outPositions.print("'" + gnuFileName + "' using 1:" + (i+2) + " notitle");
+                if (i < carList.getCount() - 1) {
+                    outPositions.print(", ");
+                }
+            }
+            outPositions.close();
+            //
+            FileWriter outFile = new FileWriter(gnuFileName);
+            out = new PrintWriter(outFile);
+        }
+        catch (Exception e) {
+            System.out.println("Error creating " + gnuFile);
+        }
+
+    }
+
+    public void finalize() {
+        out.close();
+    }
+
+    public void writeStatus(CarList carList) {
+        out.print(carList.time + "       ");
+        for (int i = 0; i < carList.getCount(); i++) {
+            out.print(carList.cars[i].x + "   ");
+        }
+        out.println();
+    } } 
+\end{lstlisting}
+
+
+
+\section{Knihovna Utilities}
+
+\begin{lstlisting}[caption = conversions.java]
+package utilities;
+
+public class Conversions {
+
+    public static double Radians(int degrees) {
+        return degrees*Math.PI / 180;
+    }
+
+    public static double KmHtoMS(double kmh) {
+        return kmh / 3.6;
+    }
+
+    public static double MStoKmH(double ms) {
+        return ms * 3.6;
+    }
+
+    public static String LaneToStr(int lane) {
+        return (lane==1)?"right lane":"left lane";
+    }
+} 
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[caption=vectors.java]
+package utilities;
+
+public class Vectors {
+
+    public static double[] Vector(double[] A, double[] B) {
+        double[] v = new double[A.length];
+        for (int i=0; i<A.length; i++)
+            v[i] = B[i] - A[i];
+        return v;
+    }
+
+    public static double[] Multiply(double[] v, double k) {
+        double[] newV = new double[v.length];
+        for (int i = 0; i < v.length; i++)
+            newV[i] = k * v[i];
+        return newV;
+    }
+
+    public static double[] LinComb( double alpha, double[] u, double beta, double[] v) {
+        double[] newV = new double[u.length];
+        for (int i = 0; i < u.length; i++)
+            newV[i] = alpha * u[i] + beta * v[i];
+        return newV;
+    }
+
+    public static double[] LinComb( double[] r0, double alpha, 
+      double[] u, double beta, double[] v) {
+        double[] newV = new double[u.length];
+        for (int i = 0; i < u.length; i++)
+            newV[i] = r0[i] + alpha * u[i] + beta * v[i];
+        return newV;
+    }
+} 
+\end{lstlisting}
+
+
+
+\newpage
+\section{Knihovna mathcomps}
+
+\begin{lstlisting}[caption=JDrawPanel.java]
+ package mathcomps;
+
+import utilities.Vectors;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class JDrawPanel extends JPanel {
+	
+	protected double[] O;
+    protected double x0, y0, x1, y1;
+	protected int w, h;
+    protected double[] u, v;
+	protected boolean initialized = false;
+	
+	public JDrawPanel () {
+		setBackground(Color.BLACK);
+	}
+
+    public void setScale (double[] Origin, double[]A, 
+      double[]B, double xO, double yO, double xA, double yB) {
+        O = Origin;
+        u = Vectors.Multiply(Vectors.Vector(O, A), 1/(xA-xO) );
+        v = Vectors.Multiply(Vectors.Vector(O, B), 1/(yB-yO) );      //(10,7)
+        x0 = xO; y0 = yO;
+        x1 = xA; y1 = yB;
+        w = getWidth();
+        h = getHeight();
+        initialized = true;
+    }
+    public boolean isInitialized() {
+		return initialized;
+	}
+
+    public int[] transform(double x, double y) {
+        double [] vec = Vectors.LinComb(O, x-x0, u, y-y0, v);
+        int [] P = {(int)vec[0], (int)vec[1]};
+        return P;
+    }
+
+    private int[] lastPoint = new int[2];
+	
+	public void move(Graphics g, double x, double y) {
+       lastPoint = transform(x, y);
+	}
+	
+	public void line(Graphics g, double x, double y) {
+        int[] P = transform(x, y);
+        g.drawLine( lastPoint[0], lastPoint[1], P[0], P[1]);
+        lastPoint[0] = P[0];
+        lastPoint[1] = P[1];
+	}
+	
+    public void fillRhomboid( Graphics g,
+                              double a1, double b1,
+                              double a2, double b2,
+                              double a3, double b3,
+                              double a4, double b4) {
+        int[] A1 = transform(a1, b1);
+        int[] A2 = transform(a2, b2);
+        int[] A3 = transform(a3, b3);
+        int[] A4 = transform(a4, b4);
+        int[] xs = {A1[0], A2[0], A3[0], A4[0]};
+        int[] ys = {A1[1], A2[1], A3[1], A4[1]};
+        Polygon p = new Polygon(xs, ys, 4);
+        g.fillPolygon(p);
+    } }
+\end{lstlisting}
+
+
+
+

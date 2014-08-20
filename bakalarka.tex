@@ -1,0 +1,316 @@
+\documentclass[10pt,a4paper,openright,fleqn,sumlimits,intlimits]{report}
+
+
+\usepackage{comment}
+
+
+\begin{comment}
+\setlength\textwidth{145mm}
+ \setlength\textheight{247mm}
+ \setlength\oddsidemargin{15mm}
+ \setlength\evensidemargin{0mm}
+ \setlength\topmargin{0mm}
+ \setlength\headsep{0mm}
+ \setlength\headheight{0mm} 
+\end{comment}
+
+\let\openright=\cleardoublepage
+
+\usepackage{geometry}
+%\usepackage{k336_thesis_macros} 
+%% Pokud používáte csLaTeX (doporuèeno):
+%\usepackage{czech}
+%% Pokud nikoliv:
+\usepackage[czech]{babel}
+\usepackage[cp1250]{inputenc}
+
+%% Použité kódování znakù: obvykle latin2, cp1250 nebo utf8:
+%\usepackage[utf8]{inputenc}
+\usepackage{makra}
+%% Ostatní balíèky
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{vector}
+\usepackage{indentfirst}
+\lstset{basicstyle=\small\ttfamily,
+commentstyle=\textit,
+keywordstyle=\bf\color{DarkBlue},
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false}
+\setlength{\overfullrule}{5pt}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+%% Balíèek hyperref, kterým jdou vyrábìt klikací odkazy v PDF,
+%% ale hlavnì ho používáme k uložení metadat do PDF (vèetnì obsahu).
+%% POZOR, nezapomeòte vyplnit jméno práce a autora.
+\usepackage[unicode]{hyperref}   % Musí být za všemi ostatními balíèky
+\hypersetup{pdftitle=Matematické modelování vybraných problémù v dopravì v jazyce Java}
+\hypersetup{pdfauthor=Miroslav Vaniš}
+
+
+
+%%% Drobné úpravy stylu
+
+% Tato makra pøesvìdèují mírnì ošklivým trikem LaTeX, aby hlavièky kapitol
+% sázel pøíèetnìji a nevynechával nad nimi spoustu místa. Smìle ignorujte.
+\makeatletter
+\def\@makechapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries \thechapter. #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+%\newcommand{\abstractpage}{
+%\cleardoublepage
+%\noindent
+%{\Huge \textbf{Abstract}}
+%\vspace{8ex}
+%\chapter*{Abstract}
+%}
+\def\iit{\textit}
+\def\free{\text{free}}
+\def\nfree{\text{nfree}}
+\def\safe{\text{safe}}
+\def\thr{\text{thr}}
+\def\inter{\text{int}}
+\def\n{\text{n}}
+\def\nm1{\text{n-1}}
+\def\m{\text{m}}
+\def\s{\text{s}}
+\def\kmh{\text{km/h}}
+\def\@makeschapterhead#1{
+  {\parindent \z@ \raggedright \normalfont
+   \Huge\bfseries #1
+   \par\nobreak
+   \vskip 20\p@
+}}
+\makeatother
+
+% Toto makro definuje kapitolu, která není oèíslovaná, ale je uvedena v obsahu.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+
+%%%%%
+\def\pd{\partial}
+\def\dd{\mathrm{d}}
+
+%\newcommand{\bb}[1]{\boldsymbol{#1}}
+
+\makeatletter
+\renewcommand \dotfill {\leavevmode \cleaders \hb@xt@ .65em{\hss .\hss }\hfill \kern \z@}
+\makeatother	
+
+\begin{document}
+\begin{comment}
+% Trochu volnìjší nastavení dìlení slov, než je default.
+\lefthyphenmin=2
+\righthyphenmin=2
+
+%%% Titulní strana práce
+papír pro razítko ústavu K611
+\newpage
+\pagestyle{empty}
+\begin{center}
+
+\large
+
+Èeské vysoké uèení technické v Praze
+
+\medskip
+
+Fakulta dopravní
+
+\vfill
+
+{\bf\Large BAKALÁØSKÁ PRÁCE}
+
+\vfill
+
+\centerline{\mbox{\includegraphics[width=60mm]{logo_cvut.pdf}}}
+
+\vfill
+\vspace{5mm}
+
+{\LARGE Miroslav Vaniš}
+
+\vspace{15mm}
+
+% Název práce pøesnì podle zadání
+{\LARGE\bfseries Matematické modelování vybraných problémù \\v dopravì v jazyce Java}
+
+\vfill
+
+% Název katedry nebo ústavu, kde byla práce oficiálnì zadána
+% (dle Organizaèní struktury MFF UK)
+Ústav aplikované matematiky
+
+\vfill
+
+\begin{tabular}{rl}
+
+Vedoucí bakaláøské práce: & Mgr. Martin Scholtz, Ph.D. \\
+\noalign{\vspace{2mm}}
+Studijní program: & Technika a technologie v dopravì a spojích \\
+\noalign{\vspace{2mm}}
+Studijní obor: & Automatizace a informatika \\
+\end{tabular}
+
+\vfill
+
+% Zde doplòte rok
+Praha 2013
+
+\end{center}
+
+\newpage
+Papír se zadáním Bc. práce
+
+\openright
+
+\noindent
+
+\vspace*{\fill}
+\noindent
+{\huge \textbf{%
+Podìkování%
+}}
+\vspace{3ex}\par
+\noindent
+Na tomto místì bych rád podìkoval všem, kteøí mi poskytli podklady a cenné rady pro vypracování této práce. Zvláštì pak dìkuji Mgr. Martinu Scholtzovi, PhD. za odborné vedení a konzultování bakaláøské práce i za rady, které mi poskytoval bìhem celého mého studia.
+\newpage
+
+%%% Strana s èestným prohlášením k bakaláøské práci
+
+\vglue 0pt plus 1fill
+
+
+
+\vspace{14 cm}
+\noindent
+{\huge \textbf{%
+Prohlášení%
+}}
+\vspace{3ex}\par
+\noindent
+Prohlašuji, že jsem tuto bakaláøskou práci vypracoval(a) samostatnì a výhradnì
+s~použitím citovaných pramenù, literatury a dalších odborných zdrojù a za pomoci svého školitele.
+
+\medskip\noindent
+Prohlašuji, že jsem predloženou práci vypracoval samostatne a že jsem uvedl veškeré použité
+informacní zdroje v souladu s Metodickým pokynem o etické príprave vysokoškolských
+záverecných prací.
+Nemám závažný duvod proti užívání tohoto školního díla ve smyslu § 60 Zákona c.121/2000
+Sb., o právu autorském, o právech souvisejících s právem autorským a o zmene nekterých
+zákonu (autorský zákon).
+\vspace{10mm}
+
+\hbox{\hbox to 0.5\hsize{%
+V Praze dne ............
+\hss}\hbox to 0.5\hsize{%
+Podpis autora ............
+\hss}}
+
+\vspace{20mm}
+\newpage
+
+%%% Povinná informaèní strana bakaláøské práce
+\end{comment}
+%\abstractpage
+\begin{comment}
+This bachelor thesis deals with programming an application, in which is implemented Intelligent Driver model and overtaking model MOBIL. The macroscopic and microscopic models are briefly described in the theoretical part. In my work are explained numerical methods for solving ordinary differential equations that are important for IDM and MOBIL. For programming these models was used Java.  For verification the rightness of these models were perfomed several simulations and the results are the graphs describing the behavior of individual vehicles or the behavior of the whole traffic flow.
+%\end{comment}
+\noindent{\Huge \textbf{Abstract}}
+\vskip 2.75\baselineskip
+In this bachelor thesis we have studied selected mathematical models developed to mimic the behavior of the real traffic flow. In the theoretical part we introduced some basic ideas related to the models of the traffic flow. We introduce both macroscopic and microscopic models, then we restrict our attention to the latter and briefly review existing microscopic models. Next we introduce the elementary theory of dynamical systems and discuss the stability analysis by linearization. Finally we present numerical methods for solving ordinary differential equations (Euler method, Runge-Kutta methods) and present the so-called Intelligent Driver Model (IDM) in detail. In the practical part of the thesis we implement the IDM model in computer language Java. Our application, being the most important result of the thesis, solves dynamical equations of IDM model and represents the results both in the graphic form and in the form of data files. Moreover, we have extended basic IDM model by overtaking model known as MOBIL. At the end of the thesis, after explaining main features and algorithms used in the application, we present full source code and a number of results obtained.
+% Prace v cestine musi krome abstraktu v anglictine obsahovat i
+% abstrakt v cestine.
+\vglue60mm
+\end{comment}
+%\noindent{\Huge \textbf{Abstrakt}}
+%\vskip 2.75\baselineskip
+
+
+\begin{comment}
+Tato bakalaøská práce se zabývá tvorbou aplikace, ve které je implementován Intelligent Driver model (IDM) a model pøedjíždìcí (MOBIL). V teoretické èásti jsou charakterizovány makroskopické a mikroskopické modely. V práci jsou dále vysvìtleny numerické metody pro øešení diferenciálních rovnic, které jsou dùležité pro popis modelù IDM a MOBIL. Pro naprogramování modelù byl využit programovací jazyk JAVA. Pro ovìøení správnosti tìchto modelù bylo provedeno nìkolik simulací, jejichž výsledkem jsou grafy popisující chování jednotlivých vozidel èi chování celého dopravního toku.
+%\end{comment}
+
+V této bakaláøské práci studujeme vybrané matematické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy  spojené s tìmito modely. Uvedeme jak makroskopické tak i mikroskopické modely. Poté se omezíme pouze na mikroskopické modely a  krátce je popíšeme. Dále se seznámíme se základní teorií dynamických systémù a jejich analýzou stability po linearizaci. Nakonec ukážeme numerické metody pro øešení obyèejných diferenciálních rovnic (Eulerova metoda, metody Runge-Kutta) a podrobnì vysvìtlíme, jak funguje Intelligent Driver Model (IDM).
+V praktické èásti této práce implementujeme IDM model do programovacího jazyka Java. Tato aplikace, která je hlavním výsledkem této práce, øeší rovnice IDM modelu a zobrazuje výsledky jak v grafické podobì, tak i ve formì datových souborù. Navíc rozšíøíme IDM model pøedjíždìcím modelem MOBIL.
+Na konci práce, po vysvìtlení základních vlastností programu, je uveden celý zdrojový kód aplikace a dosažené výsledky.
+
+
+\newpage
+
+
+\openright
+\pagestyle{plain}
+\setcounter{page}{1}
+\tableofcontents
+\end{comment}
+%\include{uvod}
+
+% Ukázka použití nìkterých konstrukcí LateXu (odkomentujte, chcete-li)
+% \include{ukazka}
+%\part{Teoretický úvod}
+\include{predidm}
+%\include{modely}
+%\input{dynsys}
+%\include{numerickemetody}
+%\include{IDM}
+
+%\part{Vypracování}
+
+%\include{program}
+%\include{sources}
+%\include{vysledky}
+%\include{zaver}
+
+
+%%% Seznam použité literatury
+\include{literatura}
+\addcontentsline{toc}{chapter}{Literatura}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Seznam obrázkù}
+
+\listoftables
+\addcontentsline{toc}{chapter}{Seznam tabulek}
+
+\begin{comment}
+%\listofappendices
+\chapter*{Seznam pøíloh}
+\addcontentsline{toc}{chapter}{Seznam pøíloh} 
+Pøíloha A: Obsah pøiloženého CD \dotfill \pageref{obsahCD}
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{Roman}
+\label{obsahCD}
+\chapter*{Pøíloha A: Obsah pøiloženého CD}
+
+\section*{Program Highway}
+Program Highway byl vytvoøen v programovacím jazyce Java a pro jeho spuštìní je nutné mít Javu nainstalovanou. Zdarma stáhnout se dá na stránce \url{http://java.com/}, kde se o ní dají nalézt i další informace. Po správné instalaci Javy je aplikaci možné spustit dávkovým souborem "Highway.bat". Problém nastává tehdy, pokud se program nepøekopíruje na pevný disk, protože nebude mít možnost zapisovat svùj výstup.
+
+\section*{Text práce}
+V této složce je umístìn samotný text bakaláøské práce vèetnì všech pøíloh i obrázkù.
+
+\section*{Výsledky}
+V této složce se nachází všechny provedené simulace. K jejich prohlížení je zapotøebí výstup programu a matematický software Mathematica, kterou si mùže každý student èi zamìstnanec ÈVUT stáhnout na adrese \url{http://download.cvut.cz}. Zde se dají vytváøet nové výøezy grafù, histogramy apod.
+
+\section*{Obrázky}
+V této složce se nacházejí již získané obrázky z jednotlivých simulací. Vìtšina z nich je pak použita v samotné bakaláøské práci.
+
+\end{comment}
+
+\end{document}

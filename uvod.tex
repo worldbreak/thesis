@@ -1,0 +1,66 @@
+\chapter*{Úvod}
+\addcontentsline{toc}{chapter}{Úvod}
+
+Matematika bıvá èasto nazıvána \uv{královnou vìd}. Je zvykem rozlišovat mezi èistou matematikou a matematikou aplikovanou. Zatímco èistá matematika zkoumá abstraktní objekty a vztahy mezi nimi, aplikovaná matematika se snaí tyto teoretické poznatky uplatnit pøi øešení konkrétních reálnıch problémù. Monosti aplikace matematiky jsou vskutku široké: fyzika a teoretická fyzika, chemie, teorie øízení, ekonomie, sociologie, stavebnictví, elektronika, inenırské aplikace, dopravní problémy a mnoho jinıch. 
+
+Zcela speciální je pak vztah matematiky a fyziky. Pro fyziku není matematika jen nástrojem k øešení problémù, ale i jazykem, kterım jsou pøírodní zákony a jevy popisovány. Není pøíliš pøekvapivé, e k analıze rùznıch fyzikálních problémù, které se èasto prolínají s tìmi inenırskımi, je matematika nutná a uiteèná. Je zøejmé, e k navrení a postavení mostu èi budovy jsou nutné pøesné propoèty zaloené na fyzikálních zákonech. Aèkoli jsou tyto zákony relativnì jednoduché (Newtonovy zákony), jejich aplikace na konkrétní problém mùe bıt znaènì sloitá a k øešení je tøeba pouít pokroèilıch matematickıch metod.
+\begin{comment}
+Pøekvapivé a nepochopitelné však je, e èím hloubìji pøírodní zákony poznáváme, tím víc se pøíroda jeví jako matematická. Dnešní fyzikální teorie jsou èasto skoro neodlišitelné od èistì matematickıch teorií. 
+\end{comment}
+
+Je tøeba zdùraznit, e fyzika je ze všech vìdních disciplín daleko nejvíc prostoupena matematikou a k øešení základních i aplikovanıch problémù fyziky byly vyvinuty velmi efektivní a robustní matematické metody, napøíklad metody statistické fyziky, renormalizaèní metody, aproximaèní a perturbaèní metody, teorie integrabilních a neintegrabilních systémù, teorie stability a chaosu a mnoho jinıch. Postupem èasu se však stále víc matematizují i jiné vìdní disciplíny jako ekonomie nebo dopravní vìdy. Tyto disciplíny mají spoleèné to, e studují velmi sloité systémy. To znamená, e tyto systémy sestávají z velkého poètu sloek, které navíc interagují sloitım zpùsobem. Ve fyzice se sloité systémy studují v teorii tuhıch látek, v molekulové fyzice, v teorii fázovıch pøechodù a kritickıch jevù èi v problémech mnoha tìles. Proto èasto dochází k tomu, e problém studovanı v rámci nìjaké vìdní disciplíny má svùj protìjšek v analogickém problému ve fyzice. Tyto analogie jsou velmi uiteèné, nebo umoòují aplikovat dobøe rozvinutı matematickı aparát na zdánlivì zcela odlišnı problém.
+
+Dopravní problémy jsou exemplárním pøíkladem, kde podobné analogie nacházejí vyuití. Dopravní systém sestává z velkého poètù úèastníkù, vozidel a øidièù, kteøí spolu interagují sloitım a ne úplnì známım zpùsobem. Na dopravní systém lze tedy nahlíet v zásadì dvìma zpùsoby: jako na kontinuální prostøedí, jeho dynamika je zachycena soustavou parciálních diferenciálních rovnic (obecnì nelineárních), nebo jako na soustavu diskrétních elementù, pøièem dynamika kadého z nich je popsána obyèejnımi diferenciálními rovnicemi (obecnì nelineárními). Oba zpùsoby popisu našly ji døíve uplatnìní ve fyzice v oblastech známıch jako mechanika kontinua a molekulová fyzika.
+
+
+Diferenciální rovnice popisující dopravní nebo fyzikální problémy jsou vìtšinou natolik sloité, e je nelze analyticky øešit, a tak je nutné k jejich øešení pouít numerické algoritmy. Tyto algoritmy jsou pak implementovány ve vhodném poèítaèovém programovacím jazyce. Inenır, stejnì tak jako fyzik, kterı chce poèítaèù vyuít k øešení sloitıch úloh se tak musí seznámit nejen se samotnım problémem, ale i s celou øadou numerickıch metod, co je samostatná matematická oblast. 
+
+
+
+Ke studiu dopravních systémù je nutná široká škála znalostí z matematiky, teorie dopravy, numerické matematiky, programování, a vıhodou je i znalost fyzikálních teorií, které se svou matematickou formulací podobají problémùm z dopravy. Programovat a analyzovat plnohodnotné dopravní simulace je proto moné a po dlouhém studiu všech uvedenıch oblastí. Cílem této bakaláøské práce je uèinit první krok v tomto studiu, jeliko v rámci bakaláøského studia není moné zvládnout problematiku v celé její šíøi. Proto cílem této práce není získání zásadních novıch vısledkù, ale sestavení vlastního funkèního programu, kterı implementuje nìkterı z existujících modelù.
+
+
+
+\section*{Cíle práce}
+\addcontentsline{toc}{section}{Cíle práce}
+
+Studijní cíle práce lze formulovat následovnì.
+
+\begin{itemize}
+ \item Seznámení se se základními typy modelù v dopravì, tedy s modely makroskopickımi a mikroskopickımi.
+ 
+ \item Seznámit se s teorií dynamickıch systému a analızou stability zaloenou na linearizaci dynamického systému.
+ 
+ \item Nastudovat základní a pokroèilé numerické metody øešení soustav obyèejnıch diferenciálních rovnic.
+ 
+ \item Seznámit se s matematickım popisem mikroskopického modelu IDM (Intelligent Driver Model).
+\end{itemize}
+
+Tato témata jsou náplní první, teoretické èásti práce. V druhé, praktické, èásti byly cíle práce následující.
+
+\begin{itemize}
+ \item Implementace modelu IDM v jazyce Java
+ \begin{itemize}
+  \item Implementace Eulerovy metody a metody Runge-Kutta 4. øádu k øešení dynamickıch rovnic modelu IDM.
+  
+  \item Vyuití základních grafickıch knihoven jazyku Java k zobrazení simulace.
+  
+  \item Naprogramovat vlastní grafickou knihovnu, která umoní vykreslení dálnice z izometrického pohledu.
+  
+  \item Rozšíøení modelu IDM o pøedjídìní vozidel podle modelu MOBIL.
+ \end{itemize}
+ 
+ \item Analıza vlastností modelu IDM
+ 
+ \begin{itemize}
+  \item Vyuít teorie dynamickıch systémù k analıze stacionárních stavù modelu IDM.
+  \item Implementovat metodu seèen k numerickému øešení rovnic pro stacionární stav.
+  \item Provést simulace na bázi modelù IDM a IDM+MOBIL pro stacionární stav a vybrané dopravní situace.
+  \item Makroskopickı popis vısledkù simulace v pojmech distribucí poètu vozidel.
+  \item Mikroskopickı popis vısledkù simulace.
+ \end{itemize}
+ 
+
+\end{itemize}
+
+V kapitole \ref{ch:sources} uvádíme i kompletní vıpis zdrojového kódu vytvoøeného programu. 
