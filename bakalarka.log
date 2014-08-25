@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  12 AUG 2014 20:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  25 AUG 2014 10:40
 entering extended mode
 **bakalarka.tex
 (C:\diplomka\diplomka\TEX\bakalarka.tex
@@ -781,25 +781,25 @@ File: images/linearaprox.pdf Graphic file (type pdf)
  <use images/linearaprox.pdf>
 Package pdftex.def Info: images/linearaprox.pdf used on input line 58.
 (pdftex.def)             Requested size: 250.95476pt x 249.74379pt.
- [2 <C:/diplomka/diplomka/TEX/images/vztahmeziSaV.pdf>]) [3 <C:/diplomka/diplomka/TEX/images/linearaprox.pdf>] (C:\diplo
-mka\diplomka\TEX\literatura.tex
+ [2 <C:/diplomka/diplomka/TEX/images/vztahmeziSaV.pdf>]) [3 <C:/diplomka/diplomka/TEX/images/linearaprox.pdf>] [4]
+(C:\diplomka\diplomka\TEX\literatura.tex
 Underfull \hbox (badness 1852) in paragraph at lines 54--55
 []\OT1/cmr/m/n/10 Treiber M, \OT1/cmr/m/it/10 Micro-si-mu-lation of road traf-fic flow \OT1/cmr/m/n/10 [on-line], do-stu
 pne z []$\OT1/cmtt/m/n/10 http : / / www .
  []
 
-) [4
+) [5
 
 
 
 ] (C:\diplomka\diplomka\TEX\bakalarka.lof)
 \tf@lof=\write5
- [5
+ [6
 
 
 ] (C:\diplomka\diplomka\TEX\bakalarka.lot)
 \tf@lot=\write6
- [6
+ [7
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
@@ -814,24 +814,25 @@ Package rerunfilecheck Info: File `bakalarka.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 316.
  ) 
 Here is how much of TeX's memory you used:
- 29658 strings out of 493921
- 648095 string characters out of 3147283
- 777912 words of memory out of 3000000
- 32465 multiletter control sequences out of 15000+200000
+ 29661 strings out of 493921
+ 648131 string characters out of 3147283
+ 777956 words of memory out of 3000000
+ 32466 multiletter control sequences out of 15000+200000
  8400 words of font info for 31 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,8n,76p,1221b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (6 pages, 177333 bytes).
+/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb>
+Output written on bakalarka.pdf (7 pages, 187205 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

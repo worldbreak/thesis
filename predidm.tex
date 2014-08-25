@@ -67,4 +67,14 @@ x_\n(t+\tau_\n + \tau_\nm1 + \cdots + \tau_1) {}={} x_0(t) - d_\n - d_\nm1 - \cd
 \label{eq:newelxn0}
 \end{equation}
 
-$\tau_\n$ a $d_\n$ se znaènì liší mezi jednotlivými vozidly, protože nìkteøí øidièi radìji jedou blíže vozidlu pøed sebou (n-1) až na minimální bezpeènou vzdálenost, kdežto nìkteøí mají radi zase naopak velkou, aby byli schopni vklidu zareagovat. Je rozumné, aby se hodnoty $\tau_n$ a $d_\n$ lišily, a to tak, že každému jednotlivému vozidlu budou hodnoty vygenerovány z nìjakého pravdìpodobnostního rozdìlení, jehož variaèní koeficient se bude blížit jedné. Pøi generování vozidel za sebou 
+$\tau_\n$ a $d_\n$ se znaènì liší mezi jednotlivými vozidly v závislosti na typu øidièe. První skupina øidièù radìji jede blíže vozidlu pøed sebou (n-1) až na minimální bezpeènou vzdálenost, zatímco druhá skupina naopak preferuje delší vzdálenost pro klidnou reakci na nenadálou událost. Je rozumné, aby se hodnoty $\tau_n$ a $d_\n$ lišily, a to tak, že každému jednotlivému vozidlu budou hodnoty vygenerovány z nìjakého pravdìpodobnostního rozdìlení, jehož variaèní koeficient se bude blížit jedné. Pøi generování rychlostí vozidel by naopak mìl být variaèní koeficient zanedbatelný.
+
+Položíme-li
+
+\begin{equation}
+\overline{\tau}{}={}\frac{1}{n}\sum_{k=1}^n \tau_k,\qquad \overline{d}{}={}\frac{1}{n}\sum_{k=1}^n d_k,
+\label{eq:averagedtau}
+\end{equation}
+
+kde $\overline{\tau}$ a $\overline{d}$ jsou prùmìrné posuny v èase resp. místì, potom prùmìrnou vlnovou rychlost spoèteme jako podíl $\overline{d}/\overline{\tau}$.
+
