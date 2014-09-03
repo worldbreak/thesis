@@ -12,6 +12,8 @@ Jednoduše øeèeno \uv{Car Following} modely vycházejí z pøedpokladu, že pokud n-t
 \section{Newellùv model}
 \label{sec:Newell}
 
+V teorii dopravního proudu je Newellùv model jeden z modelù, který popisuje chování øidièe dle vozidla pøed ním. Øidiè se snaží držet za vozidlem jedoucím pøed ním v konstantní  vzdálenosti. Tento model vznikl v roce 1961 a postupnì se vyvíjel. Vychází z nìho pozdìji Intelligent Driver Model (IDM) a z tohoto dùvodu je zde zmínìn.
+
 Jestliže $n$-té vozidlo jede za $n-1$ vozidlem (které jede za $n-2$ vozidlem atd.), cíl každého Car following modelu je zjistit závislost trajektorie $n$-tého vozidla  $x_{\n}(t)$, jeho pozici v èase $t$ na $n-1$ vozidle, viz. obrázek \ref{newell}. (To také znamená, že není žádná náhodná spojitost mezi tìmito vozidly.)
 Jestliže se $n-1$ vozidlo pohybuje konstantní rychlostí $v$,
 \[
@@ -113,10 +115,10 @@ Tvar rovnice \eqref{eq:xntaun} plyne z matematické analýzy\footnote{vìta o støed
 T_\n = \frac{\tau_\n}{2}.
 \label{eq:Tn}
 \end{equation}
-Rovnice \eqref{eq:xntaun} lze pøepsat na pøibližný tvar
+Rovnici \eqref{eq:xntaun} lze pøepsat na pøibližný tvar
 \begin{equation}
 x_\n(t+\tau_\n) {}={} x_\n(t) + \tau_\n v_\n(t) + \tau_\n T_\n a_\n(t),
-\label{eq:xntauna}
+\label{eq:xntaunx}
 \end{equation}
 který uvažuje zrychlení vozidla $a_\n$\footnote{Pøedpokládejme vozidlo v klidu, které se rozjíždí. Na zaèátku zvolíme $\tau_\n = 5s, t = 0s, T_\n= \tau_\n/2 = 2,5s$, potom platí
 \[
@@ -124,3 +126,20 @@ x_\n(5) {}={} x_\n(0) + 5 v_\n(0 +2,5).
 \]
 Pro výpoèet dráhy bereme hodnotu rychlosti v èase 2,5s. Nemùžeme vzít hodnotu v nule, vozidlo by v tomto pøípadì stálo na místì. Pøibližná hodnota bude tedy opravdu v polovinì hodnoty $\tau_\n$. 
 }.
+Kombinací rovnic \eqref{eq:xntaunx} a \eqref{eq:newelxn} dostáváme vztah pro rychlost
+\begin{equation}
+v_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[x_\nm1(t)-x_\n(t)\right] - \frac{d_\n}{\tau_\n}.
+\label{eq:xntaunv}
+\end{equation}
+Po zderivování rovnice \eqref{eq:xntaunv} dostáváme vztah pro zrychlení vozidla
+\begin{equation}
+a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_\nm1(t)-v_\n(t)\right].
+\label{eq:xntauna}
+\end{equation}
+Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle vozidle pøedcházejícím aktuální èlenem $v_\nm1(t)$, resp. $x_\nm1(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. \textbf{Koneèný vztah pro Newellùv model je tedy}
+\begin{equation}
+a_\n(t) {}={} \frac{\frac{1}{\tau_\n}\left[v_\nm1(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T_n}.
+\label{eq:newellcompl}
+\end{equation}
+
+
