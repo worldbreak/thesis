@@ -14,28 +14,31 @@ Jednoduše øeèeno \uv{Car Following} modely vycházejí z pøedpokladu, že pokud n-t
 
 V teorii dopravního proudu je Newellùv model jeden z modelù, který popisuje chování øidièe dle vozidla pøed ním. Øidiè se snaží držet za vozidlem jedoucím pøed ním v konstantní  vzdálenosti. Tento model vznikl v roce 1961 a postupnì se vyvíjel. Vychází z nìho pozdìji Intelligent Driver Model (IDM) a z tohoto dùvodu je zde zmínìn.
 
+V èlánku \cite{Newell} je pøesnì popsán nejen model, ale i jeho verifikace a porovnání s ostatními modely. Pro nás je dùležitý popis modelu.
+
+\subsection{Popis modelu}
 Jestliže $n$-té vozidlo jede za $n-1$ vozidlem (které jede za $n-2$ vozidlem atd.), cíl každého Car following modelu je zjistit závislost trajektorie $n$-tého vozidla  $x_{\n}(t)$, jeho pozici v èase $t$ na $n-1$ vozidle, viz. obrázek \ref{newell}. (To také znamená, že není žádná náhodná spojitost mezi tìmito vozidly.)
 Jestliže se $n-1$ vozidlo pohybuje konstantní rychlostí $v$,
 \[
-x_{\nm1} {}={} x_{\n} + vt,
+x_{{\nm1}} {}={} x_{\n} + vt,
 \]
 $n$-té vozidlo také pojede prùmìrnou rychlostí $v$. Pokud by $n$-té vozidlo zrychlovalo, tak by došlo ke kolizi s $n-1$ vozidlem a naopak pokud by zpomalovalo, tak by se $n$-té vozidlo neustále vzdalovalo. Totéž platí pro všechna vozidla jedoucí za $n$-tým. Tento model se nezabývá zjištìním hodnoty rychlosti $v$, pøedpokládá se, že je urèena buïto na základì omezení rychlosti èi možnostech vozidla.
 
-\begin{figure}[h]%
+\begin{figure}[ht]%
 \centering
 \includegraphics[]{images/newell.pdf}%
-\caption{Trajektorie vozidel s konstantní rychlostí}%
+\caption{Trajektorie vozidel s konstantní rychlostí, zdroj: \cite{Newell}}%
 \label{newell}%
 \end{figure}
 
-Vzdálenost $s_\n = x_\nm1 (t) - x_\n (t)$ mezi vozidly $n$ a $n-1$ se mùže mìnit v èase. Pokud je dálnice homogenní, tato vzdálenost zùstane konstantní okolo hodnoty $s_\n$. Tato hodnota se mìní na základì typu vozidla a také závisí na rychlosti $v$.
+Vzdálenost $s_\n = x_{\nm1} (t) - x_\n (t)$ mezi vozidly $n$ a $n-1$ se mùže mìnit v èase. Pokud je dálnice homogenní, tato vzdálenost zùstane konstantní okolo hodnoty $s_\n$. Tato hodnota se mìní na základì typu vozidla a také závisí na rychlosti $v$.
 
 Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svoji preferovanou rychlost $\text{V}_\n$. Jestliže tato rychlost je u $n-1$ vozidla vyšší než u $n$-tého $v>\text{V}_\n$, znamená to, že $n$-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a $n-1$ vozidlo mu ujede.
 Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové rychlosti by mìla být níže než polopøímka lineární závislosti, viz èerná teèka na obrázku \ref{vztahmezivas} pøi rychlosti $v=0$.
 \begin{figure}[ht]%
 \centering
 \includegraphics[]{images/vztahmeziSaV.pdf}%
-\caption{Vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$}%
+\caption{Vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$, zdroj: \cite{Newell}}%
 \label{vztahmezivas}%
 \end{figure}
 
@@ -48,7 +51,7 @@ Z toho vyplývá, že pokud leží $v$ a $v'$ na polopøímce z obrázku \ref{vztahmeziv
 
 Ze vztahu mezi $v$ a $s_\n$, jak je zobrazeno na obrázku \ref{vztahmezivas}, plyne nezávislost mezer $d_\n$ a $\tau_\n$ na rychlostech $v$, resp. $v'$. Pokud se tedy zmìní rychlost z hodnoty $v'$ na $v''$, $d_\n$ a $\tau_\n$ zùstanou pøi této zmìnì rychlosti stejné. Lineární trajektorie vozidla $x_n(t)$ potom bude jednoduše posun v èase $\tau_\n$ a místì $d_\n$,
 \begin{equation}
-x_\n(t+\tau_\n) {}={} x_\nm1(t) - d_\n.
+x_\n(t+\tau_\n) {}={} x_{\nm1}(t) - d_\n.
 \label{eq:newelxn}
 \end{equation}
 
@@ -56,14 +59,14 @@ U Newellova modelu platí, že n-té vozidlo bude (pøibližnì) kopírovat trajektorii
 \begin{figure}[ht]%
 \centering
 \includegraphics[]{images/linearaprox.pdf}%
-\caption{Lineární aproximace pøi zmìnì rychlosti vozidel}%
+\caption{Lineární aproximace pøi zmìnì rychlosti vozidel, zdroj: \cite{Newell}}%
 \label{linearaprox}%
 \end{figure}
 
 Pøi pozorování se došlo k závìru, že každý øidiè nezkoumá každého jiného øidièe na komunikaci, ale pouze jen vhodnou \uv{makroskopickou} èást. Hodnoty $\tau_\n$ a $d_\n$ jsou pøirozené, to vychází ze vztahu \eqref{eq:newelxn}, kde postupným iterováním dostaneme
 
 \begin{equation}
-x_\n(t+\tau_\n + \tau_\nm1 + \cdots + \tau_1) {}={} x_0(t) - d_\n - d_\nm1 - \cdots - d_1.
+x_\n(t+\tau_\n + \tau_{\nm1} + \cdots + \tau_1) {}={} x_0(t) - d_\n - d_{\nm1} - \cdots - d_1.
 \label{eq:newelxn0}
 \end{equation}
 
@@ -128,18 +131,40 @@ Pro výpoèet dráhy bereme hodnotu rychlosti v èase 2,5s. Nemùžeme vzít hodnotu v 
 }.
 Kombinací rovnic \eqref{eq:xntaunx} a \eqref{eq:newelxn} dostáváme vztah pro rychlost
 \begin{equation}
-v_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[x_\nm1(t)-x_\n(t)\right] - \frac{d_\n}{\tau_\n}.
+v_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[x_{\nm1}(t)-x_\n(t)\right] - \frac{d_\n}{\tau_\n}.
 \label{eq:xntaunv}
 \end{equation}
 Po zderivování rovnice \eqref{eq:xntaunv} dostáváme vztah pro zrychlení vozidla
 \begin{equation}
-a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_\nm1(t)-v_\n(t)\right].
+a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right].
 \label{eq:xntauna}
 \end{equation}
-Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle vozidle pøedcházejícím aktuální èlenem $v_\nm1(t)$, resp. $x_\nm1(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. \textbf{Koneèný vztah pro Newellùv model je tedy}
+Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle, které jede pøed aktuálním,  èlenem $v_{\nm1}(t)$, resp. $x_{\nm1}(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. \textbf{Koneèný vztah pro Newellùv model je tedy}
 \begin{equation}
-a_\n(t) {}={} \frac{\frac{1}{\tau_\n}\left[v_\nm1(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T_n}.
+a_\n(t) {}={} \frac{\frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T_n}.
 \label{eq:newellcompl}
 \end{equation}
 
 
+
+
+
+\section{Gippsùv model}
+\label{sec:Gipps}
+
+Další model, kterým se zde budeme zabývat, se jmenuje Gippsùv. Tento model byl poprvé popsán v roce 1981 a odvolává se i na zmínìný Newellùv model. I v dnešní dobì se tento model využívá pro simulaci dopravyy. Hlavním zdrojem pro tuto podkapitolu je èlánek P.G. Gippse\cite{Gipps}. Vìtšina modelù, které vznikly pøed Gippsovým, jsou rùzné variace na rovnici
+\begin{equation}
+a_\n(t+T_n) {}={} l_n\frac{[v_{\nm1}(t) - v_\n(t)]^k}{[x_{\nm1}(t) - x_\n(t)]^m},
+\label{eq:othermodels}
+\end{equation}
+kde jednotlivé promìnné mají stejný význam jako pøi popisu Newellova modelu \ref{sec:Newell}. Promìnné $l_n$, $k$ a $m$ jsou parametry, které je nutno empiricky odhadnout. Tyto modely se nazývají Modely General Motors a jsou blíže rozebrány v \cite{Vanis}.
+
+Aèkoliv podávají tyto modely dobré výsledky v mnoha situacích, je žádoucí, aby bìhem pøepoètù poloh, rychlostí a zrychlení nìjakým zpùsobem byl zahrnut reakèní èas øidièe $T_\n$. To si vyžaduje znaèné množství historických dat, pokud model bude použit v simulaèním programu. Navíc, parametry $l_n$, $k$ a $m$ nemají pøímou souvislost s vlastnostmi vozidla èi øidièe.
+
+Gipps se proto rozhodl, že vytvoøí model, který bude splòovat následujicí podmínky:
+
+\begin{itemize}
+	\item model by mìl napodobovat chování opravdového provozu,
+	\item parametry modelu by mìly odpovídat vlastnostem øidièe a vozidla, které jsou jasné; to znamená, že pro nastavení parametrù není potøeba model kalibrovat,
+	\item model by se mìl chovat správnì i v pøípadì, že doba mezi pøepoèítáváním polohy a rychlosti je stejná, jako reakèní èas øidièe.
+\end{itemize}
