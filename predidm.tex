@@ -173,3 +173,14 @@ Gipps se proto rozhodl, že vytvoøí model, který bude splòovat následujicí podmín
 
 Následující model je odvozen z omezení jak øidièe, tak i vozidla a pomocí tìchto omezení se dopoèítávají bezepeèná rychlost podle pøedcházejícího vozidla. Pøedpokládá se pøitom, že øidiè volí svoji rychlost tak, aby zajistil bezpeèné zastavení nebo aby dokázal náhle rychle zastavit pøi nenadálé události.
 
+První podmínka, kterou aplikujeme na vozidlo $n$, souvisí s rychlostí vozidla. Ta nepøekroèí jeho preferovanou rychlost $V_\n$ a jeho zrychlení na volné komunikaci\footnote{tj. komunikace, na které se nevyskytuje žádné další vozidlo} se zvyšuje stejnì tak jako rychlost dokud se také zvyšuje kroutící moment motoru vozidla a poté zaène klesat na nulovou hodnotu a té nabude ve chvíli, kdy se vozidlo bude pohybovat svoji preferovanou rychlostí $V_n$
+
+\begin{equation}
+v_\n (t+\tau) {}={} v_\n (t) + 2,5a_\n \tau \left(\frac{1-v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)}.
+\label{eq:inequalitygipps}
+\end{equation}
+
+\begin{comment}
+ Tento výraz je zcela popisný, pøesná forma zvolena z nìkolika zároveò postaèujících popisù na základì jednoduše získaných výpoètù. 
+\end{comment}
+Koeficienty v nerovnici \ref{eq:inequalitygipps} byly stanoveny na základì z mìøení na hlavních dopravních komunikacích pøi prùmìrném provozu.  Využití nerovnice \ref{eq:inequalitygipps} pro tento model je považované za pøijatelné do chvíle, kdy se vozidlo pøiblíží vozidlu jedoucím pøed ním. Od té chvíle dùraz na tuto podmínku klesá, naopak nejvìtší dùležitost je ve chvíli, kdy vozidlo nemá pøed sebou žádné vozidlo èi vozidlo pøed ním se nachází velmi daleko.
