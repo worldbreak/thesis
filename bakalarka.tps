@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame0_View0,0]
-TopLine=222
-Cursor=13261
+TopLine=265
+Cursor=16184
 
 [Frame1]
 Flags=0
@@ -35,7 +35,7 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame1_View0,0]
-TopLine=37
+TopLine=38
 Cursor=2243
 
 [Frame2]
