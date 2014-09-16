@@ -199,7 +199,52 @@ x_\n^* = x_\n (t) +\left[v_\n (t) + v_\n (t+T_n) \right] \frac{T_\n}{2} - \frac{
 \end{equation}
 
 A proto pro bezpeènost musí øidiè vozidla $n$ zajistit, že bude splnìna podmínka
-\[
+\begin{equation}
 x^*_{\nm1} - s_{\nm1} < x_\n^*,
+\label{eq:distance}
+\end{equation}
+kde $s_{\nm1}$ je délka vozidla $n-1$ seètena s bezpeènou vzdáleností následujícího ($n$) vozidla. Nicménì pokud tato podmínka neplatí, vozidlo nemá žádný prostor pro pøípadnou øidièovu chybu. Z toho dùvodu obsahuje tento model ještì další podmínku; bezpeèný odstup s další èasovou rezervou, $\theta$. Øidiè zaène reagovat na vozidlo pøed sebou až v èase $t+T_\n$. Od této chvíle tedy máme reakèní èas $T_\n$ a bezpeèný reakèní èas $T_\n + \theta$, který budeme ve výpoètech dále využívat. S využitím rovnic \eqref{eq:cometorestnm1}, \eqref{eq:cometorestn} a \eqref{eq:distance} mùžeme tuto podmínku pøepsat do rovnice
+\begin{equation}
+x_{\nm1} (t) - \frac{v_{\nm1} (t)^2}{2b_{\nm1}} - s_{\nm1} {}\geq{} x_\n (t) +\left[v_\n (t) + v_\n (t+T_n) \right] \frac{T_\n}{2} + v_\n (t+T_n) \theta - \frac{v_{\n} (t+T_\n)^2}{2b_{\n}}
+\label{eq:theta}
+\end{equation}
+
+Bez parametru $\theta$ by øidiè vozidla byl nucen brzdit až ve chvíli, kdy opravdu musí, to znamená na maximální výkon brzd. Do té chvíle by se stále pohyboval svoji preferovanou rychlostí. Parametr $\theta$ slouží k døívìjšímu a pøitom ne tak prudkému brždìní.
+
+Pøi skuteèném pozorování dopravy jsme schopni zmìøit všechny parametry vozidla $n$ v rovnici \eqref{eq:theta} kromì èlenu $b_{\nm1}$. Tento èlen nahradíme odhadnutou hodnotou $\hat{b}$, upravíme tuto rovnici a dostáváme
+\begin{equation}
+- \frac{v_{n} (t+T_\n)^2}{2b_{\n}} + v_\n (t+T_n) \left(\frac{T_\n}{2} + \theta\right) - \left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] + v_{\n} (t) \frac{T_\n}{2} + \frac{v_{\nm1} (t)^2}{2\hat{b}} \leq 0.
+\label{eq:replacebn}
+\end{equation}
+
+Relativní hodnoty $T_n$ a $\theta$ jsou dùležité v urèování chování vozidel. Stejnì jako v pøípadì Newellova modelu \ref{sec:Newell}, \eqref{eq:Tn}, pokud je hodnota $\theta$ rovna právì jedné polovinì $T_\n$, vozidlo jedoucí bezpeènou rychlostí bude schopno udržovat tento stav nekoneènì dlouhou dobu. Díky tomu mùžeme rovnici \eqref{eq:replacebn} pøepsat do tvaru
+\begin{equation}
+- \frac{v_{n} (t+T_\n)^2}{2b_{\n}} + v_\n (t+T_n) T_\n - \left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] + v_{\n} (t) \frac{T_\n}{2} + \frac{v_{\nm1} (t)^2}{2\hat{b}} \leq 0.
+\label{eq:replacetheta}
+\end{equation}
+
+Z toho plyne
+\begin{equation}
+v_{\n} (t+T_\n) \leq b_{\n}T_\n + \sqrt{\left(b_{\n}^2 T_\n^2 - b_{\n}\left(2\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] - v_{\n} (t)T_\n - \frac{v_{\nm1} (t)^2}{2\hat{b}} \right)\right)}.
+\label{eq:nextreplace}
+\end{equation}
+
+Z nerovnice \eqref{eq:replacetheta} vychází, že bezpeèné rychlosti $v_\n$ budou ležet mezi dvìma koøeny této nerovnice, ale pokud bude mít spodní koøen zápornou hodnotu mùžeme ho ignorovat, protože nás zajímají pouze kladné hodnoty rychlostí. Podcenìní plynulého brždìní øidièe vozidla $n$ nastane ve chvíli, kdy
+\[
+v_{\n} (t+T_\n) < v_\n (t) + b_n T_n.
 \]
-kde $s_{\nm1}$ je délka vozidla $n-1$ seètena s bezpeènou vzdáleností následujícího ($n$) vozidla. Nicménì pokud tato podmínka neplatí, vozidlo nemá žádný prostor pro jeho pøípadnou chybu.  
+
+V tuto chvíli musí vozidlo zaèít brzdit rychleji, než by sám øidiè chtìl. Øidiè tedy volí rychlost na základì preferované decelarace, ale mùže brzdit i rychleji pokud by to bylo nutné.
+
+Nerovnice \eqref{eq:inequalitygipps} pro vozidlo $n$ na volné komunikaci a \eqref{eq:nextreplace} pro vozidlo $n$ pøed kterým se nachází vozidlo $n-1$ pøedstavují dvì hlavní podmínky pro rychlost $v_\n$ v èase $t + T_\n$ a jestliže øidiè pøizpùsobí rychlost parametrùm vozidla a tak, aby jízda byla bezpeèná, dostáváme \textbf{koneèný vztah pro Gippsùv model:}
+\begin{equation}
+\begin{split}
+v_{\n} (t+&T_\n) = \min \left( v_\n (t) + 2,5a_\n \tau \left(\frac{1-v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)},\right.\\
+&\left. b_{\n}T_\n + \sqrt{\left(b_{\n}^2 T_\n^2 - b_{\n}\left(2\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] - v_{\n} (t)T_\n - \frac{v_{\nm1} (t)^2}{2\hat{b}} \right)\right)}\;\right)
+\label{eq:gipps}
+\end{split}
+\end{equation}
+
+Pokud platí pro témìø všechna vozidla nižší hodnota v rovnici \eqref{eq:gipps} nerovnice \eqref{eq:nextreplace}, vozidla jedou blízko sebe, z èehož vyplývá vysoká hustota provozu. Pokud platí opak, tz. nerovnice \eqref{eq:inequalitygipps}, dopravní proud je volný.
+
+Posun rychlosti mezi stavy $v(t)$ a $v(t+T_\n)$ 
