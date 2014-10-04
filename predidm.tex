@@ -245,6 +245,52 @@ v_{\n} (t+&T_\n) = \min \left( v_\n (t) + 2,5a_\n \tau \left(\frac{1-v_\n (t)}{V
 \end{split}
 \end{equation}
 
-Pokud platí pro témìø všechna vozidla nižší hodnota v rovnici \eqref{eq:gipps} nerovnice \eqref{eq:nextreplace}, vozidla jedou blízko sebe, z èehož vyplývá vysoká hustota provozu. Pokud platí opak, tz. nerovnice \eqref{eq:inequalitygipps}, dopravní proud je volný.
+Pokud platí pro témìø všechna vozidla nižší hodnota v rovnici \eqref{eq:gipps}, vychází se z nerovnice \eqref{eq:nextreplace}, vozidla jedou blízko sebe, z èehož vyplývá vysoká hustota provozu. Pokud platí opak, tz. nerovnice \eqref{eq:inequalitygipps}, dopravní proud je volný.
 
-Posun rychlosti mezi stavy $v(t)$ a $v(t+T_\n)$ 
+\section{Kraussùv model}
+\label{sec:Krauss}
+
+Pro simulaci v této práci budeme využívat software SUMO\footnote{Simulation of Urban MObility} a souèástí tohoto programu je pøedpøipravený Kraussùv model vytvoøený v rámci disertaèní práce stejnojmeného autora. V popisu tohoto modelu budeme vycházet z této práce\cite{Krauss}.
+
+Tento model se zamìøuje pøimárnì na všeobecné vlastnosti dopravního proudu, zkoumání chování øidièe zde není primární. Myšlenka autora je taková, že existují obecné vlastnosti dopravního proudu, ze kterých vyplývá chování jednotlivých úèastníkù silnièního provozu a není to chování jednotlivce, které hlavnì ovlivòují vlastnosti dopravního proudu.
+
+Pokud se dopravní proud modeluje mikroskopicky, musí být brány v úvahu dva typy pohybu vozidla. První pøípad je vozidlo jedoucí po vozovce samo a druhý pøípad je interakce s ostatními vozidly. Na základì tìchto pohybù pøedpokládáme následující podmínky. První podmínka souvisí s tím, že rychlost vozidla je omezena nìjakou maximální rychlostí $v_{\max}$,
+\begin{equation}
+v \leq v_{\max}.
+\label{eq:kraussvmax}
+\end{equation}
+Za maximální rychlost mùže být napøíklad zvolena preferovaná rychlost vozidla.
+
+Hlavní dùvod, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v úmyslu srážet se s ostatními vozidly. Další podmínkou tedy bude tzv. \uv{nekoliznost} systému. Budeme pøedpokládat, že øidiè vozidla zvolí tedy takovou rychlost vozidla, která nebude vyšší než maximální bezpeèná rychlost $v_{\safe}$,
+\begin{equation}
+v \leq v_{\safe}.
+\label{eq:kraussvsafe}
+\end{equation}
+
+Z maximální bezpeèné rychlosti poté plyne interakce mezi vozidly. Její stanovení bude uvedeno dále.
+
+Je možné formulovat modely na základì podmínek \eqref{eq:kraussvmax} a \eqref{eq:kraussvsafe}. Nicménì je vcelku vhodné pøedpokládat také omezující podmínky pro zrychlení,
+\begin{equation}
+\begin{split}
+&-b \leq \frac{dv}{dt} \leq a,\\
+&a,b > 0.
+\label{eq:kraussa}
+\end{split}
+\end{equation}
+
+Pozdìji bude ukázáno, že podmínka \eqref{eq:kraussa} je nezbytnou složkou, pokud chceme modelovat dopravní proud správnì.
+
+
+Pøedchozí podmínky mùžeme shrnout do následující nerovnice
+\begin{equation}
+v(t+ \Delta t) \leq \min (v_{\max}, v_{\safe}, v(t)+a \Delta t),
+\label{eq:kraussvtdt}
+\end{equation}
+kde se maximální bezpeèná rychlost $v_{\safe}$ musí splòovat podmínku
+\begin{equation}
+v(t+ \Delta t) \geq v(t) - b\Delta t.
+\label{eq:kraussvsafecalc}
+\end{equation}
+
+Celkové povìdomí o tom, jak se jednotlivá vozidla pohybují a interagují mezi sebou závisí na výpoètu maximální bezpeèné rychlosti $v_{\safe}$. Jakmile je stanovena hodnota $v_{\safe}$, nerovnice \eqref{eq:kraussvtdt} pøedstavuje aktualizované schéma pro simulace dopravního proudu, pokud jsou splnìny všechny podmínky zmínìné výše.
+
