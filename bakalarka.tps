@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame0_View0,0]
-TopLine=333
-Cursor=20380
+TopLine=421
+Cursor=24353
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame1_View0,0]
-TopLine=39
-Cursor=2243
+TopLine=31
+Cursor=2001
 
 [Frame2]
 Flags=0
@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame2_View0,0]
-TopLine=108
-Cursor=2812
+TopLine=72
+Cursor=2124
 
 [SessionInfo]
 FrameCount=3

@@ -249,12 +249,12 @@ Pokud platí pro témìø všechna vozidla nižší hodnota v rovnici \eqref{eq:gipps}, 
 
 \section{Kraussùv model}
 \label{sec:Krauss}
-
 Pro simulaci v této práci budeme využívat software SUMO\footnote{Simulation of Urban MObility} a souèástí tohoto programu je pøedpøipravený Kraussùv model vytvoøený v rámci disertaèní práce stejnojmeného autora. V popisu tohoto modelu budeme vycházet z této práce\cite{Krauss}.
 
 Tento model se zamìøuje pøimárnì na všeobecné vlastnosti dopravního proudu, zkoumání chování øidièe zde není primární. Myšlenka autora je taková, že existují obecné vlastnosti dopravního proudu, ze kterých vyplývá chování jednotlivých úèastníkù silnièního provozu a není to chování jednotlivce, které hlavnì ovlivòují vlastnosti dopravního proudu.
 
-Pokud se dopravní proud modeluje mikroskopicky, musí být brány v úvahu dva typy pohybu vozidla. První pøípad je vozidlo jedoucí po vozovce samo a druhý pøípad je interakce s ostatními vozidly. Na základì tìchto pohybù pøedpokládáme následující podmínky. První podmínka souvisí s tím, že rychlost vozidla je omezena nìjakou maximální rychlostí $v_{\max}$,
+\subsection{Obecný pøístup}
+Pokud se dopravní proud modeluje mikroskopicky, musí být brány v úvahu dva typy pohybu vozidla. Prvním typem pohybu je vozidlo jedoucí po vozovce osamoceno, zatímco ve druhém pøípadì vozidlo interaguje s ostatními vozidly. Na základì tìchto pohybù pøedpokládáme následující podmínky. První podmínka má pøímo souvislost s rychlostí vozidla. Ta je omezena nìjakou maximální rychlostí $v_{\max}$,
 \begin{equation}
 v \leq v_{\max}.
 \label{eq:kraussvmax}
@@ -294,3 +294,20 @@ v(t+ \Delta t) \geq v(t) - b\Delta t.
 
 Celkové povìdomí o tom, jak se jednotlivá vozidla pohybují a interagují mezi sebou závisí na výpoètu maximální bezpeèné rychlosti $v_{\safe}$. Jakmile je stanovena hodnota $v_{\safe}$, nerovnice \eqref{eq:kraussvtdt} pøedstavuje aktualizované schéma pro simulace dopravního proudu, pokud jsou splnìny všechny podmínky zmínìné výše.
 
+\subsection{Interakce mezi vozidly}
+
+Pro vytvoøení sofistikovaného dopravního modelu je nutné ukázat, jak vozidla mezi sebou interagují. Podívejme se na dvì vozidla na komunikaci, první vozidlo se nachází v bodì $x_1$ a jede rychlostí $v_1$, vozidlo, které ho následuje je v bodì $x_f$ a pohybuje se rychlostí $v_f$. Jestliže délka prvního vozidla bude $l$, tak mezera mezi vozidly se vypoète vztahem
+\begin{equation}
+g = x_1 - x_f - l.
+\label{eq:kraussgap}
+\end{equation}
+
+Jak již bylo zmínìno, hlavní dùvod, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v úmyslu srážet se s ostatními vozidly. Z toho plyne, že mezera mezi vozidly musí být nezáporná. Narozdíl od jiných modelovaných pøístupù, zde nezaèneme s pøedpokladem jak mùže být zrychlení vozidla vypoèteno z vozidla jedoucí pøed ním, protože nekoliznost stejnì není splnìna automaticky a nìkdy je velice složité ji dokázat.
+
+Místo toho zaèneme zavedením toho, že se v spojitých modelech spolu interagující vozidla nesrazí tehdy, pokud je mezera mezi vozidly $g$ vìtší než nìjaká preferovaná mezera mezi vozidly $g_{\des}$ a splòuje tuto dynamickou nerovnici
+\begin{equation}
+\frac{dg}{dt} \geq \frac{g_{\des} - g}{\tau_{\des}}. 
+\label{eq:kraussgapdes}
+\end{equation}
+
+Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly funkcemi odstupu mezi vozidly èi jejich rychlostmi. Fakt, že v tomto modelu nemohou nastat kolize je zøejmá, protože pokud položíme $g$ rovné nule èasová derivace bude vždy nezáporná a preferovaná mezera $g_{\des}$ také. Tento 
