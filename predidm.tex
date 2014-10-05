@@ -141,7 +141,7 @@ a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right].
 \end{equation}
 Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle, které jede pøed aktuálním,  èlenem $v_{\nm1}(t)$, resp. $x_{\nm1}(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. \textbf{Koneèný vztah pro Newellùv model je tedy}
 \begin{equation}
-a_\n(t) {}={} \frac{\frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T_n}.
+a_\n(t + T_n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t).
 \label{eq:newellcompl}
 \end{equation}
 
@@ -254,6 +254,7 @@ Pro simulaci v této práci budeme využívat software SUMO\footnote{Simulation of U
 Tento model se zamìøuje pøimárnì na všeobecné vlastnosti dopravního proudu, zkoumání chování øidièe zde není primární. Myšlenka autora je taková, že existují obecné vlastnosti dopravního proudu, ze kterých vyplývá chování jednotlivých úèastníkù silnièního provozu a není to chování jednotlivce, které hlavnì ovlivòují vlastnosti dopravního proudu.
 
 \subsection{Obecný pøístup}
+\label{krauss:approach}
 Pokud se dopravní proud modeluje mikroskopicky, musí být brány v úvahu dva typy pohybu vozidla. Prvním typem pohybu je vozidlo jedoucí po vozovce osamoceno, zatímco ve druhém pøípadì vozidlo interaguje s ostatními vozidly. Na základì tìchto pohybù pøedpokládáme následující podmínky. První podmínka má pøímo souvislost s rychlostí vozidla. Ta je omezena nìjakou maximální rychlostí $v_{\max}$,
 \begin{equation}
 v \leq v_{\max}.
@@ -310,4 +311,98 @@ Místo toho zaèneme zavedením toho, že se v spojitých modelech spolu interagující
 \label{eq:kraussgapdes}
 \end{equation}
 
-Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly funkcemi odstupu mezi vozidly èi jejich rychlostmi. Fakt, že v tomto modelu nemohou nastat kolize je zøejmá, protože pokud položíme $g$ rovné nule èasová derivace bude vždy nezáporná a preferovaná mezera $g_{\des}$ také. Tento 
+Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly funkcemi odstupu mezi vozidly èi jejich rychlostmi. Fakt, že v tomto modelu nemohou nastat kolize je zøejmá, protože pokud položíme $g$ rovné nule èasová derivace bude vždy nezáporná a preferovaná mezera $g_{\des}$ také.
+
+Pøedpokládejme pøípad dvou vozidel jedoucími rychlost $v_1$ resp. $v_f$ s odstupem $g$. Druhé vozidlo jede svoji bezpeènou rychlostí a øidiè tohoto vozidla mùže zastavit za jakýkoliv okolností tak, aby nedošlo ke kolizi s prvním vozidlem. To znamená, že pokud øidiè má reakèní èas $\tau$ a brzdná vzdálenost vozidel jedoucích rychlostí $v$ je dána funkcí $f(v)$, je situace bezpeèná právì tehdy když
+\begin{equation}
+f(v_f) + v_f \tau \leq f(v_1) + g. 
+\label{eq:kraussdvsafe}
+\end{equation}
+
+Hodnota funkce $f(v)$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být jiná funkce závisející na zpùsobu øízení øidièe a pohodlné jízdy. To samé platí pro reakèní èas $\tau$.
+
+Úprava nerovnice \ref{eq:kraussdvsafe} vede k bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v)$, který jak uvidíme není možné zjistit. Zadruhé je zbyteèné a výpoèetnì nároèné používat typ øízení, které potøebuje pøedvídat nenádalou událost a vypoèítávat decelaraci až k úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti $f(v)$ okolo prùmìrné rychlosti obou vozidel,
+\[
+\overline{v} = \frac{v_1 + v_f}{2},
+\]
+který budeme v dalším odvození dále používat. Sudé èleny tohoto rozvoje se vyruší a zanedbáním èlenù vyšších øádù dostáváme
+\begin{equation}
+f'(\overline{v})v_f + v_f \tau \leq f'(\overline{v})v_1 + g. 
+\label{eq:kraussdvsafeaverage}
+\end{equation}
+
+Smysl derivace $f(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\dot{v} = -b(v)$, kdy $b(v)>0$, obrdžíme vztah
+\begin{equation}
+f'(v) = -\frac{d}{dv}\int_v^0 \frac{v'}{b(v')} dv' = \frac{v}{b(v)}
+\label{eq:kraussintegratebv}
+\end{equation}
+
+Nyní mùžeme pøepsat podmínku bezpeènosti do tvaru
+\begin{equation}
+v_1 - v_f \geq \frac{v_1 \tau - g}{\frac{\overline{v}}{b(\overline{v})} + \tau},
+\label{eq:krausssafetycond}
+\end{equation}
+kde
+\begin{equation}
+v_1 - v_f = \frac{dg}{dt}.
+\label{eq:krausssdgdt}
+\end{equation}
+
+Nerovnice \eqref{eq:krausssafetycond} se v podstatì rovná nerovnici \eqref{eq:kraussgapdes}, kde preferovaný odstup $g_{\des} = v_1 t$ a preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des} = \tau_b + \tau$, kde $\tau_b = \overline{v}/b(\overline{v})$ je stanoveno na základì decelerací, které øidiè využije. 
+
+\subsection{Diskretizace modelu}
+
+Nerovnice v èásti \ref{krauss:approach} je potøeba pøevést na diskrétní rovnice pro dráhy, rychlosti a zrychlení pro možnost simulace na poèítaèi.
+
+Vhodná cesta pro vytvoøení rovnic dynamického systému z bezpeènostní podmínky \eqref{eq:kraussgapdes} je pøevést spojitou rychlost $v_f$ ve výrazu $\dot{g}(t) = v_1(t) - v_f(t)$ jako rychlost diskrétní s diferencí èi integraèním krokem $t + \Delta t$. Potom rovnici \eqref{eq:kraussgapdes} pøepíšeme do tvaru
+\begin{equation}
+v_f (t + \Delta t) \leq v_1(t) + \frac{g(t) - g_{\des}}{\tau_{\des}}.
+\label{eq:krausssdiscvf}
+\end{equation}
+Rovnice pro polohu vozidla se potom na stejném principu pøevede na
+\begin{equation}
+x (t + \Delta t) = x(t) + v(t + \Delta t)\Delta t.
+\label{eq:krausssdiscx}
+\end{equation}
+Víme, že pøi $\Delta t \rightarrow 0$ a $g_{\des} \geq 0$ rovnice \eqref{eq:krausssdiscvf} a nerovnice \eqref{eq:krausssdiscx} garantují bezpeènost. Pro koneèný èas $\Delta t$ musí být tato garance opìt dokázána.
+
+Mezera $g(t)$ mezi dvìma vozidly je diskretizována vztahem
+\begin{equation}
+g (t + \Delta t) = g(t) + \Delta t (v_1(t + \Delta t) - v_f(t + \Delta t)).
+\label{eq:krausssdisgap}
+\end{equation}
+
+Pøidáním rovnice \eqref{eq:krausssdiscvf} dostáváme
+\begin{equation}
+\xi (t + \Delta t) = \xi(t) + \left(1 - \frac{\Delta t}{\tau_b + \tau}\right) + \Delta t \frac{g_{\des} - v_1(t)\Delta t}{\tau_b + \tau},
+\label{eq:krausssdisxit}
+\end{equation}
+kde 
+\[
+\xi (t) = g(t)  - v_1(t) \Delta t.
+\]
+
+Bezpeènost ($g \geq 0$) je tedy garantována tehdy, když platí:
+\begin{equation}
+\begin{split}
+&\xi (t=0) \geq 0,\\
+&\Delta t \leq \tau,\\
+&g_{\des} \geq v_1 \Delta t.
+\label{eq:krausssafetygarance}
+\end{split}
+\end{equation}
+To je výsledek, který se ovšem dal pøedpokládat. Záleží pouze na tom, zda je i po provedení iteraèního kroku stále splnìna podmínka bezpeènosti, tz. kontrolovat jestli je náš iteraèní krok menší než reakèní èas øidièe $\tau$.
+
+\subsection{Rovnice modelu} 
+
+Pøedpokládáme tedy, nezávisle na náhodném kolísání, že každé vozidlo se pohybuje nejvyšší rychlostí na základì podmínek, které jsou stanoveny níže. \textbf{Kraussùv model tedy stanovíme následujícími rovnicemi:}
+\begin{equation}
+\begin{split}
+&v_{\safe} (t) = v_1(t) + \frac{g(t) - g_{\des}}{\tau_b + \tau},\\
+&v_{\des} = \min [v_{\max}, v(t) + a(t) \Delta t, v_{\safe} (t)],\\
+&v (t + \Delta t) = \max[0, v_{\des} - \eta].
+\label{eq:krausssmodel}
+\end{split}
+\end{equation}
+
+Preferovaná mezera $g_{\des}$
