@@ -322,9 +322,10 @@ f(v_f) + v_f \tau \leq f(v_1) + g.
 Hodnota funkce $f(v)$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být jiná funkce závisející na zpùsobu øízení øidièe a pohodlné jízdy. To samé platí pro reakèní èas $\tau$.
 
 Úprava nerovnice \ref{eq:kraussdvsafe} vede k bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v)$, který jak uvidíme není možné zjistit. Zadruhé je zbyteèné a výpoèetnì nároèné používat typ øízení, které potøebuje pøedvídat nenádalou událost a vypoèítávat decelaraci až k úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti $f(v)$ okolo prùmìrné rychlosti obou vozidel,
-\[
+\begin{equation}
 \overline{v} = \frac{v_1 + v_f}{2},
-\]
+\label{eq:kraussv1vf}
+\end{equation}
 který budeme v dalším odvození dále používat. Sudé èleny tohoto rozvoje se vyruší a zanedbáním èlenù vyšších øádù dostáváme
 \begin{equation}
 f'(\overline{v})v_f + v_f \tau \leq f'(\overline{v})v_1 + g. 
@@ -405,4 +406,4 @@ Pøedpokládáme tedy, nezávisle na náhodném kolísání, že každé vozidlo se pohybuje
 \end{split}
 \end{equation}
 
-Preferovaná mezera $g_{\des}$
+Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des} = v_1 \tau$, kde $\tau$ je reakèní èas øidièe. Hodnota $\tau_b$ je definována jako podíl $\overline{v}/b$, kde $\overline{v}$ plyne ze vztahu \eqref{eq:kraussv1vf}. Novì zde také zavádíme promìnnou $\eta$, která je náhodnou výchylkou od bìžného øízení. Volba integraèního kroku $\Delta t$ a preferované mezery $g_{\des}$ je závislá na podmínkách \eqref{eq:krausssafetygarance}.
