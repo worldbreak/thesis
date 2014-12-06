@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  5 OCT 2014 19:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  2 NOV 2014 12:59
 entering extended mode
 **bakalarka.tex
 (C:\diplomka\diplomka\TEX\bakalarka.tex
@@ -669,7 +669,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip52
 ) (C:\diplomka\diplomka\TEX\bakalarka.aux
-(C:\diplomka\diplomka\TEX\predidm.aux) (C:\diplomka\diplomka\TEX\literatura.aux))
+(C:\diplomka\diplomka\TEX\predidm.aux) (C:\diplomka\diplomka\TEX\IDMmodel.aux) (C:\diplomka\diplomka\TEX\literatura.aux)
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
 LaTeX Font Info:    ... okay on input line 115.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
@@ -760,13 +761,13 @@ LaTeX Info: Redefining \nameref on input line 115.
 \@outlinefile=\write4
  (C:\diplomka\diplomka\TEX\predidm.tex
 Kapitola 1.
-<images/newell.pdf, id=60, 289.48149pt x 225.2415pt>
+<images/newell.pdf, id=68, 289.48149pt x 225.2415pt>
 File: images/newell.pdf Graphic file (type pdf)
  <use images/newell.pdf>
 Package pdftex.def Info: images/newell.pdf used on input line 29.
 (pdftex.def)             Requested size: 289.48079pt x 225.24094pt.
 
-<images/vztahmeziSaV.pdf, id=65, 161.78342pt x 161.0015pt>
+<images/vztahmeziSaV.pdf, id=73, 161.78342pt x 161.0015pt>
 File: images/vztahmeziSaV.pdf Graphic file (type pdf)
  <use images/vztahmeziSaV.pdf>
 Package pdftex.def Info: images/vztahmeziSaV.pdf used on input line 40.
@@ -775,71 +776,91 @@ Package pdftex.def Info: images/vztahmeziSaV.pdf used on input line 40.
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] <images/linearaprox.pdf, id=94, 161.78342pt x 161.0015pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] <images/linearaprox.pdf, id=102, 161.78342pt x 161.0015pt>
 File: images/linearaprox.pdf Graphic file (type pdf)
  <use images/linearaprox.pdf>
 Package pdftex.def Info: images/linearaprox.pdf used on input line 61.
 (pdftex.def)             Requested size: 161.78302pt x 161.00108pt.
- [2 <C:/diplomka/diplomka/TEX/images/newell.pdf>] [3 <C:/diplomka/diplomka/TEX/images/vztahmeziSaV.pdf> <C:/diplomka/dip
-lomka/TEX/images/linearaprox.pdf>] [4]
+
+[2 <C:/diplomka/diplomka/TEX/images/newell.pdf>] [3 <C:/diplomka/diplomka/TEX/images/vztahmeziSaV.pdf> <C:/diplomka/dipl
+omka/TEX/images/linearaprox.pdf>] [4]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
- [5] [6] [7] [8] [9]) [10]
+ [5] [6] [7] [8] [9])
+[10] (C:\diplomka\diplomka\TEX\IDMmodel.tex
+Kapitola 2.
+
+Overfull \hbox (17.87186pt too wide) in paragraph at lines 34--36
+\OT1/cmr/m/n/10 je pre-fe-ro-vany od-stup. $\OML/cmm/m/it/10 s[]$ \OT1/cmr/m/n/10 je soucet mi-nimaln bezpecne vz
+dalenosti mezi vo-zi-dly a delkou nasledujcho|
+ []
+
+<idm.pdf, id=281, 450.8845pt x 153.17226pt>
+File: idm.pdf Graphic file (type pdf)
+ <use idm.pdf>
+Package pdftex.def Info: idm.pdf used on input line 40.
+(pdftex.def)             Requested size: 250.95476pt x 85.25465pt.
+) [11
+
+
+
+] [12 <C:/diplomka/diplomka/TEX/idm.pdf>]
 (C:\diplomka\diplomka\TEX\literatura.tex
 Underfull \hbox (badness 1852) in paragraph at lines 63--64
 []\OT1/cmr/m/n/10 Treiber M, \OT1/cmr/m/it/10 Micro-si-mu-lation of road traf-fic flow \OT1/cmr/m/n/10 [on-line], do-stu
 pne z []$\OT1/cmtt/m/n/10 http : / / www .
  []
 
-) [11
+) [13
 
 
 
 ] (C:\diplomka\diplomka\TEX\bakalarka.lof)
 \tf@lof=\write5
- [12
+ [14
 
 
 ] (C:\diplomka\diplomka\TEX\bakalarka.lot)
 \tf@lot=\write6
- [13
+ [15
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 317.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 317.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
 
-(C:\diplomka\diplomka\TEX\bakalarka.aux (C:\diplomka\diplomka\TEX\predidm.aux) (C:\diplomka\diplomka\TEX\literatura.aux)
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 317.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 317.
+(C:\diplomka\diplomka\TEX\bakalarka.aux (C:\diplomka\diplomka\TEX\predidm.aux) (C:\diplomka\diplomka\TEX\IDMmodel.aux)
+(C:\diplomka\diplomka\TEX\literatura.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
-(rerunfilecheck)             Checksum: FA70CC3EE2D4C3FFDA9B8632A9480E89;1778.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 317.
+(rerunfilecheck)             Checksum: 4ACF227AA86999F9D24F4811D3BD8FA2;2096.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
  ) 
 Here is how much of TeX's memory you used:
- 29796 strings out of 493921
- 650047 string characters out of 3147283
- 783961 words of memory out of 3000000
- 32540 multiletter control sequences out of 15000+200000
+ 29827 strings out of 493921
+ 650543 string characters out of 3147283
+ 784690 words of memory out of 3000000
+ 32554 multiletter control sequences out of 15000+200000
  9005 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,15n,76p,1221b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (13 pages, 273101 bytes).
+2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on bakalarka.pdf (15 pages, 301530 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 101 named destinations out of 1000 (max. 500000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
