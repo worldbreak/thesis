@@ -1,0 +1,22 @@
+\newpage
+\setcounter{page}{1}
+\setcounter{chapter}{0}
+\pagenumbering{Roman}
+\label{obsahCD}
+\chapter{Pøíloha A: Kompilace simulaèního softwaru SUMO}
+
+\section{SUMO}
+SUMO je volnì šiøitelný dopravní simulátor, který vznikl v roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøedky, mìstskou hromadnou dopravu èi chodce. Dále v SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{chap:IDM} a Wiedermanùv model. 
+
+\subsection{SUMO download}
+Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažujeme pouze pøípad dopravního simulátoru SUMO pod Windows, v dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v nìkterých èástech není dostateènì pøesný.
+
+\section{Visual Studio}
+Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi.
+
+\section{Ostatní závislosti}
+SUMO ke svému zkompilování potøebuje další knihovny. V první øadì je to \textbf{Xerces-C} (xerces-c-3.1.1-x86-windows-vc-10.0.zip, 23 MB)\footnote{http://mirror.hosting90.cz/apache//xerces/c/3/binaries/xerces-c-3.1.1-x86-windows-vc-10.0.zip}, které už je samo o sobì zkompilované. Podstatné je stáhnout verzi x86 a ne 64bitovou, aby s ní byly schopni další souèásti pracovat.
+
+Další závislostí jsou \textbf{knihovny FOX}, kterou si budeme muset ve Visual Studiu zkompilovat sami. V návodu u SUMO je uvedeno, že je vyzkoušena pouze verze 1.6.36\footnote{http://ftp.fox-toolkit.org/pub/fox-1.6.36.zip}. Pøesnì pro tuto jedinou verzi se mi povedlo provést kompilaci v poøádku.
+
+Poslední èástí pro zdárnou kompilaci jsou FWTools. Verze doporuèená SUMO ovšem nefunguje a ani nikde na internetu se ji nepodaøilo nalézt. Funkèní je ovšem verze 2.4.7\footnote{http://home.gdal.org/fwtools/FWTools247.exe}.
