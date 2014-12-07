@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame2_View0,0]
-TopLine=316
-Cursor=10339
+TopLine=280
+Cursor=9503
 
 [Frame3]
 Flags=0
@@ -71,8 +71,8 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame3_View0,0]
-TopLine=60
-Cursor=5903
+TopLine=70
+Cursor=6700
 
 [Frame4]
 Flags=0
@@ -94,5 +94,5 @@ Cursor=2494
 
 [SessionInfo]
 FrameCount=5
-ActiveFrame=3
+ActiveFrame=2
 
