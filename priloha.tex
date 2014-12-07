@@ -12,7 +12,7 @@ SUMO je volnì šiøitelný dopravní simulátor, který vznikl v roce 2001. SUMO umožò
 Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažujeme pouze pøípad dopravního simulátoru SUMO pod Windows, v dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v nìkterých èástech není dostateènì pøesný.
 
 \section{Visual Studio}
-Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi.
+Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi. \textbf{Pro správné fungování Visual Studia je nutné mít nainstalován Microsoft .NET Framework verze 4 ne vyšší! }
 
 \section{Ostatní závislosti}
 SUMO ke svému zkompilování potøebuje další knihovny. V první øadì je to \textbf{Xerces-C} (xerces-c-3.1.1-x86-windows-vc-10.0.zip, 23 MB)\footnote{http://mirror.hosting90.cz/apache//xerces/c/3/binaries/xerces-c-3.1.1-x86-windows-vc-10.0.zip}, které už je samo o sobì zkompilované. Podstatné je stáhnout verzi x86 a ne 64bitovou, aby s ní byly schopni další souèásti pracovat.
@@ -20,3 +20,19 @@ SUMO ke svému zkompilování potøebuje další knihovny. V první øadì je to \textbf{
 Další závislostí jsou \textbf{knihovny FOX}, kterou si budeme muset ve Visual Studiu zkompilovat sami. V návodu u SUMO je uvedeno, že je vyzkoušena pouze verze 1.6.36\footnote{http://ftp.fox-toolkit.org/pub/fox-1.6.36.zip}. Pøesnì pro tuto jedinou verzi se mi povedlo provést kompilaci v poøádku.
 
 Poslední èástí pro zdárnou kompilaci jsou FWTools. Verze doporuèená SUMO ovšem nefunguje a ani nikde na internetu se ji nepodaøilo nalézt. Funkèní je ovšem verze 2.4.7\footnote{http://home.gdal.org/fwtools/FWTools247.exe}.
+
+Dùraznì se doporuèuje ani jednu z tìchto èástí neinstalovat do klasického adresáøe Program Files, mùže to zpùsobit problémy.
+
+Nutné je také mít nainstalovaný Python (pro nìj neplatí pøedchozí odstavec), ovšem pozor rozhodnì ne nejnovìjší verzi\footnote{3 a výše}, nýbrž verzi 2.7\footnote{https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi, 16 MB}. U Pythonu není nutné žádné další nastavení.
+
+\subsection{Xerces-C}
+Nejprve rozbalíme obsah archivu a posléze pøekopírujeme ze složky \textit{bin} obì dll knihovny\footnote{xerces-c\_3-1.dll a xerces-c\_3\_1D} do složky \textit{Windows/System32}. Pøes veškerou snahu se nepodaøilo XERCES naimportovat všem projektùm. Tím pádem se musí celý obsah složky \textit{include} pøekopírovat do složky, kde je nainstalované Visual Studio do složky \textit{vc/include} \footnote{napø. c:/Program Files/Microsoft Visual Studio 10.0/VC/include/}. Výsledkem tedy bude pøekopírovaná složka \textit{Xercesc} ze složky \textit{Xerces/include/} do složky \textit{/vc/include}. Pro kompilaci a následné spuštìní zkompilovaných programù je nutno vytvoøit systémovou promìnnou XERCES\footnote{Start - Poèítaè - Vlastnosti systému - Upøesnit nastavení systému (nabídka na pravé stranì) - Promìnné prostøedí... - Systémové promìnné - Nová...}, jejíž hodnota bude nastavena na koøenový adresáø Xerces. Poté vyhledáme v systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%XERCES\%/bin/.
+
+\subsection{FOX}
+
+FOX klasicky rozbalíme z archivu a poté musíme Visual Studiem zkompilovat. Otevøeme v rozbaleném archivu složku \textit{windows/vcpp} a v ní otevøeme Visual Studiem soubor \textit{win32.dsw}. Dle verze Visual Studia se mùže objevit hlášení o nutnosti konvertování. Potvrdíme pro všechny (možno zaškrtnout) a necháme Visual Studio naèíst FOX. Po naètení musíme vybrat možnost kompilace \textbf{Release} a zkompilujeme \textbf{pouze} projekt foxdll. Pak provedeme to samé s tím rozdílem, že vybereme možnost \textbf{Debug}. V koøenovém adresáøi se vytvoøí složka \textit{\textit{lib}} ve které se nacházejí zkompilované knihovny FOXDLL-1.6.dll a FOXDLLD-1.6.dll, které taktéž pøekopírujeme do složky \textit{Windows/System32}. Do systémových promìnných je nutné pøidat promìnnou z názvem FOX16 s cestou do koøenového adresáøe FOX\footnote{napø. C:/fox-1.6.36/} a následnì na konec hodnoty systémové promìnné PATH pøidat \%FOX16\%/lib.
+
+\subsection{FWTools}
+
+FWTools klasicky nainstalujeme (ideálnì ne do složky Program Files). Vytvoøíme stejnì jako pro FOX systémovou promìnnou s názvem PROJ\_GDAL, která bude opìt odkazovat do koøenového adresáøe FWTools. Poté vyhledáme v systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%PROJ\_GDAL\%/bin.
+
