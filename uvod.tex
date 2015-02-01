@@ -1,12 +1,12 @@
 \chapter*{Úvod}
 \addcontentsline{toc}{chapter}{Úvod}
-
+\begin{comment}
 Matematika bıvá èasto nazıvána \uv{královnou vìd}. Je zvykem rozlišovat mezi èistou matematikou a matematikou aplikovanou. Zatímco èistá matematika zkoumá abstraktní objekty a vztahy mezi nimi, aplikovaná matematika se snaí tyto teoretické poznatky uplatnit pøi øešení konkrétních reálnıch problémù. Monosti aplikace matematiky jsou vskutku široké: fyzika a teoretická fyzika, chemie, teorie øízení, ekonomie, sociologie, stavebnictví, elektronika, inenırské aplikace, dopravní problémy a mnoho jinıch. 
 
 Zcela speciální je pak vztah matematiky a fyziky. Pro fyziku není matematika jen nástrojem k øešení problémù, ale i jazykem, kterım jsou pøírodní zákony a jevy popisovány. Není pøíliš pøekvapivé, e k analıze rùznıch fyzikálních problémù, které se èasto prolínají s tìmi inenırskımi, je matematika nutná a uiteèná. Je zøejmé, e k navrení a postavení mostu èi budovy jsou nutné pøesné propoèty zaloené na fyzikálních zákonech. Aèkoli jsou tyto zákony relativnì jednoduché (Newtonovy zákony), jejich aplikace na konkrétní problém mùe bıt znaènì sloitá a k øešení je tøeba pouít pokroèilıch matematickıch metod.
-\begin{comment}
+
 Pøekvapivé a nepochopitelné však je, e èím hloubìji pøírodní zákony poznáváme, tím víc se pøíroda jeví jako matematická. Dnešní fyzikální teorie jsou èasto skoro neodlišitelné od èistì matematickıch teorií. 
-\end{comment}
+
 
 Je tøeba zdùraznit, e fyzika je ze všech vìdních disciplín daleko nejvíc prostoupena matematikou a k øešení základních i aplikovanıch problémù fyziky byly vyvinuty velmi efektivní a robustní matematické metody, napøíklad metody statistické fyziky, renormalizaèní metody, aproximaèní a perturbaèní metody, teorie integrabilních a neintegrabilních systémù, teorie stability a chaosu a mnoho jinıch. Postupem èasu se však stále víc matematizují i jiné vìdní disciplíny jako ekonomie nebo dopravní vìdy. Tyto disciplíny mají spoleèné to, e studují velmi sloité systémy. To znamená, e tyto systémy sestávají z velkého poètu sloek, které navíc interagují sloitım zpùsobem. Ve fyzice se sloité systémy studují v teorii tuhıch látek, v molekulové fyzice, v teorii fázovıch pøechodù a kritickıch jevù èi v problémech mnoha tìles. Proto èasto dochází k tomu, e problém studovanı v rámci nìjaké vìdní disciplíny má svùj protìjšek v analogickém problému ve fyzice. Tyto analogie jsou velmi uiteèné, nebo umoòují aplikovat dobøe rozvinutı matematickı aparát na zdánlivì zcela odlišnı problém.
 
@@ -19,48 +19,46 @@ Diferenciální rovnice popisující dopravní nebo fyzikální problémy jsou vìtšinou 
 
 Ke studiu dopravních systémù je nutná široká škála znalostí z matematiky, teorie dopravy, numerické matematiky, programování, a vıhodou je i znalost fyzikálních teorií, které se svou matematickou formulací podobají problémùm z dopravy. Programovat a analyzovat plnohodnotné dopravní simulace je proto moné a po dlouhém studiu všech uvedenıch oblastí. Cílem této bakaláøské práce je uèinit první krok v tomto studiu, jeliko v rámci bakaláøského studia není moné zvládnout problematiku v celé její šíøi. Proto cílem této práce není získání zásadních novıch vısledkù, ale sestavení vlastního funkèního programu, kterı implementuje nìkterı z existujících modelù.
 
+\end{comment}
 
+V dnešní dobì je na dálnicích velká snaha o dynamické øízení dopravy obzvláštì v místech s uzavírkami jízdních pruhù èi pøi vysoké hustotì provozu. Uzavøení jízdního pruhu mùe nastat prakticky kdykoliv a to plánovanì (napø. pøi pravidelné údrbì) a nebo neplánovanì (dopravní nehoda). Prvním úkolem pro nás je, abychom se v tuto chvíli pokusili dopravu øídit, jak nejlépe to jde. Ani experti se ovšem neshodují, co znamená slovo nejlépe z pøedchozí vìty. Mùe to bıt napø. konkrétní hodnota intenzity èi rychlosti, dojezdovı èas èi další parametry dopravního proudu.
+
+Pokud získáme surová data z daného úseku, napø. intenzita vztaená na minutu pro kadı pruh, a následnì je vyhodnotíme, dostaneme pøesné informace o úseku. Poté mùeme také tyto data vzít a pokusit se nasimulovat danou oblast. Otázkou zùstává jak. Ideálnì tak, aby simulace byla blízká k ji získanım informacím o úseku. V této práci se zamìøíme na mikroskopické modely, podle kterıch budeme simulace provádìt. To znamená, e budeme simulovat kadé jednotlivé vozidlo.
+
+Po simulacích vyhodnotíme jednotlivé modely a zjistíme, které modely odpovídají reálnım situacím. Pøedpoklad je takovı, e nìkteré modely budou pøesnìjší napø. pøi vysokıch hustotách, nìkteré zase naopak.
+
+Ve chvíli, kdy získáme tento pøehled modelù, mùeme ji pøesnìji analyzovat danou situaci a do budoucna budeme vìdìt, e danı model simuluje tento stav nejlépe.
+
+Hlavní cíl práce tedy spoèívá v simulaci na základì reálnıch dat pomocí rùznıch mikroskopickıch modelù a vısledky z tìchto simulací posléze porovnat s reálnımi daty. Tím pádem se posléze naskıtá další monost vyuití pøi øízení dané oblasti èi predikování napø. pøi plánované uzavírce.
+
+\begin{comment}
+První vlastností svázanou s uzavøením pruhu nazıváme poklesem kapacity, která následnì vede k hysterezním efektùm\footnote{}
+\end{comment}
 
 \section*{Cíle práce}
 \addcontentsline{toc}{section}{Cíle práce}
 
-Studijní cíle práce lze formulovat následovnì.
+Cíle práce lze formulovat následovnì:
 
 \begin{itemize}
- \item Seznámení se se základními typy modelù v dopravì, tedy s modely makroskopickımi a mikroskopickımi.
+ \item Seznámení se se základními typy mikroskopickıch modelù (hlavnì jejich matematickım popisem) v dopravì pro pouití na dálnicích
  
- \item Seznámit se s teorií dynamickıch systému a analızou stability zaloenou na linearizaci dynamického systému.
+ \item Seznámit se s kalibrací tìchto modelù 
  
- \item Nastudovat základní a pokroèilé numerické metody øešení soustav obyèejnıch diferenciálních rovnic.
+ \item Seznámit se simulaèním softwarem SUMO, monosti jeho vyuití
  
- \item Seznámit se s matematickım popisem mikroskopického modelu IDM (Intelligent Driver Model).
 \end{itemize}
 
 Tato témata jsou náplní první, teoretické èásti práce. V druhé, praktické, èásti byly cíle práce následující.
 
 \begin{itemize}
- \item Implementace modelu IDM v jazyce Java
- \begin{itemize}
-  \item Implementace Eulerovy metody a metody Runge-Kutta 4. øádu k øešení dynamickıch rovnic modelu IDM.
-  
-  \item Vyuití základních grafickıch knihoven jazyku Java k zobrazení simulace.
-  
-  \item Naprogramovat vlastní grafickou knihovnu, která umoní vykreslení dálnice z izometrického pohledu.
-  
-  \item Rozšíøení modelu IDM o pøedjídìní vozidel podle modelu MOBIL.
- \end{itemize}
- 
- \item Analıza vlastností modelu IDM
- 
- \begin{itemize}
-  \item Vyuít teorie dynamickıch systémù k analıze stacionárních stavù modelu IDM.
-  \item Implementovat metodu seèen k numerickému øešení rovnic pro stacionární stav.
-  \item Provést simulace na bázi modelù IDM a IDM+MOBIL pro stacionární stav a vybrané dopravní situace.
-  \item Makroskopickı popis vısledkù simulace v pojmech distribucí poètu vozidel.
+	\item implementace všech mikroskopickıch modelù z teoretické èásti do simulaèního softwaru SUMO
+	
+	\item kalibrace mikroskopickıch modelù z teoretické èásti
+	
+	\item nasimulovaní reálnıch dat, pøípadnì vytvoøení vlastních scénáøù pro mikroskopické modely
+	
+  \item Makroskopickı popis vısledkù simulace.
+
   \item Mikroskopickı popis vısledkù simulace.
  \end{itemize}
- 
-
-\end{itemize}
-
-V kapitole \ref{ch:sources} uvádíme i kompletní vıpis zdrojového kódu vytvoøeného programu. 

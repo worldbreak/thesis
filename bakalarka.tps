@@ -12,7 +12,7 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1146
-NormalPos.bottom=345
+NormalPos.bottom=437
 Class=LaTeXView
 Document=predidm.tex
 
@@ -30,12 +30,12 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1146
-NormalPos.bottom=345
+NormalPos.bottom=437
 Class=LaTeXView
 Document=literatura.tex
 
 [Frame1_View0,0]
-TopLine=68
+TopLine=61
 Cursor=3142
 
 [Frame2]
@@ -48,13 +48,13 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1146
-NormalPos.bottom=345
+NormalPos.bottom=437
 Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame2_View0,0]
-TopLine=280
-Cursor=9503
+TopLine=94
+Cursor=2563
 
 [Frame3]
 Flags=0
@@ -66,12 +66,12 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1146
-NormalPos.bottom=345
+NormalPos.bottom=437
 Class=LaTeXView
 Document=priloha.tex
 
 [Frame3_View0,0]
-TopLine=70
+TopLine=63
 Cursor=6700
 
 [Frame4]
@@ -84,15 +84,33 @@ MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1146
-NormalPos.bottom=345
+NormalPos.bottom=437
 Class=LaTeXView
 Document=IDMmodel.tex
 
 [Frame4_View0,0]
-TopLine=74
-Cursor=2494
+TopLine=0
+Cursor=439
+
+[Frame5]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1146
+NormalPos.bottom=437
+Class=LaTeXView
+Document=uvod.tex
+
+[Frame5_View0,0]
+TopLine=90
+Cursor=7833
 
 [SessionInfo]
-FrameCount=5
-ActiveFrame=2
+FrameCount=6
+ActiveFrame=5
 
