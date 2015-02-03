@@ -1,6 +1,6 @@
 
 
-\chapter{Modely pøedcházející IDM}
+\chapter{Mikroskopické modely}
 \label{chap:predIDM}
 
 \begin{comment}
@@ -12,7 +12,7 @@ Jednoduše øeèeno \uv{Car Following} modely vycházejí z pøedpokladu, že pokud n-t
 \section{Newellùv model}
 \label{sec:Newell}
 
-V teorii dopravního proudu je Newellùv model jeden z modelù, který popisuje chování øidièe dle vozidla pøed ním. Øidiè se snaží držet za vozidlem jedoucím pøed ním v konstantní  vzdálenosti. Tento model vznikl v roce 1961 a postupnì se vyvíjel. Vychází z nìho pozdìji Intelligent Driver Model (IDM) a z tohoto dùvodu je zde zmínìn.
+V teorii dopravního proudu je Newellùv model jeden z modelù, který popisuje chování øidièe dle vozidla pøed ním. Øidiè se snaží držet za vozidlem jedoucím pøed ním v konstantní  vzdálenosti. Tento model vznikl v roce 1961 a postupnì se vyvíjel. Vychází z nìho novìjší modely, napø. Intelligent Driver Model (IDM) a z tohoto dùvodu je zde zmínìn.
 
 V èlánku \cite{Newell} je pøesnì popsán nejen model, ale i jeho verifikace a porovnání s ostatními modely. Pro nás je dùležitý popis modelu.
 
@@ -407,3 +407,30 @@ Pøedpokládáme tedy, nezávisle na náhodném kolísání, že každé vozidlo se pohybuje
 \end{equation}
 
 Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des} = v_1 \tau$, kde $\tau$ je reakèní èas øidièe. Hodnota $\tau_b$ je definována jako podíl $\overline{v}/b$, kde $\overline{v}$ plyne ze vztahu \eqref{eq:kraussv1vf}. Novì zde také zavádíme promìnnou $\eta$, která je náhodnou výchylkou od bìžného øízení. Volba integraèního kroku $\Delta t$ a preferované mezery $g_{\des}$ je závislá na podmínkách \eqref{eq:krausssafetygarance}.
+
+
+\section{Intelligent Driver Model}
+
+Intelligent Driver Model (IDM) je pomìrnì nový matematický model z roku 2000, který byl vymyšlen v Nìmecku. Snaží se vylepšit nìkteré nedostatky pøedcházejících modelù, ale i pøispìt novými myšlenkami v této oblasti.
+
+Èasovì spojité mikroskopické modely bez pøedjíždìní jsou v zásadì definovány funkcí zrychlení. V nejstarších modelech mùže zrychlení $\dot{v} (t + T_r)$ vozidla $\alpha$ zapsáno jako
+\begin{equation}
+\dot{v} (t + T_r) = \frac{-\lambda v_\alpha^m \Delta v_\alpha}{s_\alpha^l},
+\label{eq:earliermodels}
+\end{equation}
+kde $\lambda$, $l$ a $m$ jsou parametry modelu, $s$ je odstup mezi vozidly a $\Delta v_\alpha$ rozdíl rychlostí.
+
+Kromì toho, mùže zrychlení mùže také záviset na vlastní rychlosti vozidla $v_\alpha$ a klesá se vzdáleností $s_\alpha$ k vozidlu pøed ním,
+\begin{equation}
+s_{\alpha} = x_{\alpha-1} - x_{\alpha} - l_{\alpha},
+\label{eq:distancebetween}
+\end{equation}
+kde $l_{\alpha}$ je délka vozidla $\alpha$.
+
+V závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedoucím vozidle, tyto modely není možné použít pøi velmi nízkých hustotách provozu. Pokud není urèeno vedoucí vozidlo ($s_{\alpha} \rightarrow \infty$), zrychlení buïto není možné stanovit (pro hodnotu $l = 0$) nebo je rovné nule ($l > 0$) bez ohledu na rychlost vozidla. Dá se pøedpokládat, že v tuto chvíli se vozidla budou snažit dosáhnout své preferované rychlosti. Chování vozidel v hustém provozu je ovšem ponìkud nerealistické. Pøedevším odstup mezi vozidly $s$ týkající se vedoucího vozidla nemusí nutnì smìøovat k rovnovážnému stavu. Ani malé mezery nepøimìjí vozidlo k brždìní pokud je rozdíl rychlostí $\Delta v_\alpha$ roven nule.
+
+Tyto problémy byly vyøešeny v Newellovì modelu (viz. odstavec \ref{sec:Newell}), kde je z rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k velmi vysokým hodnotám zrychlení.\cite{Treiber}
+
+Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako napø. Wiedemannùv. Ten se snaží napodobovat dopravu jak nejlépe to jde ovšem za cenu mnoha parametrù modelu.
+
+Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} (brzdný koeficient $b_n$) a Kraussùv model \ref{sec:Krauss} (brzdný koeficient $b$). Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. 

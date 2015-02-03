@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame0_View0,0]
-TopLine=9
-Cursor=1268
+TopLine=583
+Cursor=33714
 
 [Frame1]
 Flags=0
@@ -35,7 +35,7 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame1_View0,0]
-TopLine=61
+TopLine=57
 Cursor=3142
 
 [Frame2]
@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame2_View0,0]
-TopLine=94
-Cursor=2563
+TopLine=301
+Cursor=9915
 
 [Frame3]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame3_View0,0]
-TopLine=63
+TopLine=65
 Cursor=6700
 
 [Frame4]
@@ -107,10 +107,10 @@ Class=LaTeXView
 Document=uvod.tex
 
 [Frame5_View0,0]
-TopLine=90
-Cursor=7833
+TopLine=0
+Cursor=7364
 
 [SessionInfo]
 FrameCount=6
-ActiveFrame=5
+ActiveFrame=0
 
