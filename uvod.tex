@@ -21,15 +21,15 @@ Ke studiu dopravních systémù je nutná široká škála znalostí z matematiky, teorie
 
 \end{comment}
 
-V dnešní dobì je na dálnicích velká snaha o dynamické øízení dopravy obzvláštì v místech s uzavírkami jízdních pruhù èi pøi vysoké hustotì provozu. Uzavøení jízdního pruhu mùže nastat prakticky kdykoliv a to plánovanì (napø. pøi pravidelné údržbì) a nebo neplánovanì (dopravní nehoda). Prvním úkolem pro nás je, abychom se v tuto chvíli pokusili dopravu øídit, jak nejlépe to jde. Ani experti se ovšem neshodují, co znamená slovo nejlépe z pøedchozí vìty. Mùže to být napø. konkrétní hodnota intenzity èi rychlosti, dojezdový èas èi další parametry dopravního proudu.
+V dnešní dobì je na dálnicích velká snaha o dynamické øízení dopravy obzvláštì v místech s uzavírkami jízdních pruhù èi pøi vysoké hustotì provozu. Uzavøení jízdního pruhu mùže nastat prakticky kdykoliv a to plánovanì (napø. pøi pravidelné údržbì) a nebo neplánovanì (dopravní nehoda). Z toho vyplývá úkol pokusit se v tento moment øídit dopravu jak nejlépe to jde. Ani experti se ovšem neshodují, co znamená slovo nejlépe z pøedchozí vìty. Mùže to být napø. konkrétní hodnota intenzity èi rychlosti, dojezdový èas èi další parametry dopravního proudu.
 
-Pokud získáme surová data z daného úseku, napø. intenzita vztažená na minutu pro každý pruh, a následnì je vyhodnotíme, dostaneme pøesné informace o úseku. Poté mùžeme také tyto data vzít a pokusit se nasimulovat danou oblast. Otázkou zùstává jak. Ideálnì tak, aby simulace byla blízká k již získaným informacím o úseku. V této práci se zamìøíme na mikroskopické modely, podle kterých budeme simulace provádìt. To znamená, že budeme simulovat každé jednotlivé vozidlo.
+Pokud jsme schopni získat surová data z daného úseku, napø. intenzitu vztaženou na minutu pro každý pruh, a následnì je vyhodnotíme, dostaneme pøesné informace o úseku. Poté mùžeme také tyto data vzít a pokusit se nasimulovat danou oblast. Otázkou zùstává jak. Ideálnì tak, aby simulace byla blízká k již získaným informacím o úseku. V této práci se zamìøíme na mikroskopické modely, podle kterých budeme simulace provádìt. To znamená, že budeme simulovat každé jednotlivé vozidlo.
 
 Po simulacích vyhodnotíme jednotlivé modely a zjistíme, které modely odpovídají reálným situacím. Pøedpoklad je takový, že nìkteré modely budou pøesnìjší napø. pøi vysokých hustotách, nìkteré zase naopak.
 
 Ve chvíli, kdy získáme tento pøehled modelù, mùžeme již pøesnìji analyzovat danou situaci a do budoucna budeme vìdìt, že daný model simuluje tento stav nejlépe.
 
-Hlavní cíl práce tedy spoèívá v simulaci na základì reálných dat pomocí rùzných mikroskopických modelù a výsledky z tìchto simulací posléze porovnat s reálnými daty. Tím pádem se posléze naskýtá další možnost využití pøi øízení dané oblasti èi predikování napø. pøi plánované uzavírce.
+Hlavní cíle práce tedy spoèívají v simulaci dálnièního provozu na základì získaných reálných dat, a to pomocí rùzných mikroskopických modelù. Dalším  krokem je porovnat výsledky z tìchto simulací s reálnými daty. Tento zpùsob lze využít jako další možnost pøi øízení dané dálnièní oblasti èi pøi predikování napø. plánovaných uzavírek.
 
 \begin{comment}
 První vlastností svázanou s uzavøením pruhu nazýváme poklesem kapacity, která následnì vede k hysterezním efektùm\footnote{}
@@ -38,14 +38,14 @@ První vlastností svázanou s uzavøením pruhu nazýváme poklesem kapacity, která ná
 \section*{Cíle práce}
 \addcontentsline{toc}{section}{Cíle práce}
 
-Cíle práce lze formulovat následovnì:
+Cíle práce lze chronologicky formulovat následovnì:
 
 \begin{itemize}
  \item Seznámení se se základními typy mikroskopických modelù (hlavnì jejich matematickým popisem) v dopravì pro použití na dálnicích
  
  \item Seznámit se s kalibrací tìchto modelù 
  
- \item Seznámit se simulaèním softwarem SUMO, možnosti jeho využití
+ \item Seznámit se simulaèním softwarem SUMO a možnostmi jeho využítí v dané problematice.
  
 \end{itemize}
 
