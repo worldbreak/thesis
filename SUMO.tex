@@ -1,0 +1,52 @@
+\chapter{Simulaèní a podpùrnı software}
+
+V této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji naprogramované autorem èi volnì dostupné nástroje.
+
+\section{SUMO}
+
+Po prostudování modelù byla otázka dalšího postupu. Bylo moné pokraèovat v aplikaci, kterou autor vytvoøil pro svoji bakaláøskou práci, další variantou bylo vyuít softwaru AIMSUN, kterı by byl také vhodnı pro naprogramování vlastních modelù. Nicménì zvítìzil open-source simulaèní software SUMO. Tento produkt se neustále vyvíjí ji od roku 2001 a jeho podpora neustále pokraèuje. Nejprve se autor pokusil zaèít pracovat v AIMSUNu, nicménì to skonèilo neúspìšnì, protoe pro naprogramování dalších modelù do tohoto software byl potøeba balíèek, kterı nebyl zdarma.
+
+Další variantou bylo pokraèovat v programovacím jazyku JAVA na vytvoøené aplikaci pro bakaláøskou práci, nicménì po prozkoumání dalších variant se autor rozhodl, e bude vıhodnìjší pokraèovat s ji vyvíjenım softwarem SUMO.
+
+SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít v mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi podle jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v dobì MS v Nìmecku v roce 2006 v Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
+
+Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení, matic vzdáleností vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
+
+Pøi vıvoji SUMO byly hlavní dva dùvody proè by mìl bıt opensource. První z nich je snaha podporovat komunitu, která se zabıvá simulacemi, volnì dostupnım nástrojem ve kterém ji budou zahrnuty základní algoritmy. Existují nìkteré další volnì dostupné simulaèní softwary, na kterıch ovšem nepracovali studenti a pøestaly bıt døíve èi pozdìji podporovány. Druhı dùvod je neexistující porovnatelnost implementovatelnost modelù a algoritmù.
+
+Tento druhı dùvod a také monost vlastní implementace modelù vedly autora k volbì SUMO. K tomu, aby bylo moné vlastní modely vùbec implementovat, bylo nejprve nutné vlastní SUMO zkompilovat, to znamená, e nestaèí pouze verze SUMO, které obsahuje spustitelné soubory, ale pøímo zdrojové kódy. Více o tom jak SUMO zkompilovat se ètenáø dozví v pøíloze \ref{kompilaceSUMO}.
+
+\subsection{Jak to funguje}
+
+Nyní ji víme, èeho všeho je SUMO pøiblinì schopno. K tomu abychom spuštìna simulace je zapotøebí mít pøipraveny minimálnì tøi typy souborù, a to
+\begin{itemize}
+	\item konfiguraèní soubor,
+	\item soubor s podkladem (dopravní sí),
+	\item soubor s vozidly.
+\end{itemize}
+
+\subsection{Konfiguraèní soubor}
+V konfiguraèním souboru je moné nastavit všechny monosti, které obsahuje SUMO jako parametry pøíkazové øádky. To se mùe hodit obzvláš ve chvíli, kdy se SUMO volá s mnoha parametry. Tehdy ho staèí zavolat pouze s konfiguraèním souborem.
+
+\subsection{Podklad pro simulaci}
+\label{sub:podkladSUMO}
+Pro diplomovou práci dostal autor data konkrétnì prùmìrné intenzity a rychlosti z mıtnıch bran Praského okruhu. Bylo proto vhodné mít jako podklad pro simulaci sí v konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde se konkrétní úsek stáhnul ve formátu OSM a vymazaly se všechny prvky nesouvisející s Praskım okruhem. Posléze byl pouit jeden z nástrojù SUMO a to konkrétnì netconvert, kterı pøevádí data z pøedem definovaného formátu do SUMO formátu. Více k tomuto tématu v pøíloze \ref{chap:netSUMO}.
+
+\subsection{Vozidla pro simulaci}
+
+Vozidla mají v SUMO nìkolik parametrù, které mimo jiné závisí také na volbì mikroskopického modelu.  Mezi základní patøí
+\begin{itemize}
+	\item id vozidla,
+	\item typ vozidla,
+	\item dráha, po které se bude vozidlo pohybovat,
+	\item èas vjezdu do oblasti,
+	\item místo vjezdu do oblasti,
+	\item rychlost pøi vjezdu do oblasti,
+	\item jízdní pruh pøi vjezdu do oblasti.
+\end{itemize}
+
+Mùeme na zaèátku definovat typ vozidla, co znamená jeho parametry jako napø. délka vozidla, zrychlení, max. rychlost atp. Poté u kadého vozidla nastavíme tento typ a vozidlo automaticky dostane všechny pøiøazené parametry.
+
+Dráha, po které se bude vozidlo pohybovat, souvisí s odstavcem \ref{sub:podkladSUMO}, kde pøímo tyto jízdní úseky vytváøíme. Tento parametr mùe obsahovat více hodnot, v pøípadì Praského okruhu minimálnì èást mezi dvì mıtnımi branami.
+
+Soubor s vozidly vytvoøíme pomocí speciálního programu vytvoøeného pro tento úèel. Protoe reálná data jsou v MATLAB formátu, je nutné je zkonvertovat do SUMO formátu. 

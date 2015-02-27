@@ -408,10 +408,55 @@ Pøedpokládáme tedy, nezávisle na náhodném kolísání, že každé vozidlo se pohybuje
 
 Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des} = v_1 \tau$, kde $\tau$ je reakèní èas øidièe. Hodnota $\tau_b$ je definována jako podíl $\overline{v}/b$, kde $\overline{v}$ plyne ze vztahu \eqref{eq:kraussv1vf}. Novì zde také zavádíme promìnnou $\eta$, která je náhodnou výchylkou od bìžného øízení. Volba integraèního kroku $\Delta t$ a preferované mezery $g_{\des}$ je závislá na podmínkách \eqref{eq:krausssafetygarance}.
 
-
 \section{Intelligent Driver Model}
 
+V této sekci budeme primárnì vycházet z práce \cite{Vanis}, ve které je Intelligent Driver Model (IDM) do znaèné míry rozebrán. Využijeme hlavnì podkapitolu 5.1 z \cite{Vanis}, kterou doplníme o poznatky, které jsou uplatnìny z kapitoly \ref{chap:predIDM}.
+
 Intelligent Driver Model (IDM) je pomìrnì nový matematický model z roku 2000, který byl vymyšlen v Nìmecku. Snaží se vylepšit nìkteré nedostatky pøedcházejících modelù, ale i pøispìt novými myšlenkami v této oblasti.
+
+\subsection{Matematický popis}
+\label{sec:matpopisIDM}
+ 
+Pro výpoèet zrychlení v IDM je použit vztah
+\begin{equation}
+\dot{v}_n = a_\free + a_\inter,
+\label{soucetzrych}
+\end{equation}
+kde se aktuální zrychlení úèastníka vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i úèastník jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s Gippsovým modelem (kapitola \ref{sec:Gipps}, kde se ovšem vybírá pouze jedna z tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
+
+Zrychlení pøi volném proudu je definováno vztahem
+\begin{equation}
+a_\free {}={} a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right],
+\label{zrychvolproud}
+\end{equation}
+kde $a$ je maximální zrychlení, $\delta$ je exponent zrychlení, $v_n$ je aktuální rychlost vozidla a $v_{n\free}$ je rychlost, které chce vozidlo dosáhnout.
+
+Pokud v rovnici \eqref{zrychvolproud} bude zlomek $v_n / v_\free$ roven jedné, auto se již dostalo na svou preferovanou rychlost $v_\free$ a celkové zrychlení $a_\free$ bude rovno nule. Naopak pokud bude $v_n$ rovno nule, znamená to, že $a_\free$ bude pøímo rovno $a$, a auto pojede svým maximálním zrychlením. Pokud $v_n$ bude menší než $v_\free$, pak platí že, èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_\free$. Pokud $v_n$ bude vìtší než $v_\free$, bude platit pravý opak.
+
+Auto jedoucí pøi volném proudu je ale nereálná pøedstava, proto se do rovnice \eqref{soucetzrych} pøidává interakèní èlen, který pøímo závisí na parametrech vozidla jedoucí pøed naším úèastníkem. Tento èlen je roven
+\begin{equation}
+a_\inter = - a \left(\frac{s_n^*}{s_n}\right)^2,
+\label{intclen}
+\end{equation}
+kde $a$ je maximální zrychlení, $s_n = x_{n-1} - x_n$ je rozdíl poloh vozidel a $s_n^*$
+\begin{equation}
+s_n^* = s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}
+\label{snhvez}
+\end{equation}
+je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $T$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}.
+
+Èlen úmìrný $v_n - v_{n-1}$ je kvadratický v promìnné $v_n$ a obsahuje souèin $v_n v_{n-1}$. Tyto nelineární èleny popisují interakci, v tomto pøípadì dvou vozidel. Pokud tedy bude vzdálenost $s_n$ mezi auty vysoká, potom zlomek $s_n^*/s_n$ bude mít velmi malou hodnotu a interakèní èlen $a_\inter$ lze zanedbat, takže vozidlo se pohybuje jako ve volném proudu.
+\begin{figure}%
+\centering
+\includegraphics[width=0.6\textwidth]{idm.pdf}%
+\caption{Promìnné jednotlivých aut}%
+\label{promen}%
+\end{figure}
+
+
+Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní èlen $s_n^*$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení auta $\dot{v}_n$ se musí snížit.
+
+\section{Shrnutí}
 
 Èasovì spojité mikroskopické modely bez pøedjíždìní jsou v zásadì definovány funkcí zrychlení. V nejstarších modelech mùže zrychlení $\dot{v} (t + T_r)$ vozidla $\alpha$ zapsáno jako
 \begin{equation}
@@ -433,4 +478,4 @@ Tyto problémy byly vyøešeny v Newellovì modelu (viz. odstavec \ref{sec:Newell}),
 
 Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako napø. Wiedemannùv. Ten se snaží napodobovat dopravu jak nejlépe to jde ovšem za cenu mnoha parametrù modelu.
 
-Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} (brzdný koeficient $b_n$) a Kraussùv model \ref{sec:Krauss} (brzdný koeficient $b$). Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. 
+Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} (brzdný koeficient $b_n$) a Kraussùv model \ref{sec:Krauss} (brzdný koeficient $b$). Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. Toto chování se bohužel ztrácí ve chvíli, kdy modelujeme dopravu deterministicky\footnote{napø. když vozidla vjíždí do urèité oblasti každých 5 sekund}. Tím pádem není možné simulovat nestabilní stavy dopravy.

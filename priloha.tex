@@ -1,10 +1,11 @@
+\appendix
 \newpage
 \setcounter{page}{1}
 \setcounter{chapter}{0}
 \pagenumbering{Roman}
 \label{obsahCD}
 \chapter{Pøíloha A: Kompilace simulaèního softwaru SUMO}
-
+\label{kompilaceSUMO}
 \section{SUMO}
 SUMO je volnì šiøitelný dopravní simulátor, který vznikl v roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøedky, mìstskou hromadnou dopravu èi chodce. Dále v SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{chap:IDM} a Wiedermanùv model. 
 
@@ -39,3 +40,37 @@ FWTools klasicky nainstalujeme (ideálnì ne do složky Program Files). Vytvoøíme s
 \subsection{SUMO}
 
 V koøenovém adresáøi SUMO ve složce \textbf{/build/msvc10} se nachází soubor s názvem \textit{prj.sln}. Ten otevøeme Visual Studiem. Pokud je vše nastaveno správnì, je možno spustit kompilaci SUMO, to znamená zkompilovat všechno (všech 54 projektù). Pokud kompilujeme v režimu Release, dostaneme výstup, který se nachází v koøenovém adresáøi ve složce \textit{bin}. Tento výstup je v sumo-winbin-0.22.0.zip. 
+
+
+
+
+\chapter{Pøíloha B: Vytvoøení sítì pro simulaci v SUMO}
+\label{chap:netSUMO}
+
+\section{OpenStreetMap}
+\label{sec:OSM}
+Pro vytvoøení sítì bylo využito serveru OpenStreetMap, který obsahuje kromì pozemních komunikací spoustu dalších objektù. Nejdøíve bylo na tomto serveru vybrána oblast, ve které se nacházejí mýtné brány. Posléze tato mapa byla vyexportována do souboru OSM. Ten ovšem obsahoval i další objekty, které nemají pro simulování žádnou relevanci. Tyto objekty bylo nutné odstranit.
+
+K tomu se využil free software JOSM\footnote{https://josm.openstreetmap.de/}, kde se vybraly všechny prvky, které bylo nutné odstanit. Tyto prvky byly sice odstranìny, ovšem velikost souboru se ještì zvýšila, protože ke každému objektu byl pouze pøirazen parametr skrytí.
+
+Aby se prvky opravdu smazali byl využit software XMLStartlet\footnote{http://xmlstar.sourceforge.net/}, který pøímo pracuje se souborem XML. Ve stejné složce, kde se nachází XMLStartlet se pøekopíruje soubor OSM s již odstranìnými prvky (\textit{input.osm}) a s pøíkazové øádky se spustí pøíkaz 
+
+\begin{lstlisting}
+xmlstarlet ed -d "/osm/*[@action='delete']" < input > output.osm
+\end{lstlisting}
+
+kde \textit{output.osm} je název výstupního souboru s pøímo smazanými prvky.
+
+\section{netConvert}
+
+Pokud máme pøipravený soubor z odstavce \ref{sec:OSM}, zkopírujeme ho do složky se souborem \textit{netconvert.exe}. Z pøíkazové øádky spustíme pøíkaz
+
+\begin{lstlisting}[breaklines=true]
+netconvert --guess-ramps  --remove-geometry  --junctions.join --osm-files output.osm --output-file nodes.net.xml
+\end{lstlisting}
+
+Tento pøíkaz nám vytvoøí soubor \textit{nodes.net.xml}, který obsahuje již pøesnou strukturu sítì, kterou bude možné otevøít v SUMO. Existuje mnoho parametrù netconvert, po nìkolika zkouškách autor usoudil, že tyto parametry jsou nejblíže tomu, èeho se chce dosáhnout. Program \textit{netconvert.exe} se pokusí uhádnout nájezdy a sjezdy s Pražského okruhu (\textit{--guess-ramps}), které nejsou zøejmé ze souboru \textit{output.osm}, s tím souvisí vytvoøení propojení (\textit{--junctions.join}) tìchto nájezdù a sjezdù a vytvoøení dalších uzlù (\textit{--remove-geometry}). V tuto chvíli máme již použitelný soubor jako podklad pro simulaci.
+
+SUMO pouští vozidla do oblasti tak, že vezme jeden z parametrù vozidla, který urèuje vjezd do oblasti, v dalším parametru jsou informace o dalších hranách, které vozidlo projíždí. Problém výstupního souboru \textit{nodes.net.xml}, se kterým jsou tyto parametry vozidla srovnávány, spoèívá v tom, že hrany a uzly jsou 8 až 9ti místná èísla, která nemají na první pohled danou spojitost. Je tedy nutné je pøejmenovat.
+
+Nejlepší zpùsob je asi v použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho ID a potom v souboru \textit{nodes.net.xml} nahradíme pøedem vymyšleným ID z nìjakého vlastního systému. Autor zvolil èíslování od 1 a v závislosti na smìru bud písmeno a nebo b. Takže hrana má napø. název 1a, 3b.
