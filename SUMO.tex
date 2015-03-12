@@ -12,7 +12,7 @@ SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít 
 
 Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení, matic vzdáleností vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
 
-Pøi vıvoji SUMO byly hlavní dva dùvody proè by mìl bıt opensource. První z nich je snaha podporovat komunitu, která se zabıvá simulacemi, volnì dostupnım nástrojem ve kterém ji budou zahrnuty základní algoritmy. Existují nìkteré další volnì dostupné simulaèní softwary, na kterıch ovšem nepracovali studenti a pøestaly bıt døíve èi pozdìji podporovány. Druhı dùvod je neexistující porovnatelnost implementovatelnost modelù a algoritmù.
+Pøi vıvoji SUMO byly hlavní dva dùvody proè by mìl bıt opensource. První z nich je snaha podporovat komunitu, která se zabıvá simulacemi, volnì dostupnım nástrojem ve kterém ji budou zahrnuty základní algoritmy. Existují nìkteré další volnì dostupné simulaèní softwary, na kterıch ovšem nepracovali studenti a pøestaly bıt døíve èi pozdìji podporovány. Druhım dùvodem je neexistující porovnatelnost implementovatelnost modelù a algoritmù.
 
 Tento druhı dùvod a také monost vlastní implementace modelù vedly autora k volbì SUMO. K tomu, aby bylo moné vlastní modely vùbec implementovat, bylo nejprve nutné vlastní SUMO zkompilovat, to znamená, e nestaèí pouze verze SUMO, které obsahuje spustitelné soubory, ale pøímo zdrojové kódy. Více o tom jak SUMO zkompilovat se ètenáø dozví v pøíloze \ref{kompilaceSUMO}.
 
@@ -28,9 +28,11 @@ Nyní ji víme, èeho všeho je SUMO pøiblinì schopno. K tomu abychom spuštìna sim
 \subsection{Konfiguraèní soubor}
 V konfiguraèním souboru je moné nastavit všechny monosti, které obsahuje SUMO jako parametry pøíkazové øádky. To se mùe hodit obzvláš ve chvíli, kdy se SUMO volá s mnoha parametry. Tehdy ho staèí zavolat pouze s konfiguraèním souborem.
 
-\subsection{Podklad pro simulaci}
+\subsection{Soubor s podkladem}
 \label{sub:podkladSUMO}
 Pro diplomovou práci dostal autor data konkrétnì prùmìrné intenzity a rychlosti z mıtnıch bran Praského okruhu. Bylo proto vhodné mít jako podklad pro simulaci sí v konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde se konkrétní úsek stáhnul ve formátu OSM a vymazaly se všechny prvky nesouvisející s Praskım okruhem. Posléze byl pouit jeden z nástrojù SUMO a to konkrétnì netconvert, kterı pøevádí data z pøedem definovaného formátu do SUMO formátu. Více k tomuto tématu v pøíloze \ref{chap:netSUMO}.
+
+SUMO také umoòuje vyuít vlastní nástroj na generování sítí, JTRrouter èi DFrouter.
 
 \subsection{Vozidla pro simulaci}
 
@@ -49,4 +51,46 @@ Mùeme na zaèátku definovat typ vozidla, co znamená jeho parametry jako napø. d
 
 Dráha, po které se bude vozidlo pohybovat, souvisí s odstavcem \ref{sub:podkladSUMO}, kde pøímo tyto jízdní úseky vytváøíme. Tento parametr mùe obsahovat více hodnot, v pøípadì Praského okruhu minimálnì èást mezi dvì mıtnımi branami.
 
-Soubor s vozidly vytvoøíme pomocí speciálního programu vytvoøeného pro tento úèel. Protoe reálná data jsou v MATLAB formátu, je nutné je zkonvertovat do SUMO formátu. 
+\section{Pøíprava a vyhodnocení simulace - program}
+
+Aby bylo moné dostat se k jádru celé práce, je nutná pøíprava dat pro simulaci a také jejich následné vyhodnocení. K tomuto úèelu byla vytvoøena konzolová aplikace, která umoòuje 4 základní operace
+\begin{enumerate}
+	\item pøevedení formátu dat (MATLAB) z Praského okruhu na formát podporovanı softwarem SUMO (XML)
+	\item vytvoøení moností, jak vytváøet vstupní soubor vozidel
+	\item vytvoøení souboru, kterı po následném spuštìní programem gnuplot vytvoøí graf èasové øady
+	\item vytvoøení souboru, kterı po následném spuštìní programem gnuplot vytvoøí histogram
+\end{enumerate}
+
+Tato aplikace byla vytvoøena v jazyku JAVA z dùvodu nalezení balíèku pro monost práce s daty ze softwaru MATLAB. Dále se autor rozhodl, e vytvoøí radìji jednu pøehlednou aplikaci ne 5 malıch.
+
+\subsection{Tøída AllInOne}
+
+V hlavní tøídì se nachází konstruktor, kterı na základì vstupních parametrù zavolá pøíslušnou tøídu, pøípadnì vytiskne chybovou hlášku s problémem. Dále je zde funkce na zjištìní, zda zadanı parametr je èíslo.
+
+\begin{itemize}
+	\item \textit{public AllInOne(String args[])} - konstruktor, vìtvení na základì vstupního pole \textit{args}
+	\item \textit{public static boolean isInteger(String s)} - funkce na kontrolu, zda je vstupní øetìzec \textit{s} èíslo
+\end{itemize}
+
+\subsection{Pøevedení formátu dat}
+
+Pro SUMO je moné vytvoøit si jakıkoliv soubor vozidel. SUMO obsahuje pøímo manuál, jak tento soubor vytvoøit. Není ovšem vhodné vytváøet ho ruènì, nıbr pouít nìjakı nástroj pro XML.
+
+Tøída, která toto umí v Javì, je nazvána \textit{MatlabToXML}. V konstruktoru se vytvoøí soubor, jeho název je jeden ze vstupních parametrù a poté ve funkci \textit{createLoopDocument} se pøímo vytváøí jeho obsah.
+
+\begin{itemize}
+	\item \textit{public MatlabToXML(String fileNameMatlab, String fileNameCars)} - první vstupní parametr urèuje soubor ve formátu .mat, kterı má pøedem definovanou strukturu, která je shodná s mıtnımi branami z Praského okruhu. Vıstupní soubory se potom budou jmenovat na základì vstupní promìnné \textit{fileNameCars}, kde dále bude následovat potrítko a èíslo pruhu\footnote{Napø. pro vstupní parametr detektorkm0201.xml, budou vıstupní soubory detektorkm0201\_0.xml a detektorkm0201\_1.xml}, ve kterém budou informace o rychlostech a intenzitách pouze pro ten danı pruh.
+	\item \textit{public Document createLoopDocument(int lane)} - vstupní parametr \textit{lane} urèuje pruh, pro kterı se právì obsah souboru vytváøí.
+\end{itemize}
+
+Vıstupní soubor bude shodnı s vıstupním souborem po simulaci SUMO, take bude moné pøesnì jednotlivé hodnoty z mıtnıch bran porovnat s nasimulovanımi.
+
+Pøíkaz, kterım lze program spustit aby vytvoøil tento dokument, je následující
+
+\begin{lstlisting}[breaklines=true]
+java -jar out\artifacts\AllInOne_jar\AllInOne.jar -m sokp-0187-20121031.mat det0187.xml
+\end{lstlisting}
+
+Ze souboru \textit{sokp-0187-20121031.mat} vytvoøí v závislosti na poètu pruhù pod touto mıtnou branou stejnı poèet souborù, tedy \textit{det0187\_0.xml}, \textit{det0187\_1.xml} atd.
+
+Tyto soubory lze následnì pouít jako vstup pro vytvoøení souboru s vozidly pro SUMO a nebo pro vytvoøení grafù nebo histogramù pro porovnání vısledkù se simulací.
