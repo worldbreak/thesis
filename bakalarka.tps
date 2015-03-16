@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame2_View0,0]
-TopLine=101
-Cursor=8716
+TopLine=152
+Cursor=11785
 
 [Frame3]
 Flags=0
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame4_View0,0]
-TopLine=96
-Cursor=8442
+TopLine=84
+Cursor=6854
 
 [SessionInfo]
 FrameCount=5
