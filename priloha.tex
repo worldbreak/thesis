@@ -38,8 +38,8 @@ FOX klasicky rozbalíme z archivu a poté musíme Visual Studiem zkompilovat. Otevø
 FWTools klasicky nainstalujeme (ideálnì ne do složky Program Files). Vytvoøíme stejnì jako pro FOX systémovou promìnnou s názvem PROJ\_GDAL, která bude opìt odkazovat do koøenového adresáøe FWTools. Poté vyhledáme v systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%PROJ\_GDAL\%/bin.
 
 \subsection{SUMO}
-
-V koøenovém adresáøi SUMO ve složce \textbf{/build/msvc10} se nachází soubor s názvem \textit{prj.sln}. Ten otevøeme Visual Studiem. Pokud je vše nastaveno správnì, je možno spustit kompilaci SUMO, to znamená zkompilovat všechno (všech 54 projektù). Pokud kompilujeme v režimu Release, dostaneme výstup, který se nachází v koøenovém adresáøi ve složce \textit{bin}. Tento výstup je v sumo-winbin-0.22.0.zip. 
+\label{app:SUMO}
+V koøenovém adresáøi SUMO ve složce \textbf{/build/msvc10} se nachází soubor s názvem \textit{prj.sln}. Ten otevøeme Visual Studiem. Pokud je vše nastaveno správnì, je možno spustit kompilaci\footnote{Build $\rightarrow$ Build Solution} SUMO, to znamená zkompilovat všechno (všech 54 projektù). Pokud kompilujeme v režimu Release, dostaneme výstup, který se nachází v koøenovém adresáøi ve složce \textit{bin}. Tento výstup je v sumo-winbin-0.22.0.zip. 
 
 
 
@@ -74,3 +74,25 @@ Tento pøíkaz nám vytvoøí soubor \textit{nodes.net.xml}, který obsahuje již pøesn
 SUMO pouští vozidla do oblasti tak, že vezme jeden z parametrù vozidla, který urèuje vjezd do oblasti, v dalším parametru jsou informace o dalších hranách, které vozidlo projíždí. Problém výstupního souboru \textit{nodes.net.xml}, se kterým jsou tyto parametry vozidla srovnávány, spoèívá v tom, že hrany a uzly jsou 8 až 9ti místná èísla, která nemají na první pohled danou spojitost. Je tedy nutné je pøejmenovat.
 
 Nejlepší zpùsob je asi v použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho ID a potom v souboru \textit{nodes.net.xml} nahradíme pøedem vymyšleným ID z nìjakého vlastního systému. Autor zvolil èíslování od 1 a v závislosti na smìru bud písmeno a nebo b. Takže hrana má napø. název 1a, 3b.
+
+\chapter{Pøíloha C: Vytvoøení souborù pro nový model}
+\label{chap:newfiles}
+
+Ideální volbou pro implementaci nového modelu je zaèít s modelem, který již existuje. Pokud se nacházíme v koøenovém adresáøi simulaèního nástroje SUMO, potom ve složce \textit{/src/microsim/cfmodels} nalezneme všechny dosud naprogramované modely.
+
+Nejjednoduší zpùsob je zkopírování souborù s již existujícím modelem (napø. \textit{MSCFModel\_KraussOrig2.h} a \textit{MSCFModel\_KraussOrig2.cpp} a jejich následné pøejmenování na jméno našeho modelu (napø. Gipps). Výsledkem tedy budou dva soubory \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}. Nyní otevøeme postupnì oba soubory a nahradíme každý výskyt \textit{MSCFModel\_KraussOrig1} za \textit{MSCFModel\_Gipps}.
+
+Velmi dùležitá vìc je potom pøidat tyto soubory do projektu\footnote{Postup, jak se otevírá a kompiluje projekt SUMO, se nachází v pøíloze \ref{kompilaceSUMO} v sekci \ref{app:SUMO}}. To se ve Visual Studiu provede volbou \textit{Project $\rightarrow$ Add Existing Item} a vyberou se námi vytvoøené soubory, tedy napø. \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}.
+
+Posléze otevøeme soubor \textit{/src/utisk/xml/SUMOXMLDefinitions.h} a pøidáme do seznamu parametrù\footnote{ideálnì vyhledat nìjaký stávajicí model - pro Krausse SUMO\_TAG\_CF\_KRAUSS\_ORIG1 a za nìj (ne místo nìj!) pøidat SUMO\_TAG\_CF\_GIPPS}.
+
+V souboru \textit{/src/utisk/xml/SUMOXMLDefinitions.cpp} poté pøidáme opìt k sekci modelù Gippsùv - \textit{\{ "carFollowing-GIPPS",       SUMO\_TAG\_CF\_GIPPS \}}.
+
+Závìreènou fází pøidání modelu je otevøení souboru \textit{/src/microsim/MSVehicleType.cpp}, kde se ve funkci \textit{build} nachází dìlení, podle toho jaký model je nadefinován v souboru .rou.xml. Na tomto základì je zvolen vybraný model. Do tohoto dìlení je nutné vložit následující kód:
+
+\begin{lstlisting}[breaklines=true]
+case SUMO_TAG_CF_GIPPS:
+	vtype->myCarFollowModel = new MSCFModel_Gipps(vtype, accel, decel, sigma, tau);
+\end{lstlisting}
+
+Pokud chceme zvolit náš model pøi generování vozidel, existuje více možností jak to udìlat. Nejjednodušší je vložit mezi tagy v souboru s pøíponou .rou.xml \textit{$<$vtype$>$} a \textit{$<$/vtype$>$} tag \textit{$<$carFollowing-Gipps$>$}. V nìm poté budou následovat jednotlivé parametry modelu.

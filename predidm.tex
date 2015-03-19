@@ -7,7 +7,7 @@
 Jednoduše øeèeno „Car Following“ modely vycházejí z pøedpokladu, když $n$-té vozidlo následuje ($n-1$)-té vozidlo na homogenní (stejnorodé) dálnici, trajektorie n-tého vozidla bude v podstatì stejná jako ($n-1$) vozidla kromì posunù v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechna ostatní vymyšlená pravidla (modely) v sobì toto jednoduché a pomìrnì pøesné pravidlo obsahují. Newellùv model je v podstatì speciálním pøípadem ostatních modelù s ménì parametry a jinou logikou. Posloužil také jako základ pro pozdìjší Intelligent Driver Model.
 \end{comment}
 
-Jednoduše øeèeno \uv{Car Following} modely vycházejí z pøedpokladu, že pokud n-té vozidlo následuje $n-1$ vozidlo na homogenní dálnici, trajektorie n-tého vozidla bude stejná jako vozidla pøed ním ($n-1$) až na posuny v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechny další dispozice jednotlivých modelù v sobì tento pøedpoklad obsahují.
+Hlavní skupinou mikroskopických modelù jsou tzv. \uv{Car Following} modely. Tyto modely vycházejí z pøedpokladu, že pokud n-té vozidlo následuje $n-1$ vozidlo na homogenní dálnici, trajektorie n-tého vozidla bude stejná jako vozidla pøed ním ($n-1$) až na posuny v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechny další dispozice jednotlivých modelù v sobì tento pøedpoklad obsahují.
 
 \section{Newellùv model}
 \label{sec:Newell}
@@ -17,7 +17,7 @@ V teorii dopravního proudu je Newellùv model jeden z modelù, který popisuje chov
 V èlánku \cite{Newell} je pøesnì popsán nejen model, ale i jeho verifikace a porovnání s ostatními modely. Pro nás je dùležitý popis modelu.
 
 \subsection{Popis modelu}
-Jestliže $n$-té vozidlo jede za $n-1$ vozidlem (které jede za $n-2$ vozidlem atd.), cíl každého Car following modelu je zjistit závislost trajektorie $n$-tého vozidla  $x_{\n}(t)$, jeho pozici v èase $t$ na $n-1$ vozidle, viz. obrázek \ref{newell}. (To také znamená, že není žádná náhodná spojitost mezi tìmito vozidly.)
+Jestliže $n$-té vozidlo jede za $n-1$ vozidlem (které jede za $n-2$ vozidlem atd.), cíl každého Car following modelu je zjistit závislost trajektorie $n$-tého vozidla  $x_{\n}(t)$ jeho pozici v èase $t$ na $n-1$ vozidle, viz. obrázek \ref{newell}. (To také znamená, že není žádná náhodná spojitost mezi tìmito vozidly.)
 Jestliže se $n-1$ vozidlo pohybuje konstantní rychlostí $v$,
 \[
 x_{{\nm1}} {}={} x_{\n} + vt,
@@ -33,7 +33,7 @@ $n$-té vozidlo také pojede prùmìrnou rychlostí $v$. Pokud by $n$-té vozidlo zryc
 
 Vzdálenost $s_\n = x_{\nm1} (t) - x_\n (t)$ mezi vozidly $n$ a $n-1$ se mùže mìnit v èase. Pokud je dálnice homogenní, tato vzdálenost zùstane konstantní okolo hodnoty $s_\n$. Tato hodnota se mìní na základì typu vozidla a také závisí na rychlosti $v$.
 
-Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svoji preferovanou rychlost $\text{V}_\n$. Jestliže tato rychlost je u $n-1$ vozidla vyšší než u $n$-tého $v>\text{V}_\n$, znamená to, že $n$-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a $n-1$ vozidlo mu ujede.
+Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svoji preferovanou rychlost $\text{V}_\n$. Jestliže rychlost $v$ je u $n-1$ vozidla je vyšší než preferovaná rychlost u $n$-tého, tedy $v>\text{V}_\n$, znamená to, že $n$-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a $n-1$ vozidlo mu ujede.
 Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové rychlosti by mìla být níže než polopøímka lineární závislosti, viz èerná teèka na obrázku \ref{vztahmezivas} pøi rychlosti $v=0$.
 \begin{figure}[ht]%
 \centering
@@ -42,7 +42,7 @@ Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové ry
 \label{vztahmezivas}%
 \end{figure}
 
-Nyní pøedpokládejme, že $n-1$ se vozidlo nìjakou dobu $t$ pohybuje konstantní rychlostí $v$\footnote{hodnota rychlosti osciluje okolo hodnoty $v$} a potom náhle zmìní rychlost na hodnotu $v'$. Trajektorie vozidel $n$ a $n-1$ mohou poté vypadat jako na obrázku \ref{linearaprox}. Z obrázku lze také vypozorovat jak èasovou $\tau_\n$, tak prostorovou $d_\n$ mezeru mezi vozidly $n$ a $n-1$. Z èárkovaného obdelníku poté dostáváme vztah vzdálenost mezi vozidly pøed zmìnou rychlosti $s_\n$ a po zmìnì rychlosti $s'_\n$,
+Nyní pøedpokládejme, že se $n-1$ vozidlo nìjakou dobu $t$ pohybuje konstantní rychlostí $v$\footnote{hodnota rychlosti osciluje okolo hodnoty $v$} a potom náhle zmìní rychlost na hodnotu $v'$. Trajektorie vozidel $n$ a $n-1$ mohou poté vypadat jako na obrázku \ref{linearaprox}. Z obrázku lze také vypozorovat jak èasovou $\tau_\n$, tak prostorovou $d_\n$ mezeru mezi vozidly $n$ a $n-1$. Z èárkovaného obdelníku poté dostáváme vztah vzdálenost mezi vozidly pøed zmìnou rychlosti $s_\n$ a po zmìnì rychlosti $s'_\n$,
 \[
 s_\n{}={}d_\n + v\tau_\n,\qquad s'_\n{}={}d_\n + v'\tau_\n. 
 \]
@@ -63,7 +63,9 @@ U Newellova modelu platí, že n-té vozidlo bude (pøibližnì) kopírovat trajektorii
 \label{linearaprox}%
 \end{figure}
 
-Pøi pozorování se došlo k závìru, že každý øidiè nezkoumá každého jiného øidièe na komunikaci, ale pouze jen vhodnou \uv{makroskopickou} èást. Hodnoty $\tau_\n$ a $d_\n$ jsou pøirozené, to vychází ze vztahu \eqref{eq:newelxn}, kde postupným iterováním dostaneme
+Pøi pozorování se došlo k závìru, že každý øidiè nezkoumá každého jiného øidièe na komunikaci, ale pouze jen vhodnou \uv{makroskopickou} èást.
+
+Hodnoty $\tau_\n$ a $d_\n$ jsou pøirozené, to vychází ze vztahu \eqref{eq:newelxn}, kde postupným iterováním dostaneme
 
 \begin{equation}
 x_\n(t+\tau_\n + \tau_{\nm1} + \cdots + \tau_1) {}={} x_0(t) - d_\n - d_{\nm1} - \cdots - d_1.
@@ -100,7 +102,7 @@ q = \frac{1}{\overline{\tau}} - \frac{\overline{d}}{\overline{\tau}}k,
 
 za pøedpokladu, že rychlost $v$ je menší než preferovaná rychlost jakéhokoliv vozidla $V_k$.
 
-Rovnice \eqref{eq:qk} propojuje Newellùv model s klasickými makroskopickými modely. Problém nastává ve chvíli, kdy prùmìrná rychlost $v$ je vysšší, než nìkterá s preferovaných rychlostí jednotlivých vozidel. Vozidla se v tomto modelu nemohou pøedjíždìt a proto vznikne kongesce za vozidlem s malou preferovanou rychlostí. V následujících øádcích pøedpokládáme, že aktuální rychlost vozidla bude menší než preferovaná rychlost $V_\n$.
+Rovnice \eqref{eq:qk} propojuje Newellùv model s klasickými makroskopickými modely. Problém nastává ve chvíli, kdy prùmìrná rychlost $v$ je vyšší, než nìkterá s preferovaných rychlostí jednotlivých vozidel. Vozidla se v tomto modelu nemohou pøedjíždìt a proto vznikne kongesce za vozidlem s malou preferovanou rychlostí. V následujících øádcích pøedpokládáme, že aktuální rychlost vozidla bude menší než preferovaná rychlost $V_\n$.
 
 Uvažujme, že se vozidlo $n$ pohybuje pøesnì podle rovnice \eqref{eq:newelxn} a vozidlo za ním ($n-1$) jede plynule za ním.
 
@@ -139,12 +141,16 @@ Po zderivování rovnice \eqref{eq:xntaunv} dostáváme vztah pro zrychlení vozidla
 a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right].
 \label{eq:xntauna}
 \end{equation}
-Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle, které jede pøed aktuálním,  èlenem $v_{\nm1}(t)$, resp. $x_{\nm1}(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. \textbf{Koneèný vztah pro Newellùv model je tedy}
+Z rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle, které jede pøed aktuálním,  èlenem $v_{\nm1}(t)$, resp. $x_{\nm1}(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí. 
+
+\textbf{Koneèný vztah pro Newellùv model je tedy}
 \begin{equation}
-a_\n(t + T_n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t).
+a_\n(t) {}={} \frac{\frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T_n},
 \label{eq:newellcompl}
 \end{equation}
+kde vztah mezi $\tau_\n$ a $T_n$ vychází z rovnice \eqref{eq:Tn}.
 
+U Newellova modelu není vùbec definované èelní vozidlo a jeho vlastnosti. Je napø. možné nastavit mu konstantní rychlost a vlastnosti následujících vozidel vypoèítat poté rovnice \eqref{eq:newellcompl}.
 
 
 

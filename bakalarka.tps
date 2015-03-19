@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame2_View0,0]
-TopLine=152
-Cursor=11785
+TopLine=0
+Cursor=20699
 
 [Frame3]
 Flags=0
@@ -71,8 +71,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame3_View0,0]
-TopLine=8
-Cursor=560
+TopLine=270
+Cursor=9386
 
 [Frame4]
 Flags=0
@@ -89,10 +89,28 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame4_View0,0]
-TopLine=84
+TopLine=96
 Cursor=6854
 
+[Frame5]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1322
+NormalPos.bottom=635
+Class=LaTeXView
+Document=predidm.tex
+
+[Frame5_View0,0]
+TopLine=176
+Cursor=11495
+
 [SessionInfo]
-FrameCount=5
-ActiveFrame=2
+FrameCount=6
+ActiveFrame=5
 
