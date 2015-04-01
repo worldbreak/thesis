@@ -75,8 +75,13 @@ SUMO pouští vozidla do oblasti tak, že vezme jeden z parametrù vozidla, který ur
 
 Nejlepší zpùsob je asi v použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho ID a potom v souboru \textit{nodes.net.xml} nahradíme pøedem vymyšleným ID z nìjakého vlastního systému. Autor zvolil èíslování od 1 a v závislosti na smìru bud písmeno a nebo b. Takže hrana má napø. název 1a, 3b.
 
+
+
+
 \chapter{Pøíloha C: Vytvoøení souborù pro nový model}
 \label{chap:newfiles}
+
+\section{Implementace nového modelu}
 
 Ideální volbou pro implementaci nového modelu je zaèít s modelem, který již existuje. Pokud se nacházíme v koøenovém adresáøi simulaèního nástroje SUMO, potom ve složce \textit{/src/microsim/cfmodels} nalezneme všechny dosud naprogramované modely.
 
@@ -84,9 +89,13 @@ Nejjednoduší zpùsob je zkopírování souborù s již existujícím modelem (napø. \tex
 
 Velmi dùležitá vìc je potom pøidat tyto soubory do projektu\footnote{Postup, jak se otevírá a kompiluje projekt SUMO, se nachází v pøíloze \ref{kompilaceSUMO} v sekci \ref{app:SUMO}}. To se ve Visual Studiu provede volbou \textit{Project $\rightarrow$ Add Existing Item} a vyberou se námi vytvoøené soubory, tedy napø. \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}.
 
-Posléze otevøeme soubor \textit{/src/utisk/xml/SUMOXMLDefinitions.h} a pøidáme do seznamu parametrù\footnote{ideálnì vyhledat nìjaký stávajicí model - pro Krausse SUMO\_TAG\_CF\_KRAUSS\_ORIG1 a za nìj (ne místo nìj!) pøidat SUMO\_TAG\_CF\_GIPPS}.
+Posléze otevøeme soubor \textit{/src/utils/xml/SUMOXMLDefinitions.h} a pøidáme do seznamu parametrù\footnote{ideálnì vyhledat nìjaký stávajicí model - pro Krausse SUMO\_TAG\_CF\_KRAUSS\_ORIG1 a za nìj (ne místo nìj!) pøidat SUMO\_TAG\_CF\_GIPPS}.
 
-V souboru \textit{/src/utisk/xml/SUMOXMLDefinitions.cpp} poté pøidáme opìt k sekci modelù Gippsùv - \textit{\{ "carFollowing-GIPPS",       SUMO\_TAG\_CF\_GIPPS \}}.
+V souboru \textit{/src/utisk/xml/SUMOXMLDefinitions.cpp} poté pøidáme opìt k sekci modelù Gippsùv:
+\begin{lstlisting}[breaklines=true]
+{ "carFollowing-GIPPS",    SUMO_TAG_CF_GIPPS},
+\end{lstlisting}
+
 
 Závìreènou fází pøidání modelu je otevøení souboru \textit{/src/microsim/MSVehicleType.cpp}, kde se ve funkci \textit{build} nachází dìlení, podle toho jaký model je nadefinován v souboru .rou.xml. Na tomto základì je zvolen vybraný model. Do tohoto dìlení je nutné vložit následující kód:
 
@@ -96,3 +105,30 @@ case SUMO_TAG_CF_GIPPS:
 \end{lstlisting}
 
 Pokud chceme zvolit náš model pøi generování vozidel, existuje více možností jak to udìlat. Nejjednodušší je vložit mezi tagy v souboru s pøíponou .rou.xml \textit{$<$vtype$>$} a \textit{$<$/vtype$>$} tag \textit{$<$carFollowing-Gipps$>$}. V nìm poté budou následovat jednotlivé parametry modelu.
+
+\section{Implementace nových parametrù}
+
+Napø. u Gippsova modelu \ref{sec:Gipps} je nutné pøidat parametr preferované rychlosti $V_n$. Proto je zde uveden struèný návod pro pøidání jednoho parametru. To je nezávislé na modelu do té doby dokud pøi volání konstruktoru nepøipojíme tento parametr jako vstupní.
+
+Pokud se nacházíme v koøenovém adresáøi SUMO, potom ve složce \textit{/src/utils/xml/} otevøeme soubory \textit{SUMOXMLDefinitions.h} a \textit{SUMOXMLDefinitions.cpp}. V prvnì jmenovaném souboru \textit{SUMOXMLDefinitions.h} do èásti \textit{enum SumoXMLAttr} pøidáme název nového atributu ve tvaru\footnote{Je vhodné najít sekci parametrù Car Following Modelù a pøidat ji tam, nicménì pøi vložení napø. hned na zaèátek to bude fungovat také. Ideální je vyhledat text \uv{SUMO\_ATTR\_CF\_}}
+
+\begin{lstlisting}[breaklines=true]
+SUMO_ATTR_DESIREDSPEED,
+\end{lstlisting}
+
+V souboru \textit{SUMOXMLDefinitions.cpp} v sekci \textit{StringBijection$<$int$>$::Entry SUMOXMLDefinitions::attrs[]} pøiøadíme tyto parametry promìnným pro SUMO a to ve tvaru
+
+\begin{lstlisting}[breaklines=true]
+{ "desiredSpeed",    SUMO_ATTR_DESIREDSPEED},
+\end{lstlisting}
+
+Další èástí nutnou vykonat je pøidání parametrù do souboru \textit{/src/utils/xml/SUMOVehicleParserHelper.cpp}, konkrétnì do metody \textit{getAllowedCFModelAttr()}. Pro Gippsùv model bude kód následující:
+
+\begin{lstlisting}[breaklines=true]
+std::set<SumoXMLAttr> gippsParams;
+gippsParams.insert(SUMO_ATTR_ACCEL);
+gippsParams.insert(SUMO_ATTR_DECEL);
+gippsParams.insert(SUMO_ATTR_TAU);
+gippsParams.insert(SUMO_ATTR_CF_DESIREDSPEED);
+allowedCFModelAttrs[SUMO_TAG_CF_GIPPS] = gippsParams;
+\end{lstlisting}

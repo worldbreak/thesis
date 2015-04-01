@@ -3,3 +3,20 @@
 V simulaèním nástroji SUMO jsou již nìkteré z modelù uvedených v kapitole \ref{chap:predIDM} implementovány. Napø. Newellùv model zde zatím implementován není.
 
 V tuto chvíli bych zde uvedl obecné informace, které s implementací nového modelu souvisí bez ohledu na to, o jaký model se konkrétnì jedná.
+
+\section{MSCF.h}
+
+V souboru \textit{MSCF.h} se nacházejí definice základních funkcí, které posléze v pøidaném modelu implementujeme. Pokud urèitou funkci nepøepíšeme, zùstane funkènost uvedená v souboru \textit{MSCF.cpp}.
+
+Seznam funkcí, které je možné pøepsat, je následující:
+
+\begin{itemize}
+	\item \textit{virtual SUMOReal freeSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion = false) const;} - výpoèet rychlosti vozidla, které jede jako první (jeho poloha je nejdále od zaèátku simulace)
+	\item \textit{virtual SUMOReal followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} - výpoèet rychlosti vozidla na základì vlastností vedoucího vozidla
+	\item \textit{virtual SUMOReal insertationFollowSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} - podobná funkce jako pøedchozí, volá se pøi pøidání vozidla do simulace
+	\item \textit{virtual SUMOReal stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUMOReal gap2pred)} - výpoèet rychlosti ve chvíli, kdy se pøed vozidlem nachází statický objekt\footnote{objekt, který má nulovou rychlost}
+	\item \textit{virtual SUMOReal interactionGap(const MSVehicle* const veh, SUMOReal vL) const;} - výpoèet mezery, kdy ovlivòuje vedoucí vozidlo aktuální
+\end{itemize}
+
+Tyto funkce jsou základní, a bude potøeba je pøepsat pro každý nový implementovaný model. Existují zde ještì další, které ovšem pøímo nesouvisejí s výpoètem budoucí rychlostí a nebo to jsou pouze funkce typu get, které vracejí aktuální hodnotu promìnné. Tyto funkce není potøeba pøepisovat u implementovaného modelu.
+
