@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  10 APR 2015 13:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  10 APR 2015 15:00
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -828,13 +828,13 @@ Kapitola 3.
 
 
 
-] [24] [25]) [26] (D:\Vanis-Sumo\thesis\literatura.tex
+] [24] [25] [26]) [27] (D:\Vanis-Sumo\thesis\literatura.tex
 Underfull \hbox (badness 1852) in paragraph at lines 66--67
 []\OT1/cmr/m/n/10 Treiber M, \OT1/cmr/m/it/10 Micro-si-mu-lation of road traf-fic flow \OT1/cmr/m/n/10 [on-line], do-stu
 pne z []$\OT1/cmtt/m/n/10 http : / / www .
  []
 
-) [27
+) [28
 
 
 
@@ -872,8 +872,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 306.
  ) 
 Here is how much of TeX's memory you used:
- 30501 strings out of 493921
- 664543 string characters out of 3151295
+ 30520 strings out of 493921
+ 664821 string characters out of 3151295
  837546 words of memory out of 3000000
  33029 multiletter control sequences out of 15000+200000
  9471 words of font info for 35 fonts, out of 3000000 for 9000
@@ -890,9 +890,9 @@ pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/TeX/MiKTeX 2.
 pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on bakalarka.pdf (33 pages, 499673 bytes).
+Output written on bakalarka.pdf (34 pages, 506443 bytes).
 PDF statistics:
- 886 PDF objects out of 1000 (max. 8388607)
- 277 named destinations out of 1000 (max. 500000)
+ 914 PDF objects out of 1000 (max. 8388607)
+ 296 named destinations out of 1000 (max. 500000)
  451 words of extra memory for PDF output out of 10000 (max. 10000000)
 

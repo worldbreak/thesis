@@ -121,7 +121,6 @@ SUMOReal MSCFModel_Gipps::vInteraction(SUMOReal speed, SUMOReal predSpeed, SUMOR
 Promìnná \textit{wholeGap} odpovídá èásti $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$. Tu bylo potøeba upravit pro úèely SUMO. Nemáme totiž možnost zjistit parametr $s_{\nm1}$, jenž závísí na délce vedoucího vozidla a k této informaci se jednoduše nedostaneme. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k ní jsme pøièetli minimální bezpeènostní odstup. Tím bychom mìli dostat stejný výsledek jako je uvedeno v Gippsovì modelu.
 
 Další zajímavostí je vypoèet èlenu $\hat{b}$. Pøi kalibraci Gippsova modelu vyšla nejlépe varianta brzdná konstanta vedoucího vozidla bude rovna:
-
 \begin{equation}
 \hat{b} = \min \left(-3.0, \frac{b_\n - 3.0}{2}\right) m/sec^{-2}.
 \label{eq:hatbgipps}
@@ -137,4 +136,46 @@ SUMOReal MSCFModel_Gipps::chooseBrakeConst(SUMOReal decel) const{
 
 Funkce \textit{MIN2} je vlastní funkce SUMO, která hledá minimum ze dvou hodnot.
 
+Pro vìtší pøehlednost jsme kód funkce \textit{vInteraction} rozdìlili na více èástí. Podstatná je promìnná \textit{myGippsDecel}, kterou jsme na zaèátku nastavili jako zápornou a proto zde figuruje s kladným znaménkem.
+
 V tuto chvíli máme pøipravené obì funkce pro výpoèet rychlostí pro vozidla vjíždìjící do simulace.
+
+V další fázi je potøeba tyto funkce využít pro výpoèty. Všechny následující funkce budeme pouze nahrazovat již stávajícími, které obsahuje \textit{MSCFModel}. Vždycky je otázkou, zda je nutné danou funkci pøepisovat a nebo nechat její stávající verzi.
+
+Zaèneme funkcí \textit{freeSpeed}. Tato funkce nám vypoèítává rychlost pøi volném proudu, tj. ve chvíli kdy pøed aktuálním vozidlem nejede žádné další. Mohli bychom tuto funkci nechat stejnou, tak jak je implementována v SUMO, ovšem daleko lepší bude tuto funkci pøepsat a to z toho dùvodu, že Gippsùv model pøímo uvažuje o rychlosti pøi volném proudu. Definice pøepisovaných funkcí necháme vždy stejné jako v \textit{MSCFModel.h}, pro \textit{freeSpeed} by definice\footnote{Každá definice zde zmiòována bude umístìna do souboru MSCFModel\_Gipps.h do èásti public. Tato definice je shodná s definicí uvedenou v souboru MSCFModel.h} vypadala takto:
+
+\begin{lstlisting}[breaklines=true]
+virtual SUMOReal freeSpeed(const MSVehicle* const /* veh */, SUMOReal /* speed */, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion) const;
+\end{lstlisting}
+
+Implementace naší vlastní funkce \textit{freeSpeed} bude následující
+\begin{lstlisting}[breaklines=true]
+SUMOReal
+MSCFModel_Gipps::freeSpeed(const MSVehicle* const veh , SUMOReal  speed, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion) const {
+	return vFree(speed);
+}
+\end{lstlisting}
+
+Je vidìt, že vìtšina vstupních parametrù funkce nejsou vùbec využity, nicménì musejí zde zùstat z dùvodu kompatibility s ostatními modely. Gippsùv model pøi výpoètu jednoduše tyto parametry jednoduše neøeší.
+
+Další funkcí, kterou je nutné pøepsat, bude zcela jistì \textit{followSpeed}. Ta poèítá rychlost v závislosti na vedoucím vozidle. My již víme, že tato funkce by mìla vracet stejný výsledek jako rovnice \ref{eq:gipps}. Její implementace vypadá následovnì:
+
+\begin{lstlisting}[breaklines=true]
+SUMOReal
+MSCFModel_Gipps::followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const {
+	return MIN2(vFree(speed), vInteraction(speed, predSpeed, gap));
+}
+\end{lstlisting}
+
+Bylo vyzkoušeno zmìnit i funkci \textit{insertionFollowSpeed}, nicménì zatím se zdá, že stávající verze implementována v SUMO je plnì postaèující.
+
+Další funkcí k pøepsání je \textit{stopSpeed}. Tato funkce má stejné parametry jako \textit{followSpeed} až na parametr \textit{predSpeed}, který je v tuto chvíli nulový, protože tato funkce poèítá rychlost, pokud se pøed ní nachazí statický objekt. Proto voláme stejné funkce jako u \textit{followSpeed} s tím, že \textit{predSpeed} má hodnotu nula.
+
+\begin{lstlisting}[breaklines=true]
+SUMOReal
+MSCFModel_Gipps::stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUMOReal gap) const {
+	return MIN2(vFree(speed), vInteraction(speed, 0, gap));
+}
+\end{lstlisting}
+
+Tímto je nový model implementován.
