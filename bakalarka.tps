@@ -53,7 +53,7 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame2_View0,0]
-TopLine=60
+TopLine=84
 Cursor=20699
 
 [Frame3]
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame5_View0,0]
-TopLine=0
-Cursor=25736
+TopLine=330
+Cursor=21101
 
 [Frame6]
 Flags=0
@@ -130,5 +130,5 @@ Cursor=368
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=6
+ActiveFrame=5
 

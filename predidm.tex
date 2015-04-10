@@ -9,6 +9,8 @@ Jednoduše øeèeno „Car Following“ modely vycházejí z pøedpokladu, když $n$-té voz
 
 Hlavní skupinou mikroskopických modelù jsou tzv. \uv{Car Following} modely. Tyto modely vycházejí z pøedpokladu, že pokud n-té vozidlo následuje $n-1$ vozidlo na homogenní dálnici, trajektorie n-tého vozidla bude stejná jako vozidla pøed ním ($n-1$) až na posuny v èase a místì. (Vozidlo bude ve stejném místì jako pøedcházející v jiný èas a ve stejný èas bude na jiném místì.) Všechny další dispozice jednotlivých modelù v sobì tento pøedpoklad obsahují.
 
+Na konci každého modelu budou pro pøehlednost shrnuty parametry modelu, které se vyskytujou v závìreèné rovnici.
+
 \section{Newellùv model}
 \label{sec:Newell}
 
@@ -181,7 +183,7 @@ Následující model je odvozen z omezení jak øidièe, tak i vozidla a pomocí tìchto
 
 První podmínka, kterou aplikujeme na vozidlo $n$, souvisí s rychlostí vozidla. Ta nepøekroèí jeho preferovanou rychlost $V_\n$ a jeho zrychlení na volné komunikaci\footnote{tj. komunikace, na které se nevyskytuje žádné další vozidlo} se zvyšuje stejnì tak jako rychlost dokud se také zvyšuje kroutící moment motoru vozidla a poté zaène klesat na nulovou hodnotu a té nabude ve chvíli, kdy se vozidlo bude pohybovat svoji preferovanou rychlostí $V_n$
 \begin{equation}
-v_\n (t+T_\n) {}={} v_\n (t) + 2,5a_\n \tau \left(\frac{1-v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)}.
+v_\n (t+T_\n) {}={} v_\n (t) + 2,5a_\n T_n \left(\frac{1-v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)}.
 \label{eq:inequalitygipps}
 \end{equation}
 
@@ -244,14 +246,33 @@ V tuto chvíli musí vozidlo zaèít brzdit rychleji, než by sám øidiè chtìl. Øidiè 
 
 Nerovnice \eqref{eq:inequalitygipps} pro vozidlo $n$ na volné komunikaci a \eqref{eq:nextreplace} pro vozidlo $n$ pøed kterým se nachází vozidlo $n-1$ pøedstavují dvì hlavní podmínky pro rychlost $v_\n$ v èase $t + T_\n$ a jestliže øidiè pøizpùsobí rychlost parametrùm vozidla a tak, aby jízda byla bezpeèná, dostáváme \textbf{koneèný vztah pro Gippsùv model:}
 \begin{equation}
-\begin{split}
-v_{\n} (t+&T_\n) = \min \left( v_\n (t) + 2,5a_\n \tau \left(\frac{1-v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)},\right.\\
-&\left. b_{\n}T_\n + \sqrt{\left(b_{\n}^2 T_\n^2 - b_{\n}\left(2\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] - v_{\n} (t)T_\n - \frac{v_{\nm1} (t)^2}{2\hat{b}} \right)\right)}\;\right)
 \label{eq:gipps}
+\begin{split}
+v_{\n} (t+&T_\n) = \min \left( v_\n (t) + 2,5a_\n T_n \left(1-\frac{v_\n (t)}{V_\n}\right)\sqrt{\left(0,025+\frac{v_\n (t)}{V_\n}\right)},\right.\\
+&\left. b_{\n}T_\n + \sqrt{\left(b_{\n}^2 T_\n^2 - b_{\n}\left(2\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right] - v_{\n} (t)T_\n - \frac{v_{\nm1} (t)^2}{2\hat{b}} \right)\right)}\;\right)
 \end{split}
 \end{equation}
 
 Pokud platí pro témìø všechna vozidla nižší hodnota v rovnici \eqref{eq:gipps}, vychází se z nerovnice \eqref{eq:nextreplace}, vozidla jedou blízko sebe, z èehož vyplývá vysoká hustota provozu. Pokud platí opak, tz. nerovnice \eqref{eq:inequalitygipps}, dopravní proud je volný.
+
+\subsection{Parametry Gippsova modelu}
+\label{subsec:parameterGipps}
+Všechny promìnné a parametry Gippsova modelu potom jsou:
+\begin{itemize}
+	\item $t$ - aktuální èas
+	\item $T_\n$ - reakèní èas, stejný pro všechna vozidla,
+	\item $v_\n (t)$ - rychlost vozidla n v èase $t$,
+	\item $a_\n$ - maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat - nikoliv zrychlení vozidla v èase n!,
+	\item $V_\n$ - preferovaná rychlost vozidla n,
+	\item $b_\n$ - maximální decelerace vozidla, kterým je øidiè ochoten brzdit,
+	\item $x_\n$ - poloha vozidla n
+	\item $s_{\nm1}$ - délka vozidla $n-1$ seètena s bezpeènou vzdáleností následujícího (n) vozidla
+	\item $\hat{b}$ - odhadnutá hodnota decelerace $b_{\nm1}$
+\end{itemize}
+
+
+
+
 
 \section{Kraussùv model}
 \label{sec:Krauss}
