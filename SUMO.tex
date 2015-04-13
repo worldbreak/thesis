@@ -1,12 +1,15 @@
 \chapter{Simulaèní a podpùrnı software}
 
+\rem{uèesat, je to zmatené}
+
+Po prostudování modelù byla otázka dalšího postupu. Bylo moné pokraèovat v aplikaci, kterou autor vytvoøil pro svoji bakaláøskou práci. další variantou bylo vyuít softwaru AIMSUN, kterı by byl také vhodnı pro naprogramování vlastních modelù. Nicménì zvítìzil open-source simulaèní software SUMO. Tento produkt se neustále vyvíjí ji od roku 2001 a jeho podpora neustále pokraèuje. \rem{tato vìta je opravdu bla bla bla} Nejprve se autor pokusil zaèít pracovat v AIMSUNu, nicménì to skonèilo neúspìšnì, protoe pro naprogramování dalších modelù do tohoto software byl potøeba balíèek, kterı nebyl zdarma.
+
+Další variantou bylo pokraèovat v programovacím jazyku JAVA na vytvoøené aplikaci pro bakaláøskou práci, nicménì po prozkoumání dalších variant se autor rozhodl, e bude vıhodnìjší pokraèovat s ji vyvíjenım softwarem SUMO.
+
 V této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji naprogramované autorem èi volnì dostupné nástroje.
 
 \section{SUMO}
 
-Po prostudování modelù byla otázka dalšího postupu. Bylo moné pokraèovat v aplikaci, kterou autor vytvoøil pro svoji bakaláøskou práci, další variantou bylo vyuít softwaru AIMSUN, kterı by byl také vhodnı pro naprogramování vlastních modelù. Nicménì zvítìzil open-source simulaèní software SUMO. Tento produkt se neustále vyvíjí ji od roku 2001 a jeho podpora neustále pokraèuje. Nejprve se autor pokusil zaèít pracovat v AIMSUNu, nicménì to skonèilo neúspìšnì, protoe pro naprogramování dalších modelù do tohoto software byl potøeba balíèek, kterı nebyl zdarma.
-
-Další variantou bylo pokraèovat v programovacím jazyku JAVA na vytvoøené aplikaci pro bakaláøskou práci, nicménì po prozkoumání dalších variant se autor rozhodl, e bude vıhodnìjší pokraèovat s ji vyvíjenım softwarem SUMO.
 
 SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít v mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi podle jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v dobì MS v Nìmecku v roce 2006 v Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
 
@@ -240,7 +243,7 @@ pro vytvoøení histogramù poètu vozidel od 2 do 5 ráno.
 
 \section{Shrnutí práce s programem}
 
-Program byl vytvoøen v jazyce JAVA jako podpùrnı prostøedek pro vytvoøení jak vstupù, tak vıstupù pro program SUMO pøi daném typu vstupních dat z Praského okruhu. Program se spouští s pøíkazové øádky pøíkazem 
+Program byl vytvoøen v jazyce JAVA jako podpùrnı prostøedek pro vytvoøení jak vstupù, tak vıstupù pro program SUMO pøi daném typu vstupních dat z Praského okruhu. Program se spouští s pøíkazové øádky pøíkazem
 
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar
@@ -278,4 +281,4 @@ java -jar AllInOne.jar -xh detektor.xml histogram.pdf 60
 		\begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -xh detektor.xml histogram.pdf 2:00 5:00
 		\end{lstlisting}
-\end{itemize}
+\end{itemize} 

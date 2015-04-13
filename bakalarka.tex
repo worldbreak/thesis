@@ -1,40 +1,42 @@
-\documentclass[10pt,a4paper,openright,fleqn,sumlimits,intlimits]{report}
+\documentclass[11pt,a4paper,openright,fleqn,sumlimits,intlimits]{report}
 
 
 \usepackage{comment}
 
 
 \begin{comment}
-\setlength\textwidth{145mm}
+ \setlength\textwidth{145mm}
  \setlength\textheight{247mm}
  \setlength\oddsidemargin{15mm}
  \setlength\evensidemargin{0mm}
  \setlength\topmargin{0mm}
  \setlength\headsep{0mm}
- \setlength\headheight{0mm} 
+ \setlength\headheight{0mm}
 \end{comment}
 
 \let\openright=\cleardoublepage
 
 \usepackage{geometry}
-%\usepackage{k336_thesis_macros} 
+%\usepackage{k336_thesis_macros}
 %% Pokud používáte csLaTeX (doporuèeno):
 %\usepackage{czech}
 %% Pokud nikoliv:
-\usepackage[czech]{babel}
 \usepackage[cp1250]{inputenc}
+\usepackage[czech]{babel}
 
 %% Použité kódování znakù: obvykle latin2, cp1250 nebo utf8:
 %\usepackage[utf8]{inputenc}
 \usepackage{makra}
 %% Ostatní balíèky
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{listings}
 \usepackage{vector}
-\usepackage{indentfirst}
+% JP: nene \usepackage{indentfirst}
+
 \lstset{basicstyle=\small\ttfamily,
 commentstyle=\textit,
 keywordstyle=\bf\color{DarkBlue},
@@ -48,12 +50,43 @@ showstringspaces=false}
 \usepackage{tikz}
 \usepackage{pgfplots}
 
-%% Balíèek hyperref, kterým jdou vyrábìt klikací odkazy v PDF,
-%% ale hlavnì ho používáme k uložení metadat do PDF (vèetnì obsahu).
-%% POZOR, nezapomeòte vyplnit jméno práce a autora.
-\usepackage[unicode]{hyperref}   % Musí být za všemi ostatními balíèky
+% ---------------------------------------------------------------------------
+% Standard colors used by our publications
+% ---------------------------------------------------------------------------
+\definecolor{cvutbase}{RGB}{0,99,168}
+\definecolor{cvutgreen}{RGB}{0,168,99}
+% ---------------------------------------------------------------------------
+% Colors used by the current web presentation of CVUT
+% ---------------------------------------------------------------------------
+\definecolor{cvutdark}{rgb}{0.00000, 0.17647, 0.33725}		% #002D56
+\definecolor{cvutmid}{rgb}{0.14902, 0.29804, 0.43529}		% #264C6F
+\definecolor{cvutmid1}{rgb}{0.11765, 0.23529, 0.34510}		% #1E3C58
+\definecolor{cvutmid2}{rgb}{0.12549, 0.25490, 0.37255}		% #20415F
+\definecolor{cvutmid3}{rgb}{0.13725, 0.27451, 0.40392}		% #234667
+\definecolor{cvutlight}{rgb}{0.00000, 0.47451, 0.75686}		% #0079C1
+\definecolor{cvutlig1}{rgb}{0.70000, 0.90000, 1.00000}		% #0079C1
+\definecolor{cvutblug}{rgb}{0.49804, 0.58824, 0.66667}		% #7F96AA
+\definecolor{cvutgray}{rgb}{0.87843, 0.87843, 0.87843}		% #E0E0E0
+\definecolor{cvutgray1}{rgb}{0.25098, 0.25098, 0.25098}		% #404040
+\definecolor{cvutgray2}{rgb}{0.70196, 0.70196, 0.70196}		% #B3B3B3
+% ---------------------------------------------------------------------------
+% Load hyperref
+% Balíèek hyperref, kterým jdou vyrábìt klikací odkazy v PDF,
+% ale hlavnì ho používáme k uložení metadat do PDF (vèetnì obsahu).
+% POZOR, nezapomeòte vyplnit jméno práce a autora.
+% ---------------------------------------------------------------------------
+\usepackage[pdftex,unicode,pdfpagelabels,
+  colorlinks=true,linkcolor=cvutbase,urlcolor=cvutdark,citecolor=cvutgreen,
+  plainpages=false]{hyperref}
 \hypersetup{pdftitle=Matematické modelování vybraných problémù v dopravì v jazyce Java}
 \hypersetup{pdfauthor=Miroslav Vaniš}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Poznámky v textu, které zasluhují naši budoucí pozornost (nedodìlky a podobnì)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rem}[1]{%
+    \textcolor{red}{%
+        \rule[1pt]{6pt}{6pt}\ \upshape\textsf{\bfseries#1}\ \rule[1pt]{6pt}{6pt}}}
+\newcommand{\doplnit}{\textcolor{red}{\rem{DOPLNIT}}}
 
 
 
@@ -303,4 +336,4 @@ Pøíloha A: Kompilace simulaèního softwaru SUMO \dotfill \pageref{obsahCD}
 \include{priloha}
 
 
-\end{document}
+\end{document} 
