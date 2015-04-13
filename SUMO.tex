@@ -104,7 +104,7 @@ Tyto soubory lze následnì použít jako vstup pro vytvoøení souboru s vozidly pro 
 
 \subsection{Vytvoøení souboru vozidel pro simulaci - tøída XMLCreator}
 
-Další funkèností, kterou aplikace disponuje, je vytvoøení vozidel pro simulaci. Tento soubor je plnì kompatibilní se vstupními soubory pro SUMO. Vstupním souborem pro generování vozidel bude opìt soubor s pøíponou .mat, výstupním soubourem potom jeden soubor obsahující za sebou seøazená vozidla dle vjezdu do oblasti s rychlostí vygenerovanou z Gaussova rozdìlení. Další parametry zatím není možné z konzolové aplikace nastavit.
+Další funkèností, kterou aplikace disponuje, je vytvoøení vozidel pro simulaci. Tento soubor je plnì kompatibilní se vstupními soubory pro SUMO. Vstupním souborem pro generování vozidel bude opìt soubor s pøíponou .mat, výstupním soubourem potom jeden soubor obsahující za sebou seøazená vozidla dle vjezdu do oblasti s rychlostí vygenerovanou z Gaussova rozdìlení. Další parametry jsou pøedem dané èi generované v aplikaci a urèují se na základì volby modelu, který lze nastavit z pøíkazové øádky.
 
 Jediný problém nastává ve chvíli, kdy musíme jednotlivým vozidlùm nastavit jejich cestu v simulaci. Pokud všechna vozidla pojedou po stejné dráze, staèí, když se každému vozidlu pøiøadí cesta, která je shodná s názvy hran podkladu (viz. podkapitola \ref{sub:podkladSUMO} a \ref{sec:OSM} poslední odstavec).
 
@@ -113,11 +113,50 @@ Pro naší simulaci cestu pro vozidlo pøedem pøipravíme tak, aby všechna vozidla p
 Tøída XMLCreator obsahuje následující konstruktor a metody
 
 \begin{itemize}
-	\item \textit{public XMLCreator(String fileNameMatlab, String fileNameCars,String type)} - konstruktor, který pøijímá název souboru, ze kterých budeme vozidla generovat, název výstupního souboru a zpùsob generování vozidel,
-	\item \textit{public Document createRouteEqualDocument()} - naplnìní souboru pøi konstantní èasové vzdálenosti vozidel,
-	\item \textit{public Document createRouteExpDocument()}  - naplnìní souboru pøi generování vozidel z exponenciálního rozdìlení,
-	\item \textit{public Element createVehicle(Element element, int actualCar, double time, int iTime, int lane)} - vytvoøení jednoho exempláøe vozidla s pøíslušnými parametry, \textit{actualCar} je poøadí vozidla od zaèátku simulace, \textit{lane} pruh do kterého bude vozidlo vygenerováno, \textit{time} je èas ve kterém vozidlo bude vpuštìno do simulace,
+	\item \textit{public XMLCreator(String fileNameMatlab, String fileNameCars, String model, String type)} - konstruktor, který pøijímá název souboru, ze kterých budeme vozidla generovat, název výstupního souboru a zpùsob generování vozidel,
+	\item \textit{public Document createRouteEqualDocument(String model)} - naplnìní souboru pøi konstantní èasové vzdálenosti vozidel,
+	\item \textit{public Document createRouteExpDocument(String model)}  - naplnìní souboru pøi generování vozidel z exponenciálního rozdìlení,
+	\item \textit{public Element createVType(Element element, int actualCar, String model, int iTime, int lane)} - vytvoøení parametrù pro konkrétní vozidlo, v závislosti na modelu
+	\item \textit{public Element createVehicle(Element element, int actualCar, double time, int iTime, int lane, String type)} - vytvoøení jednoho exempláøe vozidla s pøíslušnými parametry, \textit{actualCar} je poøadí vozidla od zaèátku simulace, \textit{lane} pruh do kterého bude vozidlo vygenerováno, \textit{time} je èas ve kterém vozidlo bude vpuštìno do simulace.
 \end{itemize}
+
+Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUMO simulovalo provoz. Tento parametr je nepovinný a pokud ho nezadáme, program pøedpokládá volbu Kraussova modelu. Zatím jsou k dispozici 4 modely a k nim pøíslušné parametry:
+\begin{itemize}
+	\item Gippsùv model \ref{sec:Gipps}
+	\begin{itemize}
+		\item desiredSpeed ($V_\n$) - preferovaná rychlost daného vozidla, rychlost je generovaná z normálního rozdìlení se støední hodnotou 130 a smìrodatnou odchylkou \rem{Doplnit až bude hotovo}
+	\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}[breaklines=true]
+	java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Gipps
+\end{lstlisting}
+
+\begin{itemize}
+	\item Kraussùv model \ref{sec:Krauss} - nemá žádné speciální parametry kromì základních
+\end{itemize}
+
+\begin{lstlisting}[breaklines=true]
+	java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Krauss
+\end{lstlisting}
+
+\begin{itemize}
+	\item IDM - Intelligent Driver Model \ref{sec:IDM}
+	\begin{itemize}
+		\item delta ($\delta$) - exponent akcelerace (rovnice \eqref{zrychvolproud}) - hodnota 4
+		\item stepping - poèet iterací pøi výpoètu rychlosti - hodnota 1
+	\end{itemize}
+\end{itemize}
+
+\begin{lstlisting}[breaklines=true]
+	java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml IDM
+\end{lstlisting}
+
+\begin{itemize}
+	\item Wiedemannùv model \rem{Doplnit až bude hotovo teoreticky}
+\end{itemize}
+
+Výsledný soubor bude mít název vozidla.rou.xml - .rou je povinná druhá pøípona, která pokud není uvedena, SUMO nespustí simulaci.
 
 Výchozí generování vozidel je deterministické. Pokud nám v jedné minutì projede napø. 10 vozidel, tak vozidla budou mít vstupní èas rovnomìrnì rozdìlen po 1/10. Tato varianta se zde nachází proto, aby bylo možné zkontrolovat správné generování vozidel, èi pøípadné chování jednotlivých modelù.
 
@@ -142,19 +181,31 @@ Výchozí generování vozidel je deterministické. Pokud nám v jedné minutì projede 
 
 Další varianta využívá znalost, že pokud rozdìlení poètu vozidel za nìjaký èas je Poissonovo, potom odstupy mezi vozidly mají exponenciální rozdìlení. Z pohledu na obrázek \ref{poisson25} a \ref{poisson69}\footnote{vytvoøeny také tímto programem} lze pøedpokládat, že se opravdu jedná o Poissonovo rozdìlení.
 
-Pro variantu generování souboru vozidel deterministicky si mùžeme nechat tøetí parametr prázdný, výsledný pøíkaz tedy bude:
+Pro variantu generování souboru vozidel deterministicky si mùžeme nechat poslední parametr prázdný, výsledný pøíkaz tedy bude:
 
 \begin{lstlisting}[breaklines=true]
-java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml
+java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Gipps
 \end{lstlisting}
-
-Výsledný soubor bude mít název vozidla.rou.xml - .rou je povinná druhá pøípona, která pokud není uvedena, SUMO nespustí simulaci.
 
 Pokud chceme, aby se nám vozidla generovala z exponenciálního rozdìlení, kde se každou minutu bude mìnit jeho parametr $\lambda$ ( v závislosti na poètu vozidel za minutu), zvolíme možnost spuštìní s parametrem exp:
 
 \begin{lstlisting}[breaklines=true]
+java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Krauss exp
+\end{lstlisting}
+
+Je možné vynechat jeden èi dva poslední parametry. V tu chvilí budou vozidla do simulace pouštìna s deterministickým èasovým odstupem a budou se pohybovat na základì Kraussova modelu. Je možné také vynechat jeden z tìchto dvou parametrù, tz.
+
+\begin{lstlisting}[breaklines=true]
+java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Gipps
+\end{lstlisting}
+
+generuje vozidla, která se budou pohybovat dle Gippsova modelu a budou mít deterministický èasový odstup. Je možné vynechat i model, tz.
+
+\begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml exp
 \end{lstlisting}
+
+generuje vozidla z exponenciálního rozdìlení. Pohyb bude na základì Kraussova modelu.
 
 Výstupní soubor lze rovnou použít jako vstupní soubor vozidel pro simulaci v SUMO.
 
@@ -256,13 +307,17 @@ Program se dìlí na hlavních 5 èástí a pro každou z nich je uveden pøíklad pro sp
 \begin{itemize}
 	\item vytvoøení vstupního souboru vozidel pro SUMO
 	\begin{itemize}
-		\item pravidelné rozložení
+		\item pravidelné rozložení - napø. IDM model
 		\begin{lstlisting}[breaklines=true]
-java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml
+java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml IDM
 		\end{lstlisting}
-		\item z exponenciálního rozdìlení
+		\item z exponenciálního rozdìlení - Kraussùv model (není nutno uvádìt)
 		\begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml exp
+		\end{lstlisting}
+		\item z exponenciálního rozdìlení - Wiedemannùv model
+		\begin{lstlisting}[breaklines=true]
+java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Wiedemann exp
 		\end{lstlisting}
 	\end{itemize}
 	\item pøevedení formátu dat z Matlabu do formátu SUMO
