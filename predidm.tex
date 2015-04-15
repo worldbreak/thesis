@@ -493,6 +493,57 @@ je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bez
 
 Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní èlen $s_n^*$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení auta $\dot{v}_n$ se musí snížit.
 
+\section{Wiedemannùv model}
+\label{sec:Wiedemann}
+
+V programu SUMO je také pøipraven Wiedemannùv model, jehož první verze vznikla již v roce 1974 jako disertaèní práce tehdejšího studenta R. Wiedemanna. Tento model byl posléze nìkolikrát vylepšován, v roce 1992 o tomto modelu vyšel aktualizovaný èlánek. Tyto práce ovšem bohužel nejsou k dispozici a SUMO (viz dále) navíc ani neobsahuje pøímo Wiedemannùv model, nýbrž jeho poupravenou verzi. V této sekci budeme hlavnì vycházet z èlánku \cite{Higgs}. V nìm najdeme pomìrnì pøesný popis Wiedemannova modelu\footnote{Tento èlánek se pøímo odkazuje na èlánek z roku 1992}, který je odlišný s verzí modelu v SUMO pouze v drobnostech. Na nì bude upozornìno v kapitole \rem{doplnit èíslo až bude} o simulacích.
+
+Tento model je odlišný oproti pøedcházejícím. Pracuje totiž v tzv. režimech. Nejprve je nutné zjistit, v jakém režimu se vozidlo vlastnì nachází a podle toho se urèuje výpoèet akcelerace èi decelarace, která je pro každý režim jiná. 
+
+Klíèové pro pochopení Wiedemannova modelu je obrázek \ref{wiedemann}. Osa x zobrazuje rozdíl rychlostí vozidel $\Delta v$ (aktuálního a následujícího) a na ose y se nachází vzdálenost mezi tìmito vozidly $\Delta x$. Znamená to, že pokud rozdíl rychlostí a zároveò rozdíl poloh vozidel dosahuje urèitých hodnot, vždy náleží jednomu konkrétnímu režimu, podle kterého je vozidlo dále zpracováváno. K tomu abychom mohli urèit pøíslušný režim vozidla, musíme si urèit prahové hodnoty køivek AX, ABX, SDX, CLDV, OPDV a SDV.
+
+Preferovaný odstup mezi stacionárními\footnote{nezávislé na èase} vozidly znaèíme AX. Tento práh sestává s délky èelního vozidla seètenou s preferovanou vzdáleností mezi vozidly. Je definován jako
+\begin{equation}
+AX = L_{n-1} + AXadd + RND1_n \cdot AXmult,
+\label{eq:AX}
+\end{equation}
+
+kde $AXadd$ a $AXmult$ jsou parametry modelu a $RND1_n$ znaèí parametr závislý na øidièi generovaný z normálního rozdìlení.
+
+\begin{figure}%
+\centering
+\includegraphics[width=1\textwidth]{images/wiedemann.pdf}%
+\caption{Režimy Wiedemannova modely}%
+\label{wiedemann}%
+\end{figure}
+
+ABX je preferovaná maximální vzdálenost mezi vozidly pøi malých rozdílech. Ten se vypoèítá následovnì:
+\begin{equation}
+ABX = AX + BX,
+\label{eq:ABX}
+\end{equation}
+
+kde 
+\begin{equation}
+BX = (BXadd + BXmult \cdot RND1_n)\cdot \sqrt{v},
+\label{eq:BX}
+\end{equation}
+
+
+kde $BXadd$ a $BXmult$ jsou opìt parametry modelu. Rychlost $v$ urèujeme v závislosti na základì následujícího vozidla,
+\begin{equation}
+ v = \left\{
+  \begin{array}{l l}
+    v_{\nm1} & \quad \text{pro} \quad v_n > v_{\nm1},\\
+    v_n & \quad \text{pro} \quad v_n \leq v_{\nm1}.
+\end{array} \right.
+\label{eq:}
+\end{equation}
+
+
+
+
+
 \section{Shrnutí}
 
 Èasovì spojité mikroskopické modely bez pøedjíždìní jsou v zásadì definovány funkcí zrychlení. V nejstarších modelech mùže zrychlení $\dot{v} (t + T_r)$ vozidla $\alpha$ zapsáno jako
@@ -513,6 +564,6 @@ V závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedouc
 
 Tyto problémy byly vyøešeny v Newellovì modelu (viz. odstavec \ref{sec:Newell}), kde je z rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k velmi vysokým hodnotám zrychlení.\cite{Treiber}
 
-Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako napø. Wiedemannùv. Ten se snaží napodobovat dopravu jak nejlépe to jde ovšem za cenu mnoha parametrù modelu.
+Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako Wiedemannùv (viz. odstavec \ref{sec:Wiedemann}). Ten se snaží napodobovat dopravu jak nejlépe to jde ovšem za cenu mnoha parametrù modelu.
 
 Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} (brzdný koeficient $b_n$) a Kraussùv model \ref{sec:Krauss} (brzdný koeficient $b$). Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. Toto chování se bohužel ztrácí ve chvíli, kdy modelujeme dopravu deterministicky\footnote{napø. když vozidla vjíždí do urèité oblasti každých 5 sekund}. Tím pádem není možné simulovat nestabilní stavy dopravy.
