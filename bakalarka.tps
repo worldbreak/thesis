@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame0_View0,0]
-TopLine=18
-Cursor=1033
+TopLine=24
+Cursor=1757
 
 [Frame1]
 Flags=0
@@ -53,7 +53,7 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame2_View0,0]
-TopLine=376
+TopLine=383
 Cursor=23329
 
 [Frame3]
@@ -89,7 +89,7 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame4_View0,0]
-TopLine=153
+TopLine=171
 Cursor=11895
 
 [Frame5]
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame5_View0,0]
-TopLine=560
-Cursor=33606
+TopLine=658
+Cursor=38524
 
 [Frame6]
 Flags=0
@@ -125,10 +125,10 @@ Class=LaTeXView
 Document=novymodel.tex
 
 [Frame6_View0,0]
-TopLine=135
+TopLine=166
 Cursor=11064
 
 [SessionInfo]
 FrameCount=7
-ActiveFrame=2
+ActiveFrame=5
 
