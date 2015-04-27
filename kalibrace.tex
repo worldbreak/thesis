@@ -1,0 +1,77 @@
+\chapter{Kalibrace modelù}
+
+\section{Struènı úvod do simulaèních modelù}
+
+Je známo, e simulace je vhodná monost jak provést experimentální test v porovnání s odlišnımi \rem{návrhy systému}. Daleko lepší moností je pokus provést na modelu v poèítaèi ne na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterıch reálnıch systémech nelze ani pokus provést. Vısledky tohoto experimentu na poèítaèi mohou poskytnout mnoho uiteènıch informací, na jejich základì je napø. moné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, kterı je urèen k øízení pokusù s modelem systému s cílem sestavení platnıch vısledkù i pro reálnı systém. Jinımi slovy simulaèní model se pouívá  k odpovìdi na otázky typu \uv{Co kdy?}.
+
+Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokladu, e vıvoj modelu systému v èase vhodnì napodobuje vıvoj reálného systému, mùeme sbírat informace o modelu (napø. promìnné) a posléze pøi pouití statistickım metod èi jiného vhodného matematického aparátu a následnıch dalších experimentù mùeme díky tomu navrhnout i budoucí chování systému. Tato myšlenka je znázornìna na obrázku \ref{aimsunmodel}.
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/model.pdf}%
+\caption{Simulaèní model - zdroj:\cite{Aimsun}}%
+\label{aimsunmodel}%
+\end{figure}
+
+Spolehlivost procesu rozhodování záleí na schopnosti vytvoøit takovı simulaèní model, kterı reprezentuje chování reálného systému s dostaèující pøesností. Reálnı systém potom mùe bıt nahrazen modelem a na modelu je moné provádìt rùzné experimenty. Toto platí pro simulaèní analızu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobnı reálnému systému, se nazıvá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to moné). Nesoulady mezi systémem a modelem nutí toho, kdo systém modeluje k zjišování dalších informací o systému. Tyto nesoulady a informace jsou potom pouity k vylepšení modelu. Ten by mìl bıt zlepšován do té doby, kdy je jeho pøesnost akceptována. Validace simulaèního modelu by mìla bıt brána v potaz bìhem celého procesu vytváøení modelu.
+
+\section{Validace modelù}
+
+Hlavní zdroj pro validaci modelù je pouito \cite{Kelton}.
+
+\textbf{Verifikace} je v první øadì rozhodnutí zda simulaèní program vykonává pøesnì to, co bylo zamıšleno, to jest odstranìní chyb z programu. Verifikace tedy kontroluje \uv{pøenesení} simulaèního modelu do správnì fungujícího programu.
+
+\textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou bıt rozhodnutí, která byla provedena na základì simulaèního modelu stejná jako kdyby se provádìl experiment na reálném systému. 
+
+Model je vìrohodnı tehdy, kdy jeho vısledky jsou pøijaty uivatelem a pouity v rozhodovacím procesu.
+
+Verifikace obvykle znamená spuštìní programu s implementovanım simulaèním modelem s rùznım nastavením vstupních parametrù a kontrolou, zda jsou vısledky simulace pøijatelné. V nìkterıch pøípadech je moné nìkteré vıpoèty provádìt analyticky a posléze numerickou simulací vısledky porovnat a tím zjistit pøijatelnost vıstupù.
+
+Pøi validaci simulaèního modelu by analytik nemìl zapomenout, e
+\begin{itemize}
+	\item simulaèní model je systém, kterı ovšem mùe bıt pouze aproximací reálného systému, bez ohledu na to, kolik práce bylo vloeno do vıvoje modelu,
+	\item simulaèní model by mìl bıt vdy vyvíjen pro specifické úèely,
+	\item simulaèní model by mšl bıt validován vzhledem k perfomaèním indikátorùm souvisejících s úèely modelu a mohl bıt pouit pro rozhodování
+	\item vıvoj a validace modelu by mìly probíhat zároveò bìhem celé analızy systému a vytváøení simulaèního modelu.
+\end{itemize} 
+
+Law and Kelton \cite{Kelton} dále navrhli postup, jak vyvinout validní a vìrohodné simulaèní modely. Dìlí se na tøi èásti:
+\begin{itemize}
+	\item vytvoøení modelu se \uv{zjevnou} validitou\footnote{z anglického face validity},
+	\item testování pøedpokladù modelu empiricky,
+	\item rozhodnutí, jak moc jsou vıstupní data ze simulace reprezentativní.
+\end{itemize}
+
+\subsection{Vytvoøení modelu se zjevnou validitou}
+
+Pokud lidé, kteøí rozumí reálnému systému, potvrdí e simulaèní model vypadá racionálnì, potom mùeme tvrdit e jde o model se zjevnou validitou.
+
+Pro dosaení takového modelu je dle \cite{Kelton} nutné, aby
+\begin{itemize}
+	\item èlovìk vytváøející novı model by mìl spolupracovat s lidmi, kteøí jsou dùvìrnì obeznámeni s reálnım systémem,
+	\item analytik musí bıt dùslednı pøi získávání všech poadovanıch informací,
+	\item pokud existují historická data, mìla by bıt získána a pouita pøi tvorbì modelu,
+	\item musí se také dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
+\end{itemize}
+
+\subsection{Testování pøedpokladù modelu empiricky}
+
+Jestlie je pouito pravdìpodobností rozdìlení jako vstupní parametr simulaèního modelu na základì shody s reálnımi daty, u vıstupu musí bıt tyto okolnosti zohlednìny.
+
+Další vlastnost ovlivòující model je citlivost na poèáteèní podmínky. Pokud se vıstupní data signifikatnì zmìní pouze na základì nepatrné zmìny vstupních parametrù, model potom mùe pùsobit chaoticky.
+
+Tyto dvì podmínky musí bıt pøi vyhodnocení testování také zahrnuty.
+
+\subsection{Rozhodnutí, jak moc jsou vıstupní data ze simulace reprezentativní}
+
+Hlavní test, kterım se posuzuje validita simulaèního modelu, je porovnání vıstupních dat. Pokud se data ze simulaèního modelu porovnají s vıstupními daty a vısledek je pøíznivı, lze model oznaèit za validní. Model ovšem vdy bude pouze aproximace systému a proto pøedstava, e model a systém se rovnají nemùe bıt nikdy pravdivá.
+\newline
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/validace.pdf}%
+\caption{Vztahy mezi validací, verifikací a dùveryhodností - zdroj:\cite{Aimsun}}%
+\label{validace}%
+\end{figure}
+
+Pøedcházející sekce je názornì zobrazena na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterıch situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv v obrázku \ref{validace} to není zahrnuto , je dùleité nezapomínat, e celı proces modelování je nutné brát jako iterativní a e nìkteré postupy se mùou opakovat a to nìkolikrát.
