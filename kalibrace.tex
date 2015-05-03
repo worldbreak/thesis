@@ -13,7 +13,7 @@ Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokla
 \label{aimsunmodel}%
 \end{figure}
 
-Spolehlivost procesu rozhodování záleí na schopnosti vytvoøit takovı simulaèní model, kterı reprezentuje chování reálného systému s dostateènou pøesností. Reálnı systém potom mùe bıt nahrazen modelem a na modelu je moné provádìt rùzné experimenty. Toto platí pro simulaèní analızu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobnı reálnému systému, se nazıvá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to moné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom pouity k vylepšení modelu. Je nutné si uvìdomit, e model by mohl bıt vylepšován neustále. Je proto nutné urèit práh, kdy model ji dává postaèující vısledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli ji není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla bıt brána v potaz bìhem celého procesu vytváøení modelu.
+Spolehlivost procesu rozhodování záleí na schopnosti vytvoøit takovı simulaèní model, kterı reprezentuje chování reálného systému s dostateènou pøesností. Reálnı systém potom mùe bıt nahrazen modelem a na modelu je moné provádìt rùzné experimenty. Toto platí pro simulaèní analızu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobnı reálnému systému, se nazıvá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to moné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom pouity k vylepšení modelu. Je nutné si uvìdomit, e model by mohl bıt vylepšován neustále. Je proto nezbytné urèit práh, kdy model ji dává postaèující vısledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli ji není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla bıt brána v potaz bìhem celého procesu vytváøení modelu.
 
 \section{Validace modelù}
 
@@ -21,17 +21,17 @@ Hlavní zdroj pro informace k validaci modelù je pouito \cite{Kelton}.  V \cite{
 
 \textbf{Verifikace} je v první øadì rozhodnutí zda simulaèní program vykonává pøesnì to, co bylo zamıšleno, to jest odstranìní chyb z programu. Verifikace tedy kontroluje \uv{pøenesení} simulaèního modelu do správnì fungujícího programu.
 
-Verifikace obvykle znamená spuštìní programu s implementovanım simulaèním modelem s rùznım nastavením vstupních parametrù a kontrolou, zda jsou vısledky simulace pøijatelné. V nìkterıch pøípadech je moné nìkteré vıpoèty provádìt analyticky a posléze numerickou simulací vısledky porovnat a tím zjistit pøijatelnost vıstupù.
+Verifikace obvykle znamená spuštìní programu s implementovanım simulaèním modelem s rùznım nastavením vstupních parametrù a kontrolou, zda jsou vısledky simulace pøijatelné. V nìkterıch pøípadech je moné nìkteré vıpoèty provádìt analyticky a posléze numerickou simulací vısledky porovnat a tím zjistit pøijatelnost vıstupù. To bohuel není pøípad dopravních modelù.
 
-\textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou bıt rozhodnutí, která byla provedena na základì simulaèního modelu stejná jako kdyby se provádìl experiment na reálném systému. 
+\textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou bıt rozhodnutí, která byla provedena na základì simulaèního modelu stejná, jako kdyby se provádìl experiment na reálném systému. 
 
-Model je \textbf{vìrohodnı} tehdy, kdy jeho vısledky jsou pøijaty uivatelem a pouity v rozhodovacím procesu.
+Model je \textbf{vìrohodnı} tehdy, kdy jsou jeho vısledky pøijaty uivatelem a pouity v rozhodovacím procesu.
 
 Pøi validaci simulaèního modelu by analytik nemìl zapomenout, e
 \begin{itemize}
 	\item simulaèní model je systém, kterı ovšem mùe bıt pouze aproximací reálného systému, bez ohledu na to, kolik práce bylo vloeno do vıvoje modelu,
 	\item simulaèní model by mìl bıt vdy vyvíjen pro specifické úèely,
-	\item simulaèní model by mšl bıt validován vzhledem k perfomaèním indikátorùm souvisejících s úèely modelu a mohl bıt pouit pro rozhodování
+	\item simulaèní model by mìl bıt validován vzhledem k perfomaèním indikátorùm souvisejících s úèely modelu a mohl bıt pouit pro rozhodování
 	\item vıvoj a validace modelu by mìly probíhat zároveò bìhem celé analızy systému a vytváøení simulaèního modelu.
 \end{itemize} 
 
@@ -51,7 +51,7 @@ Pro dosaení takového modelu je dle \cite{Kelton} nutné, aby
 	\item èlovìk vytváøející novı model by mìl spolupracovat s lidmi, kteøí jsou dùvìrnì obeznámeni s reálnım systémem,
 	\item analytik musí bıt dùslednı pøi získávání všech poadovanıch informací,
 	\item pokud existují historická data, mìla by bıt získána a pouita pøi tvorbì modelu,
-	\item musí se také dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
+	\item dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
 \end{itemize}
 
 \paragraph{Testování pøedpokladù modelu empiricky}
@@ -64,7 +64,7 @@ Tyto dvì podmínky musí bıt pøi vyhodnocení testování také zahrnuty.
 
 \paragraph{Rozhodnutí, jak moc jsou vıstupní data ze simulace reprezentativní}
 
-Hlavní test, kterım se posuzuje validita simulaèního modelu, je porovnání vıstupních dat. Pokud se data ze simulaèního modelu porovnají s vıstupními daty a vısledek je pøíznivı, lze model oznaèit za validní. Model ovšem vdy bude pouze aproximace systému a proto pøedstava, e model a systém se rovnají nemùe bıt nikdy pravdivá.
+Hlavní test, kterım se posuzuje validita simulaèního modelu, je porovnání vıstupních dat. Pokud se data ze simulaèního modelu porovnají s vıstupními daty a vısledek je pøíznivı, lze model oznaèit za validní. Model ovšem vdy zùstane pouhou aproximací systému.
 \newline
 
 \begin{figure}[h]%
@@ -103,7 +103,7 @@ Vısledkem z procházení informací o kalibraci docházíme k závìru, e ideální bude
 
 \section{Statistické metody pro validaci modelù}
 
-Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jak jsme zmínili v minulé sekci, budeme potøebovat dvì sady dat, jednu ke kalibraci modelu a druhou k validaci modelu.
+Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jako hlavní zdroj pro GEH formuli jsou pouity zdroje \cite{Feldman} a \cite{CalibrationWWW}. Jak jsme zmínili v minulé sekci, budeme potøebovat dvì sady dat, jednu ke kalibraci modelu a druhou k validaci modelu.
 
 \subsection{Statistickı test støední hodnoty}
 
@@ -159,14 +159,13 @@ Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které j
 \end{itemize}
 
 \subsection{GEH}
-
 GEH byla vymyšlena v 70. letech v Anglii\footnote{Jmenuje se dle iniciálù svého objevitele Geoffreyho E. Haverse}. a pouívá se pro zjištìní informace o tom, zda je model dobøe nakalibrován. Bere v úvahu absolutní i relativní rozdíly hodnot intenzit. GEH formule vypadá takto:
 \begin{equation}
-GEH = \sqrt{\frac{2(m-c)^2}{m+c}},
+GEH_i = \sqrt{\frac{2(m-c)^2}{m+c}},
 \label{eq:GEH}
 \end{equation}
 
-kde $c$ je reálná intenzita provozu a $m$ intenzita nasimulovaná modelem.
+kde $c$ je reálná intenzita provozu a $m$ intenzita nasimulovaná modelem a $i$ je poèet hodinovıch period pøes kterı se poèítá GEH.
 
 Rovnice \ref{eq:GEH} je stejná, jako rovnice pro chí-kvadrát test, ale toto není test v pravém slova smyslu. Je to empirickı vzorec, o kterém bylo dokázáno, e se hodí pro analızu dopravy. Ideálnì funguje pro hodinové intenzity provozu, pro jiné èasové úseky je doporuèeno intenzity pøepoèítat.
 

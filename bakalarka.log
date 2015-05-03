@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  3 MAY 2015 11:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  3 MAY 2015 12:06
 entering extended mode
 **bakalarka.tex
 (C:\diplomka\diplomka\TEX\bakalarka.tex
@@ -1007,28 +1007,28 @@ Underfull \hbox (badness 6510) in paragraph at lines 19--21
  []
 
 
-Underfull \hbox (badness 7064) in paragraph at lines 34--36
+Underfull \hbox (badness 7064) in paragraph at lines 40--42
 []\OT1/cmr/m/n/10.95 KANAGARAJ, Ven-ka-te-san a Go-wri ASAI-THAMBI. Eva-luation of Di-f-
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 34--36
+Underfull \hbox (badness 4699) in paragraph at lines 40--42
 \OT1/cmr/m/n/10.95 fe-rent Vehicle Following Mo-dels un-der Mi-xed Traf-fic Con-di-ti-ons. \OT1/cmr/m/it/10.95 Pro-ce-
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 34--36
+Underfull \hbox (badness 1603) in paragraph at lines 40--42
 \OT1/cmr/m/it/10.95 dia - So-cial and Be-ha-vi-o-ral Sciences 104\OT1/cmr/m/n/10.95 . 390 { 401. Do-stupne z: [][]$\OT1
 /cmtt/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \OT1/cmtt/m/n/10.95 / / ac . els-[]cdn . com / S1877042813045230 / 1-[]s2 . 0-[]S1877042813045230-[]main .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \OT1/cmtt/m/n/10.95 pdf ? _tid = fdf19d26-[]f011-[]11e4-[]97be-[]00000aacb35e & acdnat = 1430492259 _
  []
 
@@ -1094,10 +1094,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 340.
  ) 
 Here is how much of TeX's memory you used:
- 30531 strings out of 493921
- 658884 string characters out of 3147283
- 839861 words of memory out of 3000000
- 32956 multiletter control sequences out of 15000+200000
+ 30535 strings out of 493921
+ 658940 string characters out of 3147283
+ 839928 words of memory out of 3000000
+ 32958 multiletter control sequences out of 15000+200000
  11822 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,15n,76p,1221b,1206s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1114,9 +1114,9 @@ c/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (52 pages, 598706 bytes).
+Output written on bakalarka.pdf (52 pages, 600527 bytes).
 PDF statistics:
- 1160 PDF objects out of 1200 (max. 8388607)
- 370 named destinations out of 1000 (max. 500000)
+ 1166 PDF objects out of 1200 (max. 8388607)
+ 372 named destinations out of 1000 (max. 500000)
  535 words of extra memory for PDF output out of 10000 (max. 10000000)
 
