@@ -158,3 +158,23 @@ Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které j
 	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota $t_{\text{m}-1;\alpha/2}$. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. T-statistika za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
 \end{itemize}
 
+\subsection{GEH}
+
+GEH byla vymyšlena v 70. letech v Anglii\footnote{Jmenuje se dle iniciálù svého objevitele Geoffreyho E. Haverse}. a používá se pro zjištìní informace o tom, zda je model dobøe nakalibrován. Bere v úvahu absolutní i relativní rozdíly hodnot intenzit. GEH formule vypadá takto:
+\begin{equation}
+GEH = \sqrt{\frac{2(m-c)^2}{m+c}},
+\label{eq:GEH}
+\end{equation}
+
+kde $c$ je reálná intenzita provozu a $m$ intenzita nasimulovaná modelem.
+
+Rovnice \ref{eq:GEH} je stejná, jako rovnice pro chí-kvadrát test, ale toto není test v pravém slova smyslu. Je to empirický vzorec, o kterém bylo dokázáno, že se hodí pro analýzu dopravy. Ideálnì funguje pro hodinové intenzity provozu, pro jiné èasové úseky je doporuèeno intenzity pøepoèítat.
+
+Dle hodnoty GEH rozlišujeme tyto tøi stavy:
+\begin{itemize}
+	\item $GEH < 5$ - pøijatelné, model je nakalibrován správnì,
+	\item $GEH > 5$ a $GEH < 10$ - možná chyba v kalibraci èi v datech,
+	\item $GEH > 10$ - vysoká pravdìpodobnost chyby v kalibraci èi v datech.
+\end{itemize}
+
+Na tomto základì je možné rozhodnout, zda výsledky, které dostaneme pomocí modelù jsou vìrohodné èi nikoliv.
