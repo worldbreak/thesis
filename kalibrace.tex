@@ -2,7 +2,7 @@
 
 \section{Struèný úvod do simulaèních modelù}
 
-Je známo, že simulace je vhodná možnost jak provést experimentální test v porovnání s odlišnými \rem{návrhy systému}. Daleko lepší možností je pokus provést na modelu v poèítaèi než na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterých reálných systémech nelze ani pokus provést. Výsledky tohoto experimentu na poèítaèi mohou poskytnout mnoho užiteèných informací, na jejichž základì je napø. možné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, který je urèen k øízení pokusù s modelem systému s cílem sestavení platných výsledkù i pro reálný systém. Jinými slovy simulaèní model se používá  k odpovìdi na otázky typu \uv{Co když?}.
+Je známo, že simulace je vhodná možnost jak provést experimentální test v porovnání s odlišnými návrhy systému. Daleko lepší možností je pokus provést na modelu v poèítaèi než na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterých reálných systémech nelze ani pokus provést. Výsledky tohoto experimentu na poèítaèi mohou poskytnout mnoho užiteèných informací, na jejichž základì je napø. možné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, který je urèen k øízení pokusù s modelem systému s cílem sestavení platných výsledkù i pro reálný systém. Jinými slovy simulaèní model se používá  k odpovìdi na otázky typu \uv{Co když?}.
 
 Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokladu, že vývoj modelu systému v èase vhodnì napodobuje vývoj reálného systému, mùžeme sbírat informace o modelu (napø. promìnné) a posléze pøi použití statistickým metod èi jiného vhodného matematického aparátu a následných dalších experimentù mùžeme díky tomu navrhnout i budoucí chování systému. Tato myšlenka je znázornìna na obrázku \ref{aimsunmodel}.
 
@@ -13,19 +13,19 @@ Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokla
 \label{aimsunmodel}%
 \end{figure}
 
-Spolehlivost procesu rozhodování záleží na schopnosti vytvoøit takový simulaèní model, který reprezentuje chování reálného systému s dostaèující pøesností. Reálný systém potom mùže být nahrazen modelem a na modelu je možné provádìt rùzné experimenty. Toto platí pro simulaèní analýzu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobný reálnému systému, se nazývá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to možné). Nesoulady mezi systémem a modelem nutí toho, kdo systém modeluje k zjišování dalších informací o systému. Tyto nesoulady a informace jsou potom použity k vylepšení modelu. Ten by mìl být zlepšován do té doby, kdy je jeho pøesnost akceptována. Validace simulaèního modelu by mìla být brána v potaz bìhem celého procesu vytváøení modelu.
+Spolehlivost procesu rozhodování záleží na schopnosti vytvoøit takový simulaèní model, který reprezentuje chování reálného systému s dostateènou pøesností. Reálný systém potom mùže být nahrazen modelem a na modelu je možné provádìt rùzné experimenty. Toto platí pro simulaèní analýzu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobný reálnému systému, se nazývá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to možné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom použity k vylepšení modelu. Je nutné si uvìdomit, že model by mohl být vylepšován neustále. Je proto nutné urèit práh, kdy model již dává postaèující výsledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli již není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla být brána v potaz bìhem celého procesu vytváøení modelu.
 
 \section{Validace modelù}
 
-Hlavní zdroj pro validaci modelù je použito \cite{Kelton}.
+Hlavní zdroj pro informace k validaci modelù je použito \cite{Kelton}.  V \cite{Balci} je ještì více do pododrobna rozebrána problematika validace a verifikace modelù.
 
 \textbf{Verifikace} je v první øadì rozhodnutí zda simulaèní program vykonává pøesnì to, co bylo zamýšleno, to jest odstranìní chyb z programu. Verifikace tedy kontroluje \uv{pøenesení} simulaèního modelu do správnì fungujícího programu.
 
+Verifikace obvykle znamená spuštìní programu s implementovaným simulaèním modelem s rùzným nastavením vstupních parametrù a kontrolou, zda jsou výsledky simulace pøijatelné. V nìkterých pøípadech je možné nìkteré výpoèty provádìt analyticky a posléze numerickou simulací výsledky porovnat a tím zjistit pøijatelnost výstupù.
+
 \textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou být rozhodnutí, která byla provedena na základì simulaèního modelu stejná jako kdyby se provádìl experiment na reálném systému. 
 
-Model je vìrohodný tehdy, když jeho výsledky jsou pøijaty uživatelem a použity v rozhodovacím procesu.
-
-Verifikace obvykle znamená spuštìní programu s implementovaným simulaèním modelem s rùzným nastavením vstupních parametrù a kontrolou, zda jsou výsledky simulace pøijatelné. V nìkterých pøípadech je možné nìkteré výpoèty provádìt analyticky a posléze numerickou simulací výsledky porovnat a tím zjistit pøijatelnost výstupù.
+Model je \textbf{vìrohodný} tehdy, když jeho výsledky jsou pøijaty uživatelem a použity v rozhodovacím procesu.
 
 Pøi validaci simulaèního modelu by analytik nemìl zapomenout, že
 \begin{itemize}
@@ -42,7 +42,7 @@ Law and Kelton \cite{Kelton} dále navrhli postup, jak vyvinout validní a vìrohod
 	\item rozhodnutí, jak moc jsou výstupní data ze simulace reprezentativní.
 \end{itemize}
 
-\subsection{Vytvoøení modelu se zjevnou validitou}
+\paragraph{Vytvoøení modelu se zjevnou validitou}
 
 Pokud lidé, kteøí rozumí reálnému systému, potvrdí že simulaèní model vypadá racionálnì, potom mùžeme tvrdit že jde o model se zjevnou validitou.
 
@@ -54,7 +54,7 @@ Pro dosažení takového modelu je dle \cite{Kelton} nutné, aby
 	\item musí se také dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
 \end{itemize}
 
-\subsection{Testování pøedpokladù modelu empiricky}
+\paragraph{Testování pøedpokladù modelu empiricky}
 
 Jestliže je použito pravdìpodobností rozdìlení jako vstupní parametr simulaèního modelu na základì shody s reálnými daty, u výstupu musí být tyto okolnosti zohlednìny.
 
@@ -62,7 +62,7 @@ Další vlastnost ovlivòující model je citlivost na poèáteèní podmínky. Pokud se v
 
 Tyto dvì podmínky musí být pøi vyhodnocení testování také zahrnuty.
 
-\subsection{Rozhodnutí, jak moc jsou výstupní data ze simulace reprezentativní}
+\paragraph{Rozhodnutí, jak moc jsou výstupní data ze simulace reprezentativní}
 
 Hlavní test, kterým se posuzuje validita simulaèního modelu, je porovnání výstupních dat. Pokud se data ze simulaèního modelu porovnají s výstupními daty a výsledek je pøíznivý, lze model oznaèit za validní. Model ovšem vždy bude pouze aproximace systému a proto pøedstava, že model a systém se rovnají nemùže být nikdy pravdivá.
 \newline
@@ -74,4 +74,87 @@ Hlavní test, kterým se posuzuje validita simulaèního modelu, je porovnání výstup
 \label{validace}%
 \end{figure}
 
-Pøedcházející sekce je názornì zobrazena na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterých situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv v obrázku \ref{validace} to není zahrnuto , je dùležité nezapomínat, že celý proces modelování je nutné brát jako iterativní a že nìkteré postupy se mùžou opakovat a to nìkolikrát.
+Shrnutí této èásti o validaci je názornì zobrazeno na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterých situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv to není v obrázku \ref{validace} zahrnuto , je dùležité nezapomínat, že celý proces modelování je nutné brát jako iterativní a že nìkteré postupy se mùžou opakovat a to nìkolikrát.
+
+Validace modelu tedy znamená proces testování, že model skuteènì pøedstavuje uskuteènitelnou a použitelnou alternativu k experimentování se systémem. Jednou z èásti je kalibrace modelu, což znamená pøizpùsobování parametrù modelu dokud výstupní data nepodobají datùm pozorovaných na systému. Další otázkou potom je, zda je model nakalibrován pouze na urèitou sadu vstupních dat èi je nakalibrován všeobecnì pro rùzné typy vstupních dat. Abychom tuto otázku náležitì zodpovìdìli, analytik musí použít dva nezávislé soubory dat, jednu pro kalibraci a druhou pro validaci. První soubor by mìl být použit ke kalibraci modelu, druhý pro vyzkoušení nakalibrovaného modelu a poté k validaci tohoto modelu. Výsledný soubor dat je posléze porovnán s druhým souborem dat ze systému.
+
+Simulaèní model je validován na základì porovnání dat mezi pozorovanými výstupními daty systému a výstupními daty vytvoøenými poèítaèovým modelem.
+
+Tento proces je schématicky znázornìn na obrázku \ref{validmodel}.
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/validdiagram.pdf}%
+\caption{Diagram validace modelu na základì porovnání dat systému a modelu - zdroj:\cite{Aimsun}}%
+\label{validmodel}%
+\end{figure}
+
+\section{Kalibrace modelù}
+
+K tomu, jak správnì nakalibrovat model neexistuje jednotný postup a vìtšinou je to obecné know-how jednotlivých autorù kalibrace. Existuje nìkolik èlánkù o kalibraci napø. \cite{Brackstone}, kde se hlavnì dozvíme informace o kalibrace modelù General motors, které pracují na principu rovnice \eqref{eq:othermodels}, více viz. \cite[str.11-13]{Vanis}.
+
+Je zde popsána èást kalibrace vìnující se i nekolizním Car-Following modelùm, jako je napø. Gippsùv model, nicménì je zde struènì uvedeno, že Gipps model nekalibroval, nýbrž použil reálné hodnoty z provozu a jeho model s nimi rovnou fungoval, tím pádem nemìl dùvod se kalibrací nìjakým zpùsobem dál zabývat.
+
+V èlánku \cite{Kanagaraj} se autoøi snaží nakalibrovat jednotlivé modely metodou pokus omyl. Øeší zde posléze pouze rùzné možnosti kontroly validity (viz dále). Kalibrace parametrù na principu optimalizace je složitá z toho dùvodu, že úèelová funkce nemá analytické øešení.
+
+Další možnost, jak kalibrovat modely, byla vyzkoušena institutem pro výzkum dopravy v Berlínì \cite{Brockfeld}, kde vyzkoušely Nelder-Mead\footnote{též pojmenována Downhill simplexová metoda} metodu, která se numericky snaží najít maximum nelineárních problému v nìkolikarozmìrném prostoru. Výhodou pro autory byla informace o rychlosti a poloze vozidla na testovacím okruhu každou 0.1s s tím, že nepøesnost urèení rychlosti a polohy byla zanedbatelná.
+
+Výsledkem z procházení informací o kalibraci docházíme k závìru, že ideální bude volit parametry také metodou pokus omyl, která je èasovì i výpoèetnì nenároèná. Podstatné bude, aby výsledky ze simulaèních modelù odpovídaly výsledkù namìøených mýtnými branami.
+
+\section{Statistické metody pro validaci modelù}
+
+Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jak jsme zmínili v minulé sekci, budeme potøebovat dvì sady dat, jednu ke kalibraci modelu a druhou k validaci modelu.
+
+\subsection{Statistický test støední hodnoty}
+
+V každém kroku validaèního procesu by mìl být provádìn experiment. Každý pokus je urèen vstupními daty (které budou pro všechny pokusy stejné) a hodnotami parametrù modelu (ty se budou vždy lišit). Výstupem simulace bude soubor hodnot promìnných, v našem pøípadì nejspíše intenzit, které zaznamenáváme každou vzorkovací periodu. Napøíklad, pøedpokládejme, že simulace má vzorkovací periodu 1 minuta - to znamená, že každou minutu pøibývají hodnoty intenzit. Promìnná, která nás zajímá každou vzorkovací periodu, je intenzita $w$, výsledek simulaèního modelu tedy bude soubor hodnot $w_{ij}$, kde indexem $i$ znaèíme konkrétní detektor a $j$ je èas zaznamenání. Index $i$ probíhá od 1 do n,
+\[
+i = 1,2\dots\text{n},
+\]
+kde n je celkový poèet detektorù a èas $j$ probíhá od 1 do m,
+\[
+j = 1,2\dots\text{m},
+\]
+kde m je poèet vzorkovacích period v simulaci.
+
+Pokud $v_{ij}$ oznaèíme namìøenou intenzitu, v pøípadì Pražského okruhu mýtnou branou, kde indexy i a j budou stejné jako v pøípadì modelu, klasická statistická technika k validaci modelu bude porovnání hodnot $v_{ij}$ a $w_{ij}$ a zjištìní zda jsou u sebe dostateènì blízko.
+
+Pro detektor i bude porovnání založeno na testování zda rozdíl
+\begin{equation}
+d_i = w_{ij} - v_{ij}
+\label{eq:difflow}
+\end{equation}
+
+má støední hodnotu $\overline{d}_i$ významnì vzdálenou od nuly èi nikoliv. K tomu se využívá t-statistika
+\begin{equation}
+\overline{t}_{\text{m}-1} = \frac{\overline{d}_i - \delta_i}{\frac{\overline{s}_d}{\sqrt{m}}},
+\label{eq:tstat}
+\end{equation}
+
+kde $\delta_i$ je pøedpokládaná hodnota $\overline{d}_i$ a $\overline{s}_d$ je smìrodatná odchylka od $\overline{d}_i$.
+
+Jako nulovou hypotézu oznaèíme
+\begin{equation}
+H_0 : \delta_i = 0.
+\label{eq:hypoteza}
+\end{equation}
+
+To nastane ve chvíli, kdy
+\begin{equation}
+\left|\overline{t}_{\text{m}-1}\right| > t_{\text{m}-1;\alpha/2}.
+\label{eq:interval}
+\end{equation}
+
+Pokud zamítneme hypotézu \eqref{eq:hypoteza} na hladinì $\alpha$, soudíme, že model není dostateènì pøesný v chování jako systém a model zamítneme. Musíme vyzkoušet jiné kombinace vstupních parametrù modelu.
+
+Naopak pokud nezamítneme tuto hypotézu, tvrdíme, že chování simulace a systému jsou již natolik blízké, že simulaci považujeme za validní.
+
+Tento proces musí být proveden pro každý z detektorù. Model je možné oznaèit za validní ve chvíli, kdy hypotézu nezamítneme pro žádný z detektorù\footnote{Záleží ovšem na dalších okolnostech, musí být vzato v úvahu, o jaká data se jedná èi že model nikdy nemùže být stejný jako simulovaný systém.}.
+
+Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které je nutné vzít v úvahu \cite{Kleijnen} konkrétnì pøi dopravních simulacích.
+
+\begin{itemize}
+	\item Tento postup pøedpokládá stejná a nezávisle rozdìlená pozorování\footnote{i.i.d - independent and identically distributed random variables}, kdežto mìøení reálného systému a pøíslušné nasimulované výstupy nemusí tento pøedpoklad splòovat. Jednou z možností je vzít hodnoty z nìkolika èasových období a navíc zprùmìrovat tyto hodnoty pro výpoèet \eqref{eq:difflow}.
+	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota $t_{\text{m}-1;\alpha/2}$. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. T-statistika za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
+\end{itemize}
+
