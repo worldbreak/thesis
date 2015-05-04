@@ -99,8 +99,6 @@ V èlánku \cite{Kanagaraj} se autoøi snaží nakalibrovat jednotlivé modely metodou
 
 Další možnost, jak kalibrovat modely, byla vyzkoušena institutem pro výzkum dopravy v Berlínì \cite{Brockfeld}, kde vyzkoušely Nelder-Mead\footnote{též pojmenována Downhill simplexová metoda} metodu, která se numericky snaží najít maximum nelineárních problému v nìkolikarozmìrném prostoru. Výhodou pro autory byla informace o rychlosti a poloze vozidla na testovacím okruhu každou 0.1s s tím, že nepøesnost urèení rychlosti a polohy byla zanedbatelná.
 
-Výsledkem z procházení informací o kalibraci docházíme k závìru, že ideální bude volit parametry také metodou pokus omyl, která je èasovì i výpoèetnì nenároèná. Podstatné bude, aby výsledky ze simulaèních modelù odpovídaly výsledkù namìøených mýtnými branami.
-
 \section{Statistické metody pro validaci modelù}
 
 Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jako hlavní zdroj pro GEH formuli jsou použity zdroje \cite{Feldman} a \cite{CalibrationWWW}. Jak jsme zmínili v minulé sekci, budeme potøebovat dvì sady dat, jednu ke kalibraci modelu a druhou k validaci modelu.
@@ -159,6 +157,7 @@ Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které j
 \end{itemize}
 
 \subsection{GEH}
+\label{sec:GEH}
 GEH byla vymyšlena v 70. letech v Anglii\footnote{Jmenuje se dle iniciálù svého objevitele Geoffreyho E. Haverse}. a používá se pro zjištìní informace o tom, zda je model dobøe nakalibrován. Bere v úvahu absolutní i relativní rozdíly hodnot intenzit. GEH formule vypadá takto:
 \begin{equation}
 GEH_i = \sqrt{\frac{2(m-c)^2}{m+c}},
@@ -167,7 +166,7 @@ GEH_i = \sqrt{\frac{2(m-c)^2}{m+c}},
 
 kde $c$ je reálná intenzita provozu a $m$ intenzita nasimulovaná modelem a $i$ je poèet hodinových period pøes který se poèítá GEH.
 
-Rovnice \ref{eq:GEH} je stejná, jako rovnice pro chí-kvadrát test, ale toto není test v pravém slova smyslu. Je to empirický vzorec, o kterém bylo dokázáno, že se hodí pro analýzu dopravy. Ideálnì funguje pro hodinové intenzity provozu, pro jiné èasové úseky je doporuèeno intenzity pøepoèítat.
+Rovnice \ref{eq:GEH} je stejná, jako rovnice pro chí-kvadrát test, ale toto není test v pravém slova smyslu. Je to empirický vzorec vhodný pro analýzu dopravy. Ideálnì funguje pro hodinové intenzity provozu, pro jiné èasové úseky je doporuèeno intenzity pøepoèítat.
 
 Dle hodnoty GEH rozlišujeme tyto tøi stavy:
 \begin{itemize}

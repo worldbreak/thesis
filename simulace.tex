@@ -1,0 +1,21 @@
+\chapter{Simulace}
+
+V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6.
+
+Grafický podklad byl naimportován s OSM viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì.
+
+Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme spøesòovat. Jako kritériem pro validní model použijeme GEH \ref{sec:GEH}.
+
+Na zaèátku bych chtìl zmínit rozdíly v modelech mezi kapitolou \ref{chap:predIDM} a implementacemi jednotlivých modelù.
+
+\section{Zmìny modelù}
+
+Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotným simulaèním nástrojem èi velkým množstvím parametrù. SUMO umožòuje jednoduše zjistit pouze rychlost pøedního vozidla a odstup mezi aktuálním a pøedním vozidlem.
+
+\subsection{Gippsùv model}
+
+Gippsùv model je naimplementován stejnì tak, jak zní rovnice \eqref{eq:gipps}. Jediná drobná zmìna nastává u výpoètu èlenu $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$, kde není možné získat parametr $s_{\nm1}$. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k ní jsme pøièetli minimální bezpeènostní odstup.
+
+\subsection{Kraussùv model}
+
+SUMO bylo vytvoøeno primárnì na základì Kraussova modelu, proto je velice tìžké urèit a dopátrat se, jak vlastnì aktuální model funguje a zda splòuje rovnice \eqref{eq:krausssmodel}
