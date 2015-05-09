@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  9 MAY 2015 12:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  9 MAY 2015 13:24
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -1054,11 +1054,72 @@ adavky.|
 
 ) [47] (D:\Vanis-Sumo\thesis\simulace.tex
 Kapitola 6.
-) [48
+<images/usekdalnice.png, id=1030, 689.57625pt x 528.47438pt>
+File: images/usekdalnice.png Graphic file (type png)
+ <use images/usekdalnice.png>
+Package pdftex.def Info: images/usekdalnice.png used on input line 7.
+(pdftex.def)             Requested size: 418.25368pt x 320.5384pt.
+
+<images/brana0170_20121028.pdf, id=1039, 361.35pt x 216.81pt>
+File: images/brana0170_20121028.pdf Graphic file (type pdf)
+ <use images/brana0170_20121028.pdf>
+Package pdftex.def Info: images/brana0170_20121028.pdf used on input line 19.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+
+<images/brana0170_20121007.pdf, id=1040, 361.35pt x 216.81pt>
+File: images/brana0170_20121007.pdf Graphic file (type pdf)
+ <use images/brana0170_20121007.pdf>
+Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+
+<images/brana0157_20121028.pdf, id=1041, 361.35pt x 216.81pt>
+File: images/brana0157_20121028.pdf Graphic file (type pdf)
+ <use images/brana0157_20121028.pdf>
+Package pdftex.def Info: images/brana0157_20121028.pdf used on input line 39.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+
+<images/brana0157_20121007.pdf, id=1042, 361.35pt x 216.81pt>
+File: images/brana0157_20121007.pdf Graphic file (type pdf)
+ <use images/brana0157_20121007.pdf>
+Package pdftex.def Info: images/brana0157_20121007.pdf used on input line 42.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+ [48
 
 
 
-] (D:\Vanis-Sumo\thesis\literatura.tex
+ <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0145_20121028.pdf, id=1054, 361.35pt x 216.81pt>
+File: images/brana0145_20121028.pdf Graphic file (type pdf)
+
+<use images/brana0145_20121028.pdf>
+Package pdftex.def Info: images/brana0145_20121028.pdf used on input line 58.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+ <images/brana0145_20121007.pdf, id=1055, 361.35pt x 216.81pt>
+File: images/brana0145_20121007.pdf Graphic file (type pdf)
+
+<use images/brana0145_20121007.pdf>
+Package pdftex.def Info: images/brana0145_20121007.pdf used on input line 61.
+(pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
+) [49 <D:/Vanis-Sumo/thesis/images/brana0170_20121028.pdf> <D:/Vanis-Sumo/thesis/images/brana0170_20121007.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0170_20121007.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <D:/Vanis-Sumo/thesis/images/brana0157_20121028.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0157_20121028.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <D:/Vanis-Sumo/thesis/images/brana0157_20121007.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0157_20121007.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <D:/Vanis-Sumo/thesis/images/brana0145_20121028.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121028.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+>] [50] (D:\Vanis-Sumo\thesis\literatura.tex
 Underfull \hbox (badness 6510) in paragraph at lines 19--21
 [][][]\OT1/cmr/m/n/10.95 MARK, Bracks-tone a Mc-Do-nald MIKE. Car-following: a his-to-ri-cal re-
  []
@@ -1089,11 +1150,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \OT1/cmtt/m/n/10.95 pdf ? _tid = fdf19d26-[]f011-[]11e4-[]97be-[]00000aacb35e & acdnat = 1430492259 _
  []
 
-[49
+[51
 
 
 
-]) [50] (D:\Vanis-Sumo\thesis\priloha.tex
+]) [52] (D:\Vanis-Sumo\thesis\priloha.tex
 P\v {r}\'{\i }loha A.
 
 Overfull \hbox (10.11206pt too wide) in paragraph at lines 10--11
@@ -1144,10 +1205,10 @@ Package rerunfilecheck Info: File `bakalarka.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 30827 strings out of 493921
- 669454 string characters out of 3151295
- 861718 words of memory out of 3000000
- 33194 multiletter control sequences out of 15000+200000
+ 30878 strings out of 493921
+ 670669 string characters out of 3151295
+ 862092 words of memory out of 3000000
+ 33229 multiletter control sequences out of 15000+200000
  11822 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,22n,76p,1221b,1248s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1163,9 +1224,9 @@ pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/TeX/MiKTeX 2.
 y6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (57 pages, 647736 bytes).
+Output written on bakalarka.pdf (59 pages, 907379 bytes).
 PDF statistics:
- 1287 PDF objects out of 1440 (max. 8388607)
- 405 named destinations out of 1000 (max. 500000)
- 604 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1367 PDF objects out of 1440 (max. 8388607)
+ 414 named destinations out of 1000 (max. 500000)
+ 639 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,79 @@
 \chapter{Simulace}
 
-V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6. 
+V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6 - viz obrázek \ref{usekdalnice}.
 
-Grafický podklad byl naimportován s OSM viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì.
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/usekdalnice.png}%
+\caption{Simulovaný úsek dálnice - Pražský okruh km 22 - 14}%
+\label{usekdalnice}%
+\end{figure}
+
+Grafický podklad byl naimportován s OSM dle obrázku \ref{usekdalnice} - viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì.
+
+Prvním dùležitým zjištìním byla data z mýtných bran, konkrétnì brána 157 (viz obrázky \ref{b157_28} a \ref{b157_07}) a brána 145 (viz obrázky \ref{b145_28} a \ref{b145_07}) obsahují nekvalitní data. Obrázek znázoròuje èasovou osu, kde na ose x je èas (poèítán po minutách) a na ose y je vynášen poèet vozidel. U brány 145 to není na první pohled vidìt, nicménì pokud se podíváme na intenzitu provozu na bránì 170 (viz obrázky \ref{b170_28} a \ref{b170_07}), vidíme, že více jak o 50\% vyšší než u brány 157, což je nesmysl.
+
+\begin{figure}%
+ \centering
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0170_20121028.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0170_20121007.pdf}%
+	\end{minipage}		
+	\\
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0170 - 28.10.2012}
+		\label{b170_28}%
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0170 - 7.10.2012}%
+		\label{b170_07}
+	\end{minipage}			
+\end{figure}
+
+
+\begin{figure}%
+ \centering
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0157_20121028.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0157_20121007.pdf}%
+	\end{minipage}		
+	\\
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0157 - 28.10.2012}
+		\label{b157_28}%
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0157 - 7.10.2012}%
+		\label{b157_07}
+	\end{minipage}			
+\end{figure}
+
+\begin{figure}%
+ \centering
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0145_20121028.pdf}
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\includegraphics[width=7cm]{images/brana0145_20121007.pdf}%
+	\end{minipage}		
+	\\
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0145 - 28.10.2012}
+		\label{b145_28}%
+	\end{minipage}
+	\begin{minipage}[c]{7cm}
+		\caption{Brána 0145 - 7.10.2012}%
+		\label{b145_07}
+	\end{minipage}			
+\end{figure}
+
+Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170. V pøedcházející èásti této sekce jsem pouze chtìl upozornit, že je velmi dùležité zkontrolovat data pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec nebude.
 
 Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme spøesòovat. Jako kritériem pro validní model použijeme GEH \ref{sec:GEH}.
+
+
+ 
