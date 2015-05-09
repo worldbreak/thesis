@@ -463,7 +463,7 @@ Pro výpoèet zrychlení v IDM je použit vztah \rem{bacha na to, jak znaèíte deriva
 \dot{v}_n = a_\free + a_\inter,
 \label{soucetzrych}
 \end{equation}
-kde se aktuální zrychlení úèastníka vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i úèastník jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s Gippsovým modelem (kapitola \ref{sec:Gipps}, kde se ovšem vybírá pouze jedna z tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
+kde se aktuální zrychlení úèastníka vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i úèastník jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s Gippsovým modelem (kapitola \ref{sec:Gipps}), kde se ovšem vybírá pouze jedna z tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
 
 Zrychlení pøi volném proudu je definováno vztahem
 \begin{equation}
@@ -496,6 +496,13 @@ je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bez
 
 
 Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní èlen $s_n^*$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení auta $\dot{v}_n$ se musí snížit.
+
+Dosazením do rovnice \eqref{soucetzrych} za $a_\inter$ z rovnice \eqref{intclen} a $a_\free$ z rovnice \eqref{zrychvolproud} dostáváme \textbf{koneèný vztah pro zrychlení vozidla}:
+\begin{equation}
+\dot{v}_n = a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}}{s_n}\right)^2.
+\label{eq:IDMcompl}
+\end{equation}
+
 
 \section{Wiedemannùv model}
 \label{sec:Wiedemann}

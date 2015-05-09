@@ -1,67 +1,63 @@
+\contentsline {chapter}{\'Uvod}{1}{chapter*.1}
+\contentsline {section}{C\IeC {\'\i }le pr\'ace}{1}{section*.2}
 \select@language {czech}
-\contentsline {chapter}{\'Uvod}{3}{chapter*.2}
-\contentsline {section}{C\IeC {\'\i }le pr\'ace}{3}{section*.3}
-\contentsline {chapter}{\numberline {1}Mikroskopick\'e modely}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}Newell\r uv model}{5}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Popis modelu}{5}{subsection.1.1.1}
-\contentsline {section}{\numberline {1.2}Gipps\r uv model}{10}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Popis modelu}{10}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}Parametry Gippsova modelu}{12}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}Krauss\r uv model}{13}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Obecn\'y p\v r\IeC {\'\i }stup}{13}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Interakce mezi vozidly}{14}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Diskretizace modelu}{16}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Rovnice modelu}{16}{subsection.1.3.4}
-\contentsline {section}{\numberline {1.4}Intelligent Driver Model}{17}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}Matematick\'y popis}{17}{subsection.1.4.1}
-\contentsline {section}{\numberline {1.5}Wiedemann\r uv model}{18}{section.1.5}
-\contentsline {paragraph}{Re\v zim n\'asledov\'an\IeC {\'\i }:}{21}{section*.4}
-\contentsline {paragraph}{Re\v zim pln\'e rychlosti:}{21}{section*.5}
-\contentsline {paragraph}{Re\v zim p\v ribl\IeC {\'\i }\v zen\IeC {\'\i }:}{21}{section*.6}
-\contentsline {paragraph}{Nouzov\'y re\v zim}{21}{section*.7}
-\contentsline {section}{\numberline {1.6}Shrnut\IeC {\'\i }}{22}{section.1.6}
-\contentsline {chapter}{\numberline {2}Simula\v cn\IeC {\'\i } a podp\r urn\'y software}{23}{chapter.2}
-\contentsline {section}{\numberline {2.1}SUMO}{23}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Jak to funguje}{24}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Konfigura\v cn\IeC {\'\i } soubor}{24}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Soubor s podkladem}{24}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Vozidla pro simulaci}{24}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Dal\v s\IeC {\'\i } soubory}{25}{subsection.2.1.5}
-\contentsline {section}{\numberline {2.2}P\v r\IeC {\'\i }prava a vyhodnocen\IeC {\'\i } simulace - program}{25}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}T\v r\IeC {\'\i }da AllInOne}{25}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}P\v reveden\IeC {\'\i } form\'atu dat - t\v r\IeC {\'\i }da MatlabToXML}{26}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Vytvo\v ren\IeC {\'\i } souboru vozidel pro simulaci - t\v r\IeC {\'\i }da XMLCreator}{26}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}V\'ystupy ze simulac\IeC {\'\i }}{29}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}\v Casov\'a \v rada - t\v r\IeC {\'\i }da XMLReader}{29}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Po\v cet vozidel za dan\'y \v cas - t\v r\IeC {\'\i }da XMLReaderHist}{30}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Histogram - t\v r\IeC {\'\i }da Histogram}{30}{subsection.2.2.7}
-\contentsline {section}{\numberline {2.3}Shrnut\IeC {\'\i } pr\'ace s programem}{31}{section.2.3}
-\contentsline {chapter}{\numberline {3}Implementace nov\'eho modelu}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}MSCFModel.h}{33}{section.3.1}
-\contentsline {section}{\numberline {3.2}Implementace Gippsova modelu}{34}{section.3.2}
-\contentsline {chapter}{\numberline {4}Kalibrace model\r u}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Stru\v cn\'y \'uvod do simula\v cn\IeC {\'\i }ch model\r u}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Validace model\r u}{40}{section.4.2}
-\contentsline {paragraph}{Vytvo\v ren\IeC {\'\i } modelu se zjevnou validitou}{40}{section*.8}
-\contentsline {paragraph}{Testov\'an\IeC {\'\i } p\v redpoklad\r u modelu empiricky}{41}{section*.9}
-\contentsline {paragraph}{Rozhodnut\IeC {\'\i }, jak moc jsou v\'ystupn\IeC {\'\i } data ze simulace reprezentativn\IeC {\'\i }}{41}{section*.10}
-\contentsline {section}{\numberline {4.3}Kalibrace model\r u}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}Statistick\'e metody pro validaci model\r u}{43}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Statistick\'y test st\v redn\IeC {\'\i } hodnoty}{43}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}GEH}{44}{subsection.4.4.2}
-\contentsline {chapter}{\numberline {A}P\v r\IeC {\'\i }loha A: Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{I}{appendix.A}
-\contentsline {section}{\numberline {A.1}SUMO}{I}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}SUMO download}{I}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Visual Studio}{I}{section.A.2}
-\contentsline {section}{\numberline {A.3}Ostatn\IeC {\'\i } z\'avislosti}{I}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Xerces-C}{II}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}FOX}{II}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}FWTools}{III}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}SUMO}{III}{subsection.A.3.4}
-\contentsline {chapter}{\numberline {B}P\v r\IeC {\'\i }loha B: Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v SUMO}{IV}{appendix.B}
-\contentsline {section}{\numberline {B.1}OpenStreetMap}{IV}{section.B.1}
-\contentsline {section}{\numberline {B.2}netConvert}{IV}{section.B.2}
-\contentsline {chapter}{\numberline {C}P\v r\IeC {\'\i }loha C: Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{VI}{appendix.C}
-\contentsline {section}{\numberline {C.1}Implementace nov\'eho modelu}{VI}{section.C.1}
-\contentsline {section}{\numberline {C.2}Implementace nov\'ych parametr\r u}{VII}{section.C.2}
-\contentsline {chapter}{Literatura}{I}{chapter*.11}
+\contentsline {chapter}{\numberline {1}Mikroskopick\'e modely}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Newell\r uv model}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Popis modelu}{3}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Gipps\r uv model}{8}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Popis modelu}{8}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Parametry Gippsova modelu}{10}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3}Krauss\r uv model}{11}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Obecn\'y p\v r\IeC {\'\i }stup}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Interakce mezi vozidly}{12}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Diskretizace modelu}{14}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Rovnice modelu}{14}{subsection.1.3.4}
+\contentsline {section}{\numberline {1.4}Intelligent Driver Model}{15}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Matematick\'y popis}{15}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.5}Wiedemann\r uv model}{16}{section.1.5}
+\contentsline {paragraph}{Re\v zim n\'asledov\'an\IeC {\'\i }:}{19}{section*.3}
+\contentsline {paragraph}{Re\v zim pln\'e rychlosti:}{19}{section*.4}
+\contentsline {paragraph}{Re\v zim p\v ribl\IeC {\'\i }\v zen\IeC {\'\i }:}{19}{section*.5}
+\contentsline {paragraph}{Nouzov\'y re\v zim}{19}{section*.6}
+\contentsline {section}{\numberline {1.6}Shrnut\IeC {\'\i }}{20}{section.1.6}
+\contentsline {chapter}{\numberline {2}Simula\v cn\IeC {\'\i } a podp\r urn\'y software}{21}{chapter.2}
+\contentsline {section}{\numberline {2.1}SUMO}{21}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Jak to funguje}{22}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Konfigura\v cn\IeC {\'\i } soubor}{22}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Soubor s podkladem}{22}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Vozidla pro simulaci}{22}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Dal\v s\IeC {\'\i } soubory}{23}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}P\v r\IeC {\'\i }prava a vyhodnocen\IeC {\'\i } simulace - program}{23}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}T\v r\IeC {\'\i }da AllInOne}{23}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}P\v reveden\IeC {\'\i } form\'atu dat - t\v r\IeC {\'\i }da MatlabToXML}{24}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Vytvo\v ren\IeC {\'\i } souboru vozidel pro simulaci - t\v r\IeC {\'\i }da XMLCreator}{24}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}V\'ystupy ze simulac\IeC {\'\i }}{27}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}\v Casov\'a \v rada - t\v r\IeC {\'\i }da XMLReader}{27}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Po\v cet vozidel za dan\'y \v cas - t\v r\IeC {\'\i }da XMLReaderHist}{28}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Histogram - t\v r\IeC {\'\i }da Histogram}{28}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Shrnut\IeC {\'\i } pr\'ace s programem}{29}{section.2.3}
+\contentsline {chapter}{\numberline {3}Implementace nov\'eho modelu}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}MSCFModel.h}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Implementace Gippsova modelu}{32}{section.3.2}
+\contentsline {chapter}{\numberline {4}Kalibrace model\r u}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Stru\v cn\'y \'uvod do simula\v cn\IeC {\'\i }ch model\r u}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Validace model\r u}{38}{section.4.2}
+\contentsline {paragraph}{Vytvo\v ren\IeC {\'\i } modelu se zjevnou validitou}{39}{section*.7}
+\contentsline {paragraph}{Testov\'an\IeC {\'\i } p\v redpoklad\r u modelu empiricky}{39}{section*.8}
+\contentsline {paragraph}{Rozhodnut\IeC {\'\i }, jak moc jsou v\'ystupn\IeC {\'\i } data ze simulace reprezentativn\IeC {\'\i }}{39}{section*.9}
+\contentsline {section}{\numberline {4.3}Kalibrace model\r u}{40}{section.4.3}
+\contentsline {section}{\numberline {4.4}Statistick\'e metody pro validaci model\r u}{41}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Statistick\'y test st\v redn\IeC {\'\i } hodnoty}{41}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}GEH}{43}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {5}Rozd\IeC {\'\i }ly model\r u oproti teorii}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zm\v eny model\r u}{44}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Gipps\r uv model}{44}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Krauss\r uv model}{44}{subsection.5.1.2}
+\contentsline {subsubsection}{Proces br\v zd\v en\IeC {\'\i }}{44}{section*.10}
+\contentsline {paragraph}{Doba reakce \v ridi\v ce}{45}{section*.11}
+\contentsline {paragraph}{Zvy\v sov\'an\IeC {\'\i } decelerace}{45}{section*.12}
+\contentsline {paragraph}{Maxim\'aln\IeC {\'\i } br\v zd\v en\IeC {\'\i }}{46}{section*.13}
+\contentsline {paragraph}{Celkov\'a dr\'aha p\v ri br\v zd\v en\IeC {\'\i }}{46}{section*.14}
+\contentsline {subsubsection}{Simula\v cn\IeC {\'\i } model vych\'azej\IeC {\'\i }c\IeC {\'\i } z Kraussova modelu}{46}{section*.15}
+\contentsline {subsection}{\numberline {5.1.3}Intelligent Driver Model}{47}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Wiedemann\r uv model}{47}{subsection.5.1.4}
