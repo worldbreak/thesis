@@ -9,9 +9,9 @@ V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km.
 \label{usekdalnice}%
 \end{figure}
 
-Grafický podklad byl naimportován s OSM dle obrázku \ref{usekdalnice} - viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì.
+Grafický podklad byl naimportován s OSM dle obrázku \ref{usekdalnice} - viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì. 
 
-Prvním dùležitým zjištìním byla data z mýtných bran, konkrétnì brána 157 (viz obrázky \ref{b157_28} a \ref{b157_07}) a brána 145 (viz obrázky \ref{b145_28} a \ref{b145_07}) obsahují nekvalitní data. Obrázek znázoròuje èasovou osu, kde na ose x je èas (poèítán po minutách) a na ose y je vynášen poèet vozidel. U brány 145 to není na první pohled vidìt, nicménì pokud se podíváme na intenzitu provozu na bránì 170 (viz obrázky \ref{b170_28} a \ref{b170_07}), vidíme, že více jak o 50\% vyšší než u brány 157, což je nesmysl.
+Prvním dùležitým zjištìním byla data z mýtných bran, a to konkrétnì, že brána 157 (viz obrázky \ref{b157_28} a \ref{b157_07}) a brána 145 (viz obrázky \ref{b145_28} a \ref{b145_07}) obsahují nekvalitní data. Obrázek znázoròuje èasovou osu, kde na ose x je èas (poèítán po minutách) a na ose y je vynášen poèet vozidel. U brány 145 to není na první pohled vidìt, nicménì pokud se podíváme na intenzitu provozu na bránì 170 (viz obrázky \ref{b170_28} a \ref{b170_07}), vidíme, že více jak o 50\% vyšší než u brány 157, což je nesmysl.
 
 \begin{figure}%
  \centering
@@ -71,9 +71,76 @@ Prvním dùležitým zjištìním byla data z mýtných bran, konkrétnì brána 157 (viz ob
 	\end{minipage}			
 \end{figure}
 
-Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170. V pøedcházející èásti této sekce jsem pouze chtìl upozornit, že je velmi dùležité zkontrolovat data pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec nebude.
+Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170. V pøedcházející èásti této sekce jsem pouze chtìl upozornit, že je velmi dùležité zkontrolovat data pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec není.
 
-Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme spøesòovat. Jako kritériem pro validní model použijeme GEH \ref{sec:GEH}.
+Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme zpøesòovat.
+
+Jako kritérium pro validní model použijeme GEH \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \ref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
+
+Generovány byly dva typy rychlostí, preferovaná a pøi vjezdu do oblasti. Preferovaná rychlost byla vždy generována z normálního rozdìlení se støední hodnotou 36,11$ms^{-1}$\footnote{to odpovídá rychlosti 130 $kmh^{-1}$} bez ohledu na rychlosti na mýtné bránì. Naopak rychlosti vozidel pøi vjezdu do oblasti byly generovány z náhodného rozdìlení se støední hodnotou rovné hodnotì prùmìrné rychlosti na mýtné bránì.
+
+Nìkteré parametry modelù èi vozidel jsou pro všechny modely stejná, konkrétnì
+\begin{itemize}
+	\item reakèní èas $T_n = 1 s$,
+	\item délka vozidla $l = 4,5 m$,
+  \item \rem{doplnit jestli jeste neco bude}.
+\end{itemize}
+
+Pro vyzkoušení funkènosti simulací a správné kalibrace modelù byl jako první den vzat svátek 28.10.2012.
+
+Pokud se jedná o samotné simulace, tato kapitola bude rozdìlena na simulace podle jednotlivých modelù. Nejprve budou uvedeny rozdíly mezi teorií (kapitola \ref{chap:predIDM}) a implementací daného modelu, dále budou následovat hodnoty parametrù a poté výsledky samotné simulace s informacemi o hodnotách GEH. 
+
+Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotným simulaèním nástrojem èi velkým množstvím parametrù. SUMO umožòuje jednoduše zjistit pouze rychlost pøedního vozidla a odstup mezi aktuálním a pøedním vozidlemm, kdežto v modelech mùže být tato vzdálenost skryta v urèitém èlenu rovnice.
+
+\section{Rozdíly modelù oproti teorii}
+
+\subsection{Kraussùv model}
+
+Kraussùv model je údajnì pøímo implementován v SUMO, byl to vùbec první model, který byl v SUMO vyzkoušet. Nicménì pøes zkoumání se nepodaøilo nalézt pøímou implementaci shodnou s \eqref{eq:krausssmodel}, konkrétnì výpoèet hodnoty $v_{\safe}$.
+
+\subsection{Rozšíøený Kraussùv model}
+
+Rozšíøený Kraussùv model je naimplementován naprosto stejnì jako v odstavci \ref{exKrauss}, konkrétnì výpoèet $v_{\safe}$ - rovnice \eqref{eq:newKrauss}.
+
+\subsection{Intelligent Driver Model}
+
+V software SUMO byla naimplementována jiná verze IDM, než která je popsána v sekci \ref{sec:IDM}. Bohužel pohyb vozidel se vùbec nepøibližoval tomu, jak by mìla situace vypadat, a proto jsem se rozhodl model pøeprogramovat na tvar rovnice \eqref{eq:IDMcompl}, kde jsou již výsledky oproti verzi SUMO v poøádku.
+
+\subsection{Wiedemannùv model}
+
+V programu SUMO je standardnì implementován i Wiedemannùv model. Jak je vidìt z odstavce \ref{sec:Wiedemann}, model obsahuje mnoho parametrù, což jsou velmi nároèné vstupní požadavky. Proto v SUMO existuje urèité \uv{zjednodušení}, kde jednotlivé prahy neobsahují parametry, ale jsou již dopøedu pøednastaveny. Uživatel nastavuje programu pouze dva parametry - security (bezpeènost) a odhad (estimation). Pøes tyto parametry se posléze poèítají jednotlivé prahy. Bohužel se nepodaøilo najít èlánek èi informaci o tom, na základì èeho jsou tyto parametry implementovány.
+
+Tím pádem nebylo možné model vhodnì nakalibrovat a výsledky z tohoto modelu nejsou zdaleka dostaèující.
 
 
- 
+
+\section{Gippsùv model}
+
+\subsection{Rozdíly oproti teorii}
+
+Gippsùv model je naimplementován stejnì tak, jak zní rovnice \eqref{eq:gipps}. Jediná drobná zmìna nastává u výpoètu èlenu $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$, kde není možné získat parametr $s_{\nm1}$. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k ní jsme pøièetli minimální bezpeènostní odstup.
+
+\subsection{Nastavení parametrù}
+
+Nejprve jsme nechali parametry stejné jako u Kraussova modelu, nicménì to nevedlo k úspìchu. Podstatné byla informace z \cite{Brackstone}, kde bylo øeèeno pokusit se nastavit hodnoty \uv{reálnì}, což v tomto pøípadì pøineslo úspìch a po dalším zpøesnìní GEH nepøesáhlo nikde hodnotu 5.
+
+Hodnoty parametrù tedy byly následující:
+\begin{itemize}
+	\item zrychlení $a = 1,5 ms^{-1}$
+	\item decelerace $b = 5 ms^{-1}$
+	
+	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$
+\end{itemize}
+
+\subsection{Simulace}
+
+Na levé stranì je vykreslena èasová øada dle detektoru a na druhé stranì èasová øada nasimulovaná Gippsovým modelem.
+
+\begin{figure}
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp218.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp218Gipps.pdf}  \\
+		a) Reálná data & b) Gippsùv model
+	\end{tabular}
+		\caption{Mýtná brána 0218 - 28.12.2012}
+\label{eulerrungefigure}
+\end{figure}
