@@ -73,9 +73,15 @@ Prvním dùležitým zjištìním byla data z mýtných bran, a to konkrétnì, že brána 15
 
 Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170. V pøedcházející èásti této sekce jsem pouze chtìl upozornit, že je velmi dùležité zkontrolovat data pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec není.
 
+Z dùvodu nepøesnosti pøevodu infrastruktury mezi OSM a SUMO je u mýtné brány 201 o jeden jízdní pruh více než ve skuteènosti.
+
 Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme zpøesòovat.
 
 Jako kritérium pro validní model použijeme GEH \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \ref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
+
+Èas vjezdu vozidel byl vždy generován z exponenciálního rozdìlení, kde parametr rozdìlení byl poèet vozidel v danou minutu.
+
+V programu SUMO je implementován vlastní pøedjíždìcí model \uv{DK2008}, který je primárnì naprogramován pro Kraussùv model. Nicménì i ostatní modely dávaly uspokojivé výsledky, proto nebylo nutné se tímto modelem pøímo zabývat. V každém obrázku je zobrazen provoz v každém pruhu a potom také souèet všech pruhù
 
 Generovány byly dva typy rychlostí, preferovaná a pøi vjezdu do oblasti. Preferovaná rychlost byla vždy generována z normálního rozdìlení se støední hodnotou 36,11$ms^{-1}$\footnote{to odpovídá rychlosti 130 $kmh^{-1}$} bez ohledu na rychlosti na mýtné bránì. Naopak rychlosti vozidel pøi vjezdu do oblasti byly generovány z náhodného rozdìlení se støední hodnotou rovné hodnotì prùmìrné rychlosti na mýtné bránì.
 
@@ -83,6 +89,7 @@ Nìkteré parametry modelù èi vozidel jsou pro všechny modely stejná, konkrétnì
 \begin{itemize}
 	\item reakèní èas $T_n = 1 s$,
 	\item délka vozidla $l = 4,5 m$,
+	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$
   \item \rem{doplnit jestli jeste neco bude}.
 \end{itemize}
 
@@ -94,9 +101,7 @@ Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotným sim
 
 \section{Rozdíly modelù oproti teorii}
 
-\subsection{Kraussùv model}
 
-Kraussùv model je údajnì pøímo implementován v SUMO, byl to vùbec první model, který byl v SUMO vyzkoušet. Nicménì pøes zkoumání se nepodaøilo nalézt pøímou implementaci shodnou s \eqref{eq:krausssmodel}, konkrétnì výpoèet hodnoty $v_{\safe}$.
 
 \subsection{Rozšíøený Kraussùv model}
 
@@ -120,27 +125,181 @@ Tím pádem nebylo možné model vhodnì nakalibrovat a výsledky z tohoto modelu nejs
 
 Gippsùv model je naimplementován stejnì tak, jak zní rovnice \eqref{eq:gipps}. Jediná drobná zmìna nastává u výpoètu èlenu $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$, kde není možné získat parametr $s_{\nm1}$. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k ní jsme pøièetli minimální bezpeènostní odstup.
 
-\subsection{Nastavení parametrù}
+\subsection{Nastavení parametrù a simulace}
 
-Nejprve jsme nechali parametry stejné jako u Kraussova modelu, nicménì to nevedlo k úspìchu. Podstatné byla informace z \cite{Brackstone}, kde bylo øeèeno pokusit se nastavit hodnoty \uv{reálnì}, což v tomto pøípadì pøineslo úspìch a po dalším zpøesnìní GEH nepøesáhlo nikde hodnotu 5.
+Nejprve jsme nechali parametry stejné jako u Kraussova modelu, nicménì to nevedlo k úspìchu. Podstatné byla informace z \cite{Brackstone}, kde bylo øeèeno pokusit se nastavit hodnoty \uv{reálnì}, což v tomto pøípadì pøineslo úspìch a po dalším zpøesnìní GEH nepøesáhlo nikde hodnotu 5. Simulaèní krok zùstal na výchozí hodnotì 1s.
 
 Hodnoty parametrù tedy byly následující:
 \begin{itemize}
 	\item zrychlení $a = 1,5 ms^{-1}$
 	\item decelerace $b = 5 ms^{-1}$
-	
-	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$
 \end{itemize}
 
 \subsection{Simulace}
 
-Na levé stranì je vykreslena èasová øada dle detektoru a na druhé stranì èasová øada nasimulovaná Gippsovým modelem.
+Na levé stranì je vykreslena èasová øada dle detektoru a na druhé stranì èasová øada nasimulovaná Gippsovým modelem. Na obrázcích \ref{gipps218}a) a \ref{gipps218}b) je pøímo vidìt urèitá nepøesnost vjezdu vozidel pøi vysokých intenzitách. To je zpùsobeno podmínkou SUMO pro vjezd do oblasti. Mohli bychom napø. zvýšit decelaraci k pøesnìní tohoto rozdílu, ovšem tím bychom snížili reálnost simulace. Na dalších mýtných branách (napø. obrázky \ref{gipps201}a) a \ref{gipps201}b) tento jev pøetrvává, což je oèekávatelné.
 
-\begin{figure}
+Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \ref{GEHGipps}, nicménì hodnota nedosahuje ani 4, èímž se dá konstatovat, a tím pádem model dává uspokojivé výsledky.
+
+\begin{figure}[h]
 	\begin{tabular}{cc}
-		\includegraphics[width=0.45\textwidth]{real/sokp218.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp218Gipps.pdf}  \\
+		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp218Gipps.pdf}  \\
 		a) Reálná data & b) Gippsùv model
 	\end{tabular}
 		\caption{Mýtná brána 0218 - 28.12.2012}
-\label{eulerrungefigure}
+\label{gipps218}
 \end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp201Gipps.pdf}  \\
+		a) Reálná data & b) Gippsùv model
+	\end{tabular}
+		\caption{Mýtná brána 0201 - 28.12.2012}
+\label{gipps201}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp187Gipps.pdf}  \\
+		a) Reálná data & b) Gippsùv model
+	\end{tabular}
+		\caption{Mýtná brána 0187 - 28.12.2012}
+\label{gipps187}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp170orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp170Gipps.pdf}  \\
+		a) Reálná data & b) Gippsùv model
+	\end{tabular}
+		\caption{Mýtná brána 0170 - 28.12.2012}
+\label{gipps170}
+\end{figure}
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c||c|c|c|c|}
+\hline
+Èas od: & Èas do: & GEH 218  & GEH 201  & GEH 187  & GEH 170  \\ \hline
+0:00    & 0:59    & 0        & 0,346844 & 0,86711  & 1,549193 \\ \hline
+1:00    & 1:59    & 0        & 0,603023 & 0,594089 & 0,591198 \\ \hline
+2:00    & 2:59    & 0        & 0,322562 & 0,106904 & 0        \\ \hline
+3:00    & 3:59    & 0        & 0,149906 & 0,14825  & 0,149906 \\ \hline
+4:00    & 4:59    & 0        & 0        & 0,27735  & 0,966092 \\ \hline
+5:00    & 5:59    & 0        & 0,569495 & 0,654177 & 0,188144 \\ \hline
+6:00    & 6:59    & 0        & 0,439941 & 0,799076 & 0,511208 \\ \hline
+7:00    & 7:59    & 0        & 0,274618 & 0,054841 & 0,111629 \\ \hline
+8:00    & 8:59    & 0,470541 & 0,685994 & 2,281916 & 1,872764 \\ \hline
+9:00    & 9:59    & 0,372828 & 1,519109 & 2,578874 & 1,920924 \\ \hline
+10:00   & 10:59   & 0,465581 & 1,132697 & 3,132882 & 2,334866 \\ \hline
+11:00   & 11:59   & 0,027592 & 0,497131 & 0,683586 & 0,164584 \\ \hline
+12:00   & 12:59   & 0,446365 & 1,051903 & 1,700837 & 2,278846 \\ \hline
+13:00   & 13:59   & 0,786595 & 1,203928 & 2,100061 & 1,738182 \\ \hline
+14:00   & 14:59   & 1,730314 & 1,943682 & 3,123043 & \textbf{3,374375} \\ \hline
+15:00   & 15:59   & 1,697956 & 1,389913 & 2,034519 & 1,101632 \\ \hline
+16:00   & 16:59   & 0        & 0,043581 & 1,409219 & 1,323431 \\ \hline
+17:00   & 17:59   & 1,99029  & 2,789693 & 2,247377 & 2,289925 \\ \hline
+18:00   & 18:59   & 2,041722 & 1,739164 & 1,80896  & 2,524103 \\ \hline
+19:00   & 19:59   & 1,299185 & 1,888078 & 1,348284 & 1,055179 \\ \hline
+20:00   & 20:59   & 0,710047 & 0,707107 & 0        & 0        \\ \hline
+21:00   & 21:59   & 0        & 0,593199 & 0,625271 & 0,579821 \\ \hline
+22:00   & 22:59   & 0        & 0,053877 & 0,107058 & 0,322097 \\ \hline
+23:00   & 23:59   & 0        & 0,065026 & 0,458094 & 0,525226 \\ \hline
+\end{tabular}
+\caption{Vyhodnocení GEH pro Gippsùv model - 28.10. 2012}
+\label{GEHGipps}
+\end{center}
+\end{table}
+
+\section{Kraussùv model}
+
+\subsection{Rozdíly oproti teorii}
+
+Kraussùv model je údajnì pøímo implementován v SUMO, byl to vùbec první model, který byl v SUMO vyzkoušet. Nicménì pøes zkoumání se nepodaøilo nalézt pøímou implementaci shodnou s \eqref{eq:krausssmodel}, konkrétnì výpoèet hodnoty $v_{\safe}$.
+
+\subsection{Nastavení parametrù a simulace}
+
+Simulace bìžela s iteraèním krokem 1s.
+Výsledné hodnoty nakalibrovaného Kraussova modelu byly:
+\begin{itemize}
+	\item zrychlení $a = 0,8 ms^{-1}$
+	\item decelerace $b = 5 ms^{-1}$
+	\item náhodná výchylka $\eta$ - nenastavována dopøedu, generována programem SUMO, hodnota mezi 0 a 1
+\end{itemize}
+
+\subsection{Simulace}
+
+Z obrázkù èasových øad je jasnì vidìl, že Kraussùv model dokázal vìrnì kopírovat provoz a to i v pomìrnì vysokých intenzitách. Jak již bylo øeèeno, velkou výhodou pro Kraussùv model je implementace do SUMO jako vùbec prvního modelu. Co se týká maximální hodnoty GEH - viz tabulka \ref{GEHKrauss}, pouze jednou pøekroèila hodnota nepatrnì hodnotu 3, což je velmi dobrý výsledek.
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp218krauss.pdf}  \\
+		a) Reálná data & b) Kraussùv model
+	\end{tabular}
+		\caption{Mýtná brána 0218 - 28.12.2012}
+\label{krauss218}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp201krauss.pdf}  \\
+		a) Reálná data & b) Kraussùv model
+	\end{tabular}
+		\caption{Mýtná brána 0201 - 28.12.2012}
+\label{krauss201}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp187krauss.pdf}  \\
+		a) Reálná data & b) Kraussùv model
+	\end{tabular}
+		\caption{Mýtná brána 0187 - 28.12.2012}
+\label{krauss187}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp170orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp170krauss.pdf}  \\
+		a) Reálná data & b) Kraussùv model
+	\end{tabular}
+		\caption{Mýtná brána 0170 - 28.12.2012}
+\label{krauss170}
+\end{figure}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Èas od: & Èas do: & GEH 218  & GEH 201  & GEH 187  & GEH 170  \\ \hline
+0:00    & 0:59    & 0        & 0,346844 & 0,86711  & 1,549193 \\ \hline
+1:00    & 1:59    & 0        & 0,603023 & 0,594089 & 0,591198 \\ \hline
+2:00    & 2:59    & 0        & 0,428845 & 0,106904 & 0        \\ \hline
+3:00    & 3:59    & 0        & 0,149906 & 0,14825  & 0,149906 \\ \hline
+4:00    & 4:59    & 0        & 0        & 0,27735  & 0,966092 \\ \hline
+5:00    & 5:59    & 0        & 0,569495 & 0,654177 & 0,188144 \\ \hline
+6:00    & 6:59    & 0        & 0,439941 & 0,799076 & 0,585018 \\ \hline
+7:00    & 7:59    & 0        & 0,16502  & 0,275033 & 0,279727 \\ \hline
+8:00    & 8:59    & 0,427569 & 0,599694 & 1,936949 & 1,483664 \\ \hline
+9:00    & 9:59    & 0,202375 & 1,076276 & 2,544668 & 2,092399 \\ \hline
+10:00   & 10:59   & 0,758175 & 1,337978 & 2,693421 & 2,100774 \\ \hline
+11:00   & 11:59   & 0,248708 & 0,276606 & 1,207407 & 0,688233 \\ \hline
+12:00   & 12:59   & 0,525407 & 1,184416 & 2,072142 & 2,358641 \\ \hline
+13:00   & 13:59   & 0,860728 & 1,030849 & 1,976492 & 1,515806 \\ \hline
+14:00   & 14:59   & 1,118398 & 1,353604 & 2,390506 & 2,853913 \\ \hline
+15:00   & 15:59   & 1,631207 & 1,434386 & 2,522452 & 1,390251 \\ \hline
+16:00   & 16:59   & 0,65341  & 0,590102 & 1,540387 & 1,323431 \\ \hline
+17:00   & 17:59   & 2,464982 & \textbf{3,28581}  & 2,0748   & 1,879809 \\ \hline
+18:00   & 18:59   & 1,375215 & 1,097602 & 1,66181  & 2,255698 \\ \hline
+19:00   & 19:59   & 1,794506 & 2,496224 & 1,724512 & 1,490044 \\ \hline
+20:00   & 20:59   & 0,388311 & 0        & 0,513994 & 0,192154 \\ \hline
+21:00   & 21:59   & 0,209703 & 0,928841 & 0,290785 & 0,496564 \\ \hline
+22:00   & 22:59   & 0        & 0,053877 & 0,160701 & 0,322097 \\ \hline
+23:00   & 23:59   & 0        & 0,065164 & 0,393073 & 0,590243 \\ \hline
+\end{tabular}
+\end{center}
+\caption{Vyhodnocení GEH pro Kraussùv model - 28.10. 2012}
+\label{GEHKrauss}
+\end{table}

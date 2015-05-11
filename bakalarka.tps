@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame0_View0,0]
-TopLine=211
-Cursor=14357
+TopLine=125
+Cursor=8955
 
 [Frame1]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame3_View0,0]
-TopLine=120
+TopLine=141
 Cursor=7577
 
 [Frame4]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame4_View0,0]
-TopLine=329
-Cursor=11414
+TopLine=315
+Cursor=11531
 
 [Frame5]
 Flags=0
@@ -125,8 +125,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame6_View0,0]
-TopLine=552
-Cursor=32214
+TopLine=288
+Cursor=18335
 
 [Frame7]
 Flags=0
@@ -161,28 +161,13 @@ Class=LaTeXView
 Document=simulace.tex
 
 [Frame8_View0,0]
-TopLine=61
-Cursor=3825
-
-[Frame9]
-Flags=0
-ShowCmd=1
-MinPos.x=-1
-MinPos.y=-1
-MaxPos.x=-1
-MaxPos.y=-1
-NormalPos.left=4
-NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
-Class=LaTeXView
-Document=zmenymodelu.tex
-
-[Frame9_View0,0]
-TopLine=0
-Cursor=837
+TopLine=141
+Cursor=8082
 
 [SessionInfo]
-FrameCount=10
-ActiveFrame=6
+FrameCount=9
+ActiveFrame=8
+
+[Bookmarks]
+simulace.tex=0 
 
