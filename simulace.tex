@@ -101,16 +101,6 @@ Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotnım sim
 
 \section{Rozdíly modelù oproti teorii}
 
-
-
-\subsection{Rozšíøenı Kraussùv model}
-
-Rozšíøenı Kraussùv model je naimplementován naprosto stejnì jako v odstavci \ref{exKrauss}, konkrétnì vıpoèet $v_{\safe}$ - rovnice \eqref{eq:newKrauss}.
-
-\subsection{Intelligent Driver Model}
-
-V software SUMO byla naimplementována jiná verze IDM, ne která je popsána v sekci \ref{sec:IDM}. Bohuel pohyb vozidel se vùbec nepøiblioval tomu, jak by mìla situace vypadat, a proto jsem se rozhodl model pøeprogramovat na tvar rovnice \eqref{eq:IDMcompl}, kde jsou ji vısledky oproti verzi SUMO v poøádku.
-
 \subsection{Wiedemannùv model}
 
 V programu SUMO je standardnì implementován i Wiedemannùv model. Jak je vidìt z odstavce \ref{sec:Wiedemann}, model obsahuje mnoho parametrù, co jsou velmi nároèné vstupní poadavky. Proto v SUMO existuje urèité \uv{zjednodušení}, kde jednotlivé prahy neobsahují parametry, ale jsou ji dopøedu pøednastaveny. Uivatel nastavuje programu pouze dva parametry - security (bezpeènost) a odhad (estimation). Pøes tyto parametry se posléze poèítají jednotlivé prahy. Bohuel se nepodaøilo najít èlánek èi informaci o tom, na základì èeho jsou tyto parametry implementovány.
@@ -146,7 +136,7 @@ Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \
 		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp218Gipps.pdf}  \\
 		a) Reálná data & b) Gippsùv model
 	\end{tabular}
-		\caption{Mıtná brána 0218 - 28.12.2012}
+		\caption{Mıtná brána 0218 - 28.10.2012}
 \label{gipps218}
 \end{figure}
 
@@ -155,7 +145,7 @@ Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \
 		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp201Gipps.pdf}  \\
 		a) Reálná data & b) Gippsùv model
 	\end{tabular}
-		\caption{Mıtná brána 0201 - 28.12.2012}
+		\caption{Mıtná brána 0201 - 28.10.2012}
 \label{gipps201}
 \end{figure}
 
@@ -164,7 +154,7 @@ Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \
 		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{gipps/sokp187Gipps.pdf}  \\
 		a) Reálná data & b) Gippsùv model
 	\end{tabular}
-		\caption{Mıtná brána 0187 - 28.12.2012}
+		\caption{Mıtná brána 0187 - 28.10.2012}
 \label{gipps187}
 \end{figure}
 
@@ -238,7 +228,7 @@ Z obrázkù èasovıch øad je jasnì vidìl, e Kraussùv model dokázal vìrnì kopírovat
 		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp218krauss.pdf}  \\
 		a) Reálná data & b) Kraussùv model
 	\end{tabular}
-		\caption{Mıtná brána 0218 - 28.12.2012}
+		\caption{Mıtná brána 0218 - 28.10.2012}
 \label{krauss218}
 \end{figure}
 
@@ -247,7 +237,7 @@ Z obrázkù èasovıch øad je jasnì vidìl, e Kraussùv model dokázal vìrnì kopírovat
 		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp201krauss.pdf}  \\
 		a) Reálná data & b) Kraussùv model
 	\end{tabular}
-		\caption{Mıtná brána 0201 - 28.12.2012}
+		\caption{Mıtná brána 0201 - 28.10.2012}
 \label{krauss201}
 \end{figure}
 
@@ -256,7 +246,7 @@ Z obrázkù èasovıch øad je jasnì vidìl, e Kraussùv model dokázal vìrnì kopírovat
 		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp187krauss.pdf}  \\
 		a) Reálná data & b) Kraussùv model
 	\end{tabular}
-		\caption{Mıtná brána 0187 - 28.12.2012}
+		\caption{Mıtná brána 0187 - 28.10.2012}
 \label{krauss187}
 \end{figure}
 
@@ -265,13 +255,13 @@ Z obrázkù èasovıch øad je jasnì vidìl, e Kraussùv model dokázal vìrnì kopírovat
 		\includegraphics[width=0.45\textwidth]{real/sokp170orig.pdf} & \includegraphics[width=0.45\textwidth]{krauss/sokp170krauss.pdf}  \\
 		a) Reálná data & b) Kraussùv model
 	\end{tabular}
-		\caption{Mıtná brána 0170 - 28.12.2012}
+		\caption{Mıtná brána 0170 - 28.10.2012}
 \label{krauss170}
 \end{figure}
 
 \begin{table}[h]
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c||c|c|c|c|}
 \hline
 Èas od: & Èas do: & GEH 218  & GEH 201  & GEH 187  & GEH 170  \\ \hline
 0:00    & 0:59    & 0        & 0,346844 & 0,86711  & 1,549193 \\ \hline
@@ -302,4 +292,184 @@ Z obrázkù èasovıch øad je jasnì vidìl, e Kraussùv model dokázal vìrnì kopírovat
 \end{center}
 \caption{Vyhodnocení GEH pro Kraussùv model - 28.10. 2012}
 \label{GEHKrauss}
+\end{table}
+
+\section{Rozšíøenı Kraussùv model}
+
+\subsection{Rozdíly oproti teorii}
+
+Rozšíøenı Kraussùv model je naimplementován naprosto stejnì jako v odstavci \ref{exKrauss}, konkrétnì vıpoèet $v_{\safe}$ - rovnice \eqref{eq:newKrauss}.
+
+\subsection{Nastavení parametrù a simulace}
+
+Všechny parametry byly ponechány stejné jako u Kraussova modelu. Kraussùv a rozšíøenı Kraussùv model pracují se stejnımi parametry a zároveò není doporuèeno mìnit jejich hodnoty. \cite{Song}
+
+\subsection{Simulace}
+
+\rem{doplnit}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{kraussOrig/sokp218kraussOrig.pdf}  \\
+		a) Reálná data & b) Rozšíøenı Kraussùv model
+	\end{tabular}
+		\caption{Mıtná brána 0218 - 28.10.2012}
+\label{kraussOrig218}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{kraussOrig/sokp201kraussOrig.pdf}  \\
+		a) Reálná data & b) Rozšíøenı Kraussùv model
+	\end{tabular}
+		\caption{Mıtná brána 0201 - 28.10.2012}
+\label{kraussOrig201}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{kraussOrig/sokp187kraussOrig.pdf}  \\
+		a) Reálná data & b) Rozšíøenı Kraussùv model
+	\end{tabular}
+		\caption{Mıtná brána 0187 - 28.10.2012}
+\label{kraussOrig187}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp170orig.pdf} & \includegraphics[width=0.45\textwidth]{kraussOrig/sokp170kraussOrig.pdf}  \\
+		a) Reálná data & b) Rozšíøenı Kraussùv model
+	\end{tabular}
+		\caption{Mıtná brána 0170 - 28.10.2012}
+\label{kraussOrig170}
+\end{figure}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c||c|c|c|c|}
+\hline
+Èas od: & Èas do: & GEH 218  & GEH 201  & GEH 187  & GEH 170  \\ \hline
+0:00    & 0:59    & 0        & 0,346844 & 0,86711  & 1,549193 \\ \hline
+1:00    & 1:59    & 0        & 0,603023 & 0,594089 & 0,591198 \\ \hline
+2:00    & 2:59    & 0        & 0,428845 & 0,106904 & 0        \\ \hline
+3:00    & 3:59    & 0        & 0,149906 & 0,14825  & 0,149906 \\ \hline
+4:00    & 4:59    & 0        & 0        & 0,27735  & 0,966092 \\ \hline
+5:00    & 5:59    & 0        & 0,569495 & 0,654177 & 0,188144 \\ \hline
+6:00    & 6:59    & 0        & 0,439941 & 0,799076 & 0,585018 \\ \hline
+7:00    & 7:59    & 0        & 0,16502  & 0,275033 & 0,279727 \\ \hline
+8:00    & 8:59    & 0,427569 & 0,599694 & 1,936949 & 1,483664 \\ \hline
+9:00    & 9:59    & 0,202375 & 1,076276 & 2,544668 & 2,092399 \\ \hline
+10:00   & 10:59   & 0,758175 & 1,337978 & 2,693421 & 2,100774 \\ \hline
+11:00   & 11:59   & 0,248708 & 0,276606 & 1,207407 & 0,688233 \\ \hline
+12:00   & 12:59   & 0,525407 & 1,184416 & 2,072142 & 2,358641 \\ \hline
+13:00   & 13:59   & 0,860728 & 1,030849 & 1,976492 & 1,515806 \\ \hline
+14:00   & 14:59   & 1,118398 & 1,353604 & 2,390506 & 2,853913 \\ \hline
+15:00   & 15:59   & 1,631207 & 1,434386 & 2,522452 & 1,390251 \\ \hline
+16:00   & 16:59   & 0,65341  & 0,590102 & 1,540387 & 1,323431 \\ \hline
+17:00   & 17:59   & 2,464982 & 3,28581  & 2,0748   & 1,879809 \\ \hline
+18:00   & 18:59   & 1,375215 & 1,097602 & 1,66181  & 2,255698 \\ \hline
+19:00   & 19:59   & 1,794506 & 2,496224 & 1,724512 & 1,490044 \\ \hline
+20:00   & 20:59   & 0,388311 & 0        & 0,513994 & 0,192154 \\ \hline
+21:00   & 21:59   & 0,209703 & 0,928841 & 0,290785 & 0,496564 \\ \hline
+22:00   & 22:59   & 0        & 0,053877 & 0,160701 & 0,322097 \\ \hline
+23:00   & 23:59   & 0        & 0,065164 & 0,393073 & 0,590243 \\ \hline
+\end{tabular}
+\end{center}
+\caption{Vyhodnocení GEH pro Rozšíøenı Kraussùv model - 28.10. 2012}
+\label{GEHKraussOrig}
+\end{table}
+
+\section{Intelligent Driver Model}
+
+\subsection{Rozdíly oproti teorii}
+
+IDM v SUMO bylo naimplementováno pomìrnì nešastnì. Nebyla zde uvedena verze z teoretické sekce, pouze nìkteré její èásti. IDM zde byl naprogramován ještì se smyèkou, která mohla zrychlení vozidla poèítat a nìkolikrát. Nicménì po vyzkoušení tohoto modelu jsem došel k závìru, e lepší bude naprogramovat IDM pøesnì tak, jak je uveden v teoretické èásti a to i z toho dùvodu, e jsem ho ji zkoušel v \cite{Vanis}. Je tedy pouze pøeprogramována ta èást modelu, která poèítá interakèní zrychlení. Posléze ji byly vısledky postaèující.
+
+
+\subsection{Nastavení parametrù a simulace}
+
+Velmi zajímavım poznatkem pro mì byla skuteènost, e kdy jsem si programoval IDM ve svém vlastním programu, vjezd vozidel jsem si øídil jednoduchou podmínkou, aby se mi vozidla nesrazila. Naopak v SUMO existuje sofistikovaná kontrola vjezdu vozidel a tím pádem jsem musel zvıšit hodnotu decelerace na $b = 5 ms^{-1}$.
+
+Simulaèní krok jsem tentokrát zvolil 0,1s. U IDM se tímto zpùsobem velice zlepšili vısledky, ale také i doba vıpoètu se zvıšila desetinásobnì. Byl to kompromis mezi 1s nastavenou SUMO a 0,01s, kterou jsem si stanovil v \cite{Vanis}.
+
+Parametry modelu byly stanoveny na hodnoty:
+\begin{itemize}
+	\item zrychlení $a = 0,8 ms^{-1}$,
+	\item decelerace $b = 5 ms^{-1}$,
+	\item exponent zrychlení $\delta = 4$.
+\end{itemize}
+
+\subsection{Simulace}
+
+\rem{doplnit}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp218orig.pdf} & \includegraphics[width=0.45\textwidth]{IDM/sokp218IDM.pdf}  \\
+		a) Reálná data & b) Intelligent Driver Model
+	\end{tabular}
+		\caption{Mıtná brána 0218 - 28.10.2012}
+\label{IDM218}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp201orig.pdf} & \includegraphics[width=0.45\textwidth]{IDM/sokp201IDM.pdf}  \\
+		a) Reálná data & b) Intelligent Driver Model
+	\end{tabular}
+		\caption{Mıtná brána 0201 - 28.10.2012}
+\label{IDM201}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp187orig.pdf} & \includegraphics[width=0.45\textwidth]{IDM/sokp187IDM.pdf}  \\
+		a) Reálná data & b) Intelligent Driver Model
+	\end{tabular}
+		\caption{Mıtná brána 0187 - 28.10.2012}
+\label{IDM187}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{real/sokp170orig.pdf} & \includegraphics[width=0.45\textwidth]{IDM/sokp170IDM.pdf}  \\
+		a) Reálná data & b) Intelligent Driver Model
+	\end{tabular}
+		\caption{Mıtná brána 0170 - 28.10.2012}
+\label{IDM170}
+\end{figure}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Èas od: & Èas do: & GEH 218  & GEH 201  & GEH 187  & GEH 170  \\ \hline
+0:00    & 0:59    & 0        & 0,346844 & 0,955619 & 1,460425 \\ \hline
+1:00    & 1:59    & 0        & 0,603023 & 0,594089 & 0,691411 \\ \hline
+2:00    & 2:59    & 0        & 0,428845 & 0,106904 & 0        \\ \hline
+3:00    & 3:59    & 0        & 0,149906 & 0,14825  & 0,149906 \\ \hline
+4:00    & 4:59    & 0        & 0        & 0,27735  & 0,966092 \\ \hline
+5:00    & 5:59    & 0        & 0,381385 & 0,749269 & 0        \\ \hline
+6:00    & 6:59    & 0        & 0,513956 & 0,799076 & 0,511208 \\ \hline
+7:00    & 7:59    & 0        & 0,16502  & 0,38563  & 0,279727 \\ \hline
+8:00    & 8:59    & 0,513553 & 0,945854 & 2,804071 & 2,265081 \\ \hline
+9:00    & 9:59    & 0,168694 & 1,144191 & 2,442168 & 1,886688 \\ \hline
+10:00   & 10:59   & 0,670266 & 1,484982 & 2,898162 & 2,188467 \\ \hline
+11:00   & 11:59   & 0,16571  & 0,22137  & 1,207407 & 0,715898 \\ \hline
+12:00   & 12:59   & 0,736587 & 1,503387 & 2,365147 & 2,812383 \\ \hline
+13:00   & 13:59   & 0,910188 & 1,253446 & 1,902439 & 1,441815 \\ \hline
+14:00   & 14:59   & 1,048072 & 1,37713  & 2,696945 & 3,35065  \\ \hline
+15:00   & 15:59   & 1,475649 & 1,323243 & 2,233815 & 1,013009 \\ \hline
+16:00   & 16:59   & 0,697136 & 0,524348 & 1,649836 & 1,498408 \\ \hline
+17:00   & 17:59   & 2,894384 & 3,672186 & 2,57008  & 2,655313 \\ \hline
+18:00   & 18:59   & 1,151801 & 0,79975  & 0,971515 & 1,593046 \\ \hline
+19:00   & 19:59   & 1,445245 & 1,391715 & 0,882353 & 0,705273 \\ \hline
+20:00   & 20:59   & 0,549388 & 0,547108 & 0,064018 & 0,287128 \\ \hline
+21:00   & 21:59   & 0        & 0,719345 & 0,583333 & 0,704976 \\ \hline
+22:00   & 22:59   & 0        & 0,107833 & 0,214423 & 0,161398 \\ \hline
+23:00   & 23:59   & 0        & 0,065026 & 0,393073 & 0,655122 \\ \hline
+\end{tabular}
+\end{center}
+\caption{Vyhodnocení GEH pro Intelligent Driver Model - 28.10. 2012}
+\label{GEHIDM}
 \end{table}
