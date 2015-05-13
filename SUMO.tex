@@ -1,42 +1,50 @@
 \chapter{Simulaèní a podpùrnı software}
 
-\rem{uèesat, je to zmatené}
+Po pøedchozím uvedení modelù nastává otázka dalšího postupu. Nabízí se následující monosti:
+\begin{itemize}
+	\item pokraèovat v aplikaci, kterou autor vytvoøil pro svoji bakaláøskou práci,
+	\item vyuití softwaru AIMSUN,
+	\item opensource simulaèní software SUMO.
+\end{itemize}
 
+Po vyhodnocení všech hledisek se autor rozhodl zvolit platformu softwaru SUMO. Autor si je vìdom toho, e software SUMO je pouze podpùrnım nástrojem pro jeho práci, nicménì pro pochopení nìkterıch dílèích problémù, které jsou zde øešeny, je nutné zde vysvìtlit i nìkteré èinnosti vlastního fungování tohoto softwaru.
+
+\begin{comment}
 Po prostudování modelù byla otázka dalšího postupu. Bylo moné pokraèovat v aplikaci, kterou autor vytvoøil pro svoji bakaláøskou práci. další variantou bylo vyuít softwaru AIMSUN, kterı by byl také vhodnı pro naprogramování vlastních modelù. Nicménì zvítìzil open-source simulaèní software SUMO. Tento produkt se neustále vyvíjí ji od roku 2001 a jeho podpora neustále pokraèuje. \rem{tato vìta je opravdu bla bla bla} Nejprve se autor pokusil zaèít pracovat v AIMSUNu, nicménì to skonèilo neúspìšnì, protoe pro naprogramování dalších modelù do tohoto software byl potøeba balíèek, kterı nebyl zdarma.
 
 Další variantou bylo pokraèovat v programovacím jazyku JAVA na vytvoøené aplikaci pro bakaláøskou práci, nicménì po prozkoumání dalších variant se autor rozhodl, e bude vıhodnìjší pokraèovat s ji vyvíjenım softwarem SUMO.
+\end{comment}
 
-V této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji naprogramované autorem èi volnì dostupné nástroje.
+V této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji naprogramované autorem èi volnì dostupné nástroje z nich bude patrné proè autor vybral právì tento postup.
 
 \section{SUMO}
 
-
-SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít v mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi podle jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v dobì MS v Nìmecku v roce 2006 v Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
+SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít v mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v dobì MS v Nìmecku v roce 2006 v Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
 
 Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení, matic vzdáleností vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
 
-Pøi vıvoji SUMO byly hlavní dva dùvody proè by mìl bıt opensource. První z nich je snaha podporovat komunitu, která se zabıvá simulacemi, volnì dostupnım nástrojem ve kterém ji budou zahrnuty základní algoritmy. Existují nìkteré další volnì dostupné simulaèní softwary, na kterıch ovšem nepracovali studenti a pøestaly bıt døíve èi pozdìji podporovány. Druhım dùvodem je neexistující porovnatelnost implementovatelnost modelù a algoritmù.
+Pøi vıvoji SUMO existovaly dva hlavní dùvody, proè by mìl bıt opensource. První z nich je snaha podporovat spoleèenství, které se zabıvá simulacemi, volnì dostupnım nástrojem ve kterém ji budou zahrnuty základní algoritmy. Existují nìkteré další volnì dostupné simulaèní softwary, které se však dále nerozvíjely a pøestaly bıt døíve èi pozdìji podporovány. Druhım dùvodem je neexistující porovnatelnost implementovatelnost modelù a algoritmù.
 
-Tento druhı dùvod a také monost vlastní implementace modelù vedly autora k volbì SUMO. K tomu, aby bylo moné vlastní modely vùbec implementovat, bylo nejprve nutné vlastní SUMO zkompilovat, to znamená, e nestaèí pouze verze SUMO, které obsahuje spustitelné soubory, ale pøímo zdrojové kódy. Více o tom jak SUMO zkompilovat se ètenáø dozví v pøíloze \ref{kompilaceSUMO}.
+Tento druhı dùvod a také monost vlastní implementace modelù vedly autora k volbì SUMO. K tomu, aby bylo moné vlastní modely vùbec implementovat, bylo nejprve nutné vlastní SUMO zkompilovat, to znamená, e nestaèí pouze verze SUMO, které obsahuje spustitelné soubory, ale pøímo zdrojové kódy. Více o tom, jak SUMO zkompilovat, je uvedeno v pøíloze \ref{kompilaceSUMO}.
 
 \subsection{Jak to funguje}
 
-Nyní ji víme, èeho všeho je SUMO pøiblinì schopno. K tomu abychom spuštìna simulace je zapotøebí mít pøipraveny minimálnì tøi typy souborù, a to
+Po zjištìní, èeho všeho je SUMO pøiblinì schopno, je k tomu, aby byla spuštìna simulace, mít zapotøebí pøipraveny minimálnì tøi typy souborù, a to:
 \begin{itemize}
 	\item konfiguraèní soubor,
 	\item soubor s podkladem (dopravní sí),
-	\item soubor s vozidly.
-	\item další soubory
+	\item soubor s vozidly,
+	\item další soubory.
 \end{itemize}
 
 \subsection{Konfiguraèní soubor}
-V konfiguraèním souboru je moné nastavit všechny monosti, které obsahuje SUMO jako parametry pøíkazové øádky. To se mùe hodit obzvláš ve chvíli, kdy se SUMO volá s mnoha parametry. Tehdy ho staèí zavolat pouze s konfiguraèním souborem.
+V konfiguraèním souboru je moné nastavit všechny monosti, které se bez tohoto souboru musí zapsat pøi spuštìní SUMO jako parametry pøíkazové øádky. To lze vyuít, kdy se SUMO spouští s mnoha parametry.
 
 \subsection{Soubor s podkladem}
 \label{sub:podkladSUMO}
-Pro diplomovou práci dostal autor data konkrétnì prùmìrné intenzity a rychlosti z mıtnıch bran Praského okruhu. Bylo proto vhodné mít jako podklad pro simulaci sí v konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde se konkrétní úsek stáhnul ve formátu OSM a vymazaly se všechny prvky nesouvisející s Praskım okruhem. Posléze byl pouit jeden z nástrojù SUMO a to konkrétnì netconvert, kterı pøevádí data z pøedem definovaného formátu do SUMO formátu. Více k tomuto tématu v pøíloze \ref{chap:netSUMO}.
+Pro diplomovou práci obdrel autor data, a to konkrétnì intenzity a prùmìrné rychlosti z mıtnıch bran Praského okruhu. Bylo proto vhodné mít jako podklad pro simulaci sí v konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde se konkrétní úsek stáhnul ve formátu OSM a vymazaly se všechny prvky nesouvisející s Praskım okruhem. Posléze byl pouit jeden z nástrojù SUMO a to konkrétnì netconvert, kterı pøevádí data z pøedem definovaného formátu do SUMO formátu. Více k tomuto tématu v pøíloze \ref{chap:netSUMO}.
 
-SUMO také umoòuje vyuít vlastní nástroj na generování sítí, JTRrouter èi DFrouter.
+SUMO navíc také umoòuje vyuít vlastní nástroj na generování sítí, JTRrouter èi DFrouter.
 
 \subsection{Vozidla pro simulaci}
 \label{subsec:vehforsim}
@@ -51,14 +59,14 @@ Vozidla mají v SUMO nìkolik parametrù, které mimo jiné závisí také na volbì mikr
 	\item jízdní pruh pøi vjezdu do oblasti.
 \end{itemize}
 
-Mùeme na zaèátku definovat typ vozidla, co znamená jeho parametry jako napø. délka vozidla, zrychlení, max. rychlost atp. Poté u kadého vozidla nastavíme tento typ a vozidlo automaticky dostane všechny pøiøazené parametry.
+Mùeme tedy na zaèátku definovat typ vozidla, co znamená jeho parametry jako napø. délka vozidla, zrychlení, max. rychlost atp. Poté u kadého vozidla nastavíme tento typ a vozidlo automaticky dostane všechny pøiøazené parametry.
 
-Dráha, po které se bude vozidlo pohybovat, souvisí s odstavcem \ref{sub:podkladSUMO}, kde pøímo tyto jízdní úseky vytváøíme. Tento parametr mùe obsahovat více hodnot, v pøípadì Praského okruhu minimálnì èást mezi dvì mıtnımi branami.
+Dráha, po které se bude vozidlo pohybovat, souvisí s podkapitolou \ref{sub:podkladSUMO}, kde pøímo tyto jízdní úseky vytváøíme. Tento parametr mùe obsahovat více hodnot (napø. jednotlivé úseky, po kterıch se dané vozidlo bude pohybovat), v pøípadì Praského okruhu minimálnì èást mezi dvì mıtnımi branami.
 
 \subsection{Další soubory}
 \label{subsec:additionalfiles}
 
-Další soubor, kterı vytvoøíme, se tıká informací o indukèních smyèkách. Definujeme zde její polohu a také informace, které má ukládat. Ty se dají nastavit stejnì jako z dat, které máme k dispozici, tz. poèet vozidel za minutu a prùmìrná rychlost vozidel za minutu.
+Další soubor, kterı vytvoøíme, se tıká informací o indukèních smyèkách. Definujeme zde její polohu a také informace, které má ukládat. Ty se dají nastavit stejnì jako z dat, které máme k dispozici, tz¨n. poèet vozidel za minutu a prùmìrná rychlost vozidel za minutu.
 \section{Pøíprava a vyhodnocení simulace - program}
 
 Aby bylo moné dostat se k jádru celé práce, je nutná pøíprava dat pro simulaci a také jejich následné vyhodnocení. K tomuto úèelu byla vytvoøena konzolová aplikace jménem \textit{AllInOne.jar}. Pro její správnou funkènost je nutné mít nainstalované rozhraní pro Java aplikace (JRE), která umoòuje 4 základní operace,
