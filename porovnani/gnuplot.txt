@@ -1,0 +1,10 @@
+set terminal pdf
+set output 'chyba170.pdf
+set xlabel 'èas [hod:min]'
+set ylabel 'Poèet vozidel'
+set xdata time
+set timefmt '%H:%M'
+set format x '%H:%M'
+set key autotitle columnhead
+plot 'chyba170.txt' using 1:2 with lines, 'chyba170.txt' using 1:3 with lines, 'chyba170.txt' using 1:4 with lines, 'chyba170.txt' using 1:5 with lines
+
