@@ -461,7 +461,7 @@ Parametry modelu byly stanoveny na hodnoty:
 14:00   & 14:59   & 1,048072 & 1,37713  & 2,696945 & 3,35065  \\ \hline
 15:00   & 15:59   & 1,475649 & 1,323243 & 2,233815 & 1,013009 \\ \hline
 16:00   & 16:59   & 0,697136 & 0,524348 & 1,649836 & 1,498408 \\ \hline
-17:00   & 17:59   & 2,894384 & 3,672186 & 2,57008  & 2,655313 \\ \hline
+17:00   & 17:59   & 2,894384 & \textbf{3,672186} & 2,57008  & 2,655313 \\ \hline
 18:00   & 18:59   & 1,151801 & 0,79975  & 0,971515 & 1,593046 \\ \hline
 19:00   & 19:59   & 1,445245 & 1,391715 & 0,882353 & 0,705273 \\ \hline
 20:00   & 20:59   & 0,549388 & 0,547108 & 0,064018 & 0,287128 \\ \hline
@@ -473,3 +473,18 @@ Parametry modelu byly stanoveny na hodnoty:
 \caption{Vyhodnocení GEH pro Intelligent Driver Model - 28.10. 2012}
 \label{GEHIDM}
 \end{table}
+
+\section{Wiedemannùv model}
+
+Wiedemannùv model je v SUMO naimplementován skoro stejnì jako v teoretické èásti. Jediná, ale zároveò velmi podstatná zmìna nastává pøi zadávání parametrù - Wiedemannùv model jich má sám o sobì mnoho. SUMO dokázalo tìchto více jak 10 parametrù modelu shrnout pouze do dvou parametrù. Bohužel pouze nastavení tìchto parametrù nepostaèuje k tomu, abychom byli schopni spustit simulaci na pøijatelné úrovni. Jinak zde existují stejné podmínky pro urèení oblasti jako v obrázku \ref{wiedemann}. Bohužel výpoèet køivek AX, SDX atd. nejsou tak pøesné, aby bylo možné simulovat reálný provoz. Vozidla se bìhem simulace sráží a nepodaøilo se pøesnì zjistit, kde se nachází problém.
+
+Nìkteré hodnoty v GEH tabulce pøesahují hodnotu 17, což také dokazuje, že v modelu je nìkde chyba. Pro ilustraci pøikládám obrázky \ref{Wiedemann170187}a), b) z mýtných bran 170, resp. 187.
+
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{wiedemann/sokp187Wiedemann.pdf} & \includegraphics[width=0.45\textwidth]{wiedemann/sokp170Wiedemann.pdf}  \\
+		a) Mýtná brána 0187 & b) Mýtná brána 0170
+	\end{tabular}
+		\caption{Wiedemannùv model}
+\label{Wiedemann170187}
+\end{figure}
