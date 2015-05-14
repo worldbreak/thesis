@@ -99,13 +99,17 @@ V èlánku \cite{Kanagaraj} se autoøi snaží nakalibrovat jednotlivé modely metodou
 
 Další možnost, jak kalibrovat modely, byla vyzkoušena institutem pro výzkum dopravy v Berlínì \cite{Brockfeld}, kde vyzkoušely Nelder-Mead\footnote{též pojmenována Downhill simplexová metoda} metodu, která se numericky snaží najít maximum nelineárních problému v nìkolikarozmìrném prostoru. Výhodou pro autory byla informace o rychlosti a poloze vozidla na testovacím okruhu každou 0.1s s tím, že nepøesnost urèení rychlosti a polohy byla zanedbatelná.
 
-\section{Statistické metody pro validaci modelù}
+\section{Statistické metody pro validaci a porovnání modelù}
+\label{statmet}
 
-Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jako hlavní zdroj pro GEH formuli jsou použity zdroje \cite{Feldman} a \cite{CalibrationWWW}. Jak jsme zmínili v minulé sekci, budeme potøebovat dvì sady dat, jednu ke kalibraci modelu a druhou k validaci modelu.
+Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jako hlavní zdroj pro GEH formuli jsou použity zdroje \cite{Feldman} a \cite{CalibrationWWW}. F-test je obsažen v \cite[str.111]{Pavlik}. Støední absolutní chyba je dobøe popsána v \cite{Willmott}.
 
 \subsection{Statistický test støední hodnoty}
+\label{strednihodnota}
 
-V každém kroku validaèního procesu by mìl být provádìn experiment. Každý pokus je urèen vstupními daty (které budou pro všechny pokusy stejné) a hodnotami parametrù modelu (ty se budou vždy lišit). Výstupem simulace bude soubor hodnot promìnných, v našem pøípadì nejspíše intenzit, které zaznamenáváme každou vzorkovací periodu. Napøíklad, pøedpokládejme, že simulace má vzorkovací periodu 1 minuta - to znamená, že každou minutu pøibývají hodnoty intenzit. Promìnná, která nás zajímá každou vzorkovací periodu, je intenzita $w$, výsledek simulaèního modelu tedy bude soubor hodnot $w_{ij}$, kde indexem $i$ znaèíme konkrétní detektor a $j$ je èas zaznamenání. Index $i$ probíhá od 1 do n,
+Statistickým testem støední hodnoty budeme kontrolovat zda model nemá náhodou støední hodnotu rozdílnou od nuly. V tom pøípadì by to znaèilo nepøesnost v modelu èi v jeho kalibraci.
+
+Výstupem simulace bude soubor hodnot promìnných, v našem pøípadì nejspíše intenzit, které zaznamenáváme každou vzorkovací periodu. Napøíklad, pøedpokládejme, že simulace má vzorkovací periodu 1 minuta - to znamená, že každou minutu pøibývají hodnoty intenzit. Promìnná, která nás zajímá každou vzorkovací periodu, je intenzita $w$, výsledek simulaèního modelu tedy bude soubor hodnot $w_{ij}$, kde indexem $i$ znaèíme konkrétní detektor a $j$ je èas zaznamenání. Index $i$ probíhá od 1 do n,
 \[
 i = 1,2\dots\text{n},
 \]
@@ -155,6 +159,39 @@ Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které j
 	\item Tento postup pøedpokládá stejná a nezávisle rozdìlená pozorování\footnote{i.i.d - independent and identically distributed random variables}, kdežto mìøení reálného systému a pøíslušné nasimulované výstupy nemusí tento pøedpoklad splòovat. Jednou z možností je vzít hodnoty z nìkolika èasových období a navíc zprùmìrovat tyto hodnoty pro výpoèet \eqref{eq:difflow}.
 	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota $t_{\text{m}-1;\alpha/2}$. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. T-statistika za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
 \end{itemize}
+
+\subsection{F-test podílù rozptylù}
+\label{ftest}
+
+Díky F-testu podílu rozptylù mùžeme zjistit zda se rozptyl nasimulovaných hodnot významnì liší od hodnot z mýtných bran. Nejprve je nutné vypoèíst rozptyl z nasimulovaných hodnot $s_1^2$ a rozptyl z reálných dat $s_2^2$ a budeme testovat hypotézu
+\begin{equation}
+H_0: s_1^2 = s_2^2.
+\label{eq:ftesth0}
+\end{equation}
+
+Budeme testovat podíl rozptylù
+\begin{equation}
+F = \frac{s_1^2}{s_2^2}.
+\label{eq:ftesthyp}
+\end{equation}
+
+Jestliže platí, že 
+\begin{equation}
+F > F_{\text{krit}}
+\label{eq:ffkrit}
+\end{equation}
+zamítáme $H_0$ a rozptyl z nasimulovaných dat se významnì liší od rozptylu z reálných dat. V opaèném pøípadì se rozptyly statisticky významnì neliší. Hodnota $F_{\text{krit}}$ také závisí na volbì hladiny významnosti a poètu stupòù volnosti obou rozptylù.
+
+\subsection{Støední absolutní chyba}
+
+Dalším dùležitým ukazatelem je støední absolutní chyba\footnote{v odborné literatuøe oznaèována jako MAE (Mean absolute error)}, která je definována takto:
+\begin{equation}
+MAE = \frac{1}{N}\sum_{i=1}^n \left|f_i - y_i\right|,
+\label{eq:mae}
+\end{equation}
+kde $f_i$ je nasimulovaná a $y_i$ namìøená hodnota.
+
+Nemùžeme bohužel použít støední absolutní procentuální chybu\footnote{v odborné literatuøe oznaèována jako MAPE (Mean absolute percentage error)}, protože nìkteré namìøené hodnoty obsahují nulu.
 
 \subsection{GEH}
 \label{sec:GEH}

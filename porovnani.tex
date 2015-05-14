@@ -1,5 +1,83 @@
 \chapter{Porovnání modelù}
 
+Hlavním vısledkem této práce by mìlo bıt porovnání modelù. Nástroje, které by nám k tomu mìly dopomoci, jsou uvedeny v podkapitole \ref{statmet}. Další moností porovnání jednotlivıch modelù je jejich grafické znázornìní v prùbìhu dne, dále pak grafická zobrazení absolutních chyb i vıpoèet prùmìrné chyby.
+
+\section{Støední hodnota}
+
+Díky vısledkùm od všech modelù není nutné provádìt test støední hodnoty protoe prùmìr všech hodnot ze dne 28.10.2012 vychází 0. Tím pádem není nutné nic testovat. Hypotéza by nebyla toti nikdy zamítnuta.
+
+Jak ji bylo øeèeno, pokud by byla hypotéza viz \eqref{eq:hypoteza} zamítnuta, znaèilo by to nepøesnost v modelu èi v jeho kalibraci.
+
+\section{Rozptyl a smìrodatná odchylka}
+
+Z dùvodu kontroly, zda se rozptyl namìøenıch intenzit modelù vıznamnì neliší od rozptylu namìøenıch dat, byl proveden test podílu rozptylù. Pro hladinu vıznamnosti 95\% byla
+\begin{equation}
+F_\text{krit} = 1,090.
+\label{eq:Fkrit}
+\end{equation}
+
+Vısledky jednotlivıch modelù jsou shrnuty v tabulce \ref{vysledkyftest}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model:}  & \textbf{Hodnota F} \\ \hline
+Gipps            & 1,0124        \\ \hline
+Krauss           & 1,0233        \\ \hline
+Rozšíøenı Krauss & 1,0234        \\ \hline
+IDM              & 1,0187        \\ \hline
+\end{tabular}
+\end{center}
+\caption{Vısledná statistika pro jednotlivé modely}
+\label{vysledkyftest}
+\end{table}
+
+Je tedy patrné, e pro všechny modely rovnice \eqref{eq:ffkrit} neplatí a tím pádem se rozptyly jednotlivıch modelù vıznamnì statisticky neliší. Je to také kontrola, e modely dávají pøijatelné vısledky.
+
+Smìrodatné odchylky rozdílù mezi namìøenımi a nasimulovanımi daty jednotlivıch modelù jsou znázornìny v tabulce \ref{vysledkyso}. Je tedy vidìt, e nejlepší vısledky podle tohoto ukazetele mìl Gippsùv model pøed IDM a Kraussovımi modely, které jsou vyrovnané.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model}  & \textbf{Smìrodatná odchylka} \\ \hline
+Gipps            & 5,97601                      \\ \hline
+Krauss           & 6,26314                      \\ \hline
+Rozšíøenı Krauss & 6,269674                     \\ \hline
+IDM              & 6,028846                     \\ \hline
+\end{tabular}
+\caption{Smìrodatné odchylky jednotlivıch modelù}
+\label{vysledkyso}
+\end{center}
+\end{table}
+
+
+\section{Prùmìrná chyba}
+
+Støední prùmìrná chyba vypoèítaná dle vzorce \eqref{eq:mae} byla vypoèítána opìt pro všechny modely. Vısledné hodnoty jsou shrnuty v tabulce \ref{vysledkyMAE}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model}  & \textbf{Støední prùmìrná chyba} \\ \hline
+Gipps            & 3,579                     \\ \hline
+Krauss           & 3,665                     \\ \hline
+Rozšíøenı Krauss & 3,665                     \\ \hline
+IDM              & 3,590                     \\ \hline
+\end{tabular}
+\end{center}
+\caption{Støední prùmìrná chyba (MAE) jednotlivıch modelù}
+\label{vysledkyMAE}
+\end{table}
+
+I podle tohoto ukazatele je nejlepší Gippsùv model, nicménì rozdíly hodnot chyb nejsou vysoké, co znaèí, e je mono pouít všechny z tìchto modelù.
+
+
+\section{Grafická znázornìní}
+
+Jako další variantu porovnání modelù jsme zvolili prùbìhy intenzit na jednotlivıch mıtnıch branách - viz obrázek \ref{fig:porovnanirada}. Z tìchto obrázku vyplıvá jistá podobnost modelù, ádnı z nich se vıraznì nevymyká, co bude správnì, protoe jinak by to znamenalo špatnou formulaci èi kalibraci modelu. Nejvíce nepøesnı v poètu vozidel dle obrázkù je Rozšíøenı Kraussùv model, co je matematicky doloeno v pøedchozích podkapitolách.
 
 \begin{figure}[h]
 \begin{tabular}{cc}
@@ -15,6 +93,13 @@ c) Brána 187 & d) Brána 170
 \label{fig:porovnanirada}
 \end{figure}
 
+
+Dále jsme vynesli absolutní chybu jako èasovou øadu a to nejprve pro všechny brány - obrázky \ref{fig:porovnanichyba} a také pro kadı jednotlivı model zvláš na poslední bránì 170 - obrázky \ref{chyba170}. Pokud se zamìøíme na vısledky modelù na bránì 170 je vidìt i pouhım okem, e Gippsùv model dává asi nejlepší vısledky. IDM by mohl jistì dávat lepší vısledky, pokud by nìkdy a pøíliš èasto nestoupla do kladnıch hodnot, aby potom rychle klesla a to a o 30 vozidel. Kraussovy modely jsou pomìrnì dost rozkmitány, co by se postupnım dalším kalibrováním mohlo èásteènì vylepšit.
+
+O malinko vìtší chyby bìhem první noèní hodiny jsou zpùsobeny tím, e ještì nejsou ádná vozidla v simulaci. Simulace startuje o pùlnoci, ale v reálnıch datech zde ji nìjaká vozidla projela. Ta ale vyjela ještì pøed pùlnocí minulého dne. Tento problém nenastává na konci dne, zde je to pouze o chybì modelu.
+
+Dalším dùvodem vzniku chyb jsou nájezdy a vıjezdy z Praského okruhu, které nejsou v reálnıch datech zahrnuty. Pøi vyhodnocování je potøeba je brát v úvahu. Další nepøesností je generování vozidel do simulace z exponenciálního rozdìlení - viz podkapitola \ref{subsec:vozidla}. Závìreènı vliv, kterı nesouvisí pøímo se samotnım modelem, je vjezd vozidel do simulace na základì podmínky, aby mìlo dostateènı èasovı i bezpeènostní odstup a neohrozilo vozidlo pøed sebou. SUMO bere v úvahu i decelaraci vozidla, která je navíc i souèástí dalších vıpoètù, proto je otázkou zda jsou tyto odstupy poèítány nejsprávnìji jak jde.
+ 
 \begin{figure}[h]
 \begin{tabular}{cc}
 \includegraphics[width=6.5cm]{porovnani/chyba218.pdf} & \includegraphics[width=6.5cm]{porovnani/chyba201.pdf} \\
@@ -26,7 +111,7 @@ a) Brána 218 & b) Brána 201 \\
 c) Brána 187 & d) Brána 170
 \end{tabular}
 \caption{Porovnání jednotlivıch modelù mezi sebou - absolutní chyby}
-\label{porovnanichyba}
+\label{fig:porovnanichyba}
 \end{figure}
 
 \begin{figure}[h]
