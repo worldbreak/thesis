@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  15 MAY 2015 14:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  15 MAY 2015 14:44
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -835,13 +835,13 @@ Overfull \hbox (0.98578pt too wide) in paragraph at lines 110--111
  []
 
 [9] [10] [11] [12] [13]
-Overfull \hbox (16.15599pt too wide) in paragraph at lines 291--292
+Overfull \hbox (16.15599pt too wide) in paragraph at lines 292--293
 [][][]\OT1/cmr/m/n/10.95 Tento mo-del se zameruje primarne na vseobecne vlast-nosti do-pravnho proudu, zkouman
 |
  []
 
 [14] [15] [16] [17]
-Overfull \hbox (7.42813pt too wide) in paragraph at lines 451--452
+Overfull \hbox (7.42813pt too wide) in paragraph at lines 452--453
 [][]\OT1/cmr/m/n/10.95 Hlavn zdroj pro vy-lepsen Kraus-sova mo-delu je prmo clanek pro im-ple-men-taci rozs
 reneho|
  []
@@ -849,31 +849,37 @@ Overfull \hbox (7.42813pt too wide) in paragraph at lines 451--452
 <images/kraussbrzdeni.pdf, id=706, 220.826pt x 186.90427pt>
 File: images/kraussbrzdeni.pdf Graphic file (type pdf)
  <use images/kraussbrzdeni.pdf>
-Package pdftex.def Info: images/kraussbrzdeni.pdf used on input line 459.
+Package pdftex.def Info: images/kraussbrzdeni.pdf used on input line 460.
 (pdftex.def)             Requested size: 250.95476pt x 212.41711pt.
  [18 <D:/Vanis-Sumo/thesis/images/kraussbrzdeni.pdf>]
-Overfull \hbox (10.80261pt too wide) in paragraph at lines 518--519
+Overfull \hbox (10.80261pt too wide) in paragraph at lines 519--520
 [][][]\OT1/cmr/m/n/10.95 Pokud po-mi-neme reakcn cas celnho ridice, brzden se sklada ze dvou cast pro
 bhajcch|
  []
 
-[19] [20] <idm.pdf, id=770, 450.8845pt x 153.17226pt>
+[19]
+Overfull \hbox (1.23169pt too wide) in paragraph at lines 564--565
+\OT1/cmr/m/n/10.95 2000, ktery byl vymyslen v Nemecku. Snaz se vy-lepsit nektere ne-do-statky predchazejc
+ch|
+ []
+
+[20] <idm.pdf, id=770, 450.8845pt x 153.17226pt>
 File: idm.pdf Graphic file (type pdf)
  <use idm.pdf>
-Package pdftex.def Info: idm.pdf used on input line 600.
+Package pdftex.def Info: idm.pdf used on input line 602.
 (pdftex.def)             Requested size: 250.95476pt x 85.25465pt.
  [21]
 <images/wiedemann.pdf, id=787, 398.9796pt x 279.85355pt>
 File: images/wiedemann.pdf Graphic file (type pdf)
  <use images/wiedemann.pdf>
-Package pdftex.def Info: images/wiedemann.pdf used on input line 634.
+Package pdftex.def Info: images/wiedemann.pdf used on input line 636.
 (pdftex.def)             Requested size: 418.25368pt x 293.3766pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <D:/Vanis-Sumo/thesis/idm.pdf>] [23 <D:/Vanis-Sumo/thesis/images/wiedemann.pdf>]
-Overfull \hbox (0.90436pt too wide) in paragraph at lines 685--687
+Overfull \hbox (0.90436pt too wide) in paragraph at lines 687--689
 \OT1/cmr/m/n/10.95 Parametry $[][]\OML/cmm/m/it/10.95 CXconst$\OT1/cmr/m/n/10.95 , $[][]\OML/cmm/m/it/10.95 CXadd$ \OT1/
 cmr/m/n/10.95 a $[][]\OML/cmm/m/it/10.95 CXmult$ \OT1/cmr/m/n/10.95 jsou zde opet pro zpresnen vypoctu pri urc
 ovan|
@@ -886,7 +892,7 @@ Kapitola 2.
 
 
 ] [28] [29] [30]
-Overfull \hbox (17.26118pt too wide) in paragraph at lines 123--124
+Overfull \hbox (17.26118pt too wide) in paragraph at lines 131--132
 \OT1/cmr/m/n/10.95 si-mu-lo-valo pro-voz. Tento pa-ra-metr je ne-po-vinny a po-kud ho ne-zadame, pro-gram predpoklad
 a|
  []
@@ -894,37 +900,37 @@ Overfull \hbox (17.26118pt too wide) in paragraph at lines 123--124
 [31] <images/poisson25.pdf, id=928, 361.35pt x 216.81pt>
 File: images/poisson25.pdf Graphic file (type pdf)
  <use images/poisson25.pdf>
-Package pdftex.def Info: images/poisson25.pdf used on input line 166.
+Package pdftex.def Info: images/poisson25.pdf used on input line 174.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
 
 <images/poisson69.pdf, id=929, 361.35pt x 216.81pt>
 File: images/poisson69.pdf Graphic file (type pdf)
  <use images/poisson69.pdf>
-Package pdftex.def Info: images/poisson69.pdf used on input line 169.
+Package pdftex.def Info: images/poisson69.pdf used on input line 177.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
  [32 <D:/Vanis-Sumo/thesis/images/poisson25.pdf> <D:/Vanis-Sumo/thesis/images/poisson69.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/poisson69.pdf): PDF inclusion: multiple pdfs with page gr
 oup included in a single page
 >]
-Overfull \hbox (8.74582pt too wide) in paragraph at lines 232--233
+Overfull \hbox (8.74582pt too wide) in paragraph at lines 240--241
 [][][]\OT1/cmr/m/it/10.95 public sta-tic Do-cu-ment parse(String fi-le-Name) throws Do-cu-men-tEx-cep-tion \OT1/cmr/m/n/
 10.95 - rozdelen|
  []
 
 [33]
-Overfull \hbox (5.44878pt too wide) in paragraph at lines 241--242
+Overfull \hbox (5.44878pt too wide) in paragraph at lines 249--250
 [][][]\OT1/cmr/m/n/10.95 prochaz aktualn slozku a kon-t-ro-luje vsechny XML sou-bory majc tvar \OT1/cmr/m/it
 /10.95 de-tek-tor[]0.xml\OT1/cmr/m/n/10.95 ,|
  []
 
 [34]
-Overfull \hbox (14.3718pt too wide) in paragraph at lines 277--278
+Overfull \hbox (14.3718pt too wide) in paragraph at lines 285--286
 \OT1/cmr/m/n/10.95 tz. nazev vstupnho a vystupnho sou-boru, ktery bude vy-tvoren po spusten gnuploutu,|
  []
 
 
-Overfull \hbox (0.61311pt too wide) in paragraph at lines 281--282
+Overfull \hbox (0.61311pt too wide) in paragraph at lines 289--290
 [][][]\OT1/cmr/m/n/10.95 Pokud chceme vy-tvorit his-to-gram poctu vo-zi-del za cely den, prkaz vy-pada nasledovn
 e |
  []
@@ -1625,14 +1631,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
-(rerunfilecheck)             Checksum: C900C7808CD0E2334C673B99FEE7B8BC;15324.
+(rerunfilecheck)             Checksum: 8BC37A183C1C484F865F39B80EA831A8;15155.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 31209 strings out of 493921
- 677041 string characters out of 3151295
- 864639 words of memory out of 3000000
- 33433 multiletter control sequences out of 15000+200000
+ 31210 strings out of 493921
+ 677055 string characters out of 3151295
+ 865447 words of memory out of 3000000
+ 33434 multiletter control sequences out of 15000+200000
  11822 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,28n,76p,1221b,1248s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1648,7 +1654,7 @@ pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/TeX/MiKTeX 2.
 y6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (80 pages, 1927753 bytes).
+Output written on bakalarka.pdf (80 pages, 1927604 bytes).
 PDF statistics:
  2042 PDF objects out of 2073 (max. 8388607)
  497 named destinations out of 1000 (max. 500000)
