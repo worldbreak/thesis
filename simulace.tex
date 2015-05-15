@@ -1,5 +1,5 @@
 \chapter{Simulace}
-
+\label{chap:simulace}
 V této kapitole se pokusíme zhodnotit nasimulované výsledky z modelù. Simulován bude osmikilometrový úsek na Pražském okruhu mezi 22. a 14. kilometrem. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6 - viz obrázek \ref{usekdalnice}.
 
 \begin{figure}[h]%
@@ -75,11 +75,13 @@ Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170, což je pro zkoumání mod
 
 Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté porovnáme jednotlivé modely. Tyto modely zaèneme kalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme zpøesòovat.
 
-Jako kritérium pro validní model použijeme formuli GEH \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \ref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
+Jako kritérium pro validní model použijeme formuli GEH uvedený v podkapitole \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \eqref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
 
 Èas vjezdu vozidel byl vždy generován z exponenciálního rozdìlení, kde parametr rozdìlení byl poèet vozidel v danou minutu.
 
-V programu SUMO je implementován vlastní pøedjíždìcí model \uv{DK2008}, který je primárnì naprogramován pro Kraussùv model. Nicménì i ostatní modely dávaly uspokojivé výsledky, proto nebylo nutné se tímto modelem pøímo zabývat. V každém obrázku je zobrazen provoz v každém pruhu a potom také souèet všech pruhù
+V programu SUMO je implementován vlastní pøedjíždìcí model \uv{DK2008}, který je primárnì naprogramován pro Kraussùv model. Nicménì i ostatní modely dávaly uspokojivé výsledky, proto nebylo nutné se tímto modelem pøímo zabývat.
+
+V každém obrázku je zobrazen provoz v každém pruhu a potom také souèet všech pruhù.
 
 Generovány byly dva typy rychlostí, preferovaná a pøi vjezdu do oblasti. Preferovaná rychlost byla vždy generována z normálního rozdìlení se støední hodnotou 36,11$ms^{-1}$\footnote{to odpovídá rychlosti 130 $kmh^{-1}$} bez ohledu na rychlosti na mýtné bránì. Naopak rychlosti vozidel pøi vjezdu do oblasti byly generovány z náhodného rozdìlení se støední hodnotou rovné hodnotì prùmìrné rychlosti na mýtné bránì.
 
@@ -90,21 +92,11 @@ Nìkteré parametry modelù èi vozidel jsou pro všechny modely stejná, konkrétnì
 	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$.
 \end{itemize}
 
-Pro vyzkoušení funkènosti simulací a správné kalibrace modelù byl jako první den vzat svátek 28.10.2012.
+Pro vyzkoušení funkènosti simulací a správné kalibrace modelù byl jako první den zvolen svátek 28.10.2012.
 
 Pokud se jedná o samotné simulace, tato kapitola bude rozdìlena na simulace podle jednotlivých modelù. Nejprve budou uvedeny rozdíly mezi teorií (kapitola \ref{chap:predIDM}) a implementací daného modelu, dále budou následovat hodnoty parametrù a poté výsledky samotné simulace s informacemi o hodnotách GEH. 
 
-Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotným simulaèním nástrojem èi velkým množstvím parametrù. SUMO umožòuje jednoduše zjistit pouze rychlost pøedního vozidla a odstup mezi aktuálním a pøedním vozidlemm, kdežto v modelech mùže být tato vzdálenost skryta v urèitém èlenu rovnice.
-
-\section{Rozdíly modelù oproti teorii}
-
-\subsection{Wiedemannùv model}
-
-V programu SUMO je standardnì implementován i Wiedemannùv model. Jak je vidìt z odstavce \ref{sec:Wiedemann}, model obsahuje mnoho parametrù, což jsou velmi nároèné vstupní požadavky. Proto v SUMO existuje urèité \uv{zjednodušení}, kde jednotlivé prahy neobsahují parametry, ale jsou již dopøedu pøednastaveny. Uživatel nastavuje programu pouze dva parametry - security (bezpeènost) a odhad (estimation). Pøes tyto parametry se posléze poèítají jednotlivé prahy. Bohužel se nepodaøilo najít èlánek èi informaci o tom, na základì èeho jsou tyto parametry implementovány.
-
-Tím pádem nebylo možné model vhodnì nakalibrovat a výsledky z tohoto modelu nejsou zdaleka dostaèující.
-
-
+Rozdíly mezi definicí a implementací modelù jsou vìtšinou zpùsobeny samotným simulaèním nástrojem èi velkým množstvím parametrù. SUMO umožòuje jednoduše zjistit pouze rychlost pøedního vozidla a odstup mezi aktuálním a pøedním vozidlem, kdežto v modelech mùže být tato vzdálenost skryta v urèitém èlenu rovnice.
 
 \section{Gippsùv model}
 
@@ -114,7 +106,7 @@ Gippsùv model je naimplementován stejnì tak, jak zní rovnice \eqref{eq:gipps}. J
 
 \subsection{Nastavení parametrù a simulace}
 
-Nejprve jsme nechali parametry stejné jako u Kraussova modelu, nicménì to nevedlo k úspìchu. Podstatné byla informace z \cite{Brackstone}, kde bylo øeèeno pokusit se nastavit hodnoty \uv{reálnì}, což v tomto pøípadì pøineslo úspìch a po dalším zpøesnìní GEH nepøesáhlo nikde hodnotu 5. Simulaèní krok zùstal na výchozí hodnotì 1s.
+Nejprve jsme nechali parametry stejné jako u Kraussova modelu, nicménì to nevedlo k úspìchu. Podstatná byla informace z \cite{Brackstone}, kde bylo øeèeno pokusit se nastavit hodnoty \uv{reálnì}, což v tomto pøípadì pøineslo úspìch a po dalším zpøesnìní GEH nepøesáhlo nikde hodnotu 5. Simulaèní krok zùstal na výchozí hodnotì 1s.
 
 Hodnoty parametrù tedy byly následující:
 \begin{itemize}
@@ -160,7 +152,7 @@ Hodnoty parametrù tedy byly následující:
 
 \subsection{Simulace}
 
-Na levé stranì je vykreslena èasová øada dle detektoru a na druhé stranì èasová øada nasimulovaná Gippsovým modelem. Na obrázcích \ref{gipps218}a) a \ref{gipps218}b) je pøímo vidìt urèitá nepøesnost vjezdu vozidel pøi vysokých intenzitách. To je zpùsobeno podmínkou SUMO pro vjezd do oblasti. Mohli bychom napø. zvýšit decelaraci k pøesnìní tohoto rozdílu, ovšem tím bychom snížili reálnost simulace. Na dalších mýtných branách (napø. obrázky \ref{gipps201}a) a \ref{gipps201}b) tento jev pøetrvává, což je oèekávatelné.
+Na levé stranì je vykreslena èasová øada dle detektoru a na pravé èasová øada nasimulovaná Gippsovým modelem. Na obrázcích \ref{gipps218}a) a \ref{gipps218}b) je pøímo vidìt urèitá nepøesnost vjezdu vozidel pøi vysokých intenzitách. To je zpùsobeno podmínkou SUMO pro vjezd do oblasti. Mohli bychom napø. zvýšit decelaraci k pøesnìní tohoto rozdílu, ovšem tím bychom snížili reálnost simulace. Na dalších mýtných branách (napø. obrázky \ref{gipps201}a) a \ref{gipps201}b) tento jev pøetrvává, což je oèekávatelné.
 
 Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \ref{GEHGipps}, nicménì hodnota nedosahuje ani 4, èímž se dá konstatovat, a tím pádem model dává uspokojivé výsledky.
 
@@ -169,7 +161,7 @@ Koeficient GEH má nejvyšší hodnotu v dobì mezi 15. a 16. hodinou - viz tabulka \
 
 \subsection{Rozdíly oproti teorii}
 
-Kraussùv model je údajnì pøímo implementován v SUMO, byl to vùbec první model, který byl v SUMO vyzkoušet. Nicménì pøes zkoumání se nepodaøilo nalézt pøímou implementaci shodnou s \eqref{eq:krausssmodel}, konkrétnì výpoèet hodnoty $v_{\safe}$.
+Kraussùv model je pøímo implementován v SUMO. Byl to vùbec první model, který bylo možné v SUMO vyzkoušet. Nicménì pøes zkoumání se nepodaøilo nalézt pøímou implementaci shodnou s \eqref{eq:krausssmodel}, konkrétnì výpoèet hodnoty $v_{\safe}$.
 
 \subsection{Nastavení parametrù a simulace}
 
@@ -219,7 +211,7 @@ Výsledné hodnoty nakalibrovaného Kraussova modelu byly:
 
 \subsection{Simulace}
 
-Z obrázkù èasových øad je jasnì vidìl, že Kraussùv model dokázal vìrnì kopírovat provoz a to i v pomìrnì vysokých intenzitách. Jak již bylo øeèeno, velkou výhodou pro Kraussùv model je implementace do SUMO jako vùbec prvního modelu. Co se týká maximální hodnoty GEH - viz tabulka \ref{GEHKrauss}, pouze jednou pøekroèila hodnota nepatrnì hodnotu 3, což je velmi dobrý výsledek.
+Z obrázkù èasových øad je jasnì vidìt, že Kraussùv model dokázal vìrnì kopírovat provoz a to i v pomìrnì vysokých intenzitách. Jak již bylo øeèeno, velkou výhodou pro Kraussùv model je implementace do SUMO jako vùbec prvního modelu. Co se týká maximální hodnoty GEH - viz tabulka \ref{GEHKrauss}, pouze jednou pøekroèila hodnota nepatrnì hodnotu 3, což je velmi dobrý výsledek.
 
 
 \section{Rozšíøený Kraussùv model}

@@ -2,6 +2,7 @@
 
 Hlavním výsledkem této práce mìlo být porovnání mikroskopických modelù. Nástroje, které by nám k tomu mìly dopomoci, jsou uvedeny v podkapitole \ref{statmet}. Dalšími možnostmi porovnání modelù jsou grafická znázornìní intenzit èi absolutních chyb  v prùbìhu dne.
 
+Porovnávat jednotlivé modely budeme na nasimulovaných datech uvedených v kapitole \ref{chap:simulace}.
 \section{Støední hodnota}
 
 Prvním nutným testem byla kontrola nulové støední hodnoty u absolutní chyby modelù, tzn. že ji model nemá vychýlenou do kladných èi záporných hodnot.
@@ -100,7 +101,7 @@ Dále jsme vynesli absolutní chybu jako èasovou øadu a to nejprve pro všechny brá
 
 O trochu vìtší chyby bìhem první noèní hodiny u mýtné brány 170 jsou zpùsobeny tím, že ještì nejsou žádná vozidla v simulaci. Simulace startuje o pùlnoci, ale v reálných datech zde již nìjaká vozidla projela. Ta ale vyjela ještì pøed pùlnocí minulého dne.
 
-Dalším dùvodem vzniku chyb jsou nájezdy a výjezdy z Pražského okruhu, které nejsou v reálných datech zahrnuty. Další nepøesností je generování vozidel do simulace z exponenciálního rozdìlení - viz podkapitola \ref{subsec:vozidla}. Dále nesmíme zapomenout na ne úplnì pøesný import podkladových dat. Závìreèný vliv, který nesouvisí pøímo se samotným modelem, je vjezd vozidel do simulace na základì podmínky, aby mìlo dostateèný èasový i bezpeènostní odstup a neohrozilo vozidlo pøed sebou. SUMO bere v úvahu i decelaraci vozidla, která je navíc i souèástí dalších výpoètù. Proto je otázkou, jak vùbec tuto vstupní podmínku poèítat správnì.
+Dalším dùvodem vzniku chyb jsou nájezdy a výjezdy z Pražského okruhu, které nejsou v reálných datech zahrnuty. Další nepøesností je generování vozidel do simulace z exponenciálního rozdìlení - viz podkapitola \ref{subsec:vozidla}. Dále nesmíme zapomenout na ne úplnì pøesný import podkladových dat. Ovlivnìní výsledkù také mùže plynout z pøedjíždìcího modelu, který je v SUMO implementován. Závìreèný vliv, který nesouvisí pøímo se samotným modelem, je vjezd vozidel do simulace na základì podmínky, aby mìlo dostateèný èasový i bezpeènostní odstup a neohrozilo vozidlo pøed sebou. SUMO bere v úvahu i decelaraci vozidla, která je navíc i souèástí dalších výpoètù. Proto je otázkou, jak vùbec tuto vstupní podmínku poèítat správnì.
  
 \begin{figure}[h]
 \begin{tabular}{cc}

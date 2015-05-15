@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  15 MAY 2015 16:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  15 MAY 2015 17:28
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -795,7 +795,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]) [5] (D:\Vanis-Sumo\thesis\predidm.tex
 Kapitola 1.
-<images/newell.pdf, id=484, 289.48149pt x 225.2415pt>
+<images/newell.pdf, id=474, 289.48149pt x 225.2415pt>
 File: images/newell.pdf Graphic file (type pdf)
  <use images/newell.pdf>
 Package pdftex.def Info: images/newell.pdf used on input line 31.
@@ -805,13 +805,13 @@ Package pdftex.def Info: images/newell.pdf used on input line 31.
 
 
 ]
-<images/vztahmeziSaV.pdf, id=502, 161.78342pt x 161.0015pt>
+<images/vztahmeziSaV.pdf, id=492, 161.78342pt x 161.0015pt>
 File: images/vztahmeziSaV.pdf Graphic file (type pdf)
  <use images/vztahmeziSaV.pdf>
 Package pdftex.def Info: images/vztahmeziSaV.pdf used on input line 44.
 (pdftex.def)             Requested size: 161.78302pt x 161.00108pt.
 
-<images/linearaprox.pdf, id=511, 161.78342pt x 161.0015pt>
+<images/linearaprox.pdf, id=501, 161.78342pt x 161.0015pt>
 File: images/linearaprox.pdf Graphic file (type pdf)
  <use images/linearaprox.pdf>
 Package pdftex.def Info: images/linearaprox.pdf used on input line 66.
@@ -846,7 +846,7 @@ Overfull \hbox (7.42813pt too wide) in paragraph at lines 452--453
 reneho|
  []
 
-<images/kraussbrzdeni.pdf, id=706, 220.826pt x 186.90427pt>
+<images/kraussbrzdeni.pdf, id=696, 220.826pt x 186.90427pt>
 File: images/kraussbrzdeni.pdf Graphic file (type pdf)
  <use images/kraussbrzdeni.pdf>
 Package pdftex.def Info: images/kraussbrzdeni.pdf used on input line 460.
@@ -863,13 +863,13 @@ Overfull \hbox (1.23169pt too wide) in paragraph at lines 564--565
 ch|
  []
 
-[20] <idm.pdf, id=770, 450.8845pt x 153.17226pt>
+[20] <idm.pdf, id=760, 450.8845pt x 153.17226pt>
 File: idm.pdf Graphic file (type pdf)
  <use idm.pdf>
 Package pdftex.def Info: idm.pdf used on input line 602.
 (pdftex.def)             Requested size: 250.95476pt x 85.25465pt.
  [21]
-<images/wiedemann.pdf, id=787, 398.9796pt x 279.85355pt>
+<images/wiedemann.pdf, id=777, 398.9796pt x 279.85355pt>
 File: images/wiedemann.pdf Graphic file (type pdf)
  <use images/wiedemann.pdf>
 Package pdftex.def Info: images/wiedemann.pdf used on input line 636.
@@ -897,13 +897,13 @@ Overfull \hbox (17.26118pt too wide) in paragraph at lines 131--132
 a|
  []
 
-[31] <images/poisson25.pdf, id=928, 361.35pt x 216.81pt>
+[31] <images/poisson25.pdf, id=918, 361.35pt x 216.81pt>
 File: images/poisson25.pdf Graphic file (type pdf)
  <use images/poisson25.pdf>
 Package pdftex.def Info: images/poisson25.pdf used on input line 174.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
 
-<images/poisson69.pdf, id=929, 361.35pt x 216.81pt>
+<images/poisson69.pdf, id=919, 361.35pt x 216.81pt>
 File: images/poisson69.pdf Graphic file (type pdf)
  <use images/poisson69.pdf>
 Package pdftex.def Info: images/poisson69.pdf used on input line 177.
@@ -1000,7 +1000,7 @@ ma stejne pa-ra-me-try jako \OT1/cmr/m/it/10.95 followSpeed|
 
 ) [42] (D:\Vanis-Sumo\thesis\kalibrace.tex
 Kapitola 4.
-<images/model.pdf, id=1112, 456.85883pt x 114.55798pt>
+<images/model.pdf, id=1102, 456.85883pt x 114.55798pt>
 File: images/model.pdf Graphic file (type pdf)
  <use images/model.pdf>
 Package pdftex.def Info: images/model.pdf used on input line 11.
@@ -1026,7 +1026,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
 
  []
 
-<images/validace.pdf, id=1139, 578.36076pt x 106.07028pt>
+<images/validace.pdf, id=1129, 578.36076pt x 106.07028pt>
 File: images/validace.pdf Graphic file (type pdf)
  <use images/validace.pdf>
 Package pdftex.def Info: images/validace.pdf used on input line 72.
@@ -1037,7 +1037,7 @@ Overfull \hbox (4.62692pt too wide) in paragraph at lines 81--82
 mi|
  []
 
-<images/validdiagram.pdf, id=1157, 385.8656pt x 271.13898pt>
+<images/validdiagram.pdf, id=1147, 385.8656pt x 271.13898pt>
 File: images/validdiagram.pdf Graphic file (type pdf)
  <use images/validdiagram.pdf>
 Package pdftex.def Info: images/validdiagram.pdf used on input line 87.
@@ -1050,19 +1050,19 @@ Overfull \hbox (12.72066pt too wide) in paragraph at lines 159--160
 
 [48] [49]) [50] (D:\Vanis-Sumo\thesis\simulace.tex
 Kapitola 5.
-<images/usekdalnice.png, id=1235, 689.57625pt x 528.47438pt>
+<images/usekdalnice.png, id=1225, 689.57625pt x 528.47438pt>
 File: images/usekdalnice.png Graphic file (type png)
  <use images/usekdalnice.png>
 Package pdftex.def Info: images/usekdalnice.png used on input line 7.
 (pdftex.def)             Requested size: 418.25368pt x 320.5384pt.
 
-<images/brana0170_20121028.pdf, id=1244, 361.35pt x 216.81pt>
+<images/brana0170_20121028.pdf, id=1234, 361.35pt x 216.81pt>
 File: images/brana0170_20121028.pdf Graphic file (type pdf)
  <use images/brana0170_20121028.pdf>
 Package pdftex.def Info: images/brana0170_20121028.pdf used on input line 19.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
 
-<images/brana0170_20121007.pdf, id=1245, 361.35pt x 216.81pt>
+<images/brana0170_20121007.pdf, id=1235, 361.35pt x 216.81pt>
 File: images/brana0170_20121007.pdf Graphic file (type pdf)
  <use images/brana0170_20121007.pdf>
 Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
@@ -1071,25 +1071,25 @@ Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
 
 
 
- <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1255, 361.35pt x 216.81pt>
+ <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1245, 361.35pt x 216.81pt>
 File: images/brana0157_20121028.pdf Graphic file (type pdf)
 
 <use images/brana0157_20121028.pdf>
 Package pdftex.def Info: images/brana0157_20121028.pdf used on input line 39.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0157_20121007.pdf, id=1256, 361.35pt x 216.81pt>
+ <images/brana0157_20121007.pdf, id=1246, 361.35pt x 216.81pt>
 File: images/brana0157_20121007.pdf Graphic file (type pdf)
 
 <use images/brana0157_20121007.pdf>
 Package pdftex.def Info: images/brana0157_20121007.pdf used on input line 42.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0145_20121028.pdf, id=1257, 361.35pt x 216.81pt>
+ <images/brana0145_20121028.pdf, id=1247, 361.35pt x 216.81pt>
 File: images/brana0145_20121028.pdf Graphic file (type pdf)
 
 <use images/brana0145_20121028.pdf>
 Package pdftex.def Info: images/brana0145_20121028.pdf used on input line 58.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0145_20121007.pdf, id=1258, 361.35pt x 216.81pt>
+ <images/brana0145_20121007.pdf, id=1248, 361.35pt x 216.81pt>
 File: images/brana0145_20121007.pdf Graphic file (type pdf)
 
 <use images/brana0145_20121007.pdf>
@@ -1115,64 +1115,55 @@ h page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf): PDF inclusion: multiple pdfs wit
 h page group included in a single page
->]
-Overfull \hbox (7.61305pt too wide) in paragraph at lines 103--104
-\OT1/cmr/m/n/10.95 od-stavce [][]1.6[][], mo-del ob-sa-huje mnoho pa-ra-metru, coz jsou velmi narocne vstupn poz
-adavky.|
- []
-
-[53] <real/sokp218orig.pdf, id=1326, 361.35pt x 216.81pt>
+>] [53] <real/sokp218orig.pdf, id=1315, 361.35pt x 216.81pt>
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
-Package pdftex.def Info: real/sokp218orig.pdf used on input line 127.
+Package pdftex.def Info: real/sokp218orig.pdf used on input line 119.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp218Gipps.pdf, id=1327, 361.35pt x 216.81pt>
+<gipps/sokp218Gipps.pdf, id=1316, 361.35pt x 216.81pt>
 File: gipps/sokp218Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp218Gipps.pdf>
-Package pdftex.def Info: gipps/sokp218Gipps.pdf used on input line 127.
+Package pdftex.def Info: gipps/sokp218Gipps.pdf used on input line 119.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<real/sokp201orig.pdf, id=1328, 361.35pt x 216.81pt>
+<real/sokp201orig.pdf, id=1317, 361.35pt x 216.81pt>
 File: real/sokp201orig.pdf Graphic file (type pdf)
  <use real/sokp201orig.pdf>
-Package pdftex.def Info: real/sokp201orig.pdf used on input line 136.
+Package pdftex.def Info: real/sokp201orig.pdf used on input line 128.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp201Gipps.pdf, id=1329, 361.35pt x 216.81pt>
+<gipps/sokp201Gipps.pdf, id=1318, 361.35pt x 216.81pt>
 File: gipps/sokp201Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp201Gipps.pdf>
-Package pdftex.def Info: gipps/sokp201Gipps.pdf used on input line 136.
+Package pdftex.def Info: gipps/sokp201Gipps.pdf used on input line 128.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<real/sokp187orig.pdf, id=1330, 361.35pt x 216.81pt>
+<real/sokp187orig.pdf, id=1319, 361.35pt x 216.81pt>
 File: real/sokp187orig.pdf Graphic file (type pdf)
  <use real/sokp187orig.pdf>
-Package pdftex.def Info: real/sokp187orig.pdf used on input line 145.
+Package pdftex.def Info: real/sokp187orig.pdf used on input line 137.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp187Gipps.pdf, id=1331, 361.35pt x 216.81pt>
+<gipps/sokp187Gipps.pdf, id=1320, 361.35pt x 216.81pt>
 File: gipps/sokp187Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp187Gipps.pdf>
-Package pdftex.def Info: gipps/sokp187Gipps.pdf used on input line 145.
+Package pdftex.def Info: gipps/sokp187Gipps.pdf used on input line 137.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<real/sokp170orig.pdf, id=1332, 361.35pt x 216.81pt>
+<real/sokp170orig.pdf, id=1321, 361.35pt x 216.81pt>
 File: real/sokp170orig.pdf Graphic file (type pdf)
  <use real/sokp170orig.pdf>
-Package pdftex.def Info: real/sokp170orig.pdf used on input line 154.
+Package pdftex.def Info: real/sokp170orig.pdf used on input line 146.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp170Gipps.pdf, id=1333, 361.35pt x 216.81pt>
+<gipps/sokp170Gipps.pdf, id=1322, 361.35pt x 216.81pt>
 File: gipps/sokp170Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp170Gipps.pdf>
-Package pdftex.def Info: gipps/sokp170Gipps.pdf used on input line 154.
+Package pdftex.def Info: gipps/sokp170Gipps.pdf used on input line 146.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1182,50 +1173,55 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp218Gipps.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
->] [55 <D:/Vanis-Sumo/thesis/real/sokp201orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp201Gipps.pdf
+> <D:/Vanis-Sumo/thesis/real/sokp201orig.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/real/sokp201orig.pdf): PDF inclusion: multiple pdfs with page gr
+oup included in a single page
+> <D:/Vanis-Sumo/thesis/gipps/sokp201Gipps.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp201Gipps.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
-> <D:/Vanis-Sumo/thesis/real/sokp187orig.pdf
-
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/real/sokp187orig.pdf): PDF inclusion: multiple pdfs with page gr
-oup included in a single page
-> <D:/Vanis-Sumo/thesis/gipps/sokp187Gipps.pdf
+>] [55 <D:/Vanis-Sumo/thesis/real/sokp187orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp187Gipps.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp187Gipps.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+> <D:/Vanis-Sumo/thesis/real/sokp170orig.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/real/sokp170orig.pdf): PDF inclusion: multiple pdfs with page gr
+oup included in a single page
+> <D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
 >]
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
-Package pdftex.def Info: real/sokp218orig.pdf used on input line 186.
+Package pdftex.def Info: real/sokp218orig.pdf used on input line 178.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp218krauss.pdf, id=1403, 361.35pt x 216.81pt>
+ <krauss/sokp218krauss.pdf, id=1409, 361.35pt x 216.81pt>
 File: krauss/sokp218krauss.pdf Graphic file (type pdf)
  <use krauss/sokp218krauss.pdf>
-Package pdftex.def Info: krauss/sokp218krauss.pdf used on input line 186.
+Package pdftex.def Info: krauss/sokp218krauss.pdf used on input line 178.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 File: real/sokp201orig.pdf Graphic file (type pdf)
 
 <use real/sokp201orig.pdf>
-Package pdftex.def Info: real/sokp201orig.pdf used on input line 195.
+Package pdftex.def Info: real/sokp201orig.pdf used on input line 187.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp201krauss.pdf, id=1404, 361.35pt x 216.81pt>
+ <krauss/sokp201krauss.pdf, id=1410, 361.35pt x 216.81pt>
 File: krauss/sokp201krauss.pdf Graphic file (type pdf)
  <use krauss/sokp201krauss.pdf>
-Package pdftex.def Info: krauss/sokp201krauss.pdf used on input line 195.
+Package pdftex.def Info: krauss/sokp201krauss.pdf used on input line 187.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: real/sokp187orig.pdf Graphic file (type pdf)
+
 <use real/sokp187orig.pdf>
-Package pdftex.def Info: real/sokp187orig.pdf used on input line 204.
+Package pdftex.def Info: real/sokp187orig.pdf used on input line 196.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp187krauss.pdf, id=1405, 361.35pt x 216.81pt>
+ <krauss/sokp187krauss.pdf, id=1411, 361.35pt x 216.81pt>
 File: krauss/sokp187krauss.pdf Graphic file (type pdf)
  <use krauss/sokp187krauss.pdf>
-Package pdftex.def Info: krauss/sokp187krauss.pdf used on input line 204.
+Package pdftex.def Info: krauss/sokp187krauss.pdf used on input line 196.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1233,40 +1229,36 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
-Package pdftex.def Info: real/sokp170orig.pdf used on input line 213.
+Package pdftex.def Info: real/sokp170orig.pdf used on input line 205.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp170krauss.pdf, id=1406, 361.35pt x 216.81pt>
+ <krauss/sokp170krauss.pdf, id=1412, 361.35pt x 216.81pt>
 File: krauss/sokp170krauss.pdf Graphic file (type pdf)
  <use krauss/sokp170krauss.pdf>
-Package pdftex.def Info: krauss/sokp170krauss.pdf used on input line 213.
+Package pdftex.def Info: krauss/sokp170krauss.pdf used on input line 205.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[56 <D:/Vanis-Sumo/thesis/real/sokp170orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf
+[56 <D:/Vanis-Sumo/thesis/krauss/sokp218krauss.pdf> <D:/Vanis-Sumo/thesis/krauss/sokp201krauss.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/krauss/sokp218krauss.pdf
-
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp218krauss.pdf): PDF inclusion: multiple pdfs with pag
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp201krauss.pdf): PDF inclusion: multiple pdfs with pag
 e group included in a single page
 >]
-Overfull \hbox (2.41666pt too wide) in paragraph at lines 233--234
+Overfull \hbox (2.41666pt too wide) in paragraph at lines 225--226
 [][]\OT1/cmr/m/n/10.95 Vsechny pa-ra-me-try byly po-nechany stejne jako u Kraus-sova mo-delu. Kraussuv a rozsren
 y|
  []
 
 File: real/sokp218orig.pdf Graphic file (type pdf)
 <use real/sokp218orig.pdf>
-Package pdftex.def Info: real/sokp218orig.pdf used on input line 237.
+Package pdftex.def Info: real/sokp218orig.pdf used on input line 229.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp218kraussOrig.pdf, id=1442, 361.35pt x 216.81pt>
+ <kraussOrig/sokp218kraussOrig.pdf, id=1439, 361.35pt x 216.81pt>
 File: kraussOrig/sokp218kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp218kraussOrig.pdf>
-Package pdftex.def Info: kraussOrig/sokp218kraussOrig.pdf used on input line 237.
+Package pdftex.def Info: kraussOrig/sokp218kraussOrig.pdf used on input line 229.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1274,13 +1266,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
-Package pdftex.def Info: real/sokp201orig.pdf used on input line 246.
+Package pdftex.def Info: real/sokp201orig.pdf used on input line 238.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp201kraussOrig.pdf, id=1443, 361.35pt x 216.81pt>
+ <kraussOrig/sokp201kraussOrig.pdf, id=1440, 361.35pt x 216.81pt>
 File: kraussOrig/sokp201kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp201kraussOrig.pdf>
-Package pdftex.def Info: kraussOrig/sokp201kraussOrig.pdf used on input line 246.
+Package pdftex.def Info: kraussOrig/sokp201kraussOrig.pdf used on input line 238.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1288,13 +1280,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
-Package pdftex.def Info: real/sokp187orig.pdf used on input line 255.
+Package pdftex.def Info: real/sokp187orig.pdf used on input line 247.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp187kraussOrig.pdf, id=1444, 361.35pt x 216.81pt>
+ <kraussOrig/sokp187kraussOrig.pdf, id=1441, 361.35pt x 216.81pt>
 File: kraussOrig/sokp187kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp187kraussOrig.pdf>
-Package pdftex.def Info: kraussOrig/sokp187kraussOrig.pdf used on input line 255.
+Package pdftex.def Info: kraussOrig/sokp187kraussOrig.pdf used on input line 247.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1302,35 +1294,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
-Package pdftex.def Info: real/sokp170orig.pdf used on input line 264.
+Package pdftex.def Info: real/sokp170orig.pdf used on input line 256.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp170kraussOrig.pdf, id=1445, 361.35pt x 216.81pt>
+ <kraussOrig/sokp170kraussOrig.pdf, id=1442, 361.35pt x 216.81pt>
 File: kraussOrig/sokp170kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp170kraussOrig.pdf>
-Package pdftex.def Info: kraussOrig/sokp170kraussOrig.pdf used on input line 264.
+Package pdftex.def Info: kraussOrig/sokp170kraussOrig.pdf used on input line 256.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[57 <D:/Vanis-Sumo/thesis/krauss/sokp201krauss.pdf> <D:/Vanis-Sumo/thesis/krauss/sokp187krauss.pdf
+[57 <D:/Vanis-Sumo/thesis/krauss/sokp187krauss.pdf> <D:/Vanis-Sumo/thesis/krauss/sokp170krauss.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp187krauss.pdf): PDF inclusion: multiple pdfs with pag
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp170krauss.pdf): PDF inclusion: multiple pdfs with pag
 e group included in a single page
->] [58 <D:/Vanis-Sumo/thesis/krauss/sokp170krauss.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp218kraussOrig.pdf
+>] [58 <D:/Vanis-Sumo/thesis/kraussOrig/sokp218kraussOrig.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp201kraussOrig.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp218kraussOrig.pdf): PDF inclusion: multiple pdfs 
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp201kraussOrig.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
 >]
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
-Package pdftex.def Info: real/sokp218orig.pdf used on input line 299.
+Package pdftex.def Info: real/sokp218orig.pdf used on input line 291.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp218IDM.pdf, id=1493, 361.35pt x 216.81pt>
+ <IDM/sokp218IDM.pdf, id=1490, 361.35pt x 216.81pt>
 File: IDM/sokp218IDM.pdf Graphic file (type pdf)
  <use IDM/sokp218IDM.pdf>
-Package pdftex.def Info: IDM/sokp218IDM.pdf used on input line 299.
+Package pdftex.def Info: IDM/sokp218IDM.pdf used on input line 291.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1338,12 +1330,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
-Package pdftex.def Info: real/sokp201orig.pdf used on input line 308.
+Package pdftex.def Info: real/sokp201orig.pdf used on input line 300.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp201IDM.pdf, id=1494, 361.35pt x 216.81pt>
+ <IDM/sokp201IDM.pdf, id=1491, 361.35pt x 216.81pt>
 File: IDM/sokp201IDM.pdf Graphic file (type pdf)
  <use IDM/sokp201IDM.pdf>
-Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 308.
+Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 300.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1351,12 +1343,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
-Package pdftex.def Info: real/sokp187orig.pdf used on input line 317.
+Package pdftex.def Info: real/sokp187orig.pdf used on input line 309.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp187IDM.pdf, id=1495, 361.35pt x 216.81pt>
+ <IDM/sokp187IDM.pdf, id=1492, 361.35pt x 216.81pt>
 File: IDM/sokp187IDM.pdf Graphic file (type pdf)
  <use IDM/sokp187IDM.pdf>
-Package pdftex.def Info: IDM/sokp187IDM.pdf used on input line 317.
+Package pdftex.def Info: IDM/sokp187IDM.pdf used on input line 309.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1364,49 +1356,49 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
-Package pdftex.def Info: real/sokp170orig.pdf used on input line 326.
+Package pdftex.def Info: real/sokp170orig.pdf used on input line 318.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp170IDM.pdf, id=1496, 361.35pt x 216.81pt>
+ <IDM/sokp170IDM.pdf, id=1493, 361.35pt x 216.81pt>
 File: IDM/sokp170IDM.pdf Graphic file (type pdf)
  <use IDM/sokp170IDM.pdf>
-Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 326.
+Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 318.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[59 <D:/Vanis-Sumo/thesis/kraussOrig/sokp201kraussOrig.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp187kraussOrig.pdf
+[59 <D:/Vanis-Sumo/thesis/kraussOrig/sokp187kraussOrig.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp170kraussOrig.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp187kraussOrig.pdf): PDF inclusion: multiple pdfs 
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp170kraussOrig.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
->] <wiedemann/sokp187Wiedemann.pdf, id=1521, 361.35pt x 216.81pt>
+>] <wiedemann/sokp187Wiedemann.pdf, id=1518, 361.35pt x 216.81pt>
 File: wiedemann/sokp187Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp187Wiedemann.pdf>
-Package pdftex.def Info: wiedemann/sokp187Wiedemann.pdf used on input line 346.
+Package pdftex.def Info: wiedemann/sokp187Wiedemann.pdf used on input line 338.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<wiedemann/sokp170Wiedemann.pdf, id=1522, 361.35pt x 216.81pt>
+<wiedemann/sokp170Wiedemann.pdf, id=1519, 361.35pt x 216.81pt>
 File: wiedemann/sokp170Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp170Wiedemann.pdf>
-Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 346.
+Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 338.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [60 <D:/Vanis-Sumo/thesis/kraussOrig/sokp170kraussOrig.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf
+) [60 <D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp201IDM.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf): PDF inclusion: multiple pdfs with page grou
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp201IDM.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
->] [61 <D:/Vanis-Sumo/thesis/IDM/sokp201IDM.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp187IDM.pdf
-
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp187IDM.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
-> <D:/Vanis-Sumo/thesis/IDM/sokp170IDM.pdf
+>] [61 <D:/Vanis-Sumo/thesis/IDM/sokp187IDM.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp170IDM.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp170IDM.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
->] [62 <D:/Vanis-Sumo/thesis/wiedemann/sokp187Wiedemann.pdf> <D:/Vanis-Sumo/thesis/wiedemann/sokp170Wiedemann.pdf
+> <D:/Vanis-Sumo/thesis/wiedemann/sokp187Wiedemann.pdf
+
+pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/wiedemann/sokp187Wiedemann.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+> <D:/Vanis-Sumo/thesis/wiedemann/sokp170Wiedemann.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/wiedemann/sokp170Wiedemann.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
@@ -1415,92 +1407,92 @@ Kapitola 6.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[63
+[62
 
 
 
-] <porovnani/brana218.pdf, id=1613, 361.35pt x 216.81pt>
+] <porovnani/brana218.pdf, id=1597, 361.35pt x 216.81pt>
 File: porovnani/brana218.pdf Graphic file (type pdf)
  <use porovnani/brana218.pdf>
-Package pdftex.def Info: porovnani/brana218.pdf used on input line 86.
+Package pdftex.def Info: porovnani/brana218.pdf used on input line 87.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana201.pdf, id=1614, 361.35pt x 216.81pt>
+<porovnani/brana201.pdf, id=1598, 361.35pt x 216.81pt>
 File: porovnani/brana201.pdf Graphic file (type pdf)
  <use porovnani/brana201.pdf>
-Package pdftex.def Info: porovnani/brana201.pdf used on input line 86.
+Package pdftex.def Info: porovnani/brana201.pdf used on input line 87.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana187.pdf, id=1615, 361.35pt x 216.81pt>
+<porovnani/brana187.pdf, id=1599, 361.35pt x 216.81pt>
 File: porovnani/brana187.pdf Graphic file (type pdf)
  <use porovnani/brana187.pdf>
-Package pdftex.def Info: porovnani/brana187.pdf used on input line 91.
+Package pdftex.def Info: porovnani/brana187.pdf used on input line 92.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana170.pdf, id=1616, 361.35pt x 216.81pt>
+<porovnani/brana170.pdf, id=1600, 361.35pt x 216.81pt>
 File: porovnani/brana170.pdf Graphic file (type pdf)
  <use porovnani/brana170.pdf>
-Package pdftex.def Info: porovnani/brana170.pdf used on input line 91.
+Package pdftex.def Info: porovnani/brana170.pdf used on input line 92.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[64] <porovnani/chyba218.pdf, id=1628, 361.35pt x 216.81pt>
+[63] <porovnani/chyba218.pdf, id=1612, 361.35pt x 216.81pt>
 File: porovnani/chyba218.pdf Graphic file (type pdf)
  <use porovnani/chyba218.pdf>
-Package pdftex.def Info: porovnani/chyba218.pdf used on input line 107.
+Package pdftex.def Info: porovnani/chyba218.pdf used on input line 108.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba201.pdf, id=1629, 361.35pt x 216.81pt>
+<porovnani/chyba201.pdf, id=1613, 361.35pt x 216.81pt>
 File: porovnani/chyba201.pdf Graphic file (type pdf)
  <use porovnani/chyba201.pdf>
-Package pdftex.def Info: porovnani/chyba201.pdf used on input line 107.
+Package pdftex.def Info: porovnani/chyba201.pdf used on input line 108.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba187.pdf, id=1630, 361.35pt x 216.81pt>
+<porovnani/chyba187.pdf, id=1614, 361.35pt x 216.81pt>
 File: porovnani/chyba187.pdf Graphic file (type pdf)
  <use porovnani/chyba187.pdf>
-Package pdftex.def Info: porovnani/chyba187.pdf used on input line 112.
+Package pdftex.def Info: porovnani/chyba187.pdf used on input line 113.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170.pdf, id=1631, 361.35pt x 216.81pt>
+<porovnani/chyba170.pdf, id=1615, 361.35pt x 216.81pt>
 File: porovnani/chyba170.pdf Graphic file (type pdf)
  <use porovnani/chyba170.pdf>
-Package pdftex.def Info: porovnani/chyba170.pdf used on input line 112.
+Package pdftex.def Info: porovnani/chyba170.pdf used on input line 113.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<porovnani/chyba170Gipps.pdf, id=1632, 361.35pt x 216.81pt>
+<porovnani/chyba170Gipps.pdf, id=1616, 361.35pt x 216.81pt>
 File: porovnani/chyba170Gipps.pdf Graphic file (type pdf)
  <use porovnani/chyba170Gipps.pdf>
-Package pdftex.def Info: porovnani/chyba170Gipps.pdf used on input line 121.
+Package pdftex.def Info: porovnani/chyba170Gipps.pdf used on input line 122.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170Krauss.pdf, id=1633, 361.35pt x 216.81pt>
+<porovnani/chyba170Krauss.pdf, id=1617, 361.35pt x 216.81pt>
 File: porovnani/chyba170Krauss.pdf Graphic file (type pdf)
  <use porovnani/chyba170Krauss.pdf>
-Package pdftex.def Info: porovnani/chyba170Krauss.pdf used on input line 121.
+Package pdftex.def Info: porovnani/chyba170Krauss.pdf used on input line 122.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170KraussOrig.pdf, id=1634, 361.35pt x 216.81pt>
+<porovnani/chyba170KraussOrig.pdf, id=1618, 361.35pt x 216.81pt>
 File: porovnani/chyba170KraussOrig.pdf Graphic file (type pdf)
  <use porovnani/chyba170KraussOrig.pdf>
-Package pdftex.def Info: porovnani/chyba170KraussOrig.pdf used on input line 126.
+Package pdftex.def Info: porovnani/chyba170KraussOrig.pdf used on input line 127.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170IDM.pdf, id=1635, 361.35pt x 216.81pt>
+<porovnani/chyba170IDM.pdf, id=1619, 361.35pt x 216.81pt>
 File: porovnani/chyba170IDM.pdf Graphic file (type pdf)
  <use porovnani/chyba170IDM.pdf>
-Package pdftex.def Info: porovnani/chyba170IDM.pdf used on input line 126.
+Package pdftex.def Info: porovnani/chyba170IDM.pdf used on input line 127.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[65 <D:/Vanis-Sumo/thesis/porovnani/brana218.pdf> <D:/Vanis-Sumo/thesis/porovnani/brana201.pdf
+[64 <D:/Vanis-Sumo/thesis/porovnani/brana218.pdf> <D:/Vanis-Sumo/thesis/porovnani/brana201.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana201.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
@@ -1512,7 +1504,7 @@ group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana170.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
->] [66 <D:/Vanis-Sumo/thesis/porovnani/chyba218.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba201.pdf
+>] [65 <D:/Vanis-Sumo/thesis/porovnani/chyba218.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba201.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba201.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
@@ -1524,7 +1516,7 @@ group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
->]) [67 <D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf
+>]) [66 <D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf): PDF inclusion: multiple pdfs with
  page group included in a single page
@@ -1567,11 +1559,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \OT1/cmtt/m/n/10.95 pdf ? _tid = fdf19d26-[]f011-[]11e4-[]97be-[]00000aacb35e & acdnat = 1430492259 _
  []
 
-[68
+[67
 
 
 
-]) [69] (D:\Vanis-Sumo\thesis\priloha.tex
+]) [68] (D:\Vanis-Sumo\thesis\priloha.tex
 P\v {r}\'{\i }loha A.
 
 Overfull \hbox (10.11206pt too wide) in paragraph at lines 10--11
@@ -1631,14 +1623,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
-(rerunfilecheck)             Checksum: 8BC37A183C1C484F865F39B80EA831A8;15155.
+(rerunfilecheck)             Checksum: A5AC48F95183378C5D76E4465DCBF850;14790.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 31205 strings out of 493921
- 676995 string characters out of 3151295
- 865447 words of memory out of 3000000
- 33429 multiletter control sequences out of 15000+200000
+ 31201 strings out of 493921
+ 676945 string characters out of 3151295
+ 864479 words of memory out of 3000000
+ 33428 multiletter control sequences out of 15000+200000
  11822 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,28n,76p,1221b,1248s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1654,9 +1646,9 @@ pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/TeX/MiKTeX 2.
 y6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (80 pages, 1928047 bytes).
+Output written on bakalarka.pdf (79 pages, 1925204 bytes).
 PDF statistics:
- 2041 PDF objects out of 2073 (max. 8388607)
- 497 named destinations out of 1000 (max. 500000)
- 993 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2025 PDF objects out of 2073 (max. 8388607)
+ 494 named destinations out of 1000 (max. 500000)
+ 977 words of extra memory for PDF output out of 10000 (max. 10000000)
 
