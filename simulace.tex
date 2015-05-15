@@ -1,6 +1,6 @@
 \chapter{Simulace}
 
-V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6 - viz obrázek \ref{usekdalnice}.
+V této kapitole se pokusíme zhodnotit nasimulované výsledky z modelù. Simulován bude osmikilometrový úsek na Pražském okruhu mezi 22. a 14. kilometrem. Data z mýtných brán máme k dispozici pøibližnì po dvou kilometrech, celkem jich je 6 - viz obrázek \ref{usekdalnice}.
 
 \begin{figure}[h]%
 \centering
@@ -9,9 +9,9 @@ V této kapitole nasimulujeme provoz na Pražském okruhu od kilometru 22 do 14 km.
 \label{usekdalnice}%
 \end{figure}
 
-Grafický podklad byl naimportován s OSM dle obrázku \ref{usekdalnice} - viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì. 
+Grafický podklad byl naimportován s OSM dle obrázku \ref{usekdalnice} - viz pøíloha \ref{chap:netSUMO}, nicménì po pøevedení do formátu SUMO nìkteré úseky nejsou zobrazeny pro simulaci úplnì pøesnì. Z dùvodu nepøesnosti pøevodu infrastruktury mezi OSM a SUMO je u mýtné brány 201 o jeden jízdní pruh více než ve skuteènosti.
 
-Prvním dùležitým zjištìním byla data z mýtných bran, a to konkrétnì, že brána 157 (viz obrázky \ref{b157_28} a \ref{b157_07}) a brána 145 (viz obrázky \ref{b145_28} a \ref{b145_07}) obsahují nekvalitní data. Obrázek znázoròuje èasovou osu, kde na ose x je èas (poèítán po minutách) a na ose y je vynášen poèet vozidel. U brány 145 to není na první pohled vidìt, nicménì pokud se podíváme na intenzitu provozu na bránì 170 (viz obrázky \ref{b170_28} a \ref{b170_07}), vidíme, že více jak o 50\% vyšší než u brány 157, což je nesmysl.
+Nejprve jsme provedli kontrolu dat z mýtných bran. Bohužel touto kontrolou bylo zjištìno, že brána 157 (viz obrázky \ref{b157_28} a \ref{b157_07}) a brána 145 (viz obrázky \ref{b145_28} a \ref{b145_07}) obsahují nekvalitní data. Obrázek znázoròuje èasovou osu, kde na ose x je èas (poèítán po minutách) a na ose y je vynášen poèet vozidel. Problém u brány 145 to není na první pohled vidìt, nicménì pokud se podíváme na intenzitu provozu na bránì 170 (viz obrázky \ref{b170_28} a \ref{b170_07}), vidíme, že více jak o 50\% vyšší než u brány 157, což je nesmysl.
 
 \begin{figure}%
  \centering
@@ -71,13 +71,11 @@ Prvním dùležitým zjištìním byla data z mýtných bran, a to konkrétnì, že brána 15
 	\end{minipage}			
 \end{figure}
 
-Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170. V pøedcházející èásti této sekce jsem pouze chtìl upozornit, že je velmi dùležité zkontrolovat data pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec není.
+Zamìøíme se proto hlavnì na úsek mezi branami 218 a 170, což je pro zkoumání modelù plnì postaèující. Velmi dùležité je ovšem data zkontrolovat ještì pøedtím, než mají být použity napø. pro simulaci, aby se nehledala chyba nìkde, kde nakonec vùbec není.
 
-Z dùvodu nepøesnosti pøevodu infrastruktury mezi OSM a SUMO je u mýtné brány 201 o jeden jízdní pruh více než ve skuteènosti.
+Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté porovnáme jednotlivé modely. Tyto modely zaèneme kalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme zpøesòovat.
 
-Postupnì nasimulujeme tento úsek Gippsovým, Kraussovým, IDM a Wiedemannovým modelem a poté zkusíme jednotlivé modely porovnat. Modely se pøedtím pokusíme nakalibrovat tak, že vezmeme hodnoty doporuèené pro simulaci autory a dále je budeme zpøesòovat.
-
-Jako kritérium pro validní model použijeme GEH \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \ref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
+Jako kritérium pro validní model použijeme formuli GEH \ref{sec:GEH}. Máme totiž k dispozici data z detektorù ($c$) a nasimulovaná data pomocí jednotlivých modelù ($m$) z rovnice \ref{eq:GEH}. Intenzity poèítáme jako souèet poètu vozidel za hodinu pro reálná i nasimulovaná data.
 
 Èas vjezdu vozidel byl vždy generován z exponenciálního rozdìlení, kde parametr rozdìlení byl poèet vozidel v danou minutu.
 
@@ -89,8 +87,7 @@ Nìkteré parametry modelù èi vozidel jsou pro všechny modely stejná, konkrétnì
 \begin{itemize}
 	\item reakèní èas $T_n = 1 s$,
 	\item délka vozidla $l = 4,5 m$,
-	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$
-  \item \rem{doplnit jestli jeste neco bude}.
+	\item bezpeènostní odstup (minimální mezera mezi vozidly) $s = 2 m$.
 \end{itemize}
 
 Pro vyzkoušení funkènosti simulací a správné kalibrace modelù byl jako první den vzat svátek 28.10.2012.
