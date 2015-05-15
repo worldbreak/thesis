@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  14 MAY 2015 17:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  15 MAY 2015 14:27
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -1319,12 +1319,12 @@ with page group included in a single page
 >]
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
-Package pdftex.def Info: real/sokp218orig.pdf used on input line 301.
+Package pdftex.def Info: real/sokp218orig.pdf used on input line 302.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
  <IDM/sokp218IDM.pdf, id=1493, 361.35pt x 216.81pt>
 File: IDM/sokp218IDM.pdf Graphic file (type pdf)
  <use IDM/sokp218IDM.pdf>
-Package pdftex.def Info: IDM/sokp218IDM.pdf used on input line 301.
+Package pdftex.def Info: IDM/sokp218IDM.pdf used on input line 302.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1332,12 +1332,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
-Package pdftex.def Info: real/sokp201orig.pdf used on input line 310.
+Package pdftex.def Info: real/sokp201orig.pdf used on input line 311.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
  <IDM/sokp201IDM.pdf, id=1494, 361.35pt x 216.81pt>
 File: IDM/sokp201IDM.pdf Graphic file (type pdf)
  <use IDM/sokp201IDM.pdf>
-Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 310.
+Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 311.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1345,12 +1345,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
-Package pdftex.def Info: real/sokp187orig.pdf used on input line 319.
+Package pdftex.def Info: real/sokp187orig.pdf used on input line 320.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
  <IDM/sokp187IDM.pdf, id=1495, 361.35pt x 216.81pt>
 File: IDM/sokp187IDM.pdf Graphic file (type pdf)
  <use IDM/sokp187IDM.pdf>
-Package pdftex.def Info: IDM/sokp187IDM.pdf used on input line 319.
+Package pdftex.def Info: IDM/sokp187IDM.pdf used on input line 320.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1358,12 +1358,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
-Package pdftex.def Info: real/sokp170orig.pdf used on input line 328.
+Package pdftex.def Info: real/sokp170orig.pdf used on input line 329.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
  <IDM/sokp170IDM.pdf, id=1496, 361.35pt x 216.81pt>
 File: IDM/sokp170IDM.pdf Graphic file (type pdf)
  <use IDM/sokp170IDM.pdf>
-Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 328.
+Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 329.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1376,13 +1376,13 @@ with page group included in a single page
 >] <wiedemann/sokp187Wiedemann.pdf, id=1521, 361.35pt x 216.81pt>
 File: wiedemann/sokp187Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp187Wiedemann.pdf>
-Package pdftex.def Info: wiedemann/sokp187Wiedemann.pdf used on input line 348.
+Package pdftex.def Info: wiedemann/sokp187Wiedemann.pdf used on input line 349.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 <wiedemann/sokp170Wiedemann.pdf, id=1522, 361.35pt x 216.81pt>
 File: wiedemann/sokp170Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp170Wiedemann.pdf>
-Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 348.
+Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 349.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
 
@@ -1494,7 +1494,7 @@ Package pdftex.def Info: porovnani/chyba170IDM.pdf used on input line 124.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [65 <D:/Vanis-Sumo/thesis/porovnani/brana218.pdf> <D:/Vanis-Sumo/thesis/porovnani/brana201.pdf
+[65 <D:/Vanis-Sumo/thesis/porovnani/brana218.pdf> <D:/Vanis-Sumo/thesis/porovnani/brana201.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana201.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
@@ -1518,11 +1518,7 @@ group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf
-
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf): PDF inclusion: multiple pdfs with 
-page group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf
+>]) [67 <D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf): PDF inclusion: multiple pdfs with
  page group included in a single page
@@ -1565,11 +1561,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 \OT1/cmtt/m/n/10.95 pdf ? _tid = fdf19d26-[]f011-[]11e4-[]97be-[]00000aacb35e & acdnat = 1430492259 _
  []
 
-[67
+[68
 
 
 
-]) [68] (D:\Vanis-Sumo\thesis\priloha.tex
+]) [69] (D:\Vanis-Sumo\thesis\priloha.tex
 P\v {r}\'{\i }loha A.
 
 Overfull \hbox (10.11206pt too wide) in paragraph at lines 10--11
@@ -1633,10 +1629,10 @@ Package rerunfilecheck Info: File `bakalarka.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
- 31202 strings out of 493921
- 676957 string characters out of 3151295
- 864583 words of memory out of 3000000
- 33427 multiletter control sequences out of 15000+200000
+ 31209 strings out of 493921
+ 677041 string characters out of 3151295
+ 864639 words of memory out of 3000000
+ 33433 multiletter control sequences out of 15000+200000
  11822 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,28n,76p,1221b,1248s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1652,9 +1648,9 @@ pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/TeX/MiKTeX 2.
 y6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (79 pages, 1923200 bytes).
+Output written on bakalarka.pdf (80 pages, 1927753 bytes).
 PDF statistics:
- 2033 PDF objects out of 2073 (max. 8388607)
- 496 named destinations out of 1000 (max. 500000)
+ 2042 PDF objects out of 2073 (max. 8388607)
+ 497 named destinations out of 1000 (max. 500000)
  993 words of extra memory for PDF output out of 10000 (max. 10000000)
 
