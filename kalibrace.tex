@@ -2,9 +2,11 @@
 
 \section{Struèný úvod do simulaèních modelù}
 
-Je známo, že simulace je vhodná možnost jak provést experimentální test v porovnání s odlišnými návrhy systému. Daleko lepší možností je pokus provést na modelu v poèítaèi než na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterých reálných systémech nelze ani pokus provést. Výsledky tohoto experimentu na poèítaèi mohou poskytnout mnoho užiteèných informací, na jejichž základì je napø. možné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, který je urèen k øízení pokusù s modelem systému s cílem sestavení platných výsledkù i pro reálný systém. Jinými slovy simulaèní model se používá  k odpovìdi na otázky typu \uv{Co když?}.
+Èasto se stávají situace, že je potøeba vyzkoušet urèitou možnost, a není možné zkoumat chování systému ve skuteènosti. Takovým systémem mùže být v našem pøípadì dálnice a možností uzavøení jednoho pruhu pøi dopravní nehodì. Model, který vytváøíme, je jakési zjednodušení skuteènosti se snahou zachování co nejvíce vlastností systému.
 
-Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokladu, že vývoj modelu systému v èase vhodnì napodobuje vývoj reálného systému, mùžeme sbírat informace o modelu (napø. promìnné) a posléze pøi použití statistickým metod èi jiného vhodného matematického aparátu a následných dalších experimentù mùžeme díky tomu navrhnout i budoucí chování systému. Tato myšlenka je znázornìna na obrázku \ref{aimsunmodel}.
+V tuto chvíli se simulace jeví jako vhodná varianta jak provést experimentální test. Obecnì je totiž daleko lepší možností provést pokus na modelu v poèítaèi než na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterých reálných systémech nelze ani pokus provést. Výsledky tohoto pokusu na poèítaèi mohou poskytnout mnoho užiteèných informací, na jejichž základì je napø. možné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, který je urèen k øízení pokusù s modelem systému s cílem sestavení platných výsledkù i pro reálný systém.
+
+Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokladu, že vývoj modelu systému v èase vhodnì napodobuje vývoj reálného systému, mùžeme sbírat informace o modelu (napø. promìnné) a posléze pøi použití statistickým metod èi jiného vhodného matematického aparátu a následných dalších experimentù mùžeme díky tomu navrhnout i budoucí chování systému. Typickým pøíkladem mùže být liniové øízení na dálnici, kde model neustále zpracovává namìøené parametry dopravního proudu (promìnné) a na jejich základì mùže zmìnit rychlost promìnným dopravním znaèením (budoucí chování systému). Tato myšlenka je znázornìna na obrázku \ref{aimsunmodel}.
 
 \begin{figure}[h]%
 \centering
@@ -13,15 +15,15 @@ Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokla
 \label{aimsunmodel}%
 \end{figure}
 
-Spolehlivost procesu rozhodování záleží na schopnosti vytvoøit takový simulaèní model, který reprezentuje chování reálného systému s dostateènou pøesností. Reálný systém potom mùže být nahrazen modelem a na modelu je možné provádìt rùzné experimenty. Toto platí pro simulaèní analýzu obecnì a zùstává platné i pro dopravní simulace. Proces urèující, zda je simulaèní model dostateènì podobný reálnému systému, se nazývá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to možné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom použity k vylepšení modelu. Je nutné si uvìdomit, že model by mohl být vylepšován neustále. Je proto nezbytné urèit práh, kdy model již dává postaèující výsledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli již není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla být brána v potaz bìhem celého procesu vytváøení modelu.
+Spolehlivost procesu rozhodování záleží na schopnosti vytvoøit takový simulaèní model, který reprezentuje chování reálného systému s dostateènou pøesností. Ve chvíli, kdy je již model dostateènì pøesný, mùže být reálný systém nahrazen modelem a na modelu je možné provádìt rùzné experimenty. Proces urèující, zda je simulaèní model dostateènì podobný reálnému systému, se nazývá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to možné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom použity k vylepšení modelu. Je nutné si uvìdomit, že model by mohl být vylepšován neustále. Je proto nezbytné urèit práh, kdy model již dává postaèující výsledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli již není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla být brána v potaz bìhem celého procesu vytváøení modelu.
 
 \section{Validace modelù}
 
-Hlavní zdroj pro informace k validaci modelù je použito \cite{Kelton}.  V \cite{Balci} je ještì více do pododrobna rozebrána problematika validace a verifikace modelù.
+Hlavní zdroj informací k validaci modelù je použito \cite{Kelton}.  V \cite{Balci} je ještì více do pododrobna rozebrána problematika validace a verifikace modelù.
 
 \textbf{Verifikace} je v první øadì rozhodnutí zda simulaèní program vykonává pøesnì to, co bylo zamýšleno, to jest odstranìní chyb z programu. Verifikace tedy kontroluje \uv{pøenesení} simulaèního modelu do správnì fungujícího programu.
 
-Verifikace obvykle znamená spuštìní programu s implementovaným simulaèním modelem s rùzným nastavením vstupních parametrù a kontrolou, zda jsou výsledky simulace pøijatelné. V nìkterých pøípadech je možné nìkteré výpoèty provádìt analyticky a posléze numerickou simulací výsledky porovnat a tím zjistit pøijatelnost výstupù. To bohužel není pøípad dopravních modelù.
+Verifikace obvykle znamená spuštìní programu s implementovaným simulaèním modelem s rùzným nastavením vstupních parametrù a kontrolou, zda jsou výsledky simulace pøijatelné. V nìkterých pøípadech je možné nìkteré výpoèty provádìt analyticky a posléze numerickou simulací výsledky porovnat a tím zjistit pøijatelnost výstupù. To bohužel není pøípad Car-following modelù.
 
 \textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou být rozhodnutí, která byla provedena na základì simulaèního modelu stejná, jako kdyby se provádìl experiment na reálném systému. 
 
@@ -44,11 +46,11 @@ Law and Kelton \cite{Kelton} dále navrhli postup, jak vyvinout validní a vìrohod
 
 \paragraph{Vytvoøení modelu se zjevnou validitou}
 
-Pokud lidé, kteøí rozumí reálnému systému, potvrdí že simulaèní model vypadá racionálnì, potom mùžeme tvrdit že jde o model se zjevnou validitou.
+Pøi vytváøení modelu je dùležité, aby model prozkoumal odborník, resp. èlovìk, které rozumí dané problematice. Pokud uzná, že simulaèní model vypadá racionálnì, potom mùžeme tvrdit že jde o model se zjevnou validitou.
 
-Pro dosažení takového modelu je dle \cite{Kelton} nutné, aby
+Aby byl model oznaèen za model se zjevnou validitou je dle \cite{Kelton} nutné, aby
 \begin{itemize}
-	\item èlovìk vytváøející nový model by mìl spolupracovat s lidmi, kteøí jsou dùvìrnì obeznámeni s reálným systémem,
+	\item analytik by mìl spolupracovat s lidmi, kteøí jsou dùvìrnì obeznámeni s reálným systémem,
 	\item analytik musí být dùsledný pøi získávání všech požadovaných informací,
 	\item pokud existují historická data, mìla by být získána a použita pøi tvorbì modelu,
 	\item dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
@@ -58,7 +60,7 @@ Pro dosažení takového modelu je dle \cite{Kelton} nutné, aby
 
 Jestliže je použito pravdìpodobností rozdìlení jako vstupní parametr simulaèního modelu na základì shody s reálnými daty, u výstupu musí být tyto okolnosti zohlednìny.
 
-Další vlastnost ovlivòující model je citlivost na poèáteèní podmínky. Pokud se výstupní data signifikatnì zmìní pouze na základì nepatrné zmìny vstupních parametrù, model potom mùže pùsobit chaoticky.
+Z dalších okolností musí být zohlednìna citlivost na poèáteèní podmínky. To nastává tehdy, když nepatrná zmìna vstupních parametrù zpùsobí signifikatní zmìnu dat.
 
 Tyto dvì podmínky musí být pøi vyhodnocení testování také zahrnuty.
 
@@ -74,10 +76,12 @@ Hlavní test, kterým se posuzuje validita simulaèního modelu, je porovnání výstup
 \label{validace}%
 \end{figure}
 
-Shrnutí této èásti o validaci je názornì zobrazeno na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterých situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv to není v obrázku \ref{validace} zahrnuto , je dùležité nezapomínat, že celý proces modelování je nutné brát jako iterativní a že nìkteré postupy se mùžou opakovat a to nìkolikrát.
+Shrnutí této èásti o validaci je názornì zobrazeno na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterých situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv to není v obrázku \ref{validace} zahrnuto , je dùležité nezapomínat, že celý proces modelování je nutné brát jako iterativní a že nìkteré postupy se mùžou opakovat a to i nìkolikrát.
 
-Validace modelu tedy znamená proces testování, že model skuteènì pøedstavuje uskuteènitelnou a použitelnou alternativu k experimentování se systémem. Jednou z èásti je kalibrace modelu, což znamená pøizpùsobování parametrù modelu dokud výstupní data nepodobají datùm pozorovaných na systému. Další otázkou potom je, zda je model nakalibrován pouze na urèitou sadu vstupních dat èi je nakalibrován všeobecnì pro rùzné typy vstupních dat. Abychom tuto otázku náležitì zodpovìdìli, analytik musí použít dva nezávislé soubory dat, jednu pro kalibraci a druhou pro validaci. První soubor by mìl být použit ke kalibraci modelu, druhý pro vyzkoušení nakalibrovaného modelu a poté k validaci tohoto modelu. Výsledný soubor dat je posléze porovnán s druhým souborem dat ze systému.
-
+Validace modelu tedy znamená proces testování, že model skuteènì pøedstavuje uskuteènitelnou a použitelnou alternativu k experimentování se systémem. Jednou z èástí je kalibrace modelu, což znamená pøizpùsobování parametrù modelu do té chvíle, kdy se výstupní data nepodobají datùm pozorovaných na systému. Další otázkou potom je, zda je model nakalibrován pouze na urèitou sadu vstupních dat èi je nakalibrován všeobecnì pro rùzné typy vstupních dat. 
+\begin{comment}
+Abychom tuto otázku náležitì zodpovìdìli, analytik musí použít dva nezávislé soubory dat, jednu pro kalibraci a druhou pro validaci. První soubor by mìl být použit ke kalibraci modelu, druhý pro vyzkoušení nakalibrovaného modelu a poté k validaci tohoto modelu. Výsledný soubor dat je posléze porovnán s druhým souborem dat ze systému.
+\end{comment}
 Simulaèní model je validován na základì porovnání dat mezi pozorovanými výstupními daty systému a výstupními daty vytvoøenými poèítaèovým modelem.
 
 Tento proces je schématicky znázornìn na obrázku \ref{validmodel}.
@@ -107,7 +111,7 @@ Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \
 \subsection{Statistický test støední hodnoty}
 \label{strednihodnota}
 
-Statistickým testem støední hodnoty budeme kontrolovat zda model nemá náhodou støední hodnotu rozdílnou od nuly. V tom pøípadì by to znaèilo nepøesnost v modelu èi v jeho kalibraci.
+Statistickým testem støední hodnoty budeme kontrolovat, zda model nemá støední hodnotu rozdílnou od nuly. V tom pøípadì by to znaèilo nepøesnost v modelu èi v jeho kalibraci.
 
 Výstupem simulace bude soubor hodnot promìnných, v našem pøípadì nejspíše intenzit, které zaznamenáváme každou vzorkovací periodu. Napøíklad, pøedpokládejme, že simulace má vzorkovací periodu 1 minuta - to znamená, že každou minutu pøibývají hodnoty intenzit. Promìnná, která nás zajímá každou vzorkovací periodu, je intenzita $w$, výsledek simulaèního modelu tedy bude soubor hodnot $w_{ij}$, kde indexem $i$ znaèíme konkrétní detektor a $j$ je èas zaznamenání. Index $i$ probíhá od 1 do n,
 \[
@@ -121,7 +125,7 @@ kde m je poèet vzorkovacích period v simulaci.
 
 Pokud $v_{ij}$ oznaèíme namìøenou intenzitu, v pøípadì Pražského okruhu mýtnou branou, kde indexy i a j budou stejné jako v pøípadì modelu, klasická statistická technika k validaci modelu bude porovnání hodnot $v_{ij}$ a $w_{ij}$ a zjištìní zda jsou u sebe dostateènì blízko.
 
-Pro detektor i bude porovnání založeno na testování zda rozdíl
+Pro detektor $i$ bude porovnání založeno na testování zda rozdíl
 \begin{equation}
 d_i = w_{ij} - v_{ij}
 \label{eq:difflow}
@@ -133,7 +137,7 @@ má støední hodnotu $\overline{d}_i$ významnì vzdálenou od nuly èi nikoliv. K tom
 \label{eq:tstat}
 \end{equation}
 
-kde $\delta_i$ je pøedpokládaná hodnota $\overline{d}_i$ a $\overline{s}_d$ je smìrodatná odchylka od $\overline{d}_i$.
+kde $\overline{s}_d$ je smìrodatná odchylka od $\overline{d}_i$.
 
 Jako nulovou hypotézu oznaèíme
 \begin{equation}
@@ -141,13 +145,14 @@ H_0 : \delta_i = 0.
 \label{eq:hypoteza}
 \end{equation}
 
+\begin{comment}
 To nastane ve chvíli, kdy
 \begin{equation}
 \left|\overline{t}_{\text{m}-1}\right| > t_{\text{m}-1;\alpha/2}.
 \label{eq:interval}
 \end{equation}
-
-Pokud zamítneme hypotézu \eqref{eq:hypoteza} na hladinì $\alpha$, soudíme, že model není dostateènì pøesný v chování jako systém a model zamítneme. Musíme vyzkoušet jiné kombinace vstupních parametrù modelu.
+\end{comment}
+Pokud zamítneme hypotézu \eqref{eq:hypoteza} na hladinì významnosti $\alpha$, soudíme, že model není dostateènì pøesný v chování. Musíme vyzkoušet jiné kombinace vstupních parametrù modelu.
 
 Naopak pokud nezamítneme tuto hypotézu, tvrdíme, že chování simulace a systému jsou již natolik blízké, že simulaci považujeme za validní.
 
@@ -156,14 +161,14 @@ Tento proces musí být proveden pro každý z detektorù. Model je možné oznaèit za 
 Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které je nutné vzít v úvahu \cite{Kleijnen} konkrétnì pøi dopravních simulacích.
 
 \begin{itemize}
-	\item Tento postup pøedpokládá stejná a nezávisle rozdìlená pozorování\footnote{i.i.d - independent and identically distributed random variables}, kdežto mìøení reálného systému a pøíslušné nasimulované výstupy nemusí tento pøedpoklad splòovat. Jednou z možností je vzít hodnoty z nìkolika èasových období a navíc zprùmìrovat tyto hodnoty pro výpoèet \eqref{eq:difflow}.
-	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota $t_{\text{m}-1;\alpha/2}$. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. T-statistika za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
+	\item Tento postup pøedpokládá stejná a nezávisle rozdìlená pozorování\footnote{i.i.d - independent and identically distributed random variables}. Reálný systém a pøíslušné nasimulované výstupy nemusí tento pøedpoklad splòovat. Jednou z možností je vzít hodnoty z nìkolika èasových období a navíc zprùmìrovat tyto hodnoty pro výpoèet \eqref{eq:difflow}.
+	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota pro zamítnutí. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. To znamená, že test za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
 \end{itemize}
 
 \subsection{F-test podílù rozptylù}
 \label{ftest}
 
-Díky F-testu podílu rozptylù mùžeme zjistit zda se rozptyl nasimulovaných hodnot významnì liší od hodnot z mýtných bran. Nejprve je nutné vypoèíst rozptyl z nasimulovaných hodnot $s_1^2$ a rozptyl z reálných dat $s_2^2$ a budeme testovat hypotézu
+Díky F-testu podílu rozptylù mùžeme zjistit zda se rozptyl nasimulovaných hodnot významnì liší od hodnot z mýtných bran. Nejprve je nutné vypoèíst rozptyl z nasimulovaných hodnot $s_1^2$ a rozptyl z reálných dat $s_2^2$. Nulová hypotéza bude definovaná takto:
 \begin{equation}
 H_0: s_1^2 = s_2^2.
 \label{eq:ftesth0}

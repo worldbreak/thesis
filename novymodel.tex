@@ -1,7 +1,6 @@
 \chapter{Implementace nového modelu}
 
-V simulaèním nástroji SUMO jsou již nìkteré z modelù uvedených v kapitole \ref{chap:predIDM} implementovány. Napø. Newellùv model zde zatím implementován není.
-
+V simulaèním nástroji SUMO jsou již nìkteré z modelù uvedených v kapitole \ref{chap:predIDM} implementovány. 
 V tuto chvíli bych zde uvedl obecné informace, které s implementací nového modelu souvisí bez ohledu na to, o jaký model se konkrétnì jedná.
 
 Než zaèneme, je nutné mít pøipravené soubory pro nový model, pro Gippsùv model jsou to soubory \textit{MSCFModel\_Gipps.cpp} a \textit{MSCFModel\_Gipps.h}. Postup, jak nové soubory vytvoøit a implementovat do SUMO je uveden v pøíloze \ref{chap:newfiles}.
@@ -36,12 +35,12 @@ Mùžeme také využít další podpùrné funkce, které pøímo nezávisí na modelu. Dají s
 
 \begin{itemize}
 	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const;} - výpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
-	\item \textit{SUMOReal maximumSafeStopSpeed(SUMOReal gap) const;} - výpoèet bezpeèné rychlosti pro zastavení uvnitø mezery
+	\item \textit{SUMOReal maximumSafeStopSpeed(SUMOReal gap) const;} - výpoèet maximální bezpeèné rychlosti pro zastavení
 \end{itemize}
 
 \section{Implementace Gippsova modelu}
 
-K tomu abychom mohli pøidat do SUMO Gippsùv model, je nejprve nezbytné vytvoøit soubory pro nový model - viz pøíloha \ref{chap:newfiles}. Pokud vše funguje jak má, spustíme kompilaci SUMO a pokud vše probìhne bez problémù mùžeme postoupit dále. Jinak je ovšem chyba v nedodržení postupu v pøíloze a není vhodné postupovat dále.
+K tomu abychom mohli pøidat do SUMO Gippsùv model, je nejprve nezbytné vytvoøit soubory pro nový model - viz pøíloha \ref{chap:newfiles}. Pokud vše funguje jak má, spustíme kompilaci SUMO a pokud vše probìhne bez problémù mùžeme postoupit dále. Jinak je ovšem chyba v nedodržení postupu v pøíloze a není možné postupovat dále.
 
 Ve chvíli, kdy se nám SUMO zkompilovalo a máme k dispozici soubory \textit{MSCFModel\_Gipps.cpp} a \textit{MSCFModel\_Gipps.h}, mùžeme zaèít programovat Gippsùv model. V pøíloze \ref{chap:newfiles} v sekci \ref{sec:newparams} je k dispozici návod na vytvoøení vlastních parametrù, my ho použijeme pouze pro preferovanou rychlost vozidla \textit{desiredSpeed} a tím pádem pøi tvorbì konstruktoru by nám mìla být k dispozici hodnota promìnné \textit{desiredSpeed}, kterou mùžeme pøidat jako parametr pøi vytváøení souboru vozidel.
 
@@ -66,7 +65,6 @@ MSCFModel_Gipps::MSCFModel_Gipps(const MSVehicleType* vtype,  SUMOReal accel, SU
 Je také nutné v hlavièkovém souboru \textit{MSCFModel\_Gipps.h} upravit definici stávajícího konstruktoru na
 \begin{lstlisting}[breaklines=true]
  MSCFModel_Gipps(const MSVehicleType* vtype, SUMOReal accel, SUMOReal decel, SUMOReal headwayTime, SUMOReal desiredSpeed);
-}
 \end{lstlisting}
 \textit{MSCFModel\_Gipps.h}
 Tento kód zavolá konstruktor obecného modelu, uloží nám hodnoty zadané pøi generování vozidel do simulace do jednotlivých promìnných. My si potom pøidáme ještì hodnotu \textit{desiredSpeed} do promìnné \textit{myDesiredSpeed} a do promìnné \textit{myGippsDecel} uložíme zápornou hodnotu decelerace.

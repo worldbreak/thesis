@@ -132,8 +132,8 @@ Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUM
 \begin{itemize}
 	\item Gippsùv model \ref{sec:Gipps}
 	\begin{itemize}
-		\item desiredSpeed ($V_\n$) - preferovaná rychlost daného vozidla, rychlost je generovaná z normálního rozdìlení se støední hodnotou 130 a smìrodatnou odchylkou \rem{Doplnit až bude hotovo}
-	\end{itemize}
+		\item desiredSpeed ($V_\n$) - preferovaná rychlost daného vozidla, rychlost je generovaná z normálního rozdìlení se støední hodnotou 130 a smìrodatnou odchylkou 
+			\end{itemize}
 \end{itemize}
 
 \begin{lstlisting}[breaklines=true]
@@ -161,7 +161,11 @@ Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUM
 \end{lstlisting}
 
 \begin{itemize}
-	\item Wiedemannùv model \rem{Doplnit až bude hotovo teoreticky}
+	\item Wiedemannùv model - parametry použity pro výpoèet prahových hodnot
+	\begin{itemize}
+		\item estimation - hodnota 0.5
+		\item security - hodnota 0.5
+	\end{itemize}
 \end{itemize}
 
 Výsledný soubor bude mít název vozidla.rou.xml - .rou je povinná druhá pøípona, která pokud není uvedena, SUMO nespustí simulaci.

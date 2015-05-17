@@ -211,7 +211,7 @@ Vısledné hodnoty nakalibrovaného Kraussova modelu byly:
 
 \subsection{Simulace}
 
-Z obrázkù èasovıch øad je jasnì vidìt, e Kraussùv model dokázal vìrnì kopírovat provoz a to i v pomìrnì vysokıch intenzitách. Jak ji bylo øeèeno, velkou vıhodou pro Kraussùv model je implementace do SUMO jako vùbec prvního modelu. Co se tıká maximální hodnoty GEH - viz tabulka \ref{GEHKrauss}, pouze jednou pøekroèila hodnota nepatrnì hodnotu 3, co je velmi dobrı vısledek.
+Z obrázkù èasovıch øad je jasnì vidìt, e Kraussùv model dokázal vìrnì kopírovat provoz a to i v pomìrnì vysokıch intenzitách. Jak ji bylo øeèeno, velkou vıhodou pro Kraussùv model je implementace do SUMO jako vùbec prvního modelu. Jak bude dále øeèeno, nebyl úplnì nejlepší z uvedenıch modelù. To je zpùsobeno tím, e intenzita, která je nasimulována Kraussem mùe i odpovídat skuteèné intenzitì, ovšem a o 2-3 minuty, co je problém, protoe brána má v tu chvíli u skuteènou hodnotu jinou. Mùe to bıt dáno generováním vozidel s exponenciálního rozdìlení èi generováním preferované rychlosti niší, ne aktuálnì byla. Co se tıká maximální hodnoty GEH - viz tabulka \ref{GEHKrauss}, pouze jednou pøekroèila hodnota nepatrnì hodnotu 3, co je velmi dobrı vısledek.
 
 
 \section{Rozšíøenı Kraussùv model}
@@ -262,7 +262,7 @@ Všechny parametry byly ponechány stejné jako u Kraussova modelu. Kraussùv a rozš
 
 \subsection{Simulace}
 
-\rem{doplnit}
+Ze všech modelù dokázal Rozšíøenı Kraussùv model dosahovat nejvyšších intenzit, a k 60 vozidlùm, a to bez toho, aby byla narušena podmínka bezpeènosti. Bohuel to bylo èasto na základì sníení pøesnosti modelu, protoe skuteèná intenzita nikdy tuto hodnotu nedosáhla. Je otázkou, èím je takto vysoká intenzita zpùsobena. Mùe to bıt z dùvodu nahuštìní provozu pøi pøedjídìní dvou vozidel a následnì krátkı silnı provoz, nicménì hlavní prùbìh prùjezdu vozidel je generován v normì - viz hodnoty GEH v tabulce \ref{GEHKraussOrig}.
 
 
 \section{Intelligent Driver Model}
@@ -270,7 +270,7 @@ Všechny parametry byly ponechány stejné jako u Kraussova modelu. Kraussùv a rozš
 \subsection{Rozdíly oproti teorii}
 \label{sec:IDM-rozdily}
 
-IDM v SUMO bylo naimplementováno pomìrnì nešastnì. Nebyla zde uvedena verze z teoretické sekce, pouze nìkteré její èásti. IDM zde byl naprogramován ještì se smyèkou, která mohla zrychlení vozidla poèítat a nìkolikrát. Nicménì po vyzkoušení tohoto modelu jsem došel k závìru, e lepší bude naprogramovat IDM pøesnì tak, jak je uveden v teoretické èásti a to i z toho dùvodu, e jsem ho ji zkoušel v \cite{Vanis}. Je tedy pouze pøeprogramována ta èást modelu, která poèítá interakèní zrychlení. Posléze ji byly vısledky postaèující.
+IDM v SUMO bylo naimplementováno pomìrnì nešastnì. Nebyla zde uvedena verze z teoretické sekce, pouze nìkteré její èásti. IDM zde byl naprogramován ještì se smyèkou, která mohla zrychlení vozidla poèítat a nìkolikrát. Nicménì po vyzkoušení tohoto modelu jsem došel k závìru, e lepší bude naprogramovat IDM pøesnì tak, jak je uveden v teoretické èásti a to i z toho dùvodu, e jsem ho ji zkoušel v \cite{Vanis}. Vısledky neodpovídaly realitì a model i pøi sníeném simulaèním kroku zpùsoboval kolize. Je tedy pouze pøeprogramována ta èást modelu, která poèítá interakèní zrychlení. Posléze ji byly vısledky postaèující.
 
 
 \subsection{Nastavení parametrù a simulace}
@@ -325,11 +325,11 @@ Parametry modelu byly stanoveny na hodnoty:
 
 \subsection{Simulace}
 
-\rem{doplnit}
+Maximální poèet vozidel, které vjídí do oblasti, se za minutu pøi tìchto parametrech pohybuje okolo 40, obrázky \ref{IDM218}. V další èásti se ji tento poèet zvıšil a k 50 vozidlùm. Je to zaprvé zpùsobeno vjezdovou podmínkou a dle mého názoru pøedjídìcím modelem, kterı není zcela pøizpùsoben IDM modelu. IDM model pracuje ideálnì s pøedjídìcím modelem MOBIL - viz \cite{Vanis}. Poslední branou, obrázky \ref{IDM170}, projídìjí vozidla ve vlnách, nejdøíve intenzita pomìrnì malá, náhle se velmi zvıší a následnì opìt sníí a to pro oba pruhy, to mùe bıt právì dùsledkem pøedjídìní. Dle hodnot GEH je IDM v normì - viz \ref{GEHIDM}.
 
 \section{Wiedemannùv model}
 
-Wiedemannùv model je v SUMO naimplementován skoro stejnì jako v teoretické èásti. Jediná, ale zároveò velmi podstatná zmìna nastává pøi zadávání parametrù - Wiedemannùv model jich má sám o sobì mnoho. SUMO dokázalo tìchto více jak 10 parametrù modelu shrnout pouze do dvou parametrù. Bohuel pouze nastavení tìchto parametrù nepostaèuje k tomu, abychom byli schopni spustit simulaci na pøijatelné úrovni. Jinak zde existují stejné podmínky pro urèení oblasti jako v obrázku \ref{wiedemann}. Bohuel vıpoèet køivek AX, SDX atd. nejsou tak pøesné, aby bylo moné simulovat reálnı provoz. Vozidla se bìhem simulace sráí a nepodaøilo se pøesnì zjistit, kde se nachází problém.
+Wiedemannùv model je v SUMO naimplementován skoro stejnì jako v teoretické èásti. Jediná ale zároveò velmi podstatná zmìna nastává pøi zadávání parametrù - Wiedemannùv model jich má sám o sobì mnoho. SUMO dokázalo tìchto více jak 10 parametrù modelu shrnout pouze do dvou. Bohuel pouze nastavení tìchto parametrù nepostaèuje k tomu, abychom byli schopni spustit simulaci na pøijatelné úrovni. Navíc nikde není vysvìtleno, jak tyto dva parametry souvisí s hranicemi oblastí. Jinak zde existují stejné podmínky pro urèení oblasti jako v obrázku \ref{wiedemann}. Bohuel vıpoèet køivek AX, SDX atd. nejsou tak pøesné, aby bylo moné simulovat reálnı provoz. Vozidla se bìhem simulace sráí a nepodaøilo se pøesnì zjistit, kde se nachází problém. Jednou z variant je vıpoèet decelerace, protoe Wiedemannùv model ji jako jedinı z modelu nemá pøímo jako parametr.
 
 Nìkteré hodnoty v GEH tabulce pøesahují hodnotu 17, co také dokazuje, e v modelu je nìkde chyba. Pro ilustraci pøikládám obrázky \ref{Wiedemann170187}a), b) z mıtnıch bran 170, resp. 187, kde je jasnì vidìt, e model selhává a to bohuel i pøi nízkıch intenzitách.
 
