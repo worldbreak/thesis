@@ -128,7 +128,16 @@ Tøída XMLCreator obsahuje následující konstruktor a metody
 	\item \textit{public Element createVehicle(Element element, int actualCar, double time, int iTime, int lane, String type)} - vytvoøení jednoho exempláøe vozidla s pøíslušnými parametry, \textit{actualCar} je poøadí vozidla od zaèátku simulace, \textit{lane} pruh do kterého bude vozidlo vygenerováno, \textit{time} je èas ve kterém vozidlo bude vpuštìno do simulace.
 \end{itemize}
 
-Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUMO simulovalo provoz. Tento parametr je nepovinný a pokud ho nezadáme, program pøedpokládá volbu Kraussova modelu. Zatím jsou k dispozici 4 modely a k nim pøíslušné parametry:
+Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUMO simulovalo provoz. Tento parametr je nepovinný a pokud ho nezadáme, program pøedpokládá volbu Kraussova modelu.
+
+Základními parametry jsou:
+\begin{itemize}
+	\item zrychlení $a$,
+	\item decelerace $b$,
+	\item reakèní èas øidièe $T$.
+\end{itemize}
+
+Zatím jsou k dispozici 4 modely a k nim pøíslušné parametry:
 \begin{itemize}
 	\item Gippsùv model \ref{sec:Gipps}
 	\begin{itemize}
@@ -141,11 +150,17 @@ Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUM
 \end{lstlisting}
 
 \begin{itemize}
-	\item Kraussùv model \ref{sec:Krauss} - nemá žádné speciální parametry kromì základních
+	\item Kraussùv model a Rozšíøený Kraussùv model \ref{sec:Krauss}
+	\begin{itemize}
+		\item $\eta$ - náhodná výchylka od bìžného øízení - hodnota 0,5.
+	\end{itemize}
 \end{itemize}
 
 \begin{lstlisting}[breaklines=true]
 	java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Krauss
+\end{lstlisting}
+\begin{lstlisting}[breaklines=true]
+	java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml KraussOrig
 \end{lstlisting}
 
 \begin{itemize}

@@ -21,14 +21,16 @@
 \contentsline {paragraph}{Maxim\'aln\IeC {\'\i } br\v zd\v en\IeC {\'\i }:}{20}{section*.6}
 \contentsline {paragraph}{Celkov\'a dr\'aha p\v ri br\v zd\v en\IeC {\'\i }:}{20}{section*.7}
 \contentsline {subsection}{\numberline {1.4.2}Matematick\'y popis}{20}{subsection.1.4.2}
-\contentsline {section}{\numberline {1.5}Intelligent Driver Model}{21}{section.1.5}
+\contentsline {subsection}{\numberline {1.4.3}Parametry Roz\v s\IeC {\'\i }\v ren\'eho Kraussova modelu}{21}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Intelligent Driver Model}{22}{section.1.5}
 \contentsline {subsection}{\numberline {1.5.1}Matematick\'y popis}{22}{subsection.1.5.1}
-\contentsline {section}{\numberline {1.6}Wiedemann\r uv model}{23}{section.1.6}
-\contentsline {paragraph}{Re\v zim n\'asledov\'an\IeC {\'\i }:}{25}{section*.8}
+\contentsline {subsection}{\numberline {1.5.2}Parametry IDM}{23}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}Wiedemann\r uv model}{24}{section.1.6}
+\contentsline {paragraph}{Re\v zim n\'asledov\'an\IeC {\'\i }:}{26}{section*.8}
 \contentsline {paragraph}{Re\v zim pln\'e rychlosti:}{26}{section*.9}
 \contentsline {paragraph}{Re\v zim p\v ribl\IeC {\'\i }\v zen\IeC {\'\i }:}{26}{section*.10}
-\contentsline {paragraph}{Nouzov\'y re\v zim:}{26}{section*.11}
-\contentsline {section}{\numberline {1.7}Shrnut\IeC {\'\i }}{26}{section.1.7}
+\contentsline {paragraph}{Nouzov\'y re\v zim:}{27}{section*.11}
+\contentsline {section}{\numberline {1.7}Shrnut\IeC {\'\i }}{27}{section.1.7}
 \contentsline {chapter}{\numberline {2}Simula\v cn\IeC {\'\i } a podp\r urn\'y software}{28}{chapter.2}
 \contentsline {section}{\numberline {2.1}SUMO}{28}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Jak to funguje}{29}{subsection.2.1.1}

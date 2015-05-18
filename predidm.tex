@@ -281,7 +281,7 @@ Všechny promìnné a parametry Gippsova modelu potom jsou:
 \begin{itemize}
 	\item $T_\n$ - reakèní èas øidièe,
 	\item $v_\n (t)$ - rychlost vozidla n v èase $t$,
-	\item $a$ - maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat - nikoliv zrychlení vozidla v èase n!,
+	\item $a$ - maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat - \textbf{nikoliv zrychlení vozidla v èase t!},
 	\item $V_\n$ - preferovaná rychlost vozidla n,
 	\item $b$ - maximální decelerace vozidla, kterým je øidiè ochoten brzdit,
 	\item $x_\n$ - poloha vozidla n
@@ -480,7 +480,7 @@ Hlavní zdroj pro vylepšení Kraussova modelu je pøímo èlánek pro implementaci roz
 
 \subsection{Proces brždìní}
 
-Fáze brzdícího procesu na sebe plynule navazují, první z nich se nazývá doba reakce øidièe $t_r$, dále zvyšování decelarace $t_i$ a maximální brždìní $t_c$. Vše je graficky znázornìno na obrázku \ref{brzdeni}. 
+Fáze brzdícího procesu na sebe plynule navazují, první z nich se nazývá doba reakce øidièe $T$, dále zvyšování decelarace $t_i$ a maximální brždìní $t_c$. Vše je graficky znázornìno na obrázku \ref{brzdeni}. 
 
 \begin{figure}%
 \centering
@@ -489,9 +489,9 @@ Fáze brzdícího procesu na sebe plynule navazují, první z nich se nazývá doba rea
 \label{brzdeni}%
 \end{figure}
 
-\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas \footnote{v kapitole \ref{chap:predIDM} reakèní èas $T_n$} $t_r$ na to, aby zareagoval na vozidlo pøed sebou. V dobì této reakce se rychlost vozidla $v_0$ pohybuje na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dán rovnicí
+\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas $T$ na to, aby zareagoval na vozidlo pøed sebou. V dobì této reakce se pohybuje rychlost vozidla $v_0$ na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dán rovnicí
 \begin{equation}
-S_r = v_0 t_r.
+S_r = v_0 T.
 \label{eq:posunkrauss}
 \end{equation}
 
@@ -522,16 +522,16 @@ S_c = \frac{v_0^2}{2b_{\max}} - \frac{v_0 t_i}{2} + \frac{b_{\max} t_i^2}{8}.
 \paragraph{Celková dráha pøi brždìní:}
 Celková dráha pøi brždìní vozidla se vypoèítá jako souèet tøí pøedcházejících èástí, tedy
 \[
-S = S_r + S_i + S_c = v_0 t_r + v_0 t_i - b_{\max} \frac{b_{\max} t_i^2}{6} + \frac{v_0^2}{2b_{\max}} - \frac{v_0 t_i}{2} + \frac{b_{\max} t_i^2}{8},
+S = S_r + S_i + S_c = v_0 T + v_0 t_i - b_{\max} \frac{b_{\max} t_i^2}{6} + \frac{v_0^2}{2b_{\max}} - \frac{v_0 t_i}{2} + \frac{b_{\max} t_i^2}{8},
 \]
 
 a po úpravách dostaneme vztah
 \begin{equation}
-S = v_0 t_r + \frac{1}{2} v_0 t_i + \frac{v_0^2}{2b_{\max}} - \frac{b_{\max} t_i^2}{24} \approx v_0 \left(t_r + \frac{1}{2}t_i \right) + \frac{v_0^2}{2b_{\max}},
+S = v_0 T + \frac{1}{2} v_0 t_i + \frac{v_0^2}{2b_{\max}} - \frac{b_{\max} t_i^2}{24} \approx v_0 \left(t_r + \frac{1}{2}t_i \right) + \frac{v_0^2}{2b_{\max}},
 \label{eq:MoveTogetherKrauss}
 \end{equation}
 
-kde èlen $- \frac{b_{\max} t_i^2}{24}$ zanedbáme, jelikož má nìkolikrát menší hodnotu než ostatní.
+kde èlen $- \frac{b_{\max} t_i^2}{24}$ zanedbáme, jelikož má nìkolikanásobnì menší hodnotu než ostatní.
 
 \subsection{Matematický popis}
 
@@ -554,7 +554,7 @@ kde $a_{\max}$ je maximální decelerace èelního vozidla.
 
 Poloha aktuálního vozidla (vozidla jedoucího za èelním) je v celém brzdícím procesu rovna
 \begin{equation}
-S_f = S_r + S_i + S_c = v_{\safe} t_r + \frac{1}{2} v_{\safe} t_{i} + \frac{v_{\safe}^2}{2b_{\max}} - \frac{b_{\max} t_{fi}^2}{24} \approx v_{\safe} \left(t_r + \frac{1}{2}t_{fi} \right) + \frac{v_{\safe}^2}{2b_{\max}}.
+S_f = S_r + S_i + S_c = v_{\safe} T + \frac{1}{2} v_{\safe} t_{i} + \frac{v_{\safe}^2}{2b_{\max}} - \frac{b_{\max} t_{fi}^2}{24} \approx v_{\safe} \left(T + \frac{1}{2}t_{fi} \right) + \frac{v_{\safe}^2}{2b_{\max}}.
 \label{eq:S_fKrauss}
 \end{equation}
 
@@ -566,24 +566,33 @@ v_{\safe} \left(t_r + \frac{1}{2}t_{fi} \right) + \frac{v_{\safe}^2}{2b_{\max}} 
 
 Z rovnice \eqref{eq:vsafeKrauss0} už mùžeme pøes výpoèet diskriminantu vyjádøit $v_{\safe}$:
 \begin{equation}
-v_{\safe} = -b \left(t_r + \frac{t_{fi}}{2}\right) + \sqrt{b^2 \left(t_r + \frac{t_{fi}}{2}\right)^2 + b\left(v_l t_{li} + \frac{v_l^2}{a} + 2g\right)}.
+v_{\safe} = -b \left(T + \frac{t_{fi}}{2}\right) + \sqrt{b^2 \left(t_r + \frac{t_{fi}}{2}\right)^2 + b\left(v_l t_{li} + \frac{v_l^2}{a} + 2g\right)}.
 \label{eq:vsafeKrauss}
 \end{equation}
 
 V simulaci je potom èas decelerace stejný $t_i = t_{li} = t_{fi}$, z toho plyne
 \begin{equation}
-v_{\safe} = -b \left(t_r + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(t_r + \frac{t_{i}}{2}\right)^2 + b\left(v_l t_{i} + \frac{v_l^2}{a} + 2g\right)},
+v_{\safe} = -b \left(T + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{i}}{2}\right)^2 + b\left(v_l t_{i} + \frac{v_l^2}{a} + 2g\right)},
 \label{eq:vsafeKraussti}
 \end{equation}
 
 pokud èelní vozidlo stojí, je jeho rychlost $v_l = 0 ms^{-1}$ a jeho poloha se nemìní $S_l = 0$, potom mùžeme zjednodušit rovnici \eqref{eq:vsafeKraussti} na
 \begin{equation}
-v_{\safe} = -b \left(t_r + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(t_r + \frac{t_{i}}{2}\right)^2 + 2bg}.
+v_{\safe} = -b \left(T + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{i}}{2}\right)^2 + 2bg}.
 \label{eq:newKrauss}
 \end{equation}
 
-\rem{promyslet}
-Tato rovnice \eqref{eq:newKrauss} je pøímo naprogramována v SUMO a je jakýmsi doplòkem ke Kraussovu modelu, pouze pøesnìji definuje bezpeènou rychlost. Princip Kraussova modelu stále zùstává ve volbì preferované rychlosti, kterou se vozidlo bude pohybovat. Tato volba je dána minimální hodnotou, viz rovnice $v_{\des}$ v \eqref{eq:krausssmodel}.
+Tato rovnice \eqref{eq:newKrauss} je  jakýmsi doplòkem ke Kraussovu modelu, pouze pøesnìji definuje bezpeènou rychlost. Princip Kraussova modelu stále zùstává ve volbì preferované rychlosti, kterou se vozidlo bude pohybovat. Tato volba je dána minimální hodnotou, viz rovnice $v_{\des}$ v \eqref{eq:krausssmodel}.
+
+\subsection{Parametry Rozšíøeného Kraussova modelu}
+\label{subsec:parameterAddKrauss}
+Všechny promìnné a parametry Kraussova modelu potom jsou:
+\begin{itemize}
+	\item $g$ - aktuální mezera mezi vozidly,
+	\item $b$ - aktuální decelerace,
+	\item $t_i$ - èas, pøi kterém je zvyšována decelerace,
+	\item $T$ - reakèní èas øidièe.
+\end{itemize}
 
 
 \section{Intelligent Driver Model}
@@ -597,10 +606,10 @@ V této sekci budeme primárnì vycházet z práce \cite{Vanis} a \cite{TreiberWWW}, 
 
 Pro výpoèet zrychlení v IDM je použit vztah \rem{bacha na to, jak znaèíte derivace podle èasu, mìlo by to být všude stejnì}
 \begin{equation}
-\dot{v}_n = a_\free + a_\inter,
+v_{\n}(t + \Delta T) = v_\n (t) + a_\free + a_\inter,
 \label{soucetzrych}
 \end{equation}
-kde se aktuální zrychlení vozidla vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i vozidlo jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s Gippsovým modelem (kapitola \ref{sec:Gipps}), kde se ovšem vybírá pouze jedna z tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
+kde $v_\n (t)$ znaèí rychlost vozidla v èase $t$ a $\Delta T$ je simulaèní krok. Aktuální zrychlení vozidla se tedy vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i vozidlo jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s Gippsovým modelem (kapitola \ref{sec:Gipps}), kde se ovšem vybírá pouze jedna z tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
 
 Zrychlení pøi volném proudu je definováno vztahem
 \begin{equation}
@@ -618,10 +627,10 @@ a_\inter = - a \left(\frac{s_n^*}{s_n}\right)^2,
 \end{equation}
 kde $a$ je maximální zrychlení, $s_n = x_{n-1} - x_n$ je rozdíl poloh vozidel a $s_n^*$
 \begin{equation}
-s_n^* = s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}
+s_n^* = s_\text{0} + v_n \tau + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}
 \label{snhvez}
 \end{equation}
-je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $T$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}.
+je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $\tau$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}.
 
 Èlen úmìrný $v_n - v_{n-1}$ je kvadratický v promìnné $v_n$ a obsahuje souèin $v_n v_{n-1}$. Tyto nelineární èleny popisují interakci, v tomto pøípadì dvou vozidel. Pokud tedy bude vzdálenost $s_n$ mezi auty vysoká, potom zlomek $s_n^*/s_n$ bude mít velmi malou hodnotu a interakèní èlen $a_\inter$ lze zanedbat, takže vozidlo se pohybuje jako ve volném proudu.
 \begin{figure}%
@@ -636,15 +645,29 @@ Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní
 
 Dosazením do rovnice \eqref{soucetzrych} za $a_\inter$ z rovnice \eqref{intclen} a $a_\free$ z rovnice \eqref{zrychvolproud} dostáváme \textbf{koneèný vztah pro zrychlení vozidla}:
 \begin{equation}
-\dot{v}_n = a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n T + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}}{s_n}\right)^2.
+v_{\n}(t + \Delta T) = v_\n (t) + a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n \tau + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}}{s_n}\right)^2.
 \label{eq:IDMcompl}
 \end{equation}
+
+\subsection{Parametry IDM}
+\label{subsec:parameterAddKrauss}
+Všechny promìnné a parametry IDM potom jsou:
+\begin{itemize}
+	\item $s_n$ - aktuální odstup mezi vozidly,
+	\item $\tau$ - èasová mezera mezi vozidly,
+	\item $v_{\n}$ - rychlost aktuálního vozidla,
+	\item $v_{\nm1}$ - rychlost $n-1$ vozidla,
+	\item $a$ - maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat,
+	\item $b$ - maximální decelerace,
+	\item $s_0$ - bezpeènostní mezera mezi vozidly,
+	\item $v_{n\free}$ - preferovaná rychlost vozidla.
+\end{itemize}
 
 
 \section{Wiedemannùv model}
 \label{sec:Wiedemann}
 
-V programu SUMO je také pøipraven Wiedemannùv model, jehož první verze vznikla již v roce 1974 jako disertaèní práce tehdejšího studenta R. Wiedemanna. Tento model byl posléze nìkolikrát vylepšován, v roce 1992 o tomto modelu vyšel aktualizovaný èlánek. Tyto práce ovšem bohužel nejsou k dispozici a SUMO (viz dále) navíc ani neobsahuje pøímo Wiedemannùv model, nýbrž jeho poupravenou verzi. V této sekci budeme hlavnì vycházet z èlánku \cite{Higgs}. V nìm najdeme pomìrnì pøesný popis Wiedemannova modelu\footnote{Tento èlánek se pøímo odkazuje na èlánek z roku 1992.}. Na nì bude upozornìno v kapitole \rem{doplnit èíslo až bude} o simulacích.
+V programu SUMO je také pøipraven Wiedemannùv model, jehož první verze vznikla již v roce 1974 jako disertaèní práce tehdejšího studenta R. Wiedemanna. Tento model byl posléze nìkolikrát vylepšován, v roce 1992 o tomto modelu vyšel aktualizovaný èlánek. Tyto práce ovšem bohužel nejsou k dispozici. V této sekci budeme hlavnì vycházet z èlánku \cite{Higgs}. V nìm najdeme pomìrnì pøesný popis Wiedemannova modelu\footnote{Tento èlánek se pøímo odkazuje na èlánek z roku 1992.}.
 
 Tento model je odlišný oproti pøedcházejícím tím, že pracuje v tzv. režimech. Nejprve je nutné zjistit, v jakém režimu se vozidlo vlastnì nachází a podle toho se urèuje výpoèet akcelerace èi decelarace, která je pro každý režim jiná. 
 
@@ -781,9 +804,9 @@ kde $BMINadd$ a $BMINmult$ jsou parametry modelu a $RND3_n$ znaèí parametr závis
 
 \section{Shrnutí}
 
-Èasovì spojité mikroskopické modely jsou v zásadì definovány funkcí zrychlení. V nejstarších modelech mùže zrychlení $\dot{v} (t + T_r)$ vozidla $\alpha$ zapsáno jako
+Èasovì spojité mikroskopické modely jsou v zásadì definovány funkcí zrychlení. V nejstarších modelech mùže zrychlení $a (t + T_r)$ vozidla $\alpha$ zapsáno jako
 \begin{equation}
-\dot{v} (t + T_r) = \frac{-\lambda v_\alpha^m \Delta v_\alpha}{s_\alpha^l},
+a (t + T_r) = \frac{-\lambda v_\alpha^m \Delta v_\alpha}{s_\alpha^l},
 \label{eq:earliermodels}
 \end{equation}
 kde $\lambda$, $l$ a $m$ jsou parametry modelu, $s$ je odstup mezi vozidly a $\Delta v_\alpha$ rozdíl rychlostí.
@@ -799,6 +822,6 @@ V závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedouc
 
 Tyto problémy byly vyøešeny v Newellovì modelu (viz podkapitola \ref{sec:Newell}), kde je z rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k velmi vysokým hodnotám zrychlení.\cite{Treiber}
 
-Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako Wiedemannùv (viz. odstavec \ref{sec:Wiedemann}). Bohužel tento model vyžaduje mnoho parametrù.
+Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako Wiedemannùv (viz. odstavec \ref{sec:Wiedemann}). Bohužel tyto modely vyžadují mnoho parametrù.
 
-Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} (brzdný koeficient $b_n$) a Kraussùv model \ref{sec:Krauss} (brzdný koeficient $b$). Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. Toto chování se bohužel ztrácí ve chvíli, kdy modelujeme dopravu deterministicky\footnote{napø. když vozidla vjíždí do urèité oblasti každých 5 sekund}. V tìchto pøípadech není možné simulovat nestabilní stavy dopravy.
+Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} a Kraussùv model \ref{sec:Krauss}. Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. Toto chování se bohužel ztrácí ve chvíli, kdy modelujeme dopravu deterministicky\footnote{napø. když vozidla vjíždí do urèité oblasti každých 5 sekund}. V tìchto pøípadech není možné simulovat nestabilní stavy dopravy.
