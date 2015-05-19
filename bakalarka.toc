@@ -85,20 +85,22 @@
 \contentsline {section}{\numberline {6.2}Rozptyl a sm\v erodatn\'a odchylka}{63}{section.6.2}
 \contentsline {section}{\numberline {6.3}Pr\r um\v ern\'a chyba}{64}{section.6.3}
 \contentsline {section}{\numberline {6.4}Grafick\'a zn\'azorn\v en\IeC {\'\i }}{64}{section.6.4}
-\contentsline {chapter}{\numberline {A}P\v r\IeC {\'\i }loha A: Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{I}{appendix.A}
-\contentsline {section}{\numberline {A.1}SUMO}{I}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}SUMO download}{I}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Visual Studio}{I}{section.A.2}
-\contentsline {section}{\numberline {A.3}Ostatn\IeC {\'\i } z\'avislosti}{I}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Xerces-C}{II}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}FOX}{II}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}FWTools}{III}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}SUMO}{III}{subsection.A.3.4}
-\contentsline {chapter}{\numberline {B}P\v r\IeC {\'\i }loha B: Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v SUMO}{IV}{appendix.B}
-\contentsline {section}{\numberline {B.1}OpenStreetMap}{IV}{section.B.1}
-\contentsline {section}{\numberline {B.2}netConvert}{IV}{section.B.2}
-\contentsline {chapter}{\numberline {C}P\v r\IeC {\'\i }loha C: Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{VI}{appendix.C}
-\contentsline {section}{\numberline {C.1}Implementace nov\'eho modelu}{VI}{section.C.1}
-\contentsline {section}{\numberline {C.2}Implementace nov\'ych parametr\r u}{VII}{section.C.2}
-\contentsline {chapter}{\numberline {D}Hodnoty GEH pro jednotliv\'e modely}{VIII}{appendix.D}
-\contentsline {chapter}{Literatura}{I}{chapter*.15}
+\contentsline {chapter}{Literatura}{68}{chapter*.15}
+\contentsline {chapter}{Seznam obr\'azk\r u}{71}{chapter*.16}
+\contentsline {chapter}{Seznam tabulek}{72}{chapter*.17}
+\contentsline {chapter}{\numberline {A}Hodnoty GEH pro jednotliv\'e modely}{I}{appendix.A}
+\contentsline {chapter}{\numberline {B}Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{V}{appendix.B}
+\contentsline {section}{\numberline {B.1}SUMO}{V}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}SUMO download}{V}{subsection.B.1.1}
+\contentsline {section}{\numberline {B.2}Visual Studio}{V}{section.B.2}
+\contentsline {section}{\numberline {B.3}Ostatn\IeC {\'\i } z\'avislosti}{V}{section.B.3}
+\contentsline {subsection}{\numberline {B.3.1}Xerces-C}{VI}{subsection.B.3.1}
+\contentsline {subsection}{\numberline {B.3.2}FOX}{VI}{subsection.B.3.2}
+\contentsline {subsection}{\numberline {B.3.3}FWTools}{VII}{subsection.B.3.3}
+\contentsline {subsection}{\numberline {B.3.4}SUMO}{VII}{subsection.B.3.4}
+\contentsline {chapter}{\numberline {C}Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v SUMO}{VIII}{appendix.C}
+\contentsline {section}{\numberline {C.1}OpenStreetMap}{VIII}{section.C.1}
+\contentsline {section}{\numberline {C.2}netConvert}{VIII}{section.C.2}
+\contentsline {chapter}{\numberline {D}Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{X}{appendix.D}
+\contentsline {section}{\numberline {D.1}Implementace nov\'eho modelu}{X}{section.D.1}
+\contentsline {section}{\numberline {D.2}Implementace nov\'ych parametr\r u}{XI}{section.D.2}

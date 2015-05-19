@@ -274,22 +274,27 @@ In this bachelor thesis we have studied selected mathematical models developed t
 % abstrakt v cestine.
 \vglue60mm
 \end{comment}
-%\noindent{\Huge \textbf{Abstrakt}}
-%\vskip 2.75\baselineskip
+\noindent{\Huge \textbf{Abstrakt}}
+\vskip 2.75\baselineskip
 
 
-\begin{comment}
-Tato bakalaøská práce se zabývá tvorbou aplikace, ve které je implementován Intelligent Driver model (IDM) a model pøedjíždìcí (MOBIL). V teoretické èásti jsou charakterizovány makroskopické a mikroskopické modely. V práci jsou dále vysvìtleny numerické metody pro øešení diferenciálních rovnic, které jsou dùležité pro popis modelù IDM a MOBIL. Pro naprogramování modelù byl využit programovací jazyk JAVA. Pro ovìøení správnosti tìchto modelù bylo provedeno nìkolik simulací, jejichž výsledkem jsou grafy popisující chování jednotlivých vozidel èi chování celého dopravního toku.
+V této diplomové práci studujeme vybrané mikroskopické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy spojené s tìmito modely. Pøedstavíme skupinu hlavních mikroskopických modelù, které se v dnešní dobì používají k simulaci dopravy. Dále se seznámíme s validací a kalibrací tìchto modelù, které jsou pøedpokladem pro správnì fungující model.
+V praktické èásti budeme provádìt simulace v softwaru SUMO, který nìkteré z mikroskopických modelù již obsahuje. Ostatní modely doimplementujeme a poté spustíme simulace pro všechny modely. Výsledky z tìchto modelù na základì statistických metod èi graficky vyhodnotíme.
+
+%Tato diplomovová práce se zabývá implementací a následným vyhodnocením výsledkù mikroskopických modelù.
+%V teoretické èásti jsou matematicky popsány jednotlivé mikroskopické modely, dále jsou zde uvedeny informace o validaci a kalibraci modelu.
+%V praktické èásti nakalibrovanými modely je potom nasimulován úsek Pražského okruhu na základì reálných dat. Výsledky z tìchto simulací jsou potom graficky zpracovány a následnì je provedeno porovnání jednotlivých modelù graficky a na základì statistických ukazatelù.
+%Tato bakalaøská práce se zabývá tvorbou aplikace, ve které je implementován Intelligent Driver model (IDM) a model pøedjíždìcí (MOBIL). V teoretické èásti jsou charakterizovány makroskopické a mikroskopické modely. V práci jsou dále vysvìtleny numerické metody pro øešení diferenciálních rovnic, které jsou dùležité pro popis modelù IDM a MOBIL. Pro naprogramování modelù byl využit programovací jazyk JAVA. Pro ovìøení správnosti tìchto modelù bylo provedeno nìkolik simulací, jejichž výsledkem jsou grafy popisující chování jednotlivých vozidel èi chování celého dopravního toku.
 %\end{comment}
 
-V této bakaláøské práci studujeme vybrané matematické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy  spojené s tìmito modely. Uvedeme jak makroskopické tak i mikroskopické modely. Poté se omezíme pouze na mikroskopické modely a  krátce je popíšeme. Dále se seznámíme se základní teorií dynamických systémù a jejich analýzou stability po linearizaci. Nakonec ukážeme numerické metody pro øešení obyèejných diferenciálních rovnic (Eulerova metoda, metody Runge-Kutta) a podrobnì vysvìtlíme, jak funguje Intelligent Driver Model (IDM).
-V praktické èásti této práce implementujeme IDM model do programovacího jazyka Java. Tato aplikace, která je hlavním výsledkem této práce, øeší rovnice IDM modelu a zobrazuje výsledky jak v grafické podobì, tak i ve formì datových souborù. Navíc rozšíøíme IDM model pøedjíždìcím modelem MOBIL.
-Na konci práce, po vysvìtlení základních vlastností programu, je uveden celý zdrojový kód aplikace a dosažené výsledky.
+%V této bakaláøské práci studujeme vybrané matematické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy  spojené s tìmito modely. Uvedeme jak makroskopické tak i mikroskopické modely. Poté se omezíme pouze na mikroskopické modely a  krátce je popíšeme. Dále se seznámíme se základní teorií dynamických systémù a jejich analýzou stability po linearizaci. Nakonec ukážeme numerické metody pro øešení obyèejných diferenciálních rovnic (Eulerova metoda, metody Runge-Kutta) a podrobnì vysvìtlíme, jak funguje Intelligent Driver Model (IDM).
+%V praktické èásti této práce implementujeme IDM model do programovacího jazyka Java. Tato aplikace, která je hlavním výsledkem této práce, øeší rovnice IDM modelu a zobrazuje výsledky jak v grafické podobì, tak i ve formì datových souborù. Navíc rozšíøíme IDM model pøedjíždìcím modelem MOBIL.
+%Na konci práce, po vysvìtlení základních vlastností programu, je uveden celý zdrojový kód aplikace a dosažené výsledky.
 
 
 \newpage
 
-\end{comment}
+
 \openright
 \pagestyle{plain}
 \setcounter{page}{1}
@@ -324,9 +329,9 @@ Na konci práce, po vysvìtlení základních vlastností programu, je uveden celý zdr
 
 %%% Seznam použité literatury
 \include{literatura}
-\addcontentsline{toc}{chapter}{Literatura}
+%\addcontentsline{toc}{chapter}{Literatura}
 
-\begin{comment}
+
 \listoffigures
 \addcontentsline{toc}{chapter}{Seznam obrázkù}
 
@@ -335,10 +340,9 @@ Na konci práce, po vysvìtlení základních vlastností programu, je uveden celý zdr
 
 
 %\listofappendices
-\chapter*{Seznam pøíloh}
-\addcontentsline{toc}{chapter}{Seznam pøíloh}
-Pøíloha A: Kompilace simulaèního softwaru SUMO \dotfill \pageref{obsahCD}
-\end{comment}
+%\chapter*{Seznam pøíloh}
+%\addcontentsline{toc}{chapter}{Seznam pøíloh}
+%Pøíloha A: Kompilace simulaèního softwaru SUMO \dotfill \pageref{obsahCD}
 \include{priloha}
 
 
