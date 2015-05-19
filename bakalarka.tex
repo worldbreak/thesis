@@ -147,7 +147,6 @@ showstringspaces=false}
 \makeatother	
 
 \begin{document}
-\begin{comment}
 % Trochu volnìjší nastavení dìlení slov, než je default.
 \lefthyphenmin=2
 \righthyphenmin=2
@@ -168,7 +167,7 @@ Fakulta dopravní
 
 \vfill
 
-{\bf\Large BAKALÁØSKÁ PRÁCE}
+{\bf\Large DIPLOMOVÁ PRÁCE}
 
 \vfill
 
@@ -181,8 +180,9 @@ Fakulta dopravní
 
 \vspace{15mm}
 
+
 % Název práce pøesnì podle zadání
-{\LARGE\bfseries Matematické modelování vybraných problémù \\v dopravì v jazyce Java}
+{\LARGE\bfseries Ovìøení mikroskopických modelù dopravy \\na reálných dopravních datech}
 
 \vfill
 
@@ -194,22 +194,22 @@ Fakulta dopravní
 
 \begin{tabular}{rl}
 
-Vedoucí bakaláøské práce: & Mgr. Martin Scholtz, Ph.D. \\
+Vedoucí bakaláøské práce: & Dr. Ing. Jan Pøikryl \\
 \noalign{\vspace{2mm}}
 Studijní program: & Technika a technologie v dopravì a spojích \\
 \noalign{\vspace{2mm}}
-Studijní obor: & Automatizace a informatika \\
+Studijní obor: & Inženýrská informatika v dopravì a spojích \\
 \end{tabular}
 
 \vfill
 
 % Zde doplòte rok
-Praha 2013
+Praha 2015
 
 \end{center}
 
 \newpage
-Papír se zadáním Bc. práce
+Papír se zadáním diplomové práce
 
 \openright
 
@@ -221,8 +221,12 @@ Papír se zadáním Bc. práce
 Podìkování%
 }}
 \vspace{3ex}\par
-\noindent
-Na tomto místì bych rád podìkoval všem, kteøí mi poskytli podklady a cenné rady pro vypracování této práce. Zvláštì pak dìkuji Mgr. Martinu Scholtzovi, PhD. za odborné vedení a konzultování bakaláøské práce i za rady, které mi poskytoval bìhem celého mého studia.
+%\noindent
+Rád bych podìkoval všem, kteøí mnì pomohli pøi psaní této diplomové práce.
+
+Na prvním místì jsou to mí rodièe, kteøí mì neustále podporovali bìhem mého dlouhého studia.
+
+Dále bych chtìl podìkovat mému vedoucímu Janu Pøikrylovi, který se mnou moji diplomovou práci neustále konzultoval, kamarádovi Mikuláši Dítìti, který mi pomohl v prvních krocích se softwarem SUMO, Tomáši Tøasákovi za diskuse nad tématy v diplomové práci, Krzystzofovi Urbaòcovi za pomoc pøi hledání chyb a diskusích nejen o diplomové práci, Ivanovi Nagyovi pøi konzultacích o statistických metodách a celému Ústavu aplikované matematiky za prostøedí k psaní diplomové práce.
 \newpage
 
 %%% Strana s èestným prohlášením k bakaláøské práci
@@ -237,17 +241,16 @@ Na tomto místì bych rád podìkoval všem, kteøí mi poskytli podklady a cenné rady 
 Prohlášení%
 }}
 \vspace{3ex}\par
-\noindent
-Prohlašuji, že jsem tuto bakaláøskou práci vypracoval(a) samostatnì a výhradnì
-s~použitím citovaných pramenù, literatury a dalších odborných zdrojù a za pomoci svého školitele.
+%\noindent
 
-\medskip\noindent
-Prohlašuji, že jsem predloženou práci vypracoval samostatne a že jsem uvedl veškeré použité
-informacní zdroje v souladu s Metodickým pokynem o etické príprave vysokoškolských
-záverecných prací.
-Nemám závažný duvod proti užívání tohoto školního díla ve smyslu § 60 Zákona c.121/2000
-Sb., o právu autorském, o právech souvisejících s právem autorským a o zmene nekterých
-zákonu (autorský zákon).
+%Pohlašuji, že jsem tuto bakaláøskou práci vypracoval(a) samostatnì a výhradnì s~použitím citovaných pramenù, literatury a dalších odborných zdrojù a za pomoci svého školitele.
+
+%\medskip\noindent
+%Prohlašuji, že jsem predloženou práci vypracoval samostatne a že jsem uvedl veškeré použité informacní zdroje v souladu s Metodickým pokynem o etické príprave vysokoškolských záverecných prací.
+
+Prohlašuji, že jsem pøedloženou práci vypracoval samostatnì a že jsem uvedl veškeré použité informaèní zdroje v souladu s Metodickým pokynem o etické pøípravì vysokoškolských závìreèných prací.
+
+Nemám závažný dùvod proti užívání tohoto školního díla ve smyslu § 60 Zákona è. 121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a o zmìnì nìkterých zákonù (autorský zákon).
 \vspace{10mm}
 
 \hbox{\hbox to 0.5\hsize{%
@@ -260,7 +263,6 @@ Podpis autora ............
 \newpage
 
 %%% Povinná informaèní strana bakaláøské práce
-\end{comment}
 %\abstractpage
 \begin{comment}
 This bachelor thesis deals with programming an application, in which is implemented Intelligent Driver model and overtaking model MOBIL. The macroscopic and microscopic models are briefly described in the theoretical part. In my work are explained numerical methods for solving ordinary differential equations that are important for IDM and MOBIL. For programming these models was used Java.  For verification the rightness of these models were perfomed several simulations and the results are the graphs describing the behavior of individual vehicles or the behavior of the whole traffic flow.
