@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  19 MAY 2015 11:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  19 MAY 2015 13:48
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -822,7 +822,7 @@ Overfull \hbox (3.71077pt too wide) detected at line 103
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.303 \include{uvod}
+l.305 \include{uvod}
                      [3] (D:\Vanis-Sumo\thesis\uvod.texpdfTeX warning (ext4): destination with the same identifier (name
 {page.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -834,7 +834,7 @@ l.60
 ])pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.303 \include{uvod}
+l.305 \include{uvod}
                      [5] (D:\Vanis-Sumo\thesis\predidm.tex
 Kapitola 1.
 <images/newell.pdf, id=531, 289.48149pt x 225.2415pt>
@@ -1593,21 +1593,21 @@ P\v {r}\'{\i }loha D.
 [10
 
 ]) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 349.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 349.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
  (D:\Vanis-Sumo\thesis\bakalarka.aux (D:\Vanis-Sumo\thesis\uvod.aux) (D:\Vanis-Sumo\thesis\predidm.aux)
 (D:\Vanis-Sumo\thesis\SUMO.aux) (D:\Vanis-Sumo\thesis\novymodel.aux) (D:\Vanis-Sumo\thesis\kalibrace.aux)
 (D:\Vanis-Sumo\thesis\simulace.aux) (D:\Vanis-Sumo\thesis\porovnani.aux) (D:\Vanis-Sumo\thesis\literatura.aux)
 (D:\Vanis-Sumo\thesis\priloha.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 349.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 349.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
 (rerunfilecheck)             Checksum: 64CCF0822A688291ED55FDF75DEC6ECB;15638.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 349.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
  ) 
 Here is how much of TeX's memory you used:
  31237 strings out of 493921
@@ -1616,7 +1616,7 @@ Here is how much of TeX's memory you used:
  33449 multiletter control sequences out of 15000+200000
  13873 words of font info for 50 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,28n,76p,1221b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,28n,76p,1187b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
 pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
 0.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
@@ -1630,7 +1630,7 @@ fb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/TeX/MiKTeX
 y7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on bakalarka.pdf (89 pages, 2065274 bytes).
+Output written on bakalarka.pdf (89 pages, 2065858 bytes).
 PDF statistics:
  2146 PDF objects out of 2487 (max. 8388607)
  501 named destinations out of 1000 (max. 500000)
