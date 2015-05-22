@@ -11,13 +11,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame0_View0,0]
-TopLine=249
+TopLine=255
 Cursor=16498
 
 [Frame1]
@@ -29,8 +29,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=literatura.tex
 
@@ -47,13 +47,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=uvod.tex
 
 [Frame2_View0,0]
-TopLine=69
+TopLine=89
 Cursor=7432
 
 [Frame3]
@@ -65,13 +65,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=SUMO.tex
 
 [Frame3_View0,0]
-TopLine=331
+TopLine=420
 Cursor=13255
 
 [Frame4]
@@ -83,14 +83,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame4_View0,0]
-TopLine=281
-Cursor=9325
+TopLine=244
+Cursor=7260
 
 [Frame5]
 Flags=0
@@ -101,13 +101,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=priloha.tex
 
 [Frame5_View0,0]
-TopLine=320
+TopLine=347
 Cursor=18411
 
 [Frame6]
@@ -119,14 +119,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=predidm.tex
 
 [Frame6_View0,0]
-TopLine=972
-Cursor=46052
+TopLine=792
+Cursor=41750
 
 [Frame7]
 Flags=0
@@ -137,13 +137,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=novymodel.tex
 
 [Frame7_View0,0]
-TopLine=199
+TopLine=227
 Cursor=13704
 
 [Frame8]
@@ -155,13 +155,13 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=simulace.tex
 
 [Frame8_View0,0]
-TopLine=140
+TopLine=250
 Cursor=7095
 
 [Frame9]
@@ -173,18 +173,18 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1322
-NormalPos.bottom=657
+NormalPos.right=1156
+NormalPos.bottom=431
 Class=LaTeXView
 Document=porovnani.tex
 
 [Frame9_View0,0]
-TopLine=0
-Cursor=434
+TopLine=187
+Cursor=11435
 
 [SessionInfo]
 FrameCount=10
-ActiveFrame=4
+ActiveFrame=9
 
 [Bookmarks]
 predidm.tex=475 295 172 13 666 804 

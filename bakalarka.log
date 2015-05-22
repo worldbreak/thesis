@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  22 MAY 2015 17:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  22 MAY 2015 21:26
 entering extended mode
 **bakalarka.tex
-(D:\Vanis-Sumo\thesis\bakalarka.tex
+(C:\diplomka\diplomka\TEX\bakalarka.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
 , bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
@@ -10,12 +10,12 @@ ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, 
 -x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
 ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
 elsh, loaded.
-("C:\TeX\MiKTeX 2.9\tex\latex\base\report.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\TeX\MiKTeX 2.9\tex\latex\base\fleqn.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fleqn.clo"
 File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
 \mathindent=\dimen102
-) ("C:\TeX\MiKTeX 2.9\tex\latex\base\size11.clo"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,20 +31,23 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen103
 )
-(D:\Vanis-Sumo\thesis\comment.sty Excluding comment 'comment') ("C:\TeX\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+(C:\diplomka\diplomka\TEX\comment.sty Excluding comment 'comment')
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\TeX\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
-) ("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) ("C:\TeX\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count88
@@ -60,25 +63,25 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks15
 
-("C:\TeX\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) ("C:\TeX\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-
-("C:\TeX\MiKTeX 2.9\tex\latex\base\cp1250.def"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\cp1250.def"
 File: cp1250.def 2008/03/30 v1.1d Input encoding file
-)) ("C:\TeX\MiKTeX 2.9\tex\generic\babel\babel.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\TeX\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-) ("C:\TeX\MiKTeX 2.9\tex\generic\babel\czech.ldf"
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\czech.ldf"
 Language: czech 2008/07/06 v3.1a Czech support from the babel system
-
-("C:\TeX\MiKTeX 2.9\tex\generic\babel\babel.def"
+ ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen112
@@ -86,19 +89,21 @@ File: babel.def 2008/07/08 v3.8m Babel common definitions
 Package babel Info: Making " an active character on input line 172.
 \cs@wordlen=\count92
 Package babel Info: Making - an active character on input line 226.
-)) (D:\Vanis-Sumo\thesis\makra.sty)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+)) (C:\diplomka\diplomka\TEX\makra.sty)
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
- ("C:\TeX\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-("C:\TeX\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
- ("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count93
@@ -112,22 +117,23 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-) ("C:\TeX\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\TeX\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
- ("C:\TeX\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-("C:\TeX\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
-) ("C:\TeX\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks18
 \thm@bodyfont=\toks19
@@ -138,23 +144,21 @@ Package: amsthm 2004/08/06 v2.20
 \thm@postskip=\skip44
 \thm@headsep=\skip45
 \dth@everypar=\toks23
-)
-("C:\TeX\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
-
 For additional information on amsmath, use the `?' option.
-("C:\TeX\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
- ("C:\TeX\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks24
 \ex@=\dimen115
-))
-("C:\TeX\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen116
-) ("C:\TeX\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
@@ -194,10 +198,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks28
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-)
-(D:\Vanis-Sumo\thesis\wrapfig.sty
+) (C:\diplomka\diplomka\TEX\wrapfig.sty
 \WF@wrappedlines=\count106
-) (C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count107
 \lst@gtempboxa=\box28
 \lst@token=\toks29
@@ -211,22 +215,22 @@ LaTeX Info: Redefining \] on input line 2666.
 \lst@lineno=\count112
 \lst@maxwidth=\dimen127
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
-File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 \c@lstnumber=\count113
 \lst@skipnumbers=\count114
 \lst@framebox=\box29
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
-File: listings.cfg 2014/09/06 1.5e listings configuration
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
-Package: listings 2014/09/06 1.5e (Carsten Heinz)
- (D:\Vanis-Sumo\thesis\vector.sty
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
+ (C:\diplomka\diplomka\TEX\vector.sty
 Package: vector 1994/09/16 v1.0 vector macros for LaTeX2e (nde)
 
-("C:\TeX\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-) ("C:\TeX\MiKTeX 2.9\tex\latex\tools\calc.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count115
 \calc@Bcount=\count116
@@ -241,39 +245,39 @@ LaTeX Info: Redefining \addtolength on input line 77.
 )
 \c@vec@elem=\count118
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfsync\pdfsync.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdfsync\pdfsync.sty"
 Package: pdfsync 2008/01/26 v1.1
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-common.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
 \pgfutil@everybye=\toks30
 \pgfutil@tempdima=\dimen130
 \pgfutil@tempdimb=\dimen131
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-common-lists.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-latex.def
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
 \pgfutil@abb=\box30
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
 Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
 ))
 Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks31
 \pgfkeys@temptoks=\toks32
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks33
 ))
 \pgf@x=\dimen132
@@ -294,32 +298,32 @@ Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 \t@pgf@tokb=\toks35
 \t@pgf@tokc=\toks36
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
 File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def"
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count123
 \pgfsyssoftpath@bigbuffer@items=\count124
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
 Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
 \pgfmath@dimen=\dimen140
 \pgfmath@count=\count125
 \pgfmath@box=\box31
@@ -327,19 +331,19 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex)))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex")))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
 \c@pgfmathroundto@lastzeros=\count126
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen141
 \pgf@picmaxx=\dimen142
@@ -356,100 +360,100 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen153
 \pgf@zy=\dimen154
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen155
 \pgf@path@lasty=\dimen156
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
 \pgf@shorten@end@additional=\dimen157
 \pgf@shorten@start@additional=\dimen158
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box32
 \pgf@hbox=\box33
 \pgf@layerbox@main=\box34
 \pgf@picture@serial@count=\count127
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
 \pgflinewidth=\dimen159
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
 \pgf@pt@x=\dimen160
 \pgf@pt@y=\dimen161
 \pgf@pt@temp=\dimen162
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex"
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex"
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
 \pgfarrowsep=\dimen163
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen164
 \pgf@sys@shading@range@num=\count128
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
 \pgfexternal@startupbox=\box35
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex"
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex"
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex"
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
 \pgfnodeparttextbox=\box36
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
 File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen165
 \pgf@nodesepend=\dimen166
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
 \pgffor@iter=\dimen167
 \pgffor@skip=\dimen168
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
 Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count129
 \pgfplotmarksize=\dimen169
@@ -469,7 +473,7 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikznumberofcurrentchild=\count132
 \tikz@fig@count=\count133
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count134
 \pgfmatrixcurrentcolumn=\count135
@@ -477,15 +481,15 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 )
 \tikz@expandcount=\count137
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.sty
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.revision.tex)
-Package: pgfplots 2014/08/04 v1.11 Data Visualization (1.11-3-g4c99d7a)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.revision.tex")
+Package: pgfplots 2014/02/28 v1.10 Data Visualization (1.10-2-gb39fe75)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscore.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscore.code.tex"
 \t@pgfplots@toka=\toks42
 \t@pgfplots@tokb=\toks43
 \t@pgfplots@tokc=\toks44
@@ -493,43 +497,42 @@ Package: pgfplots 2014/08/04 v1.11 Data Visualization (1.11-3-g4c99d7a)
 \c@pgfplots@coordindex=\count138
 \c@pgfplots@scanlineindex=\count139
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgfplotslibrary.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryfpu.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_trig_format.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructure.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructureext.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsarray.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgfplotslibrary.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryfpu.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructure.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructureext.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsarray.code.tex"
 \c@pgfplotsarray@tmp=\count140
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsmatrix.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtable\pgfplotstableshared.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsmatrix.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstableshared.code.tex"
 \c@pgfplotstable@counta=\count141
 \t@pgfplotstable@a=\toks45
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsdeque.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbinary.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbinary.data.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil.verb.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsdeque.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.data.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.verb.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex"
 \c@pgfplotslibrarysurf@no=\count142
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def)))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolormap.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolor.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsstackedplots.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsplothandlers.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsmeshplothandler.code.tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.scaling.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscoordprocessing.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.errorbars.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.markers.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsticks.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.paths.code.tex)
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduledecorations.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolormap.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolor.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsstackedplots.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsplothandlers.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsmeshplothandler.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.scaling.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscoordprocessing.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.errorbars.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.markers.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsticks.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.paths.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecorations.code.tex"
 \pgfdecoratedcompleteddistance=\dimen177
 \pgfdecoratedremainingdistance=\dimen178
 \pgfdecoratedinputsegmentcompleteddistance=\dimen179
@@ -541,14 +544,10 @@ Package: pgfplots 2014/08/04 v1.11 Data Visualization (1.11-3-g4c99d7a)
 )
 \tikz@lib@dec@box=\box41
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphi
-ng.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.
-tex))
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplac
-ing.code.tex
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code
-.tex))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+" ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex"))
 \pgfplots@numplots=\count144
 \pgfplots@xmin@reg=\dimen184
 \pgfplots@xmax@reg=\dimen185
@@ -557,18 +556,19 @@ ing.code.tex
 \pgfplots@zmin@reg=\dimen188
 \pgfplots@zmax@reg=\dimen189
 )
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex"
 File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex"
 File: pgflibraryplotmarks.code.tex 2013/07/20 v3.0.0 (rcs-revision 1.13)
 )))
-("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
- ("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
-("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -604,25 +604,28 @@ Package atveryend Info: \enddocument detected (standard20110627).
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-) ("C:\TeX\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("C:\TeX\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen190
 \Hy@linkcounter=\count145
 \Hy@pagecounter=\count146
- ("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count147
 
-("C:\TeX\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
- ("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4319.
@@ -636,8 +639,7 @@ Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count148
-
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -662,23 +664,24 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver: hpdftex.
 
-("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count153
 \c@bookmark@seq@number=\count154
- ("C:\TeX\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip52
-)
-(D:\Vanis-Sumo\thesis\bakalarka.aux (D:\Vanis-Sumo\thesis\uvod.aux) (D:\Vanis-Sumo\thesis\predidm.aux
+) (C:\diplomka\diplomka\TEX\bakalarka.aux
+(C:\diplomka\diplomka\TEX\uvod.aux) (C:\diplomka\diplomka\TEX\predidm.aux
 
 LaTeX Warning: Label `subsec:parameterAddKrauss' multiply defined.
 
-) (D:\Vanis-Sumo\thesis\SUMO.aux) (D:\Vanis-Sumo\thesis\novymodel.aux) (D:\Vanis-Sumo\thesis\kalibrace.aux)
-(D:\Vanis-Sumo\thesis\simulace.aux) (D:\Vanis-Sumo\thesis\porovnani.aux) (D:\Vanis-Sumo\thesis\literatura.aux)
-(D:\Vanis-Sumo\thesis\priloha.aux))
+) (C:\diplomka\diplomka\TEX\SUMO.aux) (C:\diplomka\diplomka\TEX\novymodel.aux) (C:\diplomka\diplomka\TEX\kalibrace.aux)
+(C:\diplomka\diplomka\TEX\simulace.aux) (C:\diplomka\diplomka\TEX\porovnani.aux)
+(C:\diplomka\diplomka\TEX\literatura.aux) (C:\diplomka\diplomka\TEX\priloha.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
 LaTeX Font Info:    ... okay on input line 149.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 149.
@@ -730,7 +733,7 @@ LaTeX Font Info:    ... okay on input line 149.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\sumo\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count155
 \scratchdimen=\dimen194
@@ -761,14 +764,15 @@ Configuring pdfsync
  ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider w
-riting \pgfplotsset{compat=1.11} into your preamble.
+riting \pgfplotsset{compat=1.10} into your preamble.
  on input line 149.
 
 \AtBeginShipoutBox=\box43
 Package hyperref Info: Link coloring ON on input line 149.
-("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
- ("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count164
@@ -776,27 +780,29 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 149.
 LaTeX Info: Redefining \pageref on input line 149.
 LaTeX Info: Redefining \nameref on input line 149.
-
-(D:\Vanis-Sumo\thesis\bakalarka.out) (D:\Vanis-Sumo\thesis\bakalarka.out)
+ (C:\diplomka\diplomka\TEX\bakalarka.out)
+(C:\diplomka\diplomka\TEX\bakalarka.out)
 \@outlinefile=\write5
  [1
 
-{C:/Users/sumo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <logo_cvut.pdf, id=388, 366.36874pt x 279.0425pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<logo_cvut.pdf, id=388, 366.36874pt x 279.0425pt>
 File: logo_cvut.pdf Graphic file (type pdf)
  <use logo_cvut.pdf>
 Package pdftex.def Info: logo_cvut.pdf used on input line 174.
 (pdftex.def)             Requested size: 170.71652pt x 130.02591pt.
- [2 <D:/Vanis-Sumo/thesis/logo_cvut.pdf>] [3] [4
+ [2 <C:/diplomka/diplomka/TEX/logo_cvut.pdf>]
+[3] [4
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 253.
- ("C:\TeX\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
- [5] [6] (D:\Vanis-Sumo\thesis\bakalarka.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
-as been already used, duplicate ignored
+ [5] [6] (C:\diplomka\diplomka\TEX\bakalarka.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1
+}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.49 ...\i } pr\'ace s programem}{36}{section.2.3}
@@ -823,8 +829,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
 <to be read again> 
                    \relax 
 l.305 \include{uvod}
-                     [3] (D:\Vanis-Sumo\thesis\uvod.texpdfTeX warning (ext4): destination with the same identifier (name
-{page.4}) has been already used, duplicate ignored
+                     [3] (C:\diplomka\diplomka\TEX\uvod.texpdfTeX warning (ext4): destination with the same identifier (
+name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.60 
@@ -835,7 +841,7 @@ l.60
 <to be read again> 
                    \relax 
 l.305 \include{uvod}
-                     [5] (D:\Vanis-Sumo\thesis\predidm.tex
+                     [5] (C:\diplomka\diplomka\TEX\predidm.tex
 Kapitola 1.
 
 Overfull \hbox (4.53682pt too wide) in paragraph at lines 19--20
@@ -861,13 +867,13 @@ File: images/vztahmeziSaV.pdf Graphic file (type pdf)
  <use images/vztahmeziSaV.pdf>
 Package pdftex.def Info: images/vztahmeziSaV.pdf used on input line 43.
 (pdftex.def)             Requested size: 161.78302pt x 161.00108pt.
- [7 <D:/Vanis-Sumo/thesis/images/newell.pdf> <D:/Vanis-Sumo/thesis/images/vztahmeziSaV.pdf>]
+ [7 <C:/diplomka/diplomka/TEX/images/newell.pdf> <C:/diplomka/diplomka/TEX/images/vztahmeziSaV.pdf>]
 <images/linearaprox.pdf, id=589, 161.78342pt x 161.0015pt>
 File: images/linearaprox.pdf Graphic file (type pdf)
  <use images/linearaprox.pdf>
 Package pdftex.def Info: images/linearaprox.pdf used on input line 64.
 (pdftex.def)             Requested size: 161.78302pt x 161.00108pt.
- [8 <D:/Vanis-Sumo/thesis/images/linearaprox.pdf>]
+ [8 <C:/diplomka/diplomka/TEX/images/linearaprox.pdf>]
 Overfull \hbox (22.30196pt too wide) in paragraph at lines 78--79
 \OT1/cmr/m/n/10.95 kazdemu jed-not-livemu vo-zi-dlu bu-dou hod-no-ty vy-ge-ne-rovany z nejakeho pravdepodobnostn
 ho|
@@ -884,7 +890,7 @@ File: images/kraussbrzdeni.pdf Graphic file (type pdf)
  <use images/kraussbrzdeni.pdf>
 Package pdftex.def Info: images/kraussbrzdeni.pdf used on input line 485.
 (pdftex.def)             Requested size: 250.95476pt x 212.41711pt.
- [19 <D:/Vanis-Sumo/thesis/images/kraussbrzdeni.pdf>]
+ [19 <C:/diplomka/diplomka/TEX/images/kraussbrzdeni.pdf>]
 Overfull \hbox (10.80261pt too wide) in paragraph at lines 541--542
 [][][]\OT1/cmr/m/n/10.95 Pokud po-mi-ne-me re-akcn cas celnho ridice, brzden se sklada ze dvou cast p
 robhajcch|
@@ -901,7 +907,7 @@ File: idm.pdf Graphic file (type pdf)
  <use idm.pdf>
 Package pdftex.def Info: idm.pdf used on input line 632.
 (pdftex.def)             Requested size: 250.95476pt x 85.25465pt.
- [22] [23 <D:/Vanis-Sumo/thesis/idm.pdf>]
+ [22] [23 <C:/diplomka/diplomka/TEX/idm.pdf>]
 <images/wiedemann.pdf, id=849, 398.9796pt x 279.85355pt>
 File: images/wiedemann.pdf Graphic file (type pdf)
  <use images/wiedemann.pdf>
@@ -918,7 +924,7 @@ cmr/m/n/10.95 a $[][]\OML/cmm/m/it/10.95 CXmult$ \OT1/cmr/m/n/10.95 jsou zde op
 ovan|
  []
 
-[25 <D:/Vanis-Sumo/thesis/images/wiedemann.pdf>] [26]) [27] (D:\Vanis-Sumo\thesis\SUMO.tex
+[25 <C:/diplomka/diplomka/TEX/images/wiedemann.pdf>] [26]) [27] (C:\diplomka\diplomka\TEX\SUMO.tex
 Kapitola 2.
 [28
 
@@ -941,10 +947,10 @@ File: images/poisson69.pdf Graphic file (type pdf)
  <use images/poisson69.pdf>
 Package pdftex.def Info: images/poisson69.pdf used on input line 196.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- [33 <D:/Vanis-Sumo/thesis/images/poisson25.pdf> <D:/Vanis-Sumo/thesis/images/poisson69.pdf
+ [33 <C:/diplomka/diplomka/TEX/images/poisson25.pdf> <C:/diplomka/diplomka/TEX/images/poisson69.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/poisson69.pdf): PDF inclusion: multiple pdfs with page gr
-oup included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/poisson69.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
 >] [34]
 Overfull \hbox (8.74582pt too wide) in paragraph at lines 259--260
 [][][]\OT1/cmr/m/it/10.95 public sta-tic Do-cu-ment par-se(String fi-le-Na-me) throws Do-cu-men-tEx-cep-ti-on \OT1/cmr/m
@@ -968,7 +974,7 @@ Overfull \hbox (0.61311pt too wide) in paragraph at lines 308--309
 ne |
  []
 
-[36]) [37] (D:\Vanis-Sumo\thesis\novymodel.tex
+[36]) [37] (C:\diplomka\diplomka\TEX\novymodel.tex
 Kapitola 3.
 
 Overfull \hbox (23.00981pt too wide) in paragraph at lines 11--12
@@ -1025,7 +1031,7 @@ Overfull \hbox (10.81552pt too wide) in paragraph at lines 93--94
 nk-ce \OT1/cmr/m/it/10.95 vFree \OT1/cmr/m/n/10.95 po-tom vy-pada nasledovne: |
  []
 
-[41] [42]) [43] (D:\Vanis-Sumo\thesis\kalibrace.tex
+[41] [42]) [43] (C:\diplomka\diplomka\TEX\kalibrace.tex
 Kapitola 4.
 <images/model.pdf, id=1156, 456.85883pt x 114.55798pt>
 File: images/model.pdf Graphic file (type pdf)
@@ -1036,7 +1042,7 @@ Package pdftex.def Info: images/model.pdf used on input line 13.
 
 
 
- <D:/Vanis-Sumo/thesis/images/model.pdf>] [45]
+ <C:/diplomka/diplomka/TEX/images/model.pdf>] [45]
 Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
@@ -1052,19 +1058,19 @@ Overfull \hbox (25.77193pt too wide) in paragraph at lines 79--80
 duveryhodnosti.|
  []
 
-[46 <D:/Vanis-Sumo/thesis/images/validace.pdf>] <images/validdiagram.pdf, id=1200, 385.8656pt x 271.13898pt>
+[46 <C:/diplomka/diplomka/TEX/images/validace.pdf>] <images/validdiagram.pdf, id=1200, 385.8656pt x 271.13898pt>
 File: images/validdiagram.pdf Graphic file (type pdf)
 
 <use images/validdiagram.pdf>
 Package pdftex.def Info: images/validdiagram.pdf used on input line 91.
 (pdftex.def)             Requested size: 418.25368pt x 293.90968pt.
- [47 <D:/Vanis-Sumo/thesis/images/validdiagram.pdf>] [48]
+ [47 <C:/diplomka/diplomka/TEX/images/validdiagram.pdf>] [48]
 Overfull \hbox (18.26376pt too wide) in paragraph at lines 161--162
 \OT1/cmr/m/n/10.95 a prslusne na-si-mu-lo-vane vystupy ne-mus ten-to predpoklad splnovat. Jed-nou z moznost
 |
  []
 
-[49] [50]) [51] (D:\Vanis-Sumo\thesis\simulace.tex
+[49] [50]) [51] (C:\diplomka\diplomka\TEX\simulace.tex
 Kapitola 5.
 <images/usekdalnice.png, id=1275, 689.57625pt x 528.47438pt>
 File: images/usekdalnice.png Graphic file (type png)
@@ -1087,7 +1093,7 @@ Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
 
 
 
- <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1298, 361.35pt x 216.81pt>
+ <C:/diplomka/diplomka/TEX/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1298, 361.35pt x 216.81pt>
 File: images/brana0157_20121028.pdf Graphic file (type pdf)
 
 <use images/brana0157_20121028.pdf>
@@ -1111,26 +1117,26 @@ File: images/brana0145_20121007.pdf Graphic file (type pdf)
 <use images/brana0145_20121007.pdf>
 Package pdftex.def Info: images/brana0145_20121007.pdf used on input line 61.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- [53 <D:/Vanis-Sumo/thesis/images/brana0170_20121028.pdf> <D:/Vanis-Sumo/thesis/images/brana0170_20121007.pdf
+ [53 <C:/diplomka/diplomka/TEX/images/brana0170_20121028.pdf> <C:/diplomka/diplomka/TEX/images/brana0170_20121007.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0170_20121007.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
-> <D:/Vanis-Sumo/thesis/images/brana0157_20121028.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/brana0170_20121007.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <C:/diplomka/diplomka/TEX/images/brana0157_20121028.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0157_20121028.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
-> <D:/Vanis-Sumo/thesis/images/brana0157_20121007.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/brana0157_20121028.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <C:/diplomka/diplomka/TEX/images/brana0157_20121007.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0157_20121007.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
-> <D:/Vanis-Sumo/thesis/images/brana0145_20121028.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/brana0157_20121007.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <C:/diplomka/diplomka/TEX/images/brana0145_20121028.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121028.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
-> <D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/brana0145_20121028.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+> <C:/diplomka/diplomka/TEX/images/brana0145_20121007.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf): PDF inclusion: multiple pdfs wit
-h page group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/images/brana0145_20121007.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
 >] [54] <real/sokp218orig.pdf, id=1367, 361.35pt x 216.81pt>
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
@@ -1188,22 +1194,22 @@ Package pdftex.def Info: gipps/sokp170Gipps.pdf used on input line 146.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[55 <D:/Vanis-Sumo/thesis/real/sokp218orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp218Gipps.pdf
+[55 <C:/diplomka/diplomka/TEX/real/sokp218orig.pdf> <C:/diplomka/diplomka/TEX/gipps/sokp218Gipps.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp218Gipps.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
->] [56 <D:/Vanis-Sumo/thesis/real/sokp201orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp201Gipps.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/gipps/sokp218Gipps.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+>] [56 <C:/diplomka/diplomka/TEX/real/sokp201orig.pdf> <C:/diplomka/diplomka/TEX/gipps/sokp201Gipps.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp201Gipps.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/real/sokp187orig.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/gipps/sokp201Gipps.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/real/sokp187orig.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/real/sokp187orig.pdf): PDF inclusion: multiple pdfs with page gr
-oup included in a single page
-> <D:/Vanis-Sumo/thesis/gipps/sokp187Gipps.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/real/sokp187orig.pdf): PDF inclusion: multiple pdfs with pag
+e group included in a single page
+> <C:/diplomka/diplomka/TEX/gipps/sokp187Gipps.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp187Gipps.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/gipps/sokp187Gipps.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
 >]
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
@@ -1254,14 +1260,14 @@ Package pdftex.def Info: krauss/sokp170krauss.pdf used on input line 205.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[57 <D:/Vanis-Sumo/thesis/real/sokp170orig.pdf> <D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf
+[57 <C:/diplomka/diplomka/TEX/real/sokp170orig.pdf> <C:/diplomka/diplomka/TEX/gipps/sokp170Gipps.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/gipps/sokp170Gipps.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/krauss/sokp218krauss.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/gipps/sokp170Gipps.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/krauss/sokp218krauss.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp218krauss.pdf): PDF inclusion: multiple pdfs with pag
-e group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/krauss/sokp218krauss.pdf): PDF inclusion: multiple pdfs with
+ page group included in a single page
 >]
 Overfull \hbox (6.18832pt too wide) in paragraph at lines 225--226
 [][]\OT1/cmr/m/n/10.95 Vsechny pa-ra-me-t-ry by-ly po-nechany stejne ja-ko u Kraus-so-va mo-de-lu. Kraussuv a Rozs
@@ -1324,14 +1330,14 @@ Package pdftex.def Info: kraussOrig/sokp170kraussOrig.pdf used on input line 256
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[58 <D:/Vanis-Sumo/thesis/krauss/sokp201krauss.pdf> <D:/Vanis-Sumo/thesis/krauss/sokp187krauss.pdf
+[58 <C:/diplomka/diplomka/TEX/krauss/sokp201krauss.pdf> <C:/diplomka/diplomka/TEX/krauss/sokp187krauss.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/krauss/sokp187krauss.pdf): PDF inclusion: multiple pdfs with pag
-e group included in a single page
->] [59 <D:/Vanis-Sumo/thesis/krauss/sokp170krauss.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp218kraussOrig.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/krauss/sokp187krauss.pdf): PDF inclusion: multiple pdfs with
+ page group included in a single page
+>] [59 <C:/diplomka/diplomka/TEX/krauss/sokp170krauss.pdf> <C:/diplomka/diplomka/TEX/kraussOrig/sokp218kraussOrig.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp218kraussOrig.pdf): PDF inclusion: multiple pdfs 
-with page group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/kraussOrig/sokp218kraussOrig.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
 >]
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
@@ -1355,10 +1361,11 @@ File: IDM/sokp201IDM.pdf Graphic file (type pdf)
  <use IDM/sokp201IDM.pdf>
 Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 300.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- [60 <D:/Vanis-Sumo/thesis/kraussOrig/sokp201kraussOrig.pdf> <D:/Vanis-Sumo/thesis/kraussOrig/sokp187kraussOrig.pdf
+ [60 <C:/diplomka/diplomka/TEX/kraussOrig/sokp201kraussOrig.pdf> <C:/diplomka/diplomka/TEX/kraussOrig/sokp187kraussOrig.
+pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/kraussOrig/sokp187kraussOrig.pdf): PDF inclusion: multiple pdfs 
-with page group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/kraussOrig/sokp187kraussOrig.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
 >]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1389,10 +1396,10 @@ Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 318.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61 <D:/Vanis-Sumo/thesis/kraussOrig/sokp170kraussOrig.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf
+[61 <C:/diplomka/diplomka/TEX/kraussOrig/sokp170kraussOrig.pdf> <C:/diplomka/diplomka/TEX/IDM/sokp218IDM.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/IDM/sokp218IDM.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
 >] <wiedemann/sokp187Wiedemann.pdf, id=1598, 361.35pt x 216.81pt>
 File: wiedemann/sokp187Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp187Wiedemann.pdf>
@@ -1408,19 +1415,19 @@ Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 338.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [62 <D:/Vanis-Sumo/thesis/IDM/sokp201IDM.pdf> <D:/Vanis-Sumo/thesis/IDM/sokp187IDM.pdf
+) [62 <C:/diplomka/diplomka/TEX/IDM/sokp201IDM.pdf> <C:/diplomka/diplomka/TEX/IDM/sokp187IDM.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp187IDM.pdf): PDF inclusion: multiple pdfs with page grou
-p included in a single page
->] [63 <D:/Vanis-Sumo/thesis/IDM/sokp170IDM.pdf> <D:/Vanis-Sumo/thesis/wiedemann/sokp187Wiedemann.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/IDM/sokp187IDM.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+>] [63 <C:/diplomka/diplomka/TEX/IDM/sokp170IDM.pdf> <C:/diplomka/diplomka/TEX/wiedemann/sokp187Wiedemann.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/wiedemann/sokp187Wiedemann.pdf): PDF inclusion: multiple pdfs wi
-th page group included in a single page
-> <D:/Vanis-Sumo/thesis/wiedemann/sokp170Wiedemann.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/wiedemann/sokp187Wiedemann.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+> <C:/diplomka/diplomka/TEX/wiedemann/sokp170Wiedemann.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/wiedemann/sokp170Wiedemann.pdf): PDF inclusion: multiple pdfs wi
-th page group included in a single page
->] (D:\Vanis-Sumo\thesis\porovnani.tex
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/wiedemann/sokp170Wiedemann.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+>] (C:\diplomka\diplomka\TEX\porovnani.tex
 Kapitola 6.
 
 Overfull \hbox (1.53455pt too wide) in paragraph at lines 3--4
@@ -1486,18 +1493,18 @@ Package pdftex.def Info: porovnani/chyba170.pdf used on input line 113.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[66 <D:/Vanis-Sumo/thesis/porovnani/brana218.pdf> <D:/Vanis-Sumo/thesis/porovnani/brana201.pdf
+[66 <C:/diplomka/diplomka/TEX/porovnani/brana218.pdf> <C:/diplomka/diplomka/TEX/porovnani/brana201.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana201.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/brana187.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/brana201.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/porovnani/brana187.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana187.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/brana170.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/brana187.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/porovnani/brana170.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana170.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/brana170.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
 >] <porovnani/chyba170Gipps.pdf, id=1722, 361.35pt x 216.81pt>
 File: porovnani/chyba170Gipps.pdf Graphic file (type pdf)
  <use porovnani/chyba170Gipps.pdf>
@@ -1525,31 +1532,31 @@ Package pdftex.def Info: porovnani/chyba170IDM.pdf used on input line 127.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[67 <D:/Vanis-Sumo/thesis/porovnani/chyba218.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba201.pdf
+[67 <C:/diplomka/diplomka/TEX/porovnani/chyba218.pdf> <C:/diplomka/diplomka/TEX/porovnani/chyba201.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba201.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba187.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba201.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/porovnani/chyba187.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba187.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba170.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba187.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <C:/diplomka/diplomka/TEX/porovnani/chyba170.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170.pdf): PDF inclusion: multiple pdfs with page 
-group included in a single page
->]) [68 <D:/Vanis-Sumo/thesis/porovnani/chyba170Gipps.pdf> <D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba170.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+>]) [68 <C:/diplomka/diplomka/TEX/porovnani/chyba170Gipps.pdf> <C:/diplomka/diplomka/TEX/porovnani/chyba170Krauss.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170Krauss.pdf): PDF inclusion: multiple pdfs with
- page group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba170KraussOrig.pdf
-
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170KraussOrig.pdf): PDF inclusion: multiple pdfs 
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba170Krauss.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
-> <D:/Vanis-Sumo/thesis/porovnani/chyba170IDM.pdf
+> <C:/diplomka/diplomka/TEX/porovnani/chyba170KraussOrig.pdf
 
-pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/chyba170IDM.pdf): PDF inclusion: multiple pdfs with pa
-ge group included in a single page
->] [69] (D:\Vanis-Sumo\thesis\literatura.tex
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba170KraussOrig.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+> <C:/diplomka/diplomka/TEX/porovnani/chyba170IDM.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba170IDM.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+>] [69] (C:\diplomka\diplomka\TEX\literatura.tex
 Underfull \hbox (badness 6510) in paragraph at lines 19--21
 [][][]\OT1/cmr/m/n/10.95 MARK, Bracks-to-ne a Mc-Do-nald MI-KE. Car-following: a his-to-ri-cal re-
  []
@@ -1584,17 +1591,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
 
 
-]) [71] (D:\Vanis-Sumo\thesis\bakalarka.lof)
+]) [71] (C:\diplomka\diplomka\TEX\bakalarka.lof)
 \tf@lof=\write7
  [72
 
 
-] [73] (D:\Vanis-Sumo\thesis\bakalarka.lot)
+] [73] (C:\diplomka\diplomka\TEX\bakalarka.lot)
 \tf@lot=\write8
  [74
 
 ]
-(D:\Vanis-Sumo\thesis\priloha.tex
+(C:\diplomka\diplomka\TEX\priloha.tex
 P\v {r}\'{\i }loha A.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1640,10 +1647,10 @@ P\v {r}\'{\i }loha D.
 ]) [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
- (D:\Vanis-Sumo\thesis\bakalarka.aux (D:\Vanis-Sumo\thesis\uvod.aux) (D:\Vanis-Sumo\thesis\predidm.aux)
-(D:\Vanis-Sumo\thesis\SUMO.aux) (D:\Vanis-Sumo\thesis\novymodel.aux) (D:\Vanis-Sumo\thesis\kalibrace.aux)
-(D:\Vanis-Sumo\thesis\simulace.aux) (D:\Vanis-Sumo\thesis\porovnani.aux) (D:\Vanis-Sumo\thesis\literatura.aux)
-(D:\Vanis-Sumo\thesis\priloha.aux))
+ (C:\diplomka\diplomka\TEX\bakalarka.aux (C:\diplomka\diplomka\TEX\uvod.aux)
+(C:\diplomka\diplomka\TEX\predidm.aux) (C:\diplomka\diplomka\TEX\SUMO.aux) (C:\diplomka\diplomka\TEX\novymodel.aux)
+(C:\diplomka\diplomka\TEX\kalibrace.aux) (C:\diplomka\diplomka\TEX\simulace.aux) (C:\diplomka\diplomka\TEX\porovnani.aux
+) (C:\diplomka\diplomka\TEX\literatura.aux) (C:\diplomka\diplomka\TEX\priloha.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
@@ -1655,28 +1662,30 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
  ) 
 Here is how much of TeX's memory you used:
- 31236 strings out of 493921
- 677527 string characters out of 3151295
- 865497 words of memory out of 3000000
- 33448 multiletter control sequences out of 15000+200000
+ 31085 strings out of 493921
+ 669453 string characters out of 3147283
+ 859824 words of memory out of 3000000
+ 33300 multiletter control sequences out of 15000+200000
  13274 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,28n,76p,1187b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-17.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
-.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.p
-fb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10
-.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (91 pages, 2060813 bytes).
+ 55i,28n,76p,1197b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on bakalarka.pdf (91 pages, 2061427 bytes).
 PDF statistics:
- 2156 PDF objects out of 2487 (max. 8388607)
+ 2157 PDF objects out of 2487 (max. 8388607)
  503 named destinations out of 1000 (max. 500000)
  1030 words of extra memory for PDF output out of 10000 (max. 10000000)
 
