@@ -1,0 +1,142 @@
+\chapter{Porovnání modelù}
+
+Hlavním cílem této práce je porovnání mikroskopickıch modelù s reálnımi daty. Nástroje, které k tomu vyuijeme, jsou uvedeny v podkapitole \ref{statmet}. Dalšími monostmi porovnání modelù jsou grafická znázornìní intenzit èi absolutních chyb  v prùbìhu dne.
+
+Jednotlivé modely budeme porovnávat na nasimulovanıch datech uvedenıch v kapitole \ref{chap:simulace}. Wiedemannùv model není v tomto porovnání vùbec obsaen, protoe vozidla se v tomto modelu sráejí a vısledky by nìmely ádnou vypovídající hodnotu.
+
+\section{Støední hodnota}
+
+Prvním nutnım testem byla kontrola nulové støední hodnoty u absolutní chyby modelù, tzn. e ji model nemá vychılenou do kladnıch èi zápornıch hodnot.
+
+Díky vısledkùm od všech modelù nebylo ani nutné tento test provádìt, protoe prùmìr absolutní chyby ze všech hodnot ze dne 28.10.2012 vychází nulovı. 
+
+Jak ji bylo øeèeno, pokud by byla hypotéza \eqref{eq:hypoteza} zamítnuta, tj. e støední hodnota absolutní chyby nebude rovna nule, znaèilo by to nepøesnost v modelu èi v jeho kalibraci.
+
+\section{Rozptyl a smìrodatná odchylka}
+
+Z dùvodu kontroly, zda se rozptyl namìøenıch intenzit modelù vıznamnì neliší od rozptylu namìøenıch dat, byl proveden F-test podílu rozptylù vysvìtlenı v podkapitole \ref{ftest}. Pro hladinu vıznamnosti 95\% má kritická hodnota F-testu hodnotu
+\begin{equation}
+F_\text{krit} = 1{,}090.
+\label{eq:Fkrit}
+\end{equation}
+
+Vısledky jednotlivıch modelù jsou shrnuty v tabulce \ref{vysledkyftest}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model:}  & \textbf{Hodnota F} \\ \hline
+Gipps            & 1,0124        \\ \hline
+Krauss           & 1,0233        \\ \hline
+Rozšíøenı Krauss & 1,0234        \\ \hline
+IDM              & 1,0187        \\ \hline
+\end{tabular}
+\caption{Vısledná statistika pro jednotlivé modely}
+\label{vysledkyftest}
+\end{center}
+\end{table}
+Je tedy patrné, e pro všechny modely rovnice \eqref{eq:ffkrit} neplatí a tím pádem se rozptyly jednotlivıch modelù vıznamnì statisticky neliší. Je to také kontrola dávají modely pøijatelné vısledky.
+
+Smìrodatné odchylky $\sigma$ rozdílù mezi namìøenımi a nasimulovanımi daty jednotlivıch modelù jsou znázornìny v tabulce \ref{vysledkyso}. Je tedy vidìt, e nejlepší vısledky podle tohoto ukazetele mìl Gippsùv model pøed IDM a Kraussovımi modely, které jsou vyrovnané.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model}  & $\sigma$ [voz] \\ \hline
+Gipps            & 5,97601                      \\ \hline
+Krauss           & 6,26314                      \\ \hline
+Rozšíøenı Krauss & 6,26967                     \\ \hline
+IDM              & 6,02885                     \\ \hline
+\end{tabular}
+\caption{Smìrodatné odchylky jednotlivıch modelù}
+\label{vysledkyso}
+\end{center}
+\end{table}
+
+
+\section{Støední absolutní chyba}
+
+Pro všechny modely jsme posléze vypoèítali støední absolutní chybu mezi skuteènou a nasimulovanou intenzitou dle rovnice \eqref{eq:mae}. Vısledné hodnoty pro všechny modely jsou shrnuty v tabulce \ref{vysledkyMAE}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model}  & MAE [voz] \\ \hline
+Gipps            & 3,579                     \\ \hline
+Krauss           & 3,665                     \\ \hline
+Rozšíøenı Krauss & 3,665                     \\ \hline
+IDM              & 3,590                     \\ \hline
+\end{tabular}
+\caption{Støední absolutní chyba (MAE) jednotlivıch modelù}
+\label{vysledkyMAE}
+\end{center}
+\end{table}
+
+I podle tohoto ukazatele je nejlepší Gippsùv model, nicménì rozdíly hodnot chyb nejsou nìjak vysoké, co znaèí monost pouití všech modelù. Mezní hodnota støední absolutní chyby, kdy u model neposkytuje data v poadované pøesnosti, není striktnì stanovena. Dle mého názoru by chyba nemìla pøesahnout 25\%. Pokud budeme uvaovat prùmìrnou intenzitu 30 voz/s, jedná se o hodnotu 7,5 vozidla.
+
+
+\section{Grafická znázornìní}
+
+Jako další variantu porovnání modelù jsme zvolili prùbìhy intenzit na jednotlivıch mıtnıch branách, viz obrázek \ref{fig:porovnanirada}. Z tìchto obrázku vyplıvá jistá podobnost modelù, ádnı z nich se vıraznì nevymyká. Nejvíce nepøesnı v poètu vozidel dle obrázkù je Rozšíøenı Kraussùv model, co je matematicky doloeno v pøedchozích podkapitolách (smìrodatná odchylka, støední absolutní chyba).
+
+\begin{figure}[h]
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{porovnani/brana218.pdf} & \includegraphics[width=6.5cm]{porovnani/brana201.pdf} \\
+a) Brána 218 & b) Brána 201 \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{porovnani/brana187.pdf} & \includegraphics[width=6.5cm]{porovnani/brana170.pdf} \\
+c) Brána 187 & d) Brána 170
+\end{tabular}
+\caption{Porovnání jednotlivıch modelù mezi sebou - konkrétní hodnoty}
+\label{fig:porovnanirada}
+\end{figure}
+
+
+Dále jsme vynesli absolutní chybu jako èasovou øadu a to nejprve pro všechny brány, obrázek \ref{fig:porovnanichyba} a také pro kadı jednotlivı model zvláš na poslední mıtné bránì 170 - obrázky \ref{chyba170}. Pokud se zamìøíme na vısledky modelù na bránì 170 je vidìt i pouhım okem, e Gippsùv model dává asi nejlepší vısledky. IDM by mohl jistì dávat lepší vısledky, pokud by chyba nìkdy a pøíliš èasto nestoupala do kladnıch hodnot, a hned potom rychle klesla a to a o 30 vozidel. Tento problém je souhrou nìkolika okolností. Hlavní dvì z nich jsou ji zmínìny vıše, a to pøedjídìní vozidel a zároveò vjídìní vozidel do oblasti. Kraussovy modely jsou pomìrnì dost rozkmitány, co by se postupnım dalším kalibrováním mohlo èásteènì vylepšit.
+
+O trochu vìtší chyby bìhem první noèní hodiny u mıtné brány 170 jsou zpùsobeny tím, e ještì nejsou ádná vozidla v simulaci. Simulace startuje o pùlnoci, ale v reálnıch datech zde ji nìjaká vozidla projela. Ta ale vyjela ještì pøed pùlnocí minulého dne.
+
+Dalším dùvodem vzniku chyb jsou nájezdy a vıjezdy z Praského okruhu, které nemìøíme a nejsme schopni je ani realisticky simulovat. Další nepøesností je generování vozidel do simulace z exponenciálního rozdìlení - viz podkapitola \ref{subsec:vozidla}. Dále nesmíme zapomenout na ne úplnì pøesnı import podkladovıch dat. Ovlivnìní vısledkù také mùe plynout z pøedjídìcího modelu, kterı je v SUMO implementován. Závìreènı vliv, kterı nesouvisí pøímo se samotnım modelem, je vjezd vozidel do simulace na základì podmínky, aby mìlo dostateènı èasovı i bezpeènostní odstup a neohrozilo vozidlo pøed sebou. SUMO bere v úvahu i decelaraci vozidla, která je navíc i souèástí dalších vıpoètù. Proto je otázkou, jak vùbec tuto vstupní podmínku poèítat správnì.
+ 
+\begin{figure}[h]
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{porovnani/chyba218.pdf} & \includegraphics[width=6.5cm]{porovnani/chyba201.pdf} \\
+a) Brána 218 & b) Brána 201 \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{porovnani/chyba187.pdf} & \includegraphics[width=6.5cm]{porovnani/chyba170.pdf} \\
+c) Brána 187 & d) Brána 170
+\end{tabular}
+\caption{Porovnání jednotlivıch modelù mezi sebou - absolutní chyby}
+\label{fig:porovnanichyba}
+\end{figure}
+
+\begin{figure}[h]
+\begin{tabular}{cc}
+\includegraphics[width=6.5cm]{porovnani/chyba170Gipps.pdf} & \includegraphics[width=6.5cm]{porovnani/chyba170Krauss.pdf} \\
+a) Gippsùv model & b) Kraussùv model \\
+%
+\\
+%
+\includegraphics[width=6.5cm]{porovnani/chyba170KraussOrig.pdf} & \includegraphics[width=6.5cm]{porovnani/chyba170IDM.pdf} \\
+c) Rozšíøenı Kraussùv model & d) Intelligent Driver Model
+\end{tabular}
+\caption{Porovnání jednotlivıch modelù mezi sebou - mıtná brána 0170}
+\label{chyba170}
+\end{figure}
+
+Pokud se podíváme na prùbìhy všech modelù, vidíme, e absolutní chyba se zvyšuje se zvyšující se intenzitou dopravy. To je také dáno i tím, e je velice tìké do modelù zakomponovat øidièe. Øidiè má z tohoto pohledu nepøedvídatelné chování a je velice tìké ho do vıpoètù zahrnout. Jako pøíklad mùeme uvést omezenou rychlost na Praském okruhu na 130 km/h. Pokud bychom nastavili podmínku, e vozidlo nemùe jet rychleji ne je tato rychlost, potom by naše vısledky byly ještì více zkreslující. U nízkıch intenzit (do 8 hodiny ranní) si všechny modely poradily pomìrnì dobøe - absolutní chyba není vìtší ne 5 vozidel.
+
+První vìtší chybu u Gippsova modelu pozorujeme a pøed 10. hodinou, nicménì tuto chybu (a u o trochu vìtší èi menší) mají všechny modely - nejvíce pak Rozšíøenı Kraussùv. I pokud se pozornì podíváme do obrázku \ref{chyba170}d) vidíme, e intenzity se snaí nekolísat, zatímco intenzita reálné dopravy se mìní z minuty na minutu i o desítky vozidel. Jak ji bylo øeèeno, aby modely nezpùsobily sráku vozidel, radìji vozidla nepustí do oblasti pokud není zajištìn dostateènı odstup. Pøed 10. hodinou tedy vjelo do oblasti ménì vozidel ne ve skuteènosti. Tím pádem hned, jak to bude moné, se do simulace posílají další vozidla. To ale trvá øádovì minuty a v tu chvíli u má brána jinı údaj o intenzitì - vìtšinou niší ne pro stejnou minutu nasimuluje model. Díky tomu se chyba modelu o poètu vozidel pøeklopí ze zápornıch (vìtší poèet reálnıch vozidel ne nasimulovanıch) do kladnıch hodnot. Z toho dùvodu byl zvolen jako primární ukazatel GEH pro validaci modelù. Je toti vidìt, e pokud se poèty vozidel seètou hodinovì, problémy, které jsem vyjmenoval, v tuto chvíli nemají velkou váhu, pouze na zaèátku a konci dané hodiny.
+
+Všechny modely nicménì pomìrnì pøesvìdèivì potvrdily tvrzení, e je v podstatì jedno, kterı z nich pouijeme. V našem pøípadì ukazuje nejlepší vısledky Gippsùv model. Ze všech modelù, které byly uvedeny v teoretické èásti, má takové parametry, které se dají pøímo nastavit na reálné hodnoty (je to také z dùvodu urèenıch koeficientù u jednotlivıch èlenù rovnice \eqref{eq:gipps}. Pøi stejnì nastavenıch hodnotách jako má Gippsùv model nedosahuje ádnı z modelù stejnì kvalitní vısledky.
+
+Jak ji bylo øeèeno v podkapitole \ref{sec:IDM-rozdily}, IDM byl v SUMO primárnì naprogramován v urèitém módu, kde ovšem dosahoval velmi špatnıch vısledkù. Po pøeprogramování ji IDM dosahoval pomìrnì kvalitních vısledkù. Na obrázku \ref{chyba170}d) pozorujeme zajímavı jev a to sice, e u tohoto modelu jsou daleko vyšší hodnoty vıchylek do záporna, èásteènì to mùe bıt zpùsobeno problémem s vjídìním vozidel do oblasti. Støední hodnota po velkém vıkyvu do zápornıch èísel se u IDM na pár minut zvıší o 2-3 vozidla.
+
+Oproti tomu porovnání podle GEH, kterı zkoumá hodinové intenzity, je vidìt, e si v urèitıch èástech dne vedli jednotlivé modely rùznì. Nejlepších vısledkù dosáhl Kraussùv model, jeho maximální hodnota GEH byla 3,25. Je také vidìt, e nejvìtší problém mìly modely mezi 17. a 18. hodinou. Toto tvrzení ovšem neplatí pro Gippsùv model, kterı mìl nejvìtší problémy mezi 14. a 15. hodinou.

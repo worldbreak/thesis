@@ -7,7 +7,7 @@
 \chapter{Hodnoty GEH pro jednotlivé modely}
 \label{sec:GEHappendix}
 
-V následujících tabulkách jsou uvedeny hodnoty GEH pro všechny brány. Výpoèet byl proveden pro každou bránu v daném èasovém úseku. GEH 218 znaèí hodnotu GEH pro bránu 218, GEH 201 pro bránu 201 atd.
+V~následujících tabulkách jsou uvedeny hodnoty GEH pro všechny brány. Výpoèet byl proveden pro každou bránu v~daném èasovém úseku. GEH 218 znaèí hodnotu GEH pro bránu 218, GEH 201 pro bránu 201 atd.
 
 \begin{table}[h]
 \begin{center}
@@ -153,73 +153,73 @@ V následujících tabulkách jsou uvedeny hodnoty GEH pro všechny brány. Výpoèet by
 \chapter{Kompilace simulaèního softwaru SUMO}
 \label{kompilaceSUMO}
 \section{SUMO}
-SUMO je volnì šiøitelný dopravní simulátor, který vznikl v roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøedky, mìstskou hromadnou dopravu èi chodce. Dále v SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{sec:IDM} a Wiedermanùv model. 
+SUMO je volnì šiøitelný dopravní simulátor, který vznikl v~roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøedky, mìstskou hromadnou dopravu èi chodce. Dále v~SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o~sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{sec:IDM} a Wiedermanùv model. 
 
 \subsection{SUMO download}
-Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažujeme pouze pøípad dopravního simulátoru SUMO pod Windows, v dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v nìkterých èástech není dostateènì pøesný.
+Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažujeme pouze pøípad dopravního simulátoru SUMO pod Windows, v~dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V~souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V~tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v~nìkterých èástech není dostateènì pøesný.
 
 \section{Visual Studio}
-Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi. \textbf{Pro správné fungování Visual Studia je nutné mít nainstalován Microsoft .NET Framework verze 4 ne vyšší! }
+Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s~Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi. \textbf{Pro správné fungování Visual Studia je nutné mít nainstalován Microsoft .NET Framework verze 4 ne vyšší! }
 
 \section{Ostatní závislosti}
-SUMO ke svému zkompilování potøebuje další knihovny. V první øadì je to \textbf{Xerces-C} (xerces-c-3.1.1-x86-windows-vc-10.0.zip, 23 MB)\footnote{http://mirror.hosting90.cz/apache//xerces/c/3/binaries/xerces-c-3.1.1-x86-windows-vc-10.0.zip}, které už je samo o sobì zkompilované. Podstatné je stáhnout verzi x86 a ne 64bitovou, aby s ní byly schopni další souèásti pracovat.
+SUMO ke svému zkompilování potøebuje další knihovny. V~první øadì je to \textbf{Xerces-C} (xerces-c-3.1.1-x86-windows-vc-10.0.zip, 23 MB)\footnote{http://mirror.hosting90.cz/apache//xerces/c/3/binaries/xerces-c-3.1.1-x86-windows-vc-10.0.zip}, které už je samo o~sobì zkompilované. Podstatné je stáhnout verzi x86 a ne 64bitovou, aby s~ní byly schopni další souèásti pracovat.
 
-Další závislostí jsou \textbf{knihovny FOX}, kterou si budeme muset ve Visual Studiu zkompilovat sami. V návodu u SUMO je uvedeno, že je vyzkoušena pouze verze 1.6.36\footnote{http://ftp.fox-toolkit.org/pub/fox-1.6.36.zip}. Pøesnì pro tuto jedinou verzi se mi povedlo provést kompilaci v poøádku.
+Další závislostí jsou \textbf{knihovny FOX}, kterou si budeme muset ve Visual Studiu zkompilovat sami. V~návodu u~SUMO je uvedeno, že je vyzkoušena pouze verze 1.6.36\footnote{http://ftp.fox-toolkit.org/pub/fox-1.6.36.zip}. Pøesnì pro tuto jedinou verzi se mi povedlo provést kompilaci v~poøádku.
 
 Poslední èástí pro zdárnou kompilaci jsou FWTools. Verze doporuèená SUMO ovšem nefunguje a ani nikde na internetu se ji nepodaøilo nalézt. Funkèní je ovšem verze 2.4.7\footnote{http://home.gdal.org/fwtools/FWTools247.exe}.
 
-Dùraznì se doporuèuje ani jednu z tìchto èástí neinstalovat do klasického adresáøe Program Files, mùže to zpùsobit problémy.
+Dùraznì se doporuèuje ani jednu z~tìchto èástí neinstalovat do klasického adresáøe Program Files, mùže to zpùsobit problémy.
 
-Nutné je také mít nainstalovaný Python (pro nìj neplatí pøedchozí odstavec), ovšem pozor rozhodnì ne nejnovìjší verzi\footnote{3 a výše}, nýbrž verzi 2.7\footnote{https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi, 16 MB}. U Pythonu není nutné žádné další nastavení.
+Nutné je také mít nainstalovaný Python (pro nìj neplatí pøedchozí odstavec), ovšem pozor rozhodnì ne nejnovìjší verzi\footnote{3 a výše}, nýbrž verzi 2.7\footnote{https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi, 16 MB}. U~Pythonu není nutné žádné další nastavení.
 
 \subsection{Xerces-C}
-Nejprve rozbalíme obsah archivu a posléze pøekopírujeme ze složky \textit{bin} obì dll knihovny\footnote{xerces-c\_3-1.dll a xerces-c\_3\_1D} do složky \textit{Windows/System32}. Pøes veškerou snahu se nepodaøilo XERCES naimportovat všem projektùm. Tím pádem se musí celý obsah složky \textit{include} pøekopírovat do složky, kde je nainstalované Visual Studio do složky \textit{vc/include} \footnote{napø. c:/Program Files/Microsoft Visual Studio 10.0/VC/include/}. Výsledkem tedy bude pøekopírovaná složka \textit{Xercesc} ze složky \textit{Xerces/include/} do složky \textit{/vc/include}. Pro kompilaci a následné spuštìní zkompilovaných programù je nutno vytvoøit systémovou promìnnou XERCES\footnote{Start - Poèítaè - Vlastnosti systému - Upøesnit nastavení systému (nabídka na pravé stranì) - Promìnné prostøedí... - Systémové promìnné - Nová...}, jejíž hodnota bude nastavena na koøenový adresáø Xerces. Poté vyhledáme v systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%XERCES\%/bin/.
+Nejprve rozbalíme obsah archivu a posléze pøekopírujeme ze složky \textit{bin} obì dll knihovny\footnote{xerces-c\_3-1.dll a xerces-c\_3\_1D} do složky \textit{Windows/System32}. Pøes veškerou snahu se nepodaøilo XERCES naimportovat všem projektùm. Tím pádem se musí celý obsah složky \textit{include} pøekopírovat do složky, kde je nainstalované Visual Studio do složky \textit{vc/include} \footnote{napø. c:/Program Files/Microsoft Visual Studio 10.0/VC/include/}. Výsledkem tedy bude pøekopírovaná složka \textit{Xercesc} ze složky \textit{Xerces/include/} do složky \textit{/vc/include}. Pro kompilaci a následné spuštìní zkompilovaných programù je nutno vytvoøit systémovou promìnnou XERCES\footnote{Start - Poèítaè - Vlastnosti systému - Upøesnit nastavení systému (nabídka na pravé stranì) - Promìnné prostøedí... - Systémové promìnné - Nová...}, jejíž hodnota bude nastavena na koøenový adresáø Xerces. Poté vyhledáme v~systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%XERCES\%/bin/.
 
 \subsection{FOX}
 
-FOX klasicky rozbalíme z archivu a poté musíme Visual Studiem zkompilovat. Otevøeme v rozbaleném archivu složku \textit{windows/vcpp} a v ní otevøeme Visual Studiem soubor \textit{win32.dsw}. Dle verze Visual Studia se mùže objevit hlášení o nutnosti konvertování. Potvrdíme pro všechny (možno zaškrtnout) a necháme Visual Studio naèíst FOX. Po naètení musíme vybrat možnost kompilace \textbf{Release} a zkompilujeme \textbf{pouze} projekt foxdll. Pak provedeme to samé s tím rozdílem, že vybereme možnost \textbf{Debug}. Pøi kompilaci mùžou vzniknout chyby, ty nás ovšem netrápí, protože to dùležité by se mìlo vytvoøit. V koøenovém adresáøi se vytvoøí složka \textit{\textit{lib}} ve které se nacházejí zkompilované knihovny FOXDLL-1.6.dll a FOXDLLD-1.6.dll, které také pøekopírujeme do složky \textit{Windows/System32}. Do systémových promìnných je nutné pøidat promìnnou z názvem FOX16 s cestou do koøenového adresáøe FOX\footnote{napø. C:/fox-1.6.36/} a následnì na konec hodnoty systémové promìnné PATH pøidat \%FOX16\%/lib.
+FOX klasicky rozbalíme z~archivu a poté musíme Visual Studiem zkompilovat. Otevøeme v~rozbaleném archivu složku \textit{windows/vcpp} a v~ní otevøeme Visual Studiem soubor \textit{win32.dsw}. Dle verze Visual Studia se mùže objevit hlášení o~nutnosti konvertování. Potvrdíme pro všechny (možno zaškrtnout) a necháme Visual Studio naèíst FOX. Po naètení musíme vybrat možnost kompilace \textbf{Release} a zkompilujeme \textbf{pouze} projekt foxdll. Pak provedeme to samé s~tím rozdílem, že vybereme možnost \textbf{Debug}. Pøi kompilaci mùžou vzniknout chyby, ty nás ovšem netrápí, protože to dùležité by se mìlo vytvoøit. V~koøenovém adresáøi se vytvoøí složka \textit{\textit{lib}} ve které se nacházejí zkompilované knihovny FOXDLL-1.6.dll a FOXDLLD-1.6.dll, které také pøekopírujeme do složky \textit{Windows/System32}. Do systémových promìnných je nutné pøidat promìnnou z~názvem FOX16 s~cestou do koøenového adresáøe FOX\footnote{napø. C:/fox-1.6.36/} a následnì na konec hodnoty systémové promìnné PATH pøidat \%FOX16\%/lib.
 
 \subsection{FWTools}
 
-FWTools klasicky nainstalujeme (ideálnì ne do složky Program Files). Vytvoøíme stejnì jako pro FOX systémovou promìnnou s názvem PROJ\_GDAL, která bude opìt odkazovat do koøenového adresáøe FWTools. Poté vyhledáme v systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%PROJ\_GDAL\%/bin.
+FWTools klasicky nainstalujeme (ideálnì ne do složky Program Files). Vytvoøíme stejnì jako pro FOX systémovou promìnnou s~názvem PROJ\_GDAL, která bude opìt odkazovat do koøenového adresáøe FWTools. Poté vyhledáme v~systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%PROJ\_GDAL\%/bin.
 
 \subsection{SUMO}
 \label{app:SUMO}
-V koøenovém adresáøi SUMO ve složce \textbf{/build/msvc10} se nachází soubor s názvem \textit{prj.sln}. Ten otevøeme Visual Studiem. Pokud je vše nastaveno správnì, je možno spustit kompilaci\footnote{Build $\rightarrow$ Build Solution} SUMO, to znamená zkompilovat všechno (všech 54 projektù). Pokud kompilujeme v režimu Release, dostaneme výstup, který se nachází v koøenovém adresáøi ve složce \textit{bin}. Tento výstup je v sumo-winbin-0.22.0.zip. 
+V~koøenovém adresáøi SUMO ve složce \textbf{/build/msvc10} se nachází soubor s~názvem \textit{prj.sln}. Ten otevøeme Visual Studiem. Pokud je vše nastaveno správnì, je možno spustit kompilaci\footnote{Build $\rightarrow$ Build Solution} SUMO, to znamená zkompilovat všechno (všech 54 projektù). Pokud kompilujeme v~režimu Release, dostaneme výstup, který se nachází v~koøenovém adresáøi ve složce \textit{bin}. Tento výstup je v~sumo-winbin-0.22.0.zip. 
 
 
 
 
-\chapter{Vytvoøení sítì pro simulaci v SUMO}
+\chapter{Vytvoøení sítì pro simulaci v~SUMO}
 \label{chap:netSUMO}
 
 \section{OpenStreetMap}
 \label{sec:OSM}
 Pro vytvoøení sítì bylo využito serveru OpenStreetMap, který obsahuje kromì pozemních komunikací spoustu dalších objektù. Nejdøíve bylo na tomto serveru vybrána oblast, ve které se nacházejí mýtné brány. Posléze tato mapa byla vyexportována do souboru OSM. Ten ovšem obsahoval i další objekty, které nemají pro simulování žádnou relevanci. Tyto objekty bylo nutné odstranit.
 
-K tomu se využil free software JOSM\footnote{https://josm.openstreetmap.de/}, kde se vybraly všechny prvky, které bylo nutné odstanit. Tyto prvky byly sice odstranìny, ovšem velikost souboru se ještì zvýšila, protože ke každému objektu byl pouze pøirazen parametr skrytí.
+K~tomu se využil free software JOSM\footnote{https://josm.openstreetmap.de/}, kde se vybraly všechny prvky, které bylo nutné odstanit. Tyto prvky byly sice odstranìny, ovšem velikost souboru se ještì zvýšila, protože ke každému objektu byl pouze pøirazen parametr skrytí.
 
-Aby se prvky opravdu smazali byl využit software XMLStartlet\footnote{http://xmlstar.sourceforge.net/}, který pøímo pracuje se souborem XML. Ve stejné složce, kde se nachází XMLStartlet se pøekopíruje soubor OSM s již odstranìnými prvky (\textit{input.osm}) a s pøíkazové øádky se spustí pøíkaz 
+Aby se prvky opravdu smazali byl využit software XMLStartlet\footnote{http://xmlstar.sourceforge.net/}, který pøímo pracuje se souborem XML. Ve stejné složce, kde se nachází XMLStartlet se pøekopíruje soubor OSM s~již odstranìnými prvky (\textit{input.osm}) a s~pøíkazové øádky se spustí pøíkaz 
 
 \begin{lstlisting}
 xmlstarlet ed -d "/osm/*[@action='delete']" < input > output.osm
 \end{lstlisting}
 
-kde \textit{output.osm} je název výstupního souboru s pøímo smazanými prvky.
+kde \textit{output.osm} je název výstupního souboru s~pøímo smazanými prvky.
 
 \section{netConvert}
 
-Pokud máme pøipravený soubor z odstavce \ref{sec:OSM}, zkopírujeme ho do složky se souborem \textit{netconvert.exe}. Z pøíkazové øádky spustíme pøíkaz
+Pokud máme pøipravený soubor z~odstavce \ref{sec:OSM}, zkopírujeme ho do složky se souborem \textit{netconvert.exe}. Z~pøíkazové øádky spustíme pøíkaz
 
 \begin{lstlisting}[breaklines=true]
 netconvert --guess-ramps  --remove-geometry  --junctions.join --osm-files output.osm --output-file nodes.net.xml
 \end{lstlisting}
 
-Tento pøíkaz nám vytvoøí soubor \textit{nodes.net.xml}, který obsahuje již pøesnou strukturu sítì, kterou bude možné otevøít v SUMO. Existuje mnoho parametrù netconvert, po nìkolika zkouškách autor usoudil, že tyto parametry jsou nejblíže tomu, èeho se chce dosáhnout. Program \textit{netconvert.exe} se pokusí uhádnout nájezdy a sjezdy s Pražského okruhu (\textit{--guess-ramps}), které nejsou zøejmé ze souboru \textit{output.osm}, s tím souvisí vytvoøení propojení (\textit{--junctions.join}) tìchto nájezdù a sjezdù a vytvoøení dalších uzlù (\textit{--remove-geometry}). V tuto chvíli máme již použitelný soubor jako podklad pro simulaci.
+Tento pøíkaz nám vytvoøí soubor \textit{nodes.net.xml}, který obsahuje již pøesnou strukturu sítì, kterou bude možné otevøít v~SUMO. Existuje mnoho parametrù netconvert, po nìkolika zkouškách autor usoudil, že tyto parametry jsou nejblíže tomu, èeho se chce dosáhnout. Program \textit{netconvert.exe} se pokusí uhádnout nájezdy a sjezdy s~Pražského okruhu (\textit{--guess-ramps}), které nejsou zøejmé ze souboru \textit{output.osm}, s~tím souvisí vytvoøení propojení (\textit{--junctions.join}) tìchto nájezdù a sjezdù a vytvoøení dalších uzlù (\textit{--remove-geometry}). V~tuto chvíli máme již použitelný soubor jako podklad pro simulaci.
 
-SUMO pouští vozidla do oblasti tak, že vezme jeden z parametrù vozidla, který urèuje vjezd do oblasti, v dalším parametru jsou informace o dalších hranách, které vozidlo projíždí. Problém výstupního souboru \textit{nodes.net.xml}, se kterým jsou tyto parametry vozidla srovnávány, spoèívá v tom, že hrany a uzly jsou 8 až 9ti místná èísla, která nemají na první pohled danou spojitost. Je tedy nutné je pøejmenovat.
+SUMO pouští vozidla do oblasti tak, že vezme jeden z~parametrù vozidla, který urèuje vjezd do oblasti, v~dalším parametru jsou informace o~dalších hranách, které vozidlo projíždí. Problém výstupního souboru \textit{nodes.net.xml}, se kterým jsou tyto parametry vozidla srovnávány, spoèívá v~tom, že hrany a uzly jsou 8 až 9ti místná èísla, která nemají na první pohled danou spojitost. Je tedy nutné je pøejmenovat.
 
-Nejlepší zpùsob je asi v použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho ID a potom v souboru \textit{nodes.net.xml} nahradíme pøedem vymyšleným ID z nìjakého vlastního systému. Autor zvolil èíslování od 1 a v závislosti na smìru bud písmeno a nebo b. Takže hrana má napø. název 1a, 3b.
+Nejlepší zpùsob je asi v~použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho ID a potom v~souboru \textit{nodes.net.xml} nahradíme pøedem vymyšleným ID z~nìjakého vlastního systému. Autor zvolil èíslování od 1 a v~závislosti na smìru bud písmeno a nebo b. Takže hrana má napø. název 1a, 3b.
 
 
 \chapter{Vytvoøení souborù pro nový model}
@@ -227,41 +227,41 @@ Nejlepší zpùsob je asi v použití SUMO-GUI, kde pøi najetí na prvek zjistíme jeho
 
 \section{Implementace nového modelu}
 
-Ideální volbou pro implementaci nového modelu je zaèít s modelem, který již existuje. Pokud se nacházíme v koøenovém adresáøi simulaèního nástroje SUMO, potom ve složce \textit{/src/microsim/cfmodels} nalezneme všechny dosud naprogramované modely.
+Ideální volbou pro implementaci nového modelu je zaèít s~modelem, který již existuje. Pokud se nacházíme v~koøenovém adresáøi simulaèního nástroje SUMO, potom ve složce \textit{/src/microsim/cfmodels} nalezneme všechny dosud naprogramované modely.
 
-Nejjednoduší zpùsob je zkopírování souborù s již existujícím modelem (napø. \textit{MSCFModel\_KraussOrig2.h} a \textit{MSCFModel\_KraussOrig2.cpp} a jejich následné pøejmenování na jméno našeho modelu (napø. Gipps). Výsledkem tedy budou dva soubory \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}. Nyní otevøeme postupnì oba soubory a nahradíme každý výskyt \textit{MSCFModel\_KraussOrig1} za \textit{MSCFModel\_Gipps}.
+Nejjednoduší zpùsob je zkopírování souborù s~již existujícím modelem (napø. \textit{MSCFModel\_KraussOrig2.h} a \textit{MSCFModel\_KraussOrig2.cpp} a jejich následné pøejmenování na jméno našeho modelu (napø. Gipps). Výsledkem tedy budou dva soubory \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}. Nyní otevøeme postupnì oba soubory a nahradíme každý výskyt \textit{MSCFModel\_KraussOrig1} za \textit{MSCFModel\_Gipps}.
 
-Velmi dùležitá vìc je potom pøidat tyto soubory do projektu\footnote{Postup, jak se otevírá a kompiluje projekt SUMO, se nachází v pøíloze \ref{kompilaceSUMO} v sekci \ref{app:SUMO}}. To se ve Visual Studiu provede volbou \textit{Project $\rightarrow$ Add Existing Item} a vyberou se námi vytvoøené soubory, tedy napø. \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}.
+Velmi dùležitá vìc je potom pøidat tyto soubory do projektu\footnote{Postup, jak se otevírá a kompiluje projekt SUMO, se nachází v~pøíloze \ref{kompilaceSUMO} v~sekci \ref{app:SUMO}}. To se ve Visual Studiu provede volbou \textit{Project $\rightarrow$ Add Existing Item} a vyberou se námi vytvoøené soubory, tedy napø. \textit{MSCFModel\_Gipps.h} a \textit{MSCFModel\_Gipps.cpp}.
 
 Posléze otevøeme soubor \textit{/src/utils/xml/SUMOXMLDefinitions.h} a pøidáme do seznamu parametrù\footnote{ideálnì vyhledat nìjaký stávajicí model - pro Krausse SUMO\_TAG\_CF\_KRAUSS\_ORIG1 a za nìj (ne místo nìj!) pøidat SUMO\_TAG\_CF\_GIPPS}.
 
-V souboru \textit{/src/utisk/xml/SUMOXMLDefinitions.cpp} poté pøidáme opìt k sekci modelù Gippsùv:
+V~souboru \textit{/src/utisk/xml/SUMOXMLDefinitions.cpp} poté pøidáme opìt k~sekci modelù Gippsùv:
 \begin{lstlisting}[breaklines=true]
 { "carFollowing-GIPPS",    SUMO_TAG_CF_GIPPS},
 \end{lstlisting}
 
 
-Závìreènou fází pøidání modelu je otevøení souboru \textit{/src/microsim/MSVehicleType.cpp}, kde se ve funkci \textit{build} nachází dìlení, podle toho jaký model je nadefinován v souboru .rou.xml. Na tomto základì je zvolen vybraný model. Do tohoto dìlení je nutné vložit následující kód:
+Závìreènou fází pøidání modelu je otevøení souboru \textit{/src/microsim/MSVehicleType.cpp}, kde se ve funkci \textit{build} nachází dìlení, podle toho jaký model je nadefinován v~souboru .rou.xml. Na tomto základì je zvolen vybraný model. Do tohoto dìlení je nutné vložit následující kód:
 
 \begin{lstlisting}[breaklines=true]
 case SUMO_TAG_CF_GIPPS:
 	vtype->myCarFollowModel = new MSCFModel_Gipps(vtype, accel, decel, sigma, tau);
 \end{lstlisting}
 
-Pokud chceme zvolit náš model pøi generování vozidel, existuje více možností jak to udìlat. Nejjednodušší je vložit mezi tagy v souboru s pøíponou .rou.xml \textit{$<$vtype$>$} a \textit{$<$/vtype$>$} tag \textit{$<$carFollowing-Gipps$>$}. V nìm poté budou následovat jednotlivé parametry modelu.
+Pokud chceme zvolit náš model pøi generování vozidel, existuje více možností jak to udìlat. Nejjednodušší je vložit mezi tagy v~souboru s~pøíponou .rou.xml \textit{$<$vtype$>$} a \textit{$<$/vtype$>$} tag \textit{$<$carFollowing-Gipps$>$}. V~nìm poté budou následovat jednotlivé parametry modelu.
 
 \section{Implementace nových parametrù}
 \label{sec:newparams}
 
-Napø. u Gippsova modelu \ref{sec:Gipps} je nutné pøidat parametr preferované rychlosti $V_n$. Proto je zde uveden struèný návod pro pøidání jednoho parametru. To je nezávislé na modelu do té doby dokud pøi volání konstruktoru nepøipojíme tento parametr jako vstupní.
+Napø. u~Gippsova modelu \ref{sec:Gipps} je nutné pøidat parametr preferované rychlosti $V_n$. Proto je zde uveden struèný návod pro pøidání jednoho parametru. To je nezávislé na modelu do té doby dokud pøi volání konstruktoru nepøipojíme tento parametr jako vstupní.
 
-Pokud se nacházíme v koøenovém adresáøi SUMO, potom ve složce \textit{/src/utils/xml/} otevøeme soubory \textit{SUMOXMLDefinitions.h} a \textit{SUMOXMLDefinitions.cpp}. V prvnì jmenovaném souboru \textit{SUMOXMLDefinitions.h} do èásti \textit{enum SumoXMLAttr} pøidáme název nového atributu ve tvaru\footnote{Je vhodné najít sekci parametrù Car Following Modelù a pøidat ji tam, nicménì pøi vložení napø. hned na zaèátek to bude fungovat také. Ideální je vyhledat text \uv{SUMO\_ATTR\_CF\_}}
+Pokud se nacházíme v~koøenovém adresáøi SUMO, potom ve složce \textit{/src/utils/xml/} otevøeme soubory \textit{SUMOXMLDefinitions.h} a \textit{SUMOXMLDefinitions.cpp}. V~prvnì jmenovaném souboru \textit{SUMOXMLDefinitions.h} do èásti \textit{enum SumoXMLAttr} pøidáme název nového atributu ve tvaru\footnote{Je vhodné najít sekci parametrù Car Following Modelù a pøidat ji tam, nicménì pøi vložení napø. hned na zaèátek to bude fungovat také. Ideální je vyhledat text \uv{SUMO\_ATTR\_CF\_}}
 
 \begin{lstlisting}[breaklines=true]
 SUMO_ATTR_DESIREDSPEED,
 \end{lstlisting}
 
-V souboru \textit{SUMOXMLDefinitions.cpp} v sekci \textit{StringBijection$<$int$>$::Entry SUMOXMLDefinitions::attrs[]} pøiøadíme tyto parametry promìnným pro SUMO a to ve tvaru
+V~souboru \textit{SUMOXMLDefinitions.cpp} v~sekci \textit{StringBijection$<$int$>$::Entry SUMOXMLDefinitions::attrs[]} pøiøadíme tyto parametry promìnným pro SUMO a to ve tvaru
 
 \begin{lstlisting}[breaklines=true]
 { "desiredSpeed",    SUMO_ATTR_DESIREDSPEED},

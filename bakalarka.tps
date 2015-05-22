@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame0_View0,0]
-TopLine=258
+TopLine=249
 Cursor=16498
 
 [Frame1]
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame3_View0,0]
-TopLine=280
+TopLine=331
 Cursor=13255
 
 [Frame4]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame4_View0,0]
-TopLine=292
-Cursor=11564
+TopLine=281
+Cursor=9325
 
 [Frame5]
 Flags=0
@@ -125,7 +125,7 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame6_View0,0]
-TopLine=828
+TopLine=972
 Cursor=46052
 
 [Frame7]
@@ -161,7 +161,7 @@ Class=LaTeXView
 Document=simulace.tex
 
 [Frame8_View0,0]
-TopLine=125
+TopLine=140
 Cursor=7095
 
 [Frame9]

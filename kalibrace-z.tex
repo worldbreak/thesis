@@ -1,0 +1,216 @@
+\chapter{Kalibrace modelù}
+
+\section{Struèný úvod do simulaèních modelù}
+
+Èasto se stávají situace, že je potøeba vyzkoušet urèitou možnost, a není možné zkoumat chování systému ve skuteènosti. Takovým systémem mùže být v našem pøípadì dálnice a možností uzavøení jednoho pruhu pøi dopravní nehodì. Model, který vytváøíme, je jakési zjednodušení skuteènosti se snahou zachování co nejvíce vlastností systému.
+
+V tuto chvíli se simulace jeví jako vhodná varianta jak provést experimentální test. Obecnì je totiž daleko lepší možností provést pokus na modelu v poèítaèi než na reálném systému a riskovat jeho poškození èi znièení, navíc na nìkterých reálných systémech nelze ani pokus provést. Výsledky tohoto pokusu na poèítaèi mohou poskytnout mnoho užiteèných informací, na jejichž základì je napø. možné zvolit optimální variantu pøi rozhodování. Podle tohoto konceptu je tedy simulaèní model poèítaè, který je urèen k øízení pokusù s modelem systému s cílem sestavení platných výsledkù i pro reálný systém.
+
+Simulace je tedy experiment na modelu reálného systému.\cite{Pidd}. Za pøedpokladu, že vývoj modelu systému v èase vhodnì napodobuje vývoj reálného systému, mùžeme sbírat informace o modelu (napø. promìnné) a posléze pøi použití statistickým metod èi jiného vhodného matematického aparátu a následných dalších experimentù mùžeme díky tomu navrhnout i budoucí chování systému. Typickým pøíkladem mùže být liniové øízení na dálnici, kde model neustále zpracovává namìøené parametry dopravního proudu (promìnné) a na jejich základì mùže zmìnit rychlost promìnným dopravním znaèením (budoucí chování systému). Tato myšlenka je znázornìna na obrázku \ref{aimsunmodel}.
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/model.pdf}%
+\caption[Simulaèní model]{Simulaèní model, zdroj:\cite{Aimsun}}%
+\label{aimsunmodel}%
+\end{figure}
+
+Spolehlivost procesu rozhodování záleží na schopnosti vytvoøit takový simulaèní model, který reprezentuje chování reálného systému s dostateènou pøesností. Ve chvíli, kdy je již model dostateènì pøesný, mùže být reálný systém nahrazen modelem a na modelu je možné provádìt rùzné experimenty. Proces urèující, zda je simulaèní model dostateènì podobný reálnému systému, se nazývá \textbf{validace modelu} - iterativní proces zahrnující \textbf{kalibraci parametrù modelu} a porovnání chování modelu s chováním reálného systému (pokud je to možné). Nesoulady mezi systémem a modelem nutí systémového analytika k zjišování dalších informací o systému. Tyto informace jsou potom použity k vylepšení modelu. Je nutné si uvìdomit, že model by mohl být vylepšován neustále. Je proto nezbytné urèit práh, kdy model již dává postaèující výsledky, tj. kdy je jeho pøesnost akceptována. Tento práh je právì dán validací. V tu chvíli již není nezbytné model dále vylepšovat. Validace simulaèního modelu by mìla být brána v potaz bìhem celého procesu vytváøení modelu.
+
+\section{Validace modelù}
+
+Hlavní zdroj informací k validaci modelù je použito \cite{Kelton}.  V \cite{Balci} je ještì více do pododrobna rozebrána problematika validace a verifikace modelù.
+
+\textbf{Verifikace} je v první øadì rozhodnutí zda simulaèní program vykonává pøesnì to, co bylo zamýšleno, to jest odstranìní chyb z programu. Verifikace tedy kontroluje \uv{pøenesení} simulaèního modelu do správnì fungujícího programu.
+
+Verifikace obvykle znamená spuštìní programu s implementovaným simulaèním modelem s rùzným nastavením vstupních parametrù a kontrolou, zda jsou výsledky simulace pøijatelné. V nìkterých pøípadech je možné nìkteré výpoèty provádìt analyticky a posléze numerickou simulací výsledky porovnat a tím zjistit pøijatelnost výstupù. To bohužel není pøípad Car-following modelù.
+
+\textbf{Validace} modelu je hotova tehdy, pokud simulaèní model je pøesná reprezentace zkoumaného systému. Pokud je model validní, mohou být rozhodnutí, která byla provedena na základì simulaèního modelu stejná, jako kdyby se provádìl experiment na reálném systému. 
+
+Model je \textbf{vìrohodný} tehdy, když jsou jeho výsledky pøijaty uživatelem a použity v rozhodovacím procesu.
+
+Pøi validaci simulaèního modelu by analytik nemìl zapomenout, že
+\begin{itemize}
+	\item simulaèní model je systém, který ovšem mùže být pouze aproximací reálného systému, bez ohledu na to, kolik práce bylo vloženo do vývoje modelu,
+	\item simulaèní model by mìl být vždy vyvíjen pro specifické úèely,
+	\item simulaèní model by mìl být validován vzhledem k perfomaèním indikátorùm souvisejících s úèely modelu a mohl být použit pro rozhodování
+	\item vývoj a validace modelu by mìly probíhat zároveò bìhem celé analýzy systému a vytváøení simulaèního modelu.
+\end{itemize} 
+
+Law and Kelton \cite{Kelton} dále navrhli postup, jak vyvinout validní a vìrohodné simulaèní modely. Dìlí se na tøi èásti:
+\begin{itemize}
+	\item vytvoøení modelu se \uv{zjevnou} validitou\footnote{z anglického face validity},
+	\item testování pøedpokladù modelu empiricky,
+	\item rozhodnutí, jak moc jsou výstupní data ze simulace reprezentativní.
+\end{itemize}
+
+\paragraph{Vytvoøení modelu se zjevnou validitou}
+
+Pøi vytváøení modelu je dùležité, aby model prozkoumal odborník, resp. èlovìk, které rozumí dané problematice. Pokud uzná, že simulaèní model vypadá racionálnì, potom mùžeme tvrdit že jde o model se zjevnou validitou.
+
+Aby byl model oznaèen za model se zjevnou validitou je dle \cite{Kelton} nutné, aby
+\begin{itemize}
+	\item analytik by mìl spolupracovat s lidmi, kteøí jsou dùvìrnì obeznámeni s reálným systémem,
+	\item analytik musí být dùsledný pøi získávání všech požadovaných informací,
+	\item pokud existují historická data, mìla by být získána a použita pøi tvorbì modelu,
+	\item dávat pozor, aby tato data byla správná a znázoròovala to, co je modelováno.
+\end{itemize}
+
+\paragraph{Testování pøedpokladù modelu empiricky}
+
+Jestliže je použito pravdìpodobností rozdìlení jako vstupní parametr simulaèního modelu na základì shody s reálnými daty, u výstupu musí být tyto okolnosti zohlednìny.
+
+Z dalších okolností musí být zohlednìna citlivost na poèáteèní podmínky. To nastává tehdy, když nepatrná zmìna vstupních parametrù zpùsobí signifikatní zmìnu dat.
+
+Tyto dvì podmínky musí být pøi vyhodnocení testování také zahrnuty.
+
+\paragraph{Rozhodnutí, jak moc jsou výstupní data ze simulace reprezentativní}
+
+Hlavní test, kterým se posuzuje validita simulaèního modelu, je porovnání výstupních dat. Pokud se data ze simulaèního modelu porovnají s výstupními daty a výsledek je pøíznivý, lze model oznaèit za validní. Model ovšem vždy zùstane pouhou aproximací systému.
+\newline
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/validace.pdf}%
+\caption[Vztahy mezi validací, verifikací a dùveryhodností]{Vztahy mezi validací, verifikací a dùveryhodností, zdroj:\cite{Aimsun}}%
+\label{validace}%
+\end{figure}
+
+Shrnutí této èásti o validaci je názornì zobrazeno na obrázku \ref{validace}. Obdelníky v tomto diagramu znázoròují stavy modelu a jejich vztah k procesu studia simulace. Pøerušované èáry nad obdelníky ukazují, ve kterých situacích dochází k validaci, verifikaci a dùveryhodnosti. Aèkoliv to není v obrázku \ref{validace} zahrnuto , je dùležité nezapomínat, že celý proces modelování je nutné brát jako iterativní a že nìkteré postupy se mùžou opakovat a to i nìkolikrát.
+
+Validace modelu tedy znamená proces testování, že model skuteènì pøedstavuje uskuteènitelnou a použitelnou alternativu k experimentování se systémem. Jednou z èástí je kalibrace modelu, což znamená pøizpùsobování parametrù modelu do té chvíle, kdy se výstupní data nepodobají datùm pozorovaných na systému. Další otázkou potom je, zda je model nakalibrován pouze na urèitou sadu vstupních dat èi je nakalibrován všeobecnì pro rùzné typy vstupních dat. 
+\begin{comment}
+Abychom tuto otázku náležitì zodpovìdìli, analytik musí použít dva nezávislé soubory dat, jednu pro kalibraci a druhou pro validaci. První soubor by mìl být použit ke kalibraci modelu, druhý pro vyzkoušení nakalibrovaného modelu a poté k validaci tohoto modelu. Výsledný soubor dat je posléze porovnán s druhým souborem dat ze systému.
+\end{comment}
+Simulaèní model je validován na základì porovnání dat mezi pozorovanými výstupními daty systému a výstupními daty vytvoøenými poèítaèovým modelem.
+
+Tento proces je schématicky znázornìn na obrázku \ref{validmodel}.
+
+\begin{figure}[h]%
+\centering
+\includegraphics[width=1\textwidth]{images/validdiagram.pdf}%
+\caption[Diagram validace modelu na základì porovnání dat systému a modelu]{Diagram validace modelu na základì porovnání dat systému a modelu, zdroj:\cite{Aimsun}}%
+\label{validmodel}%
+\end{figure}
+
+\section{Kalibrace modelù}
+
+K tomu, jak správnì nakalibrovat model neexistuje jednotný postup a vìtšinou je to obecné know-how jednotlivých autorù kalibrace. Existuje nìkolik èlánkù o kalibraci napø. \cite{Brackstone}, kde se hlavnì dozvíme informace o kalibrace modelù General motors, které pracují na principu rovnice \eqref{eq:othermodels}, více viz. \cite[str.11-13]{Vanis}.
+
+Je zde popsána èást kalibrace vìnující se i nekolizním Car-Following modelùm, jako je napø. Gippsùv model, nicménì je zde struènì uvedeno, že Gipps model nekalibroval, nýbrž použil reálné hodnoty z provozu a jeho model s nimi rovnou fungoval, tím pádem nemìl dùvod se kalibrací nìjakým zpùsobem dál zabývat.
+
+V èlánku \cite{Kanagaraj} se autoøi snaží nakalibrovat jednotlivé modely metodou pokus omyl. Øeší zde posléze pouze rùzné možnosti kontroly validity (viz dále). Kalibrace parametrù na principu optimalizace je složitá z toho dùvodu, že úèelová funkce nemá analytické øešení.
+
+Další možnost, jak kalibrovat modely, byla vyzkoušena institutem pro výzkum dopravy v Berlínì \cite{Brockfeld}, kde vyzkoušely Nelder-Mead\footnote{též pojmenována Downhill simplexová metoda} metodu, která se numericky snaží najít maximum nelineárních problému v nìkolikarozmìrném prostoru. Výhodou pro autory byla informace o rychlosti a poloze vozidla na testovacím okruhu každou 0.1s s tím, že nepøesnost urèení rychlosti a polohy byla zanedbatelná.
+
+\section{Statistické metody pro validaci a porovnání modelù}
+\label{statmet}
+
+Statistické metody pro validaci modelù jsou vysvìtleny hlavnì v \cite{Kelton}, \cite{Aimsun} a \cite{Kleijnen}. Jako hlavní zdroj pro GEH formuli jsou použity zdroje \cite{Feldman} a \cite{CalibrationWWW}. F-test je obsažen v \cite[str.111]{Pavlik}. Støední absolutní chyba je dobøe popsána v \cite{Willmott}.
+
+\subsection{Statistický test støední hodnoty}
+\label{strednihodnota}
+
+Statistickým testem støední hodnoty budeme kontrolovat, zda model nemá støední hodnotu rozdílnou od nuly. V tom pøípadì by to znaèilo nepøesnost v modelu èi v jeho kalibraci.
+
+Výstupem simulace bude soubor hodnot promìnných, v našem pøípadì nejspíše intenzit, které zaznamenáváme každou vzorkovací periodu. Napøíklad, pøedpokládejme, že simulace má vzorkovací periodu 1 minuta - to znamená, že každou minutu pøibývají hodnoty intenzit. Promìnná, která nás zajímá každou vzorkovací periodu, je intenzita $w$, výsledek simulaèního modelu tedy bude soubor hodnot $w_{ij}$, kde indexem $i$ znaèíme konkrétní detektor a $j$ je èas zaznamenání. Index $i$ probíhá od 1 do $n$,
+\[
+i = 1,2,\dots,n,
+\]
+kde n je celkový poèet detektorù a èas $j$ probíhá od 1 do $m$,
+\[
+j = 1,2,\dots,m,
+\]
+kde $m$ je poèet vzorkovacích period v simulaci.
+
+Pokud $v_{ij}$ oznaèíme namìøenou intenzitu, v pøípadì Pražského okruhu mýtnou branou, kde indexy i a j budou stejné jako v pøípadì modelu, klasická statistická technika k validaci modelu bude porovnání hodnot $v_{ij}$ a $w_{ij}$ a zjištìní zda jsou u sebe dostateènì blízko.
+
+Pro detektor $i$ bude porovnání založeno na testování zda rozdíl
+\begin{equation}
+d_i = w_{ij} - v_{ij}
+\label{eq:difflow}
+\end{equation}
+má støední hodnotu $\overline{d}_i$ významnì vzdálenou od nuly èi nikoliv. K tomu se využívá t-statistika
+\begin{equation}
+\overline{t}_{\text{m}-1} = \frac{\overline{d}_i - \delta_i}{\frac{\overline{s}_d}{\sqrt{m}}},
+\label{eq:tstat}
+\end{equation}
+kde $\overline{s}_d$ je smìrodatná odchylka od $\overline{d}_i$.
+
+Jako nulovou hypotézu oznaèíme
+\begin{equation}
+H_0 : \delta_i = 0.
+\label{eq:hypoteza}
+\end{equation}
+\begin{comment}
+To nastane ve chvíli, kdy
+\begin{equation}
+\left|\overline{t}_{\text{m}-1}\right| > t_{\text{m}-1;\alpha/2}.
+\label{eq:interval}
+\end{equation}
+\end{comment}
+Pokud zamítneme hypotézu \eqref{eq:hypoteza} na hladinì významnosti $\alpha$, soudíme, že model není dostateènì pøesný v chování. Musíme vyzkoušet jiné kombinace vstupních parametrù modelu.
+
+Naopak pokud nezamítneme tuto hypotézu, tvrdíme, že chování simulace a systému jsou již natolik blízké, že simulaci považujeme za validní.
+
+Tento proces musí být proveden pro každý z detektorù. Model je možné oznaèit za validní ve chvíli, kdy hypotézu nezamítneme pro žádný z detektorù\footnote{Záleží ovšem na dalších okolnostech, musí být vzato v úvahu, o jaká data se jedná èi že model nikdy nemùže být stejný jako simulovaný systém.}.
+
+Pokud jde o tuto statistickou metodu validace, jsou zde další okolnosti, které je nutné vzít v úvahu \cite{Kleijnen} konkrétnì pøi dopravních simulacích.
+
+\begin{itemize}
+	\item Tento postup pøedpokládá stejná a nezávisle rozdìlená pozorování\footnote{i.i.d - independent and identically distributed random variables}. Reálný systém a pøíslušné nasimulované výstupy nemusí tento pøedpoklad splòovat. Jednou z možností je vzít hodnoty z nìkolika èasových období a navíc zprùmìrovat tyto hodnoty pro výpoèet \eqref{eq:difflow}.
+	\item Èím vyšší je vzorkovací perioda, tím nižší je kritická hodnota pro zamítnutí. To naznaèuje, že simulaèní model má vìtší šanci být zamítnut, tím jak roste vzorkovací perioda. To znamená, že test za tìchto podmínek není vhodný nástroj pro validaci daného modelu.
+\end{itemize}
+
+\subsection{F-test podílù rozptylù}
+\label{ftest}
+
+Díky F-testu podílu rozptylù mùžeme zjistit zda se rozptyl nasimulovaných hodnot významnì liší od hodnot z mýtných bran. Nejprve je nutné vypoèíst rozptyl z nasimulovaných hodnot $s_1^2$ a rozptyl z reálných dat $s_2^2$. Nulová hypotéza bude definovaná takto:
+\begin{equation}
+H_0: s_1^2 = s_2^2.
+\label{eq:ftesth0}
+\end{equation}
+
+Budeme testovat podíl rozptylù
+\begin{equation}
+F = \frac{s_1^2}{s_2^2}.
+\label{eq:ftesthyp}
+\end{equation}
+
+Jestliže platí, že 
+\begin{equation}
+F > F_{\text{krit}}
+\label{eq:ffkrit}
+\end{equation}
+zamítáme $H_0$ a rozptyl z nasimulovaných dat se významnì liší od rozptylu z reálných dat. V opaèném pøípadì se rozptyly statisticky významnì neliší. Hodnota $F_{\text{krit}}$ také závisí na volbì hladiny významnosti a poètu stupòù volnosti obou rozptylù.
+
+\subsection{Støední absolutní chyba}
+
+Dalším dùležitým ukazatelem je støední absolutní chyba\footnote{v odborné literatuøe oznaèována jako MAE (z angl. Mean absolute error)}, která je definována jako
+\begin{equation}
+\text{MAE} = \frac{1}{N}\sum_{i=1}^n \left|f_i - y_i\right|,
+\label{eq:mae}
+\end{equation}
+kde $f_i$ je v našem pøípadì nasimulovaná a $y_i$ namìøená intenzita.
+
+Nemùžeme bohužel použít støední procentuální chybu\footnote{v odborné literatuøe oznaèována jako MAPE (z angl. Mean absolute percentage error)}, protože nìkteré namìøené hodnoty obsahují nulu.
+
+\subsection{GEH}
+\label{sec:GEH}
+GEH byla vymyšlena v 70. letech v Anglii. Jmenuje se dle iniciálù svého objevitele Geoffreyho E. Haverse a používá se pro zjištìní informace o tom, zda je model dobøe nakalibrován. Bere v úvahu absolutní i relativní rozdíly hodnot intenzit. GEH formule vypadá takto:
+\begin{equation}
+GEH_i = \sqrt{\frac{2(m-c)^2}{m+c}},
+\label{eq:GEH}
+\end{equation}
+kde $c$ je reálná intenzita provozu a $m$ intenzita nasimulovaná modelem a $i$ je poèet hodinových period pøes který se poèítá GEH.
+
+Rovnice \eqref{eq:GEH} je stejná, jako rovnice pro chí-kvadrát test, ale toto není test v pravém slova smyslu. Je to empirický vzorec vhodný pro analýzu dopravy. Ideálnì funguje pro hodinové intenzity provozu, pro jiné èasové úseky je doporuèeno intenzity pøepoèítat.
+
+Dle hodnoty GEH rozlišujeme tyto tøi stavy:
+\begin{itemize}
+	\item $GEH < 5$ - pøijatelné, model je nakalibrován správnì,
+	\item $GEH > 5$ a $GEH < 10$ - možná chyba v kalibraci èi v datech,
+	\item $GEH > 10$ - vysoká pravdìpodobnost chyby v kalibraci èi v datech.
+\end{itemize}
+
+Na tomto základì je možné rozhodnout, zda výsledky, které dostaneme pomocí modelù jsou vìrohodné èi nikoliv.

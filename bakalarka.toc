@@ -56,38 +56,38 @@
 \contentsline {paragraph}{Vytvo\v ren\IeC {\'\i } modelu se zjevnou validitou}{46}{section*.12}
 \contentsline {paragraph}{Testov\'an\IeC {\'\i } p\v redpoklad\r u modelu empiricky}{46}{section*.13}
 \contentsline {paragraph}{Rozhodnut\IeC {\'\i }, jak moc jsou v\'ystupn\IeC {\'\i } data ze simulace reprezentativn\IeC {\'\i }}{46}{section*.14}
-\contentsline {section}{\numberline {4.3}Kalibrace model\r u}{47}{section.4.3}
+\contentsline {section}{\numberline {4.3}Kalibrace model\r u}{48}{section.4.3}
 \contentsline {section}{\numberline {4.4}Statistick\'e metody pro validaci a porovn\'an\IeC {\'\i } model\r u}{48}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Statistick\'y test st\v redn\IeC {\'\i } hodnoty}{48}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}F-test pod\IeC {\'\i }l\r u rozptyl\r u}{49}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}F-test pod\IeC {\'\i }l\r u rozptyl\r u}{50}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}St\v redn\IeC {\'\i } absolutn\IeC {\'\i } chyba}{50}{subsection.4.4.3}
 \contentsline {subsection}{\numberline {4.4.4}GEH}{50}{subsection.4.4.4}
-\contentsline {chapter}{\numberline {5}Simulace}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Gipps\r uv model}{53}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Rozd\IeC {\'\i }ly oproti teorii}{53}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{54}{subsection.5.1.2}
+\contentsline {chapter}{\numberline {5}Simulace}{52}{chapter.5}
+\contentsline {section}{\numberline {5.1}Gipps\r uv model}{55}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Rozd\IeC {\'\i }ly oproti teorii}{55}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{55}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Simulace}{55}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Krauss\r uv model}{55}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Rozd\IeC {\'\i }ly oproti teorii}{55}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.2}Krauss\r uv model}{56}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Rozd\IeC {\'\i }ly oproti teorii}{56}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{56}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Simulace}{56}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Roz\v s\IeC {\'\i }\v ren\'y Krauss\r uv model}{57}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Rozd\IeC {\'\i }ly oproti teorii}{57}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{57}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Simulace}{58}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.2.3}Simulace}{57}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Roz\v s\IeC {\'\i }\v ren\'y Krauss\r uv model}{58}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Rozd\IeC {\'\i }ly oproti teorii}{58}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{58}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Simulace}{59}{subsection.5.3.3}
 \contentsline {section}{\numberline {5.4}Intelligent Driver Model}{59}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Rozd\IeC {\'\i }ly oproti teorii}{59}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{59}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Simulace}{60}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.2}Nastaven\IeC {\'\i } parametr\r u a simulace}{60}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Simulace}{61}{subsection.5.4.3}
 \contentsline {section}{\numberline {5.5}Wiedemann\r uv model}{61}{section.5.5}
-\contentsline {chapter}{\numberline {6}Porovn\'an\IeC {\'\i } model\r u}{63}{chapter.6}
-\contentsline {section}{\numberline {6.1}St\v redn\IeC {\'\i } hodnota}{63}{section.6.1}
-\contentsline {section}{\numberline {6.2}Rozptyl a sm\v erodatn\'a odchylka}{63}{section.6.2}
-\contentsline {section}{\numberline {6.3}Pr\r um\v ern\'a chyba}{64}{section.6.3}
-\contentsline {section}{\numberline {6.4}Grafick\'a zn\'azorn\v en\IeC {\'\i }}{64}{section.6.4}
-\contentsline {chapter}{Literatura}{68}{chapter*.15}
-\contentsline {chapter}{Seznam obr\'azk\r u}{71}{chapter*.16}
-\contentsline {chapter}{Seznam tabulek}{72}{chapter*.17}
+\contentsline {chapter}{\numberline {6}Porovn\'an\IeC {\'\i } model\r u}{64}{chapter.6}
+\contentsline {section}{\numberline {6.1}St\v redn\IeC {\'\i } hodnota}{64}{section.6.1}
+\contentsline {section}{\numberline {6.2}Rozptyl a sm\v erodatn\'a odchylka}{64}{section.6.2}
+\contentsline {section}{\numberline {6.3}St\v redn\IeC {\'\i } absolutn\IeC {\'\i } chyba}{65}{section.6.3}
+\contentsline {section}{\numberline {6.4}Grafick\'a zn\'azorn\v en\IeC {\'\i }}{65}{section.6.4}
+\contentsline {chapter}{Literatura}{70}{chapter*.15}
+\contentsline {chapter}{Seznam obr\'azk\r u}{73}{chapter*.16}
+\contentsline {chapter}{Seznam tabulek}{74}{chapter*.17}
 \contentsline {chapter}{\numberline {A}Hodnoty GEH pro jednotliv\'e modely}{I}{appendix.A}
 \contentsline {chapter}{\numberline {B}Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{V}{appendix.B}
 \contentsline {section}{\numberline {B.1}SUMO}{V}{section.B.1}
@@ -98,7 +98,7 @@
 \contentsline {subsection}{\numberline {B.3.2}FOX}{VI}{subsection.B.3.2}
 \contentsline {subsection}{\numberline {B.3.3}FWTools}{VII}{subsection.B.3.3}
 \contentsline {subsection}{\numberline {B.3.4}SUMO}{VII}{subsection.B.3.4}
-\contentsline {chapter}{\numberline {C}Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v SUMO}{VIII}{appendix.C}
+\contentsline {chapter}{\numberline {C}Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v~SUMO}{VIII}{appendix.C}
 \contentsline {section}{\numberline {C.1}OpenStreetMap}{VIII}{section.C.1}
 \contentsline {section}{\numberline {C.2}netConvert}{VIII}{section.C.2}
 \contentsline {chapter}{\numberline {D}Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{X}{appendix.D}
