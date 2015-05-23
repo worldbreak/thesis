@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  22 MAY 2015 21:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  23 MAY 2015 14:57
 entering extended mode
 **bakalarka.tex
 (C:\diplomka\diplomka\TEX\bakalarka.tex
@@ -1557,34 +1557,42 @@ dfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file C:/diplomka/diplomka/TEX/porovnani/chyba170IDM.pdf): PDF inclusion: multiple pdfs wit
 h page group included in a single page
 >] [69] (C:\diplomka\diplomka\TEX\literatura.tex
-Underfull \hbox (badness 6510) in paragraph at lines 19--21
-[][][]\OT1/cmr/m/n/10.95 MARK, Bracks-to-ne a Mc-Do-nald MI-KE. Car-following: a his-to-ri-cal re-
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+\OT1/cmr/m/n/10.95 181-196. Do-stupne take z: [][]$[][]\OT1/cmtt/m/n/10.95 http : / / www . researchgate . net / profi
+le / Mark _
  []
 
 
-Underfull \hbox (badness 7064) in paragraph at lines 43--45
-[][][]\OT1/cmr/m/n/10.95 KANAGARAJ, Ven-ka-te-san a Go-wri ASAI-THAM-BI. Eva-luati-on of Di-f-
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+\OT1/cmtt/m/n/10.95 Brackstone / publication / 222495203 _ Car-[]following _ a _ historical _ review /
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 43--45
-\OT1/cmr/m/n/10.95 fe-rent Vehicle Following Mo-dels un-der Mi-xed Traf-fic Con-di-ti-ons. \OT1/cmr/m/it/10.95 Pro-ce-
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+\OT1/cmr/m/n/10.95 23]. Do-stupne z: [][]$[][]\OT1/cmtt/m/n/10.95 http : / / www . researchgate . net / profile / Olga 
+_ Feldman2 /
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 43--45
-\OT1/cmr/m/it/10.95 dia - So-cial and Be-ha-vi-o-ral Sciences 104\OT1/cmr/m/n/10.95 . 390 { 401. Do-stupne z: [][]$[][]
-\OT1/cmtt/m/n/10.95 http :
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+\OT1/cmtt/m/n/10.95 publication / 263140653 _ THE _ GEH _ MEASURE _ AND _ QUALITY _ OF _ THE _ HIGHWAY _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-\OT1/cmtt/m/n/10.95 / / ac . els-[]cdn . com / S1877042813045230 / 1-[]s2 . 0-[]S1877042813045230-[]main .
+Underfull \hbox (badness 1024) in paragraph at lines 34--36
+[][][]\OT1/cmr/m/n/10.95 GIPPS, Pe-ter G. A be-ha-vi-ou-ral car-following mo-del for com-pu-ter si-mu-lati-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-\OT1/cmtt/m/n/10.95 pdf ? _tid = fdf19d26-[]f011-[]11e4-[]97be-[]00000aacb35e & acdnat = 1430492259 _
+Underfull \hbox (badness 2213) in paragraph at lines 34--36
+\OT1/cmr/m/n/10.95 on. \OT1/cmr/m/it/10.95 Trans-por-tati-on Re-search Part B: Me-tho-do-lo-gi-cal. \OT1/cmr/m/n/10.95 1
+981, \OT1/cmr/bx/n/10.95 15\OT1/cmr/m/n/10.95 (2): 105-111.
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 34--36
+\OT1/cmr/m/n/10.95 Do-stupne take z: [][]$[][]\OT1/cmtt/m/n/10.95 http : / / turing . iimas . unam . mx / sos / sites 
+/ default / files /
  []
 
 [70
@@ -1668,7 +1676,7 @@ Here is how much of TeX's memory you used:
  33300 multiletter control sequences out of 15000+200000
  13274 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,28n,76p,1197b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,28n,76p,1141b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
@@ -1683,9 +1691,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
 /cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (91 pages, 2061427 bytes).
+Output written on bakalarka.pdf (91 pages, 2064768 bytes).
 PDF statistics:
- 2157 PDF objects out of 2487 (max. 8388607)
+ 2169 PDF objects out of 2487 (max. 8388607)
  503 named destinations out of 1000 (max. 500000)
  1030 words of extra memory for PDF output out of 10000 (max. 10000000)
 
