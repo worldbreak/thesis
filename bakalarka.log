@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  23 MAY 2015 14:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.6)  23 MAY 2015 16:37
 entering extended mode
 **bakalarka.tex
 (C:\diplomka\diplomka\TEX\bakalarka.tex
@@ -812,7 +812,7 @@ l.49 ...\i } pr\'ace s programem}{36}{section.2.3}
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89 ...ter}{Seznam obr\'azk\r u}{73}{chapter*.16}
+l.89 ...ter}{Seznam obr\'azk\r u}{74}{chapter*.16}
                                                    [2]
 Overfull \hbox (3.71077pt too wide) detected at line 102
 [][] []\OT1/cmr/m/n/10.95 VIII|
@@ -1568,29 +1568,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 \OT1/cmr/m/n/10.95 23]. Do-stupne z: [][]$[][]\OT1/cmtt/m/n/10.95 http : / / www . researchgate . net / profile / Olga 
 _ Feldman2 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 \OT1/cmtt/m/n/10.95 publication / 263140653 _ THE _ GEH _ MEASURE _ AND _ QUALITY _ OF _ THE _ HIGHWAY _
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 34--36
+Underfull \hbox (badness 1024) in paragraph at lines 37--39
 [][][]\OT1/cmr/m/n/10.95 GIPPS, Pe-ter G. A be-ha-vi-ou-ral car-following mo-del for com-pu-ter si-mu-lati-
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 34--36
+Underfull \hbox (badness 2213) in paragraph at lines 37--39
 \OT1/cmr/m/n/10.95 on. \OT1/cmr/m/it/10.95 Trans-por-tati-on Re-search Part B: Me-tho-do-lo-gi-cal. \OT1/cmr/m/n/10.95 1
 981, \OT1/cmr/bx/n/10.95 15\OT1/cmr/m/n/10.95 (2): 105-111.
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 34--36
+Underfull \hbox (badness 1057) in paragraph at lines 37--39
 \OT1/cmr/m/n/10.95 Do-stupne take z: [][]$[][]\OT1/cmtt/m/n/10.95 http : / / turing . iimas . unam . mx / sos / sites 
 / default / files /
  []
@@ -1599,14 +1599,14 @@ Underfull \hbox (badness 1057) in paragraph at lines 34--36
 
 
 
-]) [71] (C:\diplomka\diplomka\TEX\bakalarka.lof)
+] [71]) [72] (C:\diplomka\diplomka\TEX\bakalarka.lof)
 \tf@lof=\write7
- [72
+ [73
 
 
-] [73] (C:\diplomka\diplomka\TEX\bakalarka.lot)
+] [74] (C:\diplomka\diplomka\TEX\bakalarka.lot)
 \tf@lot=\write8
- [74
+ [75
 
 ]
 (C:\diplomka\diplomka\TEX\priloha.tex
@@ -1670,10 +1670,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
  ) 
 Here is how much of TeX's memory you used:
- 31085 strings out of 493921
- 669453 string characters out of 3147283
- 859824 words of memory out of 3000000
- 33300 multiletter control sequences out of 15000+200000
+ 31089 strings out of 493921
+ 669489 string characters out of 3147283
+ 859854 words of memory out of 3000000
+ 33302 multiletter control sequences out of 15000+200000
  13274 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,28n,76p,1141b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1691,9 +1691,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
 /cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (91 pages, 2064768 bytes).
+Output written on bakalarka.pdf (92 pages, 2065810 bytes).
 PDF statistics:
- 2169 PDF objects out of 2487 (max. 8388607)
- 503 named destinations out of 1000 (max. 500000)
+ 2175 PDF objects out of 2487 (max. 8388607)
+ 505 named destinations out of 1000 (max. 500000)
  1030 words of extra memory for PDF output out of 10000 (max. 10000000)
 

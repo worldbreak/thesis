@@ -86,8 +86,8 @@
 \contentsline {section}{\numberline {6.3}St\v redn\IeC {\'\i } absolutn\IeC {\'\i } chyba}{65}{section.6.3}
 \contentsline {section}{\numberline {6.4}Grafick\'a zn\'azorn\v en\IeC {\'\i }}{65}{section.6.4}
 \contentsline {chapter}{Literatura}{70}{chapter*.15}
-\contentsline {chapter}{Seznam obr\'azk\r u}{73}{chapter*.16}
-\contentsline {chapter}{Seznam tabulek}{74}{chapter*.17}
+\contentsline {chapter}{Seznam obr\'azk\r u}{74}{chapter*.16}
+\contentsline {chapter}{Seznam tabulek}{75}{chapter*.17}
 \contentsline {chapter}{\numberline {A}Hodnoty GEH pro jednotliv\'e modely}{I}{appendix.A}
 \contentsline {chapter}{\numberline {B}Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{V}{appendix.B}
 \contentsline {section}{\numberline {B.1}SUMO}{V}{section.B.1}

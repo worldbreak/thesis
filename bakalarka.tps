@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame0_View0,0]
-TopLine=255
+TopLine=261
 Cursor=16498
 
 [Frame1]
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame1_View0,0]
-TopLine=0
-Cursor=360
+TopLine=25
+Cursor=2033
 
 [Frame2]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame3_View0,0]
-TopLine=420
+TopLine=450
 Cursor=13255
 
 [Frame4]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame4_View0,0]
-TopLine=244
-Cursor=7260
+TopLine=375
+Cursor=14141
 
 [Frame5]
 Flags=0
@@ -125,7 +125,7 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame6_View0,0]
-TopLine=792
+TopLine=976
 Cursor=41750
 
 [Frame7]
@@ -161,7 +161,7 @@ Class=LaTeXView
 Document=simulace.tex
 
 [Frame8_View0,0]
-TopLine=250
+TopLine=273
 Cursor=7095
 
 [Frame9]
@@ -179,12 +179,12 @@ Class=LaTeXView
 Document=porovnani.tex
 
 [Frame9_View0,0]
-TopLine=187
-Cursor=11435
+TopLine=182
+Cursor=10428
 
 [SessionInfo]
 FrameCount=10
-ActiveFrame=9
+ActiveFrame=1
 
 [Bookmarks]
 predidm.tex=475 295 172 13 666 804 
