@@ -308,34 +308,32 @@ Pro simulaci v~této práci budeme využívat software SUMO\footnote{Simulation of U
 
 Tento model vytvoøil S. Krauss na Universität Köln v rámci své disertaèní práce \cite{Krauss}. V popisu modelu v této podkapitole z tohoto zdroje také vycházím.  
 
-Tento model se hlavnì zamìøuje na vlastnosti dopravního proudu, zkoumání chování øidièe zde není primární. Myšlenka autora je taková, že existují obecné vlastnosti dopravního proudu, ze kterých vyplývá chování jednotlivých úèastníkù silnièního provozu a není to chování jednotlivce, které hlavnì ovlivòují vlastnosti dopravního proudu.
+Tento model se hlavnì zamìøuje na vlastnosti dopravního proudu, zkoumání chování øidièe zde není primární. Myšlenka autora je taková, že existují obecné vlastnosti dopravního proudu, ze kterých vyplývá chování jednotlivých úèastníkù silnièního provozu a chování jednotlivce významnì neovlivòuje vlastnosti dopravního proudu.
 
 \subsection{Obecný pøístup}
 \label{krauss:approach}
 Pokud se dopravní proud modeluje mikroskopicky, musí být brány v~úvahu dva typy pohybu vozidla. Prvním typem pohybu je vozidlo jedoucí po vozovce osamoceno, zatímco ve druhém pøípadì vozidlo interaguje s~ostatními vozidly. Na základì tìchto pohybù pøedpokládáme následující podmínky. První podmínka má pøímo souvislost s~rychlostí vozidla. Ta je omezena nìjakou maximální rychlostí $v_{\max}$,
 \begin{equation}
-v~\leq v_{\max}.
+v(t) \leq v_{\max}.
 \label{eq:kraussvmax}
 \end{equation}
 Za maximální rychlost mùže být napøíklad zvolena preferovaná rychlost vozidla.
 
 Hlavní dùvod, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v~úmyslu srážet se s~ostatními vozidly. Další podmínkou tedy bude tzv. \uv{nekoliznost} systému. Budeme pøedpokládat, že øidiè vozidla zvolí tedy takovou rychlost vozidla, která nebude vyšší než maximální bezpeèná rychlost $v_{\safe}$,
 \begin{equation}
-v~\leq v_{\safe}.
+v (t) \leq v_{\safe} (t).
 \label{eq:kraussvsafe}
 \end{equation}
-
 Z~maximální bezpeèné rychlosti poté plyne interakce mezi vozidly. Její stanovení bude uvedeno dále.
 
 Je možné formulovat modely na základì podmínek \eqref{eq:kraussvmax} a \eqref{eq:kraussvsafe}. Nicménì je vcelku vhodné pøedpokládat také omezující podmínky pro akceleraci $a$ a deceleraci $b$,
 \begin{equation}
 \begin{split}
-&-b \leq \frac{dv}{dt} \leq a,\\
+&-b \leq \frac{\dd v}{\dd t} \leq a,\\
 &a,b > 0.
 \label{eq:kraussa}
 \end{split}
 \end{equation}
-
 Pozdìji bude ukázáno, že vztah \eqref{eq:kraussa} je nezbytnou podmínkou správného modelování dopravního proudu.
 
 Pøedchozí podmínky mùžeme shrnout do následující nerovnice
@@ -343,41 +341,41 @@ Pøedchozí podmínky mùžeme shrnout do následující nerovnice
 v(t+ \Delta t) \leq \min (v_{\max}, v_{\safe}, v(t)+a \Delta t),
 \label{eq:kraussvtdt}
 \end{equation}
-kde se maximální bezpeèná rychlost $v_{\safe}$ musí splòovat podmínku
+kde maximální bezpeèná rychlost $v_{\safe}$ musí splòovat podmínku
 \begin{equation}
 v(t+ \Delta t) \geq v(t) - b\Delta t.
 \label{eq:kraussvsafecalc}
 \end{equation}
 
-Celkové povìdomí o~tom, jak se jednotlivá vozidla pohybují a interagují mezi sebou závisí na výpoètu maximální bezpeèné rychlosti $v_{\safe}$. Jakmile je stanovena hodnota $v_{\safe}$, nerovnice \eqref{eq:kraussvtdt} pøedstavuje aktualizované schéma pro simulace dopravního proudu, pokud jsou splnìny všechny podmínky zmínìné výše.
+Celkové povìdomí o~tom, jak se jednotlivá vozidla pohybují a interagují mezi sebou, závisí na výpoètu maximální bezpeèné rychlosti $v_{\safe}$. Jakmile je stanovena hodnota $v_{\safe}$, nerovnice \eqref{eq:kraussvtdt} pøedstavuje schéma pro simulace dopravního proudu, pokud jsou splnìny všechny podmínky zmínìné výše.
 
 \subsection{Interakce mezi vozidly}
 
-Každý sofistikovaný dopravní model by mìl obsahovat interakci mezi vozidly. Pøedstavme si dvì vozidla na komunikaci, první vozidlo se nachází v~bodì $x_1$ a jede rychlostí $v_1$, vozidlo, které ho následuje je v~bodì $x_f$ a pohybuje se rychlostí $v_f$. Jestliže délka prvního vozidla bude $l$, tak mezera mezi vozidly se vypoète vztahem
+Každý sofistikovaný dopravní model by mìl obsahovat interakci mezi vozidly. Pøedstavme si dvì vozidla na komunikaci, první vozidlo se nachází v~bodì $x_1 (t)$ a jede rychlostí $v_1 (t)$, vozidlo, které ho následuje se nachází v~bodì $x_f (t)$ a pohybuje se rychlostí $v_f (t)$. Jestliže délka prvního vozidla bude $l$, mezera mezi vozidly se vypoète vztahem
 \begin{equation}
-g = x_1 - x_f - l.
+g(t) = x_1(t) - x_f(t) - l.
 \label{eq:kraussgap}
 \end{equation}
 
-Jak již bylo zmínìno, hlavním dùvodem, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v~úmyslu srážet se s~ostatními vozidly. Z~toho plyne, že mezera mezi vozidly musí být nezáporná. Narozdíl od jiných modelovaných pøístupù, zde nezaèneme s~pøedpokladem jak mùže být zrychlení vozidla vypoèteno z~vozidla jedoucí pøed ním, protože nekoliznost stejnì není splnìna automaticky a nìkdy je velice složité ji dokázat.
+Jak již bylo zmínìno, hlavním dùvodem, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v~úmyslu srážet se s~ostatními vozidly. Z~toho plyne, že mezera mezi vozidly musí být nezáporná. Narozdíl od jiných modelovacích pøístupù, zde nezaèneme s~pøedpokladem, že se zrychlení vozidla vypoète ze zrychlení vozidla jednoucího pøed ním, protože tím nekoliznost stejnì není zajištìna automaticky.
 
 Místo toho zavedeme pravidlo, že se ve spojitých modelech spolu interagující vozidla nesrazí tehdy, pokud je mezera mezi vozidly $g$ vìtší než nìjaká preferovaná mezera mezi vozidly $g_{\des}$ a splòuje tuto dynamickou nerovnici
 \begin{equation}
-\frac{dg}{dt} \geq \frac{g_{\des} - g}{\tau_{\des}}.
+\frac{\dd g (t)}{\dd t} \geq \frac{g_{\des} - g (t)}{\tau_{\des}}.
 \label{eq:kraussgapdes}
 \end{equation}
 
-Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly být funkcemi odstupu mezi vozidly èi jejich rychlostmi. Fakt, že v~tomto modelu nemohou nastat kolize je zøejmá, protože pokud položíme $g$ rovné nule, èasová derivace bude vždy nezáporná a preferovaná mezera $g_{\des}$ také.
+Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly být funkcemi odstupu mezi vozidly èi jejich rychlostmi, ale v tomto pøípadì to jsou konstanty. Fakt, že v~tomto modelu nemohou nastat kolize, je zøejmý, protože pokud položíme $g$ rovné nule, èasová derivace v rovnici \eqref{eq:kraussgapdes} bude vždy nezáporná nebo nutnì $g_{\des} > 0$ a $\tau_{\des} > 0$.
 
-Pøedpokládejme pøípad dvou vozidel jedoucími rychlostmi $v_1$ resp. $v_f$ s~odstupem $g$. Druhé vozidlo jede svoji bezpeènou rychlostí a øidiè tohoto vozidla mùže zastavit za jakýkoliv okolností tak, aby nedošlo ke kolizi s~prvním vozidlem. To znamená, že pokud øidiè má reakèní èas $T$ a brzdná vzdálenost vozidel jedoucích rychlostí $v$ je dána funkcí $f(v)$, je situace bezpeèná právì tehdy když
+Uvažujme stále pøípad dvou vozidel jedoucími rychlostmi $v_1 (t)$ resp. $v_f (t)$ s~odstupem $g (t)$. Druhé vozidlo jede svoji bezpeènou rychlostí a øidiè tohoto vozidla mùže zastavit za jakýkoliv okolností tak, aby nedošlo ke kolizi s~prvním vozidlem. To znamená, že pokud øidiè má reakèní èas $T$ a brzdná vzdálenost vozidel jedoucích rychlostí $v (t)$ je dána funkcí $f(v(t))$, je situace bezpeèná právì tehdy když
 \begin{equation}
-f(v_f) + v_f T \leq f(v_1) + g.
+f(v_f(t)) + v_f(t) T \leq f(v_1(t)) + g(t).
 \label{eq:kraussdvsafe}
 \end{equation}
 
-Hodnota funkce $f(v)$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být jiná funkce závisející na zpùsobu øízení øidièe a pohodlné jízdy. To samé platí pro reakèní èas $T$.
+Hodnota funkce $f(v)$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být funkce závisející na zpùsobu øízení øidièe. To samé platí pro reakèní èas $T$.
 
-Úprava nerovnice \ref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v)$, který jak uvidíme, není možné zjistit. Druhým je zbyteèné a výpoèetnì nároèné používat typ øízení, které potøebuje pøedvídat nenádalou událost a vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti $f(v)$ okolo prùmìrné rychlosti obou vozidel,
+Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v)$, který, jak uvidíme, není možné zjistit. Druhým je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti $f(v)$ okolo prùmìrné rychlosti obou vozidel,
 \begin{equation}
 \overline{v} = \frac{v_1 + v_f}{2},
 \label{eq:kraussv1vf}
