@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame0_View0,0]
-TopLine=261
+TopLine=267
 Cursor=16498
 
 [Frame1]
@@ -89,7 +89,7 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame4_View0,0]
-TopLine=375
+TopLine=378
 Cursor=14141
 
 [Frame5]
@@ -125,7 +125,7 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame6_View0,0]
-TopLine=976
+TopLine=1015
 Cursor=41750
 
 [Frame7]
@@ -161,7 +161,7 @@ Class=LaTeXView
 Document=simulace.tex
 
 [Frame8_View0,0]
-TopLine=273
+TopLine=300
 Cursor=7095
 
 [Frame9]
@@ -179,7 +179,7 @@ Class=LaTeXView
 Document=porovnani.tex
 
 [Frame9_View0,0]
-TopLine=182
+TopLine=188
 Cursor=10428
 
 [SessionInfo]

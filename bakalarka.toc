@@ -4,7 +4,7 @@
 \contentsline {chapter}{\numberline {1}Mikroskopick\'e modely}{6}{chapter.1}
 \contentsline {section}{\numberline {1.1}Newell\r uv model}{6}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Popis modelu}{6}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Parametry Newellova modelu}{11}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Shrnut\IeC {\'\i } Newellova modelu}{10}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Gipps\r uv model}{11}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Popis modelu}{12}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Parametry Gippsova modelu}{14}{subsection.1.2.2}
