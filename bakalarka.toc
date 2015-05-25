@@ -4,19 +4,19 @@
 \contentsline {chapter}{\numberline {1}Mikroskopick\'e modely}{6}{chapter.1}
 \contentsline {section}{\numberline {1.1}Newell\r uv model}{6}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Popis modelu}{6}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Shrnut\IeC {\'\i } Newellova modelu}{10}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Parametry Newellova modelu}{10}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}Gipps\r uv model}{11}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Popis modelu}{12}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Popis modelu}{11}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Parametry Gippsova modelu}{14}{subsection.1.2.2}
 \contentsline {section}{\numberline {1.3}Krauss\r uv model}{14}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Obecn\'y p\v r\IeC {\'\i }stup}{15}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.1}Obecn\'y p\v r\IeC {\'\i }stup}{14}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Interakce mezi vozidly}{15}{subsection.1.3.2}
 \contentsline {subsection}{\numberline {1.3.3}Diskretizace modelu}{18}{subsection.1.3.3}
-\contentsline {subsection}{\numberline {1.3.4}Rovnice modelu}{19}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.4}Rovnice modelu}{18}{subsection.1.3.4}
 \contentsline {subsection}{\numberline {1.3.5}Parametry Kraussova modelu}{19}{subsection.1.3.5}
 \contentsline {section}{\numberline {1.4}Roz\v s\IeC {\'\i }\v ren\'y Krauss\r uv model}{19}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Proces br\v zd\v en\IeC {\'\i }}{19}{subsection.1.4.1}
-\contentsline {paragraph}{Doba reakce \v ridi\v ce:}{20}{section*.4}
+\contentsline {paragraph}{Doba reakce \v ridi\v ce:}{19}{section*.4}
 \contentsline {paragraph}{Zvy\v sov\'an\IeC {\'\i } decelerace:}{20}{section*.5}
 \contentsline {paragraph}{Maxim\'aln\IeC {\'\i } br\v zd\v en\IeC {\'\i }:}{20}{section*.6}
 \contentsline {paragraph}{Celkov\'a dr\'aha p\v ri br\v zd\v en\IeC {\'\i }:}{21}{section*.7}

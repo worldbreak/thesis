@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  25 MAY 2015 09:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.14)  25 MAY 2015 12:02
 entering extended mode
 **bakalarka.tex
 (D:\Vanis-Sumo\thesis\bakalarka.tex
@@ -682,22 +682,22 @@ LaTeX Warning: Label `subsec:parameterAddKrauss' multiply defined.
 ) (D:\Vanis-Sumo\thesis\SUMO.aux) (D:\Vanis-Sumo\thesis\novymodel.aux) (D:\Vanis-Sumo\thesis\kalibrace.aux)
 (D:\Vanis-Sumo\thesis\simulace.aux) (D:\Vanis-Sumo\thesis\porovnani.aux) (D:\Vanis-Sumo\thesis\literatura.aux)
 (D:\Vanis-Sumo\thesis\priloha.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 149.
-LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -765,10 +765,10 @@ Configuring pdfsync
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider w
 riting \pgfplotsset{compat=1.11} into your preamble.
- on input line 149.
+ on input line 154.
 
 \AtBeginShipoutBox=\box43
-Package hyperref Info: Link coloring ON on input line 149.
+Package hyperref Info: Link coloring ON on input line 154.
 ("C:\TeX\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  ("C:\TeX\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
@@ -776,9 +776,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 149.
-LaTeX Info: Redefining \pageref on input line 149.
-LaTeX Info: Redefining \nameref on input line 149.
+LaTeX Info: Redefining \ref on input line 154.
+LaTeX Info: Redefining \pageref on input line 154.
+LaTeX Info: Redefining \nameref on input line 154.
 
 (D:\Vanis-Sumo\thesis\bakalarka.out) (D:\Vanis-Sumo\thesis\bakalarka.out)
 \@outlinefile=\write5
@@ -787,17 +787,17 @@ LaTeX Info: Redefining \nameref on input line 149.
 {C:/Users/sumo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <logo_cvut.pdf, id=388, 366.36874pt x 279.0425pt>
 File: logo_cvut.pdf Graphic file (type pdf)
  <use logo_cvut.pdf>
-Package pdftex.def Info: logo_cvut.pdf used on input line 174.
+Package pdftex.def Info: logo_cvut.pdf used on input line 179.
 (pdftex.def)             Requested size: 170.71652pt x 130.02591pt.
  [2 <D:/Vanis-Sumo/thesis/logo_cvut.pdf>] [3] [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 253.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 258.
  ("C:\TeX\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
  [5] [6] (D:\Vanis-Sumo\thesis\bakalarka.tocpdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
 as been already used, duplicate ignored
 <to be read again> 
@@ -825,7 +825,7 @@ Overfull \hbox (3.71077pt too wide) detected at line 103
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.305 \include{uvod}
+l.310 \include{uvod}
                      [3] (D:\Vanis-Sumo\thesis\uvod.texpdfTeX warning (ext4): destination with the same identifier (name
 {page.4}) has been already used, duplicate ignored
 <to be read again> 
@@ -837,7 +837,7 @@ l.60
 ])pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.305 \include{uvod}
+l.310 \include{uvod}
                      [5] (D:\Vanis-Sumo\thesis\predidm.tex
 Kapitola 1.
 
@@ -877,53 +877,61 @@ Overfull \hbox (22.30196pt too wide) in paragraph at lines 76--77
  []
 
 [8 <D:/Vanis-Sumo/thesis/images/linearaprox.pdf>] [9] [10]
-Overfull \hbox (6.74333pt too wide) in paragraph at lines 181--182
+Overfull \hbox (6.74333pt too wide) in paragraph at lines 183--184
 [][][]\OT1/cmr/m/n/10.95 Vetsina mo-delu, ktere vznik-ly pred Gip-p-sovym, jsou ruzne va-ri-a-ce na rov-ni-ci (N
 ewelluv|
  []
 
 [11] [12] [13] [14] [15]
-Overfull \hbox (8.07115pt too wide) in paragraph at lines 391--392
+Overfull \hbox (8.07115pt too wide) in paragraph at lines 393--394
 [][][]\OT1/cmr/m/n/10.95 Budeme pro zjed-no-dusen uvazovat pou-ze prvn 4 cleny Ta-y-lo-ro-va roz-vo-je. Potrebuj
 eme|
  []
 
-[16] [17] [18]
+[16]
+Overfull \hbox (0.17763pt too wide) in paragraph at lines 451--452
+\OML/cmm/m/it/10.95 v[]t$ \OT1/cmr/m/n/10.95 a pre-fe-ro-vany bez-pecny casovy od-stup me-zi vo-zi-dly $[][]\OML/cm
+m/m/it/10.95 [] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 T$\OT1/cmr/m/n/10
+.95 , kde $[][]\OML/cmm/m/it/10.95 [] \OT1/cmr/m/n/10.95 = [](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10
+.95 =b\OT1/cmr/m/n/10.95 ([](\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 ))$|
+ []
+
+[17]
+Overfull \hbox (4.38773pt too wide) in paragraph at lines 496--497
+[][]\OT1/cmr/m/n/10.95 Predpokladame te-dy, ze se kazde vo-zi-dlo po-hy-bu-je nej-vyss rych-lost na zaklad
+e podmnek,|
+ []
+
+[18]
 Overfull \hbox (11.1998pt too wide) in paragraph at lines 528--529
 [][]\OT1/cmr/m/n/10.95 Hlavn zdroj pro vy-lepsen Kraus-so-va mo-de-lu je prmo clanek pro im-ple-men-ta-ci Roz
 sreneho|
  []
 
-<images/kraussbrzdeni.pdf, id=764, 220.826pt x 186.90427pt>
+<images/kraussbrzdeni.pdf, id=765, 220.826pt x 186.90427pt>
 File: images/kraussbrzdeni.pdf Graphic file (type pdf)
  <use images/kraussbrzdeni.pdf>
 Package pdftex.def Info: images/kraussbrzdeni.pdf used on input line 536.
 (pdftex.def)             Requested size: 250.95476pt x 212.41711pt.
  [19] [20 <D:/Vanis-Sumo/thesis/images/kraussbrzdeni.pdf>]
-Overfull \hbox (10.80261pt too wide) in paragraph at lines 592--593
+Overfull \hbox (10.80261pt too wide) in paragraph at lines 591--592
 [][][]\OT1/cmr/m/n/10.95 Pokud po-mi-ne-me re-akcn cas celnho ridice, brzden se sklada ze dvou cast p
 robhajcch|
  []
 
-[21]
-Overfull \hbox (1.23169pt too wide) in paragraph at lines 645--646
-\OT1/cmr/m/n/10.95 2000, ktery byl vy-myslen v Nemecku. Snaz se vy-lepsit nektere ne-do-stat-ky predchazejc
-ch|
- []
-
-[22] <idm.pdf, id=830, 450.8845pt x 153.17226pt>
+[21] [22] <idm.pdf, id=829, 450.8845pt x 153.17226pt>
 File: idm.pdf Graphic file (type pdf)
  <use idm.pdf>
-Package pdftex.def Info: idm.pdf used on input line 683.
+Package pdftex.def Info: idm.pdf used on input line 680.
 (pdftex.def)             Requested size: 250.95476pt x 85.25465pt.
- [23 <D:/Vanis-Sumo/thesis/idm.pdf>] [24]
-<images/wiedemann.pdf, id=871, 398.9796pt x 279.85355pt>
+ [23] [24 <D:/Vanis-Sumo/thesis/idm.pdf>]
+<images/wiedemann.pdf, id=868, 398.9796pt x 279.85355pt>
 File: images/wiedemann.pdf Graphic file (type pdf)
  <use images/wiedemann.pdf>
-Package pdftex.def Info: images/wiedemann.pdf used on input line 730.
+Package pdftex.def Info: images/wiedemann.pdf used on input line 727.
 (pdftex.def)             Requested size: 418.25368pt x 293.3766pt.
  [25 <D:/Vanis-Sumo/thesis/images/wiedemann.pdf>]
-Overfull \hbox (0.90436pt too wide) in paragraph at lines 777--779
+Overfull \hbox (0.90436pt too wide) in paragraph at lines 774--776
 \OT1/cmr/m/n/10.95 Parametry $[][]\OML/cmm/m/it/10.95 CXconst$\OT1/cmr/m/n/10.95 , $[][]\OML/cmm/m/it/10.95 CXadd$ \OT1/
 cmr/m/n/10.95 a $[][]\OML/cmm/m/it/10.95 CXmult$ \OT1/cmr/m/n/10.95 jsou zde opet pro zpresnen vypoctu pri urc
 ovan|
@@ -941,13 +949,13 @@ Overfull \hbox (17.26118pt too wide) in paragraph at lines 131--132
 ada|
  []
 
-[33] <images/poisson25.pdf, id=987, 361.35pt x 216.81pt>
+[33] <images/poisson25.pdf, id=985, 361.35pt x 216.81pt>
 File: images/poisson25.pdf Graphic file (type pdf)
  <use images/poisson25.pdf>
 Package pdftex.def Info: images/poisson25.pdf used on input line 193.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
 
-<images/poisson69.pdf, id=988, 361.35pt x 216.81pt>
+<images/poisson69.pdf, id=986, 361.35pt x 216.81pt>
 File: images/poisson69.pdf Graphic file (type pdf)
  <use images/poisson69.pdf>
 Package pdftex.def Info: images/poisson69.pdf used on input line 196.
@@ -1038,7 +1046,7 @@ nk-ce \OT1/cmr/m/it/10.95 vFree \OT1/cmr/m/n/10.95 po-tom vy-pada nasledovne:
 
 [42] [43]) [44] (D:\Vanis-Sumo\thesis\kalibrace.tex
 Kapitola 4.
-<images/model.pdf, id=1175, 456.85883pt x 114.55798pt>
+<images/model.pdf, id=1173, 456.85883pt x 114.55798pt>
 File: images/model.pdf Graphic file (type pdf)
  <use images/model.pdf>
 Package pdftex.def Info: images/model.pdf used on input line 13.
@@ -1052,7 +1060,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
-<images/validace.pdf, id=1201, 578.36076pt x 106.07028pt>
+<images/validace.pdf, id=1199, 578.36076pt x 106.07028pt>
 File: images/validace.pdf Graphic file (type pdf)
  <use images/validace.pdf>
 Package pdftex.def Info: images/validace.pdf used on input line 74.
@@ -1063,7 +1071,7 @@ Overfull \hbox (25.77193pt too wide) in paragraph at lines 79--80
 duveryhodnosti.|
  []
 
-[47 <D:/Vanis-Sumo/thesis/images/validace.pdf>] <images/validdiagram.pdf, id=1219, 385.8656pt x 271.13898pt>
+[47 <D:/Vanis-Sumo/thesis/images/validace.pdf>] <images/validdiagram.pdf, id=1217, 385.8656pt x 271.13898pt>
 File: images/validdiagram.pdf Graphic file (type pdf)
 
 <use images/validdiagram.pdf>
@@ -1077,19 +1085,19 @@ Overfull \hbox (18.26376pt too wide) in paragraph at lines 161--162
 
 [50] [51]) [52] (D:\Vanis-Sumo\thesis\simulace.tex
 Kapitola 5.
-<images/usekdalnice.png, id=1294, 689.57625pt x 528.47438pt>
+<images/usekdalnice.png, id=1292, 689.57625pt x 528.47438pt>
 File: images/usekdalnice.png Graphic file (type png)
  <use images/usekdalnice.png>
 Package pdftex.def Info: images/usekdalnice.png used on input line 7.
 (pdftex.def)             Requested size: 418.25368pt x 320.5384pt.
 
-<images/brana0170_20121028.pdf, id=1304, 361.35pt x 216.81pt>
+<images/brana0170_20121028.pdf, id=1302, 361.35pt x 216.81pt>
 File: images/brana0170_20121028.pdf Graphic file (type pdf)
  <use images/brana0170_20121028.pdf>
 Package pdftex.def Info: images/brana0170_20121028.pdf used on input line 19.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
 
-<images/brana0170_20121007.pdf, id=1305, 361.35pt x 216.81pt>
+<images/brana0170_20121007.pdf, id=1303, 361.35pt x 216.81pt>
 File: images/brana0170_20121007.pdf Graphic file (type pdf)
  <use images/brana0170_20121007.pdf>
 Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
@@ -1098,25 +1106,25 @@ Package pdftex.def Info: images/brana0170_20121007.pdf used on input line 22.
 
 
 
- <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1317, 361.35pt x 216.81pt>
+ <D:/Vanis-Sumo/thesis/images/usekdalnice.png>] <images/brana0157_20121028.pdf, id=1315, 361.35pt x 216.81pt>
 File: images/brana0157_20121028.pdf Graphic file (type pdf)
 
 <use images/brana0157_20121028.pdf>
 Package pdftex.def Info: images/brana0157_20121028.pdf used on input line 39.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0157_20121007.pdf, id=1318, 361.35pt x 216.81pt>
+ <images/brana0157_20121007.pdf, id=1316, 361.35pt x 216.81pt>
 File: images/brana0157_20121007.pdf Graphic file (type pdf)
 
 <use images/brana0157_20121007.pdf>
 Package pdftex.def Info: images/brana0157_20121007.pdf used on input line 42.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0145_20121028.pdf, id=1319, 361.35pt x 216.81pt>
+ <images/brana0145_20121028.pdf, id=1317, 361.35pt x 216.81pt>
 File: images/brana0145_20121028.pdf Graphic file (type pdf)
 
 <use images/brana0145_20121028.pdf>
 Package pdftex.def Info: images/brana0145_20121028.pdf used on input line 58.
 (pdftex.def)             Requested size: 199.16928pt x 119.5006pt.
- <images/brana0145_20121007.pdf, id=1320, 361.35pt x 216.81pt>
+ <images/brana0145_20121007.pdf, id=1318, 361.35pt x 216.81pt>
 File: images/brana0145_20121007.pdf Graphic file (type pdf)
 
 <use images/brana0145_20121007.pdf>
@@ -1142,25 +1150,25 @@ h page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/images/brana0145_20121007.pdf): PDF inclusion: multiple pdfs wit
 h page group included in a single page
->] [55] <real/sokp218orig.pdf, id=1387, 361.35pt x 216.81pt>
+>] [55] <real/sokp218orig.pdf, id=1386, 361.35pt x 216.81pt>
 File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
 Package pdftex.def Info: real/sokp218orig.pdf used on input line 119.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp218Gipps.pdf, id=1388, 361.35pt x 216.81pt>
+<gipps/sokp218Gipps.pdf, id=1387, 361.35pt x 216.81pt>
 File: gipps/sokp218Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp218Gipps.pdf>
 Package pdftex.def Info: gipps/sokp218Gipps.pdf used on input line 119.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<real/sokp201orig.pdf, id=1389, 361.35pt x 216.81pt>
+<real/sokp201orig.pdf, id=1388, 361.35pt x 216.81pt>
 File: real/sokp201orig.pdf Graphic file (type pdf)
  <use real/sokp201orig.pdf>
 Package pdftex.def Info: real/sokp201orig.pdf used on input line 128.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp201Gipps.pdf, id=1390, 361.35pt x 216.81pt>
+<gipps/sokp201Gipps.pdf, id=1389, 361.35pt x 216.81pt>
 File: gipps/sokp201Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp201Gipps.pdf>
 Package pdftex.def Info: gipps/sokp201Gipps.pdf used on input line 128.
@@ -1169,13 +1177,13 @@ Package pdftex.def Info: gipps/sokp201Gipps.pdf used on input line 128.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<real/sokp187orig.pdf, id=1391, 361.35pt x 216.81pt>
+<real/sokp187orig.pdf, id=1390, 361.35pt x 216.81pt>
 File: real/sokp187orig.pdf Graphic file (type pdf)
  <use real/sokp187orig.pdf>
 Package pdftex.def Info: real/sokp187orig.pdf used on input line 137.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp187Gipps.pdf, id=1392, 361.35pt x 216.81pt>
+<gipps/sokp187Gipps.pdf, id=1391, 361.35pt x 216.81pt>
 File: gipps/sokp187Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp187Gipps.pdf>
 Package pdftex.def Info: gipps/sokp187Gipps.pdf used on input line 137.
@@ -1184,13 +1192,13 @@ Package pdftex.def Info: gipps/sokp187Gipps.pdf used on input line 137.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<real/sokp170orig.pdf, id=1393, 361.35pt x 216.81pt>
+<real/sokp170orig.pdf, id=1392, 361.35pt x 216.81pt>
 File: real/sokp170orig.pdf Graphic file (type pdf)
  <use real/sokp170orig.pdf>
 Package pdftex.def Info: real/sokp170orig.pdf used on input line 146.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<gipps/sokp170Gipps.pdf, id=1394, 361.35pt x 216.81pt>
+<gipps/sokp170Gipps.pdf, id=1393, 361.35pt x 216.81pt>
 File: gipps/sokp170Gipps.pdf Graphic file (type pdf)
  <use gipps/sokp170Gipps.pdf>
 Package pdftex.def Info: gipps/sokp170Gipps.pdf used on input line 146.
@@ -1220,7 +1228,7 @@ File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
 Package pdftex.def Info: real/sokp218orig.pdf used on input line 178.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp218krauss.pdf, id=1463, 361.35pt x 216.81pt>
+ <krauss/sokp218krauss.pdf, id=1462, 361.35pt x 216.81pt>
 File: krauss/sokp218krauss.pdf Graphic file (type pdf)
  <use krauss/sokp218krauss.pdf>
 Package pdftex.def Info: krauss/sokp218krauss.pdf used on input line 178.
@@ -1230,7 +1238,7 @@ File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
 Package pdftex.def Info: real/sokp201orig.pdf used on input line 187.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp201krauss.pdf, id=1464, 361.35pt x 216.81pt>
+ <krauss/sokp201krauss.pdf, id=1463, 361.35pt x 216.81pt>
 File: krauss/sokp201krauss.pdf Graphic file (type pdf)
  <use krauss/sokp201krauss.pdf>
 Package pdftex.def Info: krauss/sokp201krauss.pdf used on input line 187.
@@ -1243,7 +1251,7 @@ File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
 Package pdftex.def Info: real/sokp187orig.pdf used on input line 196.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp187krauss.pdf, id=1465, 361.35pt x 216.81pt>
+ <krauss/sokp187krauss.pdf, id=1464, 361.35pt x 216.81pt>
 File: krauss/sokp187krauss.pdf Graphic file (type pdf)
  <use krauss/sokp187krauss.pdf>
 Package pdftex.def Info: krauss/sokp187krauss.pdf used on input line 196.
@@ -1256,7 +1264,7 @@ File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
 Package pdftex.def Info: real/sokp170orig.pdf used on input line 205.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <krauss/sokp170krauss.pdf, id=1466, 361.35pt x 216.81pt>
+ <krauss/sokp170krauss.pdf, id=1465, 361.35pt x 216.81pt>
 File: krauss/sokp170krauss.pdf Graphic file (type pdf)
  <use krauss/sokp170krauss.pdf>
 Package pdftex.def Info: krauss/sokp170krauss.pdf used on input line 205.
@@ -1283,7 +1291,7 @@ File: real/sokp218orig.pdf Graphic file (type pdf)
 <use real/sokp218orig.pdf>
 Package pdftex.def Info: real/sokp218orig.pdf used on input line 229.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp218kraussOrig.pdf, id=1502, 361.35pt x 216.81pt>
+ <kraussOrig/sokp218kraussOrig.pdf, id=1501, 361.35pt x 216.81pt>
 File: kraussOrig/sokp218kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp218kraussOrig.pdf>
@@ -1297,7 +1305,7 @@ File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
 Package pdftex.def Info: real/sokp201orig.pdf used on input line 238.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp201kraussOrig.pdf, id=1503, 361.35pt x 216.81pt>
+ <kraussOrig/sokp201kraussOrig.pdf, id=1502, 361.35pt x 216.81pt>
 File: kraussOrig/sokp201kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp201kraussOrig.pdf>
@@ -1311,7 +1319,7 @@ File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
 Package pdftex.def Info: real/sokp187orig.pdf used on input line 247.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp187kraussOrig.pdf, id=1504, 361.35pt x 216.81pt>
+ <kraussOrig/sokp187kraussOrig.pdf, id=1503, 361.35pt x 216.81pt>
 File: kraussOrig/sokp187kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp187kraussOrig.pdf>
@@ -1325,7 +1333,7 @@ File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
 Package pdftex.def Info: real/sokp170orig.pdf used on input line 256.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <kraussOrig/sokp170kraussOrig.pdf, id=1505, 361.35pt x 216.81pt>
+ <kraussOrig/sokp170kraussOrig.pdf, id=1504, 361.35pt x 216.81pt>
 File: kraussOrig/sokp170kraussOrig.pdf Graphic file (type pdf)
 
 <use kraussOrig/sokp170kraussOrig.pdf>
@@ -1348,7 +1356,7 @@ File: real/sokp218orig.pdf Graphic file (type pdf)
  <use real/sokp218orig.pdf>
 Package pdftex.def Info: real/sokp218orig.pdf used on input line 291.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp218IDM.pdf, id=1556, 361.35pt x 216.81pt>
+ <IDM/sokp218IDM.pdf, id=1555, 361.35pt x 216.81pt>
 File: IDM/sokp218IDM.pdf Graphic file (type pdf)
  <use IDM/sokp218IDM.pdf>
 Package pdftex.def Info: IDM/sokp218IDM.pdf used on input line 291.
@@ -1361,7 +1369,7 @@ File: real/sokp201orig.pdf Graphic file (type pdf)
 <use real/sokp201orig.pdf>
 Package pdftex.def Info: real/sokp201orig.pdf used on input line 300.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp201IDM.pdf, id=1557, 361.35pt x 216.81pt>
+ <IDM/sokp201IDM.pdf, id=1556, 361.35pt x 216.81pt>
 File: IDM/sokp201IDM.pdf Graphic file (type pdf)
  <use IDM/sokp201IDM.pdf>
 Package pdftex.def Info: IDM/sokp201IDM.pdf used on input line 300.
@@ -1378,7 +1386,7 @@ File: real/sokp187orig.pdf Graphic file (type pdf)
 <use real/sokp187orig.pdf>
 Package pdftex.def Info: real/sokp187orig.pdf used on input line 309.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp187IDM.pdf, id=1581, 361.35pt x 216.81pt>
+ <IDM/sokp187IDM.pdf, id=1580, 361.35pt x 216.81pt>
 File: IDM/sokp187IDM.pdf Graphic file (type pdf)
  <use IDM/sokp187IDM.pdf>
 Package pdftex.def Info: IDM/sokp187IDM.pdf used on input line 309.
@@ -1391,7 +1399,7 @@ File: real/sokp170orig.pdf Graphic file (type pdf)
 <use real/sokp170orig.pdf>
 Package pdftex.def Info: real/sokp170orig.pdf used on input line 318.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
- <IDM/sokp170IDM.pdf, id=1582, 361.35pt x 216.81pt>
+ <IDM/sokp170IDM.pdf, id=1581, 361.35pt x 216.81pt>
 File: IDM/sokp170IDM.pdf Graphic file (type pdf)
  <use IDM/sokp170IDM.pdf>
 Package pdftex.def Info: IDM/sokp170IDM.pdf used on input line 318.
@@ -1404,13 +1412,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/IDM/sokp218IDM.pdf): PDF inclusion: multiple pdfs with page grou
 p included in a single page
->] <wiedemann/sokp187Wiedemann.pdf, id=1617, 361.35pt x 216.81pt>
+>] <wiedemann/sokp187Wiedemann.pdf, id=1616, 361.35pt x 216.81pt>
 File: wiedemann/sokp187Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp187Wiedemann.pdf>
 Package pdftex.def Info: wiedemann/sokp187Wiedemann.pdf used on input line 338.
 (pdftex.def)             Requested size: 188.21288pt x 112.92711pt.
 
-<wiedemann/sokp170Wiedemann.pdf, id=1618, 361.35pt x 216.81pt>
+<wiedemann/sokp170Wiedemann.pdf, id=1617, 361.35pt x 216.81pt>
 File: wiedemann/sokp170Wiedemann.pdf Graphic file (type pdf)
  <use wiedemann/sokp170Wiedemann.pdf>
 Package pdftex.def Info: wiedemann/sokp170Wiedemann.pdf used on input line 338.
@@ -1443,25 +1451,25 @@ astroje,|
 
 
 
-] <porovnani/brana218.pdf, id=1685, 361.35pt x 216.81pt>
+] <porovnani/brana218.pdf, id=1684, 361.35pt x 216.81pt>
 File: porovnani/brana218.pdf Graphic file (type pdf)
  <use porovnani/brana218.pdf>
 Package pdftex.def Info: porovnani/brana218.pdf used on input line 87.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana201.pdf, id=1686, 361.35pt x 216.81pt>
+<porovnani/brana201.pdf, id=1685, 361.35pt x 216.81pt>
 File: porovnani/brana201.pdf Graphic file (type pdf)
  <use porovnani/brana201.pdf>
 Package pdftex.def Info: porovnani/brana201.pdf used on input line 87.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana187.pdf, id=1687, 361.35pt x 216.81pt>
+<porovnani/brana187.pdf, id=1686, 361.35pt x 216.81pt>
 File: porovnani/brana187.pdf Graphic file (type pdf)
  <use porovnani/brana187.pdf>
 Package pdftex.def Info: porovnani/brana187.pdf used on input line 92.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/brana170.pdf, id=1688, 361.35pt x 216.81pt>
+<porovnani/brana170.pdf, id=1687, 361.35pt x 216.81pt>
 File: porovnani/brana170.pdf Graphic file (type pdf)
  <use porovnani/brana170.pdf>
 Package pdftex.def Info: porovnani/brana170.pdf used on input line 92.
@@ -1470,25 +1478,25 @@ Package pdftex.def Info: porovnani/brana170.pdf used on input line 92.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[66] <porovnani/chyba218.pdf, id=1698, 361.35pt x 216.81pt>
+[66] <porovnani/chyba218.pdf, id=1697, 361.35pt x 216.81pt>
 File: porovnani/chyba218.pdf Graphic file (type pdf)
  <use porovnani/chyba218.pdf>
 Package pdftex.def Info: porovnani/chyba218.pdf used on input line 108.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba201.pdf, id=1699, 361.35pt x 216.81pt>
+<porovnani/chyba201.pdf, id=1698, 361.35pt x 216.81pt>
 File: porovnani/chyba201.pdf Graphic file (type pdf)
  <use porovnani/chyba201.pdf>
 Package pdftex.def Info: porovnani/chyba201.pdf used on input line 108.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba187.pdf, id=1700, 361.35pt x 216.81pt>
+<porovnani/chyba187.pdf, id=1699, 361.35pt x 216.81pt>
 File: porovnani/chyba187.pdf Graphic file (type pdf)
  <use porovnani/chyba187.pdf>
 Package pdftex.def Info: porovnani/chyba187.pdf used on input line 113.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170.pdf, id=1701, 361.35pt x 216.81pt>
+<porovnani/chyba170.pdf, id=1700, 361.35pt x 216.81pt>
 File: porovnani/chyba170.pdf Graphic file (type pdf)
  <use porovnani/chyba170.pdf>
 Package pdftex.def Info: porovnani/chyba170.pdf used on input line 113.
@@ -1509,25 +1517,25 @@ group included in a single page
 
 pdfTeX warning: pdflatex.exe (file D:/Vanis-Sumo/thesis/porovnani/brana170.pdf): PDF inclusion: multiple pdfs with page 
 group included in a single page
->] <porovnani/chyba170Gipps.pdf, id=1742, 361.35pt x 216.81pt>
+>] <porovnani/chyba170Gipps.pdf, id=1741, 361.35pt x 216.81pt>
 File: porovnani/chyba170Gipps.pdf Graphic file (type pdf)
  <use porovnani/chyba170Gipps.pdf>
 Package pdftex.def Info: porovnani/chyba170Gipps.pdf used on input line 122.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170Krauss.pdf, id=1743, 361.35pt x 216.81pt>
+<porovnani/chyba170Krauss.pdf, id=1742, 361.35pt x 216.81pt>
 File: porovnani/chyba170Krauss.pdf Graphic file (type pdf)
  <use porovnani/chyba170Krauss.pdf>
 Package pdftex.def Info: porovnani/chyba170Krauss.pdf used on input line 122.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170KraussOrig.pdf, id=1744, 361.35pt x 216.81pt>
+<porovnani/chyba170KraussOrig.pdf, id=1743, 361.35pt x 216.81pt>
 File: porovnani/chyba170KraussOrig.pdf Graphic file (type pdf)
  <use porovnani/chyba170KraussOrig.pdf>
 Package pdftex.def Info: porovnani/chyba170KraussOrig.pdf used on input line 127.
 (pdftex.def)             Requested size: 184.9429pt x 110.96532pt.
 
-<porovnani/chyba170IDM.pdf, id=1745, 361.35pt x 216.81pt>
+<porovnani/chyba170IDM.pdf, id=1744, 361.35pt x 216.81pt>
 File: porovnani/chyba170IDM.pdf Graphic file (type pdf)
  <use porovnani/chyba170IDM.pdf>
 Package pdftex.def Info: porovnani/chyba170IDM.pdf used on input line 127.
@@ -1657,27 +1665,27 @@ P\v {r}\'{\i }loha D.
 [10
 
 ]) [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
  (D:\Vanis-Sumo\thesis\bakalarka.aux (D:\Vanis-Sumo\thesis\uvod.aux) (D:\Vanis-Sumo\thesis\predidm.aux)
 (D:\Vanis-Sumo\thesis\SUMO.aux) (D:\Vanis-Sumo\thesis\novymodel.aux) (D:\Vanis-Sumo\thesis\kalibrace.aux)
 (D:\Vanis-Sumo\thesis\simulace.aux) (D:\Vanis-Sumo\thesis\porovnani.aux) (D:\Vanis-Sumo\thesis\literatura.aux)
 (D:\Vanis-Sumo\thesis\priloha.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
 Package rerunfilecheck Info: File `bakalarka.out' has not changed.
-(rerunfilecheck)             Checksum: 4874F5F033D85FC2C333E7BF05E70694;15679.
+(rerunfilecheck)             Checksum: B3E37E217C745262C35D79B88F4940D5;15686.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
  ) 
 Here is how much of TeX's memory you used:
- 31254 strings out of 493921
- 677773 string characters out of 3151295
- 865855 words of memory out of 3000000
- 33456 multiletter control sequences out of 15000+200000
+ 31258 strings out of 493921
+ 677781 string characters out of 3151295
+ 865875 words of memory out of 3000000
+ 33460 multiletter control sequences out of 15000+200000
  13274 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,28n,76p,1141b,1861s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1693,9 +1701,9 @@ fb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/TeX/MiKTeX 2
 pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10
 .pfb><C:/TeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on bakalarka.pdf (93 pages, 2072056 bytes).
+Output written on bakalarka.pdf (93 pages, 2072836 bytes).
 PDF statistics:
- 2195 PDF objects out of 2487 (max. 8388607)
+ 2194 PDF objects out of 2487 (max. 8388607)
  513 named destinations out of 1000 (max. 500000)
  1030 words of extra memory for PDF output out of 10000 (max. 10000000)
 

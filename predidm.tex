@@ -147,21 +147,23 @@ a_\n(t+\tau_\n) {}={} \frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right].
 Z~rovnic \eqref{eq:xntaunv} a \eqref{eq:xntauna} je vidìt zøejmá závislost na vozidle, které jede pøed aktuálním,  èlenem $v_{\nm1}(t)$, resp. $x_{\nm1}(t)$. Øidiè volí svoji rychlost na základì odstupu od pøedchozího vozidla, resp. zrychlení na základì rychlostí.
 
 Koneèný vztah pro Newellùv model je tedy
-\[
+\begin{equation}
 a_\n(t) {}={} \frac{ \displaystyle\frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T},
-\]
+\label{eq:newellcompl}
+\end{equation}
 kde vztah mezi $\tau_\n$ a $T$ vychází z~rovnice \eqref{eq:Tn}.
 
 U~Newellova modelu není vùbec definované èelní vozidlo a jeho vlastnosti. Je napø. možné nastavit mu konstantní rychlost a vlastnosti následujících vozidel vypoèítat poté rovnice \eqref{eq:newellcompl}.
 
-\subsection{Shrnutí Newellova modelu}
+\subsection{Parametry Newellova modelu}
 \label{subsec:parameterNewell}
+\begin{comment}
 Koneèný vztah pro Newellùv model je tedy
 \begin{equation}
 a_\n(t) {}={} \frac{ \displaystyle\frac{1}{\tau_\n}\left[v_{\nm1}(t)-v_\n(t)\right] - \frac{d_\n}{\tau_\n} - v_\n(t)}{T}.
 \label{eq:newellcompl}
 \end{equation}
-
+\end{comment}
 Všechny promìnné a parametry Newellova modelu potom jsou:
 \begin{itemize}
 	\item $\tau_\n$ -- èasová mezera mezi vozidly,
@@ -377,7 +379,7 @@ Hodnota funkce $f(v_f(t))$ èi $f(v_1(t))$ nemusí být nutnì minimální možná brzdn
 
 Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v_f(t))$ èi $f(v_1(t))$, který, jak uvidíme, není možné zjistit. Druhým je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti okolo prùmìrné rychlosti obou vozidel,
 \begin{equation}
-\overline{v} = \frac{v_1(t) + v_f(t)}{2}.
+\overline{v}(t) = \frac{v_1(t) + v_f(t)}{2}.
 \label{eq:kraussv1vf}
 \end{equation}
 
@@ -388,27 +390,27 @@ f(x) = f(a) + \frac{f^{(1)}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x - a)^2 + 
 \end{equation}
 kde $a$ je bod, ve kterém budeme funkci rozvíjet a horní indexy u funkcí znaèí pøíslušnou derivaci.
 
-Budeme pro zjednodušení uvažovat pouze první 4 èleny Taylorova rozvoje. Potøebujeme rozvinout funkce $f(v_1(t))$ a $f(v_f(t))$ z rovnice \eqref{eq:kraussdvsafe} v okolí bodu $\overline{v}$ z rovnice \eqref{eq:kraussv1vf}. Po vyjadøení funkce $f(v_1(t))$ Taylorovým rozvojem, rovnice \eqref{eq:taylor}, dostáváme
+Budeme pro zjednodušení uvažovat pouze první 4 èleny Taylorova rozvoje. Potøebujeme rozvinout funkce $f(v_1(t))$ a $f(v_f(t))$ z rovnice \eqref{eq:kraussdvsafe} v okolí bodu $\overline{v}(t)$ z rovnice \eqref{eq:kraussv1vf}. Po vyjadøení funkce $f(v_1(t))$ Taylorovým rozvojem, rovnice \eqref{eq:taylor}, dostáváme
 \begin{equation}
 \begin{split}
-f(v_1(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right) \\
-&+ \frac{f^{(2)}(\overline{v})}{2} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^3,
+f(v_1(t)) &= f(\overline{v}(t)) + \frac{f^{(1)}(\overline{v}(t))}{1!} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v}(t))}{2} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v}(t))}{6} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^3,
 \end{split}
 \label{eq:taylorfv1}
 \end{equation}
 kde po úpravách závorek dostaneme
 \begin{equation}
 \begin{split}
-f(v_1(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(\frac{v_1(t) - v_f(t)}{2}\right) \\
-&+ \frac{f^{(2)}(\overline{v})}{2} \left(\frac{v_1(t) - v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(\frac{v_1(t) - v_f(t)}{2}\right)^3.
+f(v_1(t)) &= f(\overline{v}(t)) + \frac{f^{(1)}(\overline{v}(t))}{1!} \left(\frac{v_1(t) - v_f(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v}(t))}{2} \left(\frac{v_1(t) - v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v}(t))}{6} \left(\frac{v_1(t) - v_f(t)}{2}\right)^3.
 \end{split}
 \label{eq:taylorfv1}
 \end{equation}
 Stejný postup provedeme i pro $f(v_f(t))$
 \begin{equation}
 \begin{split}
-f(v_f(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(\frac{v_f(t) - v_1(t)}{2}\right) \\
-&+ \frac{f^{(2)}(\overline{v})}{2} \left(\frac{v_f(t) - v_1(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(\frac{v_f(t) - v_1(t)}{2}\right)^3.
+f(v_f(t)) &= f(\overline{v}(t)) + \frac{f^{(1)}(\overline{v}(t))}{1!} \left(\frac{v_f(t) - v_1(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v}(t))}{2} \left(\frac{v_f(t) - v_1(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v}(t))}{6} \left(\frac{v_f(t) - v_1(t)}{2}\right)^3.
 \end{split}
 \label{eq:taylorfvf}
 \end{equation}
@@ -419,40 +421,40 @@ a oba tyto rozvoje dosadíme do rovnice \eqref{eq:kraussdvsafe}. Protože platí
 \end{equation}
 kde $k$ je sudé èíslo, vyruší se všechny sudé èleny tohoto rozvoje a zanedbáním vyšších øádù dostáváme
 \begin{equation}
-f^{(1)}(\overline{v}) \frac{v_f(t) - v_1(t)}{2} + v_f(t) T \leq f^{(1)}(\overline{v}) \frac{v_1(t) - v_f(t)}{2} + g(t).
+f^{(1)}(\overline{v}(t)) \frac{v_f(t) - v_1(t)}{2} + v_f(t) T \leq f^{(1)}(\overline{v}(t)) \frac{v_1(t) - v_f(t)}{2} + g(t).
 \label{eq:krausstaylorcompare}
 \end{equation}
 Po roznásobení a pøevedení èlenù rovnice na opaèné strany získáme
 \begin{equation}
-f'(\overline{v})v_f + v_f T \leq f'(\overline{v})v_1 + g,
+f'(\overline{v}(t))v_f + v_f T \leq f'(\overline{v}(t))v_1 + g,
 \label{eq:kraussdvsafeaverage}
 \end{equation}
 kde budeme nyní první derivaci znaèit $f'$.
 
-Smysl derivace $f(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z~rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\dot{v} = -b(v)$, kdy $b(v)>0$, obrdžíme vztah
+Smysl derivace $f'(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z~rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\frac{\dd \overline{v}}{\dd t} = -b(v)$, kdy $b(v)>0$, obrdžíme vztah
 \begin{equation}
-f'(v) = -\frac{d}{dv}\int_v^0 \frac{v'}{b(v')} dv' = \frac{v}{b(v)}
+f'(\overline{v}(t)) = -\frac{\dd}{\dd \overline{v}(t)}\int_v^0 \frac{\overline{v}(t)'}{b(\overline{v}(t)')} \dd v' = \frac{\overline{v}(t)}{b(\overline{v}(t))}.
 \label{eq:kraussintegratebv}
 \end{equation}
 
 Nyní mùžeme pøepsat podmínku bezpeènosti do tvaru
 \begin{equation}
-v_1 - v_f \geq \frac{v_1 T - g}{\frac{\overline{v}}{b(\overline{v})} + T},
+v_1 - v_f \geq \frac{v_1 T - g}{\displaystyle \frac{\overline{v}}{b(\overline{v})} + T},
 \label{eq:krausssafetycond}
 \end{equation}
 kde
 \begin{equation}
-v_1 - v_f = \frac{dg}{dt}.
+v_1 - v_f = \frac{\dd g}{\dd t}.
 \label{eq:krausssdgdt}
 \end{equation}
 
-Nerovnice \eqref{eq:krausssafetycond} se v~podstatì rovná nerovnici \eqref{eq:kraussgapdes}, kde preferovaný odstup $g_{\des} = v_1 t$ a preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des} = \tau_b + T$, kde $\tau_b = \overline{v}/b(\overline{v})$ je stanoven na základì decelerací, které øidiè využije.
+Nerovnice \eqref{eq:krausssafetycond} se rovná nerovnici \eqref{eq:kraussgapdes} ve chvíli, kdy je preferovaný odstup $g_{\des} = v_1 t$ a preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des} = \tau_b + T$, kde $\tau_b = \overline{v}(t)/b(\overline{v}(t))$ je stanoven na základì decelerací, které øidiè využije.
 
 \subsection{Diskretizace modelu}
 
-Pro možnost simulace na poèítaèi je potøeba pøevést nerovnice v~èásti \ref{krauss:approach} na diskrétní rovnice pro dráhy, rychlosti a zrychlení.
+Pro možnost simulace na poèítaèi je potøeba pøevést spojité nerovnice odvozené v~èásti \ref{krauss:approach}, na diskrétní rovnice pro dráhy, rychlosti a zrychlení.
 
-Vhodná cesta pro vytvoøení rovnic dynamického systému z~bezpeènostní podmínky \eqref{eq:kraussgapdes} je pøevést spojitou rychlost $v_f$ ve výrazu $\dot{g}(t) = v_1(t) - v_f(t)$ jako rychlost diskrétní s~diferencí èi integraèním krokem $t + \Delta t$. Potom rovnici \eqref{eq:kraussgapdes} pøepíšeme do tvaru
+Vhodná cesta pro diskretizaci rovnic dynamického systému z~bezpeènostní podmínky \eqref{eq:kraussgapdes} je pøevést spojitou rychlost $v_f$ ve výrazu $g'(t) = v_1(t) - v_f(t)$ jako rychlost diskrétní s~diferencí èi integraèním krokem $\Delta t$. Potom nerovnici \eqref{eq:kraussgapdes} pøepíšeme do tvaru
 \begin{equation}
 v_f (t + \Delta t) \leq v_1(t) + \frac{g(t) - g_{\des}}{\tau_{\des}}.
 \label{eq:krausssdiscvf}
@@ -462,24 +464,22 @@ Rovnice pro polohu vozidla se potom na stejném principu pøevede na
 x (t + \Delta t) = x(t) + v(t + \Delta t)\Delta t.
 \label{eq:krausssdiscx}
 \end{equation}
-Víme, že pøi $\Delta t \rightarrow 0$ a $g_{\des} \geq 0$ rovnice \eqref{eq:krausssdiscvf} a nerovnice \eqref{eq:krausssdiscx} garantují bezpeènost. Pro koneèný èas $\Delta t$ musí být tato garance opìt dokázána.
+Víme, že pøi $\Delta t \rightarrow 0$ a $g_{\des} \geq 0$ nerovnice \eqref{eq:krausssdiscvf} a rovnice \eqref{eq:krausssdiscx} garantují nekoliznost vozidel. Pro koneèný èas $\Delta t$ musí být tato garance opìt dokázána.
 
 Mezera $g(t)$ mezi dvìma vozidly je diskretizována vztahem
 \begin{equation}
-g (t + \Delta t) = g(t) + \Delta t (v_1(t + \Delta t) - v_f(t + \Delta t)).
+g (t + \Delta t) = g(t) + (v_1(t + \Delta t) - v_f(t + \Delta t))\Delta t.
 \label{eq:krausssdisgap}
 \end{equation}
-
-Pøidáním rovnice \eqref{eq:krausssdiscvf} dostáváme
+Dosazení za $v_f (t + \Delta t)$ z rovnice \eqref{eq:krausssdiscvf} dostáváme
 \begin{equation}
-\xi (t + \Delta t) = \xi(t) + \left(1 - \frac{\Delta t}{\tau_b + T}\right) + \Delta t \frac{g_{\des} - v_1(t)\Delta t}{\tau_b + T},
+\xi (t + \Delta t) = \xi(t) + \left(1 - \frac{\Delta t}{\tau_b + T}\right) + \frac{g_{\des} - v_1(t)\Delta t}{\tau_b + T}\Delta t,
 \label{eq:krausssdisxit}
 \end{equation}
 kde
 \[
 \xi (t) = g(t)  - v_1(t) \Delta t.
 \]
-
 Bezpeènost ($g \geq 0$) je tedy garantována tehdy, když platí:
 \begin{equation}
 \begin{split}
@@ -493,17 +493,17 @@ To je výsledek, který se ovšem dal pøedpokládat. Záleží pouze na tom, zda je i p
 
 \subsection{Rovnice modelu}
 
-Pøedpokládáme tedy, nezávisle na náhodném kolísání, že se každé vozidlo pohybuje nejvyšší rychlostí na základì podmínek, které jsou stanoveny níže. \textbf{Kraussùv model tedy stanovíme následujícími rovnicemi:}
+Pøedpokládáme tedy, že se každé vozidlo pohybuje nejvyšší rychlostí na základì podmínek, které jsou stanoveny níže. \textbf{Kraussùv model tedy stanovíme následujícími rovnicemi:}
 \begin{equation}
 \begin{split}
 &v_{\safe} (t) = v_1(t) + \frac{g(t) - g_{\des}}{\tau_b + T},\\
-&v_{\des} = \min [v_{\max}, v(t) + a(t) \Delta t, v_{\safe} (t)],\\
-&v (t + \Delta t) = \max[0, v_{\des} - \eta].
+&v_{\des} = \min \left(v_{\max}, v(t) + a(t) \Delta t, v_{\safe} (t)\right),\\
+&v (t + \Delta t) = \max(0, v_{\des} - \eta).
 \label{eq:krausssmodel}
 \end{split}
 \end{equation}
 
-Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des} = v_1 \tau$, kde $\tau$ je reakèní èas øidièe. Hodnota $\tau_b$ je definována jako podíl $\overline{v}/b$, kde $\overline{v}$ plyne ze vztahu \eqref{eq:kraussv1vf}. Novì zde také zavádíme promìnnou $\eta$, která je náhodnou výchylkou od bìžného øízení. Volba integraèního kroku $\Delta t$ a preferované mezery $g_{\des}$ je závislá na podmínkách \eqref{eq:krausssafetygarance}.
+Novì zde také zavádíme promìnnou $\eta$, která je náhodnou výchylkou od bìžného øízení. Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des} = v_1 \tau$, kde $\tau$ je reakèní èas øidièe. Hodnota $\tau_b$ je definována jako podíl $\overline{v}/b$, kde $\overline{v}$ plyne ze vztahu \eqref{eq:kraussv1vf}. Volba integraèního kroku $\Delta t$ a preferované mezery $g_{\des}$ je závislá na podmínkách \eqref{eq:krausssafetygarance}.
 
 
 
@@ -511,25 +511,25 @@ Preferovaná mezera $g_{\des}$ mùže být zvolena rùznì. Vìtšinou se volí $g_{\des}
 \label{subsec:parameterKrauss}
 Všechny promìnné a parametry Kraussova modelu potom jsou:
 \begin{itemize}
-	\item $g (t)$ - mezera mezi vozidly v~èase $t$,
-	\item $g_{\des}$ - preferovaná mezera mezi vozidly,
-	\item $\tau_b$ - èas závislý na rychlosti decelerace,
-	\item $T$ - reakèní èas øidièe,
-	\item $v_1 (t)$ - rychlost aktuálního vozidla v~èase $t$,
-	\item $a (t)$ - zrychlení v~èase $t$,
-	\item $\Delta T$ - integraèní krok,
-	\item $\eta$ - náhodná výchylka od bìžného øízení.
+	\item $g (t)$ -- mezera mezi vozidly v~èase $t$,
+	\item $g_{\des}$ -- preferovaná mezera mezi vozidly,
+	\item $\tau_b$ -- èas závislý na rychlosti decelerace,
+	\item $T$ -- reakèní èas øidièe,
+	\item $v_1 (t)$ -- rychlost aktuálního vozidla v~èase $t$,
+	\item $a (t)$ -- zrychlení v~èase $t$,
+	\item $\Delta T$ -- integraèní krok,
+	\item $\eta$ -- náhodná výchylka od bìžného øízení.
 \end{itemize}
 
 
 \section{Rozšíøený Kraussùv model}
 \label{exKrauss}
 
-Hlavní zdroj pro vylepšení Kraussova modelu je pøímo èlánek pro implementaci Rozšíøeného Kraussova modelu \cite{Song}. Základem pro toto vylepšení Kraussova modelu plyne z~procesu brždìní.
+Hlavní zdroj pro vylepšení Kraussova modelu je pøímo èlánek pro implementaci Rozšíøeného Kraussova modelu \cite{Song}. Základ pro vznik tohoto vylepšení Kraussova modelu plyne z~procesu brždìní.
 
 \subsection{Proces brždìní}
 
-Fáze brzdícího procesu na sebe plynule navazují, první z~nich se nazývá doba reakce øidièe $T$, dále zvyšování decelarace $t_i$ a maximální brždìní $t_c$. Vše je graficky znázornìno na obrázku \ref{brzdeni}. 
+Fáze brzdicího procesu na sebe plynule navazují, první z~nich se nazývá doba reakce øidièe $T$, dále zvyšování decelarace $t_\ii$ a maximální brždìní $t_\cc$. Vše je graficky znázornìno na obrázku \ref{brzdeni}. 
 
 \begin{figure}%
 \centering
@@ -538,25 +538,24 @@ Fáze brzdícího procesu na sebe plynule navazují, první z~nich se nazývá doba rea
 \label{brzdeni}%
 \end{figure}
 
-\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas $T$ na to, aby zareagoval na vozidlo pøed sebou. V~dobì této reakce se pohybuje rychlost vozidla $v_0$ na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dán rovnicí
+\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas $T$ na to, aby zareagoval na zmìnu chování vozidla pøed sebou. V~dobì této reakce se pohybuje rychlost vozidla $v_0$ na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dán rovnicí
 \begin{equation}
-S_r = v_0 T.
+S_\rr = v_0 T.
 \label{eq:posunkrauss}
 \end{equation}
 
-\paragraph{Zvyšování decelerace:} Decelarace aktuálního vozidla se ve druhé fázi zvyšuje z~nuly na hodnotu $b_{\max}$, která pøedstavuje nejvyšší hodnotu decelerace vozidla. Pøedpokládáme lineární zvyšování decelarace, tz.
+\paragraph{Zvyšování decelerace:} Decelarace aktuálního vozidla se ve druhé fázi zvyšuje z~nuly na hodnotu $b_{\max}$, která pøedstavuje nejvyšší hodnotu decelerace vozidla. Pøedpokládáme lineární zvyšování decelarace,
 \[
-b = b_{\max} \frac{t}{t_i}.
+b = b_{\max} \frac{t}{t_\ii}.
 \]
-
 Aktuální rychlost vozidla se potom vypoète jako
 \begin{equation}
-v_i = v_0 - \int{b_{\max}\frac{t}{t_i} dt} = v_0 - \frac{b_{\max}}{2t_i} t^2,
+v_i = v_0 - \int_0^{t_\ii}{b_{\max}\frac{t}{t_\ii} \dd t} = v_0 - \frac{b_{\max}}{2t_\ii} t^2,
 \label{eq:speedKrauss}
 \end{equation}
-a pohyb vozidla v~této èásti
+a v~této èásti vozidlo urazí vzdálenost
 \begin{equation}
-S_i = \int_0^{t_i}{\left(v_0 - \frac{b_{\max}}{2t_i} t^2\right) dt} = v_0 t_i - b_{\max} \frac{b_{\max} t_i^2}{6}.
+S_i = \int_0^{t_\ii}{\left(v_0 - \frac{b_{\max}}{2t_\ii} t^2\right) \dd t} = v_0 t_i - b_{\max} \frac{b_{\max} t_\ii^2}{6}.
 \label{eq:moveKrauss}
 \end{equation}
 
@@ -582,102 +581,100 @@ kde èlen $- \frac{b_{\max} t_i^2}{24}$ zanedbáme, jelikož má nìkolikanásobnì men
 
 \subsection{Matematický popis}
 
-Klíè ke správnému Car-Following modelu je dle Krausse je hlavnì bezpeèná rychlost. Pokud èelní vozidlo sníží rychlost, aktuální vozidlo musí zaèít brzdit. Pokud obì vozidla zastaví, jejich polohu bude možno vypoèíst na základì vztahu
+Klíè ke správnému modelu sledu vozidel je dle Krausse je hlavnì bezpeèná rychlost. Pokud èelní vozidlo sníží rychlost, aktuální vozidlo musí zaèít brzdit. Pokud obì vozidla zastaví, jejich polohu bude možno vypoèíst na základì vztahu
 \begin{equation}
-S_l + g(t) = S_f,
+S_\ll + g(t) = S_\ff,
 \label{eq:diffdispKrauss}
 \end{equation}
-kde $S_l$ pøedstavuje polohu èelního vozidla, $g (t)$ mezeru mezi obìma vozidly a $S_f$ polohu aktuálního vozidla.
+kde $S_\ll$ pøedstavuje polohu èelního vozidla, $g (t)$ mezeru mezi obìma vozidly a $S_\ff$ polohu aktuálního vozidla.
 
-Pokud pomineme reakèní èas èelního øidièe, brždìní se skládá ze dvou èástí probíhajících v~èase: zvyšování decelarace $t_{li}$ a maximální brždìní $t_{lc}$.
-
-Poloha èelního vozidla je v~celém brzdícím prùbìhu dána rovnicí
+Pokud pomineme reakèní èas èelního øidièe, brždìní se skládá ze dvou èástí probíhajících v~èase: zvyšování decelarace $t_{\ll\ii}$ a doby maximálního brždìní $t_{\ll\cc}$. Poloha èelního vozidla je v~celém brzdicím prùbìhu dána rovnicí
 \begin{equation}
-S_l = S_{li} + S_{lc} = \frac{1}{2} v_l t_{li} + \frac{v_l^2}{2a_{\max}} - \frac{b_{\max} t_{li}^2}{24} \approx \frac{1}{2} v_l t_{li} + \frac{v_l^2}{2a_{\max}},
+S_\ll = S_{\ll\ii} + S_{\ll\cc} = \frac{1}{2} v_\ll t_{\ll\ii} + \frac{v_\ll^2}{2a_{\max}} - \frac{b_{\max} t_{\ll\ii}^2}{24} \approx \frac{1}{2} v_\ll t_{\ll\ii} + \frac{v_\ll^2}{2a_{\max}},
 \label{eq:S_lKrauss}
 \end{equation}
-kde $a_{\max}$ je maximální decelerace èelního vozidla.
+kde $a_{\max}$ je maximální decelerace èelního vozidla. 
 
-Poloha aktuálního vozidla (vozidla jedoucího za èelním) je v~celém brzdícím procesu rovna
+Poloha aktuálního vozidla (vozidla jedoucího za èelním) je v~celém brzdicím procesu rovna
 \begin{equation}
-S_f = S_r + S_i + S_c = v_{\safe} T + \frac{1}{2} v_{\safe} t_{i} + \frac{v_{\safe}^2}{2b_{\max}} - \frac{b_{\max} t_{fi}^2}{24} \approx v_{\safe} \left(T + \frac{1}{2}t_{fi} \right) + \frac{v_{\safe}^2}{2b_{\max}}.
+\begin{aligned}
+S_\ff = S_\rr + S_\ii + S_\cc = v_{\safe} T + \frac{1}{2} v_{\safe} t_{\ii} + \frac{v_{\safe}^2}{2b_{\max}} - &\frac{b_{\max} t_{\ff\ii}^2}{24} \approx\\ &v_{\safe} \left(T + \frac{1}{2}t_{\ff\ii} \right) + \frac{v_{\safe}^2}{2b_{\max}}.
+\end{aligned}
 \label{eq:S_fKrauss}
 \end{equation}
 
-Pokud do rovnice \eqref{eq:diffdispKrauss} dosadíme za $S_l$ (rovnice \eqref{eq:S_lKrauss}) a za $S_f$ (rovnice \eqref{eq:S_fKrauss}) dostáváme
+Pokud do rovnice \eqref{eq:diffdispKrauss} dosadíme za $S_\ll$ z rovnice \eqref{eq:S_lKrauss} a za $S_\ff$ z rovnice \eqref{eq:S_fKrauss} dostáváme
 \begin{equation}
-v_{\safe} \left(t_r + \frac{1}{2}t_{fi} \right) + \frac{v_{\safe}^2}{2b_{\max}} - \frac{1}{2} v_l t_{li} - \frac{v_l^2}{2a_{\max}} - g = 0.
+v_{\safe} \left(t_\rr + \frac{1}{2}t_{\ff\ii} \right) + \frac{v_{\safe}^2}{2b_{\max}} - \frac{1}{2} v_\ll t_{\ll\ii} - \frac{v_\ll^2}{2a_{\max}} - g = 0.
 \label{eq:vsafeKrauss0}
 \end{equation}
-
-Z~rovnice \eqref{eq:vsafeKrauss0} už mùžeme pøes výpoèet diskriminantu vyjádøit $v_{\safe}$:
+Z~této rovnice už mùžeme pøes výpoèet diskriminantu vyjádøit $v_{\safe}$,
 \begin{equation}
-v_{\safe} = -b \left(T + \frac{t_{fi}}{2}\right) + \sqrt{b^2 \left(t_r + \frac{t_{fi}}{2}\right)^2 + b\left(v_l t_{li} + \frac{v_l^2}{a} + 2g\right)}.
+v_{\safe} = -b \left(T + \frac{t_{\ff\ii}}{2}\right) + \sqrt{b^2 \left(t_\rr + \frac{t_{\ff\ii}}{2}\right)^2 + b\left(v_\ll t_{\ll\ii} + \frac{v_\ll^2}{a} + 2g\right)}.
 \label{eq:vsafeKrauss}
 \end{equation}
 
-V~simulaci je potom èas decelerace stejný $t_i = t_{li} = t_{fi}$, z~toho plyne
+V~simulaci je potom èas decelerace stejný $t_i = t_{\ll\ii} = t_{\ff\ii}$, a~toho plyne
 \begin{equation}
-v_{\safe} = -b \left(T + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{i}}{2}\right)^2 + b\left(v_l t_{i} + \frac{v_l^2}{a} + 2g\right)},
+v_{\safe} = -b \left(T + \frac{t_{\ii}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{\ii}}{2}\right)^2 + b\left(v_\ll t_{\ii} + \frac{v_\ll^2}{a} + 2g\right)}.
 \label{eq:vsafeKraussti}
 \end{equation}
-pokud èelní vozidlo stojí, je jeho rychlost $v_l = 0 \text{ms}^{-1}$ a jeho poloha se nemìní $S_l = 0$, potom mùžeme zjednodušit rovnici \eqref{eq:vsafeKraussti} na
+Pokud èelní vozidlo stojí, je jeho rychlost $v_\ll = 0\,\text{ms}^{-1}$ a jeho poloha se nemìní $S_\ll = 0$, rovnici \eqref{eq:vsafeKraussti} mùžeme zjednodušit na
 \begin{equation}
-v_{\safe} = -b \left(T + \frac{t_{i}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{i}}{2}\right)^2 + 2bg}.
+v_{\safe} = -b \left(T + \frac{t_{\ii}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{\ii}}{2}\right)^2 + 2bg}.
 \label{eq:newKrauss}
 \end{equation}
 
-Tato rovnice \eqref{eq:newKrauss} je  jakýmsi doplòkem ke Kraussovu modelu, pouze pøesnìji definuje bezpeènou rychlost. Princip Kraussova modelu stále zùstává ve volbì preferované rychlosti, kterou se vozidlo bude pohybovat. Tato volba je dána minimální hodnotou, viz rovnice $v_{\des}$ v~\eqref{eq:krausssmodel}.
+Tato rovnice \eqref{eq:newKrauss} je  jakýmsi doplòkem ke Kraussovu modelu, pouze pøesnìji definuje bezpeènou rychlost. Princip Kraussova modelu stále zùstává ve volbì preferované rychlosti, kterou se vozidlo bude pohybovat. Tato volba je dána hodnotou $v_{\des}$ v~rovnici \eqref{eq:krausssmodel}.
 
 \subsection{Parametry Rozšíøeného Kraussova modelu}
 \label{subsec:parameterAddKrauss}
 Všechny promìnné a parametry Kraussova modelu potom jsou:
 \begin{itemize}
-	\item $g$ - aktuální mezera mezi vozidly,
-	\item $b$ - aktuální decelerace,
-	\item $t_i$ - èas, pøi kterém je zvyšována decelerace,
-	\item $T$ - reakèní èas øidièe.
+	\item $g$ -- aktuální mezera mezi vozidly,
+	\item $b$ -- aktuální decelerace,
+	\item $t_i$ -- èas, pøi kterém je zvyšována decelerace,
+	\item $T$ -- reakèní èas øidièe.
 \end{itemize}
 
 
 \section{Intelligent Driver Model}
 \label{sec:IDM}
-Intelligent Driver Model (dále jen IDM) je pomìrnì nový matematický model z~roku 2000, který byl vymyšlen v~Nìmecku. Snaží se vylepšit nìkteré nedostatky pøedcházejících modelù, ale i pøispìt novými myšlenkami v~této oblasti.
+Intelligent Driver Model (dále jen IDM) je pomìrnì nový matematický model z~roku 2000, který byl vymyšlen v~Nìmecku. Používá se jiný pøístup výpoètu akcelerací vozidel, kde se nevybírá z nìkolika hodnot (viz Gipps èi Krauss), ale dùležitost jednoho èlenu klesá v závislosti na vzdálenosti mezi vozidly.
 
-V~této sekci budeme primárnì vycházet z~práce \cite{Vanis} a \cite{TreiberWWW}, ve které je IDM do znaèné míry rozebrán. Využijeme hlavnì podkapitolu 5.1 z~\cite{Vanis}, kterou doplníme o~poznatky, které jsou uplatnìny z~kapitoly \ref{chap:predIDM}.
-
+V~této sekci budeme primárnì vycházet z~prácí \cite{Vanis} a \cite{TreiberWWW}.
 \subsection{Matematický popis}
 \label{sec:matpopisIDM}
 
 Pro výpoèet zrychlení v~IDM je použit vztah
 \begin{equation}
-v_{\n}(t + \Delta T) = v_\n (t) + a_\free + a_\inter,
+v_{\n}(t + \Delta t) = v_\n (t) + a_{n,\free} (t) + a_{n,\inter} (t),
 \label{soucetzrych}
 \end{equation}
-kde $v_\n (t)$ znaèí rychlost vozidla v~èase $t$ a $\Delta T$ je simulaèní krok. Aktuální zrychlení vozidla se tedy vypoèítá jako souèet zrychlení pøi volném proudu $a_\free$ a zrychlení, ve kterém je zahrnut i vozidlo jedoucí pøed ním $a_\inter$. Zde je vidìt urèitá paralela s~Gippsovým modelem (kapitola \ref{sec:Gipps}), kde se ovšem vybírá pouze jedna z~tìchto dvou hodnot. Navíc i rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_\inter {}={} 0$.
+kde $v_\n (t)$ znaèí rychlost vozidla v~èase $t$ a $\Delta t$ je simulaèní krok. Aktuální zrychlení vozidla se tedy vypoèítá jako souèet zrychlení pøi volném proudu $a_{n,\free}$ a zrychlení, ve kterém je zahrnut i vozidlo jedoucí pøed ním $a_{n,\inter}$. Zde je vidìt urèitá paralela s~Gippsovým modelem (kapitola \ref{sec:Gipps}), kde se ovšem vybírá pouze jedna z~tìchto dvou hodnot. Navíc i~rovnice se od IDM odlišují. Pro volný proud je tedy zrychlení $a_{n,\inter} {}={} 0$.
 
 Zrychlení pøi volném proudu je definováno vztahem
 \begin{equation}
-a_\free {}={} a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right],
+a_{n,\free} (t){}={} a\left[1-\left(\frac{v_n (t)}{v_{n,\free}}\right)^\delta\right],
 \label{zrychvolproud}
 \end{equation}
-kde $a$ je maximální zrychlení, $\delta$ je exponent zrychlení, $v_n$ je aktuální rychlost vozidla a $v_{n\free}$ je rychlost, které chce vozidlo dosáhnout.
+kde $a$ je maximální zrychlení, $\delta$ je exponent zrychlení, který napomahá zpøesnìní výpoètu zrychlení $a_{n,\free}$, $v_n$ je aktuální rychlost vozidla a $v_{n,\free}$ je rychlost, které chce vozidlo dosáhnout.
 
-Pokud v~rovnici \eqref{zrychvolproud} bude zlomek $v_n / v_\free$ roven jedné, auto se již dostalo na svou preferovanou rychlost $v_\free$ a celkové zrychlení $a_\free$ bude rovno nule. Naopak pokud bude $v_n$ rovno nule, znamená to, že $a_\free$ bude pøímo rovno $a$, a auto pojede svým maximálním zrychlením. Pokud $v_n$ bude menší než $v_\free$, pak platí že, èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_\free$. Pokud $v_n$ bude vìtší než $v_\free$, bude platit pravý opak.
+Pokud v~rovnici \eqref{zrychvolproud} bude zlomek $v_n (t)/ v_{n,\free}$ roven jedné, vozidlo se již dostalo na svou preferovanou rychlost $v_{n,\free}$ a celkové zrychlení $a_{n,\free} (t)$ bude rovno nule. Naopak pokud bude $v_n (t)$ rovno nule, znamená to, že $a_{n,\free} (t)$ bude pøímo rovno $a$, a vozidlo pojede svým maximálním zrychlením. Pokud $v_n (t)$ bude menší než $v_{n,\free}$, pak platí že, èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_{n,\free} (t)$. Pokud $v_n (t)$ bude vìtší než $v_{n,\free}$, bude platit pravý opak.
 
-Auto jedoucí pøi volném proudu je ale nereálná pøedstava, proto se do rovnice \eqref{soucetzrych} pøidává interakèní èlen, který pøímo závisí na parametrech vozidla jedoucí pøed naším úèastníkem. Tento èlen je roven
+Podle rovnice \eqref{zrychvolproud} by bylo možné poèítat celkové zrychlení za pøedpokladu, kdyby vozidlo jelo na naprosto prázdné komunikaci. Tomu ovšem tak být nemusí, proto se do rovnice \eqref{soucetzrych} pøidává interakèní èlen, který pøímo závisí na parametrech vozidla jedoucí pøed naším úèastníkem. Tento èlen je roven
 \begin{equation}
-a_\inter = - a \left(\frac{s_n^*}{s_n}\right)^2,
+a_{n,\inter} (t) = - a \left(\frac{s_n^*(t)}{s_n(t)}\right)^2,
 \label{intclen}
 \end{equation}
-kde $a$ je maximální zrychlení, $s_n = x_{n-1} - x_n$ je rozdíl poloh vozidel a $s_n^*$
+kde $a$ je maximální zrychlení, $s_n(t) = x_{n-1}(t) - x_n(t)$ je rozdíl poloh vozidel a $s_n^*(t)$
 \begin{equation}
-s_n^* = s_\text{0} + v_n \tau + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}
+s_n^*(t) = s_\text{0} + v_n(t) \tau + \frac{v_n(t)(v_n(t) - v_{n-1}(t))}{2\sqrt{ab}}
 \label{snhvez}
 \end{equation}
-je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $\tau$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}.
+je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bezpeèné vzdálenosti mezi vozidly a délkou následujícího vozidla, $\tau$ je bezpeènostní èasový odstup mezi vozidly a $b$ je konstanta brzdìní. Situace je schématicky znázornìna na obrázku \ref{promen}, kde jsme pro pøehlednost neuvedli závislost jednotlivých promìnných na èase.
 
-Èlen úmìrný $v_n - v_{n-1}$ je kvadratický v~promìnné $v_n$ a obsahuje souèin $v_n v_{n-1}$. Tyto nelineární èleny popisují interakci, v~tomto pøípadì dvou vozidel. Pokud tedy bude vzdálenost $s_n$ mezi auty vysoká, potom zlomek $s_n^*/s_n$ bude mít velmi malou hodnotu a interakèní èlen $a_\inter$ lze zanedbat, takže vozidlo se pohybuje jako ve volném proudu.
+Èlen v èitaleli zlomku rovnice \eqref{snhvez} je kvadratický v~promìnné $v_n(t)$ a obsahuje souèin $v_n(t) v_{n-1}(t)$. Tyto nelineární èleny popisují interakci, v~tomto pøípadì dvou vozidel. Pokud tedy bude vzdálenost $s_n(t)$ mezi vozidly vysoká, potom zlomek $s_n^*(t)/s_n(t)$ bude mít velmi malou hodnotu a interakèní èlen $a_{n,\inter}(t)$ lze zanedbat, takže vozidlo se pohybuje jako ve volném proudu.
 \begin{figure}%
 \centering
 \includegraphics[width=0.6\textwidth]{idm.pdf}%
@@ -686,11 +683,11 @@ je preferovaný odstup. Hodnota $s_\text{0}$ se vypoète jako souèet minimální bez
 \end{figure}
 
 
-Pokud rychlost auta $v_n$ bude vyšší než rychlost auta $v_{n-1}$, pak interakèní èlen $s_n^*$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení auta $\dot{v}_n$ se musí snížit.
+Pokud rychlost vozidla $v_n (t)$ bude vyšší než rychlost vozidla $v_{n-1} (t)$, pak interakèní èlen $s_n^* (t)$ bude kladný a požadovaný odstup se zvìtší, takže zrychlení vozidla $v_{\n}(t + \Delta t)$ se musí snížit.
 
-Dosazením do rovnice \eqref{soucetzrych} za $a_\inter$ z~rovnice \eqref{intclen} a $a_\free$ z~rovnice \eqref{zrychvolproud} dostáváme \textbf{koneèný vztah pro zrychlení vozidla}:
+Dosazením do rovnice \eqref{soucetzrych} za $a_{n,\inter} (t)$ z~rovnice \eqref{intclen} a $a_{n,\free} (t)$ z~rovnice \eqref{zrychvolproud} dostáváme \textbf{koneèný vztah pro zrychlení vozidla}:
 \begin{equation}
-v_{\n}(t + \Delta T) = v_\n (t) + a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n \tau + \frac{v_n(v_n - v_{n-1})}{2\sqrt{ab}}}{s_n}\right)^2.
+v_{\n}(t + \Delta t) = v_\n (t) + a\left[1-\left(\frac{v_n (t)}{v_{n\free}}\right)^\delta\right] - a \left(\frac{s_\text{0} + v_n (t) \tau + \displaystyle\frac{v_n(t)(v_n(t) - v_{n-1}(t))}{2\sqrt{ab}}}{s_n(t)}\right)^2.
 \label{eq:IDMcompl}
 \end{equation}
 
@@ -698,14 +695,14 @@ v_{\n}(t + \Delta T) = v_\n (t) + a\left[1-\left(\frac{v_n}{v_{n\free}}\right)^\
 \label{subsec:parameterAddKrauss}
 Všechny promìnné a parametry IDM potom jsou:
 \begin{itemize}
-	\item $s_n$ - aktuální odstup mezi vozidly,
-	\item $\tau$ - èasová mezera mezi vozidly,
-	\item $v_{\n}$ - rychlost aktuálního vozidla,
-	\item $v_{\nm1}$ - rychlost $n-1$ vozidla,
-	\item $a$ - maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat,
-	\item $b$ - maximální decelerace,
-	\item $s_0$ - bezpeènostní mezera mezi vozidly,
-	\item $v_{n\free}$ - preferovaná rychlost vozidla.
+	\item $s_n$ -- aktuální odstup mezi vozidly,
+	\item $\tau$ -- bezpeènostní èasový odstup mezi vozidly,
+	\item $v_{\n}$ -- rychlost aktuálního vozidla,
+	\item $v_{\nm1}$ -- rychlost $n-1$ vozidla,
+	\item $a$ -- maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat,
+	\item $b$ -- maximální decelerace,
+	\item $s_0$ -- bezpeènostní mezera mezi vozidly,
+	\item $v_{n\free}$ -- preferovaná rychlost vozidla.
 \end{itemize}
 
 
