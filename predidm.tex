@@ -833,24 +833,26 @@ kde $\BMINadd$ a $\BMINmult$ jsou parametry modelu a $\RNDIII_n$ znaèí parametr 
 
 \section{Shrnutí}
 
-Èasovì spojité mikroskopické modely jsou v~zásadì definovány funkcí zrychlení. V~nejstarších modelech mùže zrychlení $a (t + T_r)$ vozidla $\alpha$ zapsáno jako
+Èasovì spojité mikroskopické modely jsou v~zásadì definovány funkcí zrychlení. V~nejstarších modelech, tj. modelech General Motors, mùže být zrychlení $a (t + \Delta t)$ vozidla $n$ zapsáno jako
 \begin{equation}
-a (t + T_r) = \frac{-\lambda v_\alpha^m \Delta v_\alpha}{s_\alpha^l},
+a (t + \Delta t) = \frac{-\lambda (v_n (t))^m \Delta v_n (t)}{s_n (t)^l},
 \label{eq:earliermodels}
 \end{equation}
-kde $\lambda$, $l$ a $m$ jsou parametry modelu, $s$ je odstup mezi vozidly a $\Delta v_\alpha$ rozdíl rychlostí.
+kde $\lambda$, $l$ a $m$ jsou parametry modelu, $s$ je odstup mezi vozidly a $\Delta v_\n (t)$ rozdíl rychlostí aktuálního vozidla a vozidla jedoucího pøed aktuálním.
 
-Kromì toho mùže zrychlení mùže také záviset na vlastní rychlosti vozidla $v_\alpha$ a klesá se vzdáleností $s_\alpha$ k~vozidlu pøed ním,
+Kromì toho mùže zrychlení mùže také záviset na vlastní rychlosti vozidla $v_n (t)$ a klesá se vzdáleností $s_n (t)$ k~vozidlu pøed ním,
 \begin{equation}
-s_{\alpha} = x_{\alpha-1} - x_{\alpha} - l_{\alpha},
+s_{n} (t) = x_{\nm1} (t) - x_{n} (t) - l_{n},
 \label{eq:distancebetween}
 \end{equation}
-kde $l_{\alpha}$ je délka vozidla $\alpha$.
+kde $l_{\n}$ je délka vozidla $\n$.
 
-V~závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedoucím vozidle, tyto modely není možné použít pøi velmi nízkých hustotách provozu. Pokud není urèeno vedoucí vozidlo ($s_{\alpha} \rightarrow \infty$), zrychlení buïto není možné stanovit (pro hodnotu $l = 0$) nebo je rovné nule ($l > 0$) bez ohledu na rychlost vozidla. Dá se pøedpokládat, že v~tuto chvíli se vozidla budou snažit dosáhnout své preferované rychlosti. Chování vozidel v~hustém provozu je ovšem ponìkud nerealistické. Pøedevším odstup mezi vozidly $s$ týkající se vedoucího vozidla nemusí nutnì smìøovat k~rovnovážnému stavu. Ani malé mezery nepøimìjí vozidlo k~brždìní pokud je rozdíl rychlostí $\Delta v_\alpha$ roven nule.
+V~závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedoucím vozidle, tyto modely není možné použít pøi velmi nízkých hustotách provozu. Pokud není urèeno vedoucí vozidlo ($s_{\n} \rightarrow \infty$), zrychlení buïto není možné stanovit (pro hodnotu $l = 0$) nebo je rovné nule ($l > 0$) bez ohledu na rychlost vozidla. Dá se pøedpokládat, že v~tuto chvíli se vozidla budou snažit dosáhnout své preferované rychlosti. Chování vozidel v~hustém provozu je ovšem ponìkud nerealistické. Pøedevším odstup mezi vozidly $s$ týkající se vedoucího vozidla nemusí nutnì smìøovat k~rovnovážnému stavu. Ani malé mezery nepøimìjí vozidlo k~brždìní pokud je rozdíl rychlostí $\Delta v_\n$ roven nule.
 
 Tyto problémy byly vyøešeny v~Newellovì modelu (viz podkapitola \ref{sec:Newell}), kde je z~rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k~velmi vysokým hodnotám zrychlení.\cite{Treiber}
  
-Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako Wiedemannùv (viz. odstavec \ref{sec:Wiedemann}). Bohužel tyto modely vyžadují mnoho parametrù.
+Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model, podkapitola \ref{sec:Gipps} a Kraussùv model, podkapitola \ref{sec:Krauss}. Navzdory své jednoduchosti, tyto modely realisticky popisují chování øidièe a jsou nekolizní. Bohužel u tìchto modelù není možné nikdy dosáhnout stacionárního stavu a to z dùvodu vybírání minima z nìkolika hodnot (jedna hodnota by k nìmu smìøovala, ale na základì volby ze dvou (Gipps) èi tøí (Krauss) možností se vybere jiná). V~tìchto pøípadech potom není možné simulovat nestabilní stavy dopravy.
 
-Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model \ref{sec:Gipps} a Kraussùv model \ref{sec:Krauss}. Navzdory své jednoduchosti, tyto modely ukazují realistické chování øidièe a jsou nekolizní. Toto chování se bohužel ztrácí ve chvíli, kdy modelujeme dopravu deterministicky\footnote{napø. když vozidla vjíždí do urèité oblasti každých 5 sekund}. V~tìchto pøípadech není možné simulovat nestabilní stavy dopravy.
+Tento problém se snaží odstanit IDM model, podkapitola \ref{sec:IDM}, který rychlost urèuje na základì zrychlení volného proudu a interakèního zrychlení, kde velikost interakèního zrychlení stoupá s klesající mezerou mezi aktuálním vozidlem a vozidlem jedoucím pøed aktuálním.
+
+Kromì Newellova modelu a dalších modelù pro základní výzkum existují také vysoce komplexní modely jako Wiedemannùv, podkapitola \ref{sec:Wiedemann}. Bohužel tyto modely mají mnoho parametrù.
