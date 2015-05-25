@@ -373,18 +373,61 @@ f(v_f(t)) + v_f(t) T \leq f(v_1(t)) + g(t).
 \label{eq:kraussdvsafe}
 \end{equation}
 
-Hodnota funkce $f(v)$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být funkce závisející na zpùsobu øízení øidièe. To samé platí pro reakèní èas $T$.
+Hodnota funkce $f(v_f(t))$ èi $f(v_1(t))$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být funkce závisející na zpùsobu øízení øidièe. To samé platí pro reakèní èas $T$.
 
-Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v)$, který, jak uvidíme, není možné zjistit. Druhým je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti $f(v)$ okolo prùmìrné rychlosti obou vozidel,
+Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v_f(t))$ èi $f(v_1(t))$, který, jak uvidíme, není možné zjistit. Druhým je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti okolo prùmìrné rychlosti obou vozidel,
 \begin{equation}
-\overline{v} = \frac{v_1 + v_f}{2},
+\overline{v} = \frac{v_1(t) + v_f(t)}{2}.
 \label{eq:kraussv1vf}
 \end{equation}
-který budeme v~dalším odvození dále používat. Sudé èleny tohoto rozvoje se vyruší a zanedbáním èlenù vyšších øádù dostáváme
+
+Taylorùv rozvoj je obecnì definován následovnì 
 \begin{equation}
-f'(\overline{v})v_f + v_f T \leq f'(\overline{v})v_1 + g.
+f(x) = f(a) + \frac{f^{(1)}(a)}{1!} (x - a) + \frac{f^{(2)}(a)}{2!} (x - a)^2 + \frac{f^{(3)}(a)}{3!} (x - a)^3 \dots,
+\label{eq:taylor}
+\end{equation}
+kde $a$ je bod, ve kterém budeme funkci rozvíjet a horní indexy u funkcí znaèí pøíslušnou derivaci.
+
+Budeme pro zjednodušení uvažovat pouze první 4 èleny Taylorova rozvoje. Potøebujeme rozvinout funkce $f(v_1(t))$ a $f(v_f(t))$ z rovnice \eqref{eq:kraussdvsafe} v okolí bodu $\overline{v}$ z rovnice \eqref{eq:kraussv1vf}. Po vyjadøení funkce $f(v_1(t))$ Taylorovým rozvojem, rovnice \eqref{eq:taylor}, dostáváme
+\begin{equation}
+\begin{split}
+f(v_1(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v})}{2} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(v_1(t) - \frac{v_1(t) + v_f(t)}{2}\right)^3,
+\end{split}
+\label{eq:taylorfv1}
+\end{equation}
+kde po úpravách závorek dostaneme
+\begin{equation}
+\begin{split}
+f(v_1(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(\frac{v_1(t) - v_f(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v})}{2} \left(\frac{v_1(t) - v_f(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(\frac{v_1(t) - v_f(t)}{2}\right)^3.
+\end{split}
+\label{eq:taylorfv1}
+\end{equation}
+Stejný postup provedeme i pro $f(v_f(t))$
+\begin{equation}
+\begin{split}
+f(v_f(t)) &= f(\overline{v}) + \frac{f^{(1)}(\overline{v})}{1!} \left(\frac{v_f(t) - v_1(t)}{2}\right) \\
+&+ \frac{f^{(2)}(\overline{v})}{2} \left(\frac{v_f(t) - v_1(t)}{2}\right)^2 + \frac{f^{(3)}(\overline{v})}{6} \left(\frac{v_f(t) - v_1(t)}{2}\right)^3.
+\end{split}
+\label{eq:taylorfvf}
+\end{equation}
+a oba tyto rozvoje dosadíme do rovnice \eqref{eq:kraussdvsafe}. Protože platí
+\begin{equation}
+\left(\frac{v_f(t) - v_1(t)}{2}\right)^k = \left(\frac{v_1(t) - v_f(t)}{2}\right)^k,
+\label{eq:vfv1}
+\end{equation}
+kde $k$ je sudé èíslo, vyruší se všechny sudé èleny tohoto rozvoje a zanedbáním vyšších øádù dostáváme
+\begin{equation}
+f^{(1)}(\overline{v}) \frac{v_f(t) - v_1(t)}{2} + v_f(t) T \leq f^{(1)}(\overline{v}) \frac{v_1(t) - v_f(t)}{2} + g(t).
+\label{eq:krausstaylorcompare}
+\end{equation}
+Po roznásobení a pøevedení èlenù rovnice na opaèné strany získáme
+\begin{equation}
+f'(\overline{v})v_f + v_f T \leq f'(\overline{v})v_1 + g,
 \label{eq:kraussdvsafeaverage}
 \end{equation}
+kde budeme nyní první derivaci znaèit $f'$.
 
 Smysl derivace $f(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z~rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\dot{v} = -b(v)$, kdy $b(v)>0$, obrdžíme vztah
 \begin{equation}
