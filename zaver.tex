@@ -11,7 +11,6 @@ Vıstupy, které program nabízí byly zpracovány v matematickém prostøedí Mathemati
 Bakaláøská práce tím pádem splnila svùj cíl a pokud by se model i pøiloenı program podaøilo vylepšit autor vìøí, e by poté byl schopen dosahovat podobnıch vısledkù jako nìkterı z robustních softwarù, které ovšem stojí nemalé peníze.
 
 Tato práce pùvodnì mìla navíc obsahovat èást tıkající se parciálních diferenciálních rovnic, po zjištìní nároènosti programování a simulování IDM jsem se rozhodl upøednostnit kvalitni provedení práce tıkající se pouze této problematiky ne povrchním zpracovaním celého pùvodního rozsahu.
-\end{comment}
 
 Jak u je zmínìno v úvodu, cílem této práce nebylo dosaení novıch vìdeckıch poznatkù, nıbr seznámení se s problematikou dopravních modelù a jejich programování. Za tímto úèelem byly popsány dva základní typy modelù: makroskopické a mikroskopické. Z vlastností tìchto typù modelù vyplynulo, e pro další studium bude vhodné se primárnì zabıvat mikroskopickımi modely. Tyto modely jsou pøevánì popsány diferenciálními rovnicemi. Porozumìní jejich tematice je podmínìno znalostmi z oblasti teorie stability. Tímto se zabıvá ètvrtá kapitola této práce. Pro realizaci dopravních modelù zaloenıch na diferenciálních rovnicích je nutno pouít numerické postupy a algoritmy. Studovali jsme základní Eulerovu metodu numerického øešení diferenciálních rovnic. Poté jsme implementovali metody vyšších øádu, konkrétnì metody Runge-Kutta druhého a ètvrtého øádu. Ukázalo se však, e všechny tyto metody poskytují pro studovanı problém identické vısledky. 
 
@@ -24,3 +23,29 @@ Po tìchto úspìšnì zakonèenıch pokusech se pøistoupilo k samotnım simulacím. Pro 
 Nejprve byla otestována zvolená numerická metoda na stacionárním stavu modelu IDM, kde vısledky simulace potvrdily vhodnost jejího pouití. Postupnì byly testovány tøi pøípady na nekoneèné i cyklické dálnici. Zjistili jsme, e ve všech pøípadech mají vozidla tendenci dostávat se na svoji preferovanou rychlost, ale s ohledem na ostatní vozidla tendují ke stacionárnímu stavu, pøièem u tøetího pøípadu (podkapitola \ref{sec:zmenaparam}) by stacionárního stavu bylo dosaeno za pomìrnì dlouhı èasovı úsek.
 
 Vızkum v této oblasti je mono rozšiøovat smìrem k dalším mikroskopickım modelùm èi zvolit makroskopickı model pro hustší provoz na pozemní komunikaci.
+
+\end{comment}
+
+Modelování dopravy se v dnešní dobì vyuívá hlavnì pøi predikování dopravy. Díky nìmu se také mùeme pokusit zjistit parametry dopravního proudu a na tomto základì tento proud ovlivòovat, a ji zmìnou rychlosti èi napø. prodlouením fáze volno. Vıhodou mikroskopického pøístupu je zkoumání kadého jednotlivého vozidla a hlavnì proto se pouívají mikroskopické modely pro simulaci pøi vzniku dopravních nehod, doèasného uzavøení jízdního pruhu ap.
+
+Mikroskopickıch modelù popisujících chování vozidel na komunikaci existuje mnoho. Nìkteré z nich se více èi ménì hodí na situace, které lze modelovat. Vdy zùstane otázkou, zda by jinı mikroskopickı model nedával lepší vısledky ne aktuální èi zda danı model nemohl bıt lépe nakalibrován.
+
+Modely, které budou mezi sebou dále porovnávány, jsou odvozeny ji od základní myšlenky autorù v kapitole \ref{chap:predIDM}. Na konci kadé podkapitoly je uveden seznam parametrù modelu. To je vhodné ve chvíli, kdy by mìl bıt model pouit pøímo pro implementaci a postup, jakım ho autor odvodil, není dùleitı. Na konci této kapitoly je krátké shrnutí tìchto modelù, jejich vıhod èi nevıhod pro pouití na simulování dopravy.
+
+Tato diplomová práce si za hlavní cíl kladla porovnat v této chvíli nejpouívanìjší mikroskopické modely na stejném úseku rychlostní komunikace. Ještì ne vùbec byly spuštìny první simulace, byl naprogramován podpùrnı program, kterı obsahuje funkce nutné k spuštìní simulace -- generování vozidel a dále také funkce k vyhodnocování tìchto simulací, konkrétnì tvorbu grafù èasovıch øad a harmonogramù. Detailnì se jím zabıvá podkapitola \ref{sec:program}.
+
+Dále bylo nutné vhodnì zvolit simulaèní nástroj, kterı by umoòoval mìnit mezi jednotlivımi modely a zároveò umìl nastavovat všechny parametry modelù. Tìmto poadavkùm vyhovoval opensource simulaèní nástroj SUMO - jeho detailnìjší popis lze nálezt v podkapitole \ref{sec:SUMO}, kterı ji nìkteré modely urèené na porovnání obsahoval. Bohuel tento nástroj neobsahuje ádnou monost vyuití makroskopického nástroje a proto nebylo moné na nìm vyzkoušet nìkterı z makroskopickıch modelù. Nìkteré modely bylo potøeba pøeprogramovat a nìkteré úplnì od zaèátku naimplementovat. Tvorbou implementace nového modelu do SUMO se nachází v kapitole \ref{chap:newmodel}.
+
+Data získaná pro úèely této diplomové práce jsou z mıtnıch bran Praského okruhu z roku 2012. Z toho dùvodu byl do SUMO naimportován právì úsek, ve kterém se nacházejí tyto mıtné brány. Postup, jak naimportovat jakıkoliv úsek z OSM je uveden v pøíloze \ref{chap:netSUMO}.
+
+Ve chvíli, kdy jsme mìli pøipraveny všechny vstupy do simulace a následné vyhodnocení, bylo nutné provést kalibraci modelù a s tím související validaci. S tím souvisela otázka nalezení vhodné metody validace. Podrobnosti k této otázce jsou shrnuty v kapitole \ref{chap:kalibrace}.
+
+Pokud máme k dispozice validované modely, bylo moné ji spustit samotnou simulaci s pøíslušnımi parametry. Prùbìh simulace, hodnoty parametrù u jednotlivıch modelù a hlavnì vısledky simulací jsou blíe popsány v kapitole \ref{chap:simulace}. 
+
+V závìreèné kapitole porovnáváme modely z nasimulovanıch dat. Porovnání probíhá jak matematicky (pouité metody jsou teoreticky popsány v \ref{statmet}), tak i graficky na základì grafù èasovıch øad.
+
+Pro porovnání jednotlivıch modelù jsme si vzali jednodušší pøípad a to konkrétnì svátek 28. øíjna. Bylo to z toho dùvodu, abychom vyzkoušeli, zda je vùbec moné modely porovnávat a zda dávají pøijatelné vısledky. V tuto chvíli existují další monosti, jak dále pokraèovat.
+
+V první øadì je to pokusit se nasimulovat, a u z reálnıch dat nebo z pøedpøipravené situace, nìjakou sloitìjší událost - napø. uzavøení jednoho jízdního pruhu. Dùleité v tomto ohledu je brát zøetel na infrastrukturu na které se bude daná situace programovat.
+
+Dále by bylo jistì vhodné zamyslet se nad zpùsobem vjezdu vozidel do jakékoliv simulované oblasti. Dle mıch znalostí nyní neexistuje ádnı ideální zpùsob jak toto dìlat a mùe to zpùsobit i chybu, která se v první chvíli jeví jako chyba modelu.

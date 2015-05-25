@@ -18,7 +18,7 @@ Další variantou bylo pokraèovat v programovacím jazyku JAVA na vytvoøené aplikac
 V této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji naprogramované autorem èi volnì dostupné nástroje z nich bude patrné proè autor vybral právì tento postup.
 
 \section{SUMO}
-
+\label{sec:SUMO}
 SUMO je open-source nástroj pro dopravní simulace. Ve vızkumu se dá SUMO vyuít v mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v dobì MS v Nìmecku v roce 2006 v Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
 
 Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení, matic vzdáleností vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
@@ -67,8 +67,9 @@ Dráha, po které se bude vozidlo pohybovat, souvisí s podkapitolou \ref{sub:podkl
 \label{subsec:additionalfiles}
 
 Další soubor, kterı vytvoøíme, se tıká informací o indukèních smyèkách. Definujeme zde její polohu a také informace, které má ukládat. Ty se dají nastavit stejnì jako z dat, které máme k dispozici, tz¨n. poèet vozidel za minutu a prùmìrná rychlost vozidel za minutu.
-\section{Pøíprava a vyhodnocení simulace - program}
 
+\section{Pøíprava a vyhodnocení simulace - program}
+\label{sec:program}
 Aby bylo moné dostat se k jádru celé práce, je nutná pøíprava dat pro simulaci a také jejich následné vyhodnocení. K tomuto úèelu byla vytvoøena konzolová aplikace jménem \textit{AllInOne.jar}. Pro její správnou funkènost je nutné mít nainstalované rozhraní pro Java aplikace (JRE), která umoòuje 4 základní operace,
 \begin{enumerate}
 	\item pøevedení formátu dat (MATLAB) z Praského okruhu na formát podporovanı softwarem SUMO (XML),
