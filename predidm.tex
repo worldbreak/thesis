@@ -709,18 +709,18 @@ Všechny promìnné a parametry IDM potom jsou:
 \section{Wiedemannùv model}
 \label{sec:Wiedemann}
 
-V~programu SUMO je také pøipraven Wiedemannùv model, jeho první verze vznikla ji v~roce 1974 jako disertaèní práce tehdejšího studenta R. Wiedemanna. Tento model byl posléze nìkolikrát vylepšován, v~roce 1992 o~tomto modelu vyšel aktualizovanı èlánek. Tyto práce ovšem bohuel nejsou k~dispozici. V~této sekci budeme hlavnì vycházet z~èlánku \cite{Higgs}. V~nìm najdeme pomìrnì pøesnı popis Wiedemannova modelu\footnote{Tento èlánek se pøímo odkazuje na èlánek z~roku 1992.}.
+V~programu SUMO je také pøipraven Wiedemannùv model, jeho první verze vznikla ji v~roce 1974 jako disertaèní práce tehdejšího studenta R. Wiedemanna. Tento model byl posléze nìkolikrát vylepšován, v~roce 1992 o~tomto modelu vyšel aktualizovanı èlánek. Wiedemannova disertaèní práce je bohuel psána nìmecky a navíc je v~podstatì nedostupná, stejnì jako zmiòovanı èlánek. V~této sekci budeme hlavnì vycházet z~èlánku \cite{Higgs}. V~nìm najdeme pomìrnì pøesnı popis Wiedemannova modelu\footnote{Tento èlánek se pøímo odkazuje na èlánek z~roku 1992.}.
 
 Tento model je odlišnı oproti pøedcházejícím tím, e pracuje v~tzv. reimech. Nejprve je nutné zjistit, v~jakém reimu se vozidlo vlastnì nachází a podle toho se urèuje vıpoèet akcelerace èi decelarace, která je pro kadı reim jiná. 
 
-Klíèové pro pochopení Wiedemannova modelu je obrázek \ref{wiedemann}. Osa x zobrazuje rozdíl rychlostí vozidel $\Delta v$ (aktuálního a následujícího) a na ose y se nachází vzdálenost mezi tìmito vozidly $\Delta x$. Znamená to, e pokud rozdíl rychlostí a zároveò rozdíl poloh vozidel dosahuje urèitıch hodnot, vdy náleí jednomu konkrétnímu reimu, podle kterého je vozidlo dále zpracováváno. K~tomu abychom mohli urèit pøíslušnı reim vozidla, musíme si urèit prahové hodnoty køivek AX, ABX, SDX, CLDV, OPDV a SDV.
+Klíèové pro pochopení Wiedemannova modelu je obrázek \ref{wiedemann}. Osa $x$ zobrazuje rozdíl rychlostí vozidel $\Delta v$ (aktuálního vozidla a vozidla jedoucího pøed ním) a na ose $y$ se nachází vzdálenost mezi tìmito vozidly $\Delta x$. Znamená to, e pokud rozdíl rychlostí a zároveò rozdíl poloh vozidel dosahuje urèitıch hodnot, lze tyto hodnoty pøiøadit jednomu konkrétnímu reimu, podle kterého je vozidlo dále zpracováváno. K~tomu, abychom mohli urèit pøíslušnı reim vozidla, musíme nejprve urèit prahové hodnoty køivek AX, ABX, SDX, CLDV, OPDV a SDV, znázornìnıch na obrázku \ref{wiedemann}.
 
-Preferovanı odstup mezi stacionárními\footnote{nezávislé na èase} vozidly znaèíme AX. Tento práh sestává s~délky èelního vozidla seètenou s~preferovanou vzdáleností mezi vozidly. Je definován vztahem
+Preferovanı odstup mezi stacionárními\footnote{nezávislé na èase} vozidly znaèíme AX. Je definován vztahem
 \begin{equation}
-AX = L_{n-1} + AXadd + RND1_n \cdot AXmult,
+\AX = L_{n-1} + \AXadd + \RNDI_n \cdot \AXmult,
 \label{eq:AX}
 \end{equation}
-kde $AXadd$ a $AXmult$ jsou parametry modelu a $RND1_n$ znaèí parametr závislı na øidièi generovanı z~normálního rozdìlení.
+kde $\AXadd$ a $\AXmult$ jsou parametry modelu, $\RNDI_n$ znaèí parametr závislı na øidièi generovanı z~normálního rozdìlení a $L_{n-1}$ je délka èelního vozidla seètená s~preferovanou vzdáleností mezi vozidly.
 
 \begin{figure}[h]%
 \centering
@@ -729,38 +729,38 @@ kde $AXadd$ a $AXmult$ jsou parametry modelu a $RND1_n$ znaèí parametr závislı n
 \label{wiedemann}%
 \end{figure}
 
-ABX je preferovaná maximální vzdálenost mezi vozidly pøi malıch rozdílech. Ten se vypoèítá následovnì:
+ABX je preferovaná maximální vzdálenost mezi vozidly pøi malıch rozdílech rychlosti. Ten se vypoèítá následovnì:
 \begin{equation}
-ABX = AX + BX,
+\ABX = \AX + \BX,
 \label{eq:ABX}
 \end{equation}
 kde 
 \begin{equation}
-BX = (BXadd + BXmult \cdot RND1_n)\cdot \sqrt{v},
+\BX = (\BXadd + \BXmult \cdot \RNDI_n)\cdot \sqrt{v (t)},
 \label{eq:BX}
 \end{equation}
-kde $BXadd$ a $BXmult$ jsou opìt parametry modelu. Rychlost $v$ urèujeme v~závislosti na základì následujícího vozidla,
+kde $\BXadd$ a $\BXmult$ jsou opìt parametry modelu. Rychlost $v (t)$ urèujeme na základì rychlostí aktuálního a následujícího vozidla,
 \begin{equation}
- v~= \left\{
+ v (t)= \left\{
   \begin{array}{l l}
-    v_{\nm1} & \quad \text{pro} \quad v_n > v_{\nm1},\\
-    v_n & \quad \text{pro} \quad v_n \leq v_{\nm1}.
+    v_{\nm1} (t) & \quad \text{pro} \quad v_n (t) > v_{\nm1} (t),\\
+    v_n (t) & \quad \text{pro} \quad v_n (t) \leq v_{\nm1} (t).
 \end{array} \right.
 \label{eq:v}
 \end{equation}
 
-Maximální vzdálenost pøi které bere vozidlo na zøetel vozidlo pøed sebou se znaèí SDX. SDX se pohybuje mezi 1,5 a 2,5 násoobkem hodnoty ABX a je definována následovnì:
+Maximální vzdálenost pøi které bere vozidlo na zøetel vozidlo pøed sebou se znaèí SDX. SDX se pohybuje mezi 1{,}5 a 2{,}5násoobkem hodnoty ABX a je definována následovnì:
 \begin{equation}
-SDX = AX + EX \cdot BX,
+\SDX = \AX + \EX \cdot \BX,
 \label{eq:sdx}
 \end{equation}
 kde EX stejnì jako u~ostatní èlenù je roven
 \begin{equation}
-EX = EXadd + EXmult \cdot (NRND - RND2_n).
-\label{eq:}
+\EX = \EXadd + \EXmult \cdot (\NRND - \RNDII_n).
+\label{eq:ex}
 \end{equation}
 
-Parametry $EXadd$ a $EXmult$ se pouívají pro zpøesnìní vıpoètù, hodnota $NRND$ je generována z~normálního rozdìlení a $RND2_n$ znaèí parametr závislı na øidièi generovanı také z~normálního rozdìlení.
+Parametry $\EXadd$ a $\EXmult$ se pouívají pro zpøesnìní vıpoètù, hodnota $\NRND$ je generována z~normálního rozdìlení a $\RNDII_n$ znaèí parametr závislı na øidièi generovanı také z~normálního rozdìlení.
 
 Další dùleitou køivku urèující práh, kdy øidiè zjistí, e se pøibliuje pomalejšímu vozidlu pøed sebou, znaèíme SDV. Vypoèítá se vztahem:
 \begin{equation}
@@ -769,18 +769,18 @@ SDV = \left(\frac{\Delta x - L_{\nm1} - AX}{CX}\right)^2,
 \end{equation}
 kde CX zavedeme jako
 \begin{equation}
-CX = CXconst \cdot (CXadd + CXmult \cdot (RND1_n + RND2_n)),
+\CX = \CXconst \cdot (\CXadd + \CXmult \cdot (\RNDII_n + \RNDII_n)),
 \label{eq:CX}
 \end{equation}
-Parametry $CXconst$, $CXadd$ a $CXmult$ jsou zde opìt pro zpøesnìní vıpoètù pøi urèování reimu.
+Parametry $\CXconst$, $\CXadd$ a $\CXmult$ jsou zde opìt pro zpøesnìní vıpoètù pøi urèování reimu.
 
-Pokud se jedná o~klesající rozdíl rychlostí CLDV, v~\cite{Higgs} je uvedeno, e v~èlánku z~roku 1992 od Wiedemanna a Reitera je stejná jako køivka SDV.
+Pokud se jedná o~klesající rozdíl rychlostí CLDV, v~\cite{Higgs} je uvedeno, e v~èlánku z~roku 1992 od Wiedemanna a Reitera je køivka CLDV totoná s køivkou SDV. Jak ji naznaèil obrázek \ref{wiedemann}, v našem pøípadì uvaujeme ve shodì s \cite{Higgs} rùzné prùbìhy.
 
-Pøi zvyšujícím se rozdílu rychlostí, OPDV, øidiè zjišuje, e jede rychlostí niší ne vozidlo pøed ním. Práh OPDV se vypoèítá jako souèin SDV a parametrù modelu $OPDVadd$, $OPDVmult$ a $NRND$, co je náhodné èíslo z~normálního rozdìlení,
+Pøi zvyšujícím se rozdílu rychlostí, OPDV, øidiè zjišuje, e jede rychlostí niší ne vozidlo pøed ním. Práh OPDV se vypoèítá jako souèin SDV a parametrù modelu $\OPDVadd$, $\OPDVmult$ a $\NRND$, co je náhodné èíslo z~normálního rozdìlení,
 \begin{equation}
 \begin{split}
-OPDV = CLDV \cdot ( -OPDVadd& - OPDVmult \cdot NRND) =\\
-&SDV \cdot ( -OPDVadd - OPDVmult \cdot NRND).
+\OPDV = \CLDV \cdot ( -\OPDVadd& - \OPDVmult \cdot \NRND) =\\
+&\SDV \cdot ( -\OPDVadd - \OPDVmult \cdot \NRND).
 \end{split}
 \label{eq:OPDV}
 \end{equation}
@@ -788,49 +788,47 @@ OPDV = CLDV \cdot ( -OPDVadd& - OPDVmult \cdot NRND) =\\
 Na základì tìchto práhù stanovujeme pøíslušnı reim Wiedemannova modelu. Tyto reimy jsou takté zobrazeny na obrázku \ref{wiedemann}. 
 
 \paragraph{Reim následování:}
-Hodnota zrychlení vozidla je vdy poèítána kadou iteraci znovu od nuly. Dùvodem je nepøesné zacházení s~plynovım pedálem ve vozidle. Pokud vozidlo pøekoná práh $SDV$ èi $ABX$, jeho hodnota akcelerace bude rovna $- b_{null}$. Naopak pøi dosáhnutí prahù $OPDV$ èi $SDX$ bereme kladnou hodnotu $b_{null}$. Akcelerace èi decelerace je definována jako
+Hodnota zrychlení vozidla je vdy poèítána kadou iteraci znovu od nuly. Dùvodem je nepøesné zacházení s~plynovım pedálem ve vozidle. Pokud vozidlo pøekoná práh $\SDV$ èi $\ABX$, jeho hodnota akcelerace bude rovna $- b_{null}$. Naopak pøi dosáhnutí prahù $\OPDV$ èi $\SDX$ bereme kladnou hodnotu $b_{null}$. Akcelerace èi decelerace je definována jako
 \begin{equation}
-b_{null} = BNULLmult \cdot (RND4_n + NRND),
+b_{null} = \BNULLmult \cdot (\RNDIV_n + \NRND),
 \label{eq:bnull}
 \end{equation}
-kde $BNULLmult$ je parametr modelu, hodnota $NRND$ je generována z~normálního rozdìlení a $RND4_n$ znaèí parametr závislı na øidièi; je generován také z~normálního rozdìlení.
+kde $\BNULLmult$ je parametr modelu, hodnota $\NRND$ je generována z~normálního rozdìlení a $\RNDIV_n$ znaèí parametr závislı na øidièi; je generován také z~normálního rozdìlení.
 
 \paragraph{Reim plné rychlosti:}
 Vozidlo je umístìno nad všemi prahy v~obrázku \ref{wiedemann} a jede nezávisle na okolní dopravì. Vozidlo jede s~maximálním zrychlením tak, aby dosáhlo své preferované rychlosti. Nepøesné zacházení s~plynem ve vozidle je modelováno pøiøazením akcelerace $b_{null}$ èi $-b_{null}$. Maximální zrychlení je definováno jako
 
 \begin{equation}
-b_{\max} = BMAXmult \cdot (v_{\max} - v\cdot FaktorV),
+b_{\max} = \BMAXmult \cdot (v_{\max} - v\cdot \FaktorV),
 \label{eq:bmax}
 \end{equation}
-kde $FaktorV$ zavedeme jako
+kde $\FaktorV$ zavedeme jako
 \begin{equation}
-FaktorV = \frac{v_{\max}}{v_{des} + FAKTORVmult \cdot (v_{\max} - v_{des})},
+\FaktorV = \frac{v_{\max}}{v_{des} + \FAKTORVmult \cdot (v_{\max} - v_{des})},
 \label{eq:faktorV}
 \end{equation}
-kde $v_{\max}$ je maximální rychlost vozidla a FAKTORVmult parametr modelu.
+kde $v_{\max}$ je maximální rychlost vozidla a $\FAKTORVmult$ parametr modelu.
 
 \paragraph{Reim pøiblíení:}
-Pokud pøesáhne vozidlo práh SDV, øidiè zjišuje, e se pøibliuje pomalejšímu vozidlu. Øidiè tedy zaène zpomalovat, aby zabránil kolizi. Decelerace se vypoèítá vztahem
+Pokud pøesáhne vozidlo práh $\SDV$, øidiè zjišuje, e se pøibliuje pomalejšímu vozidlu. Øidiè tedy zaène zpomalovat, aby zabránil kolizi. Decelerace se vypoèítá vztahem
 \begin{equation}
-b_n = \frac{1}{2} \frac{(\Delta v)^2}{ABX - (\Delta x - L_{\nm1})}+ b_{\nm1},
+b_n = \frac{1}{2} \frac{(\Delta v)^2}{\ABX - (\Delta x - L_{\nm1})}+ b_{\nm1},
 \label{eq:bn}
 \end{equation}
 kde $b_{\nm1}$ je decelerace následujícího vozidla.
 
 \paragraph{Nouzovı reim:}
-Jestlie vzdálenost èela aktuálního vozidla s~nárazníkem vozidla pøed aktuálním je menší ne $ABX$, decelerace se vypoèítá následovnì
+Jestlie vzdálenost èela aktuálního vozidla s~nárazníkem vozidla pøed aktuálním je menší ne $\ABX$, decelerace se vypoèítá následovnì
 \begin{equation}
-b_n = \frac{1}{2} \frac{(\Delta v)^2}{AX - (\Delta x - L_{\nm1})}+ b_{\nm1} + b_{\min} \frac{ABX - (\Delta x - L_{\nm1})}{BX},
+b_n = \frac{1}{2} \frac{(\Delta v)^2}{\AX - (\Delta x - L_{\nm1})}+ b_{\nm1} + b_{\min} \frac{\ABX - (\Delta x - L_{\nm1})}{\BX},
 \label{eq:bnemer}
 \end{equation} 
 kde $b_{\min}$ je maximální decelarace vozidla a zavedeme ji jako
 \begin{equation}
-b_{\min} = -BMINadd - BMINmult \cdot RND3_n + BMINmult \cdot v_n,
+b_{\min} = -\BMINadd - \BMINmult \cdot \RNDIII_n + \BMINmult \cdot v_n (t),
 \label{eq:bmin}
 \end{equation} 
-kde $BMINadd$ a $BMINmult$ jsou parametry modelu a $RND3_n$ znaèí parametr závislı na øidièi generovanı z~normálního rozdìlení. 
-
-
+kde $\BMINadd$ a $\BMINmult$ jsou parametry modelu a $\RNDIII_n$ znaèí parametr závislı na øidièi generovanı z~normálního rozdìlení. 
 
 
 \section{Shrnutí}
