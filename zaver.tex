@@ -26,21 +26,21 @@ Vızkum v této oblasti je mono rozšiøovat smìrem k dalším mikroskopickım modelùm
 
 \end{comment}
 
-Modelování dopravy se v dnešní dobì vyuívá hlavnì pøi predikování dopravy. Díky nìmu se také mùeme pokusit zjistit parametry dopravního proudu a na tomto základì tento proud ovlivòovat, a ji zmìnou rychlosti èi napø. prodlouením fáze volno. Vıhodou mikroskopického pøístupu je zkoumání kadého jednotlivého vozidla a hlavnì proto se pouívají mikroskopické modely pro simulaci pøi vzniku dopravních nehod, doèasného uzavøení jízdního pruhu ap.
+Modelování dopravy se v dnešní dobì vyuívá hlavnì pøi predikování dopravy. Díky nìmu mùeme, na základì zjištìnıch dopravních parametrù dopravního proudu detektory, tento proud také ovlivòovat, a ji zmìnou rychlosti èi napø. prodlouením fáze volno. Vıhodou mikroskopického pøístupu je zkoumání kadého jednotlivého vozidla a hlavnì proto se pouívají mikroskopické modely pro simulaci pøi vzniku dopravních nehod, doèasného uzavøení jízdního pruhu ap.
 
 Mikroskopickıch modelù popisujících chování vozidel na komunikaci existuje mnoho. Nìkteré z nich se více èi ménì hodí na situace, které lze modelovat. Vdy zùstane otázkou, zda by jinı mikroskopickı model nedával lepší vısledky ne aktuální èi zda danı model nemohl bıt lépe nakalibrován.
 
-Modely, které budou mezi sebou dále porovnávány, jsou odvozeny ji od základní myšlenky autorù v kapitole \ref{chap:predIDM}. Na konci kadé podkapitoly je uveden seznam parametrù modelu. To je vhodné ve chvíli, kdy by mìl bıt model pouit pøímo pro implementaci a postup, jakım ho autor odvodil, není dùleitı. Na konci této kapitoly je krátké shrnutí tìchto modelù, jejich vıhod èi nevıhod pro pouití na simulování dopravy.
+Modely, které budou mezi sebou dále porovnávány, jsou odvozeny ji od základní myšlenky autorù v kapitole \ref{chap:predIDM}. Na konci kadé podkapitoly je uveden seznam parametrù modelu. To je vhodné ve chvíli, kdy by mìl bıt model pouit pøímo pro implementaci a postup, jakım ho autor odvodil, není dùleitı. Na konci této kapitoly je krátké shrnutí tìchto modelù, jejich vıhod èi nevıhod pro pouití pøi simulování dopravy.
 
 Tato diplomová práce si za hlavní cíl kladla porovnat v této chvíli nejpouívanìjší mikroskopické modely na stejném úseku rychlostní komunikace. Ještì ne vùbec byly spuštìny první simulace, byl naprogramován podpùrnı program, kterı obsahuje funkce nutné k spuštìní simulace -- generování vozidel a dále také funkce k vyhodnocování tìchto simulací, konkrétnì tvorbu grafù èasovıch øad a harmonogramù. Detailnì se jím zabıvá podkapitola \ref{sec:program}.
 
-Dále bylo nutné vhodnì zvolit simulaèní nástroj, kterı by umoòoval mìnit mezi jednotlivımi modely a zároveò umìl nastavovat všechny parametry modelù. Tìmto poadavkùm vyhovoval opensource simulaèní nástroj SUMO - jeho detailnìjší popis lze nálezt v podkapitole \ref{sec:SUMO}, kterı ji nìkteré modely urèené na porovnání obsahoval. Bohuel tento nástroj neobsahuje ádnou monost vyuití makroskopického nástroje a proto nebylo moné na nìm vyzkoušet nìkterı z makroskopickıch modelù. Nìkteré modely bylo potøeba pøeprogramovat a nìkteré úplnì od zaèátku naimplementovat. Tvorbou implementace nového modelu do SUMO se nachází v kapitole \ref{chap:newmodel}.
+Dále bylo nutné vhodnì zvolit simulaèní nástroj, kterı by umoòoval mìnit mezi jednotlivımi modely a zároveò umìl nastavovat všechny parametry modelù. Tìmto poadavkùm vyhovoval opensource simulaèní nástroj SUMO - jeho detailnìjší popis lze nálezt v podkapitole \ref{sec:SUMO}. Ten ji nìkteré modely urèené na porovnání obsahoval. Bohuel tento nástroj neobsahuje ádnou monost vyuití makroskopického nástroje a proto nebylo moné na nìm vyzkoušet nìkterı z makroskopickıch modelù. Èást modelù bylo potøeba pøeprogramovat a nìkteré úplnì od zaèátku naimplementovat. Tvorbou implementace nového modelu do SUMO se nachází v kapitole \ref{chap:newmodel}.
 
 Data získaná pro úèely této diplomové práce jsou z mıtnıch bran Praského okruhu z roku 2012. Z toho dùvodu byl do SUMO naimportován právì úsek, ve kterém se nacházejí tyto mıtné brány. Postup, jak naimportovat jakıkoliv úsek z OSM je uveden v pøíloze \ref{chap:netSUMO}.
 
 Ve chvíli, kdy jsme mìli pøipraveny všechny vstupy do simulace a následné vyhodnocení, bylo nutné provést kalibraci modelù a s tím související validaci. S tím souvisela otázka nalezení vhodné metody validace. Podrobnosti k této otázce jsou shrnuty v kapitole \ref{chap:kalibrace}.
 
-Pokud máme k dispozice validované modely, bylo moné ji spustit samotnou simulaci s pøíslušnımi parametry. Prùbìh simulace, hodnoty parametrù u jednotlivıch modelù a hlavnì vısledky simulací jsou blíe popsány v kapitole \ref{chap:simulace}. 
+Pokud máme k dispozici validované modely, bylo moné ji spustit samotnou simulaci s pøíslušnımi parametry. Prùbìh simulace, hodnoty parametrù u jednotlivıch modelù a hlavnì graficky znázornìné vısledky simulací jsou blíe popsány v kapitole \ref{chap:simulace}. 
 
 V závìreèné kapitole porovnáváme modely z nasimulovanıch dat. Porovnání probíhá jak matematicky (pouité metody jsou teoreticky popsány v \ref{statmet}), tak i graficky na základì grafù èasovıch øad.
 
