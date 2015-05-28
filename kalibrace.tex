@@ -107,8 +107,6 @@ Další možnost, jak kalibrovat modely, byla vyzkoušena Institutem pro výzkum dopr
 
 K tomu, abychom mohli oznaèit model za validní, potøebujeme zvolit kritérium, podle kterého bude posléze porovnávat nasimulovaná a skuteèná data. Pro porovnání jednotlivých modelù jsme dále nalezli další statistické metody.
 
-F-test je obsažen v~\cite[str.111]{Pavlik}. Støední absolutní chyba je dobøe popsána v~\cite{Willmott}.
-
 \subsection{Statistický test støední hodnoty}
 \label{strednihodnota}
 
@@ -168,6 +166,8 @@ Pokud jde o~tuto statistickou metodu validace, jsou zde další okolnosti, které j
 \subsection{$\boldmath{F}$-test podílù rozptylù}
 \label{ftest}
 
+Hlavní zdroj pro $F$-test je použit \cite[str.111]{Pavlik}.
+
 Díky $F$-testu podílu rozptylù mùžeme zjistit, zda se rozptyl nasimulovaných hodnot významnì liší od hodnot z~mýtných bran. Nejprve je nutné vypoèíst rozptyl nasimulovaných hodnot $s_1^2$ a rozptyl reálných dat $s_2^2$. Nulová hypotéza bude definovaná takto:
 \begin{equation}
 H_0: s_1^2 = s_2^2.
@@ -189,7 +189,8 @@ zamítáme $H_0$ a rozptyl nasimulovaných dat se významnì liší od rozptylu reálnýc
 
 \subsection{Støední absolutní chyba}
 
-Dalším dùležitým ukazatelem je støední absolutní chyba\footnote{v odborné literatuøe oznaèována jako MAE (z~angl. Mean absolute error)}, která je definována jako
+
+Dalším dùležitým ukazatelem je støední absolutní chyba\footnote{v odborné literatuøe oznaèována jako MAE (z~angl. Mean absolute error)} \cite{Willmott}, která je definována jako
 \begin{equation}
 \text{MAE} = \frac{1}{N}\sum_{i=1}^n \left|w_i - v_i\right|,
 \label{eq:mae}

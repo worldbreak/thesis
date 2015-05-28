@@ -280,7 +280,7 @@ allowedCFModelAttrs[SUMO_TAG_CF_GIPPS] = gippsParams;
 
 \chapter{$\chi^2$ test dobré shody}
 \label{chap:chi2test}
-Je všeobecnì známým faktem, že vozidla se generují z exponenciálního rozdìlení za podmínky, že èetnosti poètu vozidel, které vjíždí do oblasti, má Poissonovo rozdìlení. Bylo proto nutné otestovat, zda poèty vozidel mají opravdu Poissonovo rozdìlení. Pro toto testování se používá $\chi^2$ test dobré shody.
+Je všeobecnì známým faktem, že vozidla se generují z exponenciálního rozdìlení za podmínky, že èetnosti poètu vozidel, které vjíždí do oblasti, mají Poissonovo rozdìlení. Bylo proto nutné tento pøedpoklad otestovat. Pro toto testování se používá $\chi^2$ test dobré shody.
 
 Statistika, podle které budeme testovat, má tvar
 \begin{equation}
@@ -289,9 +289,9 @@ Statistika, podle které budeme testovat, má tvar
 \end{equation}
 kde je $x_i$ skuteèná èetnost a $n_i$ oèekávaná èetnost dle Poissonova rozdìlení.
 
-Pro tento test jsem zvolil dvì èásti dne - ranní hodinu od 6:00 do 7:00 a odpolední hodinu mezi 15:00 a 18:00 hodinou na státní svátek 28.10.2012, a to z dùvodu, že tento den také probíhají simulace.
+Pro tento test jsem zvolil dvì èásti dne - ranní hodinu od 6:00 do 7:00 a odpolední hodinu mezi 15:00 a 18:00 hodinou v den státního svátku 28.10.2012, a to z dùvodu, že tento den jsem posléze simuloval provoz na Silnièním okruhu kolem Prahy.
 
-V ranní špièky byly zjištìny hodnoty, které jsou shrnuty v tabulce \ref{tablerano}. Poèet stupòù volnosti $\chi^2$ rozdìlení je poèet tøídy - 1, v našem pøípadì to bude 8.
+V ranní špièce byly zjištìny hodnoty, které jsou shrnuty v tabulce \ref{tablerano}. Poèet stupòù volnosti $\chi^2$ rozdìlení je poèet tøídy - 1, v našem pøípadì to bude 8.
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|}
