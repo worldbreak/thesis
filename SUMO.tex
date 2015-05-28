@@ -15,11 +15,11 @@ Po prostudování modelù byla otázka dalšího postupu. Bylo moné pokraèovat v~apli
 Další variantou bylo pokraèovat v~programovacím jazyku JAVA na vytvoøené aplikaci pro bakaláøskou práci, nicménì po prozkoumání dalších variant se autor rozhodl, e bude vıhodnìjší pokraèovat s~ji vyvíjenım softwarem SUMO.
 \end{comment}
 
-V~této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji autorem naprogramované èi volnì dostupné nástroje z~nich bude patrné proè autor vybral právì tento postup.
+V~této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban MObility} a další, a ji autorem naprogramované èi volnì dostupné nástroje, z~nich bude patrné, proè autor vybral právì tento postup.
 
 \section{SUMO}
 \label{sec:SUMO}
-SUMO je open-source nástroj pro dopravní simulace vyvíjenı centrem DLR\footnote{Deutsches Zentrum für Luft- und Raumfahrt - Nìmecké støedisko pro letectví a kosmonautiku} v oddìlení institutu pro dopravní systémy v Nìmecku. Ve vızkumu se dá SUMO vyuít v~mnoha oblastech napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v~dobì MS v~Nìmecku v~roce 2006 v~Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
+SUMO je open-source nástroj pro dopravní simulace vyvíjenı centrem DLR\footnote{Deutsches Zentrum für Luft- und Raumfahrt - Nìmecké støedisko pro letectví a kosmonautiku} v oddìlení institutu pro dopravní systémy v Nìmecku. Ve vızkumu se dá SUMO vyuít v~mnoha oblastech, napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v~dobì Mistrovství svìta ve fotbale v~Nìmecku v~roce 2006 v~Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
 
 Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z~nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení a O/D matic vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
 
@@ -44,7 +44,7 @@ V~konfiguraèním souboru je moné nastavit všechny monosti, které se bez tohoto 
 
 \subsection{Soubor s~podkladem}
 \label{sub:podkladSUMO}
-Pro diplomovou práci obdrel autor data, a to konkrétnì intenzity a prùmìrné rychlosti z~mıtnıch bran Silnièního okruhu kolem Prahy (SOKP, Praského okruhu). Bylo proto vhodné mít jako podklad pro simulaci sí v~konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde se konkrétní úsek stáhnul ve formátu OSM a vymazaly se všechny prvky nesouvisející s~Praskım okruhem. Posléze byl pouit jeden z~nástrojù SUMO a to konkrétnì \emph{Netconvert}, kterı pøevádí data z~pøedem definovaného formátu do SUMO formátu. Více k~tomuto tématu v~pøíloze \ref{chap:netSUMO}.
+Pro diplomovou práci obdrel autor data, a to konkrétnì intenzity a prùmìrné rychlosti z~mıtnıch bran Silnièního okruhu kolem Prahy (SOKP, Praského okruhu). Bylo proto vhodné mít jako podklad pro simulaci sí v~konkrétních úsecích mezi mıtnımi branami. Pro mapu oblasti bylo vyuito volnì dostupnıch map ze serveru OpenStreetMap, kde byl konkrétní úsek staen ve formátu OSM a byly smazány všechny prvky nesouvisející s~Praskım okruhem. Posléze byl pouit jeden z~nástrojù SUMO, a to konkrétnì \emph{Netconvert}, kterı pøevádí data z~pøedem definovaného formátu do SUMO formátu. Více k~tomuto tématu v~pøíloze \ref{chap:netSUMO}.
 
 SUMO navíc také umoòuje vyuít vlastní nástroj na generování sítí, \emph{JTRrouter} èi \emph{DFrouter}.
 
@@ -74,11 +74,11 @@ Další soubor, kterı vytvoøíme, se tıká informací o~indukèních smyèkách. Definuje
 \label{sec:program}
 Aby bylo moné dostat se k~jádru celé práce, je nutná pøíprava dat pro simulaci a také jejich následné vyhodnocení. K~tomuto úèelu byla v jazyce JAVA vytvoøena konzolová aplikace jménem \textit{AllInOne.jar}. Pro její správnou funkènost je nutné mít nainstalované rozhraní pro Java aplikace (JRE).
 
-Aplikace umoòuje 4 základní operace,
+Aplikace umoòuje tøi základní operace:
 \begin{enumerate}
 	\item pøevedení formátu dat (MATLAB) z~Praského okruhu na formát podporovanı softwarem SUMO (XML),
 	\item vytvoøení souboru vozidel pro simulaci (viz podkapitola \ref{subsec:vehforsim}), nebo SUMO nemá vlastní generátor vozidel,
-	\item vytvoøení vıstupù ze simulace (viz dále)
+	\item vytvoøení vıstupù ze simulace (viz dále).
 \end{enumerate}
 
 Dùvodem pro volbu jazyka JAVA bylo jednak to, e autor s tímto jazykem dokáe pohodlnì pracovat (na rozdíl od jazyka Python, jen je standardním rozšiøovacím jazykem simulátoru) a také existence volnì dostupného balíèku pro monost práce s~daty ze softwaru MATLAB \cite{Jmatio}. Dále se autor rozhodl, e vytvoøí radìji jednu pøehlednou aplikaci, ne 5 malıch.
@@ -109,7 +109,7 @@ Nejprve je nutné data Praského okruhu pøevést do stejného formátu, kterı nám po
 
 Vıstupní soubor bude shodnı s~vıstupním souborem po simulaci SUMO, take bude moné pøesnì jednotlivé hodnoty z~mıtnıch bran porovnat s~nasimulovanımi.
 
-Pøíkaz, kterım lze program spustit aby vytvoøil tento dokument, je následující
+Pøíkaz, kterım lze program spustit, aby vytvoøil tento dokument, je následující
 
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -m sokp-0187-20121031.mat det0187.xml
@@ -117,7 +117,7 @@ java -jar AllInOne.jar -m sokp-0187-20121031.mat det0187.xml
 
 Ze souboru \textit{sokp-0187-20121031.mat} vytvoøí v~závislosti na poètu pruhù pod touto mıtnou branou stejnı poèet souborù, tedy \textit{det0187\_0.xml}, \textit{det0187\_1.xml} atd.
 
-Tyto soubory lze následnì pouít jako vstup pro vytvoøení souboru s~informacemi o~vjezdech vozidel pro SUMO a nebo pro vytvoøení grafù nebo histogramù pro porovnání vısledkù se simulací.
+Tyto soubory lze následnì pouít jako vstup pro vytvoøení souboru s~informacemi o~vjezdech vozidel pro SUMO, anebo pro vytvoøení grafù nebo histogramù pro porovnání vısledkù se simulací.
 
 \subsection{Vytvoøení souboru vozidel pro simulaci - tøída XMLCreator}
 \label{subsec:vozidla}
@@ -129,7 +129,7 @@ Jedinı problém nastává ve chvíli, kdy musíme jednotlivım vozidlùm nastavit jejic
 
 Pro naší simulaci cestu pro vozidlo pøedem pøipravíme tak, aby všechna vozidla projela úsekem, kterı chceme simulovat. V~konzolové aplikaci v~tomto smìru není nutné nic dalšího nastavovat.
 
-Tøída \emph{XMLCreator} obsahuje následující konstruktor a metody
+Tøída \emph{XMLCreator} obsahuje následující konstruktor a metody:
 
 \begin{itemize}
 	\item \textit{public XMLCreator(String fileNameMatlab, String fileNameCars, String model, String type)} -- konstruktor, kterı pøijímá název datového souboru, ze kterého budeme vozidla generovat, název vıstupního souboru a zpùsob generování èasu vstupu vozidla do oblasti,
@@ -235,7 +235,7 @@ Pokud vynecháme oznaèení modelu sledu vozidel, bude aplikace implicitnì uvaovat
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Gipps
 \end{lstlisting}
-generuje vozidla, která se budou pohybovat dle Gippsova modelu a budou mít deterministickı èasovı odstup. Je moné vynechat i model, tz.
+generuje vozidla, která se budou pohybovat dle Gippsova modelu a budou mít deterministickı èasovı odstup. Je moné vynechat i model, tzn.
 
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml exp
@@ -257,7 +257,7 @@ Pro porovnání reálnıch a nasimulovanıch dat nabízí aplikace \textit{AllInOne.jar
 
 \subsection{Èasová øada -- tøída XMLReader}
 \label{subsec:xmlread}
-Jednou z~moností, jak zobrazit vıstupy ze simulace, je pomocí èasové øady. Program vyhodnotí všechny vstupní soubory a pøedpøipraví soubor \texttt{gnuplot.txt} pomocí kterého je potom moné vykreslit tuto øadu za pomoci programu pro vykreslování grafù GNUplot \cite{GNUplot}. Program vytvoøí tento soubor pro kadı pruh zvlášt a poté souhrnı soubor, kterı obsahuje kadı pruh a souèet vozidel v~jednom grafu.
+Jednou z~moností, jak zobrazit vıstupy ze simulace, je pomocí èasové øady. Program vyhodnotí všechny vstupní soubory a pøedpøipraví soubor \texttt{gnuplot.txt}, pomocí kterého je potom moné vykreslit tuto øadu za pomoci programu pro vykreslování grafù GNUplot \cite{GNUplot}. Program vytvoøí tento soubor pro kadı pruh zvlášt a poté souhrnı soubor, kterı obsahuje kadı pruh a souèet vozidel v~jednom grafu.
 
 Tøída \emph{XMLReader} obsahuje následující konstruktor a metody:
 \begin{itemize}

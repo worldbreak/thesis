@@ -3,7 +3,7 @@
 V~simulaèním nástroji SUMO nejsou nìkteré z~modelù, uvedených v~kapitole \ref{chap:predIDM}, implementovány. 
 V~této kapitole proto uvádím obecné informace, které s~implementací nového modelu souvisí bez ohledu na to, o~jaký model se konkrétnì jedná.
 
-Než zaèneme, je nutné mít pøipravené soubory pro nový model, pro Gippsùv model jsou to soubory \texttt{MSCFModel\_Gipps.cpp} a \texttt{MSCFModel\_Gipps.h}. Postup, jak nové soubory vytvoøit a implementovat do SUMO je uveden v~pøíloze \ref{chap:newfiles}.
+Než zaèneme, je nutné mít pøipravené soubory pro nový model, pro Gippsùv model jsou to soubory \texttt{MSCFModel\_Gipps.cpp} a \texttt{MSCFModel\_Gipps.h}. Postup, jak nové soubory vytvoøit a implementovat do SUMO, je uveden v~pøíloze \ref{chap:newfiles}.
 
 \section{MSCFModel.h}
 Ve složce \texttt{/src/microsim/cfmodels} v~souboru \texttt{MSCFModel.h} (ne \texttt{MSCFModel\_Gipps.h}) se nacházejí definice základních funkcí, které posléze v~pøidaném modelu implementujeme. Nìkteré z~nich pøetížíme a poté použijeme u~našeho implementovaného modelu. Ty, které nepoužijeme, zùstanou stejné a pøi použití našeho modelu bìhem simulace se budou volat funkce implementované v~\texttt{MSCFModel.cpp}, pøípadnì \texttt{MSCFModel.h}.
@@ -31,7 +31,7 @@ Seznam metod, které je pøi implementaci nového modelu sledu vozidel pøetížit, je
 	\item \textit{virtual SUMOReal interactionGap(const MSVehicle* const veh, SUMOReal vL) const} -- výpoèet mezery, kdy ovlivòuje vedoucí vozidlo aktuální
 \end{itemize}
 
-Mùžeme také využít další podpùrné funkce, které pøímo nezávisí na modelu. Dají se použít pøi napø. pøi kontrole bezpeèné rychlosti. Tyto funkce nelze primárnì pøepsat v~novém modelu. Jsou to:
+Mùžeme také využít další podpùrné funkce, které pøímo nezávisí na modelu. Dají se použít napø. pøi kontrole bezpeèné rychlosti. Tyto funkce nelze primárnì pøepsat v~novém modelu. Jsou to:
 
 \begin{itemize}
 	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- výpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
@@ -95,7 +95,7 @@ SUMOReal MSCFModel_Gipps::vFree(SUMOReal speed) const {
 }
 \end{lstlisting}
 
-Funkce pøesnì kopíruje vzorec \eqref{eq:inequalitygipps}, který je u~Gippsova modelu vzorec pro rychlost pøi volném proudu. Pokud je preferovaná rychlost $V_\n$ rovna aktuální rychlosti $v_\n (t)$, celý èlen za promìnnou \textit{actualSpeed} se vyruší a dostáváme, že rychlost v~následujícím kroku bude pøímo stejná jako aktuální.
+Funkce pøesnì kopíruje vzorec \eqref{eq:inequalitygipps}, který je u~Gippsova modelu vzorcem pro rychlost pøi volném proudu. Pokud je preferovaná rychlost $V_\n$ rovna aktuální rychlosti $v_\n (t)$, celý èlen za promìnnou \textit{actualSpeed} se vyruší a dostáváme, že rychlost v~následujícím kroku bude pøímo stejná jako aktuální.
 
 Interakèní èlen nám dokumentuje funkce \textit{vInteraction} obsahující výpoèet rychlosti na základì vedoucího vozidla. Její kód je následující:
 
@@ -115,7 +115,7 @@ Pro vìtší pøehlednost jsme kód funkce \textit{vInteraction} rozdìlili na více èá
 
 Promìnná \textit{wholeGap} odpovídá èásti $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$. Tu bylo potøeba upravit pro úèely SUMO. Nemáme totiž možnost zjistit parametr $s_{\nm1}$, jenž závísí na délce vedoucího vozidla a k~této informaci se jednoduše nedostaneme. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k~ní jsme pøièetli minimální bezpeènostní odstup. Tím bychom mìli dostat stejný výsledek, jaký je uveden v~Gippsovì modelu.
 
-Další zajímavostí je vypoèet èlenu $\hat{b}$. Pro výpoèet decelerace vedoucího vozidla $n-1$ zvolil Gipps na základì následující vztah
+Další zajímavostí je vypoèet èlenu $\hat{b}$. Pro výpoèet decelerace vedoucího vozidla $n-1$ zvolil Gipps následující vztah: \cite{Gipps}
 \begin{equation}
 \hat{b} = \min \left(-3.0, \frac{b_\n - 3.0}{2}\right) \text{m}/\text{s}^{-2}.
 \label{eq:hatbgipps}
@@ -133,9 +133,9 @@ Funkce \textit{MIN2} je vlastní funkce SUMO, která hledá minimum ze dvou hodnot.
 
 V~tuto chvíli máme pøipravené obì funkce pro výpoèet rychlostí pro vozidla vjíždìjící do simulace.
 
-V~další fázi tyto funkce využijeme pro výpoèty. Všechny následující funkce budeme pouze nahrazovat již stávajícími, které obsahuje \textit{MSCFModel}. Vždycky je otázkou, zda je nutné danou funkci pøepisovat a nebo nechat její stávající verzi.
+V~další fázi tyto funkce využijeme pro výpoèty. Všechny následující funkce budeme pouze nahrazovat již stávajícími, které obsahuje \textit{MSCFModel}. Vždycky je otázkou, zda je nutné danou funkci pøepisovat, anebo nechat její stávající verzi.
 
-Zaèneme funkcí \textit{freeSpeed}. Tato funkce nám vypoèítává rychlost pøi volném proudu, tj. ve chvíli, kdy pøed aktuálním vozidlem nejede žádné další. Mohli bychom tuto funkci nechat stejnou, tak jak je implementována v~SUMO, ovšem daleko lepší bude tuto funkci pøepsat a to z~toho dùvodu, že Gippsùv model pøímo uvažuje o~rychlosti pøi volném proudu. Definice pøepisovaných funkcí zùstanou stejné jako v~\textit{MSCFModel.h}, pro \textit{freeSpeed} by definice\footnote{Každá definice metody zde zmiòována bude umístìna do souboru \texttt{MSCFModel\_Gipps.h} do èásti public. Tato definice je shodná s~definicí uvedenou v~souboru \texttt{MSCFModel.h}.} vypadala takto:
+Zaèneme funkcí \textit{freeSpeed}. Tato funkce nám vypoèítává rychlost pøi volném proudu, tj. ve chvíli, kdy pøed aktuálním vozidlem nejede žádné další. Mohli bychom tuto funkci nechat stejnou, tak jak je implementována v~SUMO, ovšem daleko lepší bude tuto funkci pøepsat, a to z~toho dùvodu, že Gippsùv model pøímo uvažuje o~rychlosti pøi volném proudu. Definice pøepisovaných funkcí zùstanou stejné jako v~\textit{MSCFModel.h}, pro \textit{freeSpeed} by definice\footnote{Každá definice metody zde zmiòována bude umístìna do souboru \texttt{MSCFModel\_Gipps.h} do èásti public. Tato definice je shodná s~definicí uvedenou v~souboru \texttt{MSCFModel.h}.} vypadala takto:
 
 \begin{lstlisting}[breaklines=true]
 virtual SUMOReal freeSpeed(const MSVehicle* const /* veh */, SUMOReal /* speed */, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion) const;

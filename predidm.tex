@@ -34,8 +34,8 @@ $n$-té vozidlo také pojede prùmìrnou rychlostí $v$. Pokud by $n$-té vozidlo zryc
 
 Vzdálenost $s_\n = x_{\nm1} (t) - x_\n (t)$ mezi vozidly $n$ a $n-1$ se mùže mìnit v~èase. Pokud je komunikace homogenní, tato vzdálenost zùstane témìø konstantní s mírnými oscilacemi v okolí $s_n$. Tato hodnota se mìní na základì typu vozidla a závisí také na rychlosti $v$.
 
-Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svoji preferovanou rychlost $V_\n$. Jestliže rychlost $v$ je u~$n-1$ vozidla je vyšší než preferovaná rychlost u~$n$-tého, tedy $v>V_\n$, znamená to, že $n$-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a $n-1$ vozidlo mu ujede.
-Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové rychlosti by mìla být níže než polopøímka lineární závislosti, viz èerná teèka na obrázku \ref{vztahmezivas} pøi rychlosti $v=0$.
+Pøedpokládejme, že existuje nìjaký empirický vztah mezi rychlostí $v$ a vzdáleností mezi vozidly $s_\n$. Pokud rychlost $v$ roste, je logické, že øidièi chtìjí dosáhnout vìtšího rozestupu mezi vozidly. Tato  závislost mezi $v$ a $s_\n$ je znázornìna na obrázku \ref{vztahmezivas}. Každý øidiè má svou preferovanou rychlost $V_\n$. Jestliže rychlost $v$ je u~$n-1$ vozidla je vyšší než preferovaná rychlost u~$n$-tého, tedy $v>V_\n$, znamená to, že $n$-té vozidlo pojede svoji preferovanou rychlostí (na obrázku \ref{vztahmezivas} znázornìna èárkovanou èárou) a $n-1$ vozidlo mu ujede.
+Hodnota rychlosti $v$ nemùže být záporná a vzdálenost mezi vozidly pøi nulové rychlosti by mìla být níže než polopøímka lineární závislosti, viz èerný bod na obrázku \ref{vztahmezivas} pøi rychlosti $v=0$.
 
 \begin{figure}[ht]%
     \centering
@@ -57,7 +57,7 @@ x_\n(t+\tau_\n) {}={} x_{\nm1}(t) - d_\n.
 \label{eq:newelxn}
 \end{equation}
 
-U~Newellova modelu platí, že n-té vozidlo bude (pøibližnì) kopírovat trajektorii n-1 vozidla dle vztahu \eqref{eq:newelxn} pøi vhodných hodnotách $d_\n$ a $\tau_\n$. Tím, jak se pøesnì dokáže n-té vozidlo dodržovat vztah \eqref{eq:newelxn}, se Newellùv model nezabývá, pouze pøedpokládá, že øidiè je schopen se tímto vztahem øídit. To není tak tìžké, protože pokud se zmìní rychlost vozidla $n-1$, $n$-tý øidiè nemusí zareagovat okamžitì, ale mùže poèkat dokud se vzdálenost $s_\n$ nezvýší (neklesne) na hodnotu, která odpovídá nové rychlosti vozidla $n-1$ (viz obrázek \ref{vztahmezivas}).
+U~Newellova modelu platí, že n-té vozidlo bude (pøibližnì) kopírovat trajektorii $n-1$ vozidla dle vztahu \eqref{eq:newelxn} pøi vhodných hodnotách $d_\n$ a $\tau_\n$. Tím, jak se pøesnì dokáže $n$-té vozidlo dodržovat vztah \eqref{eq:newelxn}, se Newellùv model nezabývá, pouze pøedpokládá, že øidiè je schopen se tímto vztahem øídit. To není tak tìžké, protože pokud se zmìní rychlost vozidla $n-1$, $n$-tý øidiè nemusí zareagovat okamžitì, ale mùže poèkat dokud se vzdálenost $s_\n$ nezvýší (neklesne) na hodnotu, která odpovídá nové rychlosti vozidla $n-1$ (viz obrázek \ref{vztahmezivas}).
 \begin{figure}[ht]%
 \centering
 \includegraphics[]{images/linearaprox.pdf}%
@@ -100,7 +100,7 @@ q = \frac{1}{\overline{\tau}} - \frac{\overline{d}}{\overline{\tau}}k,
 \end{equation}
 za pøedpokladu, že rychlost $v$ je menší než preferovaná rychlost jakéhokoliv vozidla $V_k$.
 
-Rovnice \eqref{eq:qk} propojuje Newellùv model s~klasickými makroskopickými modely. Problém nastává ve chvíli, kdy prùmìrná rychlost $v$ je vyšší, než nìkterá s~preferovaných rychlostí jednotlivých vozidel. Vozidla se v~tomto modelu nemohou pøedjíždìt a proto vznikne kongesce za vozidlem s~malou preferovanou rychlostí. V~následujících øádcích pøedpokládáme, že aktuální rychlost vozidla bude menší než preferovaná rychlost $V_\n$.
+Rovnice \eqref{eq:qk} propojuje Newellùv model s~klasickými makroskopickými modely. Problém nastává ve chvíli, kdy prùmìrná rychlost $v$ je vyšší, než nìkterá z~preferovaných rychlostí jednotlivých vozidel. Vozidla se v~tomto modelu nemohou pøedjíždìt, a proto vznikne kongesce za vozidlem s~malou preferovanou rychlostí. V~následujících øádcích pøedpokládáme, že aktuální rychlost vozidla bude menší než preferovaná rychlost $V_\n$.
 
 Uvažujme, že se vozidlo $n$ pohybuje pøesnì podle rovnice \eqref{eq:newelxn} a vozidlo za ním ($n-1$) jede plynule za ním.
 
@@ -187,7 +187,7 @@ a_\n(t+T) {}={} l_n\frac{[v_{\nm1}(t) - v_\n(t)]^k}{[x_{\nm1}(t) - x_\n(t)]^m},
 \end{equation}
 kde jednotlivé promìnné mají stejný význam jako pøi popisu Newellova modelu v podkapitole \ref{sec:Newell}. Promìnné $l_n$, $k$ a $m$ jsou parametry, které je nutno empiricky odhadnout. Tyto modely zaèaly vytváøet výzkumníci ve spoleènosti General Motors a z tohoto dùvodu se také nazývají Modely General Motors. Blíže jsou rozebrány v~mé bakaláøské práci \cite{Vanis}.
 
-Aèkoliv tyto modely podávají v~mnoha situacích dobré výsledky, je žádoucí, aby bìhem pøepoètù poloh, rychlostí a zrychlení výpoèet závisel na reakèním èasu øidièe $T$. Další koncepèní slabinou GM modelù je fakt, že empritické parametry $l_n$, $k$ a $m$ v rovnici \eqref{eq:othermodels} nemají pøímou souvislost s~vlastnostmi vozidla èi øidièe.
+Aèkoliv tyto modely podávají v~mnoha situacích dobré výsledky, je žádoucí, aby bìhem pøepoètù poloh, rychlostí a zrychlení výpoèet závisel na reakèním èasu øidièe $T$. Další koncepèní slabinou GM modelù je fakt, že empirické parametry $l_n$, $k$ a $m$ v rovnici \eqref{eq:othermodels} nemají pøímou souvislost s~vlastnostmi vozidla èi øidièe.
 
 Gipps se proto rozhodl, že vytvoøí model, který bude splòovat následujicí podmínky:
 
@@ -199,7 +199,7 @@ Gipps se proto rozhodl, že vytvoøí model, který bude splòovat následujicí podmín
 
 \subsection{Popis modelu}
 
-Gippsùv model je odvozen z~omezení jak schopností øidièe, tak i vozidla a pomocí tìchto omezení se dopoèítává bezpeèná rychlost podle pøedcházejícího vozidla. Pøedpokládá se pøitom, že øidiè volí svoji rychlost tak, aby zajistil bezpeèné zastavení nebo aby dokázal náhle rychle zastavit pøi nenadálé události.
+Gippsùv model je odvozen z~omezení jak schopností øidièe, tak i vozidla, a pomocí tìchto omezení se dopoèítává bezpeèná rychlost podle pøedcházejícího vozidla. Pøedpokládá se pøitom, že øidiè volí svoji rychlost tak, aby zajistil bezpeèné zastavení nebo aby dokázal náhle rychle zastavit pøi nenadálé události.
 
 První podmínka, kterou aplikujeme na vozidlo $n$, souvisí s~rychlostí vozidla. Ta nepøekroèí jeho preferovanou rychlost $V_\n$ a jeho zrychlení na volné komunikaci\footnote{tj. komunikace, na které se nevyskytuje žádné další vozidlo} se zvyšuje stejnì tak, jako rychlost, dokud se také zvyšuje krouticí moment motoru vozidla a poté zaène klesat na nulovou hodnotu a té nabude ve chvíli, kdy se vozidlo bude pohybovat svoji preferovanou rychlostí $V_n$,
 \begin{equation}
@@ -210,7 +210,7 @@ v_\n (t+T) {}\leq{} v_\n (t) + 2{,}5 \, a \, T \left(\frac{1-v_\n (t)}{V_\n}\rig
 \begin{comment}
  Tento výraz je zcela popisný, pøesná forma zvolena z~nìkolika zároveò postaèujících popisù na základì jednoduše získaných výpoètù.
 \end{comment}
-Koeficienty v~nerovnici \eqref{eq:inequalitygipps} byly stanoveny na základì z~mìøení na hlavních dopravních komunikacích pøi prùmìrném provozu.  Využití nerovnice \eqref{eq:inequalitygipps} pro tento model je považované za pøijatelné až do chvíle, kdy se vozidlo pøiblíží vozidlu jedoucím pøed ním. Od té chvíle dùraz na tuto podmínku klesá. Naopak nejvìtší váhu má tato podmínka ve chvíli, kdy vozidlo nemá nikoho èi vozidlo pøed ním se nachází velmi daleko. Vozidlo se tedy v tuto chvíli pohybuje volnou rychlostí (z angl. \textit{free-flow speed}).
+Koeficienty v~nerovnici \eqref{eq:inequalitygipps} byly stanoveny na základì z~mìøení na hlavních dopravních komunikacích pøi prùmìrném provozu.  Využití nerovnice \eqref{eq:inequalitygipps} pro tento model je považované za pøijatelné až do chvíle, kdy se vozidlo pøiblíží vozidlu jedoucím pøed ním. Od té chvíle dùraz na tuto podmínku klesá. Naopak nejvìtší váhu má tato podmínka ve chvíli, kdy vozidlo nemá nikoho pøed sebou èi vozidlo pøed ním se nachází velmi daleko. Vozidlo se tedy v tuto chvíli pohybuje volnou rychlostí (z angl. \textit{free-flow speed}).
 
 Další omezení, které je nutno zmínit, se týká brždìní. Jestliže $n-1$ (první) vozidlo zahájí brždìní v~èase $t$, zpomalí a následnì zastaví v~místì $x^*_{\nm1}$, které dostáváme rovnicí
 %
@@ -233,7 +233,7 @@ Pro vlastní bezpeènost musí øidiè vozidla $n$ zajistit, že bude splnìna podmínka
 x^*_{\nm1} - l_{\nm1} < x_\n^*,
 \label{eq:distance}
 \end{equation}
-kde $l_{\nm1}$ je délka vozidla $n-1$, seètena s~bezpeènou vzdáleností následujícího ($n$-tého) vozidla. Pokud podmínka \eqref{eq:distance} neplatí, $n$-té vozidlo nemá žádný prostor pro pøípadnou øidièovu chybu. Z~toho dùvodu obsahuje Gippsùv model ještì další podmínku, udávající dodateènou èasovou rezervu øidièe pro bezpeèný odstup, $\theta$. Jak již víme, øidiè zaène reagovat na vozidlo pøed sebou až v~èase $t+T$. Od této chvíle tedy máme reakèní èas $T$ a bezpeèný reakèní èas $T + \theta$, který budeme ve výpoètech dále využívat. S~využitím rovnic \eqref{eq:cometorestnm1} a \eqref{eq:cometorestn} mùžeme podmínku \eqref{eq:distance} pøepsat do nerovnice
+kde $l_{\nm1}$ je délka vozidla $n-1$, seètena s~bezpeènou vzdáleností následujícího ($n$-tého) vozidla. Pokud podmínka \eqref{eq:distance} neplatí, $n$-té vozidlo nemá žádný prostor pro pøípadnou øidièovu chybu. Z~toho dùvodu obsahuje Gippsùv model ještì další podmínku, udávající dodateènou èasovou rezervu øidièe pro bezpeèný odstup, $\theta$. Jak již víme, øidiè zaène reagovat na vozidlo pøed sebou až v~èase $t+T$. Od této chvíle tedy máme reakèní èas~$T$ a bezpeèný reakèní èas $T + \theta$, který budeme ve výpoètech dále využívat. S~využitím rovnic \eqref{eq:cometorestnm1} a \eqref{eq:cometorestn} mùžeme podmínku \eqref{eq:distance} pøepsat do nerovnice
 %
 \begin{multline}
 x_{\nm1} (t) - \frac{v_{\nm1} (t)^2}{2b_{\nm1}} - l_{\nm1} \geq  x_\n (t) +\\
@@ -241,7 +241,7 @@ x_{\nm1} (t) - \frac{v_{\nm1} (t)^2}{2b_{\nm1}} - l_{\nm1} \geq  x_\n (t) +\\
 \label{eq:theta}
 \end{multline}
 
-Bez parametru $\theta$ by øidiè vozidla byl nucen brzdit až ve chvíli, kdy opravdu musí, to znamená na maximální výkon brzd. Do té chvíle by se stále pohyboval svoji preferovanou rychlostí. Parametr $\theta$ slouží k~døívìjšímu a pøitom ne tak prudkému brždìní.
+Bez parametru $\theta$ by øidiè vozidla byl nucen brzdit až ve chvíli, kdy opravdu musí, to znamená na maximální výkon brzd. Do té chvíle by se stále pohyboval svou preferovanou rychlostí. Parametr $\theta$ slouží k~døívìjšímu a pøitom ne tak prudkému brždìní.
 
 Pøi skuteèném pozorování dopravy jsme schopni zmìøit všechny parametry vozidla $n$ v~rovnici \eqref{eq:theta} kromì èlenu $b_{\nm1}$. Tento èlen nahradíme odhadnutou hodnotou $\hat{b}$, upravíme tuto rovnici a dostáváme
 \begin{multline}
@@ -262,7 +262,7 @@ v_{\n} (t+T) \leq b_\n T + \sqrt{\left(b^2 T^2 - b\left(2\left[x_{\nm1} (t) - l_
 \label{eq:nextreplace}
 \end{equation}
 
-Z~nerovnice \eqref{eq:replacetheta} vychází, že bezpeèné rychlosti $v_\n$ budou ležet mezi dvìma koøeny této nerovnice. Pokud bude mít spodní koøen zápornou hodnotu mùžeme jej ignorovat, protože nás zajímají pouze kladné hodnoty rychlostí. Zároveò tedy musí platit
+Z~nerovnice \eqref{eq:replacetheta} vychází, že bezpeèné rychlosti $v_\n$ budou ležet mezi dvìma koøeny této nerovnice. Pokud bude mít spodní koøen zápornou hodnotu, mùžeme jej ignorovat, protože nás zajímají pouze kladné hodnoty rychlostí. Zároveò tedy musí platit
 \begin{equation}
 v_{\n} \geq 0.
 \label{eq:vsafegipps0}
@@ -273,7 +273,7 @@ v_{\n} (t+T) < v_\n (t) + b_n T.
 \]
 V~tuto chvíli musí vozidlo zaèít brzdit rychleji, než by sám øidiè chtìl. Øidiè tedy volí rychlost na základì preferované decelarace, ale mùže brzdit i silnìji, pokud by to bylo nutné.
 
-Nerovnice \eqref{eq:inequalitygipps} pro vozidlo $n$ na volné komunikaci a \eqref{eq:nextreplace} pro vozidlo $n$ pøed kterým se nachází vozidlo $n-1$ pøedstavují dvì hlavní podmínky pro rychlost $v_\n$ v~èase $t + T$ a jestliže øidiè pøizpùsobí rychlost parametrùm vozidla a tak, aby jízda byla bezpeèná, dostáváme \textbf{koneèný vztah pro Gippsùv model:}
+Nerovnice \eqref{eq:inequalitygipps} pro vozidlo $n$ na volné komunikaci a \eqref{eq:nextreplace} pro vozidlo $n$, pøed kterým se nachází vozidlo $n-1$, pøedstavují dvì hlavní podmínky pro rychlost $v_\n$ v~èase $t + T$. Jestliže øidiè pøizpùsobí rychlost parametrùm vozidla tak, aby jízda byla bezpeèná, dostáváme \textbf{koneèný vztah pro Gippsùv model:}
 \begin{equation}
 \label{eq:gipps}
 \begin{split}
@@ -290,12 +290,12 @@ Všechny promìnné a parametry Gippsova modelu potom jsou:
 \begin{itemize}
 	\item $T$ -- reakèní èas øidièe,
 	\item $v_\n (t)$ -- rychlost vozidla $n$ v~èase $t$,
-	\item $a$ -- maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat - \emph{nikoliv tedy zrychlení vozidla v~èase $t$!},
+	\item $a$ -- maximální hodnota zrychlení, kterým je øidiè ochoten zrychlovat -- \emph{nikoliv tedy zrychlení vozidla v~èase $t$!},
 	\item $V_\n$ -- preferovaná rychlost vozidla $n$,
-	\item $b$ -- maximální decelerace vozidla, kterým je øidiè ochoten brzdit,
-	\item $x_\n (t)$ -- poloha vozidla $n$
-	\item $l_{\nm1}$ -- délka vozidla $n-1$ seètena s~bezpeènou vzdáleností $n$-tého vozidla
-	\item $\hat{b}$ -- odhadnutá hodnota decelerace $b_{\nm1}$
+	\item $b$ -- maximální decelerace vozidla, kterou je øidiè ochoten brzdit,
+	\item $x_\n (t)$ -- poloha vozidla $n$,
+	\item $l_{\nm1}$ -- délka vozidla $n-1$ seètena s~bezpeènou vzdáleností $n$-tého vozidla,
+	\item $\hat{b}$ -- odhadnutá hodnota decelerace $b_{\nm1}$.
 \end{itemize}
 
 
@@ -328,7 +328,7 @@ v (t) \leq v_{\safe} (t).
 \end{equation}
 Z~maximální bezpeèné rychlosti poté plyne interakce mezi vozidly. Její stanovení bude uvedeno dále.
 
-Je možné formulovat modely na základì podmínek \eqref{eq:kraussvmax} a \eqref{eq:kraussvsafe}. Nicménì je vcelku vhodné pøedpokládat také omezující podmínky pro akceleraci $a$ a deceleraci $b$,
+Je možné formulovat modely na základì podmínek \eqref{eq:kraussvmax} a \eqref{eq:kraussvsafe}. Nicménì je vhodné pøedpokládat také omezující podmínky pro akceleraci $a$ a deceleraci $b$,
 \begin{equation}
 \begin{split}
 &-b \leq \frac{\dd v}{\dd t} \leq a,\\
@@ -361,7 +361,7 @@ g(t) = x_1(t) - x_f(t) - l.
 
 Jak již bylo zmínìno, hlavním dùvodem, proè mezi sebou vozidla interagují, je fakt, že øidièi nemají v~úmyslu srážet se s~ostatními vozidly. Z~toho plyne, že mezera mezi vozidly musí být nezáporná. Narozdíl od jiných modelovacích pøístupù, zde nezaèneme s~pøedpokladem, že se zrychlení vozidla vypoète ze zrychlení vozidla jednoucího pøed ním, protože tím nekoliznost stejnì není zajištìna automaticky.
 
-Místo toho zavedeme pravidlo, že se ve spojitých modelech spolu interagující vozidla nesrazí tehdy, pokud je mezera mezi vozidly $g$ vìtší než nìjaká preferovaná mezera mezi vozidly $g_{\des}$ a splòuje tuto dynamickou nerovnici
+Místo toho zavedeme pravidlo, že se spolu interagující vozidla ve spojitých modelech nesrazí tehdy, pokud je mezera mezi vozidly $g$ vìtší než nìjaká preferovaná mezera mezi vozidly $g_{\des}$ a splòuje tuto dynamickou nerovnici
 \begin{equation}
 \frac{\dd g (t)}{\dd t} \geq \frac{g_{\des} - g (t)}{\tau_{\des}}.
 \label{eq:kraussgapdes}
@@ -369,7 +369,7 @@ Místo toho zavedeme pravidlo, že se ve spojitých modelech spolu interagující voz
 
 Preferovaný bezpeèný èasový odstup mezi vozidly $\tau_{\des}$ a preferovaná mezera $g_{\des}$ by mohly být funkcemi odstupu mezi vozidly èi jejich rychlostmi, ale v tomto pøípadì to jsou konstanty. Fakt, že v~tomto modelu nemohou nastat kolize, je zøejmý, protože pokud položíme $g$ rovné nule, èasová derivace v rovnici \eqref{eq:kraussgapdes} bude vždy nezáporná nebo nutnì $g_{\des} > 0$ a $\tau_{\des} > 0$.
 
-Uvažujme stále pøípad dvou vozidel jedoucími rychlostmi $v_1 (t)$ resp. $v_f (t)$ s~odstupem $g (t)$. Druhé vozidlo jede svoji bezpeènou rychlostí a øidiè tohoto vozidla mùže zastavit za jakýkoliv okolností tak, aby nedošlo ke kolizi s~prvním vozidlem. To znamená, že pokud øidiè má reakèní èas $T$ a brzdná vzdálenost vozidel jedoucích rychlostí $v (t)$ je dána funkcí $f(v(t))$, je situace bezpeèná právì tehdy když
+Uvažujme stále pøípad dvou vozidel jedoucími rychlostmi $v_1 (t)$, resp. $v_f (t)$ s~odstupem $g (t)$. Druhé vozidlo jede svou bezpeènou rychlostí a øidiè tohoto vozidla mùže zastavit za jakýchkoli okolností tak, aby nedošlo ke kolizi s~prvním vozidlem. To znamená, že pokud øidiè má reakèní èas $T$ a brzdná vzdálenost vozidel jedoucích rychlostí $v (t)$ je dána funkcí $f(v(t))$, je situace bezpeèná právì tehdy, když
 \begin{equation}
 f(v_f(t)) + v_f(t) T \leq f(v_1(t)) + g(t).
 \label{eq:kraussdvsafe}
@@ -377,7 +377,7 @@ f(v_f(t)) + v_f(t) T \leq f(v_1(t)) + g(t).
 
 Hodnota funkce $f(v_f(t))$ èi $f(v_1(t))$ nemusí být nutnì minimální možná brzdná vzdálenost, ale mùže to být funkce závisející na zpùsobu øízení øidièe. To samé platí pro reakèní èas $T$.
 
-Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v_f(t))$ èi $f(v_1(t))$, který, jak uvidíme, není možné zjistit. Druhým je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti okolo prùmìrné rychlosti obou vozidel,
+Úprava nerovnice \eqref{eq:kraussdvsafe} vede k~bezpeènostnímu pravidlu pro rychlost druhého vozidla. Nicménì my toto pravidlo neodvozujeme ze dvou dùvodù. První z~nich je ten, že po úpravì bychom potøebovali znát pøesný pøedpis funkce $f(v_f(t))$ èi $f(v_1(t))$, který, jak uvidíme, není možné zjistit. V druhém pøípadì je nesmyslné a zbyteèné poèítat možnou strategii øidièe ve chvíli nenadálé události a tím pádem také vypoèítávat decelaraci až k~úplnému zastavení každý jednotlivý krok. Proto zavedeme Taylorùv rozvoj brzdné vzdálenosti okolo prùmìrné rychlosti obou vozidel,
 \begin{equation}
 \overline{v}(t) = \frac{v_1(t) + v_f(t)}{2}.
 \label{eq:kraussv1vf}
@@ -431,7 +431,7 @@ f'(\overline{v}(t))v_f + v_f T \leq f'(\overline{v}(t))v_1 + g,
 \end{equation}
 kde budeme nyní první derivaci znaèit $f'$.
 
-Smysl derivace $f'(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z~rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\frac{\dd \overline{v}}{\dd t} = -b(v)$, kdy $b(v)>0$, obrdžíme vztah
+Smysl derivace $f'(\overline{v})$ vysvìtlíme jednoduše. Pokud se podívame na decelaraci vozidla $b$ z~rychlosti $v$ na nulu (nemusí být nutnì konstantní), tedy $\frac{\dd \overline{v}}{\dd t} = -b(v)$, kdy $b(v)>0$, obdržíme vztah
 \begin{equation}
 f'(\overline{v}(t)) = -\frac{\dd}{\dd \overline{v}(t)}\int_v^0 \frac{\overline{v}(t)'}{b(\overline{v}(t)')} \dd v' = \frac{\overline{v}(t)}{b(\overline{v}(t))}.
 \label{eq:kraussintegratebv}
@@ -452,7 +452,7 @@ Nerovnice \eqref{eq:krausssafetycond} se rovná nerovnici \eqref{eq:kraussgapdes}
 
 \subsection{Diskretizace modelu}
 
-Pro možnost simulace na poèítaèi je potøeba pøevést spojité nerovnice odvozené v~èásti \ref{krauss:approach}, na diskrétní rovnice pro dráhy, rychlosti a zrychlení.
+Pro možnost simulace na poèítaèi je potøeba pøevést spojité nerovnice odvozené v~èásti \ref{krauss:approach} na diskrétní rovnice pro dráhy, rychlosti a zrychlení.
 
 Vhodná cesta pro diskretizaci rovnic dynamického systému z~bezpeènostní podmínky \eqref{eq:kraussgapdes} je pøevést spojitou rychlost $v_f$ ve výrazu $g'(t) = v_1(t) - v_f(t)$ jako rychlost diskrétní s~diferencí èi integraèním krokem $\Delta t$. Potom nerovnici \eqref{eq:kraussgapdes} pøepíšeme do tvaru
 \begin{equation}
@@ -538,7 +538,7 @@ Fáze brzdicího procesu na sebe plynule navazují, první z~nich se nazývá doba rea
 \label{brzdeni}%
 \end{figure}
 
-\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas $T$ na to, aby zareagoval na zmìnu chování vozidla pøed sebou. V~dobì této reakce se pohybuje rychlost vozidla $v_0$ na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dán rovnicí
+\paragraph{Doba reakce øidièe:} Øidiè potøebuje urèitý èas $T$ na to, aby zareagoval na zmìnu chování vozidla pøed sebou. V~dobì této reakce se pohybuje rychlost vozidla $v_0$ na konstantní hodnotì, pøípadnì se lehce mìní. Posunutí aktuálního vozidla je potom dáno rovnicí
 \begin{equation}
 S_\rr = v_0 T.
 \label{eq:posunkrauss}
@@ -614,7 +614,7 @@ v_{\safe} = -b \left(T + \frac{t_{\ff\ii}}{2}\right) + \sqrt{b^2 \left(t_\rr + \
 \label{eq:vsafeKrauss}
 \end{equation}
 
-V~simulaci je potom èas decelerace stejný $t_i = t_{\ll\ii} = t_{\ff\ii}$, a~toho plyne
+V~simulaci je potom èas decelerace stejný $t_i = t_{\ll\ii} = t_{\ff\ii}$, a~z~toho plyne
 \begin{equation}
 v_{\safe} = -b \left(T + \frac{t_{\ii}}{2}\right) + \sqrt{b^2 \left(T + \frac{t_{\ii}}{2}\right)^2 + b\left(v_\ll t_{\ii} + \frac{v_\ll^2}{a} + 2g\right)}.
 \label{eq:vsafeKraussti}
@@ -642,7 +642,7 @@ Všechny promìnné a parametry Kraussova modelu potom jsou:
 \label{sec:IDM}
 Intelligent Driver Model (dále jen IDM) je pomìrnì nový matematický model z~roku 2000, který byl vymyšlen v~Nìmecku. Používá se jiný pøístup výpoètu akcelerací vozidel, kde se nevybírá z nìkolika hodnot (viz Gipps èi Krauss), ale dùležitost jednoho èlenu klesá v závislosti na vzdálenosti mezi vozidly.
 
-V~této sekci budeme primárnì vycházet z~prácí \cite{Vanis} a \cite{TreiberWWW}.
+V~této sekci budeme primárnì vycházet z~prací \cite{Vanis} a \cite{TreiberWWW}.
 \subsection{Matematický popis}
 \label{sec:matpopisIDM}
 
@@ -660,7 +660,7 @@ a_{n,\free} (t){}={} a\left[1-\left(\frac{v_n (t)}{v_{n,\free}}\right)^\delta\ri
 \end{equation}
 kde $a$ je maximální zrychlení, $\delta$ je exponent zrychlení, který napomahá zpøesnìní výpoètu zrychlení $a_{n,\free}$, $v_n$ je aktuální rychlost vozidla a $v_{n,\free}$ je rychlost, které chce vozidlo dosáhnout.
 
-Pokud v~rovnici \eqref{zrychvolproud} bude zlomek $v_n (t)/ v_{n,\free}$ roven jedné, vozidlo se již dostalo na svou preferovanou rychlost $v_{n,\free}$ a celkové zrychlení $a_{n,\free} (t)$ bude rovno nule. Naopak pokud bude $v_n (t)$ rovno nule, znamená to, že $a_{n,\free} (t)$ bude pøímo rovno $a$, a vozidlo pojede svým maximálním zrychlením. Pokud $v_n (t)$ bude menší než $v_{n,\free}$, pak platí že, èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_{n,\free} (t)$. Pokud $v_n (t)$ bude vìtší než $v_{n,\free}$, bude platit pravý opak.
+Pokud v~rovnici \eqref{zrychvolproud} bude zlomek $v_n (t)/ v_{n,\free}$ roven jedné, vozidlo se již dostalo na svou preferovanou rychlost $v_{n,\free}$ a celkové zrychlení $a_{n,\free} (t)$ bude rovno nule. Naopak pokud bude $v_n (t)$ rovno nule, znamená to, že $a_{n,\free} (t)$ bude pøímo rovno $a$, a vozidlo pojede svým maximálním zrychlením. Pokud $v_n (t)$ bude menší než $v_{n,\free}$, pak platí, že èím vyšší hodnotu bude mít nastavenou parametr $\delta$, tím se dosáhne vyšší hodnota  $a_{n,\free} (t)$. Pokud $v_n (t)$ bude vìtší než $v_{n,\free}$, bude platit pravý opak.
 
 Podle rovnice \eqref{zrychvolproud} by bylo možné poèítat celkové zrychlení za pøedpokladu, kdyby vozidlo jelo na naprosto prázdné komunikaci. Tomu ovšem tak být nemusí, proto se do rovnice \eqref{soucetzrych} pøidává interakèní èlen, který pøímo závisí na parametrech vozidla jedoucí pøed naším úèastníkem. Tento èlen je roven
 \begin{equation}
@@ -788,7 +788,7 @@ Pøi zvyšujícím se rozdílu rychlostí, OPDV, øidiè zjišuje, že jede rychlostí niž
 Na základì tìchto práhù stanovujeme pøíslušný režim Wiedemannova modelu. Tyto režimy jsou taktéž zobrazeny na obrázku \ref{wiedemann}. 
 
 \paragraph{Režim následování:}
-Hodnota zrychlení vozidla je vždy poèítána každou iteraci znovu od nuly. Dùvodem je nepøesné zacházení s~plynovým pedálem ve vozidle. Pokud vozidlo pøekoná práh $\SDV$ èi $\ABX$, jeho hodnota akcelerace bude rovna $- b_{null}$. Naopak pøi dosáhnutí prahù $\OPDV$ èi $\SDX$ bereme kladnou hodnotu $b_{null}$. Akcelerace èi decelerace je definována jako
+Hodnota zrychlení vozidla je vždy poèítána pro každou iteraci znovu od nuly. Dùvodem je nepøesné zacházení s~plynovým pedálem ve vozidle. Pokud vozidlo pøekoná práh $\SDV$ èi $\ABX$, jeho hodnota akcelerace bude rovna $- b_{null}$. Naopak pøi dosáhnutí prahù $\OPDV$ èi $\SDX$ bereme kladnou hodnotu $b_{null}$. Akcelerace èi decelerace je definována jako
 \begin{equation}
 b_{null} = \BNULLmult \cdot (\RNDIV_n + \NRND),
 \label{eq:bnull}
@@ -847,11 +847,11 @@ s_{n} (t) = x_{\nm1} (t) - x_{n} (t) - l_{n},
 \end{equation}
 kde $l_{\n}$ je délka vozidla $\n$.
 
-V~závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedoucím vozidle, tyto modely není možné použít pøi velmi nízkých hustotách provozu. Pokud není urèeno vedoucí vozidlo ($s_{\n} \rightarrow \infty$), zrychlení buïto není možné stanovit (pro hodnotu $l = 0$) nebo je rovné nule ($l > 0$) bez ohledu na rychlost vozidla. Dá se pøedpokládat, že v~tuto chvíli se vozidla budou snažit dosáhnout své preferované rychlosti. Chování vozidel v~hustém provozu je ovšem ponìkud nerealistické. Pøedevším odstup mezi vozidly $s$ týkající se vedoucího vozidla nemusí nutnì smìøovat k~rovnovážnému stavu. Ani malé mezery nepøimìjí vozidlo k~brždìní pokud je rozdíl rychlostí $\Delta v_\n$ roven nule.
+V~závislosti na rovnici \eqref{eq:earliermodels}, kdy zrychlení závisí na vedoucím vozidle, tyto modely není možné použít pøi velmi nízkých hustotách provozu. Pokud není urèeno vedoucí vozidlo ($s_{\n} \rightarrow \infty$), zrychlení buïto není možné stanovit (pro hodnotu $l = 0$) nebo je rovné nule ($l > 0$) bez ohledu na rychlost vozidla. Dá se pøedpokládat, že v~tuto chvíli se vozidla budou snažit dosáhnout své preferované rychlosti. Chování vozidel v~hustém provozu je ovšem ponìkud nerealistické. Pøedevším odstup mezi vozidly $s$ týkající se vedoucího vozidla nemusí nutnì smìøovat k~rovnovážnému stavu. Ani malé mezery nepøimìjí vozidlo k~brždìní, pokud je rozdíl rychlostí $\Delta v_\n$ roven nule.
 
-Tyto problémy byly vyøešeny v~Newellovì modelu (viz podkapitola \ref{sec:Newell}), kde je z~rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k~velmi vysokým hodnotám zrychlení.\cite{Treiber}
+Tyto problémy byly vyøešeny v~Newellovì modelu (viz podkapitola \ref{sec:Newell}), kde je z~rovnice \eqref{eq:newellcompl} vidìt, že zrychlení není závislé pouze na rozdílù rychlostí. Newellùv model je nekolizní, ale okamžitá závislost na rychlosti na hustotì provozu vede k~velmi vysokým hodnotám zrychlení \cite{Treiber}.
  
-Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model, podkapitola \ref{sec:Gipps} a Kraussùv model, podkapitola \ref{sec:Krauss}. Navzdory své jednoduchosti, tyto modely realisticky popisují chování øidièe a jsou nekolizní. Bohužel u tìchto modelù není možné nikdy dosáhnout stacionárního stavu a to z dùvodu vybírání minima z nìkolika hodnot (jedna hodnota by k nìmu smìøovala, ale na základì volby ze dvou (Gipps) èi tøí (Krauss) možností se vybere jiná). V~tìchto pøípadech potom není možné simulovat nestabilní stavy dopravy.
+Další model, který obsahuje realistické brzdné reakce øidièù, je Gippsùv model, podkapitola \ref{sec:Gipps}, a Kraussùv model, podkapitola \ref{sec:Krauss}. Navzdory své jednoduchosti, tyto modely realisticky popisují chování øidièe a jsou nekolizní. Bohužel u tìchto modelù není možné nikdy dosáhnout stacionárního stavu, a to z dùvodu vybírání minima z nìkolika hodnot (jedna hodnota by k nìmu smìøovala, ale na základì volby ze dvou (Gipps) èi tøí (Krauss) možností se vybere jiná). V~tìchto pøípadech potom není možné simulovat nestabilní stavy dopravy.
 
 Tento problém se snaží odstanit IDM model, podkapitola \ref{sec:IDM}, který rychlost urèuje na základì zrychlení volného proudu a interakèního zrychlení, kde velikost interakèního zrychlení stoupá s klesající mezerou mezi aktuálním vozidlem a vozidlem jedoucím pøed aktuálním.
 
