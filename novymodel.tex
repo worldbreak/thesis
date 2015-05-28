@@ -1,106 +1,101 @@
 \chapter{Implementace nového modelu}
 \label{chap:newmodel}
-V simulaèním nástroji SUMO jsou ji nìkteré z modelù uvedenıch v kapitole \ref{chap:predIDM} implementovány. 
-V tuto chvíli bych zde uvedl obecné informace, které s implementací nového modelu souvisí bez ohledu na to, o jakı model se konkrétnì jedná.
+V~simulaèním nástroji SUMO nejsou nìkteré z~modelù, uvedenıch v~kapitole \ref{chap:predIDM}, implementovány. 
+V~této kapitole proto uvádím obecné informace, které s~implementací nového modelu souvisí bez ohledu na to, o~jakı model se konkrétnì jedná.
 
-Ne zaèneme, je nutné mít pøipravené soubory pro novı model, pro Gippsùv model jsou to soubory \textit{MSCFModel\_Gipps.cpp} a \textit{MSCFModel\_Gipps.h}. Postup, jak nové soubory vytvoøit a implementovat do SUMO je uveden v pøíloze \ref{chap:newfiles}.
+Ne zaèneme, je nutné mít pøipravené soubory pro novı model, pro Gippsùv model jsou to soubory \texttt{MSCFModel\_Gipps.cpp} a \texttt{MSCFModel\_Gipps.h}. Postup, jak nové soubory vytvoøit a implementovat do SUMO je uveden v~pøíloze \ref{chap:newfiles}.
 
 \section{MSCFModel.h}
-V souboru \textit{MSCFModel.h} (ne \textit{MSCFModel\_Gipps.h}) se nacházejí definice základních funkcí, které posléze v pøidaném modelu implementujeme. Nìkteré z nich pouijeme u našeho implementovaného modelu. Ty, které nepouijeme, zùstanou stejné a pøi pouití našeho modelu bìhem simualce se budou volat funkce implementované v \textit{MSCF.cpp}, pøípadnì \textit{MSCF.h}.
+Ve sloce \texttt{/src/microsim/cfmodels} v~souboru \texttt{MSCFModel.h} (ne \texttt{MSCFModel\_Gipps.h}) se nacházejí definice základních funkcí, které posléze v~pøidaném modelu implementujeme. Nìkteré z~nich pøetííme a poté pouijeme u~našeho implementovaného modelu. Ty, které nepouijeme, zùstanou stejné a pøi pouití našeho modelu bìhem simulace se budou volat funkce implementované v~\texttt{MSCFModel.cpp}, pøípadnì \texttt{MSCFModel.h}.
 
-Pøi procházení zdrojovıch kódù je na první pohled vidìt, e vìtšina obecnıch funkcí je primárnì vytvoøena z Kraussova modelu. Zbytek funkcí poèítá nìjakou obecnou vlastnost, která pøímo nesouvisí s modelem. Tyto funkce nemají u své definice klíèové slovo virtual, které znaèí, e tuto funkci je mono nahradit pøi vlastní implementaci nového modelu. Dále jsou zde promìnné, které pøi vytvoøení nového modelu automaticky pøístupné.\textbf{Tyto promìnné se pouívají i pøi jinıch vıpoètech jako je napø. vjezd vozidla do oblasti. Je proto nutné dbát na to, abychom v implementaci nového modelu neuloili špatnou hodnotu (napø. decelerace).}
+Pøi procházení zdrojovıch kódù je na první pohled vidìt, e vìtšina obecnıch funkcí je primárnì vytvoøena pro Kraussùv model. Zbytek funkcí poèítá nìjakou obecnou vlastnost, která s~modelem pøímo nesouvisí. Tyto funkce nemají u~své definice klíèové slovo virtual, které znaèí, e tuto funkci není moné nahradit pøi vlastní implementaci nového modelu. Dále jsou zde promìnné, které jsou pøi vytvoøení nového potomka obecného modelu automaticky pøístupné (napø. zrychlení, reakèní èas øidièe). \textbf{Tyto promìnné se pouívají i pøi jinde, nejen pøi vıpoètech v~tøídì nového modelu, jako je napø. vjezd vozidla do oblasti. Je proto nutné dbát na to, abychom do nich v~implementaci nového modelu neuloili špatnou hodnotu (napø. decelerace).}
 
-Funkce obsahují vìtšinou následující vstupní promìnné:
+Metody tøídy \emph{MSCFModel} obsahují vìtšinou následující vstupní promìnné:
 \begin{itemize}
-	\item \textit{const MSVehicle* const veh} - ukazatel na aktuální vozidlo, pøes nìj je moné zjistit detailnìjší informace o vozidle
-	\item \textit{SUMOReal speed} - rychlost aktuálního vozidla
-	\item \textit{SUMOReal gap2pred} - vzdálenost mezi aktuálním a vedoucím vozidlem
-	\item \textit{SUMOReal predSpeed} nebo \textit{SUMOReal vL} - rychlost vedoucího vozidla
-	\item \textit{SUMOReal predMaxDecel} nebo \textit{SUMOReal vL} - maximální decelerace vedoucího vozidla
+	\item \textit{const MSVehicle* const veh} -- ukazatel na aktuální vozidlo, pøes nìj je moné zjistit detailnìjší informace o~vozidle
+	\item \textit{SUMOReal speed} -- rychlost aktuálního vozidla
+	\item \textit{SUMOReal gap2pred} -- vzdálenost mezi aktuálním a vedoucím vozidlem
+	\item \textit{SUMOReal predSpeed} nebo \textit{SUMOReal vL} -- rychlost vedoucího vozidla
+	\item \textit{SUMOReal predMaxDecel} -- maximální decelerace vedoucího vozidla
 \end{itemize}
 
 Ostatní vlastnosti vedoucího vozidla nejsme schopni jednoduše zjistit, nicménì rychlost a vzdálenost by pøi implementaci novıch modelù mìly plnì postaèit.
 
-Seznam funkcí, které je moné pøepsat, je následující:
+Seznam metod, které je pøi implementaci nového modelu sledu vozidel pøetíit, je následující:
 
 \begin{itemize}
-	\item \textit{virtual SUMOReal freeSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion = false) const;} - vıpoèet rychlosti vozidla, které jede jako první, tz. jeho poloha je nejdále od zaèátku simulace a nejede pøed ním ádné vozidlo
-	\item \textit{virtual SUMOReal followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} - vıpoèet rychlosti vozidla na základì vlastností vedoucího vozidla
-	\item \textit{virtual SUMOReal insertationFollowSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} - vıpoèet rychlosti vozidla pøi vjezdu do oblasti na základì vozidla, které se nachází pøed ním. \textbf{SUMO nenechá vjet vozidlo do oblasti, pokud není zajištìna bezpeèná vzdálenost pro zabrdìní vozidla.}
-	\item \textit{virtual SUMOReal stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUMOReal gap2pred)} - vıpoèet rychlosti ve chvíli, kdy se pøed vozidlem nachází statickı objekt\footnote{objekt, kterı má nulovou rychlost}
-	\item \textit{virtual SUMOReal interactionGap(const MSVehicle* const veh, SUMOReal vL) const;} - vıpoèet mezery, kdy ovlivòuje vedoucí vozidlo aktuální
+	\item \textit{virtual SUMOReal freeSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion = false) const} -- vıpoèet rychlosti vozidla, které jede jako první, tzn. jeho poloha je nejdále od zaèátku simulace a nejede pøed ním ádné vozidlo,
+	\item \textit{virtual SUMOReal followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet rychlosti vozidla na základì parametrù pohybu vedoucího vozidla,
+	\item \textit{virtual SUMOReal insertationFollowSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet rychlosti vozidla pøi vjezdu do oblasti na základì parametrù vozidla, které se nachází pøed ním; \textbf{SUMO nenechá vjet vozidlo do oblasti, pokud není zajištìna bezpeèná vzdálenost pro zabrdìní vozidla},
+	\item \textit{virtual SUMOReal stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUMOReal gap2pred)} -- vıpoèet rychlosti ve chvíli, kdy se pøed vozidlem nachází statickı objekt\footnote{objekt, kterı má nulovou rychlost},
+	\item \textit{virtual SUMOReal interactionGap(const MSVehicle* const veh, SUMOReal vL) const} -- vıpoèet mezery, kdy ovlivòuje vedoucí vozidlo aktuální
 \end{itemize}
 
-Mùeme také vyuít další podpùrné funkce, které pøímo nezávisí na modelu. Dají se pouít pøi napø. pøi kontrole bezpeèné rychlosti. Tyto funkce nelze primárnì pøepsat v novém modelu. Jsou to:
+Mùeme také vyuít další podpùrné funkce, které pøímo nezávisí na modelu. Dají se pouít pøi napø. pøi kontrole bezpeèné rychlosti. Tyto funkce nelze primárnì pøepsat v~novém modelu. Jsou to:
 
 \begin{itemize}
-	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const;} - vıpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
-	\item \textit{SUMOReal maximumSafeStopSpeed(SUMOReal gap) const;} - vıpoèet maximální bezpeèné rychlosti pro zastavení
+	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
+	\item \textit{SUMOReal maximumSafeStopSpeed(SUMOReal gap) const} -- vıpoèet maximální bezpeèné rychlosti pro zastavení
 \end{itemize}
 
 \section{Implementace Gippsova modelu}
 
-K tomu abychom mohli pøidat do SUMO Gippsùv model, je nejprve nezbytné vytvoøit soubory pro novı model - viz pøíloha \ref{chap:newfiles}. Pokud vše funguje jak má, spustíme kompilaci SUMO a pokud vše probìhne bez problémù mùeme postoupit dále. Jinak je ovšem chyba v nedodrení postupu v pøíloze a není moné postupovat dále.
+K~tomu abychom mohli pøidat do SUMO Gippsùv model, je nejprve nezbytné vytvoøit soubory pro novı model -- viz pøíloha \ref{chap:newfiles}. Spustíme kompilaci SUMO a pokud vše probìhne bez problémù mùeme postoupit dále. Jinak je ovšem chyba v~nedodrení postupu v~pøíloze a není moné postupovat dále.
 
-Ve chvíli, kdy se nám SUMO zkompilovalo a máme k dispozici soubory \textit{MSCFModel\_Gipps.cpp} a \textit{MSCFModel\_Gipps.h}, mùeme zaèít programovat Gippsùv model. V pøíloze \ref{chap:newfiles} v sekci \ref{sec:newparams} je k dispozici návod na vytvoøení vlastních parametrù, my ho pouijeme pouze pro preferovanou rychlost vozidla \textit{desiredSpeed} a tím pádem pøi tvorbì konstruktoru by nám mìla bıt k dispozici hodnota promìnné \textit{desiredSpeed}, kterou mùeme pøidat jako parametr pøi vytváøení souboru vozidel.
+Ve chvíli, kdy se nám SUMO zkompilovalo a máme k~dispozici soubory \texttt{MSCFModel\_Gipps.cpp} a \texttt{MSCFModel\_Gipps.h}, mùeme zaèít programovat Gippsùv model. V~pøíloze \ref{chap:newfiles} v~sekci \ref{sec:newparams} je k~dispozici návod na vytvoøení vlastních parametrù, my ho pouijeme pouze pro preferovanou rychlost vozidla \textit{desiredSpeed}. Pøi tvorbì konstruktoru by nám potom mìla bıt k~dispozici hodnota promìnné \textit{desiredSpeed}, kterou mùeme pøidat jako parametr pøi vytváøení souboru vozidel.
 
-Prvnì zakomponujeme do souboru \textit{MSCFModel\_Gipps.h} všechny naše nové promìnné, které budou k dispozici našemu modelu. Uloíme je do sekce protected, aby k nim mìl pøístup pouze Gippsùv model, pøípadnì jeho potomek. 
+Prvnì zakomponujeme do souboru \texttt{MSCFModel\_Gipps.h} všechny naše promìnné, které budou k~dispozici našemu modelu. Promìnné deklarujeme jako chránìné, aby k~nim mìl pøístup pouze Gippsùv model, pøípadnì jeho potomek. 
 \begin{lstlisting}[breaklines=true]
 protected:
 	SUMOReal myDesiredSpeed;
 	SUMOReal myGippsDecel;
 \end{lstlisting}
 
-Kromì \textit{myDesiredSpeed} jsme zde pøidali ještì jednu promìnnou a to z dùvodu zpøehlednìní (viz dále).
+Kromì \textit{myDesiredSpeed} jsme zde pøidali ještì jednu promìnnou \textit{myGippsDecel} , která bude udávat decelaraci aktuálního vozidla se zápornım znaménkem. Není to nezbytnı krok, èinéme tak pouze z~dùvodu zpøehlednìní kódu/vıpoètu (viz dále).
 
-Nyní ji vytvoøíme konstruktor, kterı bude naplní promìnné zdìdìné od obecného modelu a zároveò naše novì pøidané promìnné.
+Nyní ji vytvoøíme konstruktor, kterı bude naplní promìnné zdìdìné od obecného modelu a zároveò naše novì pøidané promìnné:
 \begin{lstlisting}[breaklines=true]
-MSCFModel_Gipps::MSCFModel_Gipps(const MSVehicleType* vtype,  SUMOReal accel, SUMOReal decel,
-        SUMOReal headwayTime, SUMOReal desiredSpeed)
-    : MSCFModel(vtype, accel, decel, headwayTime), myDesiredSpeed(desiredSpeed) {
+MSCFModel_Gipps::MSCFModel_Gipps(const MSVehicleType* vtype,  SUMOReal accel, SUMOReal decel, SUMOReal headwayTime, SUMOReal desiredSpeed): MSCFModel(vtype, accel, decel, headwayTime), myDesiredSpeed(desiredSpeed) {
 		myGippsDecel = -decel;
 }
 \end{lstlisting}
 
-Je také nutné v hlavièkovém souboru \textit{MSCFModel\_Gipps.h} upravit definici stávajícího konstruktoru na
+Tento kód zavolá konstruktor obecného modelu, uloí nám hodnoty zadané pøi generování vozidel do simulace do jednotlivıch promìnnıch. My si potom pøidáme ještì hodnotu \textit{desiredSpeed} do promìnné \textit{myDesiredSpeed} a do promìnné \textit{myGippsDecel} uloíme zápornou hodnotu decelerace.
+
+V~hlavièkovém souboru \textit{MSCFModel\_Gipps.h} je také nutné upravit definici stávajícího konstruktoru na
 \begin{lstlisting}[breaklines=true]
  MSCFModel_Gipps(const MSVehicleType* vtype, SUMOReal accel, SUMOReal decel, SUMOReal headwayTime, SUMOReal desiredSpeed);
 \end{lstlisting}
-\textit{MSCFModel\_Gipps.h}
-Tento kód zavolá konstruktor obecného modelu, uloí nám hodnoty zadané pøi generování vozidel do simulace do jednotlivıch promìnnıch. My si potom pøidáme ještì hodnotu \textit{desiredSpeed} do promìnné \textit{myDesiredSpeed} a do promìnné \textit{myGippsDecel} uloíme zápornou hodnotu decelerace.
 
-\textbf{Není moné uloit do myDecel hodnotu -decel, protoe na hodnotu myDecel se ptá SUMO v rùznıch situacích a byla by v nìm uloena záporná hodnota namísto kladné, které SUMO oèekává.}
+Vrame se nyní k~promìnné myGippsDecel. Na první pohled se zdá nelogické zavádìt novou promìnnou, obsahující zápornou hodnotu decelerace, zadanou do modelu a zdálo by se vhodné, tuto hodnotu uloit do promìnné myDecel. Tím bychom ovšem porušili definici tøídy \textit{MSCFModel}, u~ní se pøedpokládá, e myDecel obsahuje kladnou hodnotu decelerace modelu. Na tuto hodnotu se také SUMO bìhem simulace nìkolikrát odkazuje. Zápornou hodnotu decelerace je proto tøeba dret oddìlenì. \textbf{Není moné uloit do myDecel hodnotu -decel, protoe na hodnotu myDecel se ptá SUMO v~rùznıch situacích a byla by v~nìm uloena záporná hodnota namísto kladné, které SUMO oèekává.}
 
-V tuto chvíli bychom mìli mít k dispozici následující promìnné v celém tìle Gippsova modelu. Uvedeme zde také promìnnou odpovídající parametrùm Gippsova modelu - viz \ref{subsec:parameterGipps}:
+V~tuto chvíli bychom mìli mít k~dispozici následující promìnné v~celém tìle Gippsova modelu. Uvedeme zde také promìnnou odpovídající parametrùm Gippsova modelu - viz odstavec \ref{subsec:parameterGipps}:
 \begin{itemize}
-	\item myAccel - akcelerace $a_\n$,
-	\item myGippsDecel - decelerace $b_\n$,
-	\item myDesiredSpeed - preferovaná rychlost $V_\n$,
-	\item myHeadwayTime - reakèní èas $T_\n$.
+	\item \textit{myAccel} -- akcelerace $a_\n$,
+	\item \textit{myGippsDecel} -- decelerace $b_\n$,
+	\item \textit{myDesiredSpeed} -- preferovaná rychlost $V_\n$,
+	\item \textit{myHeadwayTime} -- reakèní èas $T_\n$.
 \end{itemize}
 
-Ostatní promìnné se mìní v èase a vdy jsou vstupními parametry dané funkce.
-
-Gippsùv model pracuje tak, e vybírá minimální hodnotu z dvou moností: z rychlosti ve volném proudu èi rychlosti pøi interakci z vedoucím vozidlem - viz rovnice \ref{eq:gipps}. My si obì èásti této rovnice naprogramujeme, kadá èást rovnice bude jedna funkce. V souboru \textit{MSCFModel\_Gipps.h} je obì zadefinujeme,
+Gippsùv model pracuje tak, e vybírá minimální hodnotu z~dvou moností: z~rychlosti ve volném proudu èi rychlosti pøi interakci z~vedoucím vozidlem, jak uvádí rovnice \ref{eq:gipps}. My si obì èásti této rovnice naprogramujeme, kadá èást rovnice bude jedna funkce. V~souboru \textit{MSCFModel\_Gipps.h} je obì zadefinujeme,
 
 \begin{lstlisting}[breaklines=true]
-	private:
-      virtual SUMOReal vFree(SUMOReal speed) const;
-			virtual SUMOReal vInteraction(SUMOReal speed, SUMOReal predSpeed, SUMOReal gap2pred) const;
-			virtual SUMOReal chooseBrakeConst(SUMOReal decel) const;
+private:
+ virtual SUMOReal vFree(SUMOReal speed) const;
+ virtual SUMOReal vInteraction(SUMOReal speed, SUMOReal predSpeed, SUMOReal gap2pred) const;
+ virtual SUMOReal chooseBrakeConst(SUMOReal decel) const;
 \end{lstlisting}
-
-parametry tìchto funkcí pøímo odpovídají tomu, co pro vıpoèet daného èlenu potøebujeme. K funkci \textit{chooseBrakeConst} se dostaneme za chvíli. Funkce \textit{vFree} potom vypadá následovnì:
+parametry tìchto funkcí pøímo odpovídají tomu, co pro vıpoèet daného èlenu potøebujeme. Funkce \textit{vFree} potom vypadá následovnì:
 
 \begin{lstlisting}[breaklines=true]
 SUMOReal MSCFModel_Gipps::vFree(SUMOReal speed) const {
-    SUMOReal actualSpeed = speed;
-	SUMOReal result = actualSpeed + 2.5*myHeadwayTime*myAccel*(1-actualSpeed/myDesiredSpeed)*sqrt(0.025 + actualSpeed/myDesiredSpeed);
-    return result;
+ SUMOReal actualSpeed = speed;
+ SUMOReal result = actualSpeed + 2.5*myHeadwayTime*myAccel*(1-actualSpeed/myDesiredSpeed)*sqrt(0.025 + actualSpeed/myDesiredSpeed);
+ return result;
 }
 \end{lstlisting}
 
-Funkce pøesnì kopíruje vzorec \ref{eq:inequalitygipps}, kterı je u Gippsova modelu vzorec pro rychlost pøi volném proudu. Pokud je preferovaná rychlost $V_\n$ rovna aktuální rychlosti $v_\n (t)$, celı èlen za promìnnou actualSpeed se vyruší a dostáváme, e rychlost v následujícím kroku bude pøímo stejná jako aktuální.
+Funkce pøesnì kopíruje vzorec \eqref{eq:inequalitygipps}, kterı je u~Gippsova modelu vzorec pro rychlost pøi volném proudu. Pokud je preferovaná rychlost $V_\n$ rovna aktuální rychlosti $v_\n (t)$, celı èlen za promìnnou \textit{actualSpeed} se vyruší a dostáváme, e rychlost v~následujícím kroku bude pøímo stejná jako aktuální.
 
 Interakèní èlen nám dokumentuje funkce \textit{vInteraction} obsahující vıpoèet rychlosti na základì vedoucího vozidla. Její kód je následující:
 
@@ -116,15 +111,17 @@ SUMOReal MSCFModel_Gipps::vInteraction(SUMOReal speed, SUMOReal predSpeed, SUMOR
  }
 \end{lstlisting}
 
-Promìnná \textit{wholeGap} odpovídá èásti $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$. Tu bylo potøeba upravit pro úèely SUMO. Nemáme toti monost zjistit parametr $s_{\nm1}$, jen závísí na délce vedoucího vozidla a k této informaci se jednoduše nedostaneme. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k ní jsme pøièetli minimální bezpeènostní odstup. Tím bychom mìli dostat stejnı vısledek jako je uvedeno v Gippsovì modelu.
+Pro vìtší pøehlednost jsme kód funkce \textit{vInteraction} rozdìlili na více èástí. Podstatná je promìnná \textit{myGippsDecel}, kterou jsme na zaèátku nastavili jako zápornou a proto zde figuruje s~kladnım znaménkem.
 
-Další zajímavostí je vypoèet èlenu $\hat{b}$. Pøi kalibraci Gippsova modelu vyšla nejlépe varianta brzdná konstanta vedoucího vozidla bude rovna:
+Promìnná \textit{wholeGap} odpovídá èásti $\left[x_{\nm1} (t) - s_{\nm1} - x_\n (t)\right]$. Tu bylo potøeba upravit pro úèely SUMO. Nemáme toti monost zjistit parametr $s_{\nm1}$, jen závísí na délce vedoucího vozidla a k~této informaci se jednoduše nedostaneme. Proto jsme upravili tento èlen jako souèet vzdálenosti mezi vozidly (pøedek aktuálního vozidla a zadek vedoucího vozidla) a k~ní jsme pøièetli minimální bezpeènostní odstup. Tím bychom mìli dostat stejnı vısledek, jakı je uveden v~Gippsovì modelu.
+
+Další zajímavostí je vypoèet èlenu $\hat{b}$. Pro vıpoèet decelerace vedoucího vozidla $n-1$ zvolil Gipps na základì následující vztah
 \begin{equation}
-\hat{b} = \min \left(-3.0, \frac{b_\n - 3.0}{2}\right) m/sec^{-2}.
+\hat{b} = \min \left(-3.0, \frac{b_\n - 3.0}{2}\right) \text{m}/\text{s}^{-2}.
 \label{eq:hatbgipps}
 \end{equation}
 
-Tato rovnice pøepsaná do funkce se rovná pøesnì obsahu funkce \textit{chooseBrakeConst} definovanou v èásti private, viz vıše. Její kód je pomìrnì jednoduchı:
+Tato rovnice pøepsaná do funkce se rovná pøesnì obsahu funkce \textit{chooseBrakeConst} definovanou v~èásti private, viz vıše. Její kód je pomìrnì jednoduchı:
 
 \begin{lstlisting}[breaklines=true]
 SUMOReal MSCFModel_Gipps::chooseBrakeConst(SUMOReal decel) const{
@@ -134,13 +131,11 @@ SUMOReal MSCFModel_Gipps::chooseBrakeConst(SUMOReal decel) const{
 
 Funkce \textit{MIN2} je vlastní funkce SUMO, která hledá minimum ze dvou hodnot.
 
-Pro vìtší pøehlednost jsme kód funkce \textit{vInteraction} rozdìlili na více èástí. Podstatná je promìnná \textit{myGippsDecel}, kterou jsme na zaèátku nastavili jako zápornou a proto zde figuruje s kladnım znaménkem.
+V~tuto chvíli máme pøipravené obì funkce pro vıpoèet rychlostí pro vozidla vjídìjící do simulace.
 
-V tuto chvíli máme pøipravené obì funkce pro vıpoèet rychlostí pro vozidla vjídìjící do simulace.
+V~další fázi tyto funkce vyuijeme pro vıpoèty. Všechny následující funkce budeme pouze nahrazovat ji stávajícími, které obsahuje \textit{MSCFModel}. Vdycky je otázkou, zda je nutné danou funkci pøepisovat a nebo nechat její stávající verzi.
 
-V další fázi je potøeba tyto funkce vyuít pro vıpoèty. Všechny následující funkce budeme pouze nahrazovat ji stávajícími, které obsahuje \textit{MSCFModel}. Vdycky je otázkou, zda je nutné danou funkci pøepisovat a nebo nechat její stávající verzi.
-
-Zaèneme funkcí \textit{freeSpeed}. Tato funkce nám vypoèítává rychlost pøi volném proudu, tj. ve chvíli kdy pøed aktuálním vozidlem nejede ádné další. Mohli bychom tuto funkci nechat stejnou, tak jak je implementována v SUMO, ovšem daleko lepší bude tuto funkci pøepsat a to z toho dùvodu, e Gippsùv model pøímo uvauje o rychlosti pøi volném proudu. Definice pøepisovanıch funkcí necháme vdy stejné jako v \textit{MSCFModel.h}, pro \textit{freeSpeed} by definice\footnote{Kadá definice zde zmiòována bude umístìna do souboru MSCFModel\_Gipps.h do èásti public. Tato definice je shodná s definicí uvedenou v souboru MSCFModel.h} vypadala takto:
+Zaèneme funkcí \textit{freeSpeed}. Tato funkce nám vypoèítává rychlost pøi volném proudu, tj. ve chvíli, kdy pøed aktuálním vozidlem nejede ádné další. Mohli bychom tuto funkci nechat stejnou, tak jak je implementována v~SUMO, ovšem daleko lepší bude tuto funkci pøepsat a to z~toho dùvodu, e Gippsùv model pøímo uvauje o~rychlosti pøi volném proudu. Definice pøepisovanıch funkcí zùstanou stejné jako v~\textit{MSCFModel.h}, pro \textit{freeSpeed} by definice\footnote{Kadá definice metody zde zmiòována bude umístìna do souboru \texttt{MSCFModel\_Gipps.h} do èásti public. Tato definice je shodná s~definicí uvedenou v~souboru \texttt{MSCFModel.h}.} vypadala takto:
 
 \begin{lstlisting}[breaklines=true]
 virtual SUMOReal freeSpeed(const MSVehicle* const /* veh */, SUMOReal /* speed */, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion) const;
@@ -154,9 +149,9 @@ MSCFModel_Gipps::freeSpeed(const MSVehicle* const veh , SUMOReal  speed, SUMORea
 }
 \end{lstlisting}
 
-Je vidìt, e vìtšina vstupních parametrù funkce nejsou vùbec vyuity, nicménì musejí zde zùstat z dùvodu kompatibility s ostatními modely. Gippsùv model pøi vıpoètu jednoduše tyto parametry jednoduše neøeší.
+Je vidìt, e vìtšina vstupních parametrù funkce není vùbec vyuita, nicménì musejí zde zùstat z~dùvodu kompatibility s~ostatními modely. Gippsùv model pøi vıpoètu tyto parametry ignoruje.
 
-Další funkcí, kterou je nutné pøepsat, bude zcela jistì \textit{followSpeed}. Ta poèítá rychlost v závislosti na vedoucím vozidle. My ji víme, e tato funkce by mìla vracet stejnı vısledek jako rovnice \ref{eq:gipps}. Její implementace vypadá následovnì:
+Další funkcí, kterou je nutné v~modelu implementovat, je \textit{followSpeed}. Ta poèítá rychlost v~závislosti na vedoucím vozidle. My ji víme, e tato funkce by mìla vracet stejnı vısledek jako rovnice \eqref{eq:gipps}. Její implementace vypadá následovnì:
 
 \begin{lstlisting}[breaklines=true]
 SUMOReal
@@ -165,9 +160,11 @@ MSCFModel_Gipps::followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMORea
 }
 \end{lstlisting}
 
-Bylo vyzkoušeno zmìnit i funkci \textit{insertionFollowSpeed}, nicménì zatím se zdá, e stávající verze implementována v SUMO je plnì postaèující.
+\begin{comment}
+Bylo vyzkoušeno zmìnit i funkci \textit{insertionFollowSpeed}, nicménì zatím se zdá, e stávající verze implementována v~SUMO je plnì postaèující.
+\end{comment}
 
-Další funkcí k pøepsání je \textit{stopSpeed}. Tato funkce má stejné parametry jako \textit{followSpeed} a na parametr \textit{predSpeed}, kterı je v tuto chvíli nulovı, protoe tato funkce poèítá rychlost, pokud se pøed ní nachazí statickı objekt. Proto voláme stejné funkce jako u \textit{followSpeed} s tím, e \textit{predSpeed} má hodnotu nula.
+Poslední metodou, kterou musíme ve tøíde \textit{MSCFModel\_Gipps} vytvoøit, je \textit{stopSpeed}. Tato funkce má stejné parametry jako \textit{followSpeed} a na parametr \textit{predSpeed}, kterı je v~tuto chvíli nulovı, protoe tato funkce poèítá rychlost, pokud se pøed vozidlem nachazí statickı objekt. Proto voláme stejné funkce jako u~\textit{followSpeed} s~tím, e \textit{predSpeed} má hodnotu nula:
 
 \begin{lstlisting}[breaklines=true]
 SUMOReal
@@ -176,4 +173,4 @@ MSCFModel_Gipps::stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUM
 }
 \end{lstlisting}
 
-Tímto je novı model implementován.
+Tím je novı model implementován.

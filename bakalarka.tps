@@ -17,7 +17,7 @@ Class=LaTeXView
 Document=porovnani.tex
 
 [Frame0_View0,0]
-TopLine=142
+TopLine=133
 Cursor=10428
 
 [Frame1]
@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=literatura.tex
 
 [Frame2_View0,0]
-TopLine=21
-Cursor=2014
+TopLine=29
+Cursor=2889
 
 [Frame3]
 Flags=0
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame4_View0,0]
-TopLine=3
-Cursor=1900
+TopLine=376
+Cursor=27209
 
 [Frame5]
 Flags=0
@@ -125,7 +125,7 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame6_View0,0]
-TopLine=262
+TopLine=318
 Cursor=22712
 
 [Frame7]
@@ -143,8 +143,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame7_View0,0]
-TopLine=1036
-Cursor=58504
+TopLine=642
+Cursor=36458
 
 [Frame8]
 Flags=0
@@ -197,12 +197,12 @@ Class=LaTeXView
 Document=zaver.tex
 
 [Frame10_View0,0]
-TopLine=61
+TopLine=0
 Cursor=8076
 
 [SessionInfo]
 FrameCount=11
-ActiveFrame=10
+ActiveFrame=4
 
 [Bookmarks]
 predidm.tex=475 295 172 13 666 804 
