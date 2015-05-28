@@ -277,3 +277,99 @@ gippsParams.insert(SUMO_ATTR_TAU);
 gippsParams.insert(SUMO_ATTR_CF_DESIREDSPEED);
 allowedCFModelAttrs[SUMO_TAG_CF_GIPPS] = gippsParams;
 \end{lstlisting}
+
+\chapter{$\chi^2$ test dobré shody}
+\label{chap:chi2test}
+Je všeobecnì známým faktem, že vozidla se generují z exponenciálního rozdìlení za podmínky, že èetnosti poètu vozidel, které vjíždí do oblasti, má Poissonovo rozdìlení. Bylo proto nutné otestovat, zda poèty vozidel mají opravdu Poissonovo rozdìlení. Pro toto testování se používá $\chi^2$ test dobré shody.
+
+Statistika, podle které budeme testovat, má tvar
+\begin{equation}
+\chi^2 = \sum_{i=1}^k \frac{\left(x_i -n_i\right)^2}{n_i},
+\label{eq:chi2}
+\end{equation}
+kde je $x_i$ skuteèná èetnost a $n_i$ oèekávaná èetnost dle Poissonova rozdìlení.
+
+Pro tento test jsem zvolil dvì èásti dne - ranní hodinu od 6:00 do 7:00 a odpolední hodinu mezi 15:00 a 18:00 hodinou na státní svátek 28.10.2012, a to z dùvodu, že tento den také probíhají simulace.
+
+V ranní špièky byly zjištìny hodnoty, které jsou shrnuty v tabulce \ref{tablerano}. Poèet stupòù volnosti $\chi^2$ rozdìlení je poèet tøídy - 1, v našem pøípadì to bude 8.
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Poèet vozidel & Èetnost & Oèekávaná èetnost \\ \hline
+0             & 1       & 2,56             \\ \hline
+1             & 9       & 9,6             \\ \hline
+2             & 25      & 18            \\ \hline
+3             & 20      & 22,52           \\ \hline
+4             & 14      & 21,13            \\ \hline
+5             & 20      & 15,85           \\ \hline
+6             & 10      & 9,91            \\ \hline
+7             & 6       & 5,31             \\ \hline
+8             & 4       & 4,11            \\ \hline
+\end{tabular}
+\caption{Èetnosti v èase od 6:00 do 7:00, 28.10.2012}
+\label{tablerano}
+\end{center}
+\end{table}
+
+Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 3,75$.
+
+Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
+\begin{equation}
+\chi^2 = 7,56,
+\label{eq:ci2stat}
+\end{equation}
+
+a kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
+\begin{equation}
+\chi^2_{\text{krit};0,95;8} = 15,51.
+\label{eq:ci2stat}
+\end{equation} 
+
+Je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a z 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.
+
+To sáme provedeme pro druhou èást dne mezi 15:00 -- 18:00 hodinou. Èetnosti jsou shrnuty v tabulce \ref{tableodpo}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Poèet vozidel & Èetnost & Oèekávaná èetnost \\ \hline
+25            & 12       & 19,33              \\ \hline
+26            & 11       & 6,06               \\ \hline
+27            & 12       & 7,61               \\ \hline
+28            & 7        & 9,21               \\ \hline
+29            & 12       & 10,77              \\ \hline
+30            & 10       & 12,18              \\ \hline
+31            & 8        & 13,32              \\ \hline
+32            & 17       & 14,12              \\ \hline
+33            & 15       & 14,51              \\ \hline
+34            & 12       & 14,47              \\ \hline
+35            & 13       & 14,02              \\ \hline
+36            & 6        & 13,2               \\ \hline
+37            & 15       & 12,1               \\ \hline
+38            & 8        & 10,8               \\ \hline
+39            & 8        & 9,39               \\ \hline
+40            & 13       & 7,96               \\ \hline
+41            & 8        & 6,58               \\ \hline
+42            & 25       & 16,37              \\ \hline\end{tabular}
+\caption{Èetnosti v èase od 6:00 do 7:00, 28.10.2012}
+\label{tableodpo}
+\end{center}
+\end{table}
+
+Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 33,91$.
+
+Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
+\begin{equation}
+\chi^2 = 27,23,
+\label{eq:ci2stat}
+\end{equation}
+
+a kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
+\begin{equation}
+\chi^2_{\text{krit};0,95;8} = 27,58.
+\label{eq:ci2stat}
+\end{equation} 
+
+Je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a z 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.

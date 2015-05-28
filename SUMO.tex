@@ -203,26 +203,16 @@ Implicitnì je výchozí generování vozidel deterministické. Pokud nám v~jedné minu
 java -jar AllInOne.jar -c sokp-0201-20121001.mat vozidla.rou.xml Gipps
 \end{lstlisting}
 
-\begin{figure}[ht]%
-		 \centering
-		 	\begin{minipage}[c]{7cm}
-       	\includegraphics[width=7cm]{images/poisson25}
-			\end{minipage}
-			\begin{minipage}[c]{7cm}
-			  \includegraphics[width=7cm]{images/poisson69}%
-			\end{minipage}
-		  \\
-			\begin{minipage}[c]{7cm}
-				\caption{Èetnosti pro èas od 2:00-5:00}
-				\label{poisson25}%
-			\end{minipage}
-			\begin{minipage}[c]{7cm}
-			  \caption{Èetnosti pro èas od 6:00-9:00}%
-			  \label{poisson69}
-			\end{minipage}			
+\begin{figure}[h]
+	\begin{tabular}{cc}
+		\includegraphics[width=0.45\textwidth]{images/poisson67.pdf} & \includegraphics[width=0.45\textwidth]{images/poisson1518.pdf}  \\
+		a) Èas 6:00 -- 7:00 & b) Èas 15:00 -- 18:00
+	\end{tabular}
+		\caption{Èetnosti vozidel -- 28.10.2012}
+\label{poissoncetnosti}
 \end{figure}
 
-Další varianta využívá znalost, že pokud rozdìlení poètu vozidel za nìjaký èas je Poissonovo, potom odstupy mezi vozidly mají exponenciální rozdìlení. Z~pohledu na obrázek \ref{poisson25} a \ref{poisson69}\footnote{vytvoøeny také tímto programem} lze pøedpokládat, že se opravdu jedná o~Poissonovo rozdìlení.
+Další varianta využívá znalost, že pokud rozdìlení poètu vozidel za nìjaký èas je Poissonovo, potom odstupy mezi vozidly mají exponenciální rozdìlení. Z~pohledu na obrázek \ref{poissoncetnosti}\footnote{vytvoøen také tímto programem} lze pøedpokládat, že se opravdu jedná o~Poissonovo rozdìlení. Pro kontrolu byl ještì proveden test, zda se jedná o Poissonovo rozdìlení, který je uveden v pøíloze \ref{chap:chi2test}.
 
 Pokud chceme, aby se nám vozidla generovala z~exponenciálního rozdìlení, kde se každou minutu bude mìnit jeho parametr $\lambda$ ( v~závislosti na poètu vjíždìjících vozidel za minutu), zvolíme možnost spuštìní s~dodateèným parametrem exp:
 
@@ -365,6 +355,6 @@ java -jar AllInOne.jar -xh detektor.xml histogram.pdf 60
 		\end{lstlisting}
 	\item vytvoøení histogramu èetností vozidel -- v~tomto pøípadì od 2 do 5 hodin ráno
 		\begin{lstlisting}[breaklines=true]
-java -jar AllInOne.jar -xh detektor.xml histogram.pdf 2:00 5:00
+java -jar AllInOne.jar -h detektor.xml histogram.pdf 2:00 5:00
 		\end{lstlisting}
 \end{itemize} 
