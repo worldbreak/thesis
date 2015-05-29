@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=porovnani.tex
 
 [Frame0_View0,0]
-TopLine=138
-Cursor=7734
+TopLine=0
+Cursor=124
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=kalibrace.tex
 
 [Frame1_View0,0]
-TopLine=77
-Cursor=16660
+TopLine=192
+Cursor=14553
 
 [Frame2]
 Flags=0
@@ -71,7 +71,7 @@ Class=LaTeXView
 Document=uvod.tex
 
 [Frame3_View0,0]
-TopLine=57
+TopLine=69
 Cursor=7831
 
 [Frame4]
@@ -89,8 +89,8 @@ Class=LaTeXView
 Document=SUMO.tex
 
 [Frame4_View0,0]
-TopLine=259
-Cursor=17404
+TopLine=422
+Cursor=25439
 
 [Frame5]
 Flags=0
@@ -107,8 +107,8 @@ Class=LaTeXView
 Document=bakalarka.tex
 
 [Frame5_View0,0]
-TopLine=262
-Cursor=7369
+TopLine=312
+Cursor=10512
 
 [Frame6]
 Flags=0
@@ -125,8 +125,8 @@ Class=LaTeXView
 Document=priloha.tex
 
 [Frame6_View0,0]
-TopLine=355
-Cursor=24155
+TopLine=0
+Cursor=44
 
 [Frame7]
 Flags=0
@@ -143,8 +143,8 @@ Class=LaTeXView
 Document=predidm.tex
 
 [Frame7_View0,0]
-TopLine=1036
-Cursor=57816
+TopLine=834
+Cursor=47431
 
 [Frame8]
 Flags=0
@@ -161,8 +161,8 @@ Class=LaTeXView
 Document=novymodel.tex
 
 [Frame8_View0,0]
-TopLine=205
-Cursor=12967
+TopLine=96
+Cursor=8645
 
 [Frame9]
 Flags=0
@@ -179,8 +179,8 @@ Class=LaTeXView
 Document=simulace.tex
 
 [Frame9_View0,0]
-TopLine=169
-Cursor=7124
+TopLine=229
+Cursor=12491
 
 [Frame10]
 Flags=0
@@ -197,12 +197,12 @@ Class=LaTeXView
 Document=zaver.tex
 
 [Frame10_View0,0]
-TopLine=72
-Cursor=6868
+TopLine=63
+Cursor=9153
 
 [SessionInfo]
 FrameCount=11
-ActiveFrame=9
+ActiveFrame=5
 
 [Bookmarks]
 predidm.tex=475 295 172 13 666 804 

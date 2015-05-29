@@ -1,8 +1,8 @@
 \appendix
 \newpage
-\setcounter{page}{1}
+%\setcounter{page}{1}
 \setcounter{chapter}{0}
-\pagenumbering{Roman}
+%\pagenumbering{Roman}
 
 \chapter{Hodnoty GEH pro jednotlivé modely}
 \label{sec:GEHappendix}
@@ -153,10 +153,10 @@ V~následujících tabulkách jsou uvedeny hodnoty GEH pro všechny brány. Výpoèet by
 \chapter{Kompilace simulaèního softwaru SUMO}
 \label{kompilaceSUMO}
 \section{SUMO}
-SUMO je volnì šiøitelný dopravní simulátor, který vznikl v~roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøedky, mìstskou hromadnou dopravu èi chodce. Dále v~SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o~sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{sec:IDM} a Wiedermanùv model. 
+SUMO je volnì šiøitelný dopravní simulátor, který vznikl v~roce 2001. SUMO umožòuje modelování intermodálních dopravních systémù. Ty mohou obsahovat dopravní prostøed\-ky, mìstskou hromadnou dopravu èi chodce. Dále v~SUMO existují nástroje pro vyhledávání cesty, visualizace, import èi export map, poèítání emisí a další. Nejdùležitìjší vlastností pro nás je možnost implmentování vlastního dopravního modelu. SUMO samo o~sobì již obsahuje nìkteré modely - Kraussùv model \ref{sec:Krauss}, Intelligent Driver Model \ref{sec:IDM} a Wiedermanùv model. 
 
 \subsection{SUMO download}
-Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažujeme pouze pøípad dopravního simulátoru SUMO pod Windows, v~dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V~souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V~tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v~nìkterých èástech není dostateènì pøesný.
+Na stránkách projektu SUMO\footnote{http://www.dlr.de/ts/sumo/en} se stáhne aktuální verze SUMO na pravé stranì. Uvažu\-jeme pouze pøípad dopravního simulátoru SUMO pod Windows, v~dobì vzniku byla na svìtì verze SUMO 0.22. Ideální je varianta stáhnutí tøí zkomprimovaných souborù. Pro potøeby kompilace staèí pouze soubor SUMO 0.22 sources (sumo-src-0.22.0,14 MB). V~souboru SUMO 0.22 manual, tutorial and examples (sumo-doc-0.22.0.zip, 35 MB) se nachází podrobná dokumentace ke všem naprogramovaným souèástem SUMO a SUMO 0.22 for Windows (sumo-winbin-0.22.0.zip, 33 MB) obsahuje již zkompilované SUMO, které je možné rovnou použít. V~tomto souboru se ve složce \textit{docs/userdoc} nachází uživatelská pøíruèka, která obsahuje i návod na zkompilování SUMO pod Windows. Tento návod ovšem v~nìkterých èástech není dostateènì pøesný.
 
 \section{Visual Studio}
 Pro zkompilování SUMO je zapotøebí mít nainstalované Visual Studio. To je možné získat pøímo na stránkách Visual Studia\footnote{http://www.visualstudio.com} a po zaregistrování je možno získat Expres edici Visual Studia. Autor pracuje s~Visual Studio 2010 Pro. Kompilace SUMO je tedy vyzkoušena na této verzi. \textbf{Pro správné fungování Visual Studia je nutné mít nainstalován Microsoft .NET Framework verze 4 ne vyšší! }
@@ -173,7 +173,7 @@ Dùraznì se doporuèuje ani jednu z~tìchto èástí neinstalovat do klasického adresá
 Nutné je také mít nainstalovaný Python (pro nìj neplatí pøedchozí odstavec), ovšem pozor rozhodnì ne nejnovìjší verzi\footnote{3 a výše}, nýbrž verzi 2.7\footnote{https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi, 16 MB}. U~Pythonu není nutné žádné další nastavení.
 
 \subsection{Xerces-C}
-Nejprve rozbalíme obsah archivu a posléze pøekopírujeme ze složky \textit{bin} obì dll knihovny\footnote{xerces-c\_3-1.dll a xerces-c\_3\_1D} do složky \textit{Windows/System32}. Pøes veškerou snahu se nepodaøilo XERCES naimportovat všem projektùm. Tím pádem se musí celý obsah složky \textit{include} pøekopírovat do složky, kde je nainstalované Visual Studio do složky \textit{vc/include} \footnote{napø. c:/Program Files/Microsoft Visual Studio 10.0/VC/include/}. Výsledkem tedy bude pøekopírovaná složka \textit{Xercesc} ze složky \textit{Xerces/include/} do složky \textit{/vc/include}. Pro kompilaci a následné spuštìní zkompilovaných programù je nutno vytvoøit systémovou promìnnou XERCES\footnote{Start - Poèítaè - Vlastnosti systému - Upøesnit nastavení systému (nabídka na pravé stranì) - Promìnné prostøedí... - Systémové promìnné - Nová...}, jejíž hodnota bude nastavena na koøenový adresáø Xerces. Poté vyhledáme v~systémových promìnných promìnnou PATH a nakonec hodnoty této promìnné pøidáme \%XERCES\%/bin/.
+Nejprve rozbalíme obsah archivu a posléze pøekopírujeme ze složky \textit{bin} obì dll knihovny\footnote{xerces-c\_3-1.dll a xerces-c\_3\_1D} do složky \textit{Windows/System32}. Pøes veškerou snahu se nepodaøilo XERCES naimportovat všem projektùm. Tím pádem se musí celý obsah složky \textit{include} pøekopírovat do složky, kde je nainstalované Visual Studio do složky \textit{vc/include} \footnote{napø. c:/Program Files/Microsoft Visual Studio 10.0/VC/include/}. Výsledkem tedy bude pøekopírovaná složka \textit{Xercesc} ze složky \textit{Xerces/include/} do složky \textit{/vc/include}. Pro kompilaci a následné spuštìní zkompilovaných programù je nutno vytvoøit systémovou promìnnou XERCES\footnote{Start - Poèítaè - Vlastnosti systému - Upøesnit nastavení systému (nabídka na pravé stranì) - Promìnné prostøedí... - Systémové promìnné - Nová...}, jejíž hodnota bude nastavena na koøenový adresáø Xerces. Poté vyhledáme v~systémových promìnných promìnnou PATH a nakonec hodnoty této pro\-mìnné pøidáme \%XERCES\%/bin/.
 
 \subsection{FOX}
 
@@ -280,7 +280,7 @@ allowedCFModelAttrs[SUMO_TAG_CF_GIPPS] = gippsParams;
 
 \chapter{$\chi^2$ test dobré shody}
 \label{chap:chi2test}
-Je všeobecnì známým faktem, že vozidla se generují z exponenciálního rozdìlení za podmínky, že èetnosti poètu vozidel, které vjíždí do oblasti, mají Poissonovo rozdìlení. Bylo proto nutné tento pøedpoklad otestovat. Pro toto testování se používá $\chi^2$ test dobré shody.
+Je všeobecnì známým faktem, že vozidla se generují z exponenciálního rozdìlení za podmínky, že èetnosti poètu vozidel, která vjíždí do oblasti, mají Poissonovo rozdìlení. Bylo proto nutné tento pøedpoklad otestovat. Pro toto testování se používá $\chi^2$ test dobré shody.
 
 Statistika, podle které budeme testovat, má tvar
 \begin{equation}
@@ -289,9 +289,12 @@ Statistika, podle které budeme testovat, má tvar
 \end{equation}
 kde je $x_i$ skuteèná èetnost a $n_i$ oèekávaná èetnost dle Poissonova rozdìlení.
 
-Pro tento test jsem zvolil dvì èásti dne - ranní hodinu od 6:00 do 7:00 a odpolední hodinu mezi 15:00 a 18:00 hodinou v den státního svátku 28.10.2012, a to z dùvodu, že tento den jsem posléze simuloval provoz na Silnièním okruhu kolem Prahy.
+Pro tento test jsem zvolil dvì èásti dne -- ranní hodinu od 6:00 do 7:00 a odpolední hodinu mezi 15:00 a 18:00 hodinou v den státního svátku 28.10.2012, a to z dùvodu, že tento den jsem posléze simuloval provoz na Silnièním okruhu kolem Prahy.
 
-V ranní špièce byly zjištìny hodnoty, které jsou shrnuty v tabulce \ref{tablerano}. Poèet stupòù volnosti $\chi^2$ rozdìlení je poèet tøídy - 1, v našem pøípadì to bude 8.
+$\chi^2$ rozdìlení má pouze jeden parametr $\chi^2 (n-1)$, kde $n$ je poèet stupòù volnosti. V našem pøípadì je n rovno poètu tøíd (øádkù v tabulkách -- viz dále).
+
+V ranní špièce byly zjištìny hodnoty, které jsou shrnuty v tabulce \ref{tablerano}. 
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|c|c|c|}
@@ -312,23 +315,20 @@ Poèet vozidel & Èetnost & Oèekávaná èetnost \\ \hline
 \end{center}
 \end{table}
 
-Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 3,75$.
-
-Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
+Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 3{,}75$, kde støední hodnota byla zjištìna jako vážený prùmìr poètu èetností. Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
 \begin{equation}
 \chi^2 = 7,56,
-\label{eq:ci2stat}
+\label{eq:ci2stat1}
 \end{equation}
-
-a kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
+pøièemž kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
 \begin{equation}
 \chi^2_{\text{krit};0,95;8} = 15,51.
-\label{eq:ci2stat}
+\label{eq:ci2krit1}
 \end{equation} 
 
-Je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a z 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.
+Z výše uvedených údajù je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a s 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.
 
-To sáme provedeme pro druhou èást dne mezi 15:00 -- 18:00 hodinou. Èetnosti jsou shrnuty v tabulce \ref{tableodpo}.
+To samé provedeme pro druhou èást dne mezi 15:00 a 18:00. Èetnosti jsou shrnuty v tabulce \ref{tableodpo}.
 
 \begin{table}[h]
 \begin{center}
@@ -358,18 +358,15 @@ Poèet vozidel & Èetnost & Oèekávaná èetnost \\ \hline
 \end{center}
 \end{table}
 
-Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 33,91$.
-
-Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
+Stanovíme si hypotézu $H_0$, že výbìr vozidel pochází z Poissonova rozdìlení se støední hodnotou $\mu = 33,91$. Z èetností a oèekávaných èetností byla vypoètena statistika $\chi^2$,
 \begin{equation}
 \chi^2 = 27,23,
-\label{eq:ci2stat}
+\label{eq:ci2stat2}
 \end{equation}
-
-a kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
+pøièemž kritická hodnota pro $\chi^2$ na hladinì významnosti 5\,\% byla rovna
 \begin{equation}
 \chi^2_{\text{krit};0,95;8} = 27,58.
-\label{eq:ci2stat}
+\label{eq:ci2krit2}
 \end{equation} 
 
-Je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a z 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.
+Z výše uvedených údajù je vidìt, že $\chi^2_{\text{krit};0,95;8} > \chi^2$ a z 5\% pravdìpodobností nezamítáme hypotézu, že se jedná o Poissonovo rozdìlení.

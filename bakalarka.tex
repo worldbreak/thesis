@@ -15,7 +15,7 @@
 \end{comment}
 
 \let\openright=\cleardoublepage
-
+\usepackage{pdfpages}
 \usepackage{geometry}
 %\usepackage{k336_thesis_macros}
 %% Pokud používáte csLaTeX (doporuèeno):
@@ -89,7 +89,7 @@ showstringspaces=false}
         \rule[1pt]{6pt}{6pt}\ \upshape\textsf{\bfseries#1}\ \rule[1pt]{6pt}{6pt}}}
 \newcommand{\doplnit}{\textcolor{red}{\rem{DOPLNIT}}}
 
-
+\setlength\mathindent{\parindent}
 
 %%% Drobné úpravy stylu
 
@@ -194,8 +194,8 @@ showstringspaces=false}
 \righthyphenmin=2
 
 %%% Titulní strana práce
-papír pro razítko ústavu K611
-\newpage
+%papír pro razítko ústavu K611
+%\newpage
 \pagestyle{empty}
 \begin{center}
 
@@ -251,7 +251,10 @@ Praha 2015
 \end{center}
 
 \newpage
-Papír se zadáním diplomové práce
+\includepdf{images/zadani-1.pdf}
+
+\newpage
+\includepdf{images/zadani-2.pdf}
 
 \openright
 
@@ -271,8 +274,9 @@ Na prvním místì jsou to mí rodièe, kteøí mì neustále podporovali bìhem mého dlou
 Dále bych chtìl podìkovat mému vedoucímu Janu Pøikrylovi, který se mnou moji diplomovou práci neustále konzultoval, kamarádovi Mikuláši Dítìti, který mi pomohl v prvních krocích se softwarem SUMO, Tomáši Tøasákovi za diskuse nad tématy v diplomové práci, Ondøeji Hábovi za pomoc pøi jazykových korekturách, Krzystzofu Urbaòcovi za pomoc pøi hledání chyb a diskusích nejen o diplomové práci, Ivanovi Nagyovi pøi konzultacích o statistických metodách a celému Ústavu aplikované matematiky za prostøedí k psaní diplomové práce.
 \newpage
 
+\includepdf{images/prohlaseni.pdf}
 %%% Strana s èestným prohlášením k bakaláøské práci
-
+\begin{comment}
 \vglue 0pt plus 1fill
 
 
@@ -303,27 +307,35 @@ Podpis autora ............
 
 \vspace{20mm}
 \newpage
-
+\end{comment}
 %%% Povinná informaèní strana bakaláøské práce
 %\abstractpage
 \begin{comment}
+\noindent
 This bachelor thesis deals with programming an application, in which is implemented Intelligent Driver model and overtaking model MOBIL. The macroscopic and microscopic models are briefly described in the theoretical part. In my work are explained numerical methods for solving ordinary differential equations that are important for IDM and MOBIL. For programming these models was used Java.  For verification the rightness of these models were perfomed several simulations and the results are the graphs describing the behavior of individual vehicles or the behavior of the whole traffic flow.
 \end{comment}
 %\end{comment}
-\noindent{\Huge \textbf{Abstract}}
+\noindent{\Huge \textbf{Abstrakt}}
 \vskip 2.75\baselineskip
-In this diploma thesis we have studied selected mathematical models developed to mimic the behavior of the real traffic flow. In the theoretical part we introduced some basic ideas related to the models of the traffic flow. We introduce basic microscopic models which are used for traffic simulations. Next we familiarize with validation and calibration of these models, which are assumption for properly working model. In the practical part of the thesis we perform simulations in SUMO software. This software includes some of the models, the other ones will be implemented. After that, we started the simulations for each model. The results from these simulations we analyse with statistical methods and graphically.
+\noindent
+V této diplomové práci studujeme vybrané mikroskopické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy spojené s tìmito modely. Pøedstavíme skupinu hlavních mikroskopických modelù, které se v dnešní dobì používají k simulaci dopravy. Dále se seznámíme s validací a kalibrací tìchto modelù, které jsou pøedpokladem pro správnì fungující model.
+V praktické èásti budeme provádìt simulace v softwaru SUMO. Ten již nìkteré z modelù obsahuje, ostatní do nìj budou implementovány. Poté spustíme samotné simulace pro všechny modely. Výsledky z tìchto modelù na základì statistických metod èi graficky vyhodnotíme.
 
-
+\vspace{1cm}
+\noindent 
+\textbf{Klíèová slova:} modely sledu vozidel, mikrosimulace, SUMO, validace modelu, verifikace modelu, GEH
 %both macroscopic and microscopic models, then we restrict our attention to the latter and briefly review existing microscopic models. Next we introduce the elementary theory of dynamical systems and discuss the stability analysis by linearization. Finally we present numerical methods for solving ordinary differential equations (Euler method, Runge-Kutta methods) and present the so-called Intelligent Driver Model (IDM) in detail. In the practical part of the thesis we implement the IDM model in computer language Java. Our application, being the most important result of the thesis, solves dynamical equations of IDM model and represents the results both in the graphic form and in the form of data files. Moreover, we have extended basic IDM model by overtaking model known as MOBIL. At the end of the thesis, after explaining main features and algorithms used in the application, we present full source code and a number of results obtained.
 % Prace v cestine musi krome abstraktu v anglictine obsahovat i
 % abstrakt v cestine.
-\vglue60mm
-\noindent{\Huge \textbf{Abstrakt}}
+\vglue30mm
+\noindent{\Huge \textbf{Abstract}}
 \vskip 2.75\baselineskip
+\noindent
+In this diploma thesis we study selected mathematical car-following models that were developed to mimic the behavior of the real traffic flow. In the theoretical part some basic ideas related to the traffic flow models are introduced and a set of popular microscopic car-following models is presented in detail. We introduce the basic microscopic models which are used for traffic simulations. As these models are parametric, model calibration are studied next in order to provide model representation that are appropriately set up for simulation purposes, which are assumption for properly working model. In the practical part of the thesis we perform simulations. These siimulations are carried out in SUMO micro-simulator. This software already includes some of the models, the remaining modeles were implemented by the author. The results from these simulations are analysed by statistical methods and graphically and the model output is compared to real-woprld measurements.
 
-V této diplomové práci studujeme vybrané mikroskopické modely, které se snaží napodobit chování dopravního toku. V teoretické èásti pøedstavíme základní principy spojené s tìmito modely. Pøedstavíme skupinu hlavních mikroskopických modelù, které se v dnešní dobì používají k simulaci dopravy. Dále se seznámíme s validací a kalibrací tìchto modelù, které jsou pøedpokladem pro správnì fungující model.
-V praktické èásti budeme provádìt simulace v softwaru SUMO. Ten již nìkteré z modelù obsahuje, ostatní do nìj budou implementovány. Poté spustíme samotné simulace pro všechny modely. Výsledky z tìchto modelù na základì statistických metod èi graficky vyhodnotíme.
+\vspace{1cm}
+\noindent 
+\textbf{Keywords:} car-following models, microsimulations, SUMO, model validation, model calibration, GEH
 
 %Tato diplomovová práce se zabývá implementací a následným vyhodnocením výsledkù mikroskopických modelù.
 %V teoretické èásti jsou matematicky popsány jednotlivé mikroskopické modely, dále jsou zde uvedeny informace o validaci a kalibraci modelu.

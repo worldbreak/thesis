@@ -89,20 +89,20 @@
 \contentsline {chapter}{Literatura}{72}{chapter*.16}
 \contentsline {chapter}{Seznam obr\'azk\r u}{76}{chapter*.17}
 \contentsline {chapter}{Seznam tabulek}{76}{chapter*.18}
-\contentsline {chapter}{\numberline {A}Hodnoty GEH pro jednotliv\'e modely}{I}{appendix.A}
-\contentsline {chapter}{\numberline {B}Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{V}{appendix.B}
-\contentsline {section}{\numberline {B.1}SUMO}{V}{section.B.1}
-\contentsline {subsection}{\numberline {B.1.1}SUMO download}{V}{subsection.B.1.1}
-\contentsline {section}{\numberline {B.2}Visual Studio}{V}{section.B.2}
-\contentsline {section}{\numberline {B.3}Ostatn\IeC {\'\i } z\'avislosti}{V}{section.B.3}
-\contentsline {subsection}{\numberline {B.3.1}Xerces-C}{VI}{subsection.B.3.1}
-\contentsline {subsection}{\numberline {B.3.2}FOX}{VI}{subsection.B.3.2}
-\contentsline {subsection}{\numberline {B.3.3}FWTools}{VII}{subsection.B.3.3}
-\contentsline {subsection}{\numberline {B.3.4}SUMO}{VII}{subsection.B.3.4}
-\contentsline {chapter}{\numberline {C}Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v~SUMO}{VIII}{appendix.C}
-\contentsline {section}{\numberline {C.1}OpenStreetMap}{VIII}{section.C.1}
-\contentsline {section}{\numberline {C.2}netConvert}{VIII}{section.C.2}
-\contentsline {chapter}{\numberline {D}Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{X}{appendix.D}
-\contentsline {section}{\numberline {D.1}Implementace nov\'eho modelu}{X}{section.D.1}
-\contentsline {section}{\numberline {D.2}Implementace nov\'ych parametr\r u}{XI}{section.D.2}
-\contentsline {chapter}{\numberline {E}$\chi ^2$ test dobr\'e shody}{XII}{appendix.E}
+\contentsline {chapter}{\numberline {A}Hodnoty GEH pro jednotliv\'e modely}{77}{appendix.A}
+\contentsline {chapter}{\numberline {B}Kompilace simula\v cn\IeC {\'\i }ho softwaru SUMO}{81}{appendix.B}
+\contentsline {section}{\numberline {B.1}SUMO}{81}{section.B.1}
+\contentsline {subsection}{\numberline {B.1.1}SUMO download}{81}{subsection.B.1.1}
+\contentsline {section}{\numberline {B.2}Visual Studio}{81}{section.B.2}
+\contentsline {section}{\numberline {B.3}Ostatn\IeC {\'\i } z\'avislosti}{81}{section.B.3}
+\contentsline {subsection}{\numberline {B.3.1}Xerces-C}{82}{subsection.B.3.1}
+\contentsline {subsection}{\numberline {B.3.2}FOX}{82}{subsection.B.3.2}
+\contentsline {subsection}{\numberline {B.3.3}FWTools}{83}{subsection.B.3.3}
+\contentsline {subsection}{\numberline {B.3.4}SUMO}{83}{subsection.B.3.4}
+\contentsline {chapter}{\numberline {C}Vytvo\v ren\IeC {\'\i } s\IeC {\'\i }t\v e pro simulaci v~SUMO}{84}{appendix.C}
+\contentsline {section}{\numberline {C.1}OpenStreetMap}{84}{section.C.1}
+\contentsline {section}{\numberline {C.2}netConvert}{84}{section.C.2}
+\contentsline {chapter}{\numberline {D}Vytvo\v ren\IeC {\'\i } soubor\r u pro nov\'y model}{86}{appendix.D}
+\contentsline {section}{\numberline {D.1}Implementace nov\'eho modelu}{86}{section.D.1}
+\contentsline {section}{\numberline {D.2}Implementace nov\'ych parametr\r u}{87}{section.D.2}
+\contentsline {chapter}{\numberline {E}$\chi ^2$ test dobr\'e shody}{88}{appendix.E}
