@@ -19,13 +19,13 @@ V~této kapitole rozebereme simulaèní software SUMO\footnote{Simulation of Urban 
 
 \section{SUMO}
 \label{sec:SUMO}
-SUMO je open-source nástroj pro dopravní simulace vyvíjenı centrem DLR\footnote{Deutsches Zentrum für Luft- und Raumfahrt - Nìmecké støedisko pro letectví a kosmonautiku} v oddìlení institutu pro dopravní systémy v Nìmecku. Ve vızkumu se dá SUMO vyuít v~mnoha oblastech, napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v~dobì Mistrovství svìta ve fotbale v~Nìmecku v~roce 2006 v~Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
+SUMO je otevøenı nástroj pro dopravní simulace vyvíjenı centrem DLR\footnote{Deutsches Zentrum für Luft- und Raumfahrt - Nìmecké støedisko pro letectví a kosmonautiku} v oddìlení Institutu pro dopravní systémy v Nìmecku. Ve vızkumu se dá SUMO vyuít v~mnoha oblastech, napø. vyhledání nejkratší cesty\footnote{èi jiného kritéria}, monost zkoušení signálních plánù nebo simulace komunikace mezi vozidly. SUMO bylo a je vyuíváno na mnoha zajímavıch projektech\footnote{napø. pøedpovìï dopravních proudù v~dobì Mistrovství svìta ve fotbale v~Nìmecku v~roce 2006 v~Kolínì nad Rınem, vyuití komunitou V2X pro zjišování dráhy vozidla atd.}.
 
 Od roku 2001 se SUMO postupnì rozšiøovalo a nyní je z~nìj ji soubor nìkolika programù. Umoòuje na základì dopravních mìøení a O/D matic vyuívat rùzné routovací algoritmy, simulování køiovatek. Obsahuje také rozhraní TraCI pro online simulaci.
 
 Existují nìkteré další volnì dostupné simulaèní softwary, které se však dále nerozvíjely a pøestaly bıt døíve èi pozdìji podporovány. Toto je u SUMO vysoce nepravdìpodobné z dùvodu vıvoje v rámci DLR.
 
-Pøi vıvoji SUMO existovaly dva hlavní dùvody, proè by mìl bıt otevøenım softwarem. První z~nich je snaha podporovat spoleèenství, které se zabıvá simulacemi, volnì dostupnım nástrojem, ve kterém ji budou zahrnuty základní algoritmy. Druhım dùvodem je fakt, e pro dopravní simulace neexistuje na trhu nástroj, jen by umonil jednoduše porovnávat rùzné dopravní modely (a u jde o modely sledu vozidel, pøedjdìcí modely, èi øízení dopravy).
+Pøi vıvoji SUMO existovaly dva hlavní dùvody, proè by mìl bıt otevøenım softwarem. První z~nich je snaha podporovat spoleèenství, které se zabıvá simulacemi, volnì dostupnım nástrojem, ve kterém ji budou zahrnuty základní algoritmy. Druhım dùvodem je fakt, e pro dopravní simulace neexistuje na trhu nástroj, jen by umonil jednoduše porovnávat rùzné dopravní modely (a u jde o modely sledu vozidel, pøedjí\-dìcí modely, èi øízení dopravy).
 
 Tento druhı dùvod a také monost vlastní implementace modelù vedly autora k~volbì SUMO. K~tomu, aby bylo moné vlastní modely vùbec implementovat, bylo tøeba pouít vıvojovou verzi simulátoru. To znamená, e nestaèí pouze verze SUMO, které obsahuje spustitelné soubory, ale potøebujeme pøímo zdrojové kódy. Více o~tom, jak SUMO zkompilovat, je uvedeno v~pøíloze \ref{kompilaceSUMO}.
 
@@ -103,7 +103,7 @@ Dále je zde funkce na zjištìní, zda zadanı parametr je èíslo.
 Nejprve je nutné data Praského okruhu pøevést do stejného formátu, kterı nám potom budou dávat indukèní smyèky. Naprogramovaná tøída, která toto v~Javì umí, je nazvána \textit{MatlabToXML}. V~konstruktoru se vytvoøí soubor, jeho název je jeden ze vstupních parametrù a poté ve funkci \textit{createLoopDocument} se pøímo vytváøí jeho obsah.
 
 \begin{itemize}
-	\item \textit{public MatlabToXML(String fileNameMatlab, String fileNameCars)} -- první vstupní parametr urèuje soubor ve formátu .mat, kterı má pøedem definovanou strukturu, která je shodná s~mıtnımi branami z~Praského okruhu. Vıstupní soubory se potom budou jmenovat na základì vstupní promìnné \textit{fileNameCars}, kde dále bude následovat potrítko a èíslo pruhu\footnote{Napø. pro vstupní parametr detektorkm0201.xml, budou vıstupní soubory \texttt{detektorkm0201\_0.xml} a \texttt{detektorkm0201\_1.xml}}, ve kterém budou informace o~rychlostech a intenzitách pouze pro ten danı pruh.
+	\item \textit{public MatlabToXML(String fileNameMatlab, String fileNameCars)} -- první vstup\-ní parametr urèuje soubor ve formátu .mat, kterı má pøedem definovanou strukturu, která je shodná s~mıtnımi branami z~Praského okruhu. Vıstupní soubory se potom budou jmenovat na základì vstupní promìnné \textit{fileNameCars}, kde dále bude následovat potrítko a èíslo pruhu\footnote{Napø. pro vstupní parametr detektorkm0201.xml, budou vıstupní soubory \texttt{detektorkm0201\_0.xml} a \texttt{detektorkm0201\_1.xml}}, ve kterém budou informace o~rychlostech a intenzitách pouze pro ten danı pruh.
 	\item \textit{public Document createLoopDocument(int lane)} -- vstupní parametr \textit{lane} urèuje pruh, pro kterı se právì obsah souboru vytváøí.
 \end{itemize}
 
@@ -115,7 +115,7 @@ Pøíkaz, kterım lze program spustit, aby vytvoøil tento dokument, je následující
 java -jar AllInOne.jar -m sokp-0187-20121031.mat det0187.xml
 \end{lstlisting}
 
-Ze souboru \textit{sokp-0187-20121031.mat} vytvoøí v~závislosti na poètu pruhù pod touto mıtnou branou stejnı poèet souborù, tedy \textit{det0187\_0.xml}, \textit{det0187\_1.xml} atd.
+Ze souboru \texttt{sokp-0187-20121031.mat} vytvoøí v~závislosti na poètu pruhù pod touto mıtnou branou stejnı poèet souborù, tedy \texttt{det0187\_0.xml}, \texttt{det0187\_1.xml} atd.
 
 Tyto soubory lze následnì pouít jako vstup pro vytvoøení souboru s~informacemi o~vjezdech vozidel pro SUMO, anebo pro vytvoøení grafù nebo histogramù pro porovnání vısledkù se simulací.
 
@@ -139,7 +139,7 @@ Tøída \emph{XMLCreator} obsahuje následující konstruktor a metody:
 	\item \textit{public Element createVehicle(Element element, int actualCar, double time, int iTime, int lane, String type)} -- vytvoøení jednoho exempláøe vozidla s~pøíslušnımi parametry, \textit{actualCar} je poøadí vozidla od zaèátku simulace, \textit{lane} pruh do kterého bude vozidlo vygenerováno, \textit{time} je èas ve kterém vozidlo bude vpuštìno do simulace.
 \end{itemize}
 
-Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUMO simulovalo provoz. Tento parametr je nepovinnı a pokud ho nezadáme, program pøedpokládá volbu Kraussova modelu.
+Lze pøidat konkrétní model, tøetí parametr pøíkazu, podle kterého chceme aby SUMO simulovalo provoz. Tento parametr je nepovinnı a pokud ho nezadáme, program pøedpo\-kládá volbu Kraussova modelu.
 
 Základními parametry jsou:
 \begin{itemize}
@@ -152,9 +152,9 @@ Ty je zatím moné nastavit pouze ve zdrojovém kódu programu.
 
 Zatím jsou k~dispozici ètyøi modely a k~nim pøíslušné parametry:
 \begin{itemize}
-	\item Gippsùv model tak, jak je popsán v sekci \ref{sec:Gipps}
+	\item Gippsùv model tak, jak je popsán v sekci \ref{sec:Gipps}:
 	\begin{itemize}
-		\item desiredSpeed ($V_\n$): preferovaná rychlost daného vozidla, rychlost je generovaná z~normálního rozdìlení se støední hodnotou 130\,km/h, co je maximální rychlost na rychlostní komunikaci a smìrodatnou odchylkou 10\% z maximální rychlosti, která byla stanovena na základì expertního odhadu.
+		\item desiredSpeed ($V_\n$): preferovaná rychlost daného vozidla, rychlost je generovaná z~normálního rozdìlení se støední hodnotou 130\,km/h, co je maximální rychlost na rychlostní komunikaci a smìrodatnou odchylkou 10\% z maximální rychlosti, která byla stanovena na základì expertního odhad.
 			\end{itemize}
 \end{itemize}
 
@@ -163,9 +163,9 @@ Zatím jsou k~dispozici ètyøi modely a k~nim pøíslušné parametry:
 \end{lstlisting}
 
 \begin{itemize}
-	\item Kraussùv model a Rozšíøenı Kraussùv model, tak jak je popsán v sekci \ref{sec:Krauss}, resp. \ref{exKrauss}
+	\item Kraussùv model a Rozšíøenı Kraussùv model, tak jak je popsán v sekci \ref{sec:Krauss}, resp. \ref{exKrauss}:
 	\begin{itemize}
-		\item $\eta$: náhodná vıchylka od bìného øízení, hodnota 0,5 - pøedem nastavena v rámci SUMO
+		\item $\eta$: náhodná vıchylka od bìného øízení, hodnota 0,5 - pøedem nastavena v rámci SUMO.
 	\end{itemize}
 \end{itemize}
 
@@ -179,7 +179,7 @@ Zatím jsou k~dispozici ètyøi modely a k~nim pøíslušné parametry:
 \begin{itemize}
 	\item IDM, Intelligent Driver Model ze sekce \ref{sec:IDM}
 	\begin{itemize}
-		\item delta ($\delta$): exponent akcelerace dle rovnice \eqref{zrychvolproud} - hodnota 4, doporuèena v rámci kalibrování autorù IDM
+		\item delta ($\delta$): exponent akcelerace dle rovnice \eqref{zrychvolproud} - hodnota 4, doporuèena v rámci kalibrování autorù IDM \cite{Treiber}.
 	\end{itemize}
 \end{itemize}
 
@@ -190,8 +190,8 @@ Zatím jsou k~dispozici ètyøi modely a k~nim pøíslušné parametry:
 \begin{itemize}
 	\item Wiedemannùv model - parametry pouity pro vıpoèet køivek AX, BX atd. z obrázku \ref{wiedemann}
 	\begin{itemize}
-		\item estimation - hodnota 0,5
-		\item security - hodnota 0,5
+		\item estimation - hodnota 0,5,
+		\item security - hodnota 0,5.
 	\end{itemize}
 \end{itemize}
 
@@ -238,7 +238,7 @@ Soubor \texttt{vozidla.rou.xml} lze rovnou pouít jako vstupní soubor vozidel pr
 
 Po simulaci SUMO vytvoøí nìkolik souborù. Hlavní soubor v XML formátu, jeho název urèujeme pøi spouštìní simulace, obsahuje informace o~vozidlech, která se nacházejí v~simulaci kadou sekundu. Pro naše vıstupy budou ovšem nejdùleitìjší soubory, dávající data z indukèních smyèek (viz \ref{subsec:additionalfiles}). Tento soubor se bude zpracovávat stejnì jako soubor vzniklı pomocí aplikace \textit{AllInOne} uvedeného v~odstavci \ref{subsec:convert}.
 
-Pro porovnání reálnıch a nasimulovanıch dat nabízí aplikace \textit{AllInOne.jar} tøi monosti vyhodnocení:
+Pro porovnání reálnıch a nasimulovanıch dat nabízí aplikace \textit{AllInOne.jar} tøi mo\-nosti vyhodnocení:
 \begin{itemize}
 	\item èasová øada poètu vozidel kadou minutu,
 	\item poèet vozidel za èasovı úsek, jeho délku je moné nastavit,
@@ -251,10 +251,10 @@ Jednou z~moností, jak zobrazit vıstupy ze simulace, je pomocí èasové øady. Prog
 
 Tøída \emph{XMLReader} obsahuje následující konstruktor a metody:
 \begin{itemize}
-	\item \textit{public XMLReader(String fileNameInput, String fileNameOutput) throws DocumentException} - první parametr je vstupní soubor ve formátu XML (buïto vytvoøenı programem z~Matlab souboru nebo ze simulace SUMO), druhı parametr je potom název souboru, kterı je pøi instalovaném GNUplotu vygenerován automaticky,
+	\item \textit{public XMLReader(String fileNameInput, String fileNameOutput) throws DocumentException} - první parametr je vstupní soubor ve formátu XML (buïto vytvoøenı programem z~Matlab souboru nebo ze simulace SUMO), druhı parametr je potom název souboru, kterı je pøi instalovaném GNU\-plotu vygenerován automaticky,
 	\item \textit{public static void timeSeries(String fileNameInput,String fileNameOutput,int numberOfFiles) throws DocumentException} -- stejné parametry jako u~konstruktoru + navíc poèet souborù, které je nutné zpracovat,
 	\item  \textit{private static Calendar setStart(Calendar cal)} -- nastavení èasové øady od pùlnoci do pùlnoci z dùvodu vìtší pøehlednosti programu,
-	\item \textit{public static Document parse(String fileName) throws DocumentException} -- rozdìlení XML dokumentu na jednotlivé èásti
+	\item \textit{public static Document parse(String fileName) throws DocumentException} -- rozdì\-lení XML dokumentu na jednotlivé èásti
 \end{itemize}
 
 Je potøeba si uvìdomit, e zadáváme jeden vstupní soubor, ale vstup je vlastnì nìkolik souborù zároveò. Napø. pøíkaz
@@ -274,7 +274,7 @@ Tøída \emph{XMLReaderHist} obsahuje následující konstruktor a metody
 	\item \textit{public static void hist(String fileNameInput, String fileNameOutput, int numberOfFiles, String w) throws DocumentException} -- úplnì stejná funkce jako u~XMLReaderu doplnìna o~èasovı interval
 \end{itemize}
 
-Všechny ostatní funkce, které tøída obsahuje, ji byly vysvìtleny v~pøedcházejících tøídách.
+Všechny další funkce, které tøída obsahuje, ji byly vysvìtleny v~pøedcházejících tøídách.
 
 Pokud chceme histogram poètu vozidel bìhem celého dne, necháme poslední parametr volání prázdnı, tedy
 
@@ -292,22 +292,19 @@ tedy vytvoøí histogram, kde se sèítají vozidla za hodinu.
 
 \subsection{Histogram - tøída Histogram}
 
-Poslední moností analızy vıstupu je histogram èetností poètu vozidel.\footnote{Obrázky \ref{poisson25} a \ref{poisson69} vznikly právì díky tomuto modulu.} Tento histogram mùeme udìlat jak pro celı den, tak i pro urèitou èasovou oblast (napø. ranní špièka). Pokud nejsou zadány parametry od a do, histogram se vytvoøí pro celı den. Je moné také vytvoøit histogram pøes pùlnoc, tzn. od 22:00 do 3:00.
+Poslední moností analızy vıstupu je histogram èetností poètu vozidel.\footnote{Obrázek \ref{poissoncetnosti} vznikly právì díky tomuto modulu.} Tento histogram mùeme udìlat jak pro celı den, tak i pro urèitou èasovou oblast (napø. ranní špièka). Pokud nejsou zadány parametry od a do, histogram se vytvoøí pro celı den. Je moné také vytvoøit histogram pøes pùlnoc, tzn. od 22:00 do 3:00.
 
 Tøída Histogram obsahuje následující konstruktor a metody:
 
 \begin{itemize}
-	\item \textit{public Histogram(String fileNameInput, String fileNameOutput, String from, String to) throws DocumentException} -- opìt stejné parametry jako v~pøedchozích tøídách, tz. název vstupního a vıstupního souboru, kterı bude vytvoøen po spuštìní GNUplotu, a dále èasové hodnoty od kdy a do kdy chceme histogram vykreslit,
+	\item \textit{public Histogram(String fileNameInput, String fileNameOutput, String from, String to) throws DocumentException} -- opìt stejné parametry jako v~pøedchozích tøídách, tz. název vstupního a vıstupního souboru, kterı bude vytvoøen po spuštìní GNU\-plotu, a dále èasové hodnoty od kdy a do kdy chceme histogram vykreslit,
 	\item \textit{public static void hist(String fileNameInput, String fileNameOutput, int numberOfFiles, String from, String to) throws DocumentException} -- vytvoøení souborù pro GNUplot, všechny parametry jsou stejné jako u~pøedchozích tøíd.	
 \end{itemize}
 Pokud chceme vytvoøit histogram poètu vozidel za celı den, pøíkaz vypadá následovnì
-
-
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -h detektor.xml histogram.pdf
 \end{lstlisting}
-Pokud nás zajímá pouze urèitı èasovı úsek, napø. ranní špièka, na konec pøíkazu zadáme pøíslušné meze
-
+Pokud nás zajímá pouze urèitı èasovı úsek, na konec pøíkazu zadáme pøíslušné meze
 \begin{lstlisting}[breaklines=true]
 java -jar AllInOne.jar -h detektor.xml histogram.pdf 2:00 5:00
 \end{lstlisting}

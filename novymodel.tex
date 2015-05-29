@@ -24,8 +24,8 @@ Ostatní vlastnosti vedoucího vozidla nejsme schopni jednoduše zjistit, nicménì r
 Seznam metod, které je pøi implementaci nového modelu sledu vozidel pøetíit, je následující:
 
 \begin{itemize}
-	\item \textit{virtual SUMOReal freeSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal seen, SUMOReal maxSpeed, const bool onInsertion = false) const} -- vıpoèet rychlosti vozidla, které jede jako první, tzn. jeho poloha je nejdále od zaèátku simulace a nejede pøed ním ádné vozidlo,
-	\item \textit{virtual SUMOReal followSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet rychlosti vozidla na základì parametrù pohybu vedoucího vozidla,
+	\item \textit{virtual SUMOReal freeSpeed(const MSVehicle* const veh, SUMOReal speed, SU\-MOReal seen, SUMOReal maxSpeed, const bool onInsertion = false) const} -- vıpo\-èet rychlosti vozidla, které jede jako první, tzn. jeho poloha je nejdále od zaèátku simulace a nejede pøed ním ádné vozidlo,
+	\item \textit{virtual SUMOReal followSpeed(const MSVehicle* const veh, SUMOReal speed, SU\-MOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpo\-èet rychlosti vozidla na základì parametrù pohybu vedoucího vozidla,
 	\item \textit{virtual SUMOReal insertationFollowSpeed(const MSVehicle* const veh, SUMOReal speed, SUMOReal gap2pred, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet rychlosti vozidla pøi vjezdu do oblasti na základì parametrù vozidla, které se nachází pøed ním; \textbf{SUMO nenechá vjet vozidlo do oblasti, pokud není zajištìna bezpeèná vzdálenost pro zabrdìní vozidla},
 	\item \textit{virtual SUMOReal stopSpeed(const MSVehicle* const veh, const SUMOReal speed, SUMOReal gap2pred)} -- vıpoèet rychlosti ve chvíli, kdy se pøed vozidlem nachází statickı objekt\footnote{objekt, kterı má nulovou rychlost},
 	\item \textit{virtual SUMOReal interactionGap(const MSVehicle* const veh, SUMOReal vL) const} -- vıpoèet mezery, kdy ovlivòuje vedoucí vozidlo aktuální
@@ -34,7 +34,7 @@ Seznam metod, které je pøi implementaci nového modelu sledu vozidel pøetíit, je
 Mùeme také vyuít další podpùrné funkce, které pøímo nezávisí na modelu. Dají se pouít napø. pøi kontrole bezpeèné rychlosti. Tyto funkce nelze primárnì pøepsat v~novém modelu. Jsou to:
 
 \begin{itemize}
-	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SUMOReal predMaxDecel) const} -- vıpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
+	\item \textit{SUMOReal maximumSafeFollowSpeed(SUMOReal gap, SUMOReal predSpeed, SU\-MOReal predMaxDecel) const} -- vıpoèet maximální bezpeèné rychlosti pro aktuální vozidlo na základì vedoucího
 	\item \textit{SUMOReal maximumSafeStopSpeed(SUMOReal gap) const} -- vıpoèet maximální bezpeèné rychlosti pro zastavení
 \end{itemize}
 
@@ -42,9 +42,9 @@ Mùeme také vyuít další podpùrné funkce, které pøímo nezávisí na modelu. Dají s
 
 K~tomu abychom mohli pøidat do SUMO Gippsùv model, je nejprve nezbytné vytvoøit soubory pro novı model -- viz pøíloha \ref{chap:newfiles}. Spustíme kompilaci SUMO a pokud vše probìhne bez problémù mùeme postoupit dále. Jinak je ovšem chyba v~nedodrení postupu v~pøíloze a není moné postupovat dále.
 
-Ve chvíli, kdy se nám SUMO zkompilovalo a máme k~dispozici soubory \texttt{MSCFModel\_Gipps.cpp} a \texttt{MSCFModel\_Gipps.h}, mùeme zaèít programovat Gippsùv model. V~pøíloze \ref{chap:newfiles} v~sekci \ref{sec:newparams} je k~dispozici návod na vytvoøení vlastních parametrù, my ho pouijeme pouze pro preferovanou rychlost vozidla \textit{desiredSpeed}. Pøi tvorbì konstruktoru by nám potom mìla bıt k~dispozici hodnota promìnné \textit{desiredSpeed}, kterou mùeme pøidat jako parametr pøi vytváøení souboru vozidel.
+Ve chvíli, kdy se SUMO zkompilovalo a máme k~dispozici soubory \texttt{MSCFModel\_Gipps\-.cpp} a \texttt{MSCFModel\_Gipps.h}, mùeme zaèít programovat Gippsùv model. V~pøí\-loze \ref{chap:newfiles} v~sekci \ref{sec:newparams} je k~dispozici návod na vytvoøení vlastních parametrù, my ho pouijeme pouze pro preferovanou rychlost vozidla \textit{desiredSpeed}. Pøi tvorbì konstruktoru by nám potom mìla bıt k~dispozici hodnota promìnné \textit{desiredSpeed}, kterou mùeme pøidat jako parametr pøi vytváøení souboru vozidel.
 
-Prvnì zakomponujeme do souboru \texttt{MSCFModel\_Gipps.h} všechny naše promìnné, které budou k~dispozici našemu modelu. Promìnné deklarujeme jako chránìné, aby k~nim mìl pøístup pouze Gippsùv model, pøípadnì jeho potomek. 
+Prvnì zakomponujeme do souboru \texttt{MSCFModel\_Gipps.h} všechny naše promìnné, kte\-ré budou k~dispozici našemu modelu. Promìnné deklarujeme jako chránìné, aby k~nim mìl pøístup pouze Gippsùv model, pøípadnì jeho potomek. 
 \begin{lstlisting}[breaklines=true]
 protected:
 	SUMOReal myDesiredSpeed;
@@ -62,12 +62,12 @@ MSCFModel_Gipps::MSCFModel_Gipps(const MSVehicleType* vtype,  SUMOReal accel, SU
 
 Tento kód zavolá konstruktor obecného modelu, uloí nám hodnoty zadané pøi generování vozidel do simulace do jednotlivıch promìnnıch. My si potom pøidáme ještì hodnotu \textit{desiredSpeed} do promìnné \textit{myDesiredSpeed} a do promìnné \textit{myGippsDecel} uloíme zápornou hodnotu decelerace.
 
-V~hlavièkovém souboru \textit{MSCFModel\_Gipps.h} je také nutné upravit definici stávajícího konstruktoru na
+V~hlavièkovém souboru \textit{MSCFModel\_Gipps.h} je také nutné upravit definici stávají\-cího konstruktoru na
 \begin{lstlisting}[breaklines=true]
  MSCFModel_Gipps(const MSVehicleType* vtype, SUMOReal accel, SUMOReal decel, SUMOReal headwayTime, SUMOReal desiredSpeed);
 \end{lstlisting}
 
-Vrame se nyní k~promìnné myGippsDecel. Na první pohled se zdá nelogické zavádìt novou promìnnou, obsahující zápornou hodnotu decelerace, zadanou do modelu a zdálo by se vhodné, tuto hodnotu uloit do promìnné myDecel. Tím bychom ovšem porušili definici tøídy \textit{MSCFModel}, u~ní se pøedpokládá, e myDecel obsahuje kladnou hodnotu decelerace modelu. Na tuto hodnotu se také SUMO bìhem simulace nìkolikrát odkazuje. Zápornou hodnotu decelerace je proto tøeba dret oddìlenì. \textbf{Není moné uloit do myDecel hodnotu -decel, protoe na hodnotu myDecel se ptá SUMO v~rùznıch situacích a byla by v~nìm uloena záporná hodnota namísto kladné, které SUMO oèekává.}
+Vrame se nyní k~promìnné myGippsDecel. Na první pohled se zdá nelogické zavádìt novou promìnnou, obsahující zápornou hodnotu decelerace, zadanou do modelu a zdálo by se vhodné, tuto hodnotu uloit do promìnné myDecel. Tím bychom ovšem porušili definici tøídy \textit{MSCFModel}, u~ní se pøedpokládá, e myDecel obsahuje kladnou hodnotu decelerace modelu. Na tuto hodnotu se také SUMO bìhem simulace nìkolikrát odkazuje. Zápornou hodnotu decelerace je proto tøeba dret oddìlenì. \textbf{Není moné uloit do myDecel hodnotu -decel, protoe na hodnotu myDecel se ptá SUMO v~mnoha funkcích a byla by v~nìm uloena záporná hodnota namísto kladné, které SUMO oèekává.}
 
 V~tuto chvíli bychom mìli mít k~dispozici následující promìnné v~celém tìle Gippsova modelu. Uvedeme zde také promìnnou odpovídající parametrùm Gippsova modelu - viz odstavec \ref{subsec:parameterGipps}:
 \begin{itemize}
@@ -85,7 +85,7 @@ private:
  virtual SUMOReal vInteraction(SUMOReal speed, SUMOReal predSpeed, SUMOReal gap2pred) const;
  virtual SUMOReal chooseBrakeConst(SUMOReal decel) const;
 \end{lstlisting}
-parametry tìchto funkcí pøímo odpovídají tomu, co pro vıpoèet daného èlenu potøebujeme. Funkce \textit{vFree} potom vypadá následovnì:
+parametry tìchto funkcí pøímo odpovídají tomu, co pro vıpoèet daného èlenu potøebu\-jeme. Funkce \textit{vFree} potom vypadá následovnì:
 
 \begin{lstlisting}[breaklines=true]
 SUMOReal MSCFModel_Gipps::vFree(SUMOReal speed) const {
